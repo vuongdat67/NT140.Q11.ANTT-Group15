@@ -66,6 +66,7 @@ set(CORE_SOURCES
     src/utils/crypto_utils.cpp
     src/utils/progress.cpp
     src/utils/table_formatter.cpp
+    src/utils/password.cpp
     src/format/file_header.cpp
 )
 
@@ -85,10 +86,15 @@ set(ALGORITHM_SOURCES
     src/algorithms/classical/playfair.cpp
 )
 
+set(COMPRESSION_SOURCES
+    src/compression/compressor.cpp
+)
+
 # Create static library
 add_library(filevault_lib STATIC
     ${CORE_SOURCES}
     ${ALGORITHM_SOURCES}
+    ${COMPRESSION_SOURCES}
 )
 
 target_include_directories(filevault_lib

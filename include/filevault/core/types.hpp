@@ -13,21 +13,66 @@ namespace core {
  * @brief Enumeration of encryption algorithm types
  */
 enum class AlgorithmType {
-    // Symmetric ciphers
+    // Symmetric ciphers (modern)
     AES_128_GCM,
     AES_192_GCM,
     AES_256_GCM,
+    AES_128_CBC,
+    AES_192_CBC,
+    AES_256_CBC,
     CHACHA20_POLY1305,
-    
-    // Hash functions
-    SHA256,
-    SHA512,
-    BLAKE2B,
     
     // Classic (educational)
     CAESAR,
     VIGENERE,
     PLAYFAIR
+};
+
+/**
+ * @brief Enumeration of hash algorithm types
+ */
+enum class HashType {
+    // Legacy (insecure - for compatibility only)
+    MD5,
+    SHA1,
+    
+    // SHA-2 family (secure)
+    SHA224,
+    SHA256,
+    SHA384,
+    SHA512,
+    SHA512_256,  // SHA-512/256
+    
+    // SHA-3 family (secure)
+    SHA3_224,
+    SHA3_256,
+    SHA3_384,
+    SHA3_512,
+    
+    // BLAKE2 family (secure, fast)
+    BLAKE2B_256,
+    BLAKE2B_384,
+    BLAKE2B_512,
+    BLAKE2S_256
+};
+
+/**
+ * @brief Compression algorithm types
+ */
+enum class CompressionType {
+    NONE,
+    ZLIB,
+    BZIP2,
+    LZMA
+};
+
+/**
+ * @brief User mode/profile for algorithm selection
+ */
+enum class UserMode {
+    STUDENT,        // Educational - classical ciphers
+    PROFESSIONAL,   // Standard - AES-256, Argon2
+    ADVANCED        // Maximum security - custom params
 };
 
 /**
@@ -58,10 +103,11 @@ struct EncryptionConfig {
     AlgorithmType algorithm = AlgorithmType::AES_256_GCM;
     KDFType kdf = KDFType::ARGON2ID;
     SecurityLevel level = SecurityLevel::MEDIUM;
+    UserMode mode = UserMode::PROFESSIONAL;
     
     // KDF parameters (auto-set based on SecurityLevel)
     uint32_t kdf_iterations = 100000;
-    uint32_t kdf_memory_kb = 65536;
+    uint32_t kdf_memory_kb = 65536;  // 64MB default
     uint32_t kdf_parallelism = 4;
     
     // Encryption parameters (generated automatically or provided)
@@ -71,17 +117,77 @@ struct EncryptionConfig {
     std::optional<std::vector<uint8_t>> associated_data;
     
     // Compression
-    bool compress = false;
-    int compression_level = 6;
+    CompressionType compression = CompressionType::NONE;
+    int compression_level = 6;  // 1-9 for zlib/bzip2/lzma
     
     // Metadata
     bool include_metadata = true;
     std::string comment;
     
+    // Progress reporting
+    bool show_progress = true;
+    bool verbose = false;
+    
     /**
      * @brief Apply security level parameters
      */
     void apply_security_level();
+    
+    /**
+     * @brief Apply user mode defaults
+     */
+    void apply_user_mode();
+};
+
+/**
+ * @brief Configuration for hashing operations
+ */
+struct HashConfig {
+    HashType algorithm = HashType::SHA256;
+    bool hmac_mode = false;
+    std::vector<uint8_t> hmac_key;
+    
+    // For file hashing
+    bool verify_mode = false;
+    std::string expected_hash;
+    
+    // Output format
+    bool uppercase = false;
+    bool include_filename = true;
+};
+
+/**
+ * @brief Password strength levels
+ */
+enum class PasswordStrength {
+    VERY_WEAK,
+    WEAK,
+    FAIR,
+    STRONG,
+    VERY_STRONG
+};
+
+/**
+ * @brief Password strength analysis result
+ */
+struct PasswordAnalysis {
+    PasswordStrength strength;
+    int score;  // 0-100
+    std::vector<std::string> warnings;
+    std::vector<std::string> suggestions;
+    
+    // Detailed metrics
+    size_t length;
+    bool has_lowercase;
+    bool has_uppercase;
+    bool has_digits;
+    bool has_special;
+    bool has_repeated_chars;
+    bool is_common_password;
+    
+    // Estimated crack time
+    std::string crack_time_online;   // "< 1 second" or "centuries"
+    std::string crack_time_offline;  // "< 1 second" or "centuries"
 };
 
 } // namespace core

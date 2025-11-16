@@ -30,8 +30,10 @@ private:
     std::string algorithm_ = "aes-256-gcm";
     std::string security_level_ = "medium";
     std::string kdf_ = "argon2id";
-    bool compress_ = false;
+    std::string compression_type_ = "none";
+    int compression_level_ = 6;
     bool verbose_ = false;
+    bool no_progress_ = false;
 };
 
 } // namespace cli

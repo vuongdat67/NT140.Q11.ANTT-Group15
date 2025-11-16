@@ -172,10 +172,10 @@ std::string CryptoEngine::algorithm_name(AlgorithmType type) {
         case AlgorithmType::AES_128_GCM: return "AES-128-GCM";
         case AlgorithmType::AES_192_GCM: return "AES-192-GCM";
         case AlgorithmType::AES_256_GCM: return "AES-256-GCM";
+        case AlgorithmType::AES_128_CBC: return "AES-128-CBC";
+        case AlgorithmType::AES_192_CBC: return "AES-192-CBC";
+        case AlgorithmType::AES_256_CBC: return "AES-256-CBC";
         case AlgorithmType::CHACHA20_POLY1305: return "ChaCha20-Poly1305";
-        case AlgorithmType::SHA256: return "SHA-256";
-        case AlgorithmType::SHA512: return "SHA-512";
-        case AlgorithmType::BLAKE2B: return "BLAKE2b";
         case AlgorithmType::CAESAR: return "Caesar";
         case AlgorithmType::VIGENERE: return "Vigenère";
         case AlgorithmType::PLAYFAIR: return "Playfair";
@@ -202,9 +202,6 @@ std::optional<AlgorithmType> CryptoEngine::parse_algorithm(const std::string& na
     if (lower == "aes-192-gcm" || lower == "aes192gcm") return AlgorithmType::AES_192_GCM;
     if (lower == "aes-256-gcm" || lower == "aes256gcm") return AlgorithmType::AES_256_GCM;
     if (lower == "chacha20-poly1305" || lower == "chacha20") return AlgorithmType::CHACHA20_POLY1305;
-    if (lower == "sha256" || lower == "sha-256") return AlgorithmType::SHA256;
-    if (lower == "sha512" || lower == "sha-512") return AlgorithmType::SHA512;
-    if (lower == "blake2b" || lower == "blake2") return AlgorithmType::BLAKE2B;
     if (lower == "caesar") return AlgorithmType::CAESAR;
     if (lower == "vigenere" || lower == "vigenère") return AlgorithmType::VIGENERE;
     if (lower == "playfair") return AlgorithmType::PLAYFAIR;

@@ -3,6 +3,9 @@
 #include "filevault/utils/console.hpp"
 #include "filevault/utils/file_io.hpp"
 #include "filevault/utils/crypto_utils.hpp"
+#include "filevault/utils/password.hpp"
+#include "filevault/utils/progress.hpp"
+#include "filevault/compression/compressor.hpp"
 #include <spdlog/spdlog.h>
 #include <chrono>
 #include <iostream>
@@ -38,11 +41,17 @@ void EncryptCommand::setup(CLI::App& app) {
             "argon2id", "argon2i", "pbkdf2-sha256", "pbkdf2-sha512", "scrypt"
         }));
     
-    encrypt_cmd->add_option("-p,--password", password_, "Encryption password");
+    encrypt_cmd->add_option("-p,--password", password_, "Encryption password (not recommended)");
     
-    encrypt_cmd->add_flag("-c,--compress", compress_, "Compress before encryption");
+    encrypt_cmd->add_option("--compression", compression_type_, "Compression algorithm")
+        ->check(CLI::IsMember({"none", "zlib", "bzip2", "lzma"}));
+    
+    encrypt_cmd->add_option("--compression-level", compression_level_, "Compression level (1-9)")
+        ->check(CLI::Range(1, 9));
     
     encrypt_cmd->add_flag("-v,--verbose", verbose_, "Verbose output");
+    
+    encrypt_cmd->add_flag("--no-progress", no_progress_, "Disable progress bars");
     
     encrypt_cmd->callback([this]() { execute(); });
 }
@@ -51,14 +60,15 @@ int EncryptCommand::execute() {
     try {
         utils::Console::header("FileVault Encryption");
         
-        // Get password if not provided
+        // Get password securely if not provided
         if (password_.empty()) {
-            std::cout << "Enter password: ";
-            std::getline(std::cin, password_);
+            password_ = utils::Password::read_secure("Enter encryption password: ", true);
             if (password_.empty()) {
                 utils::Console::error("Password cannot be empty");
                 return 1;
             }
+        } else {
+            utils::Console::warning("Using password from command line is insecure!");
         }
         
         // Set output file if not specified
@@ -81,8 +91,49 @@ int EncryptCommand::execute() {
             return 1;
         }
         
-        const auto& plaintext = file_result.value;
+        auto plaintext = file_result.value;
         utils::Console::info(fmt::format("Read {} bytes", plaintext.size()));
+        
+        // Step 1: Compress if requested
+        bool compressed = false;
+        size_t original_size = plaintext.size();
+        
+        if (compression_type_ != "none") {
+            utils::Console::info(fmt::format("Compressing with {}...", compression_type_));
+            
+            auto comp_type = compression::CompressionService::parse_algorithm(compression_type_);
+            
+            auto compressor = compression::CompressionService::create(comp_type);
+            if (!compressor) {
+                utils::Console::error("Failed to create compressor");
+                return 1;
+            }
+            
+            std::unique_ptr<utils::ProgressBar> compress_progress;
+            if (!no_progress_) {
+                compress_progress = std::make_unique<utils::ProgressBar>("Compressing", 100);
+                compress_progress->set_progress(50);  // Show activity
+            }
+            
+            auto compress_result = compressor->compress(plaintext, compression_level_);
+            
+            if (compress_progress) {
+                compress_progress->mark_as_completed();
+            }
+            
+            if (!compress_result.success) {
+                utils::Console::error(compress_result.error_message);
+                return 1;
+            }
+            
+            plaintext = std::move(compress_result.data);
+            compressed = true;
+            
+            utils::Console::info(fmt::format("Compressed: {} -> {} bytes ({:.1f}% ratio)",
+                               original_size,
+                               plaintext.size(),
+                               compress_result.compression_ratio));
+        }
         
         spdlog::debug("Parsing configuration...");
         // Parse configuration
@@ -116,17 +167,38 @@ int EncryptCommand::execute() {
         config.level = sec_level;
         config.apply_security_level();
         
-        // Generate salt and derive key
+        // Step 2: Generate salt and derive key
+        utils::Console::info("Deriving key...");
+        std::unique_ptr<utils::ProgressBar> kdf_progress;
+        if (!no_progress_) {
+            kdf_progress = std::make_unique<utils::ProgressBar>("Deriving key", 100);
+            kdf_progress->set_progress(50);  // Show activity
+        }
+        
         auto salt = engine_.generate_salt(32);
         auto key = engine_.derive_key(password_, salt, config);
+        
+        if (kdf_progress) {
+            kdf_progress->mark_as_completed();
+        }
         
         // Generate nonce and add to config
         auto nonce = engine_.generate_nonce(12); // GCM standard
         config.nonce = nonce;
         
-        // Encrypt
+        // Step 3: Encrypt
         utils::Console::info("Encrypting...");
+        std::unique_ptr<utils::ProgressBar> encrypt_progress;
+        if (!no_progress_) {
+            encrypt_progress = std::make_unique<utils::ProgressBar>("Encrypting", 100);
+            encrypt_progress->set_progress(50);  // Show activity
+        }
+        
         auto encrypt_result = algorithm->encrypt(plaintext, key, config);
+        
+        if (encrypt_progress) {
+            encrypt_progress->mark_as_completed();
+        }
         
         if (!encrypt_result.success) {
             utils::Console::error(encrypt_result.error_message);
@@ -145,10 +217,10 @@ int EncryptCommand::execute() {
         if (encrypt_result.tag.has_value()) {
             header.set_tag(encrypt_result.tag.value());
         }
-        header.set_original_size(plaintext.size());
+        header.set_original_size(original_size);  // Original uncompressed size
         header.set_encrypted_size(encrypt_result.data.size());
         header.set_timestamp(std::chrono::system_clock::now().time_since_epoch().count());
-        header.set_compressed(compress_);
+        header.set_compressed(compressed);
         
         if (!header.validate()) {
             utils::Console::error("Invalid header generated");
