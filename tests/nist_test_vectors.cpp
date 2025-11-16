@@ -118,10 +118,10 @@ int main() {
             }
             
             if (ciphertext_match && tag_match) {
-                std::cout << "  Result: PASSED ✓\n";
+                std::cout << "  Result: [PASS]\n";
                 passed++;
             } else {
-                std::cout << "  Result: FAILED ✗\n";
+                std::cout << "  Result: [FAIL]\n";
                 if (!ciphertext_match) {
                     std::cout << "    Expected CT: " << bytes_to_hex(test.ciphertext) << "\n";
                     std::cout << "    Got CT:      " << bytes_to_hex(result.data) << "\n";
@@ -138,7 +138,7 @@ int main() {
             }
             
         } catch (const std::exception& e) {
-            std::cout << "  Result: FAILED (exception: " << e.what() << ")\n";
+            std::cout << "  Result: [FAIL] (exception: " << e.what() << ")\n";
             failed++;
         }
         

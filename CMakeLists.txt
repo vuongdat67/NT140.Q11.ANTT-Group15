@@ -16,10 +16,14 @@ option(BUILD_TESTS "Build tests" ON)
 option(BUILD_BENCHMARKS "Build benchmarks" ON)
 option(ENABLE_COVERAGE "Enable code coverage" OFF)
 
-# Output directories
+# Output directories - organized structure
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
 set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
+
+# Separate directories for different build types
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY_DEBUG ${CMAKE_BINARY_DIR}/bin/debug)
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY_RELEASE ${CMAKE_BINARY_DIR}/bin/release)
 
 # Include paths
 include_directories(${CMAKE_SOURCE_DIR}/include)
@@ -76,7 +80,9 @@ set(CLI_SOURCES
 
 set(ALGORITHM_SOURCES
     src/algorithms/symmetric/aes_gcm.cpp
-    src/algorithms/classical/classical_ciphers.cpp
+    src/algorithms/classical/caesar.cpp
+    src/algorithms/classical/vigenere.cpp
+    src/algorithms/classical/playfair.cpp
 )
 
 # Create static library
@@ -118,17 +124,35 @@ target_link_libraries(filevault
         tabulate::tabulate
 )
 
-# Tests
+# Tests - output to tests/ directory
 if(BUILD_TESTS)
+    set(CMAKE_RUNTIME_OUTPUT_DIRECTORY_TEST ${CMAKE_BINARY_DIR}/tests)
+    
     # NIST Test Vectors
     add_executable(nist_test_vectors tests/nist_test_vectors.cpp)
     target_link_libraries(nist_test_vectors PRIVATE filevault_lib)
     target_compile_options(nist_test_vectors PRIVATE -Wno-error=stringop-overread)
+    set_target_properties(nist_test_vectors PROPERTIES
+        RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/tests
+    )
     
     # Rainbow Table Protection Test
     add_executable(rainbow_table_test tests/rainbow_table_test.cpp)
     target_link_libraries(rainbow_table_test PRIVATE filevault_lib)
     target_compile_options(rainbow_table_test PRIVATE -Wno-error=stringop-overread)
+    set_target_properties(rainbow_table_test PROPERTIES
+        RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/tests
+    )
+    
+    enable_testing()
+    add_test(NAME NIST_Vectors COMMAND nist_test_vectors)
+    add_test(NAME Rainbow_Table COMMAND rainbow_table_test)
+endif()
+
+# Benchmarks - output to benchmarks/ directory
+if(BUILD_BENCHMARKS)
+    set(CMAKE_RUNTIME_OUTPUT_DIRECTORY_BENCH ${CMAKE_BINARY_DIR}/benchmarks)
+    # Benchmark targets will be added here
 endif()
 
 # Installation

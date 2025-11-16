@@ -93,7 +93,7 @@ int main() {
     std::cout << "Test 1: Salt Uniqueness\n";
     std::cout << "  Total salts:  " << salts.size() << "\n";
     std::cout << "  Unique salts: " << unique_salts.size() << "\n";
-    std::cout << "  Result: " << (salts_unique ? "PASSED ✓" : "FAILED ✗") << "\n\n";
+    std::cout << "  Result: " << (salts_unique ? "[PASS]" : "[FAIL]") << "\n\n";
     
     if (!salts_unique) all_tests_passed = false;
     
@@ -104,7 +104,7 @@ int main() {
     std::cout << "Test 2: Nonce Uniqueness\n";
     std::cout << "  Total nonces:  " << nonces.size() << "\n";
     std::cout << "  Unique nonces: " << unique_nonces.size() << "\n";
-    std::cout << "  Result: " << (nonces_unique ? "PASSED ✓" : "FAILED ✗") << "\n\n";
+    std::cout << "  Result: " << (nonces_unique ? "[PASS]" : "[FAIL]") << "\n\n";
     
     if (!nonces_unique) all_tests_passed = false;
     
@@ -115,7 +115,7 @@ int main() {
     std::cout << "Test 3: Ciphertext Uniqueness\n";
     std::cout << "  Total ciphertexts:  " << ciphertexts.size() << "\n";
     std::cout << "  Unique ciphertexts: " << unique_ciphertexts.size() << "\n";
-    std::cout << "  Result: " << (ciphertexts_unique ? "PASSED ✓" : "FAILED ✗") << "\n\n";
+    std::cout << "  Result: " << (ciphertexts_unique ? "[PASS]" : "[FAIL]") << "\n\n";
     
     if (!ciphertexts_unique) all_tests_passed = false;
     
@@ -129,13 +129,13 @@ int main() {
     }
     
     std::cout << "Test 4: No Plaintext Leakage\n";
-    std::cout << "  Result: " << (no_plaintext_leakage ? "PASSED ✓" : "FAILED ✗") << "\n\n";
+    std::cout << "  Result: " << (no_plaintext_leakage ? "[PASS]" : "[FAIL]") << "\n\n";
     
     if (!no_plaintext_leakage) all_tests_passed = false;
     
     std::cout << "========================================\n";
     std::cout << "Summary:\n";
-    std::cout << "  Rainbow Table Protection: " << (all_tests_passed ? "PASSED ✓" : "FAILED ✗") << "\n";
+    std::cout << "  Rainbow Table Protection: " << (all_tests_passed ? "[PASS]" : "[FAIL]") << "\n";
     std::cout << "========================================\n";
     
     return all_tests_passed ? 0 : 1;

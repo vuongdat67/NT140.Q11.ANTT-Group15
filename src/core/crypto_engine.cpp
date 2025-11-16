@@ -1,7 +1,9 @@
 #include "filevault/core/crypto_engine.hpp"
 #include "filevault/core/types.hpp"
 #include "filevault/algorithms/symmetric/aes_gcm.hpp"
-#include "filevault/algorithms/classical/classical_ciphers.hpp"
+#include "filevault/algorithms/classical/caesar.hpp"
+#include "filevault/algorithms/classical/vigenere.hpp"
+#include "filevault/algorithms/classical/playfair.hpp"
 #include <botan/auto_rng.h>
 #include <botan/argon2.h>
 #include <botan/pwdhash.h>
