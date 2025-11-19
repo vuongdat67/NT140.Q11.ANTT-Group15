@@ -5,6 +5,7 @@
 
 #define STB_IMAGE_IMPLEMENTATION
 #define STB_IMAGE_WRITE_IMPLEMENTATION
+#define STBI_FAILURE_USERMSG  // Enable user-friendly error messages
 #include <stb_image.h>
 #include <stb_image_write.h>
 
@@ -25,6 +26,7 @@ bool LSBSteganography::embed(
     unsigned char* image_data = stbi_load(cover_image_path.c_str(), &width, &height, &channels, 0);
     
     if (!image_data) {
+        // stbi_failure_reason() provides helpful error message
         return false;
     }
     
@@ -85,6 +87,7 @@ std::vector<uint8_t> LSBSteganography::extract(
     unsigned char* image_data = stbi_load(stego_image_path.c_str(), &width, &height, &channels, 0);
     
     if (!image_data) {
+        // stbi_failure_reason() provides helpful error message
         return {};
     }
     
@@ -123,15 +126,20 @@ size_t LSBSteganography::calculate_capacity(
         return 0;
     }
     
-    // Load image to get dimensions
+    // Get image dimensions without loading full image data (faster)
     int width, height, channels;
-    unsigned char* image_data = stbi_load(image_path.c_str(), &width, &height, &channels, 0);
+    int info_result = stbi_info(image_path.c_str(), &width, &height, &channels);
     
-    if (!image_data) {
-        return 0;
+    if (info_result == 0) {
+        // Fallback: try loading the full image
+        unsigned char* image_data = stbi_load(image_path.c_str(), &width, &height, &channels, 0);
+        
+        if (!image_data) {
+            return 0;
+        }
+        
+        stbi_image_free(image_data);
     }
-    
-    stbi_image_free(image_data);
     
     size_t pixel_count = width * height * channels;
     size_t max_bytes = (pixel_count * bits_per_channel) / 8;
