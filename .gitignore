@@ -57,3 +57,7 @@ Release/
 *.fv
 *.encrypted
 test_output/
+
+.github/
+*.bat
+*.md
