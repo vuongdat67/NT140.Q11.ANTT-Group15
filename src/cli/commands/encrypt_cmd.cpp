@@ -34,7 +34,7 @@ void EncryptCommand::setup(CLI::App& app) {
     encrypt_cmd->add_option("-a,--algorithm", algorithm_, "Encryption algorithm")
         ->check(CLI::IsMember({
             "aes-128-gcm", "aes-192-gcm", "aes-256-gcm", 
-            "chacha20-poly1305",
+            "chacha20-poly1305", "serpent-256-gcm",
             "caesar", "vigenere", "playfair", "substitution", "hill"
         }));
     
@@ -83,13 +83,70 @@ int EncryptCommand::execute() {
         
         // Get password securely if not provided
         if (password_.empty()) {
-            password_ = utils::Password::read_secure("Enter encryption password: ", true);
+            // Try up to 3 times to get a valid password
+            int attempts = 0;
+            const int MAX_ATTEMPTS = 3;
+            
+            while (password_.empty() && attempts < MAX_ATTEMPTS) {
+                password_ = utils::Password::read_secure("Enter encryption password: ", true);
+                
+                if (password_.empty()) {
+                    attempts++;
+                    if (attempts < MAX_ATTEMPTS) {
+                        utils::Console::error("Password cannot be empty. Please try again.");
+                    } else {
+                        utils::Console::error("Too many failed attempts. Encryption cancelled.");
+                        return 1;
+                    }
+                }
+            }
+            
             if (password_.empty()) {
                 utils::Console::error("Password cannot be empty");
                 return 1;
             }
         } else {
             utils::Console::warning("Using password from command line is insecure!");
+        }
+        
+        // Check password strength (only once after we have a valid password)
+        auto strength_analysis = utils::Password::analyze_strength(password_);
+        if (strength_analysis.strength == core::PasswordStrength::VERY_WEAK || 
+            strength_analysis.strength == core::PasswordStrength::WEAK) {
+            fmt::print("\n");
+            utils::Console::warning(fmt::format("Password strength: {} (score: {}/100)", 
+                                   utils::Password::get_strength_label(strength_analysis.strength),
+                                   static_cast<int>(strength_analysis.score)));
+            
+            if (!strength_analysis.warnings.empty()) {
+                fmt::print("  ⚠️  Warnings:\n");
+                for (const auto& warning : strength_analysis.warnings) {
+                    fmt::print("      • {}\n", warning);
+                }
+            }
+            
+            if (!strength_analysis.suggestions.empty()) {
+                fmt::print("  💡 Suggestions:\n");
+                for (const auto& suggestion : strength_analysis.suggestions) {
+                    fmt::print("      • {}\n", suggestion);
+                }
+            }
+            
+            fmt::print("\n");
+            std::string response;
+            fmt::print("Continue with weak password? (y/N): ");
+            std::getline(std::cin, response);
+            
+            if (response != "y" && response != "Y") {
+                utils::Console::info("Encryption cancelled");
+                return 0;
+            }
+        } else if (verbose_ && (strength_analysis.strength == core::PasswordStrength::FAIR || 
+                               strength_analysis.strength == core::PasswordStrength::STRONG ||
+                               strength_analysis.strength == core::PasswordStrength::VERY_STRONG)) {
+            utils::Console::success(fmt::format("Password strength: {} (score: {}/100)", 
+                                   utils::Password::get_strength_label(strength_analysis.strength),
+                                   static_cast<int>(strength_analysis.score)));
         }
         
         // Set output file if not specified
@@ -248,7 +305,8 @@ int EncryptCommand::execute() {
         bool is_aead = (algo_type == core::AlgorithmType::AES_128_GCM ||
                        algo_type == core::AlgorithmType::AES_192_GCM ||
                        algo_type == core::AlgorithmType::AES_256_GCM ||
-                       algo_type == core::AlgorithmType::CHACHA20_POLY1305);
+                       algo_type == core::AlgorithmType::CHACHA20_POLY1305 ||
+                       algo_type == core::AlgorithmType::SERPENT_256_GCM);
         
         if (is_aead) {
             if (encrypt_result.tag.has_value()) {

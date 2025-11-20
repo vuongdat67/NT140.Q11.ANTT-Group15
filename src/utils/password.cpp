@@ -68,7 +68,11 @@ std::string Password::read_secure(const std::string& prompt, bool confirm) {
         std::cout.flush();
         
         disable_echo();
-        std::getline(std::cin, password);
+        if (!std::getline(std::cin, password)) {
+            enable_echo();
+            // EOF or error - cannot continue interactively
+            return "";
+        }
         enable_echo();
         
         fmt::print("\n");
@@ -89,7 +93,11 @@ std::string Password::read_secure(const std::string& prompt, bool confirm) {
             // Ask if user wants to continue with weak password
             fmt::print("\nUse this password anyway? [y/N]: ");
             std::string response;
-            std::getline(std::cin, response);
+            if (!std::getline(std::cin, response)) {
+                // EOF or error - cannot continue interactively
+                Console::error("Cannot read input. Aborting.");
+                return "";
+            }
             if (response.empty() || (response[0] != 'y' && response[0] != 'Y')) {
                 continue;
             }
@@ -102,7 +110,12 @@ std::string Password::read_secure(const std::string& prompt, bool confirm) {
             
             std::string confirm_password;
             disable_echo();
-            std::getline(std::cin, confirm_password);
+            if (!std::getline(std::cin, confirm_password)) {
+                enable_echo();
+                // EOF or error - cannot continue interactively
+                Console::error("Cannot read confirmation. Aborting.");
+                return "";
+            }
             enable_echo();
             
             fmt::print("\n");

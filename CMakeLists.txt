@@ -98,6 +98,7 @@ set(CLI_SOURCES
 set(ALGORITHM_SOURCES
     src/algorithms/symmetric/aes_gcm.cpp
     src/algorithms/symmetric/chacha20_poly1305.cpp
+    src/algorithms/symmetric/serpent_gcm.cpp
     src/algorithms/classical/caesar.cpp
     src/algorithms/classical/vigenere.cpp
     src/algorithms/classical/playfair.cpp

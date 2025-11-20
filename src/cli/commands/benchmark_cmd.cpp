@@ -68,9 +68,9 @@ void BenchmarkCommand::benchmark_encryption() {
     
     if (!json_output_) {
         fmt::print("\n📊 Encryption Performance:\n\n");
-        fmt::print("{:<12} │ {:<15} │ {:<15} │ {:<15} │ {:<15}\n", 
-                   "Size", "AES-128-GCM", "AES-192-GCM", "AES-256-GCM", "ChaCha20-Poly");
-        fmt::print("{:-<12}─┼─{:-<15}─┼─{:-<15}─┼─{:-<15}─┼─{:-<15}\n", "", "", "", "", "");
+        fmt::print("{:<12} │ {:<15} │ {:<15} │ {:<15} │ {:<15} │ {:<15}\n", 
+                   "Size", "AES-128-GCM", "AES-192-GCM", "AES-256-GCM", "ChaCha20-Poly", "Serpent-GCM");
+        fmt::print("{:-<12}─┼─{:-<15}─┼─{:-<15}─┼─{:-<15}─┼─{:-<15}─┼─{:-<15}\n", "", "", "", "", "", "");
     }
     
     for (auto size : sizes) {
@@ -86,7 +86,8 @@ void BenchmarkCommand::benchmark_encryption() {
             core::AlgorithmType::AES_128_GCM,
             core::AlgorithmType::AES_192_GCM,
             core::AlgorithmType::AES_256_GCM,
-            core::AlgorithmType::CHACHA20_POLY1305
+            core::AlgorithmType::CHACHA20_POLY1305,
+            core::AlgorithmType::SERPENT_256_GCM
         };
         
         int algo_count = 0;
@@ -123,7 +124,7 @@ void BenchmarkCommand::benchmark_encryption() {
             
             if (!json_output_) {
                 fmt::print("{:<15}", fmt::format("{:.2f} MB/s", throughput));
-                if (algo_count < 3) {
+                if (algo_count < 4) {
                     fmt::print(" │ ");
                 }
             }
@@ -158,8 +159,8 @@ void BenchmarkCommand::benchmark_kdf() {
     
     std::vector<core::KDFType> kdfs = {
         core::KDFType::ARGON2ID,
-        core::KDFType::PBKDF2_SHA256
-        // TODO: Fix Scrypt parameters before adding back
+        core::KDFType::PBKDF2_SHA256,
+        core::KDFType::SCRYPT
     };
     
     for (auto kdf : kdfs) {
@@ -175,7 +176,14 @@ void BenchmarkCommand::benchmark_kdf() {
         double time_ms = std::chrono::duration<double, std::milli>(end - start).count();
         double rate = 1000.0 / time_ms;
         
-        std::string memory = (kdf == core::KDFType::ARGON2ID) ? "65 MB" : "N/A";
+        std::string memory;
+        if (kdf == core::KDFType::ARGON2ID) {
+            memory = "65 MB";
+        } else if (kdf == core::KDFType::SCRYPT) {
+            memory = "32 MB";  // N=32768, r=8
+        } else {
+            memory = "N/A";
+        }
         
         if (!json_output_) {
             fmt::print("{:<18} │ {:<12} │ {:<12} │ {:<10}\n",

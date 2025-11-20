@@ -61,3 +61,5 @@ test_output/
 .github/
 *.bat
 *.md
+
+bintest/

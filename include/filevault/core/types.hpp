@@ -18,6 +18,7 @@ enum class AlgorithmType {
     AES_192_GCM,
     AES_256_GCM,
     CHACHA20_POLY1305,
+    SERPENT_256_GCM,
     
     // Symmetric ciphers (CBC mode - legacy)
     AES_128_CBC,

@@ -2,6 +2,7 @@
 #include "filevault/core/types.hpp"
 #include "filevault/algorithms/symmetric/aes_gcm.hpp"
 #include "filevault/algorithms/symmetric/chacha20_poly1305.hpp"
+#include "filevault/algorithms/symmetric/serpent_gcm.hpp"
 #include "filevault/algorithms/classical/caesar.hpp"
 #include "filevault/algorithms/classical/vigenere.hpp"
 #include "filevault/algorithms/classical/playfair.hpp"
@@ -33,6 +34,7 @@ void CryptoEngine::initialize() {
     register_algorithm(std::make_unique<algorithms::symmetric::AES_GCM>(192));
     register_algorithm(std::make_unique<algorithms::symmetric::AES_GCM>(256));
     register_algorithm(std::make_unique<algorithms::symmetric::ChaCha20Poly1305>());
+    register_algorithm(std::make_unique<algorithms::symmetric::Serpent_GCM>());
     
     // Register classical ciphers (educational only)
     register_algorithm(std::make_unique<algorithms::classical::Caesar>());
@@ -130,9 +132,18 @@ std::vector<uint8_t> CryptoEngine::derive_key(
                     throw std::runtime_error("Failed to create Scrypt instance");
                 }
                 
-                // Scrypt parameters: N, r, p
-                uint32_t N = config.kdf_iterations;
-                uint32_t r = 8;
+                // Scrypt parameters: N (must be power of 2), r, p
+                // Map iterations to N values that are powers of 2
+                uint32_t N;
+                switch (config.level) {
+                    case SecurityLevel::WEAK:     N = 1024;    break;  // 2^10
+                    case SecurityLevel::MEDIUM:   N = 16384;   break;  // 2^14
+                    case SecurityLevel::STRONG:   N = 32768;   break;  // 2^15
+                    case SecurityLevel::PARANOID: N = 65536;   break;  // 2^16
+                    default:                      N = 16384;   break;
+                }
+                
+                uint32_t r = 8;   // Block size
                 uint32_t p = config.kdf_parallelism;
                 
                 auto scrypt = pwdhash->from_params(N, r, p);
@@ -182,6 +193,7 @@ std::string CryptoEngine::algorithm_name(AlgorithmType type) {
         case AlgorithmType::AES_192_CBC: return "AES-192-CBC";
         case AlgorithmType::AES_256_CBC: return "AES-256-CBC";
         case AlgorithmType::CHACHA20_POLY1305: return "ChaCha20-Poly1305";
+        case AlgorithmType::SERPENT_256_GCM: return "Serpent-256-GCM";
         case AlgorithmType::CAESAR: return "Caesar";
         case AlgorithmType::VIGENERE: return "Vigenère";
         case AlgorithmType::PLAYFAIR: return "Playfair";
@@ -220,6 +232,7 @@ std::optional<AlgorithmType> CryptoEngine::parse_algorithm(const std::string& na
     if (lower == "aes-192-gcm" || lower == "aes192gcm") return AlgorithmType::AES_192_GCM;
     if (lower == "aes-256-gcm" || lower == "aes256gcm") return AlgorithmType::AES_256_GCM;
     if (lower == "chacha20-poly1305" || lower == "chacha20") return AlgorithmType::CHACHA20_POLY1305;
+    if (lower == "serpent-256-gcm" || lower == "serpent" || lower == "serpent256") return AlgorithmType::SERPENT_256_GCM;
     if (lower == "caesar") return AlgorithmType::CAESAR;
     if (lower == "vigenere" || lower == "vigenère") return AlgorithmType::VIGENERE;
     if (lower == "playfair") return AlgorithmType::PLAYFAIR;

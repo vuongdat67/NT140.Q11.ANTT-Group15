@@ -316,7 +316,8 @@ std::tuple<FileHeader, std::vector<uint8_t>, std::vector<uint8_t>> FileFormatHan
     bool has_tag = (header.algorithm == AlgorithmID::AES_128_GCM ||
                     header.algorithm == AlgorithmID::AES_192_GCM ||
                     header.algorithm == AlgorithmID::AES_256_GCM ||
-                    header.algorithm == AlgorithmID::CHACHA20_POLY1305);
+                    header.algorithm == AlgorithmID::CHACHA20_POLY1305 ||
+                    header.algorithm == AlgorithmID::SERPENT_256_GCM);
     
     size_t tag_size = has_tag ? 16 : 0;
     
@@ -345,6 +346,7 @@ AlgorithmID FileFormatHandler::to_algorithm_id(AlgorithmType type) {
         case AlgorithmType::AES_192_GCM: return AlgorithmID::AES_192_GCM;
         case AlgorithmType::AES_256_GCM: return AlgorithmID::AES_256_GCM;
         case AlgorithmType::CHACHA20_POLY1305: return AlgorithmID::CHACHA20_POLY1305;
+        case AlgorithmType::SERPENT_256_GCM: return AlgorithmID::SERPENT_256_GCM;
         case AlgorithmType::CAESAR: return AlgorithmID::CAESAR;
         case AlgorithmType::VIGENERE: return AlgorithmID::VIGENERE;
         case AlgorithmType::PLAYFAIR: return AlgorithmID::PLAYFAIR;
@@ -360,6 +362,7 @@ AlgorithmType FileFormatHandler::from_algorithm_id(AlgorithmID id) {
         case AlgorithmID::AES_192_GCM: return AlgorithmType::AES_192_GCM;
         case AlgorithmID::AES_256_GCM: return AlgorithmType::AES_256_GCM;
         case AlgorithmID::CHACHA20_POLY1305: return AlgorithmType::CHACHA20_POLY1305;
+        case AlgorithmID::SERPENT_256_GCM: return AlgorithmType::SERPENT_256_GCM;
         case AlgorithmID::CAESAR: return AlgorithmType::CAESAR;
         case AlgorithmID::VIGENERE: return AlgorithmType::VIGENERE;
         case AlgorithmID::PLAYFAIR: return AlgorithmType::PLAYFAIR;

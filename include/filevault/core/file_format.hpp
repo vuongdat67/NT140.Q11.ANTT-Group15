@@ -45,6 +45,7 @@ enum class AlgorithmID : uint8_t {
     AES_192_GCM = 0x02,
     AES_256_GCM = 0x03,
     CHACHA20_POLY1305 = 0x04,
+    SERPENT_256_GCM = 0x05,
     CAESAR = 0x10,
     VIGENERE = 0x11,
     PLAYFAIR = 0x12,
