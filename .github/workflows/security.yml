@@ -80,12 +80,12 @@ jobs:
     - name: 🔐 Run NIST Test Vectors
       run: |
         cd build
-        ./tests/nist_test_vectors || echo "::warning::NIST tests may have warnings"
+        ./bin/release/nist_test_vectors || echo "::warning::NIST tests may have warnings"
 
     - name: 🔐 Run Rainbow Table Tests
       run: |
         cd build
-        ./tests/rainbow_table_test || echo "::warning::Rainbow table tests may have warnings"
+        ./bin/release/rainbow_table_test || echo "::warning::Rainbow table tests may have warnings"
 
     - name: 🔐 Run Security Tests
       run: |

@@ -63,7 +63,6 @@ jobs:
         compiler.version=13
         os=Linux
         EOF
-        cat ~/.conan2/profiles/default
 
     - name: 📦 Install dependencies
       run: |
@@ -146,7 +145,6 @@ jobs:
         compiler.version=17
         os=Linux
         EOF
-        cat ~/.conan2/profiles/default
 
     - name: 📦 Install dependencies
       env:
@@ -237,8 +235,6 @@ jobs:
         "@
         $profilePath = Join-Path $profileDir "default"
         [System.IO.File]::WriteAllText($profilePath, $profile)
-        Write-Host "Profile content:"
-        Get-Content $profilePath
 
     - name: 📦 Install dependencies
       shell: pwsh
@@ -250,9 +246,10 @@ jobs:
       shell: pwsh
       run: |
         cd build
+        # Conan generates files in build/build/generators/ when using cmake_layout
         cmake .. -G "Ninja" `
-          -DCMAKE_BUILD_TYPE=${{ env.BUILD_TYPE }} `
-          -DCMAKE_TOOLCHAIN_FILE="build/Release/generators/conan_toolchain.cmake" `
+          -DCMAKE_BUILD_TYPE="${{ env.BUILD_TYPE }}" `
+          -DCMAKE_TOOLCHAIN_FILE="${{ github.workspace }}/build/build/generators/conan_toolchain.cmake" `
           -DBUILD_TESTS=ON
 
     - name: 🏗️ Build
@@ -298,19 +295,24 @@ jobs:
           mingw-w64-ucrt-x86_64-python
           mingw-w64-ucrt-x86_64-python-pip
 
-    - name: 📥 Cache Conan packages (MSYS2)
+    - name: 📥 Cache Conan packages
       uses: actions/cache@v4
       with:
         path: ~/.conan2
-        key: conan-windows-mingw-msys2-${{ hashFiles('conanfile.txt') }}
+        key: conan-windows-mingw-${{ hashFiles('conanfile.txt') }}
         restore-keys: |
-          conan-windows-mingw-msys2-
+          conan-windows-mingw-
 
     - name: 📦 Install Conan and Configure Profile
       shell: msys2 {0}
       run: |
+        # Install Conan
         pip install --break-system-packages conan==${{ env.CONAN_VERSION }}
+        
+        # Create profile directory
         mkdir -p ~/.conan2/profiles
+        
+        # Create profile
         cat > ~/.conan2/profiles/default << 'EOF'
         [settings]
         arch=x86_64
@@ -321,7 +323,8 @@ jobs:
         compiler.version=14
         os=Windows
         EOF
-        echo "Profile content:"
+        
+        echo "=== Profile created ==="
         cat ~/.conan2/profiles/default
 
     - name: 📦 Install dependencies
@@ -363,10 +366,6 @@ jobs:
   # ===========================================
   build-macos:
     runs-on: macos-14  # Apple Silicon (ARM64)
-    strategy:
-      fail-fast: false
-      matrix:
-        arch: [arm64]  # Only native arch to avoid cross-compile issues
 
     steps:
     - name: 📥 Checkout repository
@@ -382,22 +381,22 @@ jobs:
     - name: 📦 Install Conan
       run: |
         pip install conan==${{ env.CONAN_VERSION }}
-        conan profile detect --force
 
     - name: 📥 Cache Conan packages
       uses: actions/cache@v4
       with:
         path: ~/.conan2
-        key: conan-macos-${{ matrix.arch }}-${{ hashFiles('conanfile.txt') }}
+        key: conan-macos-arm64-${{ hashFiles('conanfile.txt') }}
         restore-keys: |
-          conan-macos-${{ matrix.arch }}-
+          conan-macos-arm64-
 
     - name: 🔨 Configure Conan Profile
       run: |
+        mkdir -p ~/.conan2/profiles
         cat > ~/.conan2/profiles/default << 'EOF'
         [settings]
         arch=armv8
-        build_type=${{ env.BUILD_TYPE }}
+        build_type=Release
         compiler=apple-clang
         compiler.cppstd=20
         compiler.libcxx=libc++
@@ -416,7 +415,7 @@ jobs:
         cmake .. -G "Unix Makefiles" \
           -DCMAKE_BUILD_TYPE=${{ env.BUILD_TYPE }} \
           -DCMAKE_TOOLCHAIN_FILE=build/Release/generators/conan_toolchain.cmake \
-          -DCMAKE_OSX_ARCHITECTURES=${{ matrix.arch }} \
+          -DCMAKE_OSX_ARCHITECTURES=arm64 \
           -DBUILD_TESTS=ON
 
     - name: 🏗️ Build
@@ -432,7 +431,7 @@ jobs:
     - name: 📤 Upload artifacts
       uses: actions/upload-artifact@v4
       with:
-        name: filevault-macos-${{ matrix.arch }}
+        name: filevault-macos-arm64
         path: build/bin/release/filevault
         if-no-files-found: warn
 

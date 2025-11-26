@@ -46,11 +46,26 @@ std::vector<uint8_t> FileEntry::serialize() const {
 FileEntry FileEntry::deserialize(std::span<const uint8_t> data, size_t& offset) {
     FileEntry entry;
     
+    // Bounds check for filename length
+    if (offset + 4 > data.size()) {
+        throw std::runtime_error("Truncated archive: cannot read filename length");
+    }
+    
     // Filename
     uint32_t name_len = *reinterpret_cast<const uint32_t*>(&data[offset]);
     offset += 4;
+    
+    // Bounds check for filename data
+    if (offset + name_len > data.size()) {
+        throw std::runtime_error("Truncated archive: cannot read filename");
+    }
     entry.filename = std::string(reinterpret_cast<const char*>(&data[offset]), name_len);
     offset += name_len;
+    
+    // Bounds check for remaining fixed-size fields (8+8+8+4 = 28 bytes)
+    if (offset + 28 > data.size()) {
+        throw std::runtime_error("Truncated archive: cannot read file entry metadata");
+    }
     
     // File size
     entry.file_size = *reinterpret_cast<const uint64_t*>(&data[offset]);

@@ -205,8 +205,8 @@ TEST_CASE("Nonce generation performance", "[security][nonce][benchmark]") {
         INFO("Generated " << NUM_NONCES << " nonces in " << duration << " ms");
         INFO("Rate: " << (NUM_NONCES / duration * 1000.0) << " nonces/second");
         
-        // Should be fast - allow up to 5 seconds for slow CI runners
-        REQUIRE(duration < 5000.0);
+        // Should be fast - allow up to 60 seconds for slow CI runners with sanitizers
+        REQUIRE(duration < 60000.0);
     }
 }
 
