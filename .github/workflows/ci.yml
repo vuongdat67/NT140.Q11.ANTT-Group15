@@ -181,7 +181,7 @@ jobs:
         build_type=${{ env.BUILD_TYPE }}
         compiler=msvc
         compiler.cppstd=20
-        compiler.version=194
+        compiler.version=193
         os=Windows
         "@ | Out-File -FilePath "$env:USERPROFILE\.conan2\profiles\default" -Encoding UTF8
 
@@ -277,7 +277,11 @@ jobs:
     runs-on: macos-14  # Apple Silicon (ARM64)
     strategy:
       matrix:
-        arch: [arm64, x86_64]
+        include:
+          - arch: armv8
+            runner_arch: arm64
+          - arch: x86_64
+            runner_arch: x86_64
 
     steps:
     - name: 📥 Checkout repository
@@ -328,7 +332,7 @@ jobs:
         cmake .. -G "Unix Makefiles" \
           -DCMAKE_BUILD_TYPE=${{ env.BUILD_TYPE }} \
           -DCMAKE_TOOLCHAIN_FILE=build/Release/generators/conan_toolchain.cmake \
-          -DCMAKE_OSX_ARCHITECTURES=${{ matrix.arch }} \
+          -DCMAKE_OSX_ARCHITECTURES=${{ matrix.runner_arch }} \
           -DBUILD_TESTS=ON
 
     - name: 🏗️ Build
@@ -337,7 +341,7 @@ jobs:
         cmake --build . --parallel $(sysctl -n hw.ncpu)
 
     - name: 🧪 Run Tests
-      if: matrix.arch == 'arm64'  # Only run tests on native arch
+      if: matrix.runner_arch == 'arm64'  # Only run tests on native arch
       run: |
         cd build
         ctest --output-on-failure -j $(sysctl -n hw.ncpu)

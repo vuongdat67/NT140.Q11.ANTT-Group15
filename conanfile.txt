@@ -1,10 +1,4 @@
 [requires]
-# Build tool (for conan to find/use)
-# Note: cmake and ninja are often installed globally, but listing them
-# here ensures conan provides the paths if needed.
-cmake/4.1.2
-ninja/1.13.1
-
 # Cryptography
 botan/3.10.0
 
@@ -30,11 +24,6 @@ stb/cci.20240531
 # UI/UX utilities - For beautiful CLI
 indicators/2.3
 tabulate/1.5
-
-[tool_requires]
-# Explicitly mark tools needed for the build process (like CMake and Ninja)
-cmake/4.1.2
-ninja/1.13.1
 
 [generators]
 # Create files for CMake to find dependencies
