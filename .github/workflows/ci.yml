@@ -209,6 +209,9 @@ jobs:
         compiler.runtime=dynamic
         compiler.version=194
         os=Windows
+        
+        [conf]
+        tools.cmake.cmaketoolchain:generator=Ninja
         "@ | Out-File -FilePath "$profileDir\default" -Encoding utf8NoBOM
         Write-Host "=== Profile ===" 
         Get-Content "$profileDir\default"
@@ -218,7 +221,7 @@ jobs:
       run: |
         New-Item -ItemType Directory -Force -Path build | Out-Null
         cd build
-        conan install .. --output-folder=. --build=missing
+        conan install .. --output-folder=. --build=missing -c tools.cmake.cmaketoolchain:generator=Ninja
         
         Write-Host "=== DEBUG: Directory structure ===" -ForegroundColor Cyan
         Get-ChildItem -Recurse -Filter "*.cmake" | Select-Object FullName
@@ -275,6 +278,7 @@ jobs:
           mingw-w64-ucrt-x86_64-gcc
           mingw-w64-ucrt-x86_64-cmake
           mingw-w64-ucrt-x86_64-ninja
+          mingw-w64-ucrt-x86_64-make
           mingw-w64-ucrt-x86_64-python
           mingw-w64-ucrt-x86_64-python-pip
 
@@ -292,16 +296,20 @@ jobs:
         # Create profile at BOTH locations to be safe
         for PROFILE_DIR in "/c/Users/$USER/.conan2/profiles" "$HOME/.conan2/profiles"; do
           mkdir -p "$PROFILE_DIR"
-          cat > "$PROFILE_DIR/default" << 'PROFILE_EOF'
-        [settings]
-        arch=x86_64
-        build_type=Release
-        compiler=gcc
-        compiler.cppstd=20
-        compiler.libcxx=libstdc++11
-        compiler.version=14
-        os=Windows
-        PROFILE_EOF
+          {
+            echo "[settings]"
+            echo "arch=x86_64"
+            echo "build_type=Release"
+            echo "compiler=gcc"
+            echo "compiler.cppstd=20"
+            echo "compiler.libcxx=libstdc++11"
+            echo "compiler.version=14"
+            echo "os=Windows"
+            echo ""
+            echo "[conf]"
+            echo "tools.cmake.cmaketoolchain:generator=Ninja"
+            echo "tools.gnu:make_program=mingw32-make"
+          } > "$PROFILE_DIR/default"
           echo "Created profile at: $PROFILE_DIR/default"
         done
         
@@ -312,7 +320,7 @@ jobs:
       shell: msys2 {0}
       run: |
         mkdir -p build && cd build
-        conan install .. --output-folder=. --build=missing
+        conan install .. --output-folder=. --build=missing -c tools.cmake.cmaketoolchain:generator=Ninja -c tools.gnu:make_program=mingw32-make
         
         echo "=== DEBUG: Find toolchain ==="
         find . -name "conan_toolchain.cmake" -type f
