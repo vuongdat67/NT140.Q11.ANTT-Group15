@@ -52,11 +52,17 @@ jobs:
 
     - name: 🔨 Configure Conan Profile
       run: |
-        conan profile detect --force
-        conan profile update settings.compiler=gcc default
-        conan profile update settings.compiler.version=13 default
-        conan profile update settings.compiler.cppstd=20 default
-        conan profile update settings.compiler.libcxx=libstdc++11 default
+        mkdir -p ~/.conan2/profiles
+        cat > ~/.conan2/profiles/default << 'EOF'
+        [settings]
+        arch=x86_64
+        build_type=Release
+        compiler=gcc
+        compiler.cppstd=20
+        compiler.libcxx=libstdc++11
+        compiler.version=13
+        os=Linux
+        EOF
 
     - name: 📦 Install dependencies
       run: |
@@ -128,11 +134,17 @@ jobs:
 
     - name: 🔨 Configure Conan Profile
       run: |
-        conan profile detect --force
-        conan profile update settings.compiler=clang default
-        conan profile update settings.compiler.version=17 default
-        conan profile update settings.compiler.cppstd=20 default
-        conan profile update settings.compiler.libcxx=libc++ default
+        mkdir -p ~/.conan2/profiles
+        cat > ~/.conan2/profiles/default << 'EOF'
+        [settings]
+        arch=x86_64
+        build_type=Release
+        compiler=clang
+        compiler.cppstd=20
+        compiler.libcxx=libc++
+        compiler.version=17
+        os=Linux
+        EOF
 
     - name: 📦 Install dependencies
       env:
@@ -209,11 +221,20 @@ jobs:
     - name: 🔨 Configure Conan Profile
       shell: pwsh
       run: |
-        conan profile detect --force
-        conan profile update settings.compiler=msvc default
-        conan profile update settings.compiler.version=194 default
-        conan profile update settings.compiler.cppstd=20 default
-        conan profile update settings.compiler.runtime=dynamic default
+        $profileDir = Join-Path $env:USERPROFILE ".conan2\profiles"
+        New-Item -ItemType Directory -Force -Path $profileDir | Out-Null
+        $profile = @"
+        [settings]
+        arch=x86_64
+        build_type=Release
+        compiler=msvc
+        compiler.cppstd=20
+        compiler.runtime=dynamic
+        compiler.version=194
+        os=Windows
+        "@
+        $profilePath = Join-Path $profileDir "default"
+        [System.IO.File]::WriteAllText($profilePath, $profile)
 
     - name: 📦 Install dependencies
       shell: pwsh
@@ -225,8 +246,8 @@ jobs:
       shell: pwsh
       run: |
         cd build
-        # Sử dụng Visual Studio generator thay vì Ninja để tránh lỗi platform
-        cmake .. -G "Visual Studio 17 2022" -A x64 `
+        # Conan generates files in build/build/generators/ when using cmake_layout
+        cmake .. -G "Ninja" `
           -DCMAKE_BUILD_TYPE="${{ env.BUILD_TYPE }}" `
           -DCMAKE_TOOLCHAIN_FILE="${{ github.workspace }}/build/build/generators/conan_toolchain.cmake" `
           -DBUILD_TESTS=ON
@@ -235,19 +256,19 @@ jobs:
       shell: pwsh
       run: |
         cd build
-        cmake --build . --config ${{ env.BUILD_TYPE }} --parallel
+        cmake --build . --parallel
 
     - name: 🧪 Run Tests
       shell: pwsh
       run: |
         cd build
-        ctest --output-on-failure -C ${{ env.BUILD_TYPE }} -j $env:NUMBER_OF_PROCESSORS
+        ctest --output-on-failure -j $env:NUMBER_OF_PROCESSORS
 
     - name: 📤 Upload artifacts
       uses: actions/upload-artifact@v4
       with:
         name: filevault-windows-msvc
-        path: build/bin/${{ env.BUILD_TYPE }}/filevault.exe
+        path: build/bin/release/filevault.exe
         if-no-files-found: warn
 
   # ===========================================
@@ -288,16 +309,23 @@ jobs:
         # Install Conan
         pip install --break-system-packages conan==${{ env.CONAN_VERSION }}
         
-        # Sử dụng profile detect thay vì tạo thủ công
-        conan profile detect --force
-        conan profile update settings.compiler=gcc default
-        conan profile update settings.compiler.version=14 default
-        conan profile update settings.compiler.cppstd=20 default
-        conan profile update settings.compiler.libcxx=libstdc++11 default
-        conan profile update settings.os=Windows default
+        # Create profile directory
+        mkdir -p ~/.conan2/profiles
+        
+        # Create profile
+        cat > ~/.conan2/profiles/default << 'EOF'
+        [settings]
+        arch=x86_64
+        build_type=Release
+        compiler=gcc
+        compiler.cppstd=20
+        compiler.libcxx=libstdc++11
+        compiler.version=14
+        os=Windows
+        EOF
         
         echo "=== Profile created ==="
-        conan profile show default
+        cat ~/.conan2/profiles/default
 
     - name: 📦 Install dependencies
       shell: msys2 {0}
@@ -364,11 +392,17 @@ jobs:
 
     - name: 🔨 Configure Conan Profile
       run: |
-        conan profile detect --force
-        conan profile update settings.compiler=apple-clang default
-        conan profile update settings.compiler.version=16 default
-        conan profile update settings.compiler.cppstd=20 default
-        conan profile update settings.arch=armv8 default
+        mkdir -p ~/.conan2/profiles
+        cat > ~/.conan2/profiles/default << 'EOF'
+        [settings]
+        arch=armv8
+        build_type=Release
+        compiler=apple-clang
+        compiler.cppstd=20
+        compiler.libcxx=libc++
+        compiler.version=16
+        os=Macos
+        EOF
 
     - name: 📦 Install dependencies
       run: |
