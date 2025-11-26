@@ -256,6 +256,26 @@ int EncryptCommand::execute() {
         auto kdf_type = kdf_type_opt.value();
         auto sec_level = sec_level_opt.value();
         
+        // Check if asymmetric algorithm is selected without public key
+        // RSA and ECC require public keys, not password-derived keys
+        bool is_asymmetric = (algo_type == core::AlgorithmType::RSA_2048 ||
+                              algo_type == core::AlgorithmType::RSA_3072 ||
+                              algo_type == core::AlgorithmType::RSA_4096 ||
+                              algo_type == core::AlgorithmType::ECC_P256 ||
+                              algo_type == core::AlgorithmType::ECC_P384 ||
+                              algo_type == core::AlgorithmType::ECC_P521);
+        
+        if (is_asymmetric) {
+            utils::Console::warning(fmt::format(
+                "{} is an asymmetric algorithm that requires a public key file.", algorithm_));
+            utils::Console::warning("Password-based encryption will use AES-256-GCM instead.");
+            utils::Console::info("To use asymmetric encryption, use: filevault keygen --algorithm " + algorithm_);
+            
+            // Fallback to AES-256-GCM for password-based encryption
+            algo_type = core::AlgorithmType::AES_256_GCM;
+            algorithm_ = "aes-256-gcm";
+        }
+        
         // Get algorithm
         auto* algorithm = engine_.get_algorithm(algo_type);
         if (!algorithm) {

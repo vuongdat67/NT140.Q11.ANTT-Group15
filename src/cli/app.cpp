@@ -9,6 +9,7 @@
 #include "filevault/cli/commands/compress_cmd.hpp"
 #include "filevault/cli/commands/stego_cmd.hpp"
 #include "filevault/cli/commands/archive_cmd.hpp"
+#include "filevault/cli/commands/keygen_cmd.hpp"
 #include "filevault/utils/console.hpp"
 #include <spdlog/spdlog.h>
 #include <spdlog/sinks/stdout_color_sinks.h>
@@ -76,6 +77,7 @@ void Application::register_commands() {
     commands_.push_back(std::make_unique<CompressCommand>());
     commands_.push_back(std::make_unique<commands::StegoCommand>());
     commands_.push_back(std::make_unique<commands::ArchiveCommand>(*engine_));
+    commands_.push_back(std::make_unique<KeygenCommand>(*engine_));
     
     // Setup each command
     for (auto& cmd : commands_) {
