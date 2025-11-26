@@ -11,7 +11,7 @@ on:
 
 env:
   BUILD_TYPE: Release
-  CONAN_VERSION: 2.12.0
+  CONAN_VERSION: 2.14.0
 
 jobs:
   # ===========================================
@@ -53,6 +53,7 @@ jobs:
         wget https://apt.llvm.org/llvm.sh
         chmod +x llvm.sh
         sudo ./llvm.sh 17
+        sudo apt-get install -y libc++-17-dev libc++abi-17-dev
         sudo update-alternatives --install /usr/bin/clang clang /usr/bin/clang-17 100
         sudo update-alternatives --install /usr/bin/clang++ clang++ /usr/bin/clang++-17 100
 
@@ -81,13 +82,20 @@ jobs:
       if: matrix.compiler == 'clang-17'
       run: |
         conan profile detect --force
-        echo "[settings]" > ~/.conan2/profiles/default
-        echo "arch=x86_64" >> ~/.conan2/profiles/default
-        echo "build_type=${{ env.BUILD_TYPE }}" >> ~/.conan2/profiles/default
-        echo "compiler=clang" >> ~/.conan2/profiles/default
-        echo "compiler.cppstd=20" >> ~/.conan2/profiles/default
-        echo "compiler.libcxx=libstdc++11" >> ~/.conan2/profiles/default
-        echo "compiler.version=17" >> ~/.conan2/profiles/default
+        cat > ~/.conan2/profiles/default << 'EOF'
+        [settings]
+        arch=x86_64
+        build_type=${{ env.BUILD_TYPE }}
+        compiler=clang
+        compiler.cppstd=20
+        compiler.libcxx=libc++
+        compiler.version=17
+        os=Linux
+        
+        [buildenv]
+        CC=clang-17
+        CXX=clang++-17
+        EOF
         echo "os=Linux" >> ~/.conan2/profiles/default
 
     - name: 📦 Install dependencies
@@ -181,6 +189,7 @@ jobs:
         build_type=${{ env.BUILD_TYPE }}
         compiler=msvc
         compiler.cppstd=20
+        compiler.runtime=dynamic
         compiler.version=193
         os=Windows
         "@ | Out-File -FilePath "$env:USERPROFILE\.conan2\profiles\default" -Encoding UTF8

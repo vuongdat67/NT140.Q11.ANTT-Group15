@@ -32,6 +32,12 @@ include_directories(${CMAKE_SOURCE_DIR}/include)
 if(MSVC)
     add_compile_options(/W4 /WX /utf-8)
     add_compile_definitions(_CRT_SECURE_NO_WARNINGS)
+elseif(CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
+    # GCC-specific warnings
+    add_compile_options(-Wall -Wextra -Wpedantic -Werror -Wno-stringop-overread)
+elseif(CMAKE_CXX_COMPILER_ID MATCHES "Clang")
+    # Clang/AppleClang - no stringop-overread warning
+    add_compile_options(-Wall -Wextra -Wpedantic -Werror -Wno-unused-private-field)
 else()
     add_compile_options(-Wall -Wextra -Wpedantic -Werror)
 endif()
