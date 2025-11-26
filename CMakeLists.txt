@@ -188,7 +188,9 @@ if(BUILD_TESTS)
     # NIST Test Vectors
     add_executable(nist_test_vectors tests/nist_test_vectors.cpp)
     target_link_libraries(nist_test_vectors PRIVATE filevault_lib)
-    target_compile_options(nist_test_vectors PRIVATE -Wno-error=stringop-overread)
+    if(CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
+        target_compile_options(nist_test_vectors PRIVATE -Wno-error=stringop-overread)
+    endif()
     set_target_properties(nist_test_vectors PROPERTIES
         RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/tests
     )
@@ -196,7 +198,9 @@ if(BUILD_TESTS)
     # Rainbow Table Protection Test
     add_executable(rainbow_table_test tests/rainbow_table_test.cpp)
     target_link_libraries(rainbow_table_test PRIVATE filevault_lib)
-    target_compile_options(rainbow_table_test PRIVATE -Wno-error=stringop-overread)
+    if(CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
+        target_compile_options(rainbow_table_test PRIVATE -Wno-error=stringop-overread)
+    endif()
     set_target_properties(rainbow_table_test PROPERTIES
         RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/tests
     )
@@ -204,70 +208,90 @@ if(BUILD_TESTS)
     # Unit Tests
     add_executable(test_classical tests/unit/crypto/test_classical.cpp)
     target_link_libraries(test_classical PRIVATE filevault_lib Catch2::Catch2WithMain)
-    target_compile_options(test_classical PRIVATE -Wno-error=stringop-overread)
+    if(CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
+        target_compile_options(test_classical PRIVATE -Wno-error=stringop-overread)
+    endif()
     set_target_properties(test_classical PROPERTIES
         RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin/release
     )
     
     add_executable(test_aes tests/unit/crypto/test_aes.cpp)
     target_link_libraries(test_aes PRIVATE filevault_lib Catch2::Catch2WithMain)
-    target_compile_options(test_aes PRIVATE -Wno-error=stringop-overread)
+    if(CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
+        target_compile_options(test_aes PRIVATE -Wno-error=stringop-overread)
+    endif()
     set_target_properties(test_aes PROPERTIES
         RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin/release
     )
     
     add_executable(test_kdf tests/unit/crypto/test_kdf.cpp)
     target_link_libraries(test_kdf PRIVATE filevault_lib Catch2::Catch2WithMain)
-    target_compile_options(test_kdf PRIVATE -Wno-error=stringop-overread)
+    if(CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
+        target_compile_options(test_kdf PRIVATE -Wno-error=stringop-overread)
+    endif()
     set_target_properties(test_kdf PROPERTIES
         RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin/release
     )
     
     add_executable(test_compression tests/unit/compression/test_compression.cpp)
     target_link_libraries(test_compression PRIVATE filevault_lib Catch2::Catch2WithMain)
-    target_compile_options(test_compression PRIVATE -Wno-error=stringop-overread)
+    if(CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
+        target_compile_options(test_compression PRIVATE -Wno-error=stringop-overread)
+    endif()
     set_target_properties(test_compression PROPERTIES
         RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin/release
     )
     
     add_executable(test_chacha20 tests/unit/crypto/test_chacha20.cpp)
     target_link_libraries(test_chacha20 PRIVATE filevault_lib Catch2::Catch2WithMain)
-    target_compile_options(test_chacha20 PRIVATE -Wno-error=stringop-overread)
+    if(CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
+        target_compile_options(test_chacha20 PRIVATE -Wno-error=stringop-overread)
+    endif()
     set_target_properties(test_chacha20 PROPERTIES
         RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin/release
     )
     
     add_executable(test_twofish tests/unit/crypto/test_twofish.cpp)
     target_link_libraries(test_twofish PRIVATE filevault_lib Catch2::Catch2WithMain)
-    target_compile_options(test_twofish PRIVATE -Wno-error=stringop-overread)
+    if(CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
+        target_compile_options(test_twofish PRIVATE -Wno-error=stringop-overread)
+    endif()
     set_target_properties(test_twofish PROPERTIES
         RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin/release
     )
     
     add_executable(test_international_ciphers tests/unit/crypto/test_international_ciphers.cpp)
     target_link_libraries(test_international_ciphers PRIVATE filevault_lib Catch2::Catch2WithMain)
-    target_compile_options(test_international_ciphers PRIVATE -Wno-error=stringop-overread)
+    if(CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
+        target_compile_options(test_international_ciphers PRIVATE -Wno-error=stringop-overread)
+    endif()
     set_target_properties(test_international_ciphers PROPERTIES
         RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin/release
     )
     
     add_executable(test_non_aead_ciphers tests/unit/crypto/test_non_aead_ciphers.cpp)
     target_link_libraries(test_non_aead_ciphers PRIVATE filevault_lib Catch2::Catch2WithMain)
-    target_compile_options(test_non_aead_ciphers PRIVATE -Wno-error=stringop-overread)
+    if(CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
+        target_compile_options(test_non_aead_ciphers PRIVATE -Wno-error=stringop-overread)
+    endif()
     set_target_properties(test_non_aead_ciphers PROPERTIES
         RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin/release
     )
     
     add_executable(test_aes_modes tests/unit/crypto/test_aes_modes.cpp)
     target_link_libraries(test_aes_modes PRIVATE filevault_lib Catch2::Catch2WithMain)
-    target_compile_options(test_aes_modes PRIVATE -Wno-error=stringop-overread)
+    if(CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
+        target_compile_options(test_aes_modes PRIVATE -Wno-error=stringop-overread)
+    endif()
     set_target_properties(test_aes_modes PROPERTIES
         RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin/release
     )
     
     add_executable(test_rsa tests/unit/crypto/test_rsa.cpp)
     target_link_libraries(test_rsa PRIVATE filevault_lib Catch2::Catch2WithMain)
-    target_compile_options(test_rsa PRIVATE -Wno-error=stringop-overread)
+    if(CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
+        target_compile_options(test_rsa PRIVATE -Wno-error=stringop-overread)
+    endif()
     set_target_properties(test_rsa PROPERTIES
         RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin/release
     )
@@ -275,21 +299,27 @@ if(BUILD_TESTS)
     # Security Tests
     add_executable(test_nonce_uniqueness tests/security/test_nonce_uniqueness.cpp)
     target_link_libraries(test_nonce_uniqueness PRIVATE filevault_lib Catch2::Catch2WithMain)
-    target_compile_options(test_nonce_uniqueness PRIVATE -Wno-error=stringop-overread)
+    if(CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
+        target_compile_options(test_nonce_uniqueness PRIVATE -Wno-error=stringop-overread)
+    endif()
     set_target_properties(test_nonce_uniqueness PROPERTIES
         RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin/release
     )
     
     add_executable(test_salt_uniqueness tests/security/test_salt_uniqueness.cpp)
     target_link_libraries(test_salt_uniqueness PRIVATE filevault_lib Catch2::Catch2WithMain)
-    target_compile_options(test_salt_uniqueness PRIVATE -Wno-error=stringop-overread)
+    if(CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
+        target_compile_options(test_salt_uniqueness PRIVATE -Wno-error=stringop-overread)
+    endif()
     set_target_properties(test_salt_uniqueness PROPERTIES
         RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin/release
     )
     
     add_executable(test_timing_attacks tests/security/test_timing_attacks.cpp)
     target_link_libraries(test_timing_attacks PRIVATE filevault_lib Catch2::Catch2WithMain)
-    target_compile_options(test_timing_attacks PRIVATE -Wno-error=stringop-overread)
+    if(CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
+        target_compile_options(test_timing_attacks PRIVATE -Wno-error=stringop-overread)
+    endif()
     set_target_properties(test_timing_attacks PROPERTIES
         RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin/release
     )
@@ -297,7 +327,9 @@ if(BUILD_TESTS)
     # Integration Tests
     add_executable(test_encrypt_decrypt_flow tests/integration/test_encrypt_decrypt_flow.cpp)
     target_link_libraries(test_encrypt_decrypt_flow PRIVATE filevault_lib Catch2::Catch2WithMain)
-    target_compile_options(test_encrypt_decrypt_flow PRIVATE -Wno-error=stringop-overread)
+    if(CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
+        target_compile_options(test_encrypt_decrypt_flow PRIVATE -Wno-error=stringop-overread)
+    endif()
     set_target_properties(test_encrypt_decrypt_flow PROPERTIES
         RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin/release
     )
@@ -305,7 +337,9 @@ if(BUILD_TESTS)
     # Hash Tests
     add_executable(test_hash tests/unit/crypto/test_hash.cpp)
     target_link_libraries(test_hash PRIVATE filevault_lib Catch2::Catch2WithMain)
-    target_compile_options(test_hash PRIVATE -Wno-error=stringop-overread)
+    if(CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
+        target_compile_options(test_hash PRIVATE -Wno-error=stringop-overread)
+    endif()
     set_target_properties(test_hash PROPERTIES
         RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin/release
     )
@@ -313,7 +347,9 @@ if(BUILD_TESTS)
     # Steganography Tests
     add_executable(test_steganography tests/unit/steganography/test_steganography.cpp)
     target_link_libraries(test_steganography PRIVATE filevault_lib Catch2::Catch2WithMain)
-    target_compile_options(test_steganography PRIVATE -Wno-error=stringop-overread)
+    if(CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
+        target_compile_options(test_steganography PRIVATE -Wno-error=stringop-overread)
+    endif()
     set_target_properties(test_steganography PROPERTIES
         RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin/release
     )
@@ -321,7 +357,9 @@ if(BUILD_TESTS)
     # Archive Tests
     add_executable(test_archive tests/unit/archive/test_archive.cpp)
     target_link_libraries(test_archive PRIVATE filevault_lib Catch2::Catch2WithMain)
-    target_compile_options(test_archive PRIVATE -Wno-error=stringop-overread)
+    if(CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
+        target_compile_options(test_archive PRIVATE -Wno-error=stringop-overread)
+    endif()
     set_target_properties(test_archive PROPERTIES
         RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin/release
     )
@@ -329,7 +367,9 @@ if(BUILD_TESTS)
     # ECC Tests
     add_executable(test_ecc tests/unit/crypto/test_ecc.cpp)
     target_link_libraries(test_ecc PRIVATE filevault_lib Catch2::Catch2WithMain)
-    target_compile_options(test_ecc PRIVATE -Wno-error=stringop-overread)
+    if(CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
+        target_compile_options(test_ecc PRIVATE -Wno-error=stringop-overread)
+    endif()
     set_target_properties(test_ecc PROPERTIES
         RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin/release
     )

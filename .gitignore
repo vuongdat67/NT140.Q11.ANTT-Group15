@@ -70,3 +70,4 @@ test_output/
 
 # Test binaries directory
 bintest/
+errors.txt
