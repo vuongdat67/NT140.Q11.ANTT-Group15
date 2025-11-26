@@ -11,14 +11,18 @@ on:
 
 env:
   BUILD_TYPE: Release
-  CONAN_VERSION: 2.14.0
+  CONAN_VERSION: 2.22.2
 
 jobs:
   # ===========================================
-  # Linux Build - GCC 13
+  # Linux Build
   # ===========================================
-  build-linux-gcc:
+  build-linux:
     runs-on: ubuntu-24.04
+    strategy:
+      fail-fast: false
+      matrix:
+        compiler: [gcc-13, clang-17]
     
     steps:
     - name: 📥 Checkout repository
@@ -36,87 +40,16 @@ jobs:
         pip install conan==${{ env.CONAN_VERSION }}
         conan profile detect --force
 
-    - name: 🛠️ Install GCC-13
+    - name: 🛠️ Install compiler (GCC-13)
+      if: matrix.compiler == 'gcc-13'
       run: |
         sudo apt-get update
         sudo apt-get install -y gcc-13 g++-13
         sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-13 100
         sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-13 100
 
-    - name: 📥 Cache Conan packages
-      uses: actions/cache@v4
-      with:
-        path: ~/.conan2
-        key: conan-linux-gcc13-${{ hashFiles('conanfile.txt') }}
-        restore-keys: |
-          conan-linux-gcc13-
-
-    - name: 🔨 Configure Conan Profile
-      run: |
-        cat > ~/.conan2/profiles/default << 'EOF'
-        [settings]
-        arch=x86_64
-        build_type=Release
-        compiler=gcc
-        compiler.cppstd=20
-        compiler.libcxx=libstdc++11
-        compiler.version=13
-        os=Linux
-        EOF
-
-    - name: 📦 Install dependencies
-      run: |
-        mkdir -p build
-        conan install . --output-folder=build --build=missing
-
-    - name: 🔨 Configure CMake
-      run: |
-        cd build
-        cmake .. -G "Unix Makefiles" \
-          -DCMAKE_BUILD_TYPE=${{ env.BUILD_TYPE }} \
-          -DCMAKE_TOOLCHAIN_FILE=build/Release/generators/conan_toolchain.cmake \
-          -DBUILD_TESTS=ON
-
-    - name: 🏗️ Build
-      run: |
-        cd build
-        cmake --build . --parallel $(nproc)
-
-    - name: 🧪 Run Tests
-      run: |
-        cd build
-        ctest --output-on-failure -j $(nproc)
-
-    - name: 📤 Upload artifacts
-      uses: actions/upload-artifact@v4
-      with:
-        name: filevault-linux-gcc13
-        path: build/bin/release/filevault
-        if-no-files-found: warn
-
-  # ===========================================
-  # Linux Build - Clang 17
-  # ===========================================
-  build-linux-clang:
-    runs-on: ubuntu-24.04
-    
-    steps:
-    - name: 📥 Checkout repository
-      uses: actions/checkout@v4
-      with:
-        submodules: recursive
-
-    - name: 🔧 Setup Python
-      uses: actions/setup-python@v5
-      with:
-        python-version: '3.12'
-
-    - name: 📦 Install Conan
-      run: |
-        pip install conan==${{ env.CONAN_VERSION }}
-        conan profile detect --force
-
-    - name: 🛠️ Install Clang-17 and libc++
+    - name: 🛠️ Install compiler (Clang-17)
+      if: matrix.compiler == 'clang-17'
       run: |
         wget https://apt.llvm.org/llvm.sh
         chmod +x llvm.sh
@@ -129,33 +62,64 @@ jobs:
       uses: actions/cache@v4
       with:
         path: ~/.conan2
-        key: conan-linux-clang17-${{ hashFiles('conanfile.txt') }}
+        key: conan-linux-${{ matrix.compiler }}-${{ hashFiles('conanfile.txt') }}
         restore-keys: |
-          conan-linux-clang17-
+          conan-linux-${{ matrix.compiler }}-
 
-    - name: 🔨 Configure Conan Profile
+    - name: 🔨 Configure Conan Profile (GCC)
+      if: matrix.compiler == 'gcc-13'
       run: |
         cat > ~/.conan2/profiles/default << 'EOF'
         [settings]
         arch=x86_64
-        build_type=Release
+        build_type=${{ env.BUILD_TYPE }}
+        compiler=gcc
+        compiler.cppstd=20
+        compiler.libcxx=libstdc++11
+        compiler.version=13
+        os=Linux
+        EOF
+
+    - name: 🔨 Configure Conan Profile (Clang)
+      if: matrix.compiler == 'clang-17'
+      run: |
+        cat > ~/.conan2/profiles/default << 'EOF'
+        [settings]
+        arch=x86_64
+        build_type=${{ env.BUILD_TYPE }}
         compiler=clang
         compiler.cppstd=20
         compiler.libcxx=libc++
         compiler.version=17
         os=Linux
-
-        [buildenv]
-        CC=clang-17
-        CXX=clang++-17
         EOF
 
-    - name: 📦 Install dependencies
+    - name: 📦 Install dependencies (GCC)
+      if: matrix.compiler == 'gcc-13'
       run: |
         mkdir -p build
         conan install . --output-folder=build --build=missing
 
-    - name: 🔨 Configure CMake
+    - name: 📦 Install dependencies (Clang)
+      if: matrix.compiler == 'clang-17'
+      env:
+        CC: clang-17
+        CXX: clang++-17
+      run: |
+        mkdir -p build
+        conan install . --output-folder=build --build=missing
+
+    - name: 🔨 Configure CMake (GCC)
+      if: matrix.compiler == 'gcc-13'
+      run: |
+        cd build
+        cmake .. -G "Unix Makefiles" \
+          -DCMAKE_BUILD_TYPE=${{ env.BUILD_TYPE }} \
+          -DCMAKE_TOOLCHAIN_FILE=build/Release/generators/conan_toolchain.cmake \
+          -DBUILD_TESTS=ON
+
+    - name: 🔨 Configure CMake (Clang)
+      if: matrix.compiler == 'clang-17'
       env:
         CC: clang-17
         CXX: clang++-17
@@ -181,15 +145,19 @@ jobs:
     - name: 📤 Upload artifacts
       uses: actions/upload-artifact@v4
       with:
-        name: filevault-linux-clang17
+        name: filevault-linux-${{ matrix.compiler }}
         path: build/bin/release/filevault
         if-no-files-found: warn
 
   # ===========================================
-  # Windows Build - MSVC
+  # Windows Build
   # ===========================================
-  build-windows-msvc:
-    runs-on: windows-2022
+  build-windows:
+    runs-on: windows-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        compiler: [msvc, mingw]
 
     steps:
     - name: 📥 Checkout repository
@@ -208,85 +176,13 @@ jobs:
         conan profile detect --force
 
     - name: 🛠️ Setup MSVC
+      if: matrix.compiler == 'msvc'
       uses: ilammy/msvc-dev-cmd@v1
       with:
         arch: x64
 
-    - name: 📥 Cache Conan packages
-      uses: actions/cache@v4
-      with:
-        path: ~/.conan2
-        key: conan-windows-msvc-${{ hashFiles('conanfile.txt') }}
-        restore-keys: |
-          conan-windows-msvc-
-
-    - name: 🔨 Configure Conan Profile
-      shell: pwsh
-      run: |
-        $profile = @"
-        [settings]
-        arch=x86_64
-        build_type=Release
-        compiler=msvc
-        compiler.cppstd=20
-        compiler.runtime=dynamic
-        compiler.version=193
-        os=Windows
-
-        [conf]
-        tools.microsoft.msbuild:vs_version=17
-        "@
-        $profilePath = Join-Path $env:USERPROFILE ".conan2\profiles\default"
-        New-Item -ItemType Directory -Force -Path (Split-Path $profilePath -Parent) | Out-Null
-        $profile | Out-File -FilePath $profilePath -Encoding UTF8 -NoNewline
-
-    - name: 📦 Install dependencies
-      shell: pwsh
-      run: |
-        New-Item -ItemType Directory -Force -Path build
-        conan install . --output-folder=build --build=missing
-
-    - name: 🔨 Configure CMake
-      shell: pwsh
-      run: |
-        cd build
-        cmake .. -G "Ninja" `
-          -DCMAKE_BUILD_TYPE=${{ env.BUILD_TYPE }} `
-          -DCMAKE_TOOLCHAIN_FILE="build/Release/generators/conan_toolchain.cmake" `
-          -DBUILD_TESTS=ON
-
-    - name: 🏗️ Build
-      shell: pwsh
-      run: |
-        cd build
-        cmake --build . --parallel
-
-    - name: 🧪 Run Tests
-      shell: pwsh
-      run: |
-        cd build
-        ctest --output-on-failure -j $env:NUMBER_OF_PROCESSORS
-
-    - name: 📤 Upload artifacts
-      uses: actions/upload-artifact@v4
-      with:
-        name: filevault-windows-msvc
-        path: build/bin/release/filevault.exe
-        if-no-files-found: warn
-
-  # ===========================================
-  # Windows Build - MinGW
-  # ===========================================
-  build-windows-mingw:
-    runs-on: windows-2022
-
-    steps:
-    - name: 📥 Checkout repository
-      uses: actions/checkout@v4
-      with:
-        submodules: recursive
-
-    - name: 🛠️ Setup MinGW with MSYS2
+    - name: 🛠️ Setup MinGW
+      if: matrix.compiler == 'mingw'
       uses: msys2/setup-msys2@v2
       with:
         msystem: UCRT64
@@ -298,23 +194,38 @@ jobs:
           mingw-w64-ucrt-x86_64-python
           mingw-w64-ucrt-x86_64-python-pip
 
-    - name: 📦 Install Conan in MSYS2
-      shell: msys2 {0}
-      run: |
-        pip install conan==${{ env.CONAN_VERSION }}
-        conan profile detect --force
-
     - name: 📥 Cache Conan packages
       uses: actions/cache@v4
       with:
         path: ~/.conan2
-        key: conan-windows-mingw-${{ hashFiles('conanfile.txt') }}
+        key: conan-windows-${{ matrix.compiler }}-${{ hashFiles('conanfile.txt') }}
         restore-keys: |
-          conan-windows-mingw-
+          conan-windows-${{ matrix.compiler }}-
 
-    - name: 🔨 Configure Conan Profile
+    - name: 🔨 Configure Conan Profile (MSVC)
+      if: matrix.compiler == 'msvc'
+      shell: pwsh
+      run: |
+        $profile = @"
+        [settings]
+        arch=x86_64
+        build_type=${{ env.BUILD_TYPE }}
+        compiler=msvc
+        compiler.cppstd=20
+        compiler.runtime=dynamic
+        compiler.version=194
+        os=Windows
+        "@
+        $profilePath = Join-Path $env:USERPROFILE ".conan2\profiles\default"
+        New-Item -ItemType Directory -Force -Path (Split-Path $profilePath -Parent) | Out-Null
+        $profile | Out-File -FilePath $profilePath -Encoding UTF8 -NoNewline
+
+    - name: 🔨 Configure Conan Profile (MinGW)
+      if: matrix.compiler == 'mingw'
       shell: msys2 {0}
       run: |
+        pip install conan==${{ env.CONAN_VERSION }}
+        conan profile detect --force
         mkdir -p ~/.conan2/profiles
         cat > ~/.conan2/profiles/default << 'EOF'
         [settings]
@@ -327,13 +238,32 @@ jobs:
         os=Windows
         EOF
 
-    - name: 📦 Install dependencies
+    - name: 📦 Install dependencies (MSVC)
+      if: matrix.compiler == 'msvc'
+      shell: pwsh
+      run: |
+        New-Item -ItemType Directory -Force -Path build
+        conan install . --output-folder=build --build=missing
+
+    - name: 📦 Install dependencies (MinGW)
+      if: matrix.compiler == 'mingw'
       shell: msys2 {0}
       run: |
         mkdir -p build
         conan install . --output-folder=build --build=missing
 
-    - name: 🔨 Configure CMake
+    - name: 🔨 Configure CMake (MSVC)
+      if: matrix.compiler == 'msvc'
+      shell: pwsh
+      run: |
+        cd build
+        cmake .. -G "Ninja" `
+          -DCMAKE_BUILD_TYPE=${{ env.BUILD_TYPE }} `
+          -DCMAKE_TOOLCHAIN_FILE="build/Release/generators/conan_toolchain.cmake" `
+          -DBUILD_TESTS=ON
+
+    - name: 🔨 Configure CMake (MinGW)
+      if: matrix.compiler == 'mingw'
       shell: msys2 {0}
       run: |
         cd build
@@ -342,13 +272,29 @@ jobs:
           -DCMAKE_TOOLCHAIN_FILE=build/Release/generators/conan_toolchain.cmake \
           -DBUILD_TESTS=ON
 
-    - name: 🏗️ Build
+    - name: 🏗️ Build (MSVC)
+      if: matrix.compiler == 'msvc'
+      shell: pwsh
+      run: |
+        cd build
+        cmake --build . --parallel
+
+    - name: 🏗️ Build (MinGW)
+      if: matrix.compiler == 'mingw'
       shell: msys2 {0}
       run: |
         cd build
-        cmake --build . --parallel $(nproc)
+        cmake --build . --parallel
 
-    - name: 🧪 Run Tests
+    - name: 🧪 Run Tests (MSVC)
+      if: matrix.compiler == 'msvc'
+      shell: pwsh
+      run: |
+        cd build
+        ctest --output-on-failure -j $env:NUMBER_OF_PROCESSORS
+
+    - name: 🧪 Run Tests (MinGW)
+      if: matrix.compiler == 'mingw'
       shell: msys2 {0}
       run: |
         cd build
@@ -357,15 +303,19 @@ jobs:
     - name: 📤 Upload artifacts
       uses: actions/upload-artifact@v4
       with:
-        name: filevault-windows-mingw
+        name: filevault-windows-${{ matrix.compiler }}
         path: build/bin/release/filevault.exe
         if-no-files-found: warn
 
   # ===========================================
-  # macOS Build - ARM64 native only
+  # macOS Build
   # ===========================================
   build-macos:
     runs-on: macos-14  # Apple Silicon (ARM64)
+    strategy:
+      fail-fast: false
+      matrix:
+        arch: [arm64]  # Only native arch to avoid cross-compile issues
 
     steps:
     - name: 📥 Checkout repository
@@ -387,16 +337,16 @@ jobs:
       uses: actions/cache@v4
       with:
         path: ~/.conan2
-        key: conan-macos-arm64-${{ hashFiles('conanfile.txt') }}
+        key: conan-macos-${{ matrix.arch }}-${{ hashFiles('conanfile.txt') }}
         restore-keys: |
-          conan-macos-arm64-
+          conan-macos-${{ matrix.arch }}-
 
     - name: 🔨 Configure Conan Profile
       run: |
         cat > ~/.conan2/profiles/default << 'EOF'
         [settings]
         arch=armv8
-        build_type=Release
+        build_type=${{ env.BUILD_TYPE }}
         compiler=apple-clang
         compiler.cppstd=20
         compiler.libcxx=libc++
@@ -415,6 +365,7 @@ jobs:
         cmake .. -G "Unix Makefiles" \
           -DCMAKE_BUILD_TYPE=${{ env.BUILD_TYPE }} \
           -DCMAKE_TOOLCHAIN_FILE=build/Release/generators/conan_toolchain.cmake \
+          -DCMAKE_OSX_ARCHITECTURES=${{ matrix.arch }} \
           -DBUILD_TESTS=ON
 
     - name: 🏗️ Build
@@ -430,7 +381,7 @@ jobs:
     - name: 📤 Upload artifacts
       uses: actions/upload-artifact@v4
       with:
-        name: filevault-macos-arm64
+        name: filevault-macos-${{ matrix.arch }}
         path: build/bin/release/filevault
         if-no-files-found: warn
 
@@ -459,7 +410,7 @@ jobs:
   # Release Job (only on tags)
   # ===========================================
   release:
-    needs: [build-linux-gcc, build-linux-clang, build-windows-msvc, build-windows-mingw, build-macos]
+    needs: [build-linux, build-windows, build-macos]
     runs-on: ubuntu-latest
     if: startsWith(github.ref, 'refs/tags/v')
     
