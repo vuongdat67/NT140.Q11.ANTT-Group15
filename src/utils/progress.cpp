@@ -93,7 +93,7 @@ BlockProgressBar::BlockProgressBar(const std::string& prefix, size_t max_progres
         option::ForegroundColor{Color::cyan},
         option::PrefixText{prefix},
         option::ShowPercentage{true},
-        option::MaxProgress{max_progress}
+        option::MaxProgress{static_cast<float>(max_progress)}
     );
 }
 

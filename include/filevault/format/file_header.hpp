@@ -1,6 +1,7 @@
 #ifndef FILEVAULT_FORMAT_FILE_HEADER_HPP
 #define FILEVAULT_FORMAT_FILE_HEADER_HPP
 
+#include <array>
 #include <cstdint>
 #include <vector>
 #include <string>

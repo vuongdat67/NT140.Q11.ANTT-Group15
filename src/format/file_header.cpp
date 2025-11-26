@@ -129,7 +129,7 @@ core::Result<FileHeader> FileHeader::deserialize(std::span<const uint8_t> data) 
     if (offset + 16 > data.size()) {
         return core::Result<FileHeader>::error("Header truncated");
     }
-    std::copy_n(data.begin() + offset, 16, header.reserved_.begin());
+    std::copy_n(data.begin() + static_cast<std::ptrdiff_t>(offset), 16, header.reserved_.begin());
     offset += 16;
     
     return core::Result<FileHeader>::ok(std::move(header));
