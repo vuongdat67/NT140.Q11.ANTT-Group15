@@ -255,10 +255,10 @@ jobs:
       shell: pwsh
       run: |
         cd build
-        # Fix: Đường dẫn đúng với /Release/
+        # Conan 2.x generates to build/build/generators (không có /Release/)
         cmake .. -G "Ninja" `
           -DCMAKE_BUILD_TYPE="${{ env.BUILD_TYPE }}" `
-          -DCMAKE_TOOLCHAIN_FILE="${{ github.workspace }}/build/build/Release/generators/conan_toolchain.cmake" `
+          -DCMAKE_TOOLCHAIN_FILE="${{ github.workspace }}/build/build/generators/conan_toolchain.cmake" `
           -DBUILD_TESTS=ON
 
     - name: 🏗️ Build
@@ -318,21 +318,22 @@ jobs:
         # Install Conan
         pip install --break-system-packages conan==${{ env.CONAN_VERSION }}
         
-        # Tạo profile thủ công cho MinGW GCC (KHÔNG dùng detect vì nó sẽ detect MSVC)
-        mkdir -p ~/.conan2/profiles
-        cat > ~/.conan2/profiles/default << 'EOF'
-        [settings]
-        arch=x86_64
-        build_type=Release
-        compiler=gcc
-        compiler.cppstd=20
-        compiler.libcxx=libstdc++11
-        compiler.version=14
-        os=Windows
-        EOF
+        # Tạo profile tại Windows path (C:/Users/runneradmin/.conan2/profiles/)
+        # KHÔNG dùng ~/.conan2 vì trong MSYS2 đó là path khác
+        PROFILE_DIR="/c/Users/runneradmin/.conan2/profiles"
+        mkdir -p "$PROFILE_DIR"
+        
+        echo "[settings]" > "$PROFILE_DIR/default"
+        echo "arch=x86_64" >> "$PROFILE_DIR/default"
+        echo "build_type=Release" >> "$PROFILE_DIR/default"
+        echo "compiler=gcc" >> "$PROFILE_DIR/default"
+        echo "compiler.cppstd=20" >> "$PROFILE_DIR/default"
+        echo "compiler.libcxx=libstdc++11" >> "$PROFILE_DIR/default"
+        echo "compiler.version=14" >> "$PROFILE_DIR/default"
+        echo "os=Windows" >> "$PROFILE_DIR/default"
         
         echo "=== MinGW GCC Profile ==="
-        cat ~/.conan2/profiles/default
+        cat "$PROFILE_DIR/default"
 
     - name: 📦 Install dependencies
       shell: msys2 {0}
@@ -346,7 +347,7 @@ jobs:
         cd build
         cmake .. -G "Ninja" \
           -DCMAKE_BUILD_TYPE=${{ env.BUILD_TYPE }} \
-          -DCMAKE_TOOLCHAIN_FILE=build/Release/generators/conan_toolchain.cmake \
+          -DCMAKE_TOOLCHAIN_FILE=build/generators/conan_toolchain.cmake \
           -DBUILD_TESTS=ON
 
     - name: 🏗️ Build
