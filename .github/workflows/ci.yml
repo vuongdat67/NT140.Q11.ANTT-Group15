@@ -77,7 +77,7 @@ jobs:
           -DCMAKE_TOOLCHAIN_FILE=build/Release/generators/conan_toolchain.cmake \
           -DBUILD_TESTS=ON
 
-    - name: �️ Build
+    - name: 🏗️ Build
       run: |
         cd build
         cmake --build . --parallel $(nproc)
@@ -167,7 +167,7 @@ jobs:
           -DCMAKE_TOOLCHAIN_FILE=build/Release/generators/conan_toolchain.cmake \
           -DBUILD_TESTS=ON
 
-    - name: �️ Build
+    - name: 🏗️ Build
       run: |
         cd build
         cmake --build . --parallel $(nproc)
@@ -201,10 +201,16 @@ jobs:
       with:
         python-version: '3.12'
 
-    - name: 🛠️ Setup MSVC
+    - name: 🛠️ Setup MSVC with Ninja
       uses: ilammy/msvc-dev-cmd@v1
       with:
         arch: x64
+
+    - name: 📦 Install Ninja
+      shell: pwsh
+      run: |
+        choco install ninja -y
+        ninja --version
 
     - name: 📦 Install Conan
       run: |
@@ -232,9 +238,6 @@ jobs:
         compiler.runtime=dynamic
         compiler.version=194
         os=Windows
-        
-        [conf]
-        tools.cmake.cmaketoolchain:generator=Ninja
         "@
         $profilePath = Join-Path $profileDir "default"
         [System.IO.File]::WriteAllText($profilePath, $profile)
@@ -252,12 +255,13 @@ jobs:
       shell: pwsh
       run: |
         cd build
+        # Fix: Đường dẫn đúng với /Release/
         cmake .. -G "Ninja" `
           -DCMAKE_BUILD_TYPE="${{ env.BUILD_TYPE }}" `
-          -DCMAKE_TOOLCHAIN_FILE="${{ github.workspace }}/build/build/generators/conan_toolchain.cmake" `
+          -DCMAKE_TOOLCHAIN_FILE="${{ github.workspace }}/build/build/Release/generators/conan_toolchain.cmake" `
           -DBUILD_TESTS=ON
 
-    - name: �️ Build
+    - name: 🏗️ Build
       shell: pwsh
       run: |
         cd build
@@ -314,19 +318,19 @@ jobs:
         # Install Conan
         pip install --break-system-packages conan==${{ env.CONAN_VERSION }}
         
-        # Detect and create default profile
+        # Detect profile (tạo trong Windows path)
         conan profile detect --force
         
-        # Show detected profile
+        # Hiển thị profile bằng conan command thay vì cat
         echo "=== Detected Profile ==="
-        cat ~/.conan2/profiles/default
+        conan profile show default
         
-        # Update profile settings
+        # Update các settings cần thiết
         conan profile update settings.compiler.cppstd=20 default
         conan profile update settings.build_type=Release default
         
         echo "=== Updated Profile ==="
-        cat ~/.conan2/profiles/default
+        conan profile show default
 
     - name: 📦 Install dependencies
       shell: msys2 {0}
@@ -343,7 +347,7 @@ jobs:
           -DCMAKE_TOOLCHAIN_FILE=build/Release/generators/conan_toolchain.cmake \
           -DBUILD_TESTS=ON
 
-    - name: �️ Build
+    - name: 🏗️ Build
       shell: msys2 {0}
       run: |
         cd build
@@ -419,7 +423,7 @@ jobs:
           -DCMAKE_OSX_ARCHITECTURES=arm64 \
           -DBUILD_TESTS=ON
 
-    - name: �️ Build
+    - name: 🏗️ Build
       run: |
         cd build
         cmake --build . --parallel $(sysctl -n hw.ncpu)
