@@ -100,6 +100,9 @@ set(ALGORITHM_SOURCES
     src/algorithms/symmetric/chacha20_poly1305.cpp
     src/algorithms/symmetric/serpent_gcm.cpp
     src/algorithms/symmetric/twofish_gcm.cpp
+    src/algorithms/symmetric/camellia_gcm.cpp
+    src/algorithms/symmetric/aria_gcm.cpp
+    src/algorithms/symmetric/sm4_gcm.cpp
     src/algorithms/classical/caesar.cpp
     src/algorithms/classical/vigenere.cpp
     src/algorithms/classical/playfair.cpp
@@ -225,6 +228,13 @@ if(BUILD_TESTS)
         RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin/release
     )
     
+    add_executable(test_international_ciphers tests/unit/crypto/test_international_ciphers.cpp)
+    target_link_libraries(test_international_ciphers PRIVATE filevault_lib Catch2::Catch2WithMain)
+    target_compile_options(test_international_ciphers PRIVATE -Wno-error=stringop-overread)
+    set_target_properties(test_international_ciphers PROPERTIES
+        RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin/release
+    )
+    
     # Security Tests
     add_executable(test_nonce_uniqueness tests/security/test_nonce_uniqueness.cpp)
     target_link_libraries(test_nonce_uniqueness PRIVATE filevault_lib Catch2::Catch2WithMain)
@@ -295,6 +305,7 @@ if(BUILD_TESTS)
     add_test(NAME Steganography COMMAND test_steganography)
     add_test(NAME Archive_Format COMMAND test_archive)
     add_test(NAME Twofish_GCM COMMAND test_twofish)
+    add_test(NAME International_Ciphers COMMAND test_international_ciphers)
 endif()
 
 # Benchmarks - output to benchmarks/ directory

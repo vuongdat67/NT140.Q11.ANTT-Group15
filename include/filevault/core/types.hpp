@@ -23,6 +23,19 @@ enum class AlgorithmType {
     TWOFISH_192_GCM,
     TWOFISH_256_GCM,
     
+    // Camellia (Japanese standard - ISO/IEC 18033-3)
+    CAMELLIA_128_GCM,
+    CAMELLIA_192_GCM,
+    CAMELLIA_256_GCM,
+    
+    // ARIA (Korean standard - ISO/IEC 18033-3)
+    ARIA_128_GCM,
+    ARIA_192_GCM,
+    ARIA_256_GCM,
+    
+    // SM4 (Chinese standard - GB/T 32907-2016)
+    SM4_GCM,
+    
     // Symmetric ciphers (CBC mode - legacy)
     AES_128_CBC,
     AES_192_CBC,
