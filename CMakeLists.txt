@@ -319,6 +319,14 @@ if(BUILD_TESTS)
         RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin/release
     )
     
+    # ECC Tests
+    add_executable(test_ecc tests/unit/crypto/test_ecc.cpp)
+    target_link_libraries(test_ecc PRIVATE filevault_lib Catch2::Catch2WithMain)
+    target_compile_options(test_ecc PRIVATE -Wno-error=stringop-overread)
+    set_target_properties(test_ecc PROPERTIES
+        RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin/release
+    )
+    
     enable_testing()
     add_test(NAME NIST_Vectors COMMAND nist_test_vectors)
     add_test(NAME Rainbow_Table COMMAND rainbow_table_test)
@@ -339,6 +347,7 @@ if(BUILD_TESTS)
     add_test(NAME Non_AEAD_Ciphers COMMAND test_non_aead_ciphers)
     add_test(NAME AES_Modes COMMAND test_aes_modes)
     add_test(NAME RSA_Encryption COMMAND test_rsa)
+    add_test(NAME ECC_Encryption COMMAND test_ecc)
 endif()
 
 # Benchmarks - output to benchmarks/ directory
