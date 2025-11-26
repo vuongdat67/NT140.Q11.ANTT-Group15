@@ -55,7 +55,7 @@ ProgressBar::~ProgressBar() {
 void ProgressBar::set_progress(size_t progress) {
     current_progress_ = progress;
     if (bar_) {
-        bar_->set_progress(progress);
+        bar_->set_progress(static_cast<float>(progress));
     }
 }
 
@@ -99,7 +99,7 @@ BlockProgressBar::BlockProgressBar(const std::string& prefix, size_t max_progres
 
 void BlockProgressBar::set_progress(size_t progress) {
     if (bar_) {
-        bar_->set_progress(progress);
+        bar_->set_progress(static_cast<float>(progress));
     }
 }
 

@@ -278,6 +278,7 @@ jobs:
           mingw-w64-ucrt-x86_64-gcc
           mingw-w64-ucrt-x86_64-cmake
           mingw-w64-ucrt-x86_64-ninja
+          mingw-w64-ucrt-x86_64-make
           mingw-w64-ucrt-x86_64-python
           mingw-w64-ucrt-x86_64-python-pip
 
@@ -307,6 +308,7 @@ jobs:
             echo ""
             echo "[conf]"
             echo "tools.cmake.cmaketoolchain:generator=Ninja"
+            echo "tools.gnu:make_program=/ucrt64/bin/mingw32-make.exe"
           } > "$PROFILE_DIR/default"
           echo "Created profile at: $PROFILE_DIR/default"
         done
@@ -318,7 +320,7 @@ jobs:
       shell: msys2 {0}
       run: |
         mkdir -p build && cd build
-        conan install .. --output-folder=. --build=missing -c tools.cmake.cmaketoolchain:generator=Ninja
+        conan install .. --output-folder=. --build=missing -c tools.cmake.cmaketoolchain:generator=Ninja -c tools.gnu:make_program=/ucrt64/bin/mingw32-make.exe
         
         echo "=== DEBUG: Find toolchain ==="
         find . -name "conan_toolchain.cmake" -type f
