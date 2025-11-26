@@ -46,6 +46,19 @@ enum class AlgorithmID : uint8_t {
     AES_256_GCM = 0x03,
     CHACHA20_POLY1305 = 0x04,
     SERPENT_256_GCM = 0x05,
+    // Twofish family
+    TWOFISH_128_GCM = 0x06,
+    TWOFISH_192_GCM = 0x07,
+    TWOFISH_256_GCM = 0x08,
+    // International standards
+    CAMELLIA_128_GCM = 0x09,
+    CAMELLIA_192_GCM = 0x0A,
+    CAMELLIA_256_GCM = 0x0B,
+    ARIA_128_GCM = 0x0C,
+    ARIA_192_GCM = 0x0D,
+    ARIA_256_GCM = 0x0E,
+    SM4_GCM = 0x0F,
+    // Classical ciphers
     CAESAR = 0x10,
     VIGENERE = 0x11,
     PLAYFAIR = 0x12,

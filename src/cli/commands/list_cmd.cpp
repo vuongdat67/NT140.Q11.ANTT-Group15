@@ -20,15 +20,31 @@ int ListCommand::execute() {
     // Symmetric Encryption
     fmt::print("\n");
     fmt::print(fmt::emphasis::bold | fmt::fg(fmt::color::cyan), 
-              "Symmetric Encryption Algorithms\n");
+              "Symmetric Encryption Algorithms (AEAD)\n");
     fmt::print("{}\n", std::string(80, '-'));
     
     fmt::print("  Algorithm          Key Size    Security    Speed    Notes\n");
     fmt::print("  ----------------   --------    --------    -----    ------------------\n");
-    fmt::print("  AES-128-GCM        128-bit     Good        ***      Fast, modern AEAD\n");
-    fmt::print("  AES-192-GCM        192-bit     Strong      **       Balanced\n");
-    fmt::print("  AES-256-GCM        256-bit     Maximum     **       Recommended\n");
-    fmt::print("  ChaCha20-Poly1305  256-bit     Maximum     ***      SW-optimized\n\n");
+    fmt::print("  AES-128-GCM        128-bit     Good        ****     Fast, NIST standard\n");
+    fmt::print("  AES-192-GCM        192-bit     Strong      ***      Balanced\n");
+    fmt::print("  AES-256-GCM        256-bit     Maximum     ***      Recommended\n");
+    fmt::print("  ChaCha20-Poly1305  256-bit     Maximum     ****     SW-optimized\n");
+    fmt::print("  Serpent-256-GCM    256-bit     Maximum     **       AES finalist\n");
+    fmt::print("  Twofish-128-GCM    128-bit     Good        ***      AES finalist\n");
+    fmt::print("  Twofish-256-GCM    256-bit     Maximum     ***      AES finalist\n\n");
+    
+    // International Standards
+    fmt::print(fmt::emphasis::bold | fmt::fg(fmt::color::magenta), 
+              "International Standard Ciphers\n");
+    fmt::print("{}\n", std::string(80, '-'));
+    fmt::print("  Algorithm          Key Size    Origin      Standard\n");
+    fmt::print("  ----------------   --------    ---------   ----------------------\n");
+    fmt::print("  Camellia-128-GCM   128-bit     Japan       ISO/IEC 18033-3\n");
+    fmt::print("  Camellia-256-GCM   256-bit     Japan       CRYPTREC, NESSIE\n");
+    fmt::print("  ARIA-128-GCM       128-bit     Korea       KS X 1213, RFC 5794\n");
+    fmt::print("  ARIA-256-GCM       256-bit     Korea       ISO/IEC 18033-3\n");
+    fmt::print("  SM4-GCM            128-bit     China       GB/T 32907-2016\n\n");
+
     // Classical Ciphers (Educational)
     fmt::print(fmt::emphasis::bold | fmt::fg(fmt::color::yellow), 
               "Classical Ciphers (Educational Only)\n");
@@ -38,7 +54,9 @@ int ListCommand::execute() {
     fmt::print("  --------    ---------------   --------------   ---------------------\n");
     fmt::print("  Caesar      Shift             Brute-force      Only 26 possible keys\n");
     fmt::print("  Vigenere    Polyalphabetic    Kasiski exam     Repeated key weakness\n");
-    fmt::print("  Playfair    Digraph           Frequency        600 digraphs\n\n");
+    fmt::print("  Playfair    Digraph           Frequency        600 digraphs\n");
+    fmt::print("  Hill        Matrix            Known-plaintext  Linear algebra attack\n");
+    fmt::print("  Substitution Monoalphabetic  Frequency        26! permutations\n\n");
     
     // KDF
     fmt::print("Key Derivation Functions\n");

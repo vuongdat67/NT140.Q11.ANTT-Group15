@@ -33,8 +33,15 @@ void EncryptCommand::setup(CLI::App& app) {
     
     encrypt_cmd->add_option("-a,--algorithm", algorithm_, "Encryption algorithm")
         ->check(CLI::IsMember({
+            // Modern AEAD algorithms
             "aes-128-gcm", "aes-192-gcm", "aes-256-gcm", 
             "chacha20-poly1305", "serpent-256-gcm",
+            "twofish-128-gcm", "twofish-192-gcm", "twofish-256-gcm",
+            // International standards
+            "camellia-128-gcm", "camellia-192-gcm", "camellia-256-gcm",
+            "aria-128-gcm", "aria-192-gcm", "aria-256-gcm",
+            "sm4-gcm",
+            // Classical (educational)
             "caesar", "vigenere", "playfair", "substitution", "hill"
         }));
     
@@ -306,7 +313,17 @@ int EncryptCommand::execute() {
                        algo_type == core::AlgorithmType::AES_192_GCM ||
                        algo_type == core::AlgorithmType::AES_256_GCM ||
                        algo_type == core::AlgorithmType::CHACHA20_POLY1305 ||
-                       algo_type == core::AlgorithmType::SERPENT_256_GCM);
+                       algo_type == core::AlgorithmType::SERPENT_256_GCM ||
+                       algo_type == core::AlgorithmType::TWOFISH_128_GCM ||
+                       algo_type == core::AlgorithmType::TWOFISH_192_GCM ||
+                       algo_type == core::AlgorithmType::TWOFISH_256_GCM ||
+                       algo_type == core::AlgorithmType::CAMELLIA_128_GCM ||
+                       algo_type == core::AlgorithmType::CAMELLIA_192_GCM ||
+                       algo_type == core::AlgorithmType::CAMELLIA_256_GCM ||
+                       algo_type == core::AlgorithmType::ARIA_128_GCM ||
+                       algo_type == core::AlgorithmType::ARIA_192_GCM ||
+                       algo_type == core::AlgorithmType::ARIA_256_GCM ||
+                       algo_type == core::AlgorithmType::SM4_GCM);
         
         if (is_aead) {
             if (encrypt_result.tag.has_value()) {

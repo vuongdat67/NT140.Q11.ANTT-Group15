@@ -41,12 +41,17 @@ TEST_CASE("Camellia-GCM Basic Operations", "[camellia][gcm][aead]") {
         std::vector<uint8_t> pt(plaintext.begin(), plaintext.end());
         auto key = generate_random(16);
         
-        core::EncryptionConfig config;
-        auto enc_result = cipher.encrypt(pt, key, config);
+        core::EncryptionConfig enc_config;
+        auto enc_result = cipher.encrypt(pt, key, enc_config);
         REQUIRE(enc_result.success);
         REQUIRE(!enc_result.data.empty());
+        REQUIRE(enc_result.nonce.has_value());
+        REQUIRE(enc_result.tag.has_value());
         
-        auto dec_result = cipher.decrypt(enc_result.data, key, config);
+        core::EncryptionConfig dec_config;
+        dec_config.nonce = enc_result.nonce;
+        dec_config.tag = enc_result.tag;
+        auto dec_result = cipher.decrypt(enc_result.data, key, dec_config);
         REQUIRE(dec_result.success);
         REQUIRE(dec_result.data == pt);
     }
@@ -62,11 +67,16 @@ TEST_CASE("Camellia-GCM Basic Operations", "[camellia][gcm][aead]") {
         std::vector<uint8_t> pt(plaintext.begin(), plaintext.end());
         auto key = generate_random(24);
         
-        core::EncryptionConfig config;
-        auto enc_result = cipher.encrypt(pt, key, config);
+        core::EncryptionConfig enc_config;
+        auto enc_result = cipher.encrypt(pt, key, enc_config);
         REQUIRE(enc_result.success);
+        REQUIRE(enc_result.nonce.has_value());
+        REQUIRE(enc_result.tag.has_value());
         
-        auto dec_result = cipher.decrypt(enc_result.data, key, config);
+        core::EncryptionConfig dec_config;
+        dec_config.nonce = enc_result.nonce;
+        dec_config.tag = enc_result.tag;
+        auto dec_result = cipher.decrypt(enc_result.data, key, dec_config);
         REQUIRE(dec_result.success);
         REQUIRE(dec_result.data == pt);
     }
@@ -82,11 +92,16 @@ TEST_CASE("Camellia-GCM Basic Operations", "[camellia][gcm][aead]") {
         std::vector<uint8_t> pt(plaintext.begin(), plaintext.end());
         auto key = generate_random(32);
         
-        core::EncryptionConfig config;
-        auto enc_result = cipher.encrypt(pt, key, config);
+        core::EncryptionConfig enc_config;
+        auto enc_result = cipher.encrypt(pt, key, enc_config);
         REQUIRE(enc_result.success);
+        REQUIRE(enc_result.nonce.has_value());
+        REQUIRE(enc_result.tag.has_value());
         
-        auto dec_result = cipher.decrypt(enc_result.data, key, config);
+        core::EncryptionConfig dec_config;
+        dec_config.nonce = enc_result.nonce;
+        dec_config.tag = enc_result.tag;
+        auto dec_result = cipher.decrypt(enc_result.data, key, dec_config);
         REQUIRE(dec_result.success);
         REQUIRE(dec_result.data == pt);
     }
@@ -104,12 +119,15 @@ TEST_CASE("Camellia-GCM Basic Operations", "[camellia][gcm][aead]") {
         auto key1 = generate_random(32);
         auto key2 = generate_random(32);
         
-        core::EncryptionConfig config;
-        auto enc_result = cipher.encrypt(pt, key1, config);
+        core::EncryptionConfig enc_config;
+        auto enc_result = cipher.encrypt(pt, key1, enc_config);
         REQUIRE(enc_result.success);
         
         // Decrypt with wrong key
-        auto dec_result = cipher.decrypt(enc_result.data, key2, config);
+        core::EncryptionConfig dec_config;
+        dec_config.nonce = enc_result.nonce;
+        dec_config.tag = enc_result.tag;
+        auto dec_result = cipher.decrypt(enc_result.data, key2, dec_config);
         REQUIRE_FALSE(dec_result.success);
     }
 }
@@ -129,12 +147,17 @@ TEST_CASE("ARIA-GCM Basic Operations", "[aria][gcm][aead]") {
         std::vector<uint8_t> pt(plaintext.begin(), plaintext.end());
         auto key = generate_random(16);
         
-        core::EncryptionConfig config;
-        auto enc_result = cipher.encrypt(pt, key, config);
+        core::EncryptionConfig enc_config;
+        auto enc_result = cipher.encrypt(pt, key, enc_config);
         REQUIRE(enc_result.success);
         REQUIRE(!enc_result.data.empty());
+        REQUIRE(enc_result.nonce.has_value());
+        REQUIRE(enc_result.tag.has_value());
         
-        auto dec_result = cipher.decrypt(enc_result.data, key, config);
+        core::EncryptionConfig dec_config;
+        dec_config.nonce = enc_result.nonce;
+        dec_config.tag = enc_result.tag;
+        auto dec_result = cipher.decrypt(enc_result.data, key, dec_config);
         REQUIRE(dec_result.success);
         REQUIRE(dec_result.data == pt);
     }
@@ -150,11 +173,16 @@ TEST_CASE("ARIA-GCM Basic Operations", "[aria][gcm][aead]") {
         std::vector<uint8_t> pt(plaintext.begin(), plaintext.end());
         auto key = generate_random(24);
         
-        core::EncryptionConfig config;
-        auto enc_result = cipher.encrypt(pt, key, config);
+        core::EncryptionConfig enc_config;
+        auto enc_result = cipher.encrypt(pt, key, enc_config);
         REQUIRE(enc_result.success);
+        REQUIRE(enc_result.nonce.has_value());
+        REQUIRE(enc_result.tag.has_value());
         
-        auto dec_result = cipher.decrypt(enc_result.data, key, config);
+        core::EncryptionConfig dec_config;
+        dec_config.nonce = enc_result.nonce;
+        dec_config.tag = enc_result.tag;
+        auto dec_result = cipher.decrypt(enc_result.data, key, dec_config);
         REQUIRE(dec_result.success);
         REQUIRE(dec_result.data == pt);
     }
@@ -170,11 +198,16 @@ TEST_CASE("ARIA-GCM Basic Operations", "[aria][gcm][aead]") {
         std::vector<uint8_t> pt(plaintext.begin(), plaintext.end());
         auto key = generate_random(32);
         
-        core::EncryptionConfig config;
-        auto enc_result = cipher.encrypt(pt, key, config);
+        core::EncryptionConfig enc_config;
+        auto enc_result = cipher.encrypt(pt, key, enc_config);
         REQUIRE(enc_result.success);
+        REQUIRE(enc_result.nonce.has_value());
+        REQUIRE(enc_result.tag.has_value());
         
-        auto dec_result = cipher.decrypt(enc_result.data, key, config);
+        core::EncryptionConfig dec_config;
+        dec_config.nonce = enc_result.nonce;
+        dec_config.tag = enc_result.tag;
+        auto dec_result = cipher.decrypt(enc_result.data, key, dec_config);
         REQUIRE(dec_result.success);
         REQUIRE(dec_result.data == pt);
     }
@@ -200,12 +233,17 @@ TEST_CASE("SM4-GCM Basic Operations", "[sm4][gcm][aead]") {
         std::vector<uint8_t> pt(plaintext.begin(), plaintext.end());
         auto key = generate_random(16);
         
-        core::EncryptionConfig config;
-        auto enc_result = cipher.encrypt(pt, key, config);
+        core::EncryptionConfig enc_config;
+        auto enc_result = cipher.encrypt(pt, key, enc_config);
         REQUIRE(enc_result.success);
         REQUIRE(!enc_result.data.empty());
+        REQUIRE(enc_result.nonce.has_value());
+        REQUIRE(enc_result.tag.has_value());
         
-        auto dec_result = cipher.decrypt(enc_result.data, key, config);
+        core::EncryptionConfig dec_config;
+        dec_config.nonce = enc_result.nonce;
+        dec_config.tag = enc_result.tag;
+        auto dec_result = cipher.decrypt(enc_result.data, key, dec_config);
         REQUIRE(dec_result.success);
         REQUIRE(dec_result.data == pt);
     }
@@ -217,11 +255,16 @@ TEST_CASE("SM4-GCM Basic Operations", "[sm4][gcm][aead]") {
         std::vector<uint8_t> pt = {0x00, 0x01, 0xFF, 0xFE, 0x80, 0x7F, 0x00, 0x00};
         auto key = generate_random(16);
         
-        core::EncryptionConfig config;
-        auto enc_result = cipher.encrypt(pt, key, config);
+        core::EncryptionConfig enc_config;
+        auto enc_result = cipher.encrypt(pt, key, enc_config);
         REQUIRE(enc_result.success);
+        REQUIRE(enc_result.nonce.has_value());
+        REQUIRE(enc_result.tag.has_value());
         
-        auto dec_result = cipher.decrypt(enc_result.data, key, config);
+        core::EncryptionConfig dec_config;
+        dec_config.nonce = enc_result.nonce;
+        dec_config.tag = enc_result.tag;
+        auto dec_result = cipher.decrypt(enc_result.data, key, dec_config);
         REQUIRE(dec_result.success);
         REQUIRE(dec_result.data == pt);
     }
@@ -234,12 +277,15 @@ TEST_CASE("SM4-GCM Basic Operations", "[sm4][gcm][aead]") {
         auto key1 = generate_random(16);
         auto key2 = generate_random(16);
         
-        core::EncryptionConfig config;
-        auto enc_result = cipher.encrypt(pt, key1, config);
+        core::EncryptionConfig enc_config;
+        auto enc_result = cipher.encrypt(pt, key1, enc_config);
         REQUIRE(enc_result.success);
         
         // Decrypt with wrong key should fail
-        auto dec_result = cipher.decrypt(enc_result.data, key2, config);
+        core::EncryptionConfig dec_config;
+        dec_config.nonce = enc_result.nonce;
+        dec_config.tag = enc_result.tag;
+        auto dec_result = cipher.decrypt(enc_result.data, key2, dec_config);
         REQUIRE_FALSE(dec_result.success);
     }
     
@@ -250,14 +296,17 @@ TEST_CASE("SM4-GCM Basic Operations", "[sm4][gcm][aead]") {
         std::vector<uint8_t> pt(plaintext.begin(), plaintext.end());
         auto key = generate_random(16);
         
-        core::EncryptionConfig config;
-        auto enc_result = cipher.encrypt(pt, key, config);
+        core::EncryptionConfig enc_config;
+        auto enc_result = cipher.encrypt(pt, key, enc_config);
         REQUIRE(enc_result.success);
         
         // Tamper with ciphertext
         enc_result.data[enc_result.data.size() / 2] ^= 0xFF;
         
-        auto dec_result = cipher.decrypt(enc_result.data, key, config);
+        core::EncryptionConfig dec_config;
+        dec_config.nonce = enc_result.nonce;
+        dec_config.tag = enc_result.tag;
+        auto dec_result = cipher.decrypt(enc_result.data, key, dec_config);
         REQUIRE_FALSE(dec_result.success);
     }
 }
@@ -313,10 +362,9 @@ TEST_CASE("Nonce Uniqueness for International Ciphers", "[nonce][security]") {
         for (int i = 0; i < 100; ++i) {
             auto result = cipher.encrypt(pt, key, config);
             REQUIRE(result.success);
+            REQUIRE(result.nonce.has_value());
             
-            // Extract nonce (first 12 bytes)
-            std::vector<uint8_t> nonce(result.data.begin(), result.data.begin() + 12);
-            nonces.insert(nonce);
+            nonces.insert(result.nonce.value());
         }
         
         // All 100 nonces should be unique
@@ -335,9 +383,9 @@ TEST_CASE("Nonce Uniqueness for International Ciphers", "[nonce][security]") {
         for (int i = 0; i < 100; ++i) {
             auto result = cipher.encrypt(pt, key, config);
             REQUIRE(result.success);
+            REQUIRE(result.nonce.has_value());
             
-            std::vector<uint8_t> nonce(result.data.begin(), result.data.begin() + 12);
-            nonces.insert(nonce);
+            nonces.insert(result.nonce.value());
         }
         
         REQUIRE(nonces.size() == 100);
@@ -355,9 +403,9 @@ TEST_CASE("Nonce Uniqueness for International Ciphers", "[nonce][security]") {
         for (int i = 0; i < 100; ++i) {
             auto result = cipher.encrypt(pt, key, config);
             REQUIRE(result.success);
+            REQUIRE(result.nonce.has_value());
             
-            std::vector<uint8_t> nonce(result.data.begin(), result.data.begin() + 12);
-            nonces.insert(nonce);
+            nonces.insert(result.nonce.value());
         }
         
         REQUIRE(nonces.size() == 100);

@@ -317,7 +317,17 @@ std::tuple<FileHeader, std::vector<uint8_t>, std::vector<uint8_t>> FileFormatHan
                     header.algorithm == AlgorithmID::AES_192_GCM ||
                     header.algorithm == AlgorithmID::AES_256_GCM ||
                     header.algorithm == AlgorithmID::CHACHA20_POLY1305 ||
-                    header.algorithm == AlgorithmID::SERPENT_256_GCM);
+                    header.algorithm == AlgorithmID::SERPENT_256_GCM ||
+                    header.algorithm == AlgorithmID::TWOFISH_128_GCM ||
+                    header.algorithm == AlgorithmID::TWOFISH_192_GCM ||
+                    header.algorithm == AlgorithmID::TWOFISH_256_GCM ||
+                    header.algorithm == AlgorithmID::CAMELLIA_128_GCM ||
+                    header.algorithm == AlgorithmID::CAMELLIA_192_GCM ||
+                    header.algorithm == AlgorithmID::CAMELLIA_256_GCM ||
+                    header.algorithm == AlgorithmID::ARIA_128_GCM ||
+                    header.algorithm == AlgorithmID::ARIA_192_GCM ||
+                    header.algorithm == AlgorithmID::ARIA_256_GCM ||
+                    header.algorithm == AlgorithmID::SM4_GCM);
     
     size_t tag_size = has_tag ? 16 : 0;
     
@@ -347,6 +357,16 @@ AlgorithmID FileFormatHandler::to_algorithm_id(AlgorithmType type) {
         case AlgorithmType::AES_256_GCM: return AlgorithmID::AES_256_GCM;
         case AlgorithmType::CHACHA20_POLY1305: return AlgorithmID::CHACHA20_POLY1305;
         case AlgorithmType::SERPENT_256_GCM: return AlgorithmID::SERPENT_256_GCM;
+        case AlgorithmType::TWOFISH_128_GCM: return AlgorithmID::TWOFISH_128_GCM;
+        case AlgorithmType::TWOFISH_192_GCM: return AlgorithmID::TWOFISH_192_GCM;
+        case AlgorithmType::TWOFISH_256_GCM: return AlgorithmID::TWOFISH_256_GCM;
+        case AlgorithmType::CAMELLIA_128_GCM: return AlgorithmID::CAMELLIA_128_GCM;
+        case AlgorithmType::CAMELLIA_192_GCM: return AlgorithmID::CAMELLIA_192_GCM;
+        case AlgorithmType::CAMELLIA_256_GCM: return AlgorithmID::CAMELLIA_256_GCM;
+        case AlgorithmType::ARIA_128_GCM: return AlgorithmID::ARIA_128_GCM;
+        case AlgorithmType::ARIA_192_GCM: return AlgorithmID::ARIA_192_GCM;
+        case AlgorithmType::ARIA_256_GCM: return AlgorithmID::ARIA_256_GCM;
+        case AlgorithmType::SM4_GCM: return AlgorithmID::SM4_GCM;
         case AlgorithmType::CAESAR: return AlgorithmID::CAESAR;
         case AlgorithmType::VIGENERE: return AlgorithmID::VIGENERE;
         case AlgorithmType::PLAYFAIR: return AlgorithmID::PLAYFAIR;
@@ -363,6 +383,16 @@ AlgorithmType FileFormatHandler::from_algorithm_id(AlgorithmID id) {
         case AlgorithmID::AES_256_GCM: return AlgorithmType::AES_256_GCM;
         case AlgorithmID::CHACHA20_POLY1305: return AlgorithmType::CHACHA20_POLY1305;
         case AlgorithmID::SERPENT_256_GCM: return AlgorithmType::SERPENT_256_GCM;
+        case AlgorithmID::TWOFISH_128_GCM: return AlgorithmType::TWOFISH_128_GCM;
+        case AlgorithmID::TWOFISH_192_GCM: return AlgorithmType::TWOFISH_192_GCM;
+        case AlgorithmID::TWOFISH_256_GCM: return AlgorithmType::TWOFISH_256_GCM;
+        case AlgorithmID::CAMELLIA_128_GCM: return AlgorithmType::CAMELLIA_128_GCM;
+        case AlgorithmID::CAMELLIA_192_GCM: return AlgorithmType::CAMELLIA_192_GCM;
+        case AlgorithmID::CAMELLIA_256_GCM: return AlgorithmType::CAMELLIA_256_GCM;
+        case AlgorithmID::ARIA_128_GCM: return AlgorithmType::ARIA_128_GCM;
+        case AlgorithmID::ARIA_192_GCM: return AlgorithmType::ARIA_192_GCM;
+        case AlgorithmID::ARIA_256_GCM: return AlgorithmType::ARIA_256_GCM;
+        case AlgorithmID::SM4_GCM: return AlgorithmType::SM4_GCM;
         case AlgorithmID::CAESAR: return AlgorithmType::CAESAR;
         case AlgorithmID::VIGENERE: return AlgorithmType::VIGENERE;
         case AlgorithmID::PLAYFAIR: return AlgorithmType::PLAYFAIR;

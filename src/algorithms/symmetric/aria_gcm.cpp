@@ -91,14 +91,31 @@ core::CryptoResult ARIA_GCM::encrypt(
         Botan::secure_vector<uint8_t> buffer(plaintext.begin(), plaintext.end());
         cipher->finish(buffer);
         
-        // Prepare result (nonce + ciphertext + tag)
-        result.data.reserve(nonce.size() + buffer.size());
-        result.data.insert(result.data.end(), nonce.begin(), nonce.end());
-        result.data.insert(result.data.end(), buffer.begin(), buffer.end());
+        // Extract tag (last 16 bytes)
+        if (buffer.size() < tag_size()) {
+            result.success = false;
+            result.error_message = "Invalid ciphertext size";
+            return result;
+        }
+        
+        size_t ciphertext_len = buffer.size() - tag_size();
+        
+        // Store ciphertext (without tag)
+        result.data.assign(buffer.begin(), buffer.begin() + ciphertext_len);
+        
+        // Store tag separately
+        result.tag = std::vector<uint8_t>(
+            buffer.begin() + ciphertext_len,
+            buffer.end()
+        );
+        
+        // Store nonce
+        result.nonce = std::vector<uint8_t>(nonce.begin(), nonce.end());
+        
         result.success = true;
         
-        spdlog::debug("ARIA-{}-GCM encryption successful: {} bytes -> {} bytes",
-                      key_bits_, plaintext.size(), result.data.size());
+        spdlog::debug("ARIA-{}-GCM encryption successful: {} bytes -> {} bytes + {} byte tag",
+                      key_bits_, plaintext.size(), result.data.size(), tag_size());
         
     } catch (const Botan::Exception& e) {
         result.success = false;
@@ -130,11 +147,25 @@ core::CryptoResult ARIA_GCM::decrypt(
             return result;
         }
         
-        // Validate minimum ciphertext size (nonce + tag)
-        size_t min_size = nonce_size() + tag_size();
-        if (ciphertext.size() < min_size) {
+        // Get nonce and tag from config
+        if (!config.nonce.has_value() || !config.tag.has_value()) {
             result.success = false;
-            result.error_message = "Ciphertext too short";
+            result.error_message = "Nonce and tag must be provided in config";
+            return result;
+        }
+        
+        auto& nonce = config.nonce.value();
+        auto& tag = config.tag.value();
+        
+        if (nonce.size() != nonce_size()) {
+            result.success = false;
+            result.error_message = "Invalid nonce size";
+            return result;
+        }
+        
+        if (tag.size() != tag_size()) {
+            result.success = false;
+            result.error_message = "Invalid tag size";
             return result;
         }
         
@@ -146,15 +177,6 @@ core::CryptoResult ARIA_GCM::decrypt(
             return result;
         }
         
-        // Extract nonce from beginning
-        std::vector<uint8_t> nonce(ciphertext.begin(), ciphertext.begin() + nonce_size());
-        
-        // Extract actual ciphertext (includes tag at end)
-        Botan::secure_vector<uint8_t> buffer(
-            ciphertext.begin() + nonce_size(),
-            ciphertext.end()
-        );
-        
         // Set key and nonce
         cipher->set_key(key.data(), key.size());
         cipher->start(nonce);
@@ -163,6 +185,12 @@ core::CryptoResult ARIA_GCM::decrypt(
         if (config.associated_data && !config.associated_data->empty()) {
             cipher->set_associated_data(*config.associated_data);
         }
+        
+        // Combine ciphertext + tag
+        Botan::secure_vector<uint8_t> buffer;
+        buffer.reserve(ciphertext.size() + tag.size());
+        buffer.insert(buffer.end(), ciphertext.begin(), ciphertext.end());
+        buffer.insert(buffer.end(), tag.begin(), tag.end());
         
         // Decrypt and verify
         cipher->finish(buffer);
