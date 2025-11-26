@@ -331,6 +331,7 @@ jobs:
     - name: 📦 Install dependencies
       shell: msys2 {0}
       run: |
+        export CONAN_HOME=$(pwd)
         mkdir -p build
         conan install . --output-folder=build --build=missing
 
