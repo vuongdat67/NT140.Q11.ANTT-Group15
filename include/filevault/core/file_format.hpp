@@ -92,7 +92,11 @@ enum class AlgorithmID : uint8_t {
     // Asymmetric (RSA)
     RSA_2048 = 0x50,
     RSA_3072 = 0x51,
-    RSA_4096 = 0x52
+    RSA_4096 = 0x52,
+    // Asymmetric (ECC)
+    ECC_P256 = 0x60,
+    ECC_P384 = 0x61,
+    ECC_P521 = 0x62
 };
 
 /**

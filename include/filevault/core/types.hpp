@@ -73,6 +73,11 @@ enum class AlgorithmType {
     RSA_3072,
     RSA_4096,
     
+    // Asymmetric encryption (ECC)
+    ECC_P256,   // secp256r1, 128-bit security
+    ECC_P384,   // secp384r1, 192-bit security
+    ECC_P521,   // secp521r1, 256-bit security
+    
     // Classic (educational)
     CAESAR,
     VIGENERE,

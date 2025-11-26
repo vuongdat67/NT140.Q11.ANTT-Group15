@@ -385,6 +385,9 @@ AlgorithmID FileFormatHandler::to_algorithm_id(AlgorithmType type) {
         case AlgorithmType::RSA_2048: return AlgorithmID::RSA_2048;
         case AlgorithmType::RSA_3072: return AlgorithmID::RSA_3072;
         case AlgorithmType::RSA_4096: return AlgorithmID::RSA_4096;
+        case AlgorithmType::ECC_P256: return AlgorithmID::ECC_P256;
+        case AlgorithmType::ECC_P384: return AlgorithmID::ECC_P384;
+        case AlgorithmType::ECC_P521: return AlgorithmID::ECC_P521;
         case AlgorithmType::CHACHA20_POLY1305: return AlgorithmID::CHACHA20_POLY1305;
         case AlgorithmType::SERPENT_256_GCM: return AlgorithmID::SERPENT_256_GCM;
         case AlgorithmType::TWOFISH_128_GCM: return AlgorithmID::TWOFISH_128_GCM;
@@ -432,6 +435,9 @@ AlgorithmType FileFormatHandler::from_algorithm_id(AlgorithmID id) {
         case AlgorithmID::RSA_2048: return AlgorithmType::RSA_2048;
         case AlgorithmID::RSA_3072: return AlgorithmType::RSA_3072;
         case AlgorithmID::RSA_4096: return AlgorithmType::RSA_4096;
+        case AlgorithmID::ECC_P256: return AlgorithmType::ECC_P256;
+        case AlgorithmID::ECC_P384: return AlgorithmType::ECC_P384;
+        case AlgorithmID::ECC_P521: return AlgorithmType::ECC_P521;
         case AlgorithmID::CHACHA20_POLY1305: return AlgorithmType::CHACHA20_POLY1305;
         case AlgorithmID::SERPENT_256_GCM: return AlgorithmType::SERPENT_256_GCM;
         case AlgorithmID::TWOFISH_128_GCM: return AlgorithmType::TWOFISH_128_GCM;

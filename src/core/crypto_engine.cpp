@@ -15,6 +15,7 @@
 #include "filevault/algorithms/symmetric/aria_gcm.hpp"
 #include "filevault/algorithms/symmetric/sm4_gcm.hpp"
 #include "filevault/algorithms/asymmetric/rsa.hpp"
+#include "filevault/algorithms/asymmetric/ecc.hpp"
 #include "filevault/algorithms/classical/caesar.hpp"
 #include "filevault/algorithms/classical/vigenere.hpp"
 #include "filevault/algorithms/classical/playfair.hpp"
@@ -94,6 +95,11 @@ void CryptoEngine::initialize() {
     register_algorithm(std::make_unique<algorithms::asymmetric::RSA>(2048));
     register_algorithm(std::make_unique<algorithms::asymmetric::RSA>(3072));
     register_algorithm(std::make_unique<algorithms::asymmetric::RSA>(4096));
+    
+    // Register asymmetric algorithms (ECC hybrid - ECDH + AES-GCM)
+    register_algorithm(std::make_unique<algorithms::asymmetric::ECCHybrid>(algorithms::asymmetric::ECCurve::SECP256R1));
+    register_algorithm(std::make_unique<algorithms::asymmetric::ECCHybrid>(algorithms::asymmetric::ECCurve::SECP384R1));
+    register_algorithm(std::make_unique<algorithms::asymmetric::ECCHybrid>(algorithms::asymmetric::ECCurve::SECP521R1));
     
     // Register classical ciphers (educational only)
     register_algorithm(std::make_unique<algorithms::classical::Caesar>());
@@ -269,6 +275,9 @@ std::string CryptoEngine::algorithm_name(AlgorithmType type) {
         case AlgorithmType::RSA_2048: return "RSA-2048";
         case AlgorithmType::RSA_3072: return "RSA-3072";
         case AlgorithmType::RSA_4096: return "RSA-4096";
+        case AlgorithmType::ECC_P256: return "ECC-P256";
+        case AlgorithmType::ECC_P384: return "ECC-P384";
+        case AlgorithmType::ECC_P521: return "ECC-P521";
         case AlgorithmType::CHACHA20_POLY1305: return "ChaCha20-Poly1305";
         case AlgorithmType::SERPENT_256_GCM: return "Serpent-256-GCM";
         case AlgorithmType::TWOFISH_128_GCM: return "Twofish-128-GCM";
@@ -356,6 +365,11 @@ std::optional<AlgorithmType> CryptoEngine::parse_algorithm(const std::string& na
     if (lower == "rsa-2048" || lower == "rsa2048") return AlgorithmType::RSA_2048;
     if (lower == "rsa-3072" || lower == "rsa3072") return AlgorithmType::RSA_3072;
     if (lower == "rsa-4096" || lower == "rsa4096" || lower == "rsa") return AlgorithmType::RSA_4096;
+    
+    // ECC hybrid encryption (ECDH + AES-GCM)
+    if (lower == "ecc-p256" || lower == "eccp256" || lower == "p256" || lower == "secp256r1") return AlgorithmType::ECC_P256;
+    if (lower == "ecc-p384" || lower == "eccp384" || lower == "p384" || lower == "secp384r1") return AlgorithmType::ECC_P384;
+    if (lower == "ecc-p521" || lower == "eccp521" || lower == "p521" || lower == "secp521r1" || lower == "ecc") return AlgorithmType::ECC_P521;
     
     if (lower == "chacha20-poly1305" || lower == "chacha20" || lower == "chacha") return AlgorithmType::CHACHA20_POLY1305;
     if (lower == "serpent-256-gcm" || lower == "serpent" || lower == "serpent256") return AlgorithmType::SERPENT_256_GCM;

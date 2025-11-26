@@ -111,6 +111,7 @@ set(ALGORITHM_SOURCES
     src/algorithms/symmetric/aria_gcm.cpp
     src/algorithms/symmetric/sm4_gcm.cpp
     src/algorithms/asymmetric/rsa.cpp
+    src/algorithms/asymmetric/ecc.cpp
     src/algorithms/classical/caesar.cpp
     src/algorithms/classical/vigenere.cpp
     src/algorithms/classical/playfair.cpp

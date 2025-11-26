@@ -57,6 +57,8 @@ void EncryptCommand::setup(CLI::App& app) {
             "3des", "tripledes", "triple-des",
             // Asymmetric (RSA)
             "rsa-2048", "rsa-3072", "rsa-4096", "rsa",
+            // Asymmetric (ECC)
+            "ecc-p256", "ecc-p384", "ecc-p521", "ecc", "p256", "p384", "p521",
             // Classical (educational)
             "caesar", "vigenere", "playfair", "substitution", "hill"
         }));
