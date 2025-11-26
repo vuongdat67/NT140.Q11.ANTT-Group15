@@ -99,6 +99,7 @@ set(ALGORITHM_SOURCES
     src/algorithms/symmetric/aes_gcm.cpp
     src/algorithms/symmetric/chacha20_poly1305.cpp
     src/algorithms/symmetric/serpent_gcm.cpp
+    src/algorithms/symmetric/twofish_gcm.cpp
     src/algorithms/classical/caesar.cpp
     src/algorithms/classical/vigenere.cpp
     src/algorithms/classical/playfair.cpp
@@ -217,6 +218,13 @@ if(BUILD_TESTS)
         RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin/release
     )
     
+    add_executable(test_twofish tests/unit/crypto/test_twofish.cpp)
+    target_link_libraries(test_twofish PRIVATE filevault_lib Catch2::Catch2WithMain)
+    target_compile_options(test_twofish PRIVATE -Wno-error=stringop-overread)
+    set_target_properties(test_twofish PROPERTIES
+        RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin/release
+    )
+    
     # Security Tests
     add_executable(test_nonce_uniqueness tests/security/test_nonce_uniqueness.cpp)
     target_link_libraries(test_nonce_uniqueness PRIVATE filevault_lib Catch2::Catch2WithMain)
@@ -247,6 +255,30 @@ if(BUILD_TESTS)
         RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin/release
     )
     
+    # Hash Tests
+    add_executable(test_hash tests/unit/crypto/test_hash.cpp)
+    target_link_libraries(test_hash PRIVATE filevault_lib Catch2::Catch2WithMain)
+    target_compile_options(test_hash PRIVATE -Wno-error=stringop-overread)
+    set_target_properties(test_hash PROPERTIES
+        RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin/release
+    )
+    
+    # Steganography Tests
+    add_executable(test_steganography tests/unit/steganography/test_steganography.cpp)
+    target_link_libraries(test_steganography PRIVATE filevault_lib Catch2::Catch2WithMain)
+    target_compile_options(test_steganography PRIVATE -Wno-error=stringop-overread)
+    set_target_properties(test_steganography PROPERTIES
+        RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin/release
+    )
+    
+    # Archive Tests
+    add_executable(test_archive tests/unit/archive/test_archive.cpp)
+    target_link_libraries(test_archive PRIVATE filevault_lib Catch2::Catch2WithMain)
+    target_compile_options(test_archive PRIVATE -Wno-error=stringop-overread)
+    set_target_properties(test_archive PROPERTIES
+        RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin/release
+    )
+    
     enable_testing()
     add_test(NAME NIST_Vectors COMMAND nist_test_vectors)
     add_test(NAME Rainbow_Table COMMAND rainbow_table_test)
@@ -259,6 +291,10 @@ if(BUILD_TESTS)
     add_test(NAME Security_Nonce_Uniqueness COMMAND test_nonce_uniqueness)
     add_test(NAME Security_Salt_Uniqueness COMMAND test_salt_uniqueness)
     add_test(NAME Security_Timing_Attacks COMMAND test_timing_attacks)
+    add_test(NAME Hash_Functions COMMAND test_hash)
+    add_test(NAME Steganography COMMAND test_steganography)
+    add_test(NAME Archive_Format COMMAND test_archive)
+    add_test(NAME Twofish_GCM COMMAND test_twofish)
 endif()
 
 # Benchmarks - output to benchmarks/ directory

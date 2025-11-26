@@ -3,6 +3,7 @@
 #include "filevault/algorithms/symmetric/aes_gcm.hpp"
 #include "filevault/algorithms/symmetric/chacha20_poly1305.hpp"
 #include "filevault/algorithms/symmetric/serpent_gcm.hpp"
+#include "filevault/algorithms/symmetric/twofish_gcm.hpp"
 #include "filevault/algorithms/classical/caesar.hpp"
 #include "filevault/algorithms/classical/vigenere.hpp"
 #include "filevault/algorithms/classical/playfair.hpp"
@@ -35,6 +36,9 @@ void CryptoEngine::initialize() {
     register_algorithm(std::make_unique<algorithms::symmetric::AES_GCM>(256));
     register_algorithm(std::make_unique<algorithms::symmetric::ChaCha20Poly1305>());
     register_algorithm(std::make_unique<algorithms::symmetric::Serpent_GCM>());
+    register_algorithm(std::make_unique<algorithms::symmetric::Twofish_GCM>(128));
+    register_algorithm(std::make_unique<algorithms::symmetric::Twofish_GCM>(192));
+    register_algorithm(std::make_unique<algorithms::symmetric::Twofish_GCM>(256));
     
     // Register classical ciphers (educational only)
     register_algorithm(std::make_unique<algorithms::classical::Caesar>());
@@ -194,6 +198,9 @@ std::string CryptoEngine::algorithm_name(AlgorithmType type) {
         case AlgorithmType::AES_256_CBC: return "AES-256-CBC";
         case AlgorithmType::CHACHA20_POLY1305: return "ChaCha20-Poly1305";
         case AlgorithmType::SERPENT_256_GCM: return "Serpent-256-GCM";
+        case AlgorithmType::TWOFISH_128_GCM: return "Twofish-128-GCM";
+        case AlgorithmType::TWOFISH_192_GCM: return "Twofish-192-GCM";
+        case AlgorithmType::TWOFISH_256_GCM: return "Twofish-256-GCM";
         case AlgorithmType::CAESAR: return "Caesar";
         case AlgorithmType::VIGENERE: return "Vigenère";
         case AlgorithmType::PLAYFAIR: return "Playfair";
@@ -233,6 +240,9 @@ std::optional<AlgorithmType> CryptoEngine::parse_algorithm(const std::string& na
     if (lower == "aes-256-gcm" || lower == "aes256gcm") return AlgorithmType::AES_256_GCM;
     if (lower == "chacha20-poly1305" || lower == "chacha20") return AlgorithmType::CHACHA20_POLY1305;
     if (lower == "serpent-256-gcm" || lower == "serpent" || lower == "serpent256") return AlgorithmType::SERPENT_256_GCM;
+    if (lower == "twofish-128-gcm" || lower == "twofish128") return AlgorithmType::TWOFISH_128_GCM;
+    if (lower == "twofish-192-gcm" || lower == "twofish192") return AlgorithmType::TWOFISH_192_GCM;
+    if (lower == "twofish-256-gcm" || lower == "twofish" || lower == "twofish256") return AlgorithmType::TWOFISH_256_GCM;
     if (lower == "caesar") return AlgorithmType::CAESAR;
     if (lower == "vigenere" || lower == "vigenère") return AlgorithmType::VIGENERE;
     if (lower == "playfair") return AlgorithmType::PLAYFAIR;
