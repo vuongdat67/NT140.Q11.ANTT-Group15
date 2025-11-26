@@ -15,41 +15,33 @@ env:
 
 jobs:
   # ===========================================
-  # Linux Build - GCC
+  # Linux Build - GCC (GIỮ NGUYÊN)
   # ===========================================
   build-linux-gcc:
     runs-on: ubuntu-24.04
-    
     steps:
     - name: 📥 Checkout repository
       uses: actions/checkout@v4
       with:
         submodules: recursive
-
     - name: 🔧 Setup Python
       uses: actions/setup-python@v5
       with:
         python-version: '3.12'
-
     - name: 🛠️ Install GCC-13
       run: |
         sudo apt-get update
         sudo apt-get install -y gcc-13 g++-13
         sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-13 100
         sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-13 100
-
     - name: 📦 Install Conan
-      run: |
-        pip install conan==${{ env.CONAN_VERSION }}
-
+      run: pip install conan==${{ env.CONAN_VERSION }}
     - name: 📥 Cache Conan packages
       uses: actions/cache@v4
       with:
         path: ~/.conan2
         key: conan-linux-gcc13-${{ hashFiles('conanfile.txt') }}
-        restore-keys: |
-          conan-linux-gcc13-
-
+        restore-keys: conan-linux-gcc13-
     - name: 🔨 Configure Conan Profile
       run: |
         mkdir -p ~/.conan2/profiles
@@ -63,12 +55,10 @@ jobs:
         compiler.version=13
         os=Linux
         EOF
-
     - name: 📦 Install dependencies
       run: |
         mkdir -p build
         conan install . --output-folder=build --build=missing
-
     - name: 🔨 Configure CMake
       run: |
         cd build
@@ -76,17 +66,14 @@ jobs:
           -DCMAKE_BUILD_TYPE=${{ env.BUILD_TYPE }} \
           -DCMAKE_TOOLCHAIN_FILE=build/Release/generators/conan_toolchain.cmake \
           -DBUILD_TESTS=ON
-
     - name: 🏗️ Build
       run: |
         cd build
         cmake --build . --parallel $(nproc)
-
     - name: 🧪 Run Tests
       run: |
         cd build
         ctest --output-on-failure -j $(nproc)
-
     - name: 📤 Upload artifacts
       uses: actions/upload-artifact@v4
       with:
@@ -95,22 +82,19 @@ jobs:
         if-no-files-found: warn
 
   # ===========================================
-  # Linux Build - Clang
+  # Linux Build - Clang (GIỮ NGUYÊN)
   # ===========================================
   build-linux-clang:
     runs-on: ubuntu-24.04
-    
     steps:
     - name: 📥 Checkout repository
       uses: actions/checkout@v4
       with:
         submodules: recursive
-
     - name: 🔧 Setup Python
       uses: actions/setup-python@v5
       with:
         python-version: '3.12'
-
     - name: 🛠️ Install Clang-17 and libc++
       run: |
         wget https://apt.llvm.org/llvm.sh
@@ -119,19 +103,14 @@ jobs:
         sudo apt-get install -y libc++-17-dev libc++abi-17-dev
         sudo update-alternatives --install /usr/bin/clang clang /usr/bin/clang-17 100
         sudo update-alternatives --install /usr/bin/clang++ clang++ /usr/bin/clang++-17 100
-
     - name: 📦 Install Conan
-      run: |
-        pip install conan==${{ env.CONAN_VERSION }}
-
+      run: pip install conan==${{ env.CONAN_VERSION }}
     - name: 📥 Cache Conan packages
       uses: actions/cache@v4
       with:
         path: ~/.conan2
         key: conan-linux-clang17-${{ hashFiles('conanfile.txt') }}
-        restore-keys: |
-          conan-linux-clang17-
-
+        restore-keys: conan-linux-clang17-
     - name: 🔨 Configure Conan Profile
       run: |
         mkdir -p ~/.conan2/profiles
@@ -145,7 +124,6 @@ jobs:
         compiler.version=17
         os=Linux
         EOF
-
     - name: 📦 Install dependencies
       env:
         CC: clang-17
@@ -153,7 +131,6 @@ jobs:
       run: |
         mkdir -p build
         conan install . --output-folder=build --build=missing
-
     - name: 🔨 Configure CMake
       env:
         CC: clang-17
@@ -166,17 +143,14 @@ jobs:
           -DCMAKE_CXX_COMPILER=clang++-17 \
           -DCMAKE_TOOLCHAIN_FILE=build/Release/generators/conan_toolchain.cmake \
           -DBUILD_TESTS=ON
-
     - name: 🏗️ Build
       run: |
         cd build
         cmake --build . --parallel $(nproc)
-
     - name: 🧪 Run Tests
       run: |
         cd build
         ctest --output-on-failure -j $(nproc)
-
     - name: 📤 Upload artifacts
       uses: actions/upload-artifact@v4
       with:
@@ -185,7 +159,7 @@ jobs:
         if-no-files-found: warn
 
   # ===========================================
-  # Windows Build - MSVC (FIXED)
+  # Windows Build - MSVC (ĐÃ SỬA)
   # ===========================================
   build-windows-msvc:
     runs-on: windows-latest
@@ -201,17 +175,8 @@ jobs:
       with:
         python-version: '3.12'
 
-    - name: 🛠️ Setup MSVC with Ninja
-      uses: ilammy/msvc-dev-cmd@v1
-      with:
-        arch: x64
-
-    - name: 📦 Install Ninja
-      shell: pwsh
-      run: |
-        choco install ninja -y
-        ninja --version
-
+    # Sửa: Xóa bước ilammy/msvc-dev-cmd và ninja vì ta sẽ dùng VS Generator native
+    
     - name: 📦 Install Conan
       run: |
         pip install conan==${{ env.CONAN_VERSION }}
@@ -241,9 +206,6 @@ jobs:
         "@
         $profilePath = Join-Path $profileDir "default"
         [System.IO.File]::WriteAllText($profilePath, $profile)
-        
-        Write-Host "Profile created:"
-        Get-Content $profilePath
 
     - name: 📦 Install dependencies
       shell: pwsh
@@ -253,25 +215,27 @@ jobs:
 
     - name: 🔨 Configure CMake
       shell: pwsh
+      # Sửa: Đổi Generator sang Visual Studio 17 2022 để tương thích với Conan toolchain
       run: |
         cd build
-        # Conan 2.x generates to build/build/generators (không có /Release/)
-        cmake .. -G "Ninja" `
+        cmake .. -G "Visual Studio 17 2022" `
           -DCMAKE_BUILD_TYPE="${{ env.BUILD_TYPE }}" `
           -DCMAKE_TOOLCHAIN_FILE="${{ github.workspace }}/build/build/generators/conan_toolchain.cmake" `
           -DBUILD_TESTS=ON
 
     - name: 🏗️ Build
       shell: pwsh
+      # Sửa: Thêm --config Release vì VS là multi-configuration generator
       run: |
         cd build
-        cmake --build . --parallel
+        cmake --build . --config Release --parallel
 
     - name: 🧪 Run Tests
       shell: pwsh
+      # Sửa: Thêm -C Release cho ctest
       run: |
         cd build
-        ctest --output-on-failure -j $env:NUMBER_OF_PROCESSORS
+        ctest -C Release --output-on-failure -j $env:NUMBER_OF_PROCESSORS
 
     - name: 📤 Upload artifacts
       uses: actions/upload-artifact@v4
@@ -281,7 +245,7 @@ jobs:
         if-no-files-found: warn
 
   # ===========================================
-  # Windows Build - MinGW (FIXED)
+  # Windows Build - MinGW (ĐÃ SỬA)
   # ===========================================
   build-windows-mingw:
     runs-on: windows-latest
@@ -297,7 +261,10 @@ jobs:
       with:
         msystem: UCRT64
         update: true
+        # Sửa: Thêm 'make' và 'mingw-w64-ucrt-x86_64-make' vào danh sách cài đặt
         install: >-
+          make
+          mingw-w64-ucrt-x86_64-make
           mingw-w64-ucrt-x86_64-gcc
           mingw-w64-ucrt-x86_64-cmake
           mingw-w64-ucrt-x86_64-ninja
@@ -315,11 +282,8 @@ jobs:
     - name: 📦 Install Conan and Configure Profile
       shell: msys2 {0}
       run: |
-        # Install Conan
         pip install --break-system-packages conan==${{ env.CONAN_VERSION }}
         
-        # Tạo profile tại Windows path (C:/Users/runneradmin/.conan2/profiles/)
-        # KHÔNG dùng ~/.conan2 vì trong MSYS2 đó là path khác
         PROFILE_DIR="/c/Users/runneradmin/.conan2/profiles"
         mkdir -p "$PROFILE_DIR"
         
@@ -331,9 +295,6 @@ jobs:
         echo "compiler.libcxx=libstdc++11" >> "$PROFILE_DIR/default"
         echo "compiler.version=14" >> "$PROFILE_DIR/default"
         echo "os=Windows" >> "$PROFILE_DIR/default"
-        
-        echo "=== MinGW GCC Profile ==="
-        cat "$PROFILE_DIR/default"
 
     - name: 📦 Install dependencies
       shell: msys2 {0}
@@ -370,34 +331,27 @@ jobs:
         if-no-files-found: warn
 
   # ===========================================
-  # macOS Build
+  # macOS Build (GIỮ NGUYÊN)
   # ===========================================
   build-macos:
-    runs-on: macos-14  # Apple Silicon (ARM64)
-
+    runs-on: macos-14
     steps:
     - name: 📥 Checkout repository
       uses: actions/checkout@v4
       with:
         submodules: recursive
-
     - name: 🔧 Setup Python
       uses: actions/setup-python@v5
       with:
         python-version: '3.12'
-
     - name: 📦 Install Conan
-      run: |
-        pip install conan==${{ env.CONAN_VERSION }}
-
+      run: pip install conan==${{ env.CONAN_VERSION }}
     - name: 📥 Cache Conan packages
       uses: actions/cache@v4
       with:
         path: ~/.conan2
         key: conan-macos-arm64-${{ hashFiles('conanfile.txt') }}
-        restore-keys: |
-          conan-macos-arm64-
-
+        restore-keys: conan-macos-arm64-
     - name: 🔨 Configure Conan Profile
       run: |
         mkdir -p ~/.conan2/profiles
@@ -411,12 +365,10 @@ jobs:
         compiler.version=16
         os=Macos
         EOF
-
     - name: 📦 Install dependencies
       run: |
         mkdir -p build
         conan install . --output-folder=build --build=missing
-
     - name: 🔨 Configure CMake
       run: |
         cd build
@@ -425,17 +377,14 @@ jobs:
           -DCMAKE_TOOLCHAIN_FILE=build/Release/generators/conan_toolchain.cmake \
           -DCMAKE_OSX_ARCHITECTURES=arm64 \
           -DBUILD_TESTS=ON
-
     - name: 🏗️ Build
       run: |
         cd build
         cmake --build . --parallel $(sysctl -n hw.ncpu)
-
     - name: 🧪 Run Tests
       run: |
         cd build
         ctest --output-on-failure -j $(sysctl -n hw.ncpu)
-
     - name: 📤 Upload artifacts
       uses: actions/upload-artifact@v4
       with:
@@ -444,40 +393,33 @@ jobs:
         if-no-files-found: warn
 
   # ===========================================
-  # Code Quality Checks
+  # Code Quality Checks & Release (GIỮ NGUYÊN)
   # ===========================================
   code-quality:
     runs-on: ubuntu-latest
     steps:
     - name: 📥 Checkout repository
       uses: actions/checkout@v4
-
     - name: 🔍 Check file encodings
       run: |
         echo "Checking for non-UTF-8 files..."
         find . -name "*.cpp" -o -name "*.hpp" -o -name "*.h" | \
           xargs -I {} sh -c 'file -i {} | grep -v "utf-8\|us-ascii" && echo "Warning: {} may not be UTF-8" || true'
-
     - name: 🔍 Check line endings
       run: |
         echo "Checking for CRLF line endings in source files..."
         find . -name "*.cpp" -o -name "*.hpp" | \
           xargs -I {} sh -c 'grep -l $'"'"'\r'"'"' {} && echo "Warning: {} has CRLF" || true'
 
-  # ===========================================
-  # Release Job (only on tags)
-  # ===========================================
   release:
     needs: [build-linux-gcc, build-linux-clang, build-windows-msvc, build-windows-mingw, build-macos]
     runs-on: ubuntu-latest
     if: startsWith(github.ref, 'refs/tags/v')
-    
     steps:
     - name: 📥 Download all artifacts
       uses: actions/download-artifact@v4
       with:
         path: artifacts
-
     - name: 📦 Create Release Archives
       run: |
         cd artifacts
@@ -489,7 +431,6 @@ jobs:
             zip -j "${name}.zip" "$dir/filevault.exe"
           fi
         done
-
     - name: 🚀 Create GitHub Release
       uses: softprops/action-gh-release@v1
       with:
