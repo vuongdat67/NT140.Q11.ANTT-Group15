@@ -31,23 +31,29 @@ function getExecutablePath(): string {
     const config = vscode.workspace.getConfiguration('filevault');
     const configPath = config.get<string>('executablePath');
     
-    if (configPath && configPath.length > 0) {
+    if (configPath && configPath.length > 0 && fs.existsSync(configPath)) {
         return configPath;
     }
     
-    // Try common locations
+    // Try common locations on Windows
     const possiblePaths = [
-        'filevault',
-        'filevault.exe',
-        path.join(process.env.PROGRAMFILES || '', 'FileVault', 'filevault.exe'),
+        // Current workspace
+        path.join(vscode.workspace.workspaceFolders?.[0]?.uri.fsPath || '', 'build', 'build', 'Release', 'bin', 'release', 'filevault.exe'),
+        path.join(vscode.workspace.workspaceFolders?.[0]?.uri.fsPath || '', 'dist', 'filevault.exe'),
+        // Common install locations
+        path.join(process.env.PROGRAMFILES || 'C:\\Program Files', 'FileVault', 'filevault.exe'),
         path.join(process.env.LOCALAPPDATA || '', 'FileVault', 'filevault.exe'),
+        path.join(process.env.USERPROFILE || '', 'filevault', 'filevault.exe'),
+        // Linux/macOS
         '/usr/local/bin/filevault',
-        '/usr/bin/filevault'
+        '/usr/bin/filevault',
+        path.join(process.env.HOME || '', '.local', 'bin', 'filevault')
     ];
     
     for (const p of possiblePaths) {
         try {
-            if (fs.existsSync(p)) {
+            if (p && fs.existsSync(p)) {
+                outputChannel.appendLine(`Found FileVault at: ${p}`);
                 return p;
             }
         } catch {
@@ -55,7 +61,17 @@ function getExecutablePath(): string {
         }
     }
     
-    return 'filevault';
+    // Not found - prompt user
+    vscode.window.showWarningMessage(
+        'FileVault executable not found. Please configure the path in settings.',
+        'Open Settings'
+    ).then(selection => {
+        if (selection === 'Open Settings') {
+            vscode.commands.executeCommand('workbench.action.openSettings', 'filevault.executablePath');
+        }
+    });
+    
+    return configPath || 'filevault';
 }
 
 // Run FileVault command

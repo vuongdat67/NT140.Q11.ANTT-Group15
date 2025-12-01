@@ -433,34 +433,4 @@ jobs:
         find . -name "*.cpp" -o -name "*.hpp" | \
           xargs -I {} sh -c 'file -i {} | grep -v "utf-8\|us-ascii" || true'
 
-  # ===========================================
-  # Release
-  # ===========================================
-  release:
-    needs: [build-linux-gcc, build-linux-clang, build-windows-msvc, build-windows-mingw, build-macos]
-    runs-on: ubuntu-latest
-    if: startsWith(github.ref, 'refs/tags/v')
-    
-    steps:
-    - uses: actions/download-artifact@v4
-      with:
-        path: artifacts
-
-    - name: Create Archives
-      run: |
-        cd artifacts
-        for dir in */; do
-          name="${dir%/}"
-          if [[ -f "$dir/filevault" ]]; then
-            tar -czvf "${name}.tar.gz" -C "$dir" filevault
-          elif [[ -f "$dir/filevault.exe" ]]; then
-            zip -j "${name}.zip" "$dir/filevault.exe"
-          fi
-        done
-
-    - uses: softprops/action-gh-release@v1
-      with:
-        files: artifacts/*.tar.gz,artifacts/*.zip
-        generate_release_notes: true
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  # Note: Release is handled by release.yml workflow
