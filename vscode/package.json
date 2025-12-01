@@ -68,6 +68,11 @@
         "icon": "$(dashboard)"
       },
       {
+        "command": "filevault.list",
+        "title": "FileVault: List All Algorithms",
+        "icon": "$(list-unordered)"
+      },
+      {
         "command": "filevault.setExecutablePath",
         "title": "FileVault: Set Executable Path",
         "icon": "$(gear)"
@@ -125,7 +130,35 @@
             "aes-256-gcm",
             "chacha20-poly1305",
             "serpent-256-gcm",
-            "kyber-1024-hybrid"
+            "twofish-128-gcm",
+            "twofish-256-gcm",
+            "camellia-256-gcm",
+            "aria-256-gcm",
+            "sm4-gcm",
+            "kyber-512-hybrid",
+            "kyber-768-hybrid",
+            "kyber-1024-hybrid",
+            "aes-256-cbc",
+            "aes-256-ctr",
+            "aes-256-xts"
+          ],
+          "enumDescriptions": [
+            "AES-128-GCM - Fast, NIST standard",
+            "AES-192-GCM - Balanced security",
+            "AES-256-GCM - Recommended, maximum security",
+            "ChaCha20-Poly1305 - Fast software implementation",
+            "Serpent-256-GCM - Maximum security, AES finalist",
+            "Twofish-128-GCM - AES finalist, 128-bit",
+            "Twofish-256-GCM - AES finalist, 256-bit",
+            "Camellia-256-GCM - Japan CRYPTREC standard",
+            "ARIA-256-GCM - Korea KS X 1213 standard",
+            "SM4-GCM - China GB/T 32907 standard",
+            "Kyber-512-Hybrid - Post-Quantum, NIST Level 1",
+            "Kyber-768-Hybrid - Post-Quantum, NIST Level 3",
+            "Kyber-1024-Hybrid - Post-Quantum, NIST Level 5",
+            "AES-256-CBC - Block mode with HMAC",
+            "AES-256-CTR - Counter mode",
+            "AES-256-XTS - Disk encryption mode"
           ],
           "description": "Default encryption algorithm"
         },

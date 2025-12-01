@@ -91,6 +91,23 @@ npm run watch
 # Package extension
 npx @vscode/vsce package
 ```
+1. Using Command Palette
+- `Ctrl + Shift + P`
+- FileVault: Set Executable Path
+- Select `filevault.exe`
+or
+2. Settings
+- `Ctrl + ,` (Settings)
+- Find filevault.executablePath
+- Type filevault.exe
+or
+3. settings.json
+```json
+{
+    "filevault.executablePath": "D:\\code\\filevault\\build\\build\\Release\\bin\\release\\filevault.exe"
+}
+```
+
 
 ## License
 

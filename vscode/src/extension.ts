@@ -16,8 +16,12 @@ export function activate(context: vscode.ExtensionContext) {
         vscode.commands.registerCommand('filevault.keygen', generateKeyPair),
         vscode.commands.registerCommand('filevault.hash', calculateHash),
         vscode.commands.registerCommand('filevault.benchmark', runBenchmark),
+        vscode.commands.registerCommand('filevault.list', listAlgorithms),
         vscode.commands.registerCommand('filevault.setExecutablePath', setExecutablePath)
     );
+
+    // Auto-detect executable on activation
+    autoDetectExecutable();
     
     outputChannel.appendLine('FileVault extension activated');
 }
@@ -72,6 +76,57 @@ function getExecutablePath(): string {
     });
     
     return configPath || 'filevault';
+}
+
+// Auto-detect and save executable path
+async function autoDetectExecutable(): Promise<void> {
+    const config = vscode.workspace.getConfiguration('filevault');
+    const configPath = config.get<string>('executablePath');
+    
+    // Already configured
+    if (configPath && configPath.length > 0 && fs.existsSync(configPath)) {
+        outputChannel.appendLine(`FileVault configured at: ${configPath}`);
+        return;
+    }
+    
+    // Try to find executable
+    const isWin = process.platform === 'win32';
+    const exeName = isWin ? 'filevault.exe' : 'filevault';
+    
+    const possiblePaths = [
+        // Current workspace build paths
+        path.join(vscode.workspace.workspaceFolders?.[0]?.uri.fsPath || '', 'build', 'build', 'Release', 'bin', 'release', exeName),
+        path.join(vscode.workspace.workspaceFolders?.[0]?.uri.fsPath || '', 'build', 'build', 'Release', 'bin', exeName),
+        path.join(vscode.workspace.workspaceFolders?.[0]?.uri.fsPath || '', 'build', 'Release', exeName),
+        path.join(vscode.workspace.workspaceFolders?.[0]?.uri.fsPath || '', 'build', exeName),
+        path.join(vscode.workspace.workspaceFolders?.[0]?.uri.fsPath || '', 'dist', exeName),
+        path.join(vscode.workspace.workspaceFolders?.[0]?.uri.fsPath || '', 'bin', exeName),
+        // Common install locations
+        path.join(process.env.PROGRAMFILES || 'C:\\Program Files', 'FileVault', exeName),
+        path.join(process.env.LOCALAPPDATA || '', 'FileVault', exeName),
+        path.join(process.env.USERPROFILE || '', 'filevault', exeName),
+        // Linux/macOS
+        '/usr/local/bin/filevault',
+        '/usr/bin/filevault',
+        path.join(process.env.HOME || '', '.local', 'bin', 'filevault')
+    ];
+    
+    for (const p of possiblePaths) {
+        try {
+            if (p && fs.existsSync(p)) {
+                // Found! Save to config
+                await config.update('executablePath', p, vscode.ConfigurationTarget.Global);
+                outputChannel.appendLine(`Auto-detected FileVault at: ${p}`);
+                vscode.window.showInformationMessage(`FileVault found: ${path.basename(path.dirname(p))}/${path.basename(p)}`);
+                return;
+            }
+        } catch {
+            // Ignore
+        }
+    }
+    
+    // Not found - show notification
+    outputChannel.appendLine('FileVault executable not found in common locations');
 }
 
 // Run FileVault command
@@ -132,13 +187,23 @@ async function encryptFile(uri?: vscode.Uri) {
         // Get algorithm
         const config = vscode.workspace.getConfiguration('filevault');
         const algorithms = [
-            { label: 'AES-256-GCM', description: 'Recommended - NIST Standard', value: 'aes-256-gcm' },
-            { label: 'ChaCha20-Poly1305', description: 'Fast software implementation', value: 'chacha20-poly1305' },
-            { label: 'Kyber-1024-Hybrid', description: 'Post-Quantum Resistant', value: 'kyber-1024-hybrid' },
-            { label: 'Serpent-256-GCM', description: 'Maximum security', value: 'serpent-256-gcm' },
-            { label: 'Camellia-256-GCM', description: 'Japan Standard', value: 'camellia-256-gcm' },
-            { label: 'ARIA-256-GCM', description: 'Korea Standard', value: 'aria-256-gcm' },
-            { label: 'SM4-GCM', description: 'China Standard', value: 'sm4-gcm' }
+            // AEAD (Recommended)
+            { label: '$(shield) AES-256-GCM', description: 'Recommended - NIST Standard', value: 'aes-256-gcm' },
+            { label: '$(shield) AES-128-GCM', description: 'Fast - NIST Standard', value: 'aes-128-gcm' },
+            { label: '$(shield) ChaCha20-Poly1305', description: 'Fast software implementation', value: 'chacha20-poly1305' },
+            { label: '$(shield) Serpent-256-GCM', description: 'Maximum security - AES finalist', value: 'serpent-256-gcm' },
+            { label: '$(shield) Twofish-256-GCM', description: 'AES finalist', value: 'twofish-256-gcm' },
+            { label: '$(shield) Camellia-256-GCM', description: 'Japan (CRYPTREC)', value: 'camellia-256-gcm' },
+            { label: '$(shield) ARIA-256-GCM', description: 'Korea (KS X 1213)', value: 'aria-256-gcm' },
+            { label: '$(shield) SM4-GCM', description: 'China (GB/T 32907)', value: 'sm4-gcm' },
+            // Post-Quantum
+            { label: '$(rocket) Kyber-1024-Hybrid', description: 'Post-Quantum - NIST Level 5', value: 'kyber-1024-hybrid' },
+            { label: '$(rocket) Kyber-768-Hybrid', description: 'Post-Quantum - NIST Level 3', value: 'kyber-768-hybrid' },
+            { label: '$(rocket) Kyber-512-Hybrid', description: 'Post-Quantum - NIST Level 1', value: 'kyber-512-hybrid' },
+            // Block modes
+            { label: '$(lock) AES-256-CBC', description: 'Block mode + HMAC', value: 'aes-256-cbc' },
+            { label: '$(lock) AES-256-CTR', description: 'Counter mode', value: 'aes-256-ctr' },
+            { label: '$(lock) AES-256-XTS', description: 'Disk encryption mode', value: 'aes-256-xts' }
         ];
         
         const algorithm = await vscode.window.showQuickPick(algorithms, {
@@ -535,6 +600,29 @@ async function runBenchmark() {
         
     } catch (error: any) {
         vscode.window.showErrorMessage(`Benchmark failed: ${error.message}`);
+    }
+}
+
+// List all algorithms
+async function listAlgorithms() {
+    try {
+        outputChannel.show();
+        outputChannel.appendLine('\n========================================');
+        outputChannel.appendLine('FileVault - Available Algorithms');
+        outputChannel.appendLine('========================================\n');
+        
+        await vscode.window.withProgress({
+            location: vscode.ProgressLocation.Notification,
+            title: 'Loading algorithms...',
+            cancellable: false
+        }, async () => {
+            await runFileVault(['list']);
+        });
+        
+        vscode.window.showInformationMessage('See Output panel for full algorithm list');
+        
+    } catch (error: any) {
+        vscode.window.showErrorMessage(`Failed to list algorithms: ${error.message}`);
     }
 }
 
