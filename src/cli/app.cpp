@@ -22,6 +22,21 @@ Application::Application()
     // Require subcommand or show help
     app_.require_subcommand(0);
     app_.set_help_all_flag("--help-all", "Show all help");
+    
+    // Add footer with quick examples
+    app_.footer(
+        "\nQuick Examples:\n"
+        "  Encrypt file:        filevault encrypt document.txt -m standard\n"
+        "  Decrypt file:        filevault decrypt document.txt.fvlt\n"
+        "  Hash file:           filevault hash document.txt -a sha256\n"
+        "  Compress file:       filevault compress large_file.txt -a lzma\n"
+        "  Create archive:      filevault archive create *.txt -o archive.fva\n"
+        "  Hide data in image:  filevault stego embed secret.txt image.png output.png\n"
+        "  List algorithms:     filevault list\n"
+        "  Show config:         filevault config show\n"
+        "\n"
+        "For detailed usage examples, see USAGE.md or run: <command> --help\n"
+    );
 }
 
 Application::~Application() = default;
