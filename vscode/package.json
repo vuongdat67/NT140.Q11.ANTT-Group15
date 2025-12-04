@@ -34,8 +34,12 @@
     "onCommand:filevault.benchmark",
     "onCommand:filevault.hash",
     "onCommand:filevault.compress",
-    "onCommand:filevault.archive",
-    "onCommand:filevault.stego"
+    "onCommand:filevault.decompress",
+    "onCommand:filevault.archiveCreate",
+    "onCommand:filevault.archiveExtract",
+    "onCommand:filevault.stegoEmbed",
+    "onCommand:filevault.stegoExtract",
+    "onCommand:filevault.stegoCapacity"
   ],
   "main": "./out/extension.js",
   "contributes": {
@@ -81,14 +85,34 @@
         "icon": "$(archive)"
       },
       {
-        "command": "filevault.archive",
+        "command": "filevault.decompress",
+        "title": "FileVault: Decompress File",
+        "icon": "$(archive)"
+      },
+      {
+        "command": "filevault.archiveCreate",
         "title": "FileVault: Create Archive",
         "icon": "$(file-zip)"
       },
       {
-        "command": "filevault.stego",
-        "title": "FileVault: Steganography",
+        "command": "filevault.archiveExtract",
+        "title": "FileVault: Extract Archive",
+        "icon": "$(file-zip)"
+      },
+      {
+        "command": "filevault.stegoEmbed",
+        "title": "FileVault: Steganography - Embed Data",
         "icon": "$(eye-closed)"
+      },
+      {
+        "command": "filevault.stegoExtract",
+        "title": "FileVault: Steganography - Extract Data",
+        "icon": "$(eye)"
+      },
+      {
+        "command": "filevault.stegoCapacity",
+        "title": "FileVault: Steganography - Check Capacity",
+        "icon": "$(dashboard)"
       },
       {
         "command": "filevault.setExecutablePath",
@@ -124,9 +148,34 @@
           "group": "filevault@5"
         },
         {
-          "command": "filevault.stego",
-          "when": "!explorerResourceIsFolder && resourceExtname =~ /\\.(png|bmp)$/",
+          "command": "filevault.decompress",
+          "when": "!explorerResourceIsFolder && resourceExtname =~ /\\.(zlib|bz2|lzma|xz)$/",
           "group": "filevault@6"
+        },
+        {
+          "command": "filevault.archiveCreate",
+          "when": "explorerResourceIsFolder",
+          "group": "filevault@7"
+        },
+        {
+          "command": "filevault.archiveExtract",
+          "when": "!explorerResourceIsFolder && resourceExtname == '.fva'",
+          "group": "filevault@8"
+        },
+        {
+          "command": "filevault.stegoEmbed",
+          "when": "!explorerResourceIsFolder && resourceExtname =~ /\\.(png|bmp)$/",
+          "group": "filevault@9"
+        },
+        {
+          "command": "filevault.stegoExtract",
+          "when": "!explorerResourceIsFolder && resourceExtname =~ /\\.(png|bmp)$/",
+          "group": "filevault@10"
+        },
+        {
+          "command": "filevault.stegoCapacity",
+          "when": "!explorerResourceIsFolder && resourceExtname =~ /\\.(png|bmp)$/",
+          "group": "filevault@11"
         }
       ],
       "editor/context": [

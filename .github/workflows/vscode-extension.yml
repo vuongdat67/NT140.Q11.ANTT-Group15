@@ -1,0 +1,59 @@
+name: Build VSCode Extension
+
+on:
+  push:
+    branches: [ master, main ]
+    paths:
+      - 'vscode/**'
+  pull_request:
+    branches: [ master, main ]
+    paths:
+      - 'vscode/**'
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: windows-latest
+    
+    defaults:
+      run:
+        working-directory: vscode
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+    
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+        cache: 'npm'
+        cache-dependency-path: vscode/package-lock.json
+    
+    - name: Install dependencies
+      run: npm ci
+    
+    - name: Compile TypeScript
+      run: npm run compile
+    
+    - name: Lint
+      run: npm run lint
+      continue-on-error: true
+    
+    - name: Package extension
+      run: npx vsce package --out filevault-extension.vsix
+    
+    - name: Upload VSIX artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: filevault-vscode-extension
+        path: vscode/filevault-extension.vsix
+        retention-days: 30
+    
+    - name: Create release (on tag)
+      if: startsWith(github.ref, 'refs/tags/v')
+      uses: softprops/action-gh-release@v1
+      with:
+        files: vscode/filevault-extension.vsix
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -18,8 +18,12 @@ export function activate(context: vscode.ExtensionContext) {
         vscode.commands.registerCommand('filevault.benchmark', runBenchmark),
         vscode.commands.registerCommand('filevault.list', listAlgorithms),
         vscode.commands.registerCommand('filevault.compress', compressFile),
-        vscode.commands.registerCommand('filevault.archive', createArchive),
-        vscode.commands.registerCommand('filevault.stego', steganography),
+        vscode.commands.registerCommand('filevault.decompress', decompressFile),
+        vscode.commands.registerCommand('filevault.archiveCreate', createArchive),
+        vscode.commands.registerCommand('filevault.archiveExtract', extractArchive),
+        vscode.commands.registerCommand('filevault.stegoEmbed', stegoEmbed),
+        vscode.commands.registerCommand('filevault.stegoExtract', stegoExtract),
+        vscode.commands.registerCommand('filevault.stegoCapacity', stegoCapacity),
         vscode.commands.registerCommand('filevault.setExecutablePath', setExecutablePath)
     );
 
@@ -200,52 +204,78 @@ async function encryptFile(uri?: vscode.Uri) {
             filePath = fileUri[0].fsPath;
         }
         
-        // Get algorithm
+        // Get config and choose mode or custom
         const config = vscode.workspace.getConfiguration('filevault');
-        const algorithms = [
-            // AEAD (Recommended)
-            { label: '$(shield) AES-256-GCM', description: 'Recommended - NIST Standard', value: 'aes-256-gcm' },
-            { label: '$(shield) AES-128-GCM', description: 'Fast - NIST Standard', value: 'aes-128-gcm' },
-            { label: '$(shield) ChaCha20-Poly1305', description: 'Fast software implementation', value: 'chacha20-poly1305' },
-            { label: '$(shield) Serpent-256-GCM', description: 'Maximum security - AES finalist', value: 'serpent-256-gcm' },
-            { label: '$(shield) Twofish-256-GCM', description: 'AES finalist', value: 'twofish-256-gcm' },
-            { label: '$(shield) Camellia-256-GCM', description: 'Japan (CRYPTREC)', value: 'camellia-256-gcm' },
-            { label: '$(shield) ARIA-256-GCM', description: 'Korea (KS X 1213)', value: 'aria-256-gcm' },
-            { label: '$(shield) SM4-GCM', description: 'China (GB/T 32907)', value: 'sm4-gcm' },
-            // Post-Quantum
-            { label: '$(rocket) Kyber-1024-Hybrid', description: 'Post-Quantum - NIST Level 5', value: 'kyber-1024-hybrid' },
-            { label: '$(rocket) Kyber-768-Hybrid', description: 'Post-Quantum - NIST Level 3', value: 'kyber-768-hybrid' },
-            { label: '$(rocket) Kyber-512-Hybrid', description: 'Post-Quantum - NIST Level 1', value: 'kyber-512-hybrid' },
-            // Block modes
-            { label: '$(lock) AES-256-CBC', description: 'Block mode + HMAC', value: 'aes-256-cbc' },
-            { label: '$(lock) AES-256-CTR', description: 'Counter mode', value: 'aes-256-ctr' },
-            { label: '$(lock) AES-256-XTS', description: 'Disk encryption mode', value: 'aes-256-xts' }
-        ];
         
-        const algorithm = await vscode.window.showQuickPick(algorithms, {
-            placeHolder: 'Select encryption algorithm',
-            title: 'Encryption Algorithm'
+        // First ask: use preset mode or custom?
+        const modeChoice = await vscode.window.showQuickPick([
+            { label: '$(rocket) Basic Mode', description: 'Fast encryption, good security (casual use)', value: 'basic' },
+            { label: '$(shield) Standard Mode', description: 'Balanced security & performance (recommended)', value: 'standard' },
+            { label: '$(lock) Advanced Mode', description: 'Maximum security, slower (high-value data)', value: 'advanced' },
+            { label: '$(settings-gear) Custom', description: 'Choose algorithm and security manually', value: 'custom' }
+        ], {
+            placeHolder: 'Select encryption mode',
+            title: 'Encryption Mode'
         });
         
-        if (!algorithm) {
+        if (!modeChoice) {
             return;
         }
         
-        // Get security level
-        const securityLevels = [
-            { label: 'Medium', description: 'Recommended - balanced security/performance', value: 'medium' },
-            { label: 'Strong', description: 'Higher security, slower', value: 'strong' },
-            { label: 'Paranoid', description: 'Maximum security, slowest', value: 'paranoid' },
-            { label: 'Weak', description: 'Fast, for testing only', value: 'weak' }
-        ];
+        let algorithm: any = null;
+        let security: any = null;
+        let useMode: string | null = null;
         
-        const security = await vscode.window.showQuickPick(securityLevels, {
-            placeHolder: 'Select security level',
-            title: 'Security Level'
-        });
-        
-        if (!security) {
-            return;
+        if (modeChoice.value !== 'custom') {
+            // Use mode preset
+            useMode = modeChoice.value;
+        } else {
+            // Custom: ask for algorithm and security
+            const algorithms = [
+                // AEAD (Recommended)
+                { label: '$(shield) AES-256-GCM', description: 'Recommended - NIST Standard', value: 'aes-256-gcm' },
+                { label: '$(shield) AES-128-GCM', description: 'Fast - NIST Standard', value: 'aes-128-gcm' },
+                { label: '$(shield) ChaCha20-Poly1305', description: 'Fast software implementation', value: 'chacha20-poly1305' },
+                { label: '$(shield) Serpent-256-GCM', description: 'Maximum security - AES finalist', value: 'serpent-256-gcm' },
+                { label: '$(shield) Twofish-256-GCM', description: 'AES finalist', value: 'twofish-256-gcm' },
+                { label: '$(shield) Camellia-256-GCM', description: 'Japan (CRYPTREC)', value: 'camellia-256-gcm' },
+                { label: '$(shield) ARIA-256-GCM', description: 'Korea (KS X 1213)', value: 'aria-256-gcm' },
+                { label: '$(shield) SM4-GCM', description: 'China (GB/T 32907)', value: 'sm4-gcm' },
+                // Post-Quantum
+                { label: '$(rocket) Kyber-1024-Hybrid', description: 'Post-Quantum - NIST Level 5', value: 'kyber-1024-hybrid' },
+                { label: '$(rocket) Kyber-768-Hybrid', description: 'Post-Quantum - NIST Level 3', value: 'kyber-768-hybrid' },
+                { label: '$(rocket) Kyber-512-Hybrid', description: 'Post-Quantum - NIST Level 1', value: 'kyber-512-hybrid' },
+                // Block modes
+                { label: '$(lock) AES-256-CBC', description: 'Block mode + HMAC', value: 'aes-256-cbc' },
+                { label: '$(lock) AES-256-CTR', description: 'Counter mode', value: 'aes-256-ctr' },
+                { label: '$(lock) AES-256-XTS', description: 'Disk encryption mode', value: 'aes-256-xts' }
+            ];
+            
+            algorithm = await vscode.window.showQuickPick(algorithms, {
+                placeHolder: 'Select encryption algorithm',
+                title: 'Encryption Algorithm'
+            });
+            
+            if (!algorithm) {
+                return;
+            }
+            
+            // Get security level
+            const securityLevels = [
+                { label: 'Medium', description: 'Recommended - balanced security/performance', value: 'medium' },
+                { label: 'Strong', description: 'Higher security, slower', value: 'strong' },
+                { label: 'Paranoid', description: 'Maximum security, slowest', value: 'paranoid' },
+                { label: 'Weak', description: 'Fast, for testing only', value: 'weak' }
+            ];
+            
+            security = await vscode.window.showQuickPick(securityLevels, {
+                placeHolder: 'Select security level',
+                title: 'Security Level'
+            });
+            
+            if (!security) {
+                return;
+            }
         }
         
         // Get password
@@ -285,14 +315,20 @@ async function encryptFile(uri?: vscode.Uri) {
             title: 'Encrypting file...',
             cancellable: false
         }, async () => {
-            await runFileVault([
-                'encrypt',
-                filePath,
-                outputPath,
-                '-a', algorithm.value,
-                '-s', security.value,
-                '-p', password
-            ]);
+            const args = ['encrypt', filePath, outputPath];
+            
+            if (useMode) {
+                // Use mode preset
+                args.push('-m', useMode);
+            } else {
+                // Use custom algorithm and security
+                args.push('-a', algorithm.value);
+                args.push('-s', security.value);
+            }
+            
+            args.push('-p', password);
+            
+            await runFileVault(args);
         });
         
         const showNotifications = config.get<boolean>('showNotifications', true);
@@ -732,8 +768,9 @@ async function createArchive() {
             placeHolder: 'Leave empty for no encryption'
         });
         
-        const args = ['archive', 'create', outputPath.fsPath];
+        const args = ['archive', 'create'];
         files.forEach(f => args.push(f.fsPath));
+        args.push('-o', outputPath.fsPath);
         
         if (password && password.length > 0) {
             args.push('-p', password);
@@ -808,10 +845,10 @@ async function steganography(uri?: vscode.Uri) {
             }, async () => {
                 await runFileVault([
                     'stego',
-                    'hide',
-                    coverImage[0].fsPath,
+                    'embed',
                     dataFile[0].fsPath,
-                    '-o', outputPath
+                    coverImage[0].fsPath,
+                    outputPath
                 ]);
             });
             
@@ -849,7 +886,7 @@ async function steganography(uri?: vscode.Uri) {
                     'stego',
                     'extract',
                     stegoImage[0].fsPath,
-                    '-o', outputPath
+                    outputPath
                 ]);
             });
             
@@ -868,6 +905,267 @@ async function steganography(uri?: vscode.Uri) {
         
     } catch (error: any) {
         vscode.window.showErrorMessage(`Steganography operation failed: ${error.message}`);
+    }
+}
+
+// Decompress file
+async function decompressFile(uri?: vscode.Uri) {
+    try {
+        let filePath: string;
+        if (uri) {
+            filePath = uri.fsPath;
+        } else {
+            const fileUri = await vscode.window.showOpenDialog({
+                canSelectMany: false,
+                title: 'Select file to decompress',
+                filters: {
+                    'Compressed Files': ['zlib', 'bz2', 'lzma', 'xz']
+                }
+            });
+            if (!fileUri || fileUri.length === 0) {
+                return;
+            }
+            filePath = fileUri[0].fsPath;
+        }
+        
+        const outputPath = filePath.replace(/\.(zlib|bz2|lzma|xz)$/i, '');
+        
+        await vscode.window.withProgress({
+            location: vscode.ProgressLocation.Notification,
+            title: 'Decompressing...',
+            cancellable: false
+        }, async () => {
+            await runFileVault(['decompress', filePath, outputPath]);
+        });
+        
+        vscode.window.showInformationMessage(
+            `File decompressed: ${path.basename(outputPath)}`,
+            'Open Folder'
+        ).then((result: any) => {
+            if (result === 'Open Folder') {
+                vscode.commands.executeCommand('revealFileInOS', vscode.Uri.file(outputPath));
+            }
+        });
+        
+    } catch (error: any) {
+        vscode.window.showErrorMessage(`Decompression failed: ${error.message}`);
+    }
+}
+
+// Extract archive
+async function extractArchive(uri?: vscode.Uri) {
+    try {
+        let archivePath: string;
+        if (uri) {
+            archivePath = uri.fsPath;
+        } else {
+            const fileUri = await vscode.window.showOpenDialog({
+                canSelectMany: false,
+                title: 'Select archive to extract',
+                filters: {
+                    'FileVault Archive': ['fva']
+                }
+            });
+            if (!fileUri || fileUri.length === 0) {
+                return;
+            }
+            archivePath = fileUri[0].fsPath;
+        }
+        
+        const outputDir = await vscode.window.showOpenDialog({
+            canSelectFiles: false,
+            canSelectFolders: true,
+            canSelectMany: false,
+            title: 'Select output directory'
+        });
+        
+        if (!outputDir || outputDir.length === 0) {
+            return;
+        }
+        
+        const password = await vscode.window.showInputBox({
+            prompt: 'Enter archive password',
+            password: true,
+            placeHolder: 'Password'
+        });
+        
+        if (!password) {
+            return;
+        }
+        
+        await vscode.window.withProgress({
+            location: vscode.ProgressLocation.Notification,
+            title: 'Extracting archive...',
+            cancellable: false
+        }, async () => {
+            await runFileVault([
+                'archive', 'extract',
+                archivePath,
+                '-o', outputDir[0].fsPath,
+                '-p', password
+            ]);
+        });
+        
+        vscode.window.showInformationMessage(
+            'Archive extracted successfully',
+            'Open Folder'
+        ).then((result: any) => {
+            if (result === 'Open Folder') {
+                vscode.commands.executeCommand('revealFileInOS', outputDir[0]);
+            }
+        });
+        
+    } catch (error: any) {
+        vscode.window.showErrorMessage(`Archive extraction failed: ${error.message}`);
+    }
+}
+
+// Steganography - Embed
+async function stegoEmbed() {
+    try {
+        const dataFile = await vscode.window.showOpenDialog({
+            canSelectMany: false,
+            title: 'Select file to hide'
+        });
+        
+        if (!dataFile || dataFile.length === 0) {
+            return;
+        }
+        
+        const coverImage = await vscode.window.showOpenDialog({
+            canSelectMany: false,
+            title: 'Select cover image',
+            filters: {
+                'Images': ['png', 'bmp']
+            }
+        });
+        
+        if (!coverImage || coverImage.length === 0) {
+            return;
+        }
+        
+        const outputPath = await vscode.window.showSaveDialog({
+            title: 'Save stego image as',
+            filters: {
+                'Images': ['png', 'bmp']
+            },
+            defaultUri: vscode.Uri.file(coverImage[0].fsPath.replace(/\.(png|bmp)$/i, '_stego.$1'))
+        });
+        
+        if (!outputPath) {
+            return;
+        }
+        
+        await vscode.window.withProgress({
+            location: vscode.ProgressLocation.Notification,
+            title: 'Embedding data...',
+            cancellable: false
+        }, async () => {
+            await runFileVault([
+                'stego', 'embed',
+                dataFile[0].fsPath,
+                coverImage[0].fsPath,
+                outputPath.fsPath
+            ]);
+        });
+        
+        vscode.window.showInformationMessage(
+            `Data hidden in: ${path.basename(outputPath.fsPath)}`,
+            'Open Folder'
+        ).then((result: any) => {
+            if (result === 'Open Folder') {
+                vscode.commands.executeCommand('revealFileInOS', outputPath);
+            }
+        });
+        
+    } catch (error: any) {
+        vscode.window.showErrorMessage(`Stego embed failed: ${error.message}`);
+    }
+}
+
+// Steganography - Extract
+async function stegoExtract(uri?: vscode.Uri) {
+    try {
+        let stegoImage: string;
+        if (uri) {
+            stegoImage = uri.fsPath;
+        } else {
+            const fileUri = await vscode.window.showOpenDialog({
+                canSelectMany: false,
+                title: 'Select stego image',
+                filters: {
+                    'Images': ['png', 'bmp']
+                }
+            });
+            if (!fileUri || fileUri.length === 0) {
+                return;
+            }
+            stegoImage = fileUri[0].fsPath;
+        }
+        
+        const outputPath = await vscode.window.showSaveDialog({
+            title: 'Save extracted data as',
+            defaultUri: vscode.Uri.file(stegoImage + '_extracted.dat')
+        });
+        
+        if (!outputPath) {
+            return;
+        }
+        
+        await vscode.window.withProgress({
+            location: vscode.ProgressLocation.Notification,
+            title: 'Extracting hidden data...',
+            cancellable: false
+        }, async () => {
+            await runFileVault([
+                'stego', 'extract',
+                stegoImage,
+                outputPath.fsPath
+            ]);
+        });
+        
+        vscode.window.showInformationMessage(
+            `Data extracted to: ${path.basename(outputPath.fsPath)}`,
+            'Open File',
+            'Open Folder'
+        ).then((result: any) => {
+            if (result === 'Open File') {
+                vscode.window.showTextDocument(outputPath);
+            } else if (result === 'Open Folder') {
+                vscode.commands.executeCommand('revealFileInOS', outputPath);
+            }
+        });
+        
+    } catch (error: any) {
+        vscode.window.showErrorMessage(`Stego extract failed: ${error.message}`);
+    }
+}
+
+// Steganography - Check capacity
+async function stegoCapacity(uri?: vscode.Uri) {
+    try {
+        let imagePath: string;
+        if (uri) {
+            imagePath = uri.fsPath;
+        } else {
+            const fileUri = await vscode.window.showOpenDialog({
+                canSelectMany: false,
+                title: 'Select image to check capacity',
+                filters: {
+                    'Images': ['png', 'bmp']
+                }
+            });
+            if (!fileUri || fileUri.length === 0) {
+                return;
+            }
+            imagePath = fileUri[0].fsPath;
+        }
+        
+        outputChannel.show();
+        await runFileVault(['stego', 'capacity', imagePath]);
+        
+    } catch (error: any) {
+        vscode.window.showErrorMessage(`Capacity check failed: ${error.message}`);
     }
 }
 

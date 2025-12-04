@@ -83,6 +83,9 @@ private:
     bool pqc_only_ = false;
     bool symmetric_only_ = false;
     bool asymmetric_only_ = false;
+    bool hash_only_ = false;
+    bool kdf_only_ = false;
+    bool compression_only_ = false;
 };
 
 } // namespace cli

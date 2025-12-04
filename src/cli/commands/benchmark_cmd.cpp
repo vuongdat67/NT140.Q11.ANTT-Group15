@@ -72,6 +72,9 @@ void BenchmarkCommand::setup(CLI::App& app) {
     cmd->add_flag("--pqc", pqc_only_, "Only benchmark Post-Quantum algorithms");
     cmd->add_flag("--symmetric", symmetric_only_, "Only benchmark symmetric algorithms");
     cmd->add_flag("--asymmetric", asymmetric_only_, "Only benchmark asymmetric algorithms");
+    cmd->add_flag("--hash", hash_only_, "Only benchmark hash functions");
+    cmd->add_flag("--kdf", kdf_only_, "Only benchmark key derivation functions");
+    cmd->add_flag("--compression", compression_only_, "Only benchmark compression algorithms");
     
     cmd->callback([this]() { execute(); });
 }
@@ -90,8 +93,37 @@ int BenchmarkCommand::execute() {
         json_results["data_size"] = data_size_;
         json_results["iterations"] = iterations_;
         
-        // Run benchmarks based on flags
-        if (pqc_only_) {
+        // Run benchmarks based on flags and algorithm filter
+        if (hash_only_) {
+            benchmark_hash(json_results);
+        } else if (kdf_only_) {
+            benchmark_kdf(json_results);
+        } else if (compression_only_) {
+            benchmark_compression(json_results);
+        } else if (!algorithm_.empty() && algorithm_ != "all") {
+            // Specific algorithm - determine type and run only that category
+            std::string algo_lower = algorithm_;
+            std::transform(algo_lower.begin(), algo_lower.end(), algo_lower.begin(), ::tolower);
+            
+            if (algo_lower.find("sha") != std::string::npos || 
+                algo_lower.find("blake") != std::string::npos ||
+                algo_lower.find("md5") != std::string::npos) {
+                benchmark_hash(json_results);
+            } else if (algo_lower.find("argon") != std::string::npos ||
+                      algo_lower.find("pbkdf") != std::string::npos ||
+                      algo_lower.find("scrypt") != std::string::npos) {
+                benchmark_kdf(json_results);
+            } else if (algo_lower.find("zlib") != std::string::npos ||
+                      algo_lower.find("bzip") != std::string::npos ||
+                      algo_lower.find("lzma") != std::string::npos) {
+                benchmark_compression(json_results);
+            } else {
+                // Assume symmetric/asymmetric/pqc
+                benchmark_symmetric(json_results);
+                benchmark_asymmetric(json_results);
+                benchmark_pqc(json_results);
+            }
+        } else if (pqc_only_) {
             benchmark_pqc(json_results);
         } else if (symmetric_only_) {
             benchmark_symmetric(json_results);
