@@ -104,6 +104,7 @@ set(CLI_SOURCES
     src/cli/commands/config_cmd.cpp
     src/cli/commands/info_cmd.cpp
     src/cli/commands/compress_cmd.cpp
+    src/cli/commands/decompress_cmd.cpp
     src/cli/commands/stego_cmd.cpp
     src/cli/commands/archive_cmd.cpp
     src/cli/commands/keygen_cmd.cpp

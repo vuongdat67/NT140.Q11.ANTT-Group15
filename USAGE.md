@@ -140,11 +140,19 @@ filevault compress large_file.txt -a lzma -l 9
 
 ### Decompress Files
 ```bash
-# Decompress (auto-detect algorithm)
+# Decompress (auto-detect algorithm from file header/extension)
 filevault decompress large_file.txt.zlib
+filevault decompress file.xz      # LZMA
+filevault decompress file.bz2     # BZIP2
 
 # Decompress with custom output name
 filevault decompress compressed.dat -o original_file.txt
+
+# Specify algorithm manually (if auto-detect fails)
+filevault decompress file.dat -a zlib -o output.txt
+
+# Using compress command with -d flag (alternative syntax)
+filevault compress large_file.txt.zlib -d
 ```
 
 ---

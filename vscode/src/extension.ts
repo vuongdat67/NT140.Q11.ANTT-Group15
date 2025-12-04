@@ -919,7 +919,8 @@ async function decompressFile(uri?: vscode.Uri) {
                 canSelectMany: false,
                 title: 'Select file to decompress',
                 filters: {
-                    'Compressed Files': ['zlib', 'bz2', 'lzma', 'xz']
+                    'Compressed Files': ['zlib', 'bz2', 'xz', 'lzma', 'zz', 'compressed'],
+                    'All Files': ['*']
                 }
             });
             if (!fileUri || fileUri.length === 0) {
@@ -928,22 +929,35 @@ async function decompressFile(uri?: vscode.Uri) {
             filePath = fileUri[0].fsPath;
         }
         
-        const outputPath = filePath.replace(/\.(zlib|bz2|lzma|xz)$/i, '');
+        // Ask for output path
+        const defaultOutput = filePath.replace(/\.(zlib|bz2|xz|lzma|zz|compressed)$/i, '') || filePath + '.decompressed';
+        const outputPath = await vscode.window.showSaveDialog({
+            title: 'Save decompressed file as',
+            defaultUri: vscode.Uri.file(defaultOutput)
+        });
+        
+        if (!outputPath) {
+            return;
+        }
         
         await vscode.window.withProgress({
             location: vscode.ProgressLocation.Notification,
             title: 'Decompressing...',
             cancellable: false
         }, async () => {
-            await runFileVault(['decompress', filePath, outputPath]);
+            // Use auto-detect for algorithm
+            await runFileVault(['decompress', filePath, '-o', outputPath.fsPath]);
         });
         
         vscode.window.showInformationMessage(
-            `File decompressed: ${path.basename(outputPath)}`,
+            `File decompressed: ${path.basename(outputPath.fsPath)}`,
+            'Open File',
             'Open Folder'
         ).then((result: any) => {
-            if (result === 'Open Folder') {
-                vscode.commands.executeCommand('revealFileInOS', vscode.Uri.file(outputPath));
+            if (result === 'Open File') {
+                vscode.window.showTextDocument(outputPath);
+            } else if (result === 'Open Folder') {
+                vscode.commands.executeCommand('revealFileInOS', outputPath);
             }
         });
         
