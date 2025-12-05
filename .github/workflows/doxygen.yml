@@ -30,70 +30,90 @@ jobs:
       - name: Install dependencies
         run: |
           sudo apt-get update
-          sudo apt-get install -y doxygen graphviz texlive-latex-base texlive-latex-extra texlive-fonts-recommended
+          sudo apt-get install -y \
+            doxygen \
+            graphviz \
+            texlive-latex-base \
+            texlive-latex-extra \
+            texlive-fonts-recommended \
+            texlive-fonts-extra \
+            latexmk
       
-      - name: Enable LaTeX generation in Doxyfile
+      - name: Generate HTML documentation (with emojis)
         run: |
-          # Temporarily enable LaTeX generation for workflow
-          sed -i 's/GENERATE_LATEX         = NO/GENERATE_LATEX         = YES/' Doxyfile
-          echo "✓ LaTeX generation enabled"
-      
-      - name: Generate Doxygen documentation
-        run: |
-          doxygen Doxyfile
-      
-      - name: Strip emojis from LaTeX files
-        run: |
-          if [ -d docs/doxygen/latex ]; then
-            # Remove emoji patterns from all .tex files
-            find docs/doxygen/latex -name "*.tex" -type f -exec sed -i 's/[😀-🙏🌀-🗿🚀-🛿✀-➿]/[emoji]/g' {} + || true
-            
-            # Also remove specific unicode emoji ranges
-            find docs/doxygen/latex -name "*.tex" -type f -exec sed -i 's/[\xF0\x9F][\x80-\xBF][\x80-\xBF][\x80-\xBF]//g' {} + || true
-            
-            # Remove zero-width characters and other problematic unicode
-            find docs/doxygen/latex -name "*.tex" -type f -exec sed -i 's/[\u200B-\u200D\uFEFF]//g' {} + || true
-            
-            echo "✓ Emojis stripped from LaTeX files"
+          echo "📄 Generating HTML documentation..."
+          doxygen Doxyfile.html
+          
+          if [ -d docs/doxygen-html/html ]; then
+            echo "✅ HTML docs generated: $(du -sh docs/doxygen-html/html | cut -f1)"
+          else
+            echo "❌ HTML generation failed"
+            exit 1
           fi
       
-      - name: Build LaTeX PDF
+      - name: Generate LaTeX documentation (no emojis)
+        run: |
+          echo "📚 Generating LaTeX documentation..."
+          doxygen Doxyfile.latex
+          
+          if [ -d docs/doxygen-latex/latex ]; then
+            echo "✅ LaTeX sources generated"
+          else
+            echo "❌ LaTeX generation failed"
+            exit 1
+          fi
+      
+      - name: Build PDF from LaTeX
         continue-on-error: true
         run: |
-          if [ -d docs/doxygen/latex ]; then
-            cd docs/doxygen/latex
-            make pdf 2>&1 | tee build.log || echo "⚠ LaTeX PDF build had errors (non-critical)"
+          cd docs/doxygen-latex/latex
+          
+          echo "🔨 Building PDF with pdflatex..."
+          # Use make to build PDF (handles all dependencies)
+          make pdf 2>&1 | tee build.log
+          
+          if [ -f refman.pdf ]; then
+            PDF_SIZE=$(du -h refman.pdf | cut -f1)
+            echo "✅ PDF successfully generated: $PDF_SIZE"
             
-            if [ -f refman.pdf ]; then
-              echo "✅ PDF successfully generated: refman.pdf"
-            else
-              echo "❌ PDF generation failed, see build.log"
-            fi
+            # Rename to more friendly name
+            cp refman.pdf FileVault-API.pdf
+          else
+            echo "⚠️ PDF generation failed (non-critical)"
+            echo "Check build.log for details"
           fi
       
       - name: Prepare API branch (clean)
         run: |
-          # Save current commit SHA and docs
+          # Save current commit SHA
           MASTER_SHA=$(git rev-parse --short HEAD)
           echo "MASTER_SHA=$MASTER_SHA" >> $GITHUB_ENV
           
           # Create temporary directory for docs
           mkdir -p /tmp/api-docs
-          cp -r docs/doxygen/html /tmp/api-docs/
           
-          # Copy LaTeX if exists
-          if [ -d docs/doxygen/latex ]; then
-            cp -r docs/doxygen/latex /tmp/api-docs/
+          # Copy HTML documentation
+          if [ -d docs/doxygen-html/html ]; then
+            cp -r docs/doxygen-html/html /tmp/api-docs/
+            echo "✅ HTML copied"
+          fi
+          
+          # Copy LaTeX sources
+          if [ -d docs/doxygen-latex/latex ]; then
+            cp -r docs/doxygen-latex/latex /tmp/api-docs/
+            echo "✅ LaTeX sources copied"
             
-            # Copy PDF if built
-            if [ -f docs/doxygen/latex/refman.pdf ]; then
+            # Copy PDF if successfully built
+            if [ -f docs/doxygen-latex/latex/FileVault-API.pdf ]; then
               mkdir -p /tmp/api-docs/pdf
-              cp docs/doxygen/latex/refman.pdf /tmp/api-docs/pdf/FileVault-API.pdf
-              echo "✅ PDF copied"
+              cp docs/doxygen-latex/latex/FileVault-API.pdf /tmp/api-docs/pdf/
+              echo "✅ PDF copied ($(du -h /tmp/api-docs/pdf/FileVault-API.pdf | cut -f1))"
+            else
+              echo "⚠️ No PDF found (build may have failed)"
             fi
           fi
           
-          echo "✓ Docs saved to temp"
+          echo "✓ All documentation saved to temp"
       
       - name: Create clean API branch
         run: |
@@ -117,22 +137,24 @@ jobs:
           
           echo "✓ Docs copied to clean API branch"
           
-          # Create README for doxygen folder
-          echo "# FileVault API Documentation" > doxygen/README.md
-          echo "" >> doxygen/README.md
-          echo "Auto-generated API documentation using Doxygen." >> doxygen/README.md
-          echo "" >> doxygen/README.md
-          echo "## Contents" >> doxygen/README.md
-          echo "" >> doxygen/README.md
-          echo "- **html/** - HTML documentation" >> doxygen/README.md
-          echo "- **latex/** - LaTeX source files" >> doxygen/README.md
-          echo "- **pdf/** - PDF documentation (if built)" >> doxygen/README.md
-          echo "" >> doxygen/README.md
-          echo "## View Documentation" >> doxygen/README.md
-          echo "" >> doxygen/README.md
-          echo "Open \`html/index.html\` in your browser." >> doxygen/README.md
-          echo "" >> doxygen/README.md
-          echo "Generated from master commit: $MASTER_SHA" >> doxygen/README.md
+          # Copy README template and customize
+          cp .github/workflows/API_README.md doxygen/README.md
+          
+          # Replace placeholders with actual stats
+          sed -i "s/\*Auto-updated by workflow\*/$(date -u +"%Y-%m-%d %H:%M:%S UTC")/" doxygen/README.md
+          sed -i "s/\*master branch\*/master@$MASTER_SHA/" doxygen/README.md
+          
+          if [ -f doxygen/html/index.html ]; then
+            HTML_FILES=$(find doxygen/html -name "*.html" | wc -l)
+            sed -i "s/\*Hundreds of pages\*/$HTML_FILES pages/" doxygen/README.md
+          fi
+          
+          if [ -f doxygen/pdf/FileVault-API.pdf ]; then
+            PDF_SIZE=$(du -h doxygen/pdf/FileVault-API.pdf | cut -f1)
+            sed -i "s/\*Several MB\*/$PDF_SIZE/" doxygen/README.md
+          fi
+          
+          echo "✓ README customized with stats"
           
           # Create root README
           echo "# FileVault API Documentation" > README.md

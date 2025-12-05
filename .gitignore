@@ -84,3 +84,8 @@ errors.txt
 
 # Doxygen generated documentation (will be in API branch only)
 docs/doxygen/
+docs/doxygen-html/
+docs/doxygen-latex/
+doxyfile_html.txt
+doxyfile_latex.txt
+doxyfile_readme.txt
