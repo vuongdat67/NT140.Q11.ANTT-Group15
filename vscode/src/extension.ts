@@ -402,7 +402,7 @@ async function decryptFile(uri?: vscode.Uri) {
             outputPath = filePath + '.decrypted';
         }
         
-        // Check if output exists
+        // Check if output exists and delete it to prevent false success
         if (fs.existsSync(outputPath)) {
             const overwrite = await vscode.window.showWarningMessage(
                 `File ${path.basename(outputPath)} already exists. Overwrite?`,
@@ -411,6 +411,8 @@ async function decryptFile(uri?: vscode.Uri) {
             if (overwrite !== 'Yes') {
                 return;
             }
+            // Delete old file before decryption
+            fs.unlinkSync(outputPath);
         }
         
         // Run decryption

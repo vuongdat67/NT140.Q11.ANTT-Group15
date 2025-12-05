@@ -9,6 +9,8 @@ on:
       - 'src/**'
       - 'docs/**'
       - 'Doxyfile'
+      - 'Doxyfile.html'
+      - 'Doxyfile.latex'
       - 'README.md'
       - '.github/workflows/doxygen.yml'
   workflow_dispatch:
