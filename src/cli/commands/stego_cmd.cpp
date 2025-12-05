@@ -184,7 +184,7 @@ int StegoCommand::do_extract() {
             uint16_t filename_len = extracted_data[0] | (extracted_data[1] << 8);
             
             // Check if metadata is present and valid
-            if (filename_len > 0 && filename_len < 256 && extracted_data.size() > 2 + filename_len) {
+            if (filename_len > 0 && filename_len < 256 && extracted_data.size() > 2 + static_cast<size_t>(filename_len)) {
                 // Extract filename
                 original_filename.assign(
                     extracted_data.begin() + 2,

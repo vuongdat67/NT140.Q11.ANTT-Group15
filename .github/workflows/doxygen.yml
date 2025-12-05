@@ -71,43 +71,53 @@ jobs:
             fi
           fi
       
-      - name: Checkout API branch
+      - name: Prepare API branch (clean)
         run: |
-          # Save current commit SHA
+          # Save current commit SHA and docs
           MASTER_SHA=$(git rev-parse --short HEAD)
           echo "MASTER_SHA=$MASTER_SHA" >> $GITHUB_ENV
           
-          # Fetch and checkout API branch
-          git fetch origin API || true
-          git checkout API || git checkout -b API
+          # Create temporary directory for docs
+          mkdir -p /tmp/api-docs
+          cp -r docs/doxygen/html /tmp/api-docs/
           
-          # Clear existing docs
-          rm -rf doxygen
-          git rm -rf doxygen 2>/dev/null || true
-          
-          echo "✓ Checked out API branch"
-      
-      - name: Copy documentation to API branch
-        run: |
-          # Copy generated HTML documentation
-          mkdir -p doxygen
-          cp -r docs/doxygen/html doxygen/
-          
-          # Copy LaTeX documentation if exists
+          # Copy LaTeX if exists
           if [ -d docs/doxygen/latex ]; then
-            cp -r docs/doxygen/latex doxygen/
+            cp -r docs/doxygen/latex /tmp/api-docs/
             
-            # Keep only the PDF if it was built successfully
-            if [ -f doxygen/latex/refman.pdf ]; then
-              mkdir -p doxygen/pdf
-              cp doxygen/latex/refman.pdf doxygen/pdf/FileVault-API.pdf
-              echo "✅ PDF copied to doxygen/pdf/FileVault-API.pdf"
+            # Copy PDF if built
+            if [ -f docs/doxygen/latex/refman.pdf ]; then
+              mkdir -p /tmp/api-docs/pdf
+              cp docs/doxygen/latex/refman.pdf /tmp/api-docs/pdf/FileVault-API.pdf
+              echo "✅ PDF copied"
             fi
           fi
           
-          echo "✓ Documentation copied to API branch"
+          echo "✓ Docs saved to temp"
+      
+      - name: Create clean API branch
+        run: |
+          # Create orphan API branch (no history, clean slate)
+          git checkout --orphan API
           
-          # Create README for API branch
+          # Remove all files from git index
+          git rm -rf . 2>/dev/null || true
+          
+          # Copy only documentation
+          mkdir -p doxygen
+          cp -r /tmp/api-docs/html doxygen/
+          
+          if [ -d /tmp/api-docs/latex ]; then
+            cp -r /tmp/api-docs/latex doxygen/
+          fi
+          
+          if [ -d /tmp/api-docs/pdf ]; then
+            cp -r /tmp/api-docs/pdf doxygen/
+          fi
+          
+          echo "✓ Docs copied to clean API branch"
+          
+          # Create README for doxygen folder
           echo "# FileVault API Documentation" > doxygen/README.md
           echo "" >> doxygen/README.md
           echo "Auto-generated API documentation using Doxygen." >> doxygen/README.md
@@ -118,36 +128,61 @@ jobs:
           echo "- **latex/** - LaTeX source files" >> doxygen/README.md
           echo "- **pdf/** - PDF documentation (if built)" >> doxygen/README.md
           echo "" >> doxygen/README.md
-          echo "## View Online" >> doxygen/README.md
+          echo "## View Documentation" >> doxygen/README.md
           echo "" >> doxygen/README.md
-          echo "Open html/index.html in your browser." >> doxygen/README.md
+          echo "Open \`html/index.html\` in your browser." >> doxygen/README.md
           echo "" >> doxygen/README.md
-          echo "Generated from commit: $MASTER_SHA" >> doxygen/README.md
+          echo "Generated from master commit: $MASTER_SHA" >> doxygen/README.md
           
-          echo "✓ README created for API branch"
+          # Create root README
+          echo "# FileVault API Documentation" > README.md
+          echo "" >> README.md
+          echo "This branch contains only the auto-generated API documentation." >> README.md
+          echo "" >> README.md
+          echo "## Quick Start" >> README.md
+          echo "" >> README.md
+          echo "\`\`\`bash" >> README.md
+          echo "# Clone only the API branch" >> README.md
+          echo "git clone -b API --single-branch https://github.com/${{ github.repository }}.git filevault-docs" >> README.md
+          echo "" >> README.md
+          echo "# Open documentation" >> README.md
+          echo "cd filevault-docs/doxygen/html" >> README.md
+          echo "# Open index.html in your browser" >> README.md
+          echo "\`\`\`" >> README.md
+          echo "" >> README.md
+          echo "**Documentation contents**: See [doxygen/README.md](doxygen/README.md)" >> README.md
+          echo "" >> README.md
+          echo "Generated: $(date -u +"%Y-%m-%d %H:%M:%S UTC")" >> README.md
+          echo "" >> README.md
+          echo "Source: master@$MASTER_SHA" >> README.md
+          
+          echo "✓ README files created"
       
       - name: Commit and push to API branch
         run: |
           git config user.name "GitHub Actions Bot"
           git config user.email "actions@github.com"
           
-          git add doxygen/
+          # Add only doxygen/ and README.md
+          git add doxygen/ README.md
           
           # Commit with detailed message
-          git commit -m "docs: Update API documentation
+          git commit -m "docs: Update API documentation from master@$MASTER_SHA
 
-          Auto-generated from commit $(git rev-parse --short HEAD)
+          Auto-generated Doxygen documentation
           
-          Changes:
-          - HTML documentation
-          - LaTeX sources (emoji-stripped)
-          - PDF documentation (if built)
+          Contents:
+          - HTML documentation (doxygen/html/)
+          - LaTeX sources (doxygen/latex/) - emoji-stripped
+          - PDF documentation (doxygen/pdf/) - if built successfully
           
-          Generated: $(date -u +"%Y-%m-%d %H:%M:%S UTC")" || echo "No changes to commit"
+          Generated: $(date -u +"%Y-%m-%d %H:%M:%S UTC")
+          Source: master branch commit $MASTER_SHA" || echo "No changes to commit"
           
+          # Force push to replace API branch completely
           git push origin API --force
           
-          echo "✓ Documentation pushed to API branch"
+          echo "✓ Clean API branch pushed (only doxygen/ + README.md)"
       
       - name: Create deployment info
         run: |
