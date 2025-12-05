@@ -1,0 +1,172 @@
+name: Generate API Documentation
+
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - 'include/**'
+      - 'src/**'
+      - 'docs/**'
+      - 'Doxyfile'
+      - 'README.md'
+      - '.github/workflows/doxygen.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build-docs:
+    name: Build Doxygen Documentation
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      
+      - name: Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y doxygen graphviz texlive-latex-base texlive-latex-extra texlive-fonts-recommended
+      
+      - name: Generate Doxygen documentation
+        run: |
+          doxygen Doxyfile
+      
+      - name: Strip emojis from LaTeX files
+        run: |
+          # Remove emoji patterns from all .tex files
+          find doxygen/latex -name "*.tex" -type f -exec sed -i 's/[😀-🙏🌀-🗿🚀-🛿✀-➿]/[emoji]/g' {} +
+          
+          # Also remove specific unicode emoji ranges
+          find doxygen/latex -name "*.tex" -type f -exec sed -i 's/[\xF0\x9F][\x80-\xBF][\x80-\xBF][\x80-\xBF]//g' {} +
+          
+          # Remove zero-width characters and other problematic unicode
+          find doxygen/latex -name "*.tex" -type f -exec sed -i 's/[\u200B-\u200D\uFEFF]//g' {} +
+          
+          echo "✓ Emojis stripped from LaTeX files"
+      
+      - name: Build LaTeX PDF (optional, may fail)
+        continue-on-error: true
+        shell: bash
+        run: |
+          cd doxygen/latex
+          make pdf || echo "LaTeX PDF build failed (non-critical)"
+      
+      - name: Create archive
+        run: |
+          # Create HTML archive
+          tar -czf doxygen-html.tar.gz -C doxygen/html .
+          
+          # Create LaTeX archive (if exists)
+          if [ -d doxygen/latex ]; then
+            tar -czf doxygen-latex.tar.gz -C doxygen/latex .
+          fi
+          
+          echo "✓ Archives created"
+      
+      - name: Checkout API branch
+        run: |
+          # Create API branch if it doesn't exist
+          git fetch origin API || git branch API
+          git checkout API || git checkout -b API
+          
+          # Clear existing doxygen directory
+          rm -rf doxygen
+          git rm -rf doxygen 2>/dev/null || true
+      
+      - name: Copy documentation to API branch
+        run: |
+          # Copy generated documentation
+          cp -r doxygen ./
+          
+          # Remove LaTeX source files (keep only HTML and archives)
+          if [ -d doxygen/latex ]; then
+            # Keep only the PDF if it was built successfully
+            if [ -f doxygen/latex/refman.pdf ]; then
+              mkdir -p doxygen/pdf
+              cp doxygen/latex/refman.pdf doxygen/pdf/FileVault-API.pdf
+            fi
+            # Remove LaTeX source directory
+            rm -rf doxygen/latex
+          fi
+          
+          # Create README for API branch
+          cat > doxygen/README.md << 'EOFMARKER'
+          # FileVault API Documentation
+          
+          Auto-generated API documentation using Doxygen.
+          
+          ## Contents
+          
+          - **html/** - HTML documentation (main)
+          - **pdf/** - PDF documentation (if available)
+          
+          ## View Online
+          
+          Open html/index.html in your browser to view the API documentation.
+          
+          ## Generation Info
+          
+          - Generated: $(date -u +"%Y-%m-%d %H:%M:%S UTC")
+          - Commit: $(git rev-parse --short HEAD)
+          - Branch: master
+          - Tool: Doxygen $(doxygen --version)
+          
+          ## Features
+          
+          - Full API reference with class diagrams
+          - Call graphs and dependency graphs
+          - Source code browser
+          - Search functionality
+          - Hyperlinked cross-references
+          
+          This documentation is automatically generated. Do not edit manually.
+          EOFMARKER
+          
+          echo "✓ Documentation prepared for API branch"
+      
+      - name: Commit and push to API branch
+        run: |
+          git config user.name "GitHub Actions Bot"
+          git config user.email "actions@github.com"
+          
+          git add doxygen/
+          
+          # Commit with detailed message
+          git commit -m "docs: Update API documentation
+
+          Auto-generated from commit $(git rev-parse --short HEAD)
+          
+          Changes:
+          - HTML documentation
+          - LaTeX sources (emoji-stripped)
+          - PDF documentation (if built)
+          
+          Generated: $(date -u +"%Y-%m-%d %H:%M:%S UTC")" || echo "No changes to commit"
+          
+          git push origin API --force
+          
+          echo "✓ Documentation pushed to API branch"
+      
+      - name: Create deployment info
+        run: |
+          echo "## 📚 Documentation Deployment" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "✅ **Status**: Documentation successfully generated and deployed" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### 📂 Output" >> $GITHUB_STEP_SUMMARY
+          echo "- **Branch**: \`API\`" >> $GITHUB_STEP_SUMMARY
+          echo "- **Commit**: \`$(git rev-parse --short HEAD)\`" >> $GITHUB_STEP_SUMMARY
+          echo "- **HTML Size**: $(du -sh doxygen/html | cut -f1)" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### 🔗 Access" >> $GITHUB_STEP_SUMMARY
+          echo "Clone the API branch to view documentation:" >> $GITHUB_STEP_SUMMARY
+          echo "\`\`\`bash" >> $GITHUB_STEP_SUMMARY
+          echo "git clone -b API https://github.com/${{ github.repository }}.git filevault-docs" >> $GITHUB_STEP_SUMMARY
+          echo "cd filevault-docs/doxygen/html" >> $GITHUB_STEP_SUMMARY
+          echo "# Open index.html in browser" >> $GITHUB_STEP_SUMMARY
+          echo "\`\`\`" >> $GITHUB_STEP_SUMMARY
