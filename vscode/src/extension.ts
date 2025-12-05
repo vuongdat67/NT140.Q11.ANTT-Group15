@@ -336,6 +336,11 @@ async function encryptFile(uri?: vscode.Uri) {
             await runFileVault(args);
         });
         
+        // Verify output file was created
+        if (!fs.existsSync(outputPath)) {
+            throw new Error('Encryption failed: output file not created');
+        }
+        
         const showNotifications = config.get<boolean>('showNotifications', true);
         if (showNotifications) {
             const result = await vscode.window.showInformationMessage(
@@ -421,6 +426,11 @@ async function decryptFile(uri?: vscode.Uri) {
             ]);
         });
         
+        // Verify output file was created
+        if (!fs.existsSync(outputPath)) {
+            throw new Error('Decryption failed: output file not created');
+        }
+        
         const config = vscode.workspace.getConfiguration('filevault');
         const showNotifications = config.get<boolean>('showNotifications', true);
         if (showNotifications) {
@@ -452,9 +462,10 @@ async function showFileInfo(uri?: vscode.Uri) {
         } else {
             const fileUri = await vscode.window.showOpenDialog({
                 canSelectMany: false,
-                title: 'Select encrypted file',
+                title: 'Select file to inspect',
                 filters: {
-                    'FileVault Encrypted': ['fvlt']
+                    'FileVault Encrypted': ['fvlt'],
+                    'All Files': ['*']
                 }
             });
             if (!fileUri || fileUri.length === 0) {
@@ -463,23 +474,163 @@ async function showFileInfo(uri?: vscode.Uri) {
             filePath = fileUri[0].fsPath;
         }
         
-        const result = await runFileVault(['info', filePath]);
+        // Check if it's an encrypted file
+        const isEncrypted = filePath.endsWith('.fvlt');
         
-        // Show in output channel
-        outputChannel.show();
-        
-        // Also show in a quick pick or webview
-        vscode.window.showInformationMessage(
-            `File: ${path.basename(filePath)} - See Output panel for details`,
-            'Show Output'
-        ).then(result => {
-            if (result === 'Show Output') {
-                outputChannel.show();
+        if (isEncrypted) {
+            // Show encrypted file metadata
+            const result = await runFileVault(['info', filePath]);
+            outputChannel.show();
+            
+            vscode.window.showInformationMessage(
+                `File: ${path.basename(filePath)} - See Output panel for details`,
+                'Show Output'
+            ).then(result => {
+                if (result === 'Show Output') {
+                    outputChannel.show();
+                }
+            });
+        } else {
+            // Show file in different formats
+            const formats = [
+                { label: 'Hexadecimal', description: 'View file as hex dump', value: 'hex' },
+                { label: 'Binary', description: 'View file as binary', value: 'binary' },
+                { label: 'Base64', description: 'View file as base64', value: 'base64' },
+                { label: 'File Stats', description: 'Show file size, type, permissions', value: 'stats' }
+            ];
+            
+            const format = await vscode.window.showQuickPick(formats, {
+                placeHolder: 'Select view format',
+                title: 'File Viewer'
+            });
+            
+            if (!format) {
+                return;
             }
-        });
+            
+            const fileBuffer = fs.readFileSync(filePath);
+            const fileStats = fs.statSync(filePath);
+            const maxBytes = 1024; // Show first 1KB for large files
+            const displayBuffer = fileBuffer.length > maxBytes ? fileBuffer.subarray(0, maxBytes) : fileBuffer;
+            
+            outputChannel.show();
+            outputChannel.appendLine(`\n${'='.repeat(60)}`);
+            outputChannel.appendLine(`File: ${path.basename(filePath)}`);
+            outputChannel.appendLine(`Path: ${filePath}`);
+            outputChannel.appendLine(`Size: ${fileStats.size} bytes`);
+            
+            switch (format.value) {
+                case 'hex':
+                    outputChannel.appendLine(`Format: Hexadecimal${fileBuffer.length > maxBytes ? ` (showing first ${maxBytes} bytes)` : ''}`);
+                    outputChannel.appendLine(`${'='.repeat(60)}\n`);
+                    
+                    // Format: offset | hex bytes | ASCII
+                    for (let i = 0; i < displayBuffer.length; i += 16) {
+                        const chunk = displayBuffer.subarray(i, Math.min(i + 16, displayBuffer.length));
+                        const offset = i.toString(16).padStart(8, '0');
+                        const hexPart = Array.from(chunk).map(b => b.toString(16).padStart(2, '0')).join(' ');
+                        const asciiPart = Array.from(chunk).map(b => (b >= 32 && b < 127) ? String.fromCharCode(b) : '.').join('');
+                        outputChannel.appendLine(`${offset}  ${hexPart.padEnd(48, ' ')}  |${asciiPart}|`);
+                    }
+                    break;
+                
+                case 'binary':
+                    outputChannel.appendLine(`Format: Binary${fileBuffer.length > maxBytes ? ` (showing first ${maxBytes} bytes)` : ''}`);
+                    outputChannel.appendLine(`${'='.repeat(60)}\n`);
+                    
+                    for (let i = 0; i < displayBuffer.length; i += 8) {
+                        const chunk = displayBuffer.subarray(i, Math.min(i + 8, displayBuffer.length));
+                        const offset = i.toString(16).padStart(8, '0');
+                        const binaryPart = Array.from(chunk).map(b => b.toString(2).padStart(8, '0')).join(' ');
+                        outputChannel.appendLine(`${offset}  ${binaryPart}`);
+                    }
+                    break;
+                
+                case 'base64':
+                    outputChannel.appendLine(`Format: Base64`);
+                    outputChannel.appendLine(`${'='.repeat(60)}\n`);
+                    const base64 = fileBuffer.toString('base64');
+                    // Wrap at 76 characters (MIME standard)
+                    for (let i = 0; i < base64.length; i += 76) {
+                        outputChannel.appendLine(base64.substring(i, i + 76));
+                    }
+                    break;
+                
+                case 'stats':
+                    outputChannel.appendLine(`Format: File Statistics`);
+                    outputChannel.appendLine(`${'='.repeat(60)}\n`);
+                    outputChannel.appendLine(`Created:  ${fileStats.birthtime.toISOString()}`);
+                    outputChannel.appendLine(`Modified: ${fileStats.mtime.toISOString()}`);
+                    outputChannel.appendLine(`Accessed: ${fileStats.atime.toISOString()}`);
+                    outputChannel.appendLine(`Mode:     ${fileStats.mode.toString(8)}`);
+                    outputChannel.appendLine(`IsFile:   ${fileStats.isFile()}`);
+                    outputChannel.appendLine(`IsDir:    ${fileStats.isDirectory()}`);
+                    
+                    // Try to detect file type by magic bytes
+                    if (fileBuffer.length >= 4) {
+                        const magic = Array.from(fileBuffer.subarray(0, 4)).map(b => b.toString(16).padStart(2, '0')).join('');
+                        outputChannel.appendLine(`Magic:    ${magic}`);
+                        
+                        const fileTypes: {[key: string]: string} = {
+                            '89504e47': 'PNG image',
+                            'ffd8ffe0': 'JPEG image (JFIF)',
+                            'ffd8ffe1': 'JPEG image (EXIF)',
+                            '47494638': 'GIF image',
+                            '424d': 'BMP image',
+                            '504b0304': 'ZIP archive',
+                            '504b0506': 'ZIP archive (empty)',
+                            '504b0708': 'ZIP archive (spanned)',
+                            '25504446': 'PDF document',
+                            'd0cf11e0': 'Microsoft Office document',
+                            '52617221': 'RAR archive',
+                            '1f8b08': 'GZIP archive',
+                            '4d5a': 'Windows executable',
+                            '7f454c46': 'ELF executable',
+                            'cafebabe': 'Java class file'
+                        };
+                        
+                        for (const [sig, type] of Object.entries(fileTypes)) {
+                            if (magic.startsWith(sig)) {
+                                outputChannel.appendLine(`Type:     ${type}`);
+                                break;
+                            }
+                        }
+                    }
+                    break;
+            }
+            
+            outputChannel.appendLine(`\n${'='.repeat(60)}`);
+            
+            if (format.value !== 'stats') {
+                const action = await vscode.window.showInformationMessage(
+                    `File displayed as ${format.label}`,
+                    'Copy to Clipboard',
+                    'Show Output'
+                );
+                
+                if (action === 'Copy to Clipboard') {
+                    let copyText = '';
+                    switch (format.value) {
+                        case 'hex':
+                            copyText = Array.from(fileBuffer).map(b => b.toString(16).padStart(2, '0')).join('');
+                            break;
+                        case 'binary':
+                            copyText = Array.from(fileBuffer).map(b => b.toString(2).padStart(8, '0')).join('');
+                            break;
+                        case 'base64':
+                            copyText = fileBuffer.toString('base64');
+                            break;
+                    }
+                    await vscode.env.clipboard.writeText(copyText);
+                    vscode.window.showInformationMessage('Copied to clipboard');
+                } else if (action === 'Show Output') {
+                    outputChannel.show();
+                }
+            }
+        }
         
     } catch (error: any) {
-        vscode.window.showErrorMessage(`Failed to get file info: ${error.message}`);
+        vscode.window.showErrorMessage(`Failed to show file info: ${error.message}`);
     }
 }
 
@@ -590,10 +741,31 @@ async function calculateHash(uri?: vscode.Uri) {
             return;
         }
         
-        const result = await runFileVault(['hash', filePath, '-a', algorithm.value]);
+        // Select output format
+        const formats = [
+            { label: 'Hexadecimal', description: 'Standard hex format (default)', value: 'hex' },
+            { label: 'Base64', description: 'Compact base64 encoding', value: 'base64' },
+            { label: 'Binary', description: 'Binary representation', value: 'binary' }
+        ];
+        
+        const format = await vscode.window.showQuickPick(formats, {
+            placeHolder: 'Select output format',
+            title: 'Hash Output Format'
+        });
+        
+        if (!format) {
+            return;
+        }
+        
+        const args = ['hash', filePath, '-a', algorithm.value];
+        if (format.value !== 'hex') {
+            args.push('--format', format.value);
+        }
+        
+        const result = await runFileVault(args);
         
         // Extract hash from output
-        const hashMatch = result.stdout.match(/^([A-Fa-f0-9]+)/m);
+        const hashMatch = result.stdout.match(/^([A-Za-z0-9+/=]+)/m);
         const hash = hashMatch ? hashMatch[1] : result.stdout.trim();
         
         const action = await vscode.window.showInformationMessage(
@@ -832,7 +1004,8 @@ async function steganography(uri?: vscode.Uri) {
                 canSelectMany: false,
                 title: 'Select cover image',
                 filters: {
-                    'Images': ['png', 'bmp']
+                    'Images': ['png', 'bmp', 'jpg', 'jpeg', 'gif', 'webp'],
+                    'All Files': ['*']
                 }
             });
             
@@ -882,7 +1055,8 @@ async function steganography(uri?: vscode.Uri) {
                 canSelectMany: false,
                 title: 'Select stego image',
                 filters: {
-                    'Images': ['png', 'bmp']
+                    'Images': ['png', 'bmp', 'jpg', 'jpeg', 'gif', 'webp'],
+                    'All Files': ['*']
                 }
             });
             
@@ -1065,7 +1239,8 @@ async function stegoEmbed() {
             canSelectMany: false,
             title: 'Select cover image',
             filters: {
-                'Images': ['png', 'bmp']
+                'Images': ['png', 'bmp', 'jpg', 'jpeg', 'gif', 'webp'],
+                'All Files': ['*']
             }
         });
         
@@ -1076,9 +1251,10 @@ async function stegoEmbed() {
         const outputPath = await vscode.window.showSaveDialog({
             title: 'Save stego image as',
             filters: {
-                'Images': ['png', 'bmp']
+                'Images': ['png', 'bmp', 'jpg', 'jpeg', 'gif', 'webp'],
+                'All Files': ['*']
             },
-            defaultUri: vscode.Uri.file(coverImage[0].fsPath.replace(/\.(png|bmp)$/i, '_stego.$1'))
+            defaultUri: vscode.Uri.file(coverImage[0].fsPath.replace(/\.(png|bmp|jpg|jpeg|gif|webp)$/i, '_stego.$1'))
         });
         
         if (!outputPath) {
@@ -1097,6 +1273,11 @@ async function stegoEmbed() {
                 outputPath.fsPath
             ]);
         });
+        
+        // Verify output file was created
+        if (!fs.existsSync(outputPath.fsPath)) {
+            throw new Error('Stego embed failed: output file not created');
+        }
         
         vscode.window.showInformationMessage(
             `Data hidden in: ${path.basename(outputPath.fsPath)}`,
@@ -1123,7 +1304,8 @@ async function stegoExtract(uri?: vscode.Uri) {
                 canSelectMany: false,
                 title: 'Select stego image',
                 filters: {
-                    'Images': ['png', 'bmp']
+                    'Images': ['png', 'bmp', 'jpg', 'jpeg', 'gif', 'webp'],
+                    'All Files': ['*']
                 }
             });
             if (!fileUri || fileUri.length === 0) {
@@ -1218,7 +1400,8 @@ async function stegoCapacity(uri?: vscode.Uri) {
                 canSelectMany: false,
                 title: 'Select image to check capacity',
                 filters: {
-                    'Images': ['png', 'bmp']
+                    'Images': ['png', 'bmp', 'jpg', 'jpeg', 'gif', 'webp'],
+                    'All Files': ['*']
                 }
             });
             if (!fileUri || fileUri.length === 0) {
