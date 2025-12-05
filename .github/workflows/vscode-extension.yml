@@ -3,12 +3,8 @@ name: Build VSCode Extension
 on:
   push:
     branches: [ master, main ]
-    paths:
-      - 'vscode/**'
   pull_request:
     branches: [ master, main ]
-    paths:
-      - 'vscode/**'
   workflow_dispatch:
 
 jobs:

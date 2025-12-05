@@ -1,152 +1,81 @@
-# FileVault API Documentation
+# FileVault Documentation
 
-Tài liệu API đầy đủ cho FileVault - Modern C++ Cryptographic File Encryption Library.
+Tài liệu hướng dẫn sử dụng và học tập về các thuật toán mã hóa trong FileVault.
 
-## 📚 Xem Documentation
+## 📚 API Documentation
 
-### 🌐 HTML Documentation (Recommended)
-**Cách xem tốt nhất** - Có emoji, search, interactive diagrams.
+### Doxygen (API Reference)
+- **Location**: [`doxygen/html/index.html`](doxygen/html/index.html)
+- **Features**: 
+  - Class hierarchy diagrams
+  - Full API reference với source code
+  - Search functionality
+  - Cross-referenced documentation
 
-**Mở trong browser:**
-- Windows: Double-click `html/index.html` hoặc `start html/index.html`
-- macOS: `open html/index.html`
-- Linux: `xdg-open html/index.html`
-
-**Features:**
-- ✅ Full emoji support
-- ✅ Search functionality  
-- ✅ Interactive class diagrams (SVG)
-- ✅ Source code browser
-- ✅ Cross-referenced documentation
-
-### 📄 PDF Documentation
-**Portable format** - Dễ print, share, đọc offline.
-
-Xem file `pdf/FileVault-API.pdf`
-
-**Features:**
-- ✅ Printable format
-- ✅ Table of contents với bookmarks
-- ✅ Hyperlinked references
-- ⚠️ No emoji (LaTeX limitation)
-
-### 📝 LaTeX Sources
-**Advanced users** - Customize và rebuild PDF.
-
-```bash
-cd latex
-
-# Rebuild PDF (requires LaTeX installation)
-make pdf              # Linux/macOS
-make.bat              # Windows
-
-# Output: refman.pdf
-```
+**Mở docs**: Double-click file `docs/doxygen/html/index.html` trong browser.
 
 ## 🔐 Algorithm Categories
 
-### 1. Classical Ciphers (`filevault::algorithms::classical`)
-Thuật toán mã hóa cổ điển - học tập và demo.
+### 1. Classical Ciphers (`src/algorithms/classical/`)
+Các thuật toán mã hóa cổ điển - dùng cho mục đích học tập.
 
-| Algorithm | Class | Description |
-|-----------|-------|-------------|
-| Caesar | `Caesar` | Shift cipher đơn giản |
-| Vigenère | `Vigenere` | Polyalphabetic substitution |
-| Playfair | `Playfair` | Digraph substitution |
-| Hill | `HillCipher` | Matrix-based cipher |
-| Substitution | `SubstitutionCipher` | Monoalphabetic substitution |
+| Algorithm | File | Description |
+|-----------|------|-------------|
+| Caesar | `caesar.cpp` | Shift cipher đơn giản |
+| Vigenère | `vigenere.cpp` | Polyalphabetic substitution |
+| Playfair | `playfair.cpp` | Digraph substitution cipher |
+| Hill | `hill.cpp` | Matrix-based cipher |
+| Substitution | `substitution.cpp` | Monoalphabetic substitution |
 
-### 2. Symmetric Encryption (`filevault::algorithms::symmetric`)
-Mã hóa đối xứng hiện đại - production use.
+### 2. Symmetric Encryption (`src/algorithms/symmetric/`)
+Thuật toán mã hóa đối xứng hiện đại.
 
-| Algorithm | Class | Mode | Description |
-|-----------|-------|------|-------------|
-| AES-GCM | `AES_GCM` | AEAD | ⭐ Recommended |
-| ChaCha20-Poly1305 | `ChaCha20Poly1305` | AEAD | Modern stream cipher |
-| AES-CBC | `AES_CBC` | Block | Classic mode |
-| AES-CTR | `AES_CTR` | Stream | Counter mode |
-| AES-XTS | `AES_XTS` | Disk | Disk encryption |
-| Camellia-GCM | `Camellia_GCM` | AEAD | Japanese standard |
-| ARIA-GCM | `ARIA_GCM` | AEAD | Korean standard |
-| Serpent-GCM | `Serpent_GCM` | AEAD | AES finalist |
-| Twofish-GCM | `Twofish_GCM` | AEAD | AES finalist |
-| SM4-GCM | `SM4_GCM` | AEAD | Chinese standard |
+| Algorithm | File | Mode | Description |
+|-----------|------|------|-------------|
+| AES-GCM | `aes_gcm.cpp` | AEAD | ⭐ Recommended - Authenticated encryption |
+| AES-CBC | `aes_cbc.cpp` | Block | Classic block cipher mode |
+| AES-CTR | `aes_ctr.cpp` | Stream | Counter mode |
+| AES-XTS | `aes_xts.cpp` | Disk | Disk encryption mode |
+| ChaCha20-Poly1305 | `chacha20_poly1305.cpp` | AEAD | Modern stream cipher |
+| Camellia-GCM | `camellia_gcm.cpp` | AEAD | Japanese standard |
+| ARIA-GCM | `aria_gcm.cpp` | AEAD | Korean standard |
+| Serpent-GCM | `serpent_gcm.cpp` | AEAD | AES finalist |
+| Twofish-GCM | `twofish_gcm.cpp` | AEAD | AES finalist |
+| SM4-GCM | `sm4_gcm.cpp` | AEAD | Chinese standard |
+| 3DES | `triple_des.cpp` | Legacy | Legacy support |
 
-### 3. Asymmetric Encryption (`filevault::algorithms::asymmetric`)
-Mã hóa bất đối xứng.
+### 3. Asymmetric Encryption (`src/algorithms/asymmetric/`)
+Thuật toán mã hóa bất đối xứng.
 
-| Algorithm | Classes | Description |
-|-----------|---------|-------------|
-| RSA | `RSA`, `RSAKeyPair` | 2048/3072/4096-bit |
-| ECC | `ECC`, `ECCKeyPair` | ECDH, ECDSA (P-256/384/521) |
+| Algorithm | File | Description |
+|-----------|------|-------------|
+| RSA | `rsa.cpp` | 2048/3072/4096-bit RSA |
+| ECC | `ecc.cpp` | ECDH, ECDSA với P-256/P-384/P-521 |
 
-### 4. Post-Quantum Cryptography (`filevault::algorithms::pqc`)
-Kháng lượng tử (NIST PQC).
+### 4. Post-Quantum Cryptography (`src/algorithms/pqc/`)
+Thuật toán kháng lượng tử (NIST PQC).
 
-| Algorithm | Classes | Description |
-|-----------|---------|-------------|
-| Kyber | `Kyber`, `KyberHybrid` | ML-KEM key encapsulation |
-| Dilithium | `Dilithium` | ML-DSA digital signature |
+| Algorithm | File | Description |
+|-----------|------|-------------|
+| Kyber | `post_quantum.cpp` | ML-KEM (Key Encapsulation) |
+| Dilithium | `post_quantum.cpp` | ML-DSA (Digital Signature) |
 
-## 🏗️ Core Components
+## 🔄 Regenerate Documentation
 
-### Encryption Engine
-- **`CryptoEngine`** - Main encryption/decryption engine
-- **`StreamingCrypto`** - Large file streaming encryption
-- **`FileFormatHandler`** - .fv file format handler
-
-### Utilities
-- **`CryptoUtils`** - Key derivation (Argon2, Scrypt, PBKDF2)
-- **`Password`** - Password strength analysis
-- **`FileIO`** - Secure file operations
-- **`ProgressBar`** - Visual progress indicators
-
-### Compression
-- **`CompressionService`** - ZLIB, LZMA, BZIP2 support
-
-### Steganography
-- **`LSBSteganography`** - Hide data in images
-
-## 📖 Navigation Tips
-
-### HTML Documentation
-1. **Classes** → Xem tất cả classes
-2. **Namespaces** → Browse theo module
-3. **Files** → View source code
-4. **Search** → Tìm functions/classes nhanh
-
-### Class Diagrams
-- 🔵 Blue boxes = Có documentation
-- ⚪ White boxes = External dependencies
-- Arrows = Inheritance/composition
-
-## 🛠️ Regenerate Documentation
-
-Nếu muốn rebuild locally:
-
-```bash
-# Clone repo
-git clone https://github.com/vuongdat67/NT140.Q11.ANTT-Group15.git
-cd NT140.Q11.ANTT-Group15
-
-# Generate HTML (with emojis)
-doxygen Doxyfile.html
-# Output: docs/doxygen-html/html/
-
-# Generate LaTeX (no emojis)
-doxygen Doxyfile.latex
-cd docs/doxygen-latex/latex
-make pdf
-# Output: refman.pdf
+### Doxygen
+```powershell
+cd D:\code\filevault
+doxygen Doxyfile
 ```
 
-## 📊 Documentation Stats
+## 📖 Learning Resources
 
-- **Generated**: *Auto-updated by workflow*
-- **Source**: *master branch*
-- **HTML Files**: *Hundreds of pages*
-- **PDF Size**: *Several MB*
+- **Doxygen HTML**: Xem class diagrams và API reference
+- **Source Code**: Đọc implementation với comments chi tiết
+- **Test Cases**: Xem `tests/` folder cho examples
 
----
+## 🛠️ Configuration Files
 
-*Auto-generated by [Doxygen](https://www.doxygen.nl/) via GitHub Actions*
+| File | Purpose |
+|------|---------|
+| `Doxyfile` | Doxygen configuration |
