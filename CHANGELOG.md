@@ -1,7 +1,32 @@
-# FileVault - Complete Fix Summary
+# FileVault Changelog
 
-**Date:** December 3, 2025  
-**Changes:** Major CLI and VSCode Extension enhancements
+## [1.1.0] - December 5, 2025
+
+### Added
+- **CLI Commands:**
+  - `dump` - View file content in hex/binary/base64 format
+  - `sign` - Create digital signatures (RSA support)
+  - `verify` - Verify digital signatures
+  - `keyinfo` - Display cryptographic key information with pair validation
+  
+- **Hash Command:** Added `--format` flag (hex/base64/binary output)
+- **Encrypt Command:** Added `--yes/--force` flag to skip weak password prompts
+- **Usage Footers:** All commands now show comprehensive examples with algorithm lists
+
+### Fixed
+- **VSCode Extension:** Decrypt false success when wrong password with existing output file
+  - Now deletes old file before decrypt attempt
+- **Doxygen Workflow:** Added Doxyfile.html and Doxyfile.latex to trigger paths
+
+### Changed
+- Version bumped to 1.1.0 for both CLI and extension
+- Enhanced command documentation with algorithm lists
+
+---
+
+## [1.0.5] - December 3, 2025
+
+### Major CLI and VSCode Extension Enhancements
 
 ---
 

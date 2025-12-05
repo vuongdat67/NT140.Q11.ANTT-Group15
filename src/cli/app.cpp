@@ -12,6 +12,9 @@
 #include "filevault/cli/commands/archive_cmd.hpp"
 #include "filevault/cli/commands/keygen_cmd.hpp"
 #include "filevault/cli/commands/dump_cmd.hpp"
+#include "filevault/cli/commands/sign_cmd.hpp"
+#include "filevault/cli/commands/verify_cmd.hpp"
+#include "filevault/cli/commands/keyinfo_cmd.hpp"
 #include "filevault/utils/console.hpp"
 #include <spdlog/spdlog.h>
 #include <spdlog/sinks/stdout_color_sinks.h>
@@ -127,6 +130,9 @@ void Application::register_commands() {
     commands_.push_back(std::make_unique<commands::ArchiveCommand>(*engine_));
     commands_.push_back(std::make_unique<KeygenCommand>(*engine_));
     commands_.push_back(std::make_unique<commands::DumpCommand>());
+    commands_.push_back(std::make_unique<commands::SignCommand>(*engine_));
+    commands_.push_back(std::make_unique<commands::VerifyCommand>(*engine_));
+    commands_.push_back(std::make_unique<commands::KeyInfoCommand>(*engine_));
     
     // Setup each command
     for (auto& cmd : commands_) {

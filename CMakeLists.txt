@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.20)
 
 project(FileVault
-    VERSION 1.0.0
+    VERSION 1.1.0
     DESCRIPTION "Professional File Encryption CLI Tool"
     LANGUAGES CXX
 )
@@ -109,6 +109,9 @@ set(CLI_SOURCES
     src/cli/commands/archive_cmd.cpp
     src/cli/commands/keygen_cmd.cpp
     src/cli/commands/dump_cmd.cpp
+    src/cli/commands/sign_cmd.cpp
+    src/cli/commands/verify_cmd.cpp
+    src/cli/commands/keyinfo_cmd.cpp
 )
 
 set(ALGORITHM_SOURCES

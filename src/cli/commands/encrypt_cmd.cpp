@@ -88,6 +88,25 @@ void EncryptCommand::setup(CLI::App& app) {
     encrypt_cmd->add_flag("-y,--yes,--force", force_weak_password_, 
                          "Skip weak password prompt (accept automatically)");
     
+    encrypt_cmd->footer(
+        "\nExamples:\n"
+        "  Basic encryption:      filevault encrypt file.txt -m basic\n"
+        "  Standard encryption:   filevault encrypt file.txt -m standard\n"
+        "  Advanced encryption:   filevault encrypt file.txt -m advanced\n"
+        "  Custom algorithm:      filevault encrypt file.txt -a aes-256-gcm\n"
+        "  With compression:      filevault encrypt file.txt --compression lzma\n"
+        "  Skip weak password:    filevault encrypt file.txt -m standard --yes\n"
+        "\n"
+        "Symmetric algorithms: aes-128-gcm, aes-192-gcm, aes-256-gcm, chacha20-poly1305,\n"
+        "  serpent-256-gcm, twofish-{128,192,256}-gcm, camellia-{128,192,256}-gcm,\n"
+        "  aria-{128,192,256}-gcm, sm4-gcm, aes-{128,192,256}-{cbc,ctr,cfb,ofb,ecb,xts}\n"
+        "Asymmetric: rsa-{2048,3072,4096}, ecc-{p256,p384,p521}\n"
+        "Post-Quantum: kyber-{512,768,1024}-hybrid\n"
+        "Classical: caesar, vigenere, playfair, substitution, hill\n"
+        "KDF options: argon2id, argon2i, pbkdf2-sha256, pbkdf2-sha512, scrypt\n"
+        "Compression: none, zlib, bzip2, lzma (levels 1-9)\n"
+    );
+    
     encrypt_cmd->callback([this]() { execute(); });
 }
 

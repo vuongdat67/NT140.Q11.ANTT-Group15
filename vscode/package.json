@@ -2,7 +2,7 @@
   "name": "filevault",
   "displayName": "FileVault - File Encryption",
   "description": "Encrypt and decrypt files with modern cryptographic algorithms including Post-Quantum Cryptography",
-  "version": "1.0.5",
+  "version": "1.1.0",
   "publisher": "nt140-group15",
   "repository": {
     "type": "git",
