@@ -1,0 +1,44 @@
+\doxysection{app.\+hpp}
+\hypertarget{app_8hpp_source}{}\label{app_8hpp_source}\index{include/filevault/cli/app.hpp@{include/filevault/cli/app.hpp}}
+\mbox{\hyperlink{app_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ FILEVAULT\_CLI\_APP\_HPP}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ FILEVAULT\_CLI\_APP\_HPP}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <CLI/CLI.hpp>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{command_8hpp}{command.hpp}}"{}}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{crypto__engine_8hpp}{filevault/core/crypto\_engine.hpp}}"{}}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacefilevault}{filevault}}\ \{}
+\DoxyCodeLine{00011\ \textcolor{keyword}{namespace\ }cli\ \{}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00016\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classfilevault_1_1cli_1_1Application}{Application}}\ \{}
+\DoxyCodeLine{00017\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00018\ \ \ \ \ \mbox{\hyperlink{classfilevault_1_1cli_1_1Application_ac4726ec9d0fa46b1ae465e58ce6e67a0}{Application}}();}
+\DoxyCodeLine{00019\ \ \ \ \ \mbox{\hyperlink{classfilevault_1_1cli_1_1Application_afc4d860ed83b047cf570cdceb4536035}{\string~Application}}();}
+\DoxyCodeLine{00020\ \ \ \ \ }
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classfilevault_1_1cli_1_1Application_a37da8b30d6b31f8a9ec19a0c091494ba}{initialize}}();}
+\DoxyCodeLine{00025\ \ \ \ \ }
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classfilevault_1_1cli_1_1Application_adb3e77f66dc003b4724b6b27470452df}{run}}(\textcolor{keywordtype}{int}\ argc,\ \textcolor{keywordtype}{char}**\ argv);}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classfilevault_1_1cli_1_1Application_aadbd120ad3d34d4e8b39722c9c07bd7f}{register\_commands}}();}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classfilevault_1_1cli_1_1Application_a6f6fdc4bdf50399f93c331537a6f781f}{setup\_logging}}();}
+\DoxyCodeLine{00034\ \ \ \ \ }
+\DoxyCodeLine{00035\ \ \ \ \ CLI::App\ \mbox{\hyperlink{classfilevault_1_1cli_1_1Application_a6a96b25a1968a8a4d9a98f4a1dd140b7}{app\_}};}
+\DoxyCodeLine{00036\ \ \ \ \ std::unique\_ptr<core::CryptoEngine>\ \mbox{\hyperlink{classfilevault_1_1cli_1_1Application_a68061fa2fdfe51379b721c08e2244b97}{engine\_}};}
+\DoxyCodeLine{00037\ \ \ \ \ std::vector<std::unique\_ptr<ICommand>>\ \mbox{\hyperlink{classfilevault_1_1cli_1_1Application_a32987f902be10e1ad9909b5eb7e729d0}{commands\_}};}
+\DoxyCodeLine{00038\ \ \ \ \ }
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{comment}{//\ Global\ options}}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classfilevault_1_1cli_1_1Application_a0b8120b2438fc834145f782376b87f4a}{verbose\_}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00041\ \ \ \ \ std::string\ \mbox{\hyperlink{classfilevault_1_1cli_1_1Application_a6daf401e0ab98e3bc0a488aa509034d4}{log\_level\_}}\ =\ \textcolor{stringliteral}{"{}info"{}};}
+\DoxyCodeLine{00042\ \};}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \}\ \textcolor{comment}{//\ namespace\ cli}}
+\DoxyCodeLine{00045\ \}\ \textcolor{comment}{//\ namespace\ filevault}}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ FILEVAULT\_CLI\_APP\_HPP}}
+
+\end{DoxyCode}

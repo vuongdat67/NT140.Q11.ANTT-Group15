@@ -1,0 +1,105 @@
+\doxysection{filevault\+::core\+::Crypto\+Result Struct Reference}
+\hypertarget{structfilevault_1_1core_1_1CryptoResult}{}\label{structfilevault_1_1core_1_1CryptoResult}\index{filevault::core::CryptoResult@{filevault::core::CryptoResult}}
+
+
+\doxylink{structfilevault_1_1core_1_1Result}{Result} of cryptographic operations.  
+
+
+
+
+{\ttfamily \#include $<$result.\+hpp$>$}
+
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{structfilevault_1_1core_1_1CryptoResult_a25e09669305256e30233bc5a3172e495}{success}} = false
+\item 
+std\+::string \mbox{\hyperlink{structfilevault_1_1core_1_1CryptoResult_a77b714326d923e9abfeb9a9c448536b3}{error\+\_\+message}}
+\item 
+std\+::vector$<$ uint8\+\_\+t $>$ \mbox{\hyperlink{structfilevault_1_1core_1_1CryptoResult_a48574f498ae3eec77ee2c71a6b92dedb}{data}}
+\item 
+\mbox{\hyperlink{namespacefilevault_1_1core_ab1ba257a0205c63e9e1e3623170940a2}{Algorithm\+Type}} \mbox{\hyperlink{structfilevault_1_1core_1_1CryptoResult_a174ccf71b242dfc028c7a231c9a782ec}{algorithm\+\_\+used}}
+\item 
+size\+\_\+t \mbox{\hyperlink{structfilevault_1_1core_1_1CryptoResult_ab2c02af1644b08eac76e32539a65296a}{original\+\_\+size}} = 0
+\item 
+size\+\_\+t \mbox{\hyperlink{structfilevault_1_1core_1_1CryptoResult_a8a529ec8f642e00b7bd812d7f0509a97}{final\+\_\+size}} = 0
+\item 
+double \mbox{\hyperlink{structfilevault_1_1core_1_1CryptoResult_a8b68698194e2079ce468645f2a88e8fd}{processing\+\_\+time\+\_\+ms}} = 0.\+0
+\item 
+std\+::optional$<$ std\+::vector$<$ uint8\+\_\+t $>$ $>$ \mbox{\hyperlink{structfilevault_1_1core_1_1CryptoResult_a77ba4ee05ed2a514e0859f514ea0aff1}{salt}}
+\item 
+std\+::optional$<$ std\+::vector$<$ uint8\+\_\+t $>$ $>$ \mbox{\hyperlink{structfilevault_1_1core_1_1CryptoResult_a578c87b661e472f930a9959b65d40627}{nonce}}
+\item 
+std\+::optional$<$ std\+::vector$<$ uint8\+\_\+t $>$ $>$ \mbox{\hyperlink{structfilevault_1_1core_1_1CryptoResult_ad2c85d2aa2836f1ca2c669fcf7fb1e74}{tag}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\doxylink{structfilevault_1_1core_1_1Result}{Result} of cryptographic operations. 
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{structfilevault_1_1core_1_1CryptoResult_a174ccf71b242dfc028c7a231c9a782ec}\label{structfilevault_1_1core_1_1CryptoResult_a174ccf71b242dfc028c7a231c9a782ec} 
+\index{filevault::core::CryptoResult@{filevault::core::CryptoResult}!algorithm\_used@{algorithm\_used}}
+\index{algorithm\_used@{algorithm\_used}!filevault::core::CryptoResult@{filevault::core::CryptoResult}}
+\doxysubsubsection{\texorpdfstring{algorithm\_used}{algorithm\_used}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacefilevault_1_1core_ab1ba257a0205c63e9e1e3623170940a2}{Algorithm\+Type}} filevault\+::core\+::\+Crypto\+Result\+::algorithm\+\_\+used}
+
+\Hypertarget{structfilevault_1_1core_1_1CryptoResult_a48574f498ae3eec77ee2c71a6b92dedb}\label{structfilevault_1_1core_1_1CryptoResult_a48574f498ae3eec77ee2c71a6b92dedb} 
+\index{filevault::core::CryptoResult@{filevault::core::CryptoResult}!data@{data}}
+\index{data@{data}!filevault::core::CryptoResult@{filevault::core::CryptoResult}}
+\doxysubsubsection{\texorpdfstring{data}{data}}
+{\footnotesize\ttfamily std\+::vector$<$uint8\+\_\+t$>$ filevault\+::core\+::\+Crypto\+Result\+::data}
+
+\Hypertarget{structfilevault_1_1core_1_1CryptoResult_a77b714326d923e9abfeb9a9c448536b3}\label{structfilevault_1_1core_1_1CryptoResult_a77b714326d923e9abfeb9a9c448536b3} 
+\index{filevault::core::CryptoResult@{filevault::core::CryptoResult}!error\_message@{error\_message}}
+\index{error\_message@{error\_message}!filevault::core::CryptoResult@{filevault::core::CryptoResult}}
+\doxysubsubsection{\texorpdfstring{error\_message}{error\_message}}
+{\footnotesize\ttfamily std\+::string filevault\+::core\+::\+Crypto\+Result\+::error\+\_\+message}
+
+\Hypertarget{structfilevault_1_1core_1_1CryptoResult_a8a529ec8f642e00b7bd812d7f0509a97}\label{structfilevault_1_1core_1_1CryptoResult_a8a529ec8f642e00b7bd812d7f0509a97} 
+\index{filevault::core::CryptoResult@{filevault::core::CryptoResult}!final\_size@{final\_size}}
+\index{final\_size@{final\_size}!filevault::core::CryptoResult@{filevault::core::CryptoResult}}
+\doxysubsubsection{\texorpdfstring{final\_size}{final\_size}}
+{\footnotesize\ttfamily size\+\_\+t filevault\+::core\+::\+Crypto\+Result\+::final\+\_\+size = 0}
+
+\Hypertarget{structfilevault_1_1core_1_1CryptoResult_a578c87b661e472f930a9959b65d40627}\label{structfilevault_1_1core_1_1CryptoResult_a578c87b661e472f930a9959b65d40627} 
+\index{filevault::core::CryptoResult@{filevault::core::CryptoResult}!nonce@{nonce}}
+\index{nonce@{nonce}!filevault::core::CryptoResult@{filevault::core::CryptoResult}}
+\doxysubsubsection{\texorpdfstring{nonce}{nonce}}
+{\footnotesize\ttfamily std\+::optional$<$std\+::vector$<$uint8\+\_\+t$>$ $>$ filevault\+::core\+::\+Crypto\+Result\+::nonce}
+
+\Hypertarget{structfilevault_1_1core_1_1CryptoResult_ab2c02af1644b08eac76e32539a65296a}\label{structfilevault_1_1core_1_1CryptoResult_ab2c02af1644b08eac76e32539a65296a} 
+\index{filevault::core::CryptoResult@{filevault::core::CryptoResult}!original\_size@{original\_size}}
+\index{original\_size@{original\_size}!filevault::core::CryptoResult@{filevault::core::CryptoResult}}
+\doxysubsubsection{\texorpdfstring{original\_size}{original\_size}}
+{\footnotesize\ttfamily size\+\_\+t filevault\+::core\+::\+Crypto\+Result\+::original\+\_\+size = 0}
+
+\Hypertarget{structfilevault_1_1core_1_1CryptoResult_a8b68698194e2079ce468645f2a88e8fd}\label{structfilevault_1_1core_1_1CryptoResult_a8b68698194e2079ce468645f2a88e8fd} 
+\index{filevault::core::CryptoResult@{filevault::core::CryptoResult}!processing\_time\_ms@{processing\_time\_ms}}
+\index{processing\_time\_ms@{processing\_time\_ms}!filevault::core::CryptoResult@{filevault::core::CryptoResult}}
+\doxysubsubsection{\texorpdfstring{processing\_time\_ms}{processing\_time\_ms}}
+{\footnotesize\ttfamily double filevault\+::core\+::\+Crypto\+Result\+::processing\+\_\+time\+\_\+ms = 0.\+0}
+
+\Hypertarget{structfilevault_1_1core_1_1CryptoResult_a77ba4ee05ed2a514e0859f514ea0aff1}\label{structfilevault_1_1core_1_1CryptoResult_a77ba4ee05ed2a514e0859f514ea0aff1} 
+\index{filevault::core::CryptoResult@{filevault::core::CryptoResult}!salt@{salt}}
+\index{salt@{salt}!filevault::core::CryptoResult@{filevault::core::CryptoResult}}
+\doxysubsubsection{\texorpdfstring{salt}{salt}}
+{\footnotesize\ttfamily std\+::optional$<$std\+::vector$<$uint8\+\_\+t$>$ $>$ filevault\+::core\+::\+Crypto\+Result\+::salt}
+
+\Hypertarget{structfilevault_1_1core_1_1CryptoResult_a25e09669305256e30233bc5a3172e495}\label{structfilevault_1_1core_1_1CryptoResult_a25e09669305256e30233bc5a3172e495} 
+\index{filevault::core::CryptoResult@{filevault::core::CryptoResult}!success@{success}}
+\index{success@{success}!filevault::core::CryptoResult@{filevault::core::CryptoResult}}
+\doxysubsubsection{\texorpdfstring{success}{success}}
+{\footnotesize\ttfamily bool filevault\+::core\+::\+Crypto\+Result\+::success = false}
+
+\Hypertarget{structfilevault_1_1core_1_1CryptoResult_ad2c85d2aa2836f1ca2c669fcf7fb1e74}\label{structfilevault_1_1core_1_1CryptoResult_ad2c85d2aa2836f1ca2c669fcf7fb1e74} 
+\index{filevault::core::CryptoResult@{filevault::core::CryptoResult}!tag@{tag}}
+\index{tag@{tag}!filevault::core::CryptoResult@{filevault::core::CryptoResult}}
+\doxysubsubsection{\texorpdfstring{tag}{tag}}
+{\footnotesize\ttfamily std\+::optional$<$std\+::vector$<$uint8\+\_\+t$>$ $>$ filevault\+::core\+::\+Crypto\+Result\+::tag}
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/filevault/core/\mbox{\hyperlink{result_8hpp}{result.\+hpp}}\end{DoxyCompactItemize}

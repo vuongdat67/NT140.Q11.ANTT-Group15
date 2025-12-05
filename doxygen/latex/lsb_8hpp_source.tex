@@ -1,0 +1,60 @@
+\doxysection{lsb.\+hpp}
+\hypertarget{lsb_8hpp_source}{}\label{lsb_8hpp_source}\index{include/filevault/steganography/lsb.hpp@{include/filevault/steganography/lsb.hpp}}
+\mbox{\hyperlink{lsb_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ FILEVAULT\_STEGANOGRAPHY\_LSB\_HPP}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ FILEVAULT\_STEGANOGRAPHY\_LSB\_HPP}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <cstdint>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <span>}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacefilevault_1_1steganography}{filevault::steganography}}\ \{}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00020\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classfilevault_1_1steganography_1_1LSBSteganography}{LSBSteganography}}\ \{}
+\DoxyCodeLine{00021\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classfilevault_1_1steganography_1_1LSBSteganography_a5536bb0cc2d01b8e77089acd73fd0818}{embed}}(}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ cover\_image\_path,}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ std::span<const\ uint8\_t>\ secret\_data,}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ output\_path,}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ bits\_per\_channel\ =\ 1}
+\DoxyCodeLine{00036\ \ \ \ \ );}
+\DoxyCodeLine{00037\ \ \ \ \ }
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keyword}{static}\ std::vector<uint8\_t>\ \mbox{\hyperlink{classfilevault_1_1steganography_1_1LSBSteganography_a5b9ffd7a8d99275eeea4044008603961}{extract}}(}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ stego\_image\_path,}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ bits\_per\_channel\ =\ 1}
+\DoxyCodeLine{00048\ \ \ \ \ );}
+\DoxyCodeLine{00049\ \ \ \ \ }
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classfilevault_1_1steganography_1_1LSBSteganography_a85414cae8f094b7999106e761095be31}{calculate\_capacity}}(}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ image\_path,}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ bits\_per\_channel\ =\ 1}
+\DoxyCodeLine{00060\ \ \ \ \ );}
+\DoxyCodeLine{00061\ \ \ \ \ }
+\DoxyCodeLine{00062\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{comment}{//\ Embed\ length\ header\ (4\ bytes)\ at\ the\ beginning}}
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classfilevault_1_1steganography_1_1LSBSteganography_a685c9e8c025c32d4404d8a5aee6a8034}{LENGTH\_HEADER\_SIZE}}\ =\ 4;}
+\DoxyCodeLine{00065\ \ \ \ \ }
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{comment}{//\ Helper\ to\ embed\ one\ byte\ into\ image\ data}}
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classfilevault_1_1steganography_1_1LSBSteganography_a04f2df76c61a64f1bef3133eb663822f}{embed\_byte}}(}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ uint8\_t*\ pixel\_data,}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ pixel\_count,}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\&\ bit\_index,}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ uint8\_t\ \textcolor{keywordtype}{byte},}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ bits\_per\_channel}
+\DoxyCodeLine{00073\ \ \ \ \ );}
+\DoxyCodeLine{00074\ \ \ \ \ }
+\DoxyCodeLine{00075\ \ \ \ \ \textcolor{comment}{//\ Helper\ to\ extract\ one\ byte\ from\ image\ data}}
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keyword}{static}\ uint8\_t\ \mbox{\hyperlink{classfilevault_1_1steganography_1_1LSBSteganography_adfdae5ccdb4c8ff49a40b4c83954c1de}{extract\_byte}}(}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ uint8\_t*\ pixel\_data,}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ pixel\_count,}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\&\ bit\_index,}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ bits\_per\_channel}
+\DoxyCodeLine{00081\ \ \ \ \ );}
+\DoxyCodeLine{00082\ \};}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00084\ \}\ \textcolor{comment}{//\ namespace\ filevault::steganography}}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00086\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ FILEVAULT\_STEGANOGRAPHY\_LSB\_HPP}}
+
+\end{DoxyCode}

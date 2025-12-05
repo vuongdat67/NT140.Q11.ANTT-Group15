@@ -1,0 +1,147 @@
+\doxysection{filevault\+::utils\+::Progress\+Bar Class Reference}
+\hypertarget{classfilevault_1_1utils_1_1ProgressBar}{}\label{classfilevault_1_1utils_1_1ProgressBar}\index{filevault::utils::ProgressBar@{filevault::utils::ProgressBar}}
+
+
+Modern progress bar wrapper.  
+
+
+
+
+{\ttfamily \#include $<$progress.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classfilevault_1_1utils_1_1ProgressBar_a0d7882af3af015e94cdcbad417685366}{Progress\+Bar}} (const std\+::string \&prefix, size\+\_\+t max\+\_\+progress=100)
+\item 
+\mbox{\hyperlink{classfilevault_1_1utils_1_1ProgressBar_afc9bd13639230f8b7212ada18bb7ed17}{\texorpdfstring{$\sim$}{\string~}\+Progress\+Bar}} ()
+\item 
+void \mbox{\hyperlink{classfilevault_1_1utils_1_1ProgressBar_a1818c0f6580286b16506b792c83f6bed}{set\+\_\+progress}} (size\+\_\+t progress)
+\item 
+void \mbox{\hyperlink{classfilevault_1_1utils_1_1ProgressBar_a056f40dac4cf39b8e4cb56b915989622}{tick}} ()
+\item 
+void \mbox{\hyperlink{classfilevault_1_1utils_1_1ProgressBar_aa841da0c62578eb3e0822899fb39b909}{set\+\_\+postfix}} (const std\+::string \&text)
+\item 
+void \mbox{\hyperlink{classfilevault_1_1utils_1_1ProgressBar_afb66db4e08306eaa2affb290b07370e9}{mark\+\_\+as\+\_\+completed}} ()
+\item 
+void \mbox{\hyperlink{classfilevault_1_1utils_1_1ProgressBar_a47e62a1f5e79fa02f5829f758df1a053}{hide}} ()
+\item 
+void \mbox{\hyperlink{classfilevault_1_1utils_1_1ProgressBar_a37c26589ff98448aa4f70a708f864be1}{show}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::unique\+\_\+ptr$<$ indicators\+::\+Progress\+Bar $>$ \mbox{\hyperlink{classfilevault_1_1utils_1_1ProgressBar_aa97901e3560605cc014f8a720dddcb8c}{bar\+\_\+}}
+\item 
+size\+\_\+t \mbox{\hyperlink{classfilevault_1_1utils_1_1ProgressBar_a33fddd748a7c1c2ef43f71ca9078651e}{current\+\_\+progress\+\_\+}}
+\item 
+size\+\_\+t \mbox{\hyperlink{classfilevault_1_1utils_1_1ProgressBar_a13eaaaf3ed14504c4858c6211fd6b136}{max\+\_\+progress\+\_\+}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Modern progress bar wrapper. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classfilevault_1_1utils_1_1ProgressBar_a0d7882af3af015e94cdcbad417685366}\label{classfilevault_1_1utils_1_1ProgressBar_a0d7882af3af015e94cdcbad417685366} 
+\index{filevault::utils::ProgressBar@{filevault::utils::ProgressBar}!ProgressBar@{ProgressBar}}
+\index{ProgressBar@{ProgressBar}!filevault::utils::ProgressBar@{filevault::utils::ProgressBar}}
+\doxysubsubsection{\texorpdfstring{ProgressBar()}{ProgressBar()}}
+{\footnotesize\ttfamily filevault\+::utils\+::\+Progress\+Bar\+::\+Progress\+Bar (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{prefix,  }\item[{size\+\_\+t}]{max\+\_\+progress = {\ttfamily 100} }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=345pt]{classfilevault_1_1utils_1_1ProgressBar_a0d7882af3af015e94cdcbad417685366_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1utils_1_1ProgressBar_afc9bd13639230f8b7212ada18bb7ed17}\label{classfilevault_1_1utils_1_1ProgressBar_afc9bd13639230f8b7212ada18bb7ed17} 
+\index{filevault::utils::ProgressBar@{filevault::utils::ProgressBar}!````~ProgressBar@{\texorpdfstring{$\sim$}{\string~}ProgressBar}}
+\index{````~ProgressBar@{\texorpdfstring{$\sim$}{\string~}ProgressBar}!filevault::utils::ProgressBar@{filevault::utils::ProgressBar}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}ProgressBar()}{\string~ProgressBar()}}
+{\footnotesize\ttfamily filevault\+::utils\+::\+Progress\+Bar\+::\texorpdfstring{$\sim$}{\string~}\+Progress\+Bar (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classfilevault_1_1utils_1_1ProgressBar_a47e62a1f5e79fa02f5829f758df1a053}\label{classfilevault_1_1utils_1_1ProgressBar_a47e62a1f5e79fa02f5829f758df1a053} 
+\index{filevault::utils::ProgressBar@{filevault::utils::ProgressBar}!hide@{hide}}
+\index{hide@{hide}!filevault::utils::ProgressBar@{filevault::utils::ProgressBar}}
+\doxysubsubsection{\texorpdfstring{hide()}{hide()}}
+{\footnotesize\ttfamily void filevault\+::utils\+::\+Progress\+Bar\+::hide (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{classfilevault_1_1utils_1_1ProgressBar_afb66db4e08306eaa2affb290b07370e9}\label{classfilevault_1_1utils_1_1ProgressBar_afb66db4e08306eaa2affb290b07370e9} 
+\index{filevault::utils::ProgressBar@{filevault::utils::ProgressBar}!mark\_as\_completed@{mark\_as\_completed}}
+\index{mark\_as\_completed@{mark\_as\_completed}!filevault::utils::ProgressBar@{filevault::utils::ProgressBar}}
+\doxysubsubsection{\texorpdfstring{mark\_as\_completed()}{mark\_as\_completed()}}
+{\footnotesize\ttfamily void filevault\+::utils\+::\+Progress\+Bar\+::mark\+\_\+as\+\_\+completed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{classfilevault_1_1utils_1_1ProgressBar_aa841da0c62578eb3e0822899fb39b909}\label{classfilevault_1_1utils_1_1ProgressBar_aa841da0c62578eb3e0822899fb39b909} 
+\index{filevault::utils::ProgressBar@{filevault::utils::ProgressBar}!set\_postfix@{set\_postfix}}
+\index{set\_postfix@{set\_postfix}!filevault::utils::ProgressBar@{filevault::utils::ProgressBar}}
+\doxysubsubsection{\texorpdfstring{set\_postfix()}{set\_postfix()}}
+{\footnotesize\ttfamily void filevault\+::utils\+::\+Progress\+Bar\+::set\+\_\+postfix (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{text }\end{DoxyParamCaption})}
+
+\Hypertarget{classfilevault_1_1utils_1_1ProgressBar_a1818c0f6580286b16506b792c83f6bed}\label{classfilevault_1_1utils_1_1ProgressBar_a1818c0f6580286b16506b792c83f6bed} 
+\index{filevault::utils::ProgressBar@{filevault::utils::ProgressBar}!set\_progress@{set\_progress}}
+\index{set\_progress@{set\_progress}!filevault::utils::ProgressBar@{filevault::utils::ProgressBar}}
+\doxysubsubsection{\texorpdfstring{set\_progress()}{set\_progress()}}
+{\footnotesize\ttfamily void filevault\+::utils\+::\+Progress\+Bar\+::set\+\_\+progress (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{progress }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1utils_1_1ProgressBar_a1818c0f6580286b16506b792c83f6bed_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1utils_1_1ProgressBar_a37c26589ff98448aa4f70a708f864be1}\label{classfilevault_1_1utils_1_1ProgressBar_a37c26589ff98448aa4f70a708f864be1} 
+\index{filevault::utils::ProgressBar@{filevault::utils::ProgressBar}!show@{show}}
+\index{show@{show}!filevault::utils::ProgressBar@{filevault::utils::ProgressBar}}
+\doxysubsubsection{\texorpdfstring{show()}{show()}}
+{\footnotesize\ttfamily void filevault\+::utils\+::\+Progress\+Bar\+::show (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{classfilevault_1_1utils_1_1ProgressBar_a056f40dac4cf39b8e4cb56b915989622}\label{classfilevault_1_1utils_1_1ProgressBar_a056f40dac4cf39b8e4cb56b915989622} 
+\index{filevault::utils::ProgressBar@{filevault::utils::ProgressBar}!tick@{tick}}
+\index{tick@{tick}!filevault::utils::ProgressBar@{filevault::utils::ProgressBar}}
+\doxysubsubsection{\texorpdfstring{tick()}{tick()}}
+{\footnotesize\ttfamily void filevault\+::utils\+::\+Progress\+Bar\+::tick (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1utils_1_1ProgressBar_a056f40dac4cf39b8e4cb56b915989622_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classfilevault_1_1utils_1_1ProgressBar_aa97901e3560605cc014f8a720dddcb8c}\label{classfilevault_1_1utils_1_1ProgressBar_aa97901e3560605cc014f8a720dddcb8c} 
+\index{filevault::utils::ProgressBar@{filevault::utils::ProgressBar}!bar\_@{bar\_}}
+\index{bar\_@{bar\_}!filevault::utils::ProgressBar@{filevault::utils::ProgressBar}}
+\doxysubsubsection{\texorpdfstring{bar\_}{bar\_}}
+{\footnotesize\ttfamily std\+::unique\+\_\+ptr$<$indicators\+::\+Progress\+Bar$>$ filevault\+::utils\+::\+Progress\+Bar\+::bar\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classfilevault_1_1utils_1_1ProgressBar_a33fddd748a7c1c2ef43f71ca9078651e}\label{classfilevault_1_1utils_1_1ProgressBar_a33fddd748a7c1c2ef43f71ca9078651e} 
+\index{filevault::utils::ProgressBar@{filevault::utils::ProgressBar}!current\_progress\_@{current\_progress\_}}
+\index{current\_progress\_@{current\_progress\_}!filevault::utils::ProgressBar@{filevault::utils::ProgressBar}}
+\doxysubsubsection{\texorpdfstring{current\_progress\_}{current\_progress\_}}
+{\footnotesize\ttfamily size\+\_\+t filevault\+::utils\+::\+Progress\+Bar\+::current\+\_\+progress\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classfilevault_1_1utils_1_1ProgressBar_a13eaaaf3ed14504c4858c6211fd6b136}\label{classfilevault_1_1utils_1_1ProgressBar_a13eaaaf3ed14504c4858c6211fd6b136} 
+\index{filevault::utils::ProgressBar@{filevault::utils::ProgressBar}!max\_progress\_@{max\_progress\_}}
+\index{max\_progress\_@{max\_progress\_}!filevault::utils::ProgressBar@{filevault::utils::ProgressBar}}
+\doxysubsubsection{\texorpdfstring{max\_progress\_}{max\_progress\_}}
+{\footnotesize\ttfamily size\+\_\+t filevault\+::utils\+::\+Progress\+Bar\+::max\+\_\+progress\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/filevault/utils/\mbox{\hyperlink{progress_8hpp}{progress.\+hpp}}\item 
+src/utils/\mbox{\hyperlink{progress_8cpp}{progress.\+cpp}}\end{DoxyCompactItemize}

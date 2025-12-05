@@ -1,0 +1,75 @@
+\doxysection{filevault\+::utils\+::Block\+Progress\+Bar Class Reference}
+\hypertarget{classfilevault_1_1utils_1_1BlockProgressBar}{}\label{classfilevault_1_1utils_1_1BlockProgressBar}\index{filevault::utils::BlockProgressBar@{filevault::utils::BlockProgressBar}}
+
+
+Block-\/style progress bar.  
+
+
+
+
+{\ttfamily \#include $<$progress.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classfilevault_1_1utils_1_1BlockProgressBar_a83c5b770e9f44f214a1a755fd157add4}{Block\+Progress\+Bar}} (const std\+::string \&prefix, size\+\_\+t max\+\_\+progress=100)
+\item 
+void \mbox{\hyperlink{classfilevault_1_1utils_1_1BlockProgressBar_a49be95c00fe008bd7b3359383ba17aef}{set\+\_\+progress}} (size\+\_\+t progress)
+\item 
+void \mbox{\hyperlink{classfilevault_1_1utils_1_1BlockProgressBar_a0943cfd8699cfb54c732162a3fd844cc}{set\+\_\+option\+\_\+text}} (const std\+::string \&text)
+\item 
+void \mbox{\hyperlink{classfilevault_1_1utils_1_1BlockProgressBar_a4dae10a035bd17bf97e09ef189562789}{mark\+\_\+as\+\_\+completed}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::unique\+\_\+ptr$<$ indicators\+::\+Block\+Progress\+Bar $>$ \mbox{\hyperlink{classfilevault_1_1utils_1_1BlockProgressBar_a1cebee9fdb3fbf811e786d3d4fe62777}{bar\+\_\+}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Block-\/style progress bar. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classfilevault_1_1utils_1_1BlockProgressBar_a83c5b770e9f44f214a1a755fd157add4}\label{classfilevault_1_1utils_1_1BlockProgressBar_a83c5b770e9f44f214a1a755fd157add4} 
+\index{filevault::utils::BlockProgressBar@{filevault::utils::BlockProgressBar}!BlockProgressBar@{BlockProgressBar}}
+\index{BlockProgressBar@{BlockProgressBar}!filevault::utils::BlockProgressBar@{filevault::utils::BlockProgressBar}}
+\doxysubsubsection{\texorpdfstring{BlockProgressBar()}{BlockProgressBar()}}
+{\footnotesize\ttfamily filevault\+::utils\+::\+Block\+Progress\+Bar\+::\+Block\+Progress\+Bar (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{prefix,  }\item[{size\+\_\+t}]{max\+\_\+progress = {\ttfamily 100} }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classfilevault_1_1utils_1_1BlockProgressBar_a4dae10a035bd17bf97e09ef189562789}\label{classfilevault_1_1utils_1_1BlockProgressBar_a4dae10a035bd17bf97e09ef189562789} 
+\index{filevault::utils::BlockProgressBar@{filevault::utils::BlockProgressBar}!mark\_as\_completed@{mark\_as\_completed}}
+\index{mark\_as\_completed@{mark\_as\_completed}!filevault::utils::BlockProgressBar@{filevault::utils::BlockProgressBar}}
+\doxysubsubsection{\texorpdfstring{mark\_as\_completed()}{mark\_as\_completed()}}
+{\footnotesize\ttfamily void filevault\+::utils\+::\+Block\+Progress\+Bar\+::mark\+\_\+as\+\_\+completed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{classfilevault_1_1utils_1_1BlockProgressBar_a0943cfd8699cfb54c732162a3fd844cc}\label{classfilevault_1_1utils_1_1BlockProgressBar_a0943cfd8699cfb54c732162a3fd844cc} 
+\index{filevault::utils::BlockProgressBar@{filevault::utils::BlockProgressBar}!set\_option\_text@{set\_option\_text}}
+\index{set\_option\_text@{set\_option\_text}!filevault::utils::BlockProgressBar@{filevault::utils::BlockProgressBar}}
+\doxysubsubsection{\texorpdfstring{set\_option\_text()}{set\_option\_text()}}
+{\footnotesize\ttfamily void filevault\+::utils\+::\+Block\+Progress\+Bar\+::set\+\_\+option\+\_\+text (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{text }\end{DoxyParamCaption})}
+
+\Hypertarget{classfilevault_1_1utils_1_1BlockProgressBar_a49be95c00fe008bd7b3359383ba17aef}\label{classfilevault_1_1utils_1_1BlockProgressBar_a49be95c00fe008bd7b3359383ba17aef} 
+\index{filevault::utils::BlockProgressBar@{filevault::utils::BlockProgressBar}!set\_progress@{set\_progress}}
+\index{set\_progress@{set\_progress}!filevault::utils::BlockProgressBar@{filevault::utils::BlockProgressBar}}
+\doxysubsubsection{\texorpdfstring{set\_progress()}{set\_progress()}}
+{\footnotesize\ttfamily void filevault\+::utils\+::\+Block\+Progress\+Bar\+::set\+\_\+progress (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{progress }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classfilevault_1_1utils_1_1BlockProgressBar_a1cebee9fdb3fbf811e786d3d4fe62777}\label{classfilevault_1_1utils_1_1BlockProgressBar_a1cebee9fdb3fbf811e786d3d4fe62777} 
+\index{filevault::utils::BlockProgressBar@{filevault::utils::BlockProgressBar}!bar\_@{bar\_}}
+\index{bar\_@{bar\_}!filevault::utils::BlockProgressBar@{filevault::utils::BlockProgressBar}}
+\doxysubsubsection{\texorpdfstring{bar\_}{bar\_}}
+{\footnotesize\ttfamily std\+::unique\+\_\+ptr$<$indicators\+::\+Block\+Progress\+Bar$>$ filevault\+::utils\+::\+Block\+Progress\+Bar\+::bar\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/filevault/utils/\mbox{\hyperlink{progress_8hpp}{progress.\+hpp}}\item 
+src/utils/\mbox{\hyperlink{progress_8cpp}{progress.\+cpp}}\end{DoxyCompactItemize}

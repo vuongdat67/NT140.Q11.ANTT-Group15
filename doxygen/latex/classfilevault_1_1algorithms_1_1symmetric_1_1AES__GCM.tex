@@ -1,0 +1,308 @@
+\doxysection{filevault\+::algorithms\+::symmetric\+::AES\+\_\+\+GCM Class Reference}
+\hypertarget{classfilevault_1_1algorithms_1_1symmetric_1_1AES__GCM}{}\label{classfilevault_1_1algorithms_1_1symmetric_1_1AES__GCM}\index{filevault::algorithms::symmetric::AES\_GCM@{filevault::algorithms::symmetric::AES\_GCM}}
+
+
+AES-\/\+GCM AEAD encryption.  
+
+
+
+
+{\ttfamily \#include $<$aes\+\_\+gcm.\+hpp$>$}
+
+
+
+Inheritance diagram for filevault\+::algorithms\+::symmetric\+::AES\+\_\+\+GCM\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=208pt]{classfilevault_1_1algorithms_1_1symmetric_1_1AES__GCM__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for filevault\+::algorithms\+::symmetric\+::AES\+\_\+\+GCM\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=208pt]{classfilevault_1_1algorithms_1_1symmetric_1_1AES__GCM__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1AES__GCM_a35d3eb2a3e47fc44335cbf9df5097422}{AES\+\_\+\+GCM}} (size\+\_\+t key\+\_\+bits=256)
+\item 
+virtual \mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1AES__GCM_a2b9fe44127d0872c383ead4489572fb1}{\texorpdfstring{$\sim$}{\string~}\+AES\+\_\+\+GCM}} ()=default
+\item 
+std\+::string \mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1AES__GCM_aa936725f52c871fa68510abbc407fef3}{name}} () const override
+\begin{DoxyCompactList}\small\item\em Get algorithm name. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacefilevault_1_1core_ab1ba257a0205c63e9e1e3623170940a2}{core\+::\+Algorithm\+Type}} \mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1AES__GCM_aa23e4afa8b8da25dea3e5ab97b185eeb}{type}} () const override
+\begin{DoxyCompactList}\small\item\em Get algorithm type. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structfilevault_1_1core_1_1CryptoResult}{core\+::\+Crypto\+Result}} \mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1AES__GCM_a7c613ef577185191de8c080ad9cbad8e}{encrypt}} (std\+::span$<$ const uint8\+\_\+t $>$ plaintext, std\+::span$<$ const uint8\+\_\+t $>$ key, const \mbox{\hyperlink{structfilevault_1_1core_1_1EncryptionConfig}{core\+::\+Encryption\+Config}} \&config) override
+\begin{DoxyCompactList}\small\item\em Encrypt data. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structfilevault_1_1core_1_1CryptoResult}{core\+::\+Crypto\+Result}} \mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1AES__GCM_af694ac294147f2a6a6c9b178d7f88a7a}{decrypt}} (std\+::span$<$ const uint8\+\_\+t $>$ ciphertext, std\+::span$<$ const uint8\+\_\+t $>$ key, const \mbox{\hyperlink{structfilevault_1_1core_1_1EncryptionConfig}{core\+::\+Encryption\+Config}} \&config) override
+\begin{DoxyCompactList}\small\item\em Decrypt data. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1AES__GCM_a2538b15382c7edae8a9a6938e2357d4b}{key\+\_\+size}} () const override
+\begin{DoxyCompactList}\small\item\em Get recommended key size in bytes. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1AES__GCM_a2437d907511bfc056f9ffdb2c8c4bd20}{nonce\+\_\+size}} () const
+\item 
+size\+\_\+t \mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1AES__GCM_ada8a50b5d179abeb15aabe75142cbefe}{tag\+\_\+size}} () const
+\item 
+bool \mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1AES__GCM_a7869b616afe6122b655ab0ae3c29aa98}{is\+\_\+suitable\+\_\+for}} (\mbox{\hyperlink{namespacefilevault_1_1core_abcb3b3d896f7dc00926903183b3e2dc9}{core\+::\+Security\+Level}} level) const override
+\begin{DoxyCompactList}\small\item\em Check if algorithm is suitable for security level. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classfilevault_1_1core_1_1ICryptoAlgorithm}{filevault\+::core\+::\+ICrypto\+Algorithm}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classfilevault_1_1core_1_1ICryptoAlgorithm_a36383558169617931374ca3b64399818}{\texorpdfstring{$\sim$}{\string~}\+ICrypto\+Algorithm}} ()=default
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+size\+\_\+t \mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1AES__GCM_a2a677920fba4b86a0cba12486c064de2}{key\+\_\+bits\+\_\+}}
+\item 
+\mbox{\hyperlink{namespacefilevault_1_1core_ab1ba257a0205c63e9e1e3623170940a2}{core\+::\+Algorithm\+Type}} \mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1AES__GCM_ace997a2727c29600848781953a5a466f}{type\+\_\+}}
+\item 
+std\+::string \mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1AES__GCM_a738e4fa7ad1fccfe233ab6a046b7b4aa}{botan\+\_\+name\+\_\+}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+AES-\/\+GCM AEAD encryption. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classfilevault_1_1algorithms_1_1symmetric_1_1AES__GCM_a35d3eb2a3e47fc44335cbf9df5097422}\label{classfilevault_1_1algorithms_1_1symmetric_1_1AES__GCM_a35d3eb2a3e47fc44335cbf9df5097422} 
+\index{filevault::algorithms::symmetric::AES\_GCM@{filevault::algorithms::symmetric::AES\_GCM}!AES\_GCM@{AES\_GCM}}
+\index{AES\_GCM@{AES\_GCM}!filevault::algorithms::symmetric::AES\_GCM@{filevault::algorithms::symmetric::AES\_GCM}}
+\doxysubsubsection{\texorpdfstring{AES\_GCM()}{AES\_GCM()}}
+{\footnotesize\ttfamily filevault\+::algorithms\+::symmetric\+::\+AES\+\_\+\+GCM\+::\+AES\+\_\+\+GCM (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{key\+\_\+bits = {\ttfamily 256} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1algorithms_1_1symmetric_1_1AES__GCM_a35d3eb2a3e47fc44335cbf9df5097422_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1algorithms_1_1symmetric_1_1AES__GCM_a2b9fe44127d0872c383ead4489572fb1}\label{classfilevault_1_1algorithms_1_1symmetric_1_1AES__GCM_a2b9fe44127d0872c383ead4489572fb1} 
+\index{filevault::algorithms::symmetric::AES\_GCM@{filevault::algorithms::symmetric::AES\_GCM}!````~AES\_GCM@{\texorpdfstring{$\sim$}{\string~}AES\_GCM}}
+\index{````~AES\_GCM@{\texorpdfstring{$\sim$}{\string~}AES\_GCM}!filevault::algorithms::symmetric::AES\_GCM@{filevault::algorithms::symmetric::AES\_GCM}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}AES\_GCM()}{\string~AES\_GCM()}}
+{\footnotesize\ttfamily virtual filevault\+::algorithms\+::symmetric\+::\+AES\+\_\+\+GCM\+::\texorpdfstring{$\sim$}{\string~}\+AES\+\_\+\+GCM (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classfilevault_1_1algorithms_1_1symmetric_1_1AES__GCM_af694ac294147f2a6a6c9b178d7f88a7a}\label{classfilevault_1_1algorithms_1_1symmetric_1_1AES__GCM_af694ac294147f2a6a6c9b178d7f88a7a} 
+\index{filevault::algorithms::symmetric::AES\_GCM@{filevault::algorithms::symmetric::AES\_GCM}!decrypt@{decrypt}}
+\index{decrypt@{decrypt}!filevault::algorithms::symmetric::AES\_GCM@{filevault::algorithms::symmetric::AES\_GCM}}
+\doxysubsubsection{\texorpdfstring{decrypt()}{decrypt()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structfilevault_1_1core_1_1CryptoResult}{core\+::\+Crypto\+Result}} filevault\+::algorithms\+::symmetric\+::\+AES\+\_\+\+GCM\+::decrypt (\begin{DoxyParamCaption}\item[{std\+::span$<$ const uint8\+\_\+t $>$}]{ciphertext,  }\item[{std\+::span$<$ const uint8\+\_\+t $>$}]{key,  }\item[{const \mbox{\hyperlink{structfilevault_1_1core_1_1EncryptionConfig}{core\+::\+Encryption\+Config}} \&}]{config }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Decrypt data. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ciphertext} & Encrypted data \\
+\hline
+{\em key} & Decryption key (derived from password) \\
+\hline
+{\em config} & Decryption configuration \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Decrypted data 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classfilevault_1_1core_1_1ICryptoAlgorithm_a5ad6e9e19a3ed1dd3f0b49106bcaac0d}{filevault\+::core\+::\+ICrypto\+Algorithm}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1algorithms_1_1symmetric_1_1AES__GCM_af694ac294147f2a6a6c9b178d7f88a7a_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1algorithms_1_1symmetric_1_1AES__GCM_af694ac294147f2a6a6c9b178d7f88a7a_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1algorithms_1_1symmetric_1_1AES__GCM_a7c613ef577185191de8c080ad9cbad8e}\label{classfilevault_1_1algorithms_1_1symmetric_1_1AES__GCM_a7c613ef577185191de8c080ad9cbad8e} 
+\index{filevault::algorithms::symmetric::AES\_GCM@{filevault::algorithms::symmetric::AES\_GCM}!encrypt@{encrypt}}
+\index{encrypt@{encrypt}!filevault::algorithms::symmetric::AES\_GCM@{filevault::algorithms::symmetric::AES\_GCM}}
+\doxysubsubsection{\texorpdfstring{encrypt()}{encrypt()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structfilevault_1_1core_1_1CryptoResult}{core\+::\+Crypto\+Result}} filevault\+::algorithms\+::symmetric\+::\+AES\+\_\+\+GCM\+::encrypt (\begin{DoxyParamCaption}\item[{std\+::span$<$ const uint8\+\_\+t $>$}]{plaintext,  }\item[{std\+::span$<$ const uint8\+\_\+t $>$}]{key,  }\item[{const \mbox{\hyperlink{structfilevault_1_1core_1_1EncryptionConfig}{core\+::\+Encryption\+Config}} \&}]{config }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Encrypt data. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em plaintext} & Input data to encrypt \\
+\hline
+{\em key} & Encryption key (derived from password) \\
+\hline
+{\em config} & Encryption configuration \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Encrypted data with metadata 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classfilevault_1_1core_1_1ICryptoAlgorithm_a5b9102cef54b84b54feea1dc16561a2d}{filevault\+::core\+::\+ICrypto\+Algorithm}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1algorithms_1_1symmetric_1_1AES__GCM_a7c613ef577185191de8c080ad9cbad8e_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1algorithms_1_1symmetric_1_1AES__GCM_a7c613ef577185191de8c080ad9cbad8e_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1algorithms_1_1symmetric_1_1AES__GCM_a7869b616afe6122b655ab0ae3c29aa98}\label{classfilevault_1_1algorithms_1_1symmetric_1_1AES__GCM_a7869b616afe6122b655ab0ae3c29aa98} 
+\index{filevault::algorithms::symmetric::AES\_GCM@{filevault::algorithms::symmetric::AES\_GCM}!is\_suitable\_for@{is\_suitable\_for}}
+\index{is\_suitable\_for@{is\_suitable\_for}!filevault::algorithms::symmetric::AES\_GCM@{filevault::algorithms::symmetric::AES\_GCM}}
+\doxysubsubsection{\texorpdfstring{is\_suitable\_for()}{is\_suitable\_for()}}
+{\footnotesize\ttfamily bool filevault\+::algorithms\+::symmetric\+::\+AES\+\_\+\+GCM\+::is\+\_\+suitable\+\_\+for (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacefilevault_1_1core_abcb3b3d896f7dc00926903183b3e2dc9}{core\+::\+Security\+Level}}}]{level }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Check if algorithm is suitable for security level. 
+
+
+
+Implements \mbox{\hyperlink{classfilevault_1_1core_1_1ICryptoAlgorithm_aab479734daf06d3f76af5d916c0285fa}{filevault\+::core\+::\+ICrypto\+Algorithm}}.
+
+\Hypertarget{classfilevault_1_1algorithms_1_1symmetric_1_1AES__GCM_a2538b15382c7edae8a9a6938e2357d4b}\label{classfilevault_1_1algorithms_1_1symmetric_1_1AES__GCM_a2538b15382c7edae8a9a6938e2357d4b} 
+\index{filevault::algorithms::symmetric::AES\_GCM@{filevault::algorithms::symmetric::AES\_GCM}!key\_size@{key\_size}}
+\index{key\_size@{key\_size}!filevault::algorithms::symmetric::AES\_GCM@{filevault::algorithms::symmetric::AES\_GCM}}
+\doxysubsubsection{\texorpdfstring{key\_size()}{key\_size()}}
+{\footnotesize\ttfamily size\+\_\+t filevault\+::algorithms\+::symmetric\+::\+AES\+\_\+\+GCM\+::key\+\_\+size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get recommended key size in bytes. 
+
+
+
+Implements \mbox{\hyperlink{classfilevault_1_1core_1_1ICryptoAlgorithm_af9ccb47457495eb99988fef0b5b2bbe8}{filevault\+::core\+::\+ICrypto\+Algorithm}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1algorithms_1_1symmetric_1_1AES__GCM_a2538b15382c7edae8a9a6938e2357d4b_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1algorithms_1_1symmetric_1_1AES__GCM_aa936725f52c871fa68510abbc407fef3}\label{classfilevault_1_1algorithms_1_1symmetric_1_1AES__GCM_aa936725f52c871fa68510abbc407fef3} 
+\index{filevault::algorithms::symmetric::AES\_GCM@{filevault::algorithms::symmetric::AES\_GCM}!name@{name}}
+\index{name@{name}!filevault::algorithms::symmetric::AES\_GCM@{filevault::algorithms::symmetric::AES\_GCM}}
+\doxysubsubsection{\texorpdfstring{name()}{name()}}
+{\footnotesize\ttfamily std\+::string filevault\+::algorithms\+::symmetric\+::\+AES\+\_\+\+GCM\+::name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get algorithm name. 
+
+
+
+Implements \mbox{\hyperlink{classfilevault_1_1core_1_1ICryptoAlgorithm_a8acdc23e4f2ea77bb4a5b9820b27fa66}{filevault\+::core\+::\+ICrypto\+Algorithm}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1algorithms_1_1symmetric_1_1AES__GCM_aa936725f52c871fa68510abbc407fef3_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1algorithms_1_1symmetric_1_1AES__GCM_a2437d907511bfc056f9ffdb2c8c4bd20}\label{classfilevault_1_1algorithms_1_1symmetric_1_1AES__GCM_a2437d907511bfc056f9ffdb2c8c4bd20} 
+\index{filevault::algorithms::symmetric::AES\_GCM@{filevault::algorithms::symmetric::AES\_GCM}!nonce\_size@{nonce\_size}}
+\index{nonce\_size@{nonce\_size}!filevault::algorithms::symmetric::AES\_GCM@{filevault::algorithms::symmetric::AES\_GCM}}
+\doxysubsubsection{\texorpdfstring{nonce\_size()}{nonce\_size()}}
+{\footnotesize\ttfamily size\+\_\+t filevault\+::algorithms\+::symmetric\+::\+AES\+\_\+\+GCM\+::nonce\+\_\+size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1algorithms_1_1symmetric_1_1AES__GCM_a2437d907511bfc056f9ffdb2c8c4bd20_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1algorithms_1_1symmetric_1_1AES__GCM_ada8a50b5d179abeb15aabe75142cbefe}\label{classfilevault_1_1algorithms_1_1symmetric_1_1AES__GCM_ada8a50b5d179abeb15aabe75142cbefe} 
+\index{filevault::algorithms::symmetric::AES\_GCM@{filevault::algorithms::symmetric::AES\_GCM}!tag\_size@{tag\_size}}
+\index{tag\_size@{tag\_size}!filevault::algorithms::symmetric::AES\_GCM@{filevault::algorithms::symmetric::AES\_GCM}}
+\doxysubsubsection{\texorpdfstring{tag\_size()}{tag\_size()}}
+{\footnotesize\ttfamily size\+\_\+t filevault\+::algorithms\+::symmetric\+::\+AES\+\_\+\+GCM\+::tag\+\_\+size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1algorithms_1_1symmetric_1_1AES__GCM_ada8a50b5d179abeb15aabe75142cbefe_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1algorithms_1_1symmetric_1_1AES__GCM_aa23e4afa8b8da25dea3e5ab97b185eeb}\label{classfilevault_1_1algorithms_1_1symmetric_1_1AES__GCM_aa23e4afa8b8da25dea3e5ab97b185eeb} 
+\index{filevault::algorithms::symmetric::AES\_GCM@{filevault::algorithms::symmetric::AES\_GCM}!type@{type}}
+\index{type@{type}!filevault::algorithms::symmetric::AES\_GCM@{filevault::algorithms::symmetric::AES\_GCM}}
+\doxysubsubsection{\texorpdfstring{type()}{type()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacefilevault_1_1core_ab1ba257a0205c63e9e1e3623170940a2}{core\+::\+Algorithm\+Type}} filevault\+::algorithms\+::symmetric\+::\+AES\+\_\+\+GCM\+::type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get algorithm type. 
+
+
+
+Implements \mbox{\hyperlink{classfilevault_1_1core_1_1ICryptoAlgorithm_a11b7820f7b0bbb5fd6668fac3b78a7e1}{filevault\+::core\+::\+ICrypto\+Algorithm}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classfilevault_1_1algorithms_1_1symmetric_1_1AES__GCM_a738e4fa7ad1fccfe233ab6a046b7b4aa}\label{classfilevault_1_1algorithms_1_1symmetric_1_1AES__GCM_a738e4fa7ad1fccfe233ab6a046b7b4aa} 
+\index{filevault::algorithms::symmetric::AES\_GCM@{filevault::algorithms::symmetric::AES\_GCM}!botan\_name\_@{botan\_name\_}}
+\index{botan\_name\_@{botan\_name\_}!filevault::algorithms::symmetric::AES\_GCM@{filevault::algorithms::symmetric::AES\_GCM}}
+\doxysubsubsection{\texorpdfstring{botan\_name\_}{botan\_name\_}}
+{\footnotesize\ttfamily std\+::string filevault\+::algorithms\+::symmetric\+::\+AES\+\_\+\+GCM\+::botan\+\_\+name\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classfilevault_1_1algorithms_1_1symmetric_1_1AES__GCM_a2a677920fba4b86a0cba12486c064de2}\label{classfilevault_1_1algorithms_1_1symmetric_1_1AES__GCM_a2a677920fba4b86a0cba12486c064de2} 
+\index{filevault::algorithms::symmetric::AES\_GCM@{filevault::algorithms::symmetric::AES\_GCM}!key\_bits\_@{key\_bits\_}}
+\index{key\_bits\_@{key\_bits\_}!filevault::algorithms::symmetric::AES\_GCM@{filevault::algorithms::symmetric::AES\_GCM}}
+\doxysubsubsection{\texorpdfstring{key\_bits\_}{key\_bits\_}}
+{\footnotesize\ttfamily size\+\_\+t filevault\+::algorithms\+::symmetric\+::\+AES\+\_\+\+GCM\+::key\+\_\+bits\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classfilevault_1_1algorithms_1_1symmetric_1_1AES__GCM_ace997a2727c29600848781953a5a466f}\label{classfilevault_1_1algorithms_1_1symmetric_1_1AES__GCM_ace997a2727c29600848781953a5a466f} 
+\index{filevault::algorithms::symmetric::AES\_GCM@{filevault::algorithms::symmetric::AES\_GCM}!type\_@{type\_}}
+\index{type\_@{type\_}!filevault::algorithms::symmetric::AES\_GCM@{filevault::algorithms::symmetric::AES\_GCM}}
+\doxysubsubsection{\texorpdfstring{type\_}{type\_}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacefilevault_1_1core_ab1ba257a0205c63e9e1e3623170940a2}{core\+::\+Algorithm\+Type}} filevault\+::algorithms\+::symmetric\+::\+AES\+\_\+\+GCM\+::type\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/filevault/algorithms/symmetric/\mbox{\hyperlink{aes__gcm_8hpp}{aes\+\_\+gcm.\+hpp}}\item 
+src/algorithms/symmetric/\mbox{\hyperlink{aes__gcm_8cpp}{aes\+\_\+gcm.\+cpp}}\end{DoxyCompactItemize}

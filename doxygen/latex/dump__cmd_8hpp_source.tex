@@ -1,0 +1,42 @@
+\doxysection{dump\+\_\+cmd.\+hpp}
+\hypertarget{dump__cmd_8hpp_source}{}\label{dump__cmd_8hpp_source}\index{include/filevault/cli/commands/dump\_cmd.hpp@{include/filevault/cli/commands/dump\_cmd.hpp}}
+\mbox{\hyperlink{dump__cmd_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ FILEVAULT\_CLI\_COMMANDS\_DUMP\_CMD\_HPP}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ FILEVAULT\_CLI\_COMMANDS\_DUMP\_CMD\_HPP}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}../command.hpp"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacefilevault}{filevault}}\ \{}
+\DoxyCodeLine{00008\ \textcolor{keyword}{namespace\ }cli\ \{}
+\DoxyCodeLine{00009\ \textcolor{keyword}{namespace\ }commands\ \{}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classfilevault_1_1cli_1_1commands_1_1DumpCommand}{DumpCommand}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classfilevault_1_1cli_1_1ICommand}{ICommand}}\ \{}
+\DoxyCodeLine{00015\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00016\ \ \ \ \ \mbox{\hyperlink{classfilevault_1_1cli_1_1commands_1_1DumpCommand_aa0475313890ce1e5089371a43a367eeb}{DumpCommand}}();}
+\DoxyCodeLine{00017\ \ \ \ \ }
+\DoxyCodeLine{00018\ \ \ \ \ std::string\ \mbox{\hyperlink{classfilevault_1_1cli_1_1commands_1_1DumpCommand_aac7a7f9def896a8c750d72430e1c4ebe}{name}}()\textcolor{keyword}{\ const\ override\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classfilevault_1_1cli_1_1commands_1_1DumpCommand_ac06a19bb532e6ecdfda41a9d61ca1a29}{name\_}};\ \}}
+\DoxyCodeLine{00019\ \ \ \ \ std::string\ \mbox{\hyperlink{classfilevault_1_1cli_1_1commands_1_1DumpCommand_a0230217d7e5faa9531f5f674032ad943}{description}}()\textcolor{keyword}{\ const\ override\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classfilevault_1_1cli_1_1commands_1_1DumpCommand_ab51eada337cf0f73b1a17a4cdd0e476f}{description\_}};\ \}}
+\DoxyCodeLine{00020\ \ \ \ \ }
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classfilevault_1_1cli_1_1commands_1_1DumpCommand_ac1f6ef852c8c9ba0fe96f440d8a06819}{setup}}(CLI::App\&\ app)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classfilevault_1_1cli_1_1commands_1_1DumpCommand_a5d3167faa948f2aa1bd9b692a683a806}{execute}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00023\ \ \ \ \ }
+\DoxyCodeLine{00024\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00025\ \ \ \ \ std::string\ \mbox{\hyperlink{classfilevault_1_1cli_1_1commands_1_1DumpCommand_ac06a19bb532e6ecdfda41a9d61ca1a29}{name\_}}\ =\ \textcolor{stringliteral}{"{}dump"{}};}
+\DoxyCodeLine{00026\ \ \ \ \ std::string\ \mbox{\hyperlink{classfilevault_1_1cli_1_1commands_1_1DumpCommand_ab51eada337cf0f73b1a17a4cdd0e476f}{description\_}}\ =\ \textcolor{stringliteral}{"{}View\ file\ content\ in\ hex,\ binary,\ or\ base64\ format"{}};}
+\DoxyCodeLine{00027\ \ \ \ \ }
+\DoxyCodeLine{00028\ \ \ \ \ std::string\ \mbox{\hyperlink{classfilevault_1_1cli_1_1commands_1_1DumpCommand_aefa22b8e5bd65711c08bde45c8a2b1dd}{file\_path\_}};}
+\DoxyCodeLine{00029\ \ \ \ \ std::string\ \mbox{\hyperlink{classfilevault_1_1cli_1_1commands_1_1DumpCommand_a156d7f0110adae87c59c9deaf12be242}{format\_}}\ =\ \textcolor{stringliteral}{"{}hex"{}};\ \ \textcolor{comment}{//\ Default\ format}}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classfilevault_1_1cli_1_1commands_1_1DumpCommand_a2cb089adb936443b2898eae29de5f114}{max\_bytes\_}}\ =\ 0;\ \ \textcolor{comment}{//\ 0\ =\ show\ all}}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classfilevault_1_1cli_1_1commands_1_1DumpCommand_a1790fd874c05f28864152a69569bc11e}{show\_offset\_}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classfilevault_1_1cli_1_1commands_1_1DumpCommand_a78c7c95574f39f747db640b43492b7de}{show\_ascii\_}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00033\ \};}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \}\ \textcolor{comment}{//\ namespace\ commands}}
+\DoxyCodeLine{00036\ \}\ \textcolor{comment}{//\ namespace\ cli}}
+\DoxyCodeLine{00037\ \}\ \textcolor{comment}{//\ namespace\ filevault}}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ FILEVAULT\_CLI\_COMMANDS\_DUMP\_CMD\_HPP}}
+
+\end{DoxyCode}

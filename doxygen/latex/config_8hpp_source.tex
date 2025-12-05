@@ -1,0 +1,73 @@
+\doxysection{config.\+hpp}
+\hypertarget{config_8hpp_source}{}\label{config_8hpp_source}\index{include/filevault/utils/config.hpp@{include/filevault/utils/config.hpp}}
+\mbox{\hyperlink{config_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ FILEVAULT\_UTILS\_CONFIG\_HPP}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ FILEVAULT\_UTILS\_CONFIG\_HPP}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{types_8hpp}{filevault/core/types.hpp}}"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <nlohmann/json.hpp>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <optional>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <filesystem>}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacefilevault}{filevault}}\ \{}
+\DoxyCodeLine{00011\ \textcolor{keyword}{namespace\ }utils\ \{}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00018\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classfilevault_1_1utils_1_1Config}{Config}}\ \{}
+\DoxyCodeLine{00019\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{classfilevault_1_1utils_1_1Config}{Config}}\ \mbox{\hyperlink{classfilevault_1_1utils_1_1Config_af92729896ea314eaca5be1f889373a10}{load}}();}
+\DoxyCodeLine{00024\ \ \ \ \ }
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classfilevault_1_1utils_1_1Config_a946b67c355440b5330bef800056ad3b9}{save}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00029\ \ \ \ \ }
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keyword}{static}\ std::filesystem::path\ \mbox{\hyperlink{classfilevault_1_1utils_1_1Config_ab1c0ed71714c295495f9e151f03024af}{get\_config\_path}}();}
+\DoxyCodeLine{00034\ \ \ \ \ }
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{classfilevault_1_1utils_1_1Config}{Config}}\ \mbox{\hyperlink{classfilevault_1_1utils_1_1Config_ab405ed7451ccbe59ee21507ece5d8f57}{get\_default}}();}
+\DoxyCodeLine{00039\ \ \ \ \ }
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classfilevault_1_1utils_1_1Config_a70a4f00d08b05068e86993d8404fafa4}{reset}}();}
+\DoxyCodeLine{00044\ \ \ \ \ }
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{comment}{//\ Getters}}
+\DoxyCodeLine{00046\ \ \ \ \ std::string\ \mbox{\hyperlink{classfilevault_1_1utils_1_1Config_a71511f6b41711634578f8198ddda2612}{get\_default\_mode}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classfilevault_1_1utils_1_1Config_a26940db3fd5e836ef04bab0cd2343a34}{default\_mode\_}};\ \}}
+\DoxyCodeLine{00047\ \ \ \ \ std::string\ \mbox{\hyperlink{classfilevault_1_1utils_1_1Config_a1d0e517fe95267029a1582f9ebcd81cc}{get\_default\_algorithm}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classfilevault_1_1utils_1_1Config_a4fc34aa38491b44bd88bb8208c076be7}{default\_algorithm\_}};\ \}}
+\DoxyCodeLine{00048\ \ \ \ \ std::string\ \mbox{\hyperlink{classfilevault_1_1utils_1_1Config_a6a5de5576f147918ba7f57c220113ecc}{get\_default\_kdf}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classfilevault_1_1utils_1_1Config_a40481161e8fbaea4fce7a5be04226de7}{default\_kdf\_}};\ \}}
+\DoxyCodeLine{00049\ \ \ \ \ std::string\ \mbox{\hyperlink{classfilevault_1_1utils_1_1Config_a54f671615f2e689540ada38fb7572aaa}{get\_default\_compression}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classfilevault_1_1utils_1_1Config_a1ebfe739f835b82d7ee65c6da216e85a}{default\_compression\_}};\ \}}
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classfilevault_1_1utils_1_1Config_ac94b0dc2468f4d6ffb1b361f0f7cc716}{get\_compression\_level}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classfilevault_1_1utils_1_1Config_aa19f81eeb2f1a6bcd17ed0e045abe9a9}{compression\_level\_}};\ \}}
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classfilevault_1_1utils_1_1Config_a5713f3f1b58724cbfa3dae020e3a48c8}{get\_show\_progress}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classfilevault_1_1utils_1_1Config_a1bde9d1006edfc998c914e9d011acf7a}{show\_progress\_}};\ \}}
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classfilevault_1_1utils_1_1Config_a63ac0102581c173896d3dbc03f47a03a}{get\_verbose}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classfilevault_1_1utils_1_1Config_a933a8b848d284d09b6d96b1051c4dbb8}{verbose\_}};\ \}}
+\DoxyCodeLine{00053\ \ \ \ \ }
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{comment}{//\ Setters}}
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classfilevault_1_1utils_1_1Config_a1c5d1a65fab4687836fb08ca438045f5}{set\_default\_mode}}(\textcolor{keyword}{const}\ std::string\&\ mode)\ \{\ \mbox{\hyperlink{classfilevault_1_1utils_1_1Config_a26940db3fd5e836ef04bab0cd2343a34}{default\_mode\_}}\ =\ mode;\ \}}
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classfilevault_1_1utils_1_1Config_aca7ed0929e41ad65b8d3fc1874f4f2d5}{set\_default\_algorithm}}(\textcolor{keyword}{const}\ std::string\&\ algo)\ \{\ \mbox{\hyperlink{classfilevault_1_1utils_1_1Config_a4fc34aa38491b44bd88bb8208c076be7}{default\_algorithm\_}}\ =\ algo;\ \}}
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classfilevault_1_1utils_1_1Config_a48d143e4bafb4baeb873f0aeb01f7d8d}{set\_default\_kdf}}(\textcolor{keyword}{const}\ std::string\&\ kdf)\ \{\ \mbox{\hyperlink{classfilevault_1_1utils_1_1Config_a40481161e8fbaea4fce7a5be04226de7}{default\_kdf\_}}\ =\ kdf;\ \}}
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classfilevault_1_1utils_1_1Config_a45557fbaea5ebb59efbacb9dcd304fc7}{set\_default\_compression}}(\textcolor{keyword}{const}\ std::string\&\ comp)\ \{\ \mbox{\hyperlink{classfilevault_1_1utils_1_1Config_a1ebfe739f835b82d7ee65c6da216e85a}{default\_compression\_}}\ =\ comp;\ \}}
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classfilevault_1_1utils_1_1Config_ac7dec0be7e71afba9de3a6f720028361}{set\_compression\_level}}(\textcolor{keywordtype}{int}\ level)\ \{\ \mbox{\hyperlink{classfilevault_1_1utils_1_1Config_aa19f81eeb2f1a6bcd17ed0e045abe9a9}{compression\_level\_}}\ =\ level;\ \}}
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classfilevault_1_1utils_1_1Config_af09183c55789d340529b008b7a080b79}{set\_show\_progress}}(\textcolor{keywordtype}{bool}\ show)\ \{\ \mbox{\hyperlink{classfilevault_1_1utils_1_1Config_a1bde9d1006edfc998c914e9d011acf7a}{show\_progress\_}}\ =\ show;\ \}}
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classfilevault_1_1utils_1_1Config_a5c03579f9b309d0be8a9aa1ba2bd0e5e}{set\_verbose}}(\textcolor{keywordtype}{bool}\ verbose)\ \{\ \mbox{\hyperlink{classfilevault_1_1utils_1_1Config_a933a8b848d284d09b6d96b1051c4dbb8}{verbose\_}}\ =\ verbose;\ \}}
+\DoxyCodeLine{00062\ \ \ \ \ }
+\DoxyCodeLine{00066\ \ \ \ \ std::optional<std::string>\ \mbox{\hyperlink{classfilevault_1_1utils_1_1Config_a3b0583b341108a900e67927d2952e088}{get}}(\textcolor{keyword}{const}\ std::string\&\ key)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00067\ \ \ \ \ }
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classfilevault_1_1utils_1_1Config_a4bebc4cbfe5e009d161c44a6ea093015}{set}}(\textcolor{keyword}{const}\ std::string\&\ key,\ \textcolor{keyword}{const}\ std::string\&\ value);}
+\DoxyCodeLine{00072\ \ \ \ \ }
+\DoxyCodeLine{00076\ \ \ \ \ nlohmann::json\ \mbox{\hyperlink{classfilevault_1_1utils_1_1Config_a8f1c3b6a932ec1f377a8fa7feb4560e2}{to\_json}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00077\ \ \ \ \ }
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{classfilevault_1_1utils_1_1Config}{Config}}\ \mbox{\hyperlink{classfilevault_1_1utils_1_1Config_a62580661de150f544dc07284073d343e}{from\_json}}(\textcolor{keyword}{const}\ nlohmann::json\&\ j);}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00083\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00084\ \ \ \ \ \textcolor{comment}{//\ Default\ settings}}
+\DoxyCodeLine{00085\ \ \ \ \ std::string\ \mbox{\hyperlink{classfilevault_1_1utils_1_1Config_a26940db3fd5e836ef04bab0cd2343a34}{default\_mode\_}}\ =\ \textcolor{stringliteral}{"{}standard"{}};}
+\DoxyCodeLine{00086\ \ \ \ \ std::string\ \mbox{\hyperlink{classfilevault_1_1utils_1_1Config_a4fc34aa38491b44bd88bb8208c076be7}{default\_algorithm\_}}\ =\ \textcolor{stringliteral}{"{}aes-\/256-\/gcm"{}};}
+\DoxyCodeLine{00087\ \ \ \ \ std::string\ \mbox{\hyperlink{classfilevault_1_1utils_1_1Config_a40481161e8fbaea4fce7a5be04226de7}{default\_kdf\_}}\ =\ \textcolor{stringliteral}{"{}argon2id"{}};}
+\DoxyCodeLine{00088\ \ \ \ \ std::string\ \mbox{\hyperlink{classfilevault_1_1utils_1_1Config_a1ebfe739f835b82d7ee65c6da216e85a}{default\_compression\_}}\ =\ \textcolor{stringliteral}{"{}none"{}};}
+\DoxyCodeLine{00089\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classfilevault_1_1utils_1_1Config_aa19f81eeb2f1a6bcd17ed0e045abe9a9}{compression\_level\_}}\ =\ 6;}
+\DoxyCodeLine{00090\ \ \ \ \ }
+\DoxyCodeLine{00091\ \ \ \ \ \textcolor{comment}{//\ UI\ preferences}}
+\DoxyCodeLine{00092\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classfilevault_1_1utils_1_1Config_a1bde9d1006edfc998c914e9d011acf7a}{show\_progress\_}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00093\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classfilevault_1_1utils_1_1Config_a933a8b848d284d09b6d96b1051c4dbb8}{verbose\_}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00094\ \};}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00096\ \}\ \textcolor{comment}{//\ namespace\ utils}}
+\DoxyCodeLine{00097\ \}\ \textcolor{comment}{//\ namespace\ filevault}}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00099\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ FILEVAULT\_UTILS\_CONFIG\_HPP}}
+
+\end{DoxyCode}

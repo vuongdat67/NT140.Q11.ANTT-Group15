@@ -1,0 +1,57 @@
+\doxysection{archive\+\_\+format.\+hpp}
+\hypertarget{archive__format_8hpp_source}{}\label{archive__format_8hpp_source}\index{include/filevault/archive/archive\_format.hpp@{include/filevault/archive/archive\_format.hpp}}
+\mbox{\hyperlink{archive__format_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ FILEVAULT\_ARCHIVE\_FORMAT\_HPP}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ FILEVAULT\_ARCHIVE\_FORMAT\_HPP}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <cstdint>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <span>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <filesystem>}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacefilevault_1_1archive}{filevault::archive}}\ \{}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00015\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structfilevault_1_1archive_1_1FileEntry}{FileEntry}}\ \{}
+\DoxyCodeLine{00016\ \ \ \ \ std::string\ \mbox{\hyperlink{structfilevault_1_1archive_1_1FileEntry_a974b176d15d50cf9de97763324c65ed6}{filename}};}
+\DoxyCodeLine{00017\ \ \ \ \ uint64\_t\ \mbox{\hyperlink{structfilevault_1_1archive_1_1FileEntry_a6cb4cf414324bd0bfb6437ee839cc543}{file\_size}};}
+\DoxyCodeLine{00018\ \ \ \ \ uint64\_t\ \mbox{\hyperlink{structfilevault_1_1archive_1_1FileEntry_a2cc173df76e6e28139bea2b109a48874}{offset}};\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Offset\ in\ data\ section}}
+\DoxyCodeLine{00019\ \ \ \ \ uint64\_t\ \mbox{\hyperlink{structfilevault_1_1archive_1_1FileEntry_a46373ae6668e3590529b5685e68d1544}{modified\_time}};\ \ \ \ \textcolor{comment}{//\ Unix\ timestamp}}
+\DoxyCodeLine{00020\ \ \ \ \ uint32\_t\ \mbox{\hyperlink{structfilevault_1_1archive_1_1FileEntry_ad354960c19dc8a2eb095f563988bc6a2}{permissions}};\ \ \ \ \ \ \textcolor{comment}{//\ File\ permissions}}
+\DoxyCodeLine{00021\ \ \ \ \ }
+\DoxyCodeLine{00022\ \ \ \ \ std::vector<uint8\_t>\ \mbox{\hyperlink{structfilevault_1_1archive_1_1FileEntry_afd3b0db849cd2c51db33e573851fccc8}{serialize}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{structfilevault_1_1archive_1_1FileEntry}{FileEntry}}\ \mbox{\hyperlink{structfilevault_1_1archive_1_1FileEntry_abf4602786a4e78872542350c22e7f639}{deserialize}}(std::span<const\ uint8\_t>\ data,\ \textcolor{keywordtype}{size\_t}\&\ \mbox{\hyperlink{structfilevault_1_1archive_1_1FileEntry_a2cc173df76e6e28139bea2b109a48874}{offset}});}
+\DoxyCodeLine{00024\ \};}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00034\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classfilevault_1_1archive_1_1ArchiveFormat}{ArchiveFormat}}\ \{}
+\DoxyCodeLine{00035\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{classfilevault_1_1archive_1_1ArchiveFormat_a85526996820baea14ef475d341463d1c}{MAGIC}}[7]\ =\ \textcolor{stringliteral}{"{}FVARCH"{}};}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ uint8\_t\ \mbox{\hyperlink{classfilevault_1_1archive_1_1ArchiveFormat_a598bfdc20f2406c55601ad4ce3b5f0e0}{VERSION}}\ =\ 1;}
+\DoxyCodeLine{00038\ \ \ \ \ }
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keyword}{static}\ std::vector<uint8\_t>\ \mbox{\hyperlink{classfilevault_1_1archive_1_1ArchiveFormat_a56db58970e0d63112f9462b8ebb3a3e8}{create\_archive}}(}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<std::filesystem::path>\&\ files}
+\DoxyCodeLine{00044\ \ \ \ \ );}
+\DoxyCodeLine{00045\ \ \ \ \ }
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classfilevault_1_1archive_1_1ArchiveFormat_a1375960eeac0b8ddd971b06e8b510095}{extract\_archive}}(}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ std::span<const\ uint8\_t>\ archive\_data,}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::filesystem::path\&\ output\_dir}
+\DoxyCodeLine{00052\ \ \ \ \ );}
+\DoxyCodeLine{00053\ \ \ \ \ }
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keyword}{static}\ std::vector<FileEntry>\ \mbox{\hyperlink{classfilevault_1_1archive_1_1ArchiveFormat_aa90cabc46b42c8b558fa4aaa9fef4070}{list\_files}}(}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ std::span<const\ uint8\_t>\ archive\_data}
+\DoxyCodeLine{00059\ \ \ \ \ );}
+\DoxyCodeLine{00060\ \ \ \ \ }
+\DoxyCodeLine{00061\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classfilevault_1_1archive_1_1ArchiveFormat_a434c2f181a013e9045ea66cb19167d7b}{write\_uint32}}(std::vector<uint8\_t>\&\ buffer,\ uint32\_t\ value);}
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classfilevault_1_1archive_1_1ArchiveFormat_a219ea92f75f9d81019011bde3e960916}{write\_uint64}}(std::vector<uint8\_t>\&\ buffer,\ uint64\_t\ value);}
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keyword}{static}\ uint32\_t\ \mbox{\hyperlink{classfilevault_1_1archive_1_1ArchiveFormat_a1416e9a3391f192b01245dd918988889}{read\_uint32}}(std::span<const\ uint8\_t>\ data,\ \textcolor{keywordtype}{size\_t}\&\ offset);}
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keyword}{static}\ uint64\_t\ \mbox{\hyperlink{classfilevault_1_1archive_1_1ArchiveFormat_ac5f3f387380a73f370a9f4b289666977}{read\_uint64}}(std::span<const\ uint8\_t>\ data,\ \textcolor{keywordtype}{size\_t}\&\ offset);}
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keyword}{static}\ std::string\ \mbox{\hyperlink{classfilevault_1_1archive_1_1ArchiveFormat_a3a4a1fd92484c81a145597e5923fa9b5}{read\_string}}(std::span<const\ uint8\_t>\ data,\ \textcolor{keywordtype}{size\_t}\&\ offset);}
+\DoxyCodeLine{00067\ \};}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \}\ \textcolor{comment}{//\ namespace\ filevault::archive}}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ FILEVAULT\_ARCHIVE\_FORMAT\_HPP}}
+
+\end{DoxyCode}

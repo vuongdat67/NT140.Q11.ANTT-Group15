@@ -1,0 +1,575 @@
+\doxysection{filevault\+::cli\+::Benchmark\+Command Class Reference}
+\hypertarget{classfilevault_1_1cli_1_1BenchmarkCommand}{}\label{classfilevault_1_1cli_1_1BenchmarkCommand}\index{filevault::cli::BenchmarkCommand@{filevault::cli::BenchmarkCommand}}
+
+
+{\ttfamily \#include $<$benchmark\+\_\+cmd.\+hpp$>$}
+
+
+
+Inheritance diagram for filevault\+::cli\+::Benchmark\+Command\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=215pt]{classfilevault_1_1cli_1_1BenchmarkCommand__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for filevault\+::cli\+::Benchmark\+Command\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1cli_1_1BenchmarkCommand__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classfilevault_1_1cli_1_1BenchmarkCommand_aef6c2a2fea90a259fa16100cfdac9388}{Benchmark\+Command}} (\mbox{\hyperlink{classfilevault_1_1core_1_1CryptoEngine}{core\+::\+Crypto\+Engine}} \&engine)
+\item 
+std\+::string \mbox{\hyperlink{classfilevault_1_1cli_1_1BenchmarkCommand_a063dcd7fd2c3dd6bc376103fad3bdb59}{name}} () const override
+\begin{DoxyCompactList}\small\item\em Get command name. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classfilevault_1_1cli_1_1BenchmarkCommand_ab60d7a50d411f69a258e5665dde3a4c8}{description}} () const override
+\begin{DoxyCompactList}\small\item\em Get command description. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classfilevault_1_1cli_1_1BenchmarkCommand_a4b2a889f998d688ca81e7f7f0d030942}{setup}} (CLI\+::\+App \&app) override
+\begin{DoxyCompactList}\small\item\em Setup CLI11 subcommand. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classfilevault_1_1cli_1_1BenchmarkCommand_ac67d1d013588d09628a81946d29850a0}{execute}} () override
+\begin{DoxyCompactList}\small\item\em Execute the command. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classfilevault_1_1cli_1_1ICommand}{filevault\+::cli\+::\+ICommand}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classfilevault_1_1cli_1_1ICommand_a358ce6bf0db6a1ff7f53eec427481a5d}{\texorpdfstring{$\sim$}{\string~}\+ICommand}} ()=default
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classfilevault_1_1cli_1_1BenchmarkCommand_ab06cd7823dbb52389235276e909915b4}{benchmark\+\_\+symmetric}} (nlohmann\+::json \&json\+\_\+results)
+\item 
+void \mbox{\hyperlink{classfilevault_1_1cli_1_1BenchmarkCommand_a7a3ecf2227863875ce27e5c341bd784e}{benchmark\+\_\+asymmetric}} (nlohmann\+::json \&json\+\_\+results)
+\item 
+void \mbox{\hyperlink{classfilevault_1_1cli_1_1BenchmarkCommand_afbbca157c9720dc83fd8337e52048a5a}{benchmark\+\_\+pqc}} (nlohmann\+::json \&json\+\_\+results)
+\item 
+void \mbox{\hyperlink{classfilevault_1_1cli_1_1BenchmarkCommand_af8850722c5b6e611e6e73c44074720b8}{benchmark\+\_\+kdf}} (nlohmann\+::json \&json\+\_\+results)
+\item 
+void \mbox{\hyperlink{classfilevault_1_1cli_1_1BenchmarkCommand_aee073d126ccd3aa38bc5a7aeb1ee4de9}{benchmark\+\_\+compression}} (nlohmann\+::json \&json\+\_\+results)
+\item 
+void \mbox{\hyperlink{classfilevault_1_1cli_1_1BenchmarkCommand_a6577b6eb82abea3b7e9cdcff01f9da9c}{benchmark\+\_\+hash}} (nlohmann\+::json \&json\+\_\+results)
+\item 
+\mbox{\hyperlink{structfilevault_1_1cli_1_1BenchmarkResult}{Benchmark\+Result}} \mbox{\hyperlink{classfilevault_1_1cli_1_1BenchmarkCommand_a2ff18058e61d67ddd05269bbd6706811}{benchmark\+\_\+algorithm}} (\mbox{\hyperlink{namespacefilevault_1_1core_ab1ba257a0205c63e9e1e3623170940a2}{core\+::\+Algorithm\+Type}} algo\+\_\+type)
+\item 
+\mbox{\hyperlink{structfilevault_1_1cli_1_1AsymmetricBenchmarkResult}{Asymmetric\+Benchmark\+Result}} \mbox{\hyperlink{classfilevault_1_1cli_1_1BenchmarkCommand_a8a312fa54380d5f2ef1db7240d0fd2ea}{benchmark\+\_\+asymmetric\+\_\+algorithm}} (\mbox{\hyperlink{namespacefilevault_1_1core_ab1ba257a0205c63e9e1e3623170940a2}{core\+::\+Algorithm\+Type}} algo\+\_\+type)
+\item 
+\mbox{\hyperlink{structfilevault_1_1cli_1_1PQCBenchmarkResult}{PQCBenchmark\+Result}} \mbox{\hyperlink{classfilevault_1_1cli_1_1BenchmarkCommand_ad649e39df4e8acbcc792c673c3b6e7a7}{benchmark\+\_\+pqc\+\_\+algorithm}} (\mbox{\hyperlink{namespacefilevault_1_1core_ab1ba257a0205c63e9e1e3623170940a2}{core\+::\+Algorithm\+Type}} algo\+\_\+type)
+\item 
+\mbox{\hyperlink{structfilevault_1_1cli_1_1BenchmarkResult}{Benchmark\+Result}} \mbox{\hyperlink{classfilevault_1_1cli_1_1BenchmarkCommand_aa3ac0c475f13752cf10e475b93dce589}{benchmark\+\_\+hybrid\+\_\+algorithm}} (\mbox{\hyperlink{namespacefilevault_1_1core_ab1ba257a0205c63e9e1e3623170940a2}{core\+::\+Algorithm\+Type}} algo\+\_\+type)
+\item 
+\mbox{\hyperlink{structfilevault_1_1cli_1_1SignatureBenchmarkResult}{Signature\+Benchmark\+Result}} \mbox{\hyperlink{classfilevault_1_1cli_1_1BenchmarkCommand_aeaf99366d0a6cb1e2288dbef1f06322e}{benchmark\+\_\+signature\+\_\+algorithm}} (\mbox{\hyperlink{namespacefilevault_1_1core_ab1ba257a0205c63e9e1e3623170940a2}{core\+::\+Algorithm\+Type}} algo\+\_\+type)
+\item 
+std\+::string \mbox{\hyperlink{classfilevault_1_1cli_1_1BenchmarkCommand_a4a001e94c2a5b73e9df3ffa2c20d8371}{get\+\_\+platform\+\_\+info}} ()
+\item 
+void \mbox{\hyperlink{classfilevault_1_1cli_1_1BenchmarkCommand_a8020f6e491e8c28b618fd0f64477524b}{save\+\_\+json\+\_\+output}} (const nlohmann\+::json \&results)
+\item 
+void \mbox{\hyperlink{classfilevault_1_1cli_1_1BenchmarkCommand_a378369c02e20bb1676cf874c0b446070}{save\+\_\+log\+\_\+output}} (const std\+::string \&log\+\_\+content)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classfilevault_1_1core_1_1CryptoEngine}{core\+::\+Crypto\+Engine}} \& \mbox{\hyperlink{classfilevault_1_1cli_1_1BenchmarkCommand_a3943024249d5bb1546923e10e607efdc}{engine\+\_\+}}
+\item 
+std\+::string \mbox{\hyperlink{classfilevault_1_1cli_1_1BenchmarkCommand_a9a97f42ed0a57c9803cd0021c6252f65}{algorithm\+\_\+}}
+\item 
+std\+::string \mbox{\hyperlink{classfilevault_1_1cli_1_1BenchmarkCommand_aadd14504970978efa6ab6b3679cbf540}{output\+\_\+file\+\_\+}}
+\item 
+size\+\_\+t \mbox{\hyperlink{classfilevault_1_1cli_1_1BenchmarkCommand_a55947e53380ba4988f62f44eaad939e3}{data\+\_\+size\+\_\+}} = 1048576
+\item 
+int \mbox{\hyperlink{classfilevault_1_1cli_1_1BenchmarkCommand_a3a8a7c81a82c5eaf6fdb492811cce243}{iterations\+\_\+}} = 5
+\item 
+bool \mbox{\hyperlink{classfilevault_1_1cli_1_1BenchmarkCommand_a749ef77d6333dc19632da3a90db4ab1e}{all\+\_\+}} = false
+\item 
+bool \mbox{\hyperlink{classfilevault_1_1cli_1_1BenchmarkCommand_aa951b642c3a5bae2ea331fc2cf8044d1}{json\+\_\+output\+\_\+}} = false
+\item 
+bool \mbox{\hyperlink{classfilevault_1_1cli_1_1BenchmarkCommand_ae050988e5b7e5ae0618f8d648f998e5b}{pqc\+\_\+only\+\_\+}} = false
+\item 
+bool \mbox{\hyperlink{classfilevault_1_1cli_1_1BenchmarkCommand_aa242a82d06fe3161df253a67f723d903}{symmetric\+\_\+only\+\_\+}} = false
+\item 
+bool \mbox{\hyperlink{classfilevault_1_1cli_1_1BenchmarkCommand_a1c84437f85e0fda97144c1dce2b97069}{asymmetric\+\_\+only\+\_\+}} = false
+\item 
+bool \mbox{\hyperlink{classfilevault_1_1cli_1_1BenchmarkCommand_a17a54ca87daa1686392cbeedc693ede7}{hash\+\_\+only\+\_\+}} = false
+\item 
+bool \mbox{\hyperlink{classfilevault_1_1cli_1_1BenchmarkCommand_a013b70ec3df8bac6f2eccb8344eab816}{kdf\+\_\+only\+\_\+}} = false
+\item 
+bool \mbox{\hyperlink{classfilevault_1_1cli_1_1BenchmarkCommand_a7af4f1d388953ca03e3b8f91ce675e0b}{compression\+\_\+only\+\_\+}} = false
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classfilevault_1_1cli_1_1BenchmarkCommand_aef6c2a2fea90a259fa16100cfdac9388}\label{classfilevault_1_1cli_1_1BenchmarkCommand_aef6c2a2fea90a259fa16100cfdac9388} 
+\index{filevault::cli::BenchmarkCommand@{filevault::cli::BenchmarkCommand}!BenchmarkCommand@{BenchmarkCommand}}
+\index{BenchmarkCommand@{BenchmarkCommand}!filevault::cli::BenchmarkCommand@{filevault::cli::BenchmarkCommand}}
+\doxysubsubsection{\texorpdfstring{BenchmarkCommand()}{BenchmarkCommand()}}
+{\footnotesize\ttfamily filevault\+::cli\+::\+Benchmark\+Command\+::\+Benchmark\+Command (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classfilevault_1_1core_1_1CryptoEngine}{core\+::\+Crypto\+Engine}} \&}]{engine }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classfilevault_1_1cli_1_1BenchmarkCommand_a2ff18058e61d67ddd05269bbd6706811}\label{classfilevault_1_1cli_1_1BenchmarkCommand_a2ff18058e61d67ddd05269bbd6706811} 
+\index{filevault::cli::BenchmarkCommand@{filevault::cli::BenchmarkCommand}!benchmark\_algorithm@{benchmark\_algorithm}}
+\index{benchmark\_algorithm@{benchmark\_algorithm}!filevault::cli::BenchmarkCommand@{filevault::cli::BenchmarkCommand}}
+\doxysubsubsection{\texorpdfstring{benchmark\_algorithm()}{benchmark\_algorithm()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structfilevault_1_1cli_1_1BenchmarkResult}{Benchmark\+Result}} filevault\+::cli\+::\+Benchmark\+Command\+::benchmark\+\_\+algorithm (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacefilevault_1_1core_ab1ba257a0205c63e9e1e3623170940a2}{core\+::\+Algorithm\+Type}}}]{algo\+\_\+type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1cli_1_1BenchmarkCommand_a2ff18058e61d67ddd05269bbd6706811_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1cli_1_1BenchmarkCommand_a2ff18058e61d67ddd05269bbd6706811_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1cli_1_1BenchmarkCommand_a7a3ecf2227863875ce27e5c341bd784e}\label{classfilevault_1_1cli_1_1BenchmarkCommand_a7a3ecf2227863875ce27e5c341bd784e} 
+\index{filevault::cli::BenchmarkCommand@{filevault::cli::BenchmarkCommand}!benchmark\_asymmetric@{benchmark\_asymmetric}}
+\index{benchmark\_asymmetric@{benchmark\_asymmetric}!filevault::cli::BenchmarkCommand@{filevault::cli::BenchmarkCommand}}
+\doxysubsubsection{\texorpdfstring{benchmark\_asymmetric()}{benchmark\_asymmetric()}}
+{\footnotesize\ttfamily void filevault\+::cli\+::\+Benchmark\+Command\+::benchmark\+\_\+asymmetric (\begin{DoxyParamCaption}\item[{nlohmann\+::json \&}]{json\+\_\+results }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1cli_1_1BenchmarkCommand_a7a3ecf2227863875ce27e5c341bd784e_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1cli_1_1BenchmarkCommand_a7a3ecf2227863875ce27e5c341bd784e_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1cli_1_1BenchmarkCommand_a8a312fa54380d5f2ef1db7240d0fd2ea}\label{classfilevault_1_1cli_1_1BenchmarkCommand_a8a312fa54380d5f2ef1db7240d0fd2ea} 
+\index{filevault::cli::BenchmarkCommand@{filevault::cli::BenchmarkCommand}!benchmark\_asymmetric\_algorithm@{benchmark\_asymmetric\_algorithm}}
+\index{benchmark\_asymmetric\_algorithm@{benchmark\_asymmetric\_algorithm}!filevault::cli::BenchmarkCommand@{filevault::cli::BenchmarkCommand}}
+\doxysubsubsection{\texorpdfstring{benchmark\_asymmetric\_algorithm()}{benchmark\_asymmetric\_algorithm()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structfilevault_1_1cli_1_1AsymmetricBenchmarkResult}{Asymmetric\+Benchmark\+Result}} filevault\+::cli\+::\+Benchmark\+Command\+::benchmark\+\_\+asymmetric\+\_\+algorithm (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacefilevault_1_1core_ab1ba257a0205c63e9e1e3623170940a2}{core\+::\+Algorithm\+Type}}}]{algo\+\_\+type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1cli_1_1BenchmarkCommand_a8a312fa54380d5f2ef1db7240d0fd2ea_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1cli_1_1BenchmarkCommand_a8a312fa54380d5f2ef1db7240d0fd2ea_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1cli_1_1BenchmarkCommand_aee073d126ccd3aa38bc5a7aeb1ee4de9}\label{classfilevault_1_1cli_1_1BenchmarkCommand_aee073d126ccd3aa38bc5a7aeb1ee4de9} 
+\index{filevault::cli::BenchmarkCommand@{filevault::cli::BenchmarkCommand}!benchmark\_compression@{benchmark\_compression}}
+\index{benchmark\_compression@{benchmark\_compression}!filevault::cli::BenchmarkCommand@{filevault::cli::BenchmarkCommand}}
+\doxysubsubsection{\texorpdfstring{benchmark\_compression()}{benchmark\_compression()}}
+{\footnotesize\ttfamily void filevault\+::cli\+::\+Benchmark\+Command\+::benchmark\+\_\+compression (\begin{DoxyParamCaption}\item[{nlohmann\+::json \&}]{json\+\_\+results }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1cli_1_1BenchmarkCommand_aee073d126ccd3aa38bc5a7aeb1ee4de9_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1cli_1_1BenchmarkCommand_aee073d126ccd3aa38bc5a7aeb1ee4de9_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1cli_1_1BenchmarkCommand_a6577b6eb82abea3b7e9cdcff01f9da9c}\label{classfilevault_1_1cli_1_1BenchmarkCommand_a6577b6eb82abea3b7e9cdcff01f9da9c} 
+\index{filevault::cli::BenchmarkCommand@{filevault::cli::BenchmarkCommand}!benchmark\_hash@{benchmark\_hash}}
+\index{benchmark\_hash@{benchmark\_hash}!filevault::cli::BenchmarkCommand@{filevault::cli::BenchmarkCommand}}
+\doxysubsubsection{\texorpdfstring{benchmark\_hash()}{benchmark\_hash()}}
+{\footnotesize\ttfamily void filevault\+::cli\+::\+Benchmark\+Command\+::benchmark\+\_\+hash (\begin{DoxyParamCaption}\item[{nlohmann\+::json \&}]{json\+\_\+results }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1cli_1_1BenchmarkCommand_a6577b6eb82abea3b7e9cdcff01f9da9c_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1cli_1_1BenchmarkCommand_a6577b6eb82abea3b7e9cdcff01f9da9c_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1cli_1_1BenchmarkCommand_aa3ac0c475f13752cf10e475b93dce589}\label{classfilevault_1_1cli_1_1BenchmarkCommand_aa3ac0c475f13752cf10e475b93dce589} 
+\index{filevault::cli::BenchmarkCommand@{filevault::cli::BenchmarkCommand}!benchmark\_hybrid\_algorithm@{benchmark\_hybrid\_algorithm}}
+\index{benchmark\_hybrid\_algorithm@{benchmark\_hybrid\_algorithm}!filevault::cli::BenchmarkCommand@{filevault::cli::BenchmarkCommand}}
+\doxysubsubsection{\texorpdfstring{benchmark\_hybrid\_algorithm()}{benchmark\_hybrid\_algorithm()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structfilevault_1_1cli_1_1BenchmarkResult}{Benchmark\+Result}} filevault\+::cli\+::\+Benchmark\+Command\+::benchmark\+\_\+hybrid\+\_\+algorithm (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacefilevault_1_1core_ab1ba257a0205c63e9e1e3623170940a2}{core\+::\+Algorithm\+Type}}}]{algo\+\_\+type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1cli_1_1BenchmarkCommand_aa3ac0c475f13752cf10e475b93dce589_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1cli_1_1BenchmarkCommand_aa3ac0c475f13752cf10e475b93dce589_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1cli_1_1BenchmarkCommand_af8850722c5b6e611e6e73c44074720b8}\label{classfilevault_1_1cli_1_1BenchmarkCommand_af8850722c5b6e611e6e73c44074720b8} 
+\index{filevault::cli::BenchmarkCommand@{filevault::cli::BenchmarkCommand}!benchmark\_kdf@{benchmark\_kdf}}
+\index{benchmark\_kdf@{benchmark\_kdf}!filevault::cli::BenchmarkCommand@{filevault::cli::BenchmarkCommand}}
+\doxysubsubsection{\texorpdfstring{benchmark\_kdf()}{benchmark\_kdf()}}
+{\footnotesize\ttfamily void filevault\+::cli\+::\+Benchmark\+Command\+::benchmark\+\_\+kdf (\begin{DoxyParamCaption}\item[{nlohmann\+::json \&}]{json\+\_\+results }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1cli_1_1BenchmarkCommand_af8850722c5b6e611e6e73c44074720b8_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1cli_1_1BenchmarkCommand_af8850722c5b6e611e6e73c44074720b8_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1cli_1_1BenchmarkCommand_afbbca157c9720dc83fd8337e52048a5a}\label{classfilevault_1_1cli_1_1BenchmarkCommand_afbbca157c9720dc83fd8337e52048a5a} 
+\index{filevault::cli::BenchmarkCommand@{filevault::cli::BenchmarkCommand}!benchmark\_pqc@{benchmark\_pqc}}
+\index{benchmark\_pqc@{benchmark\_pqc}!filevault::cli::BenchmarkCommand@{filevault::cli::BenchmarkCommand}}
+\doxysubsubsection{\texorpdfstring{benchmark\_pqc()}{benchmark\_pqc()}}
+{\footnotesize\ttfamily void filevault\+::cli\+::\+Benchmark\+Command\+::benchmark\+\_\+pqc (\begin{DoxyParamCaption}\item[{nlohmann\+::json \&}]{json\+\_\+results }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1cli_1_1BenchmarkCommand_afbbca157c9720dc83fd8337e52048a5a_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1cli_1_1BenchmarkCommand_afbbca157c9720dc83fd8337e52048a5a_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1cli_1_1BenchmarkCommand_ad649e39df4e8acbcc792c673c3b6e7a7}\label{classfilevault_1_1cli_1_1BenchmarkCommand_ad649e39df4e8acbcc792c673c3b6e7a7} 
+\index{filevault::cli::BenchmarkCommand@{filevault::cli::BenchmarkCommand}!benchmark\_pqc\_algorithm@{benchmark\_pqc\_algorithm}}
+\index{benchmark\_pqc\_algorithm@{benchmark\_pqc\_algorithm}!filevault::cli::BenchmarkCommand@{filevault::cli::BenchmarkCommand}}
+\doxysubsubsection{\texorpdfstring{benchmark\_pqc\_algorithm()}{benchmark\_pqc\_algorithm()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structfilevault_1_1cli_1_1PQCBenchmarkResult}{PQCBenchmark\+Result}} filevault\+::cli\+::\+Benchmark\+Command\+::benchmark\+\_\+pqc\+\_\+algorithm (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacefilevault_1_1core_ab1ba257a0205c63e9e1e3623170940a2}{core\+::\+Algorithm\+Type}}}]{algo\+\_\+type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1cli_1_1BenchmarkCommand_ad649e39df4e8acbcc792c673c3b6e7a7_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1cli_1_1BenchmarkCommand_ad649e39df4e8acbcc792c673c3b6e7a7_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1cli_1_1BenchmarkCommand_aeaf99366d0a6cb1e2288dbef1f06322e}\label{classfilevault_1_1cli_1_1BenchmarkCommand_aeaf99366d0a6cb1e2288dbef1f06322e} 
+\index{filevault::cli::BenchmarkCommand@{filevault::cli::BenchmarkCommand}!benchmark\_signature\_algorithm@{benchmark\_signature\_algorithm}}
+\index{benchmark\_signature\_algorithm@{benchmark\_signature\_algorithm}!filevault::cli::BenchmarkCommand@{filevault::cli::BenchmarkCommand}}
+\doxysubsubsection{\texorpdfstring{benchmark\_signature\_algorithm()}{benchmark\_signature\_algorithm()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structfilevault_1_1cli_1_1SignatureBenchmarkResult}{Signature\+Benchmark\+Result}} filevault\+::cli\+::\+Benchmark\+Command\+::benchmark\+\_\+signature\+\_\+algorithm (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacefilevault_1_1core_ab1ba257a0205c63e9e1e3623170940a2}{core\+::\+Algorithm\+Type}}}]{algo\+\_\+type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1cli_1_1BenchmarkCommand_aeaf99366d0a6cb1e2288dbef1f06322e_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1cli_1_1BenchmarkCommand_aeaf99366d0a6cb1e2288dbef1f06322e_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1cli_1_1BenchmarkCommand_ab06cd7823dbb52389235276e909915b4}\label{classfilevault_1_1cli_1_1BenchmarkCommand_ab06cd7823dbb52389235276e909915b4} 
+\index{filevault::cli::BenchmarkCommand@{filevault::cli::BenchmarkCommand}!benchmark\_symmetric@{benchmark\_symmetric}}
+\index{benchmark\_symmetric@{benchmark\_symmetric}!filevault::cli::BenchmarkCommand@{filevault::cli::BenchmarkCommand}}
+\doxysubsubsection{\texorpdfstring{benchmark\_symmetric()}{benchmark\_symmetric()}}
+{\footnotesize\ttfamily void filevault\+::cli\+::\+Benchmark\+Command\+::benchmark\+\_\+symmetric (\begin{DoxyParamCaption}\item[{nlohmann\+::json \&}]{json\+\_\+results }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1cli_1_1BenchmarkCommand_ab06cd7823dbb52389235276e909915b4_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1cli_1_1BenchmarkCommand_ab06cd7823dbb52389235276e909915b4_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1cli_1_1BenchmarkCommand_ab60d7a50d411f69a258e5665dde3a4c8}\label{classfilevault_1_1cli_1_1BenchmarkCommand_ab60d7a50d411f69a258e5665dde3a4c8} 
+\index{filevault::cli::BenchmarkCommand@{filevault::cli::BenchmarkCommand}!description@{description}}
+\index{description@{description}!filevault::cli::BenchmarkCommand@{filevault::cli::BenchmarkCommand}}
+\doxysubsubsection{\texorpdfstring{description()}{description()}}
+{\footnotesize\ttfamily std\+::string filevault\+::cli\+::\+Benchmark\+Command\+::description (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get command description. 
+
+
+
+Implements \mbox{\hyperlink{classfilevault_1_1cli_1_1ICommand_a154cdd3f87273142e70814445abd48ea}{filevault\+::cli\+::\+ICommand}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1cli_1_1BenchmarkCommand_ab60d7a50d411f69a258e5665dde3a4c8_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1cli_1_1BenchmarkCommand_ac67d1d013588d09628a81946d29850a0}\label{classfilevault_1_1cli_1_1BenchmarkCommand_ac67d1d013588d09628a81946d29850a0} 
+\index{filevault::cli::BenchmarkCommand@{filevault::cli::BenchmarkCommand}!execute@{execute}}
+\index{execute@{execute}!filevault::cli::BenchmarkCommand@{filevault::cli::BenchmarkCommand}}
+\doxysubsubsection{\texorpdfstring{execute()}{execute()}}
+{\footnotesize\ttfamily int filevault\+::cli\+::\+Benchmark\+Command\+::execute (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Execute the command. 
+
+
+
+Implements \mbox{\hyperlink{classfilevault_1_1cli_1_1ICommand_a2fdc36b29a23b94a6e52bc3d4eb0c1ed}{filevault\+::cli\+::\+ICommand}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1cli_1_1BenchmarkCommand_ac67d1d013588d09628a81946d29850a0_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1cli_1_1BenchmarkCommand_ac67d1d013588d09628a81946d29850a0_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1cli_1_1BenchmarkCommand_a4a001e94c2a5b73e9df3ffa2c20d8371}\label{classfilevault_1_1cli_1_1BenchmarkCommand_a4a001e94c2a5b73e9df3ffa2c20d8371} 
+\index{filevault::cli::BenchmarkCommand@{filevault::cli::BenchmarkCommand}!get\_platform\_info@{get\_platform\_info}}
+\index{get\_platform\_info@{get\_platform\_info}!filevault::cli::BenchmarkCommand@{filevault::cli::BenchmarkCommand}}
+\doxysubsubsection{\texorpdfstring{get\_platform\_info()}{get\_platform\_info()}}
+{\footnotesize\ttfamily std\+::string filevault\+::cli\+::\+Benchmark\+Command\+::get\+\_\+platform\+\_\+info (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1cli_1_1BenchmarkCommand_a4a001e94c2a5b73e9df3ffa2c20d8371_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1cli_1_1BenchmarkCommand_a063dcd7fd2c3dd6bc376103fad3bdb59}\label{classfilevault_1_1cli_1_1BenchmarkCommand_a063dcd7fd2c3dd6bc376103fad3bdb59} 
+\index{filevault::cli::BenchmarkCommand@{filevault::cli::BenchmarkCommand}!name@{name}}
+\index{name@{name}!filevault::cli::BenchmarkCommand@{filevault::cli::BenchmarkCommand}}
+\doxysubsubsection{\texorpdfstring{name()}{name()}}
+{\footnotesize\ttfamily std\+::string filevault\+::cli\+::\+Benchmark\+Command\+::name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get command name. 
+
+
+
+Implements \mbox{\hyperlink{classfilevault_1_1cli_1_1ICommand_a60aa4bc7c96c2e80feeb1a184d7ae2f7}{filevault\+::cli\+::\+ICommand}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1cli_1_1BenchmarkCommand_a063dcd7fd2c3dd6bc376103fad3bdb59_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1cli_1_1BenchmarkCommand_a8020f6e491e8c28b618fd0f64477524b}\label{classfilevault_1_1cli_1_1BenchmarkCommand_a8020f6e491e8c28b618fd0f64477524b} 
+\index{filevault::cli::BenchmarkCommand@{filevault::cli::BenchmarkCommand}!save\_json\_output@{save\_json\_output}}
+\index{save\_json\_output@{save\_json\_output}!filevault::cli::BenchmarkCommand@{filevault::cli::BenchmarkCommand}}
+\doxysubsubsection{\texorpdfstring{save\_json\_output()}{save\_json\_output()}}
+{\footnotesize\ttfamily void filevault\+::cli\+::\+Benchmark\+Command\+::save\+\_\+json\+\_\+output (\begin{DoxyParamCaption}\item[{const nlohmann\+::json \&}]{results }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1cli_1_1BenchmarkCommand_a8020f6e491e8c28b618fd0f64477524b_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1cli_1_1BenchmarkCommand_a378369c02e20bb1676cf874c0b446070}\label{classfilevault_1_1cli_1_1BenchmarkCommand_a378369c02e20bb1676cf874c0b446070} 
+\index{filevault::cli::BenchmarkCommand@{filevault::cli::BenchmarkCommand}!save\_log\_output@{save\_log\_output}}
+\index{save\_log\_output@{save\_log\_output}!filevault::cli::BenchmarkCommand@{filevault::cli::BenchmarkCommand}}
+\doxysubsubsection{\texorpdfstring{save\_log\_output()}{save\_log\_output()}}
+{\footnotesize\ttfamily void filevault\+::cli\+::\+Benchmark\+Command\+::save\+\_\+log\+\_\+output (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{log\+\_\+content }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classfilevault_1_1cli_1_1BenchmarkCommand_a4b2a889f998d688ca81e7f7f0d030942}\label{classfilevault_1_1cli_1_1BenchmarkCommand_a4b2a889f998d688ca81e7f7f0d030942} 
+\index{filevault::cli::BenchmarkCommand@{filevault::cli::BenchmarkCommand}!setup@{setup}}
+\index{setup@{setup}!filevault::cli::BenchmarkCommand@{filevault::cli::BenchmarkCommand}}
+\doxysubsubsection{\texorpdfstring{setup()}{setup()}}
+{\footnotesize\ttfamily void filevault\+::cli\+::\+Benchmark\+Command\+::setup (\begin{DoxyParamCaption}\item[{CLI\+::\+App \&}]{app }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Setup CLI11 subcommand. 
+
+
+
+Implements \mbox{\hyperlink{classfilevault_1_1cli_1_1ICommand_aa43a60aabddff55d1060c334dade972c}{filevault\+::cli\+::\+ICommand}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1cli_1_1BenchmarkCommand_a4b2a889f998d688ca81e7f7f0d030942_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classfilevault_1_1cli_1_1BenchmarkCommand_a9a97f42ed0a57c9803cd0021c6252f65}\label{classfilevault_1_1cli_1_1BenchmarkCommand_a9a97f42ed0a57c9803cd0021c6252f65} 
+\index{filevault::cli::BenchmarkCommand@{filevault::cli::BenchmarkCommand}!algorithm\_@{algorithm\_}}
+\index{algorithm\_@{algorithm\_}!filevault::cli::BenchmarkCommand@{filevault::cli::BenchmarkCommand}}
+\doxysubsubsection{\texorpdfstring{algorithm\_}{algorithm\_}}
+{\footnotesize\ttfamily std\+::string filevault\+::cli\+::\+Benchmark\+Command\+::algorithm\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classfilevault_1_1cli_1_1BenchmarkCommand_a749ef77d6333dc19632da3a90db4ab1e}\label{classfilevault_1_1cli_1_1BenchmarkCommand_a749ef77d6333dc19632da3a90db4ab1e} 
+\index{filevault::cli::BenchmarkCommand@{filevault::cli::BenchmarkCommand}!all\_@{all\_}}
+\index{all\_@{all\_}!filevault::cli::BenchmarkCommand@{filevault::cli::BenchmarkCommand}}
+\doxysubsubsection{\texorpdfstring{all\_}{all\_}}
+{\footnotesize\ttfamily bool filevault\+::cli\+::\+Benchmark\+Command\+::all\+\_\+ = false\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classfilevault_1_1cli_1_1BenchmarkCommand_a1c84437f85e0fda97144c1dce2b97069}\label{classfilevault_1_1cli_1_1BenchmarkCommand_a1c84437f85e0fda97144c1dce2b97069} 
+\index{filevault::cli::BenchmarkCommand@{filevault::cli::BenchmarkCommand}!asymmetric\_only\_@{asymmetric\_only\_}}
+\index{asymmetric\_only\_@{asymmetric\_only\_}!filevault::cli::BenchmarkCommand@{filevault::cli::BenchmarkCommand}}
+\doxysubsubsection{\texorpdfstring{asymmetric\_only\_}{asymmetric\_only\_}}
+{\footnotesize\ttfamily bool filevault\+::cli\+::\+Benchmark\+Command\+::asymmetric\+\_\+only\+\_\+ = false\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classfilevault_1_1cli_1_1BenchmarkCommand_a7af4f1d388953ca03e3b8f91ce675e0b}\label{classfilevault_1_1cli_1_1BenchmarkCommand_a7af4f1d388953ca03e3b8f91ce675e0b} 
+\index{filevault::cli::BenchmarkCommand@{filevault::cli::BenchmarkCommand}!compression\_only\_@{compression\_only\_}}
+\index{compression\_only\_@{compression\_only\_}!filevault::cli::BenchmarkCommand@{filevault::cli::BenchmarkCommand}}
+\doxysubsubsection{\texorpdfstring{compression\_only\_}{compression\_only\_}}
+{\footnotesize\ttfamily bool filevault\+::cli\+::\+Benchmark\+Command\+::compression\+\_\+only\+\_\+ = false\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classfilevault_1_1cli_1_1BenchmarkCommand_a55947e53380ba4988f62f44eaad939e3}\label{classfilevault_1_1cli_1_1BenchmarkCommand_a55947e53380ba4988f62f44eaad939e3} 
+\index{filevault::cli::BenchmarkCommand@{filevault::cli::BenchmarkCommand}!data\_size\_@{data\_size\_}}
+\index{data\_size\_@{data\_size\_}!filevault::cli::BenchmarkCommand@{filevault::cli::BenchmarkCommand}}
+\doxysubsubsection{\texorpdfstring{data\_size\_}{data\_size\_}}
+{\footnotesize\ttfamily size\+\_\+t filevault\+::cli\+::\+Benchmark\+Command\+::data\+\_\+size\+\_\+ = 1048576\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classfilevault_1_1cli_1_1BenchmarkCommand_a3943024249d5bb1546923e10e607efdc}\label{classfilevault_1_1cli_1_1BenchmarkCommand_a3943024249d5bb1546923e10e607efdc} 
+\index{filevault::cli::BenchmarkCommand@{filevault::cli::BenchmarkCommand}!engine\_@{engine\_}}
+\index{engine\_@{engine\_}!filevault::cli::BenchmarkCommand@{filevault::cli::BenchmarkCommand}}
+\doxysubsubsection{\texorpdfstring{engine\_}{engine\_}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classfilevault_1_1core_1_1CryptoEngine}{core\+::\+Crypto\+Engine}}\& filevault\+::cli\+::\+Benchmark\+Command\+::engine\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classfilevault_1_1cli_1_1BenchmarkCommand_a17a54ca87daa1686392cbeedc693ede7}\label{classfilevault_1_1cli_1_1BenchmarkCommand_a17a54ca87daa1686392cbeedc693ede7} 
+\index{filevault::cli::BenchmarkCommand@{filevault::cli::BenchmarkCommand}!hash\_only\_@{hash\_only\_}}
+\index{hash\_only\_@{hash\_only\_}!filevault::cli::BenchmarkCommand@{filevault::cli::BenchmarkCommand}}
+\doxysubsubsection{\texorpdfstring{hash\_only\_}{hash\_only\_}}
+{\footnotesize\ttfamily bool filevault\+::cli\+::\+Benchmark\+Command\+::hash\+\_\+only\+\_\+ = false\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classfilevault_1_1cli_1_1BenchmarkCommand_a3a8a7c81a82c5eaf6fdb492811cce243}\label{classfilevault_1_1cli_1_1BenchmarkCommand_a3a8a7c81a82c5eaf6fdb492811cce243} 
+\index{filevault::cli::BenchmarkCommand@{filevault::cli::BenchmarkCommand}!iterations\_@{iterations\_}}
+\index{iterations\_@{iterations\_}!filevault::cli::BenchmarkCommand@{filevault::cli::BenchmarkCommand}}
+\doxysubsubsection{\texorpdfstring{iterations\_}{iterations\_}}
+{\footnotesize\ttfamily int filevault\+::cli\+::\+Benchmark\+Command\+::iterations\+\_\+ = 5\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classfilevault_1_1cli_1_1BenchmarkCommand_aa951b642c3a5bae2ea331fc2cf8044d1}\label{classfilevault_1_1cli_1_1BenchmarkCommand_aa951b642c3a5bae2ea331fc2cf8044d1} 
+\index{filevault::cli::BenchmarkCommand@{filevault::cli::BenchmarkCommand}!json\_output\_@{json\_output\_}}
+\index{json\_output\_@{json\_output\_}!filevault::cli::BenchmarkCommand@{filevault::cli::BenchmarkCommand}}
+\doxysubsubsection{\texorpdfstring{json\_output\_}{json\_output\_}}
+{\footnotesize\ttfamily bool filevault\+::cli\+::\+Benchmark\+Command\+::json\+\_\+output\+\_\+ = false\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classfilevault_1_1cli_1_1BenchmarkCommand_a013b70ec3df8bac6f2eccb8344eab816}\label{classfilevault_1_1cli_1_1BenchmarkCommand_a013b70ec3df8bac6f2eccb8344eab816} 
+\index{filevault::cli::BenchmarkCommand@{filevault::cli::BenchmarkCommand}!kdf\_only\_@{kdf\_only\_}}
+\index{kdf\_only\_@{kdf\_only\_}!filevault::cli::BenchmarkCommand@{filevault::cli::BenchmarkCommand}}
+\doxysubsubsection{\texorpdfstring{kdf\_only\_}{kdf\_only\_}}
+{\footnotesize\ttfamily bool filevault\+::cli\+::\+Benchmark\+Command\+::kdf\+\_\+only\+\_\+ = false\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classfilevault_1_1cli_1_1BenchmarkCommand_aadd14504970978efa6ab6b3679cbf540}\label{classfilevault_1_1cli_1_1BenchmarkCommand_aadd14504970978efa6ab6b3679cbf540} 
+\index{filevault::cli::BenchmarkCommand@{filevault::cli::BenchmarkCommand}!output\_file\_@{output\_file\_}}
+\index{output\_file\_@{output\_file\_}!filevault::cli::BenchmarkCommand@{filevault::cli::BenchmarkCommand}}
+\doxysubsubsection{\texorpdfstring{output\_file\_}{output\_file\_}}
+{\footnotesize\ttfamily std\+::string filevault\+::cli\+::\+Benchmark\+Command\+::output\+\_\+file\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classfilevault_1_1cli_1_1BenchmarkCommand_ae050988e5b7e5ae0618f8d648f998e5b}\label{classfilevault_1_1cli_1_1BenchmarkCommand_ae050988e5b7e5ae0618f8d648f998e5b} 
+\index{filevault::cli::BenchmarkCommand@{filevault::cli::BenchmarkCommand}!pqc\_only\_@{pqc\_only\_}}
+\index{pqc\_only\_@{pqc\_only\_}!filevault::cli::BenchmarkCommand@{filevault::cli::BenchmarkCommand}}
+\doxysubsubsection{\texorpdfstring{pqc\_only\_}{pqc\_only\_}}
+{\footnotesize\ttfamily bool filevault\+::cli\+::\+Benchmark\+Command\+::pqc\+\_\+only\+\_\+ = false\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classfilevault_1_1cli_1_1BenchmarkCommand_aa242a82d06fe3161df253a67f723d903}\label{classfilevault_1_1cli_1_1BenchmarkCommand_aa242a82d06fe3161df253a67f723d903} 
+\index{filevault::cli::BenchmarkCommand@{filevault::cli::BenchmarkCommand}!symmetric\_only\_@{symmetric\_only\_}}
+\index{symmetric\_only\_@{symmetric\_only\_}!filevault::cli::BenchmarkCommand@{filevault::cli::BenchmarkCommand}}
+\doxysubsubsection{\texorpdfstring{symmetric\_only\_}{symmetric\_only\_}}
+{\footnotesize\ttfamily bool filevault\+::cli\+::\+Benchmark\+Command\+::symmetric\+\_\+only\+\_\+ = false\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/filevault/cli/commands/\mbox{\hyperlink{benchmark__cmd_8hpp}{benchmark\+\_\+cmd.\+hpp}}\item 
+src/cli/commands/\mbox{\hyperlink{benchmark__cmd_8cpp}{benchmark\+\_\+cmd.\+cpp}}\end{DoxyCompactItemize}

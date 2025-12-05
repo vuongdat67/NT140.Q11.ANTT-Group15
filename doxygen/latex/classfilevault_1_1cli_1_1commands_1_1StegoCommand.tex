@@ -1,0 +1,286 @@
+\doxysection{filevault\+::cli\+::commands\+::Stego\+Command Class Reference}
+\hypertarget{classfilevault_1_1cli_1_1commands_1_1StegoCommand}{}\label{classfilevault_1_1cli_1_1commands_1_1StegoCommand}\index{filevault::cli::commands::StegoCommand@{filevault::cli::commands::StegoCommand}}
+
+
+Steganography command for embedding/extracting data in images.  
+
+
+
+
+{\ttfamily \#include $<$stego\+\_\+cmd.\+hpp$>$}
+
+
+
+Inheritance diagram for filevault\+::cli\+::commands\+::Stego\+Command\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=214pt]{classfilevault_1_1cli_1_1commands_1_1StegoCommand__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for filevault\+::cli\+::commands\+::Stego\+Command\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=214pt]{classfilevault_1_1cli_1_1commands_1_1StegoCommand__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{classfilevault_1_1cli_1_1commands_1_1StegoCommand_a8c02846e5382b3ae504e37ea862a4ee1}{name}} () const override
+\begin{DoxyCompactList}\small\item\em Get command name. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classfilevault_1_1cli_1_1commands_1_1StegoCommand_abc424ef9bb81b611498fa4a8c0bfc092}{description}} () const override
+\begin{DoxyCompactList}\small\item\em Get command description. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classfilevault_1_1cli_1_1commands_1_1StegoCommand_afaeac18a65ca27d6ac94551930792b0b}{setup}} (CLI\+::\+App \&app) override
+\begin{DoxyCompactList}\small\item\em Setup CLI11 subcommand. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classfilevault_1_1cli_1_1commands_1_1StegoCommand_a0b2c059bd47114a40719a4ed195aa535}{execute}} () override
+\begin{DoxyCompactList}\small\item\em Execute the command. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classfilevault_1_1cli_1_1ICommand}{filevault\+::cli\+::\+ICommand}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classfilevault_1_1cli_1_1ICommand_a358ce6bf0db6a1ff7f53eec427481a5d}{\texorpdfstring{$\sim$}{\string~}\+ICommand}} ()=default
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{classfilevault_1_1cli_1_1commands_1_1StegoCommand_ad024106669df06666aa97913749ebcff}{do\+\_\+embed}} ()
+\item 
+int \mbox{\hyperlink{classfilevault_1_1cli_1_1commands_1_1StegoCommand_ab4aefd0dc98c608afa8368639e1aa5fe}{do\+\_\+extract}} ()
+\item 
+int \mbox{\hyperlink{classfilevault_1_1cli_1_1commands_1_1StegoCommand_ab1773d71d90b0d92c3532f0687019751}{do\+\_\+capacity}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{classfilevault_1_1cli_1_1commands_1_1StegoCommand_a07283c73efbcd5cab2652fd6d7682b5b}{operation\+\_\+}}
+\item 
+std\+::string \mbox{\hyperlink{classfilevault_1_1cli_1_1commands_1_1StegoCommand_a3f4ad064fca4b20e4f6c551dd0364544}{input\+\_\+file\+\_\+}}
+\item 
+std\+::string \mbox{\hyperlink{classfilevault_1_1cli_1_1commands_1_1StegoCommand_a0817a9e449b0f95904dca1c3e8645eb3}{cover\+\_\+image\+\_\+}}
+\item 
+std\+::string \mbox{\hyperlink{classfilevault_1_1cli_1_1commands_1_1StegoCommand_a2afd152174c84ee60bf0f9d0062d8447}{output\+\_\+file\+\_\+}}
+\item 
+int \mbox{\hyperlink{classfilevault_1_1cli_1_1commands_1_1StegoCommand_a7ab82f2c94e1a020e46894d7751ec486}{bits\+\_\+per\+\_\+channel\+\_\+}} = 1
+\item 
+bool \mbox{\hyperlink{classfilevault_1_1cli_1_1commands_1_1StegoCommand_ae04cefe0d09e4557d429f3eb83556611}{verbose\+\_\+}} = false
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Steganography command for embedding/extracting data in images. 
+
+Supports LSB (Least Significant Bit) steganography for hiding data within image files without visible changes.
+
+Features\+:
+\begin{DoxyItemize}
+\item Embed secret data into PNG/\+BMP images
+\item Extract hidden data from stego images
+\item Calculate embedding capacity
+\item Configurable bits per channel (1-\/4) 
+\end{DoxyItemize}
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classfilevault_1_1cli_1_1commands_1_1StegoCommand_abc424ef9bb81b611498fa4a8c0bfc092}\label{classfilevault_1_1cli_1_1commands_1_1StegoCommand_abc424ef9bb81b611498fa4a8c0bfc092} 
+\index{filevault::cli::commands::StegoCommand@{filevault::cli::commands::StegoCommand}!description@{description}}
+\index{description@{description}!filevault::cli::commands::StegoCommand@{filevault::cli::commands::StegoCommand}}
+\doxysubsubsection{\texorpdfstring{description()}{description()}}
+{\footnotesize\ttfamily std\+::string filevault\+::cli\+::commands\+::\+Stego\+Command\+::description (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get command description. 
+
+
+
+Implements \mbox{\hyperlink{classfilevault_1_1cli_1_1ICommand_a154cdd3f87273142e70814445abd48ea}{filevault\+::cli\+::\+ICommand}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1cli_1_1commands_1_1StegoCommand_abc424ef9bb81b611498fa4a8c0bfc092_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1cli_1_1commands_1_1StegoCommand_ab1773d71d90b0d92c3532f0687019751}\label{classfilevault_1_1cli_1_1commands_1_1StegoCommand_ab1773d71d90b0d92c3532f0687019751} 
+\index{filevault::cli::commands::StegoCommand@{filevault::cli::commands::StegoCommand}!do\_capacity@{do\_capacity}}
+\index{do\_capacity@{do\_capacity}!filevault::cli::commands::StegoCommand@{filevault::cli::commands::StegoCommand}}
+\doxysubsubsection{\texorpdfstring{do\_capacity()}{do\_capacity()}}
+{\footnotesize\ttfamily int filevault\+::cli\+::commands\+::\+Stego\+Command\+::do\+\_\+capacity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1cli_1_1commands_1_1StegoCommand_ab1773d71d90b0d92c3532f0687019751_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1cli_1_1commands_1_1StegoCommand_ab1773d71d90b0d92c3532f0687019751_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1cli_1_1commands_1_1StegoCommand_ad024106669df06666aa97913749ebcff}\label{classfilevault_1_1cli_1_1commands_1_1StegoCommand_ad024106669df06666aa97913749ebcff} 
+\index{filevault::cli::commands::StegoCommand@{filevault::cli::commands::StegoCommand}!do\_embed@{do\_embed}}
+\index{do\_embed@{do\_embed}!filevault::cli::commands::StegoCommand@{filevault::cli::commands::StegoCommand}}
+\doxysubsubsection{\texorpdfstring{do\_embed()}{do\_embed()}}
+{\footnotesize\ttfamily int filevault\+::cli\+::commands\+::\+Stego\+Command\+::do\+\_\+embed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1cli_1_1commands_1_1StegoCommand_ad024106669df06666aa97913749ebcff_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1cli_1_1commands_1_1StegoCommand_ad024106669df06666aa97913749ebcff_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1cli_1_1commands_1_1StegoCommand_ab4aefd0dc98c608afa8368639e1aa5fe}\label{classfilevault_1_1cli_1_1commands_1_1StegoCommand_ab4aefd0dc98c608afa8368639e1aa5fe} 
+\index{filevault::cli::commands::StegoCommand@{filevault::cli::commands::StegoCommand}!do\_extract@{do\_extract}}
+\index{do\_extract@{do\_extract}!filevault::cli::commands::StegoCommand@{filevault::cli::commands::StegoCommand}}
+\doxysubsubsection{\texorpdfstring{do\_extract()}{do\_extract()}}
+{\footnotesize\ttfamily int filevault\+::cli\+::commands\+::\+Stego\+Command\+::do\+\_\+extract (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1cli_1_1commands_1_1StegoCommand_ab4aefd0dc98c608afa8368639e1aa5fe_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1cli_1_1commands_1_1StegoCommand_ab4aefd0dc98c608afa8368639e1aa5fe_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1cli_1_1commands_1_1StegoCommand_a0b2c059bd47114a40719a4ed195aa535}\label{classfilevault_1_1cli_1_1commands_1_1StegoCommand_a0b2c059bd47114a40719a4ed195aa535} 
+\index{filevault::cli::commands::StegoCommand@{filevault::cli::commands::StegoCommand}!execute@{execute}}
+\index{execute@{execute}!filevault::cli::commands::StegoCommand@{filevault::cli::commands::StegoCommand}}
+\doxysubsubsection{\texorpdfstring{execute()}{execute()}}
+{\footnotesize\ttfamily int filevault\+::cli\+::commands\+::\+Stego\+Command\+::execute (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Execute the command. 
+
+
+
+Implements \mbox{\hyperlink{classfilevault_1_1cli_1_1ICommand_a2fdc36b29a23b94a6e52bc3d4eb0c1ed}{filevault\+::cli\+::\+ICommand}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1cli_1_1commands_1_1StegoCommand_a0b2c059bd47114a40719a4ed195aa535_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1cli_1_1commands_1_1StegoCommand_a0b2c059bd47114a40719a4ed195aa535_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1cli_1_1commands_1_1StegoCommand_a8c02846e5382b3ae504e37ea862a4ee1}\label{classfilevault_1_1cli_1_1commands_1_1StegoCommand_a8c02846e5382b3ae504e37ea862a4ee1} 
+\index{filevault::cli::commands::StegoCommand@{filevault::cli::commands::StegoCommand}!name@{name}}
+\index{name@{name}!filevault::cli::commands::StegoCommand@{filevault::cli::commands::StegoCommand}}
+\doxysubsubsection{\texorpdfstring{name()}{name()}}
+{\footnotesize\ttfamily std\+::string filevault\+::cli\+::commands\+::\+Stego\+Command\+::name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get command name. 
+
+
+
+Implements \mbox{\hyperlink{classfilevault_1_1cli_1_1ICommand_a60aa4bc7c96c2e80feeb1a184d7ae2f7}{filevault\+::cli\+::\+ICommand}}.
+
+\Hypertarget{classfilevault_1_1cli_1_1commands_1_1StegoCommand_afaeac18a65ca27d6ac94551930792b0b}\label{classfilevault_1_1cli_1_1commands_1_1StegoCommand_afaeac18a65ca27d6ac94551930792b0b} 
+\index{filevault::cli::commands::StegoCommand@{filevault::cli::commands::StegoCommand}!setup@{setup}}
+\index{setup@{setup}!filevault::cli::commands::StegoCommand@{filevault::cli::commands::StegoCommand}}
+\doxysubsubsection{\texorpdfstring{setup()}{setup()}}
+{\footnotesize\ttfamily void filevault\+::cli\+::commands\+::\+Stego\+Command\+::setup (\begin{DoxyParamCaption}\item[{CLI\+::\+App \&}]{app }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Setup CLI11 subcommand. 
+
+
+
+Implements \mbox{\hyperlink{classfilevault_1_1cli_1_1ICommand_aa43a60aabddff55d1060c334dade972c}{filevault\+::cli\+::\+ICommand}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1cli_1_1commands_1_1StegoCommand_afaeac18a65ca27d6ac94551930792b0b_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classfilevault_1_1cli_1_1commands_1_1StegoCommand_a7ab82f2c94e1a020e46894d7751ec486}\label{classfilevault_1_1cli_1_1commands_1_1StegoCommand_a7ab82f2c94e1a020e46894d7751ec486} 
+\index{filevault::cli::commands::StegoCommand@{filevault::cli::commands::StegoCommand}!bits\_per\_channel\_@{bits\_per\_channel\_}}
+\index{bits\_per\_channel\_@{bits\_per\_channel\_}!filevault::cli::commands::StegoCommand@{filevault::cli::commands::StegoCommand}}
+\doxysubsubsection{\texorpdfstring{bits\_per\_channel\_}{bits\_per\_channel\_}}
+{\footnotesize\ttfamily int filevault\+::cli\+::commands\+::\+Stego\+Command\+::bits\+\_\+per\+\_\+channel\+\_\+ = 1\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classfilevault_1_1cli_1_1commands_1_1StegoCommand_a0817a9e449b0f95904dca1c3e8645eb3}\label{classfilevault_1_1cli_1_1commands_1_1StegoCommand_a0817a9e449b0f95904dca1c3e8645eb3} 
+\index{filevault::cli::commands::StegoCommand@{filevault::cli::commands::StegoCommand}!cover\_image\_@{cover\_image\_}}
+\index{cover\_image\_@{cover\_image\_}!filevault::cli::commands::StegoCommand@{filevault::cli::commands::StegoCommand}}
+\doxysubsubsection{\texorpdfstring{cover\_image\_}{cover\_image\_}}
+{\footnotesize\ttfamily std\+::string filevault\+::cli\+::commands\+::\+Stego\+Command\+::cover\+\_\+image\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classfilevault_1_1cli_1_1commands_1_1StegoCommand_a3f4ad064fca4b20e4f6c551dd0364544}\label{classfilevault_1_1cli_1_1commands_1_1StegoCommand_a3f4ad064fca4b20e4f6c551dd0364544} 
+\index{filevault::cli::commands::StegoCommand@{filevault::cli::commands::StegoCommand}!input\_file\_@{input\_file\_}}
+\index{input\_file\_@{input\_file\_}!filevault::cli::commands::StegoCommand@{filevault::cli::commands::StegoCommand}}
+\doxysubsubsection{\texorpdfstring{input\_file\_}{input\_file\_}}
+{\footnotesize\ttfamily std\+::string filevault\+::cli\+::commands\+::\+Stego\+Command\+::input\+\_\+file\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classfilevault_1_1cli_1_1commands_1_1StegoCommand_a07283c73efbcd5cab2652fd6d7682b5b}\label{classfilevault_1_1cli_1_1commands_1_1StegoCommand_a07283c73efbcd5cab2652fd6d7682b5b} 
+\index{filevault::cli::commands::StegoCommand@{filevault::cli::commands::StegoCommand}!operation\_@{operation\_}}
+\index{operation\_@{operation\_}!filevault::cli::commands::StegoCommand@{filevault::cli::commands::StegoCommand}}
+\doxysubsubsection{\texorpdfstring{operation\_}{operation\_}}
+{\footnotesize\ttfamily std\+::string filevault\+::cli\+::commands\+::\+Stego\+Command\+::operation\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classfilevault_1_1cli_1_1commands_1_1StegoCommand_a2afd152174c84ee60bf0f9d0062d8447}\label{classfilevault_1_1cli_1_1commands_1_1StegoCommand_a2afd152174c84ee60bf0f9d0062d8447} 
+\index{filevault::cli::commands::StegoCommand@{filevault::cli::commands::StegoCommand}!output\_file\_@{output\_file\_}}
+\index{output\_file\_@{output\_file\_}!filevault::cli::commands::StegoCommand@{filevault::cli::commands::StegoCommand}}
+\doxysubsubsection{\texorpdfstring{output\_file\_}{output\_file\_}}
+{\footnotesize\ttfamily std\+::string filevault\+::cli\+::commands\+::\+Stego\+Command\+::output\+\_\+file\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classfilevault_1_1cli_1_1commands_1_1StegoCommand_ae04cefe0d09e4557d429f3eb83556611}\label{classfilevault_1_1cli_1_1commands_1_1StegoCommand_ae04cefe0d09e4557d429f3eb83556611} 
+\index{filevault::cli::commands::StegoCommand@{filevault::cli::commands::StegoCommand}!verbose\_@{verbose\_}}
+\index{verbose\_@{verbose\_}!filevault::cli::commands::StegoCommand@{filevault::cli::commands::StegoCommand}}
+\doxysubsubsection{\texorpdfstring{verbose\_}{verbose\_}}
+{\footnotesize\ttfamily bool filevault\+::cli\+::commands\+::\+Stego\+Command\+::verbose\+\_\+ = false\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/filevault/cli/commands/\mbox{\hyperlink{stego__cmd_8hpp}{stego\+\_\+cmd.\+hpp}}\item 
+src/cli/commands/\mbox{\hyperlink{stego__cmd_8cpp}{stego\+\_\+cmd.\+cpp}}\end{DoxyCompactItemize}

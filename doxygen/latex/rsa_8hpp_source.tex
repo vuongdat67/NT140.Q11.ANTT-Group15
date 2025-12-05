@@ -1,0 +1,76 @@
+\doxysection{rsa.\+hpp}
+\hypertarget{rsa_8hpp_source}{}\label{rsa_8hpp_source}\index{include/filevault/algorithms/asymmetric/rsa.hpp@{include/filevault/algorithms/asymmetric/rsa.hpp}}
+\mbox{\hyperlink{rsa_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#ifndef\ FILEVAULT\_ALGORITHMS\_ASYMMETRIC\_RSA\_HPP}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#define\ FILEVAULT\_ALGORITHMS\_ASYMMETRIC\_RSA\_HPP}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{crypto__algorithm_8hpp}{filevault/core/crypto\_algorithm.hpp}}"{}}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <botan/rsa.h>}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <botan/pubkey.h>}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacefilevault}{filevault}}\ \{}
+\DoxyCodeLine{00017\ \textcolor{keyword}{namespace\ }algorithms\ \{}
+\DoxyCodeLine{00018\ \textcolor{keyword}{namespace\ }asymmetric\ \{}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00023\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structfilevault_1_1algorithms_1_1asymmetric_1_1RSAKeyPair}{RSAKeyPair}}\ \{}
+\DoxyCodeLine{00024\ \ \ \ \ std::vector<uint8\_t>\ \mbox{\hyperlink{structfilevault_1_1algorithms_1_1asymmetric_1_1RSAKeyPair_a1e6d06ab19af74928b11fc294ea0dc78}{public\_key}};\ \ \ \textcolor{comment}{//\ PEM\ or\ DER\ encoded}}
+\DoxyCodeLine{00025\ \ \ \ \ std::vector<uint8\_t>\ \mbox{\hyperlink{structfilevault_1_1algorithms_1_1asymmetric_1_1RSAKeyPair_add45c17f226f9f5d3c713cf1c696f3c5}{private\_key}};\ \ \textcolor{comment}{//\ PEM\ or\ DER\ encoded}}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{structfilevault_1_1algorithms_1_1asymmetric_1_1RSAKeyPair_aeea06437b0ff6022dadcee78e7cd1721}{bits}};}
+\DoxyCodeLine{00027\ \};}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00041\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classfilevault_1_1algorithms_1_1asymmetric_1_1RSA}{RSA}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classfilevault_1_1core_1_1ICryptoAlgorithm}{core::ICryptoAlgorithm}}\ \{}
+\DoxyCodeLine{00042\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1asymmetric_1_1RSA}{RSA}}(\textcolor{keywordtype}{size\_t}\ key\_bits\ =\ 2048);}
+\DoxyCodeLine{00048\ \ \ \ \ }
+\DoxyCodeLine{00049\ \ \ \ \ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1asymmetric_1_1RSA_ae78ad13a2d10a9b72afb387fcbcd1713}{\string~RSA}}()\ \textcolor{keyword}{override}\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00050\ \ \ \ \ }
+\DoxyCodeLine{00051\ \ \ \ \ std::string\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1asymmetric_1_1RSA_aee734db6a1dac6ebe855a812818ad3c4}{name}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00052\ \ \ \ \ \mbox{\hyperlink{namespacefilevault_1_1core_ab1ba257a0205c63e9e1e3623170940a2}{core::AlgorithmType}}\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1asymmetric_1_1RSA_a1be468ac3934c4c457668a00f5429cb1}{type}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00053\ \ \ \ \ }
+\DoxyCodeLine{00060\ \ \ \ \ \mbox{\hyperlink{structfilevault_1_1core_1_1CryptoResult}{core::CryptoResult}}\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1asymmetric_1_1RSA_a10d9eb4d9975f23e0f7c2817315bf94d}{encrypt}}(}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ std::span<const\ uint8\_t>\ plaintext,}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ std::span<const\ uint8\_t>\ key,}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structfilevault_1_1core_1_1EncryptionConfig}{core::EncryptionConfig}}\&\ config}
+\DoxyCodeLine{00064\ \ \ \ \ )\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00065\ \ \ \ \ }
+\DoxyCodeLine{00072\ \ \ \ \ \mbox{\hyperlink{structfilevault_1_1core_1_1CryptoResult}{core::CryptoResult}}\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1asymmetric_1_1RSA_adb633ac2bd12112232aeb165fc593912}{decrypt}}(}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ std::span<const\ uint8\_t>\ ciphertext,}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ std::span<const\ uint8\_t>\ key,}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structfilevault_1_1core_1_1EncryptionConfig}{core::EncryptionConfig}}\&\ config}
+\DoxyCodeLine{00076\ \ \ \ \ )\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00077\ \ \ \ \ }
+\DoxyCodeLine{00082\ \ \ \ \ \mbox{\hyperlink{structfilevault_1_1algorithms_1_1asymmetric_1_1RSAKeyPair}{RSAKeyPair}}\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1asymmetric_1_1RSA_aa727bac0b5fbfdd903099153fe7499c2}{generate\_key\_pair}}();}
+\DoxyCodeLine{00083\ \ \ \ \ }
+\DoxyCodeLine{00090\ \ \ \ \ std::vector<uint8\_t>\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1asymmetric_1_1RSA_ab93eea9a86c84053bb3c1b89e56f5bb0}{sign}}(}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ std::span<const\ uint8\_t>\ data,}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ std::span<const\ uint8\_t>\ private\_key}
+\DoxyCodeLine{00093\ \ \ \ \ );}
+\DoxyCodeLine{00094\ \ \ \ \ }
+\DoxyCodeLine{00102\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1asymmetric_1_1RSA_a4efbc42c1942f9727183e88a26601601}{verify}}(}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ std::span<const\ uint8\_t>\ data,}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ std::span<const\ uint8\_t>\ signature,}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ std::span<const\ uint8\_t>\ public\_key}
+\DoxyCodeLine{00106\ \ \ \ \ );}
+\DoxyCodeLine{00107\ \ \ \ \ }
+\DoxyCodeLine{00108\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1asymmetric_1_1RSA_a089444b56551c82071fde28aa7ef921b}{key\_size}}()\textcolor{keyword}{\ const\ override\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1asymmetric_1_1RSA_a0d32dc59e5f026e3b98c457e01e3bbd4}{key\_bits\_}}\ /\ 8;\ \}}
+\DoxyCodeLine{00109\ \ \ \ \ }
+\DoxyCodeLine{00114\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1asymmetric_1_1RSA_a8514d36499b8f02480495997550cb7a7}{max\_plaintext\_size}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ (\mbox{\hyperlink{classfilevault_1_1algorithms_1_1asymmetric_1_1RSA_a0d32dc59e5f026e3b98c457e01e3bbd4}{key\_bits\_}}\ /\ 8)\ -\/\ 66;\ \}}
+\DoxyCodeLine{00115\ \ \ \ \ }
+\DoxyCodeLine{00116\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1asymmetric_1_1RSA_a09bbb9c49300fbac2e89dbb8ea3bbf86}{requires\_padding}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};\ \}\ \ \textcolor{comment}{//\ OAEP\ padding}}
+\DoxyCodeLine{00117\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1asymmetric_1_1RSA_a35ffd93d2fb30654c168ce3025608460}{is\_authenticated}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};\ \}}
+\DoxyCodeLine{00118\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1asymmetric_1_1RSA_a60ab7f2f23a1f14860b3d806a8c55bcb}{is\_suitable\_for}}(\mbox{\hyperlink{namespacefilevault_1_1core_abcb3b3d896f7dc00926903183b3e2dc9}{core::SecurityLevel}}\ level)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00119\ \ \ \ \ }
+\DoxyCodeLine{00120\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00121\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1asymmetric_1_1RSA_a0d32dc59e5f026e3b98c457e01e3bbd4}{key\_bits\_}};}
+\DoxyCodeLine{00122\ \ \ \ \ \mbox{\hyperlink{namespacefilevault_1_1core_ab1ba257a0205c63e9e1e3623170940a2}{core::AlgorithmType}}\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1asymmetric_1_1RSA_a26bf8f93c7376761e1006cd1e8730d71}{type\_}};}
+\DoxyCodeLine{00123\ \};}
+\DoxyCodeLine{00124\ }
+\DoxyCodeLine{00125\ \}\ \textcolor{comment}{//\ namespace\ asymmetric}}
+\DoxyCodeLine{00126\ \}\ \textcolor{comment}{//\ namespace\ algorithms}}
+\DoxyCodeLine{00127\ \}\ \textcolor{comment}{//\ namespace\ filevault}}
+\DoxyCodeLine{00128\ }
+\DoxyCodeLine{00129\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

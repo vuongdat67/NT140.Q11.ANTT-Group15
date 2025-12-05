@@ -1,0 +1,136 @@
+\doxysection{ecc.\+hpp}
+\hypertarget{ecc_8hpp_source}{}\label{ecc_8hpp_source}\index{include/filevault/algorithms/asymmetric/ecc.hpp@{include/filevault/algorithms/asymmetric/ecc.hpp}}
+\mbox{\hyperlink{ecc_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#ifndef\ FILEVAULT\_ALGORITHMS\_ASYMMETRIC\_ECC\_HPP}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#define\ FILEVAULT\_ALGORITHMS\_ASYMMETRIC\_ECC\_HPP}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{crypto__algorithm_8hpp}{filevault/core/crypto\_algorithm.hpp}}"{}}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <botan/ecdh.h>}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <botan/ecdsa.h>}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <botan/ec\_group.h>}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacefilevault}{filevault}}\ \{}
+\DoxyCodeLine{00020\ \textcolor{keyword}{namespace\ }algorithms\ \{}
+\DoxyCodeLine{00021\ \textcolor{keyword}{namespace\ }asymmetric\ \{}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00026\ \textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{namespacefilevault_1_1algorithms_1_1asymmetric_a5955f778874f5a3eaa61006b00c2ab02}{ECCurve}}\ \{}
+\DoxyCodeLine{00027\ \ \ \ \ \mbox{\hyperlink{namespacefilevault_1_1algorithms_1_1asymmetric_a5955f778874f5a3eaa61006b00c2ab02ae391840247cc176f98c8bd36b74393ce}{SECP256R1}},\ \ \textcolor{comment}{//\ P-\/256,\ 128-\/bit\ security}}
+\DoxyCodeLine{00028\ \ \ \ \ \mbox{\hyperlink{namespacefilevault_1_1algorithms_1_1asymmetric_a5955f778874f5a3eaa61006b00c2ab02a22e60bed6bdf68bf51c8017786b26d27}{SECP384R1}},\ \ \textcolor{comment}{//\ P-\/384,\ 192-\/bit\ security}}
+\DoxyCodeLine{00029\ \ \ \ \ \mbox{\hyperlink{namespacefilevault_1_1algorithms_1_1asymmetric_a5955f778874f5a3eaa61006b00c2ab02a2bd7340fbb5bdefe99376e3865cfb799}{SECP521R1}},\ \ \textcolor{comment}{//\ P-\/521,\ 256-\/bit\ security}}
+\DoxyCodeLine{00030\ \ \ \ \ \mbox{\hyperlink{namespacefilevault_1_1algorithms_1_1asymmetric_a5955f778874f5a3eaa61006b00c2ab02af2c08fed6488d1d51758a6b692d9f832}{X25519}}\ \ \ \ \ \ \textcolor{comment}{//\ Curve25519,\ 128-\/bit\ security\ (for\ ECDH\ only)}}
+\DoxyCodeLine{00031\ \};}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00036\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structfilevault_1_1algorithms_1_1asymmetric_1_1ECCKeyPair}{ECCKeyPair}}\ \{}
+\DoxyCodeLine{00037\ \ \ \ \ std::vector<uint8\_t>\ \mbox{\hyperlink{structfilevault_1_1algorithms_1_1asymmetric_1_1ECCKeyPair_a6f99b2f67e1db75c3bf9e5f0067aa0ec}{public\_key}};\ \ \ \textcolor{comment}{//\ Raw\ or\ DER\ encoded}}
+\DoxyCodeLine{00038\ \ \ \ \ std::vector<uint8\_t>\ \mbox{\hyperlink{structfilevault_1_1algorithms_1_1asymmetric_1_1ECCKeyPair_acbc3e32f448f1ffcbc5bf6bd0d4bad7e}{private\_key}};\ \ \textcolor{comment}{//\ Raw\ or\ DER\ encoded}}
+\DoxyCodeLine{00039\ \ \ \ \ \mbox{\hyperlink{namespacefilevault_1_1algorithms_1_1asymmetric_a5955f778874f5a3eaa61006b00c2ab02}{ECCurve}}\ \mbox{\hyperlink{structfilevault_1_1algorithms_1_1asymmetric_1_1ECCKeyPair_a22b06e5fcd98f4fbb9d0bb27a604764c}{curve}};}
+\DoxyCodeLine{00040\ \ \ \ \ std::string\ \mbox{\hyperlink{structfilevault_1_1algorithms_1_1asymmetric_1_1ECCKeyPair_afbce235bebe5db06a4eb5fc30fbcdc61}{curve\_name}};}
+\DoxyCodeLine{00041\ \};}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00046\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structfilevault_1_1algorithms_1_1asymmetric_1_1ECDHResult}{ECDHResult}}\ \{}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structfilevault_1_1algorithms_1_1asymmetric_1_1ECDHResult_a2f40860e96b37caf9385436971a550b5}{success}};}
+\DoxyCodeLine{00048\ \ \ \ \ std::vector<uint8\_t>\ \mbox{\hyperlink{structfilevault_1_1algorithms_1_1asymmetric_1_1ECDHResult_a43f7b0e3573af408c5126f1bf8f62a57}{shared\_secret}};\ \ \textcolor{comment}{//\ Derived\ shared\ secret}}
+\DoxyCodeLine{00049\ \ \ \ \ std::string\ \mbox{\hyperlink{structfilevault_1_1algorithms_1_1asymmetric_1_1ECDHResult_a2b289ef0fc8de3375dd18ade98c8744d}{error\_message}};}
+\DoxyCodeLine{00050\ \};}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00055\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structfilevault_1_1algorithms_1_1asymmetric_1_1ECDSASignResult}{ECDSASignResult}}\ \{}
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structfilevault_1_1algorithms_1_1asymmetric_1_1ECDSASignResult_a35cd7903ca0df4d8aad259eee9adb3f9}{success}};}
+\DoxyCodeLine{00057\ \ \ \ \ std::vector<uint8\_t>\ \mbox{\hyperlink{structfilevault_1_1algorithms_1_1asymmetric_1_1ECDSASignResult_a2f084ecb70f0c7d493c854f37cd99c5a}{signature}};}
+\DoxyCodeLine{00058\ \ \ \ \ std::string\ \mbox{\hyperlink{structfilevault_1_1algorithms_1_1asymmetric_1_1ECDSASignResult_a44b749c2c043f924fcb9e370bfcff7e5}{error\_message}};}
+\DoxyCodeLine{00059\ \};}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00068\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classfilevault_1_1algorithms_1_1asymmetric_1_1ECDH}{ECDH}}\ \{}
+\DoxyCodeLine{00069\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1asymmetric_1_1ECDH}{ECDH}}(\mbox{\hyperlink{namespacefilevault_1_1algorithms_1_1asymmetric_a5955f778874f5a3eaa61006b00c2ab02}{ECCurve}}\ curve\ =\ \mbox{\hyperlink{namespacefilevault_1_1algorithms_1_1asymmetric_a5955f778874f5a3eaa61006b00c2ab02ae391840247cc176f98c8bd36b74393ce}{ECCurve::SECP256R1}});}
+\DoxyCodeLine{00075\ \ \ \ \ }
+\DoxyCodeLine{00076\ \ \ \ \ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1asymmetric_1_1ECDH_ae4de7903a6cc97d36a704e3563e65363}{\string~ECDH}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00077\ \ \ \ \ }
+\DoxyCodeLine{00081\ \ \ \ \ \mbox{\hyperlink{structfilevault_1_1algorithms_1_1asymmetric_1_1ECCKeyPair}{ECCKeyPair}}\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1asymmetric_1_1ECDH_a9866ae80680e10453caeeb3aab3acdf4}{generate\_key\_pair}}();}
+\DoxyCodeLine{00082\ \ \ \ \ }
+\DoxyCodeLine{00089\ \ \ \ \ \mbox{\hyperlink{structfilevault_1_1algorithms_1_1asymmetric_1_1ECDHResult}{ECDHResult}}\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1asymmetric_1_1ECDH_abf1a1f3fde41b1c154e68df2bd1aa64d}{derive\_shared\_secret}}(}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ std::span<const\ uint8\_t>\ own\_private\_key,}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ std::span<const\ uint8\_t>\ peer\_public\_key}
+\DoxyCodeLine{00092\ \ \ \ \ );}
+\DoxyCodeLine{00093\ \ \ \ \ }
+\DoxyCodeLine{00094\ \ \ \ \ std::string\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1asymmetric_1_1ECDH_aae211ce3d9e99dacac5176149e835114}{name}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00095\ \ \ \ \ std::string\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1asymmetric_1_1ECDH_a09d637751aa988b6cd33c3c205ea2c8f}{curve\_name}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00096\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1asymmetric_1_1ECDH_a7ec191e461401d9ebb17c9f4c37e57b3}{key\_size}}()\ \textcolor{keyword}{const};\ \ \textcolor{comment}{//\ In\ bytes}}
+\DoxyCodeLine{00097\ \ \ \ \ }
+\DoxyCodeLine{00098\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00099\ \ \ \ \ \mbox{\hyperlink{namespacefilevault_1_1algorithms_1_1asymmetric_a5955f778874f5a3eaa61006b00c2ab02}{ECCurve}}\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1asymmetric_1_1ECDH_ae08262219f984eb0733b74482889ec9a}{curve\_}};}
+\DoxyCodeLine{00100\ \ \ \ \ std::string\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1asymmetric_1_1ECDH_ad0a6eb0c3d5560e83c3722af30be9752}{botan\_curve\_name\_}};}
+\DoxyCodeLine{00101\ \};}
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00108\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classfilevault_1_1algorithms_1_1asymmetric_1_1ECDSA}{ECDSA}}\ \{}
+\DoxyCodeLine{00109\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00114\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1asymmetric_1_1ECDSA}{ECDSA}}(\mbox{\hyperlink{namespacefilevault_1_1algorithms_1_1asymmetric_a5955f778874f5a3eaa61006b00c2ab02}{ECCurve}}\ curve\ =\ \mbox{\hyperlink{namespacefilevault_1_1algorithms_1_1asymmetric_a5955f778874f5a3eaa61006b00c2ab02ae391840247cc176f98c8bd36b74393ce}{ECCurve::SECP256R1}});}
+\DoxyCodeLine{00115\ \ \ \ \ }
+\DoxyCodeLine{00116\ \ \ \ \ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1asymmetric_1_1ECDSA_a2a3aaf2a0ec0f08afa692639f30de20c}{\string~ECDSA}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00117\ \ \ \ \ }
+\DoxyCodeLine{00121\ \ \ \ \ \mbox{\hyperlink{structfilevault_1_1algorithms_1_1asymmetric_1_1ECCKeyPair}{ECCKeyPair}}\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1asymmetric_1_1ECDSA_aa25175d4c43d8c2004b4ede520428561}{generate\_key\_pair}}();}
+\DoxyCodeLine{00122\ \ \ \ \ }
+\DoxyCodeLine{00129\ \ \ \ \ \mbox{\hyperlink{structfilevault_1_1algorithms_1_1asymmetric_1_1ECDSASignResult}{ECDSASignResult}}\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1asymmetric_1_1ECDSA_a94340a6ad74718073be096ec8e387480}{sign}}(}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ std::span<const\ uint8\_t>\ data,}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ std::span<const\ uint8\_t>\ private\_key}
+\DoxyCodeLine{00132\ \ \ \ \ );}
+\DoxyCodeLine{00133\ \ \ \ \ }
+\DoxyCodeLine{00141\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1asymmetric_1_1ECDSA_a433c10efecf736c638d27baa65b55069}{verify}}(}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ std::span<const\ uint8\_t>\ data,}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ std::span<const\ uint8\_t>\ signature,}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ std::span<const\ uint8\_t>\ public\_key}
+\DoxyCodeLine{00145\ \ \ \ \ );}
+\DoxyCodeLine{00146\ \ \ \ \ }
+\DoxyCodeLine{00147\ \ \ \ \ std::string\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1asymmetric_1_1ECDSA_a6b6ffd50f3e7268387cb5ffb078b99af}{name}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00148\ \ \ \ \ std::string\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1asymmetric_1_1ECDSA_a867cd043c6c3a0cbea025ff1576e485e}{curve\_name}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00149\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1asymmetric_1_1ECDSA_a3baf5038e40974a13c3bad3e08cb8e56}{key\_size}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00150\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1asymmetric_1_1ECDSA_acba2d68fb4b6a46ccdd06ce5e510ae65}{signature\_size}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00151\ \ \ \ \ }
+\DoxyCodeLine{00152\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00153\ \ \ \ \ \mbox{\hyperlink{namespacefilevault_1_1algorithms_1_1asymmetric_a5955f778874f5a3eaa61006b00c2ab02}{ECCurve}}\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1asymmetric_1_1ECDSA_a8033d0b3841a9ec20b1a037a198f1cae}{curve\_}};}
+\DoxyCodeLine{00154\ \ \ \ \ std::string\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1asymmetric_1_1ECDSA_a858b512e4bb747093f91e39e866dc6c1}{botan\_curve\_name\_}};}
+\DoxyCodeLine{00155\ \};}
+\DoxyCodeLine{00156\ }
+\DoxyCodeLine{00170\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classfilevault_1_1algorithms_1_1asymmetric_1_1ECCHybrid}{ECCHybrid}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classfilevault_1_1core_1_1ICryptoAlgorithm}{core::ICryptoAlgorithm}}\ \{}
+\DoxyCodeLine{00171\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00176\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1asymmetric_1_1ECCHybrid}{ECCHybrid}}(\mbox{\hyperlink{namespacefilevault_1_1algorithms_1_1asymmetric_a5955f778874f5a3eaa61006b00c2ab02}{ECCurve}}\ curve\ =\ \mbox{\hyperlink{namespacefilevault_1_1algorithms_1_1asymmetric_a5955f778874f5a3eaa61006b00c2ab02ae391840247cc176f98c8bd36b74393ce}{ECCurve::SECP256R1}});}
+\DoxyCodeLine{00177\ \ \ \ \ }
+\DoxyCodeLine{00178\ \ \ \ \ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1asymmetric_1_1ECCHybrid_a3b9fcf94f0113f8c036926aa0608b626}{\string~ECCHybrid}}()\ \textcolor{keyword}{override}\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00179\ \ \ \ \ }
+\DoxyCodeLine{00180\ \ \ \ \ std::string\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1asymmetric_1_1ECCHybrid_a74f13e3c8ff2e0374645833faf923549}{name}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00181\ \ \ \ \ \mbox{\hyperlink{namespacefilevault_1_1core_ab1ba257a0205c63e9e1e3623170940a2}{core::AlgorithmType}}\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1asymmetric_1_1ECCHybrid_acf3ccf35272da36f444e8d9a52b41563}{type}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00182\ \ \ \ \ }
+\DoxyCodeLine{00189\ \ \ \ \ \mbox{\hyperlink{structfilevault_1_1core_1_1CryptoResult}{core::CryptoResult}}\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1asymmetric_1_1ECCHybrid_a2a84feef4873ce861e566f4ddeb710e7}{encrypt}}(}
+\DoxyCodeLine{00190\ \ \ \ \ \ \ \ \ std::span<const\ uint8\_t>\ plaintext,}
+\DoxyCodeLine{00191\ \ \ \ \ \ \ \ \ std::span<const\ uint8\_t>\ key,}
+\DoxyCodeLine{00192\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structfilevault_1_1core_1_1EncryptionConfig}{core::EncryptionConfig}}\&\ config}
+\DoxyCodeLine{00193\ \ \ \ \ )\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00194\ \ \ \ \ }
+\DoxyCodeLine{00201\ \ \ \ \ \mbox{\hyperlink{structfilevault_1_1core_1_1CryptoResult}{core::CryptoResult}}\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1asymmetric_1_1ECCHybrid_af88980bcc1889d541e1cd0c0c5a82992}{decrypt}}(}
+\DoxyCodeLine{00202\ \ \ \ \ \ \ \ \ std::span<const\ uint8\_t>\ ciphertext,}
+\DoxyCodeLine{00203\ \ \ \ \ \ \ \ \ std::span<const\ uint8\_t>\ key,}
+\DoxyCodeLine{00204\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structfilevault_1_1core_1_1EncryptionConfig}{core::EncryptionConfig}}\&\ config}
+\DoxyCodeLine{00205\ \ \ \ \ )\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00206\ \ \ \ \ }
+\DoxyCodeLine{00210\ \ \ \ \ \mbox{\hyperlink{structfilevault_1_1algorithms_1_1asymmetric_1_1ECCKeyPair}{ECCKeyPair}}\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1asymmetric_1_1ECCHybrid_abfe7232a8502c7b198ebc6e553300181}{generate\_key\_pair}}();}
+\DoxyCodeLine{00211\ \ \ \ \ }
+\DoxyCodeLine{00212\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1asymmetric_1_1ECCHybrid_a74edb59e145213784ae8ca3fcff01760}{key\_size}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00213\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1asymmetric_1_1ECCHybrid_a949d2f96293818c0d57014c06badf983}{is\_suitable\_for}}(\mbox{\hyperlink{namespacefilevault_1_1core_abcb3b3d896f7dc00926903183b3e2dc9}{core::SecurityLevel}}\ level)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00214\ \ \ \ \ }
+\DoxyCodeLine{00215\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00216\ \ \ \ \ \mbox{\hyperlink{namespacefilevault_1_1algorithms_1_1asymmetric_a5955f778874f5a3eaa61006b00c2ab02}{ECCurve}}\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1asymmetric_1_1ECCHybrid_a0dca8b4b6ae7b2f87f27000f203a1aa8}{curve\_}};}
+\DoxyCodeLine{00217\ \ \ \ \ std::string\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1asymmetric_1_1ECCHybrid_aa3478e1f5a64c8e223fab2057ba6f430}{botan\_curve\_name\_}};}
+\DoxyCodeLine{00218\ \ \ \ \ \mbox{\hyperlink{namespacefilevault_1_1core_ab1ba257a0205c63e9e1e3623170940a2}{core::AlgorithmType}}\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1asymmetric_1_1ECCHybrid_ae838384c83fe068d0d0bd22b33416135}{type\_}};}
+\DoxyCodeLine{00219\ \ \ \ \ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1asymmetric_1_1ECDH}{ECDH}}\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1asymmetric_1_1ECCHybrid_a3a1aaf937e5a40dc04296944fd7b879d}{ecdh\_}};}
+\DoxyCodeLine{00220\ \};}
+\DoxyCodeLine{00221\ }
+\DoxyCodeLine{00222\ \}\ \textcolor{comment}{//\ namespace\ asymmetric}}
+\DoxyCodeLine{00223\ \}\ \textcolor{comment}{//\ namespace\ algorithms}}
+\DoxyCodeLine{00224\ \}\ \textcolor{comment}{//\ namespace\ filevault}}
+\DoxyCodeLine{00225\ }
+\DoxyCodeLine{00226\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

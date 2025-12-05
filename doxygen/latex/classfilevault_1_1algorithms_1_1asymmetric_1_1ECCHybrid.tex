@@ -1,0 +1,318 @@
+\doxysection{filevault\+::algorithms\+::asymmetric\+::ECCHybrid Class Reference}
+\hypertarget{classfilevault_1_1algorithms_1_1asymmetric_1_1ECCHybrid}{}\label{classfilevault_1_1algorithms_1_1asymmetric_1_1ECCHybrid}\index{filevault::algorithms::asymmetric::ECCHybrid@{filevault::algorithms::asymmetric::ECCHybrid}}
+
+
+Hybrid encryption using \doxylink{classfilevault_1_1algorithms_1_1asymmetric_1_1ECDH}{ECDH} + AES-\/\+GCM.  
+
+
+
+
+{\ttfamily \#include $<$ecc.\+hpp$>$}
+
+
+
+Inheritance diagram for filevault\+::algorithms\+::asymmetric\+::ECCHybrid\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=219pt]{classfilevault_1_1algorithms_1_1asymmetric_1_1ECCHybrid__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for filevault\+::algorithms\+::asymmetric\+::ECCHybrid\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=338pt]{classfilevault_1_1algorithms_1_1asymmetric_1_1ECCHybrid__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classfilevault_1_1algorithms_1_1asymmetric_1_1ECCHybrid_ae522c33700e1ce2000f334984ca6d60c}{ECCHybrid}} (\mbox{\hyperlink{namespacefilevault_1_1algorithms_1_1asymmetric_a5955f778874f5a3eaa61006b00c2ab02}{ECCurve}} curve=\mbox{\hyperlink{namespacefilevault_1_1algorithms_1_1asymmetric_a5955f778874f5a3eaa61006b00c2ab02ae391840247cc176f98c8bd36b74393ce}{ECCurve\+::\+SECP256\+R1}})
+\begin{DoxyCompactList}\small\item\em Construct ECC hybrid encryption. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfilevault_1_1algorithms_1_1asymmetric_1_1ECCHybrid_a3b9fcf94f0113f8c036926aa0608b626}{\texorpdfstring{$\sim$}{\string~}\+ECCHybrid}} () override=default
+\item 
+std\+::string \mbox{\hyperlink{classfilevault_1_1algorithms_1_1asymmetric_1_1ECCHybrid_a74f13e3c8ff2e0374645833faf923549}{name}} () const override
+\begin{DoxyCompactList}\small\item\em Get algorithm name. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacefilevault_1_1core_ab1ba257a0205c63e9e1e3623170940a2}{core\+::\+Algorithm\+Type}} \mbox{\hyperlink{classfilevault_1_1algorithms_1_1asymmetric_1_1ECCHybrid_acf3ccf35272da36f444e8d9a52b41563}{type}} () const override
+\begin{DoxyCompactList}\small\item\em Get algorithm type. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structfilevault_1_1core_1_1CryptoResult}{core\+::\+Crypto\+Result}} \mbox{\hyperlink{classfilevault_1_1algorithms_1_1asymmetric_1_1ECCHybrid_a2a84feef4873ce861e566f4ddeb710e7}{encrypt}} (std\+::span$<$ const uint8\+\_\+t $>$ plaintext, std\+::span$<$ const uint8\+\_\+t $>$ key, const \mbox{\hyperlink{structfilevault_1_1core_1_1EncryptionConfig}{core\+::\+Encryption\+Config}} \&config) override
+\begin{DoxyCompactList}\small\item\em Encrypt with recipient\textquotesingle{}s public key. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structfilevault_1_1core_1_1CryptoResult}{core\+::\+Crypto\+Result}} \mbox{\hyperlink{classfilevault_1_1algorithms_1_1asymmetric_1_1ECCHybrid_af88980bcc1889d541e1cd0c0c5a82992}{decrypt}} (std\+::span$<$ const uint8\+\_\+t $>$ ciphertext, std\+::span$<$ const uint8\+\_\+t $>$ key, const \mbox{\hyperlink{structfilevault_1_1core_1_1EncryptionConfig}{core\+::\+Encryption\+Config}} \&config) override
+\begin{DoxyCompactList}\small\item\em Decrypt with own private key. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structfilevault_1_1algorithms_1_1asymmetric_1_1ECCKeyPair}{ECCKey\+Pair}} \mbox{\hyperlink{classfilevault_1_1algorithms_1_1asymmetric_1_1ECCHybrid_abfe7232a8502c7b198ebc6e553300181}{generate\+\_\+key\+\_\+pair}} ()
+\begin{DoxyCompactList}\small\item\em Generate a new ECC key pair for this hybrid scheme. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{classfilevault_1_1algorithms_1_1asymmetric_1_1ECCHybrid_a74edb59e145213784ae8ca3fcff01760}{key\+\_\+size}} () const override
+\begin{DoxyCompactList}\small\item\em Get recommended key size in bytes. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classfilevault_1_1algorithms_1_1asymmetric_1_1ECCHybrid_a949d2f96293818c0d57014c06badf983}{is\+\_\+suitable\+\_\+for}} (\mbox{\hyperlink{namespacefilevault_1_1core_abcb3b3d896f7dc00926903183b3e2dc9}{core\+::\+Security\+Level}} level) const override
+\begin{DoxyCompactList}\small\item\em Check if algorithm is suitable for security level. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classfilevault_1_1core_1_1ICryptoAlgorithm}{filevault\+::core\+::\+ICrypto\+Algorithm}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classfilevault_1_1core_1_1ICryptoAlgorithm_a36383558169617931374ca3b64399818}{\texorpdfstring{$\sim$}{\string~}\+ICrypto\+Algorithm}} ()=default
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespacefilevault_1_1algorithms_1_1asymmetric_a5955f778874f5a3eaa61006b00c2ab02}{ECCurve}} \mbox{\hyperlink{classfilevault_1_1algorithms_1_1asymmetric_1_1ECCHybrid_a0dca8b4b6ae7b2f87f27000f203a1aa8}{curve\+\_\+}}
+\item 
+std\+::string \mbox{\hyperlink{classfilevault_1_1algorithms_1_1asymmetric_1_1ECCHybrid_aa3478e1f5a64c8e223fab2057ba6f430}{botan\+\_\+curve\+\_\+name\+\_\+}}
+\item 
+\mbox{\hyperlink{namespacefilevault_1_1core_ab1ba257a0205c63e9e1e3623170940a2}{core\+::\+Algorithm\+Type}} \mbox{\hyperlink{classfilevault_1_1algorithms_1_1asymmetric_1_1ECCHybrid_ae838384c83fe068d0d0bd22b33416135}{type\+\_\+}}
+\item 
+\mbox{\hyperlink{classfilevault_1_1algorithms_1_1asymmetric_1_1ECDH}{ECDH}} \mbox{\hyperlink{classfilevault_1_1algorithms_1_1asymmetric_1_1ECCHybrid_a3a1aaf937e5a40dc04296944fd7b879d}{ecdh\+\_\+}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Hybrid encryption using \doxylink{classfilevault_1_1algorithms_1_1asymmetric_1_1ECDH}{ECDH} + AES-\/\+GCM. 
+
+Combines the security of ECC key exchange with the efficiency of symmetric encryption for encrypting arbitrary-\/sized data.
+
+Encryption flow\+:
+\begin{DoxyEnumerate}
+\item Generate ephemeral \doxylink{classfilevault_1_1algorithms_1_1asymmetric_1_1ECDH}{ECDH} key pair
+\item Derive shared secret with recipient\textquotesingle{}s public key
+\item Use KDF to derive AES key from shared secret
+\item Encrypt data with AES-\/\+GCM
+\item Output\+: ephemeral public key + nonce + ciphertext + tag 
+\end{DoxyEnumerate}
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classfilevault_1_1algorithms_1_1asymmetric_1_1ECCHybrid_ae522c33700e1ce2000f334984ca6d60c}\label{classfilevault_1_1algorithms_1_1asymmetric_1_1ECCHybrid_ae522c33700e1ce2000f334984ca6d60c} 
+\index{filevault::algorithms::asymmetric::ECCHybrid@{filevault::algorithms::asymmetric::ECCHybrid}!ECCHybrid@{ECCHybrid}}
+\index{ECCHybrid@{ECCHybrid}!filevault::algorithms::asymmetric::ECCHybrid@{filevault::algorithms::asymmetric::ECCHybrid}}
+\doxysubsubsection{\texorpdfstring{ECCHybrid()}{ECCHybrid()}}
+{\footnotesize\ttfamily filevault\+::algorithms\+::asymmetric\+::\+ECCHybrid\+::\+ECCHybrid (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacefilevault_1_1algorithms_1_1asymmetric_a5955f778874f5a3eaa61006b00c2ab02}{ECCurve}}}]{curve = {\ttfamily \mbox{\hyperlink{namespacefilevault_1_1algorithms_1_1asymmetric_a5955f778874f5a3eaa61006b00c2ab02ae391840247cc176f98c8bd36b74393ce}{ECCurve\+::\+SECP256\+R1}}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Construct ECC hybrid encryption. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em curve} & Elliptic curve to use \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classfilevault_1_1algorithms_1_1asymmetric_1_1ECCHybrid_a3b9fcf94f0113f8c036926aa0608b626}\label{classfilevault_1_1algorithms_1_1asymmetric_1_1ECCHybrid_a3b9fcf94f0113f8c036926aa0608b626} 
+\index{filevault::algorithms::asymmetric::ECCHybrid@{filevault::algorithms::asymmetric::ECCHybrid}!````~ECCHybrid@{\texorpdfstring{$\sim$}{\string~}ECCHybrid}}
+\index{````~ECCHybrid@{\texorpdfstring{$\sim$}{\string~}ECCHybrid}!filevault::algorithms::asymmetric::ECCHybrid@{filevault::algorithms::asymmetric::ECCHybrid}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}ECCHybrid()}{\string~ECCHybrid()}}
+{\footnotesize\ttfamily filevault\+::algorithms\+::asymmetric\+::\+ECCHybrid\+::\texorpdfstring{$\sim$}{\string~}\+ECCHybrid (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [default]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classfilevault_1_1algorithms_1_1asymmetric_1_1ECCHybrid_af88980bcc1889d541e1cd0c0c5a82992}\label{classfilevault_1_1algorithms_1_1asymmetric_1_1ECCHybrid_af88980bcc1889d541e1cd0c0c5a82992} 
+\index{filevault::algorithms::asymmetric::ECCHybrid@{filevault::algorithms::asymmetric::ECCHybrid}!decrypt@{decrypt}}
+\index{decrypt@{decrypt}!filevault::algorithms::asymmetric::ECCHybrid@{filevault::algorithms::asymmetric::ECCHybrid}}
+\doxysubsubsection{\texorpdfstring{decrypt()}{decrypt()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structfilevault_1_1core_1_1CryptoResult}{core\+::\+Crypto\+Result}} filevault\+::algorithms\+::asymmetric\+::\+ECCHybrid\+::decrypt (\begin{DoxyParamCaption}\item[{std\+::span$<$ const uint8\+\_\+t $>$}]{ciphertext,  }\item[{std\+::span$<$ const uint8\+\_\+t $>$}]{key,  }\item[{const \mbox{\hyperlink{structfilevault_1_1core_1_1EncryptionConfig}{core\+::\+Encryption\+Config}} \&}]{config }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Decrypt with own private key. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ciphertext} & Encrypted data (includes ephemeral public key) \\
+\hline
+{\em key} & Own private key \\
+\hline
+{\em config} & Encryption configuration \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classfilevault_1_1core_1_1ICryptoAlgorithm_a5ad6e9e19a3ed1dd3f0b49106bcaac0d}{filevault\+::core\+::\+ICrypto\+Algorithm}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1algorithms_1_1asymmetric_1_1ECCHybrid_af88980bcc1889d541e1cd0c0c5a82992_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1algorithms_1_1asymmetric_1_1ECCHybrid_af88980bcc1889d541e1cd0c0c5a82992_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1algorithms_1_1asymmetric_1_1ECCHybrid_a2a84feef4873ce861e566f4ddeb710e7}\label{classfilevault_1_1algorithms_1_1asymmetric_1_1ECCHybrid_a2a84feef4873ce861e566f4ddeb710e7} 
+\index{filevault::algorithms::asymmetric::ECCHybrid@{filevault::algorithms::asymmetric::ECCHybrid}!encrypt@{encrypt}}
+\index{encrypt@{encrypt}!filevault::algorithms::asymmetric::ECCHybrid@{filevault::algorithms::asymmetric::ECCHybrid}}
+\doxysubsubsection{\texorpdfstring{encrypt()}{encrypt()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structfilevault_1_1core_1_1CryptoResult}{core\+::\+Crypto\+Result}} filevault\+::algorithms\+::asymmetric\+::\+ECCHybrid\+::encrypt (\begin{DoxyParamCaption}\item[{std\+::span$<$ const uint8\+\_\+t $>$}]{plaintext,  }\item[{std\+::span$<$ const uint8\+\_\+t $>$}]{key,  }\item[{const \mbox{\hyperlink{structfilevault_1_1core_1_1EncryptionConfig}{core\+::\+Encryption\+Config}} \&}]{config }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Encrypt with recipient\textquotesingle{}s public key. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em plaintext} & Data to encrypt \\
+\hline
+{\em key} & Recipient\textquotesingle{}s public key \\
+\hline
+{\em config} & Encryption configuration \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classfilevault_1_1core_1_1ICryptoAlgorithm_a5b9102cef54b84b54feea1dc16561a2d}{filevault\+::core\+::\+ICrypto\+Algorithm}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1algorithms_1_1asymmetric_1_1ECCHybrid_a2a84feef4873ce861e566f4ddeb710e7_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1algorithms_1_1asymmetric_1_1ECCHybrid_a2a84feef4873ce861e566f4ddeb710e7_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1algorithms_1_1asymmetric_1_1ECCHybrid_abfe7232a8502c7b198ebc6e553300181}\label{classfilevault_1_1algorithms_1_1asymmetric_1_1ECCHybrid_abfe7232a8502c7b198ebc6e553300181} 
+\index{filevault::algorithms::asymmetric::ECCHybrid@{filevault::algorithms::asymmetric::ECCHybrid}!generate\_key\_pair@{generate\_key\_pair}}
+\index{generate\_key\_pair@{generate\_key\_pair}!filevault::algorithms::asymmetric::ECCHybrid@{filevault::algorithms::asymmetric::ECCHybrid}}
+\doxysubsubsection{\texorpdfstring{generate\_key\_pair()}{generate\_key\_pair()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structfilevault_1_1algorithms_1_1asymmetric_1_1ECCKeyPair}{ECCKey\+Pair}} filevault\+::algorithms\+::asymmetric\+::\+ECCHybrid\+::generate\+\_\+key\+\_\+pair (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Generate a new ECC key pair for this hybrid scheme. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1algorithms_1_1asymmetric_1_1ECCHybrid_abfe7232a8502c7b198ebc6e553300181_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1algorithms_1_1asymmetric_1_1ECCHybrid_abfe7232a8502c7b198ebc6e553300181_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1algorithms_1_1asymmetric_1_1ECCHybrid_a949d2f96293818c0d57014c06badf983}\label{classfilevault_1_1algorithms_1_1asymmetric_1_1ECCHybrid_a949d2f96293818c0d57014c06badf983} 
+\index{filevault::algorithms::asymmetric::ECCHybrid@{filevault::algorithms::asymmetric::ECCHybrid}!is\_suitable\_for@{is\_suitable\_for}}
+\index{is\_suitable\_for@{is\_suitable\_for}!filevault::algorithms::asymmetric::ECCHybrid@{filevault::algorithms::asymmetric::ECCHybrid}}
+\doxysubsubsection{\texorpdfstring{is\_suitable\_for()}{is\_suitable\_for()}}
+{\footnotesize\ttfamily bool filevault\+::algorithms\+::asymmetric\+::\+ECCHybrid\+::is\+\_\+suitable\+\_\+for (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacefilevault_1_1core_abcb3b3d896f7dc00926903183b3e2dc9}{core\+::\+Security\+Level}}}]{level }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Check if algorithm is suitable for security level. 
+
+
+
+Implements \mbox{\hyperlink{classfilevault_1_1core_1_1ICryptoAlgorithm_aab479734daf06d3f76af5d916c0285fa}{filevault\+::core\+::\+ICrypto\+Algorithm}}.
+
+\Hypertarget{classfilevault_1_1algorithms_1_1asymmetric_1_1ECCHybrid_a74edb59e145213784ae8ca3fcff01760}\label{classfilevault_1_1algorithms_1_1asymmetric_1_1ECCHybrid_a74edb59e145213784ae8ca3fcff01760} 
+\index{filevault::algorithms::asymmetric::ECCHybrid@{filevault::algorithms::asymmetric::ECCHybrid}!key\_size@{key\_size}}
+\index{key\_size@{key\_size}!filevault::algorithms::asymmetric::ECCHybrid@{filevault::algorithms::asymmetric::ECCHybrid}}
+\doxysubsubsection{\texorpdfstring{key\_size()}{key\_size()}}
+{\footnotesize\ttfamily size\+\_\+t filevault\+::algorithms\+::asymmetric\+::\+ECCHybrid\+::key\+\_\+size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get recommended key size in bytes. 
+
+
+
+Implements \mbox{\hyperlink{classfilevault_1_1core_1_1ICryptoAlgorithm_af9ccb47457495eb99988fef0b5b2bbe8}{filevault\+::core\+::\+ICrypto\+Algorithm}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1algorithms_1_1asymmetric_1_1ECCHybrid_a74edb59e145213784ae8ca3fcff01760_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1algorithms_1_1asymmetric_1_1ECCHybrid_a74f13e3c8ff2e0374645833faf923549}\label{classfilevault_1_1algorithms_1_1asymmetric_1_1ECCHybrid_a74f13e3c8ff2e0374645833faf923549} 
+\index{filevault::algorithms::asymmetric::ECCHybrid@{filevault::algorithms::asymmetric::ECCHybrid}!name@{name}}
+\index{name@{name}!filevault::algorithms::asymmetric::ECCHybrid@{filevault::algorithms::asymmetric::ECCHybrid}}
+\doxysubsubsection{\texorpdfstring{name()}{name()}}
+{\footnotesize\ttfamily std\+::string filevault\+::algorithms\+::asymmetric\+::\+ECCHybrid\+::name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get algorithm name. 
+
+
+
+Implements \mbox{\hyperlink{classfilevault_1_1core_1_1ICryptoAlgorithm_a8acdc23e4f2ea77bb4a5b9820b27fa66}{filevault\+::core\+::\+ICrypto\+Algorithm}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1algorithms_1_1asymmetric_1_1ECCHybrid_a74f13e3c8ff2e0374645833faf923549_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1algorithms_1_1asymmetric_1_1ECCHybrid_acf3ccf35272da36f444e8d9a52b41563}\label{classfilevault_1_1algorithms_1_1asymmetric_1_1ECCHybrid_acf3ccf35272da36f444e8d9a52b41563} 
+\index{filevault::algorithms::asymmetric::ECCHybrid@{filevault::algorithms::asymmetric::ECCHybrid}!type@{type}}
+\index{type@{type}!filevault::algorithms::asymmetric::ECCHybrid@{filevault::algorithms::asymmetric::ECCHybrid}}
+\doxysubsubsection{\texorpdfstring{type()}{type()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacefilevault_1_1core_ab1ba257a0205c63e9e1e3623170940a2}{core\+::\+Algorithm\+Type}} filevault\+::algorithms\+::asymmetric\+::\+ECCHybrid\+::type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get algorithm type. 
+
+
+
+Implements \mbox{\hyperlink{classfilevault_1_1core_1_1ICryptoAlgorithm_a11b7820f7b0bbb5fd6668fac3b78a7e1}{filevault\+::core\+::\+ICrypto\+Algorithm}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classfilevault_1_1algorithms_1_1asymmetric_1_1ECCHybrid_aa3478e1f5a64c8e223fab2057ba6f430}\label{classfilevault_1_1algorithms_1_1asymmetric_1_1ECCHybrid_aa3478e1f5a64c8e223fab2057ba6f430} 
+\index{filevault::algorithms::asymmetric::ECCHybrid@{filevault::algorithms::asymmetric::ECCHybrid}!botan\_curve\_name\_@{botan\_curve\_name\_}}
+\index{botan\_curve\_name\_@{botan\_curve\_name\_}!filevault::algorithms::asymmetric::ECCHybrid@{filevault::algorithms::asymmetric::ECCHybrid}}
+\doxysubsubsection{\texorpdfstring{botan\_curve\_name\_}{botan\_curve\_name\_}}
+{\footnotesize\ttfamily std\+::string filevault\+::algorithms\+::asymmetric\+::\+ECCHybrid\+::botan\+\_\+curve\+\_\+name\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classfilevault_1_1algorithms_1_1asymmetric_1_1ECCHybrid_a0dca8b4b6ae7b2f87f27000f203a1aa8}\label{classfilevault_1_1algorithms_1_1asymmetric_1_1ECCHybrid_a0dca8b4b6ae7b2f87f27000f203a1aa8} 
+\index{filevault::algorithms::asymmetric::ECCHybrid@{filevault::algorithms::asymmetric::ECCHybrid}!curve\_@{curve\_}}
+\index{curve\_@{curve\_}!filevault::algorithms::asymmetric::ECCHybrid@{filevault::algorithms::asymmetric::ECCHybrid}}
+\doxysubsubsection{\texorpdfstring{curve\_}{curve\_}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacefilevault_1_1algorithms_1_1asymmetric_a5955f778874f5a3eaa61006b00c2ab02}{ECCurve}} filevault\+::algorithms\+::asymmetric\+::\+ECCHybrid\+::curve\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classfilevault_1_1algorithms_1_1asymmetric_1_1ECCHybrid_a3a1aaf937e5a40dc04296944fd7b879d}\label{classfilevault_1_1algorithms_1_1asymmetric_1_1ECCHybrid_a3a1aaf937e5a40dc04296944fd7b879d} 
+\index{filevault::algorithms::asymmetric::ECCHybrid@{filevault::algorithms::asymmetric::ECCHybrid}!ecdh\_@{ecdh\_}}
+\index{ecdh\_@{ecdh\_}!filevault::algorithms::asymmetric::ECCHybrid@{filevault::algorithms::asymmetric::ECCHybrid}}
+\doxysubsubsection{\texorpdfstring{ecdh\_}{ecdh\_}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classfilevault_1_1algorithms_1_1asymmetric_1_1ECDH}{ECDH}} filevault\+::algorithms\+::asymmetric\+::\+ECCHybrid\+::ecdh\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classfilevault_1_1algorithms_1_1asymmetric_1_1ECCHybrid_ae838384c83fe068d0d0bd22b33416135}\label{classfilevault_1_1algorithms_1_1asymmetric_1_1ECCHybrid_ae838384c83fe068d0d0bd22b33416135} 
+\index{filevault::algorithms::asymmetric::ECCHybrid@{filevault::algorithms::asymmetric::ECCHybrid}!type\_@{type\_}}
+\index{type\_@{type\_}!filevault::algorithms::asymmetric::ECCHybrid@{filevault::algorithms::asymmetric::ECCHybrid}}
+\doxysubsubsection{\texorpdfstring{type\_}{type\_}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacefilevault_1_1core_ab1ba257a0205c63e9e1e3623170940a2}{core\+::\+Algorithm\+Type}} filevault\+::algorithms\+::asymmetric\+::\+ECCHybrid\+::type\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/filevault/algorithms/asymmetric/\mbox{\hyperlink{ecc_8hpp}{ecc.\+hpp}}\item 
+src/algorithms/asymmetric/\mbox{\hyperlink{ecc_8cpp}{ecc.\+cpp}}\end{DoxyCompactItemize}

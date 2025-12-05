@@ -1,0 +1,63 @@
+\doxysection{hill.\+hpp}
+\hypertarget{hill_8hpp_source}{}\label{hill_8hpp_source}\index{include/filevault/algorithms/classical/hill.hpp@{include/filevault/algorithms/classical/hill.hpp}}
+\mbox{\hyperlink{hill_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ FILEVAULT\_ALGORITHMS\_CLASSICAL\_HILL\_HPP}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ FILEVAULT\_ALGORITHMS\_CLASSICAL\_HILL\_HPP}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{crypto__algorithm_8hpp}{filevault/core/crypto\_algorithm.hpp}}"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <array>}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacefilevault}{filevault}}\ \{}
+\DoxyCodeLine{00009\ \textcolor{keyword}{namespace\ }algorithms\ \{}
+\DoxyCodeLine{00010\ \textcolor{keyword}{namespace\ }classical\ \{}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00018\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classfilevault_1_1algorithms_1_1classical_1_1HillCipher}{HillCipher}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classfilevault_1_1core_1_1ICryptoAlgorithm}{core::ICryptoAlgorithm}}\ \{}
+\DoxyCodeLine{00019\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00020\ \ \ \ \ std::string\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1classical_1_1HillCipher_a298cff4ac01cf9af6e6c1875a9564cd2}{name}}()\textcolor{keyword}{\ const\ override\ }\{\ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Hill"{}};\ \}}
+\DoxyCodeLine{00021\ \ \ \ \ }
+\DoxyCodeLine{00022\ \ \ \ \ \mbox{\hyperlink{namespacefilevault_1_1core_ab1ba257a0205c63e9e1e3623170940a2}{core::AlgorithmType}}\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1classical_1_1HillCipher_abaad2d0c383311de06c48b9afc83efcf}{type}}()\textcolor{keyword}{\ const\ override\ }\{}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespacefilevault_1_1core_ab1ba257a0205c63e9e1e3623170940a2ab279edd63cb7ea76ae038c4810e2cbd1}{core::AlgorithmType::HILL}};}
+\DoxyCodeLine{00024\ \ \ \ \ \}}
+\DoxyCodeLine{00025\ \ \ \ \ }
+\DoxyCodeLine{00026\ \ \ \ \ \mbox{\hyperlink{structfilevault_1_1core_1_1CryptoResult}{core::CryptoResult}}\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1classical_1_1HillCipher_a31af4604bd6ba08f41c01e3cd351623f}{encrypt}}(}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ std::span<const\ uint8\_t>\ plaintext,}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ std::span<const\ uint8\_t>\ key,}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structfilevault_1_1core_1_1EncryptionConfig}{core::EncryptionConfig}}\&\ config}
+\DoxyCodeLine{00030\ \ \ \ \ )\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00031\ \ \ \ \ }
+\DoxyCodeLine{00032\ \ \ \ \ \mbox{\hyperlink{structfilevault_1_1core_1_1CryptoResult}{core::CryptoResult}}\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1classical_1_1HillCipher_a98d48c76afdb860835363a283be7283d}{decrypt}}(}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ std::span<const\ uint8\_t>\ ciphertext,}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ std::span<const\ uint8\_t>\ key,}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structfilevault_1_1core_1_1EncryptionConfig}{core::EncryptionConfig}}\&\ config}
+\DoxyCodeLine{00036\ \ \ \ \ )\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00037\ \ \ \ \ }
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1classical_1_1HillCipher_a18060b7c79615b59719bbbee8744f2a4}{key\_size}}()\textcolor{keyword}{\ const\ override\ }\{\ \textcolor{keywordflow}{return}\ 4;\ \}\ \ \textcolor{comment}{//\ 2x2\ matrix\ =\ 4\ values}}
+\DoxyCodeLine{00039\ \ \ \ \ }
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1classical_1_1HillCipher_a02b6d019f7140c8e099fc2c8c6b3b012}{is\_suitable\_for}}(\mbox{\hyperlink{namespacefilevault_1_1core_abcb3b3d896f7dc00926903183b3e2dc9}{core::SecurityLevel}}\ level)\textcolor{keyword}{\ const\ override\ }\{}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Educational\ cipher\ -\/\ suitable\ for\ learning\ only}}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ (void)level;}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};\ \ \textcolor{comment}{//\ Not\ recommended\ for\ real\ encryption}}
+\DoxyCodeLine{00044\ \ \ \ \ \}}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{classfilevault_1_1algorithms_1_1classical_1_1HillCipher_adc23f745afadf8849eb49e9542c35452}{Matrix2x2}}\ =\ std::array<int,\ 4>;\ \ \textcolor{comment}{//\ [a,b,c,d]\ for\ matrix\ [[a,b],[c,d]]}}
+\DoxyCodeLine{00048\ \ \ \ \ }
+\DoxyCodeLine{00049\ \ \ \ \ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1classical_1_1HillCipher_adc23f745afadf8849eb49e9542c35452}{Matrix2x2}}\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1classical_1_1HillCipher_a7e4486145e43cd1037ad48e4df9ec81b}{parse\_key}}(std::span<const\ uint8\_t>\ key);}
+\DoxyCodeLine{00050\ \ \ \ \ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1classical_1_1HillCipher_adc23f745afadf8849eb49e9542c35452}{Matrix2x2}}\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1classical_1_1HillCipher_a6e2f64975b55791204ee3c2fd1fd73d6}{invert\_matrix}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1classical_1_1HillCipher_adc23f745afadf8849eb49e9542c35452}{Matrix2x2}}\&\ matrix);}
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1classical_1_1HillCipher_a38cee2645186b1ba9ca44b02a139069b}{mod\_inverse}}(\textcolor{keywordtype}{int}\ a,\ \textcolor{keywordtype}{int}\ m);}
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1classical_1_1HillCipher_a068fae43428f2af62d383b249bef0c16}{determinant}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1classical_1_1HillCipher_adc23f745afadf8849eb49e9542c35452}{Matrix2x2}}\&\ matrix);}
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1classical_1_1HillCipher_ad262a8b13fde7782104f84c2551dc041}{is\_valid\_key}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1classical_1_1HillCipher_adc23f745afadf8849eb49e9542c35452}{Matrix2x2}}\&\ matrix);}
+\DoxyCodeLine{00054\ \ \ \ \ }
+\DoxyCodeLine{00055\ \ \ \ \ std::string\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1classical_1_1HillCipher_a775077aecd69606292b6ab21c48099d6}{encrypt\_block}}(\textcolor{keyword}{const}\ std::string\&\ block,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1classical_1_1HillCipher_adc23f745afadf8849eb49e9542c35452}{Matrix2x2}}\&\ key\_matrix);}
+\DoxyCodeLine{00056\ \ \ \ \ std::string\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1classical_1_1HillCipher_a9772be28c3fef1c8f7e2fc22fd98ed48}{decrypt\_block}}(\textcolor{keyword}{const}\ std::string\&\ block,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1classical_1_1HillCipher_adc23f745afadf8849eb49e9542c35452}{Matrix2x2}}\&\ inv\_matrix);}
+\DoxyCodeLine{00057\ \};}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \}\ \textcolor{comment}{//\ namespace\ classical}}
+\DoxyCodeLine{00060\ \}\ \textcolor{comment}{//\ namespace\ algorithms}}
+\DoxyCodeLine{00061\ \}\ \textcolor{comment}{//\ namespace\ filevault}}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

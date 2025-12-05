@@ -1,0 +1,51 @@
+\doxysection{modes.\+hpp}
+\hypertarget{modes_8hpp_source}{}\label{modes_8hpp_source}\index{include/filevault/core/modes.hpp@{include/filevault/core/modes.hpp}}
+\mbox{\hyperlink{modes_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ FILEVAULT\_CORE\_MODES\_HPP}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ FILEVAULT\_CORE\_MODES\_HPP}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{types_8hpp}{filevault/core/types.hpp}}"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacefilevault}{filevault}}\ \{}
+\DoxyCodeLine{00008\ \textcolor{keyword}{namespace\ }core\ \{}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00017\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structfilevault_1_1core_1_1ModePreset}{ModePreset}}\ \{}
+\DoxyCodeLine{00018\ \ \ \ \ \mbox{\hyperlink{namespacefilevault_1_1core_a89d269facaa3468c9c64583832084d2d}{UserMode}}\ \mbox{\hyperlink{structfilevault_1_1core_1_1ModePreset_a3bfea1e893696b01047c7a8881802a32}{mode}};}
+\DoxyCodeLine{00019\ \ \ \ \ \mbox{\hyperlink{namespacefilevault_1_1core_ab1ba257a0205c63e9e1e3623170940a2}{AlgorithmType}}\ \mbox{\hyperlink{structfilevault_1_1core_1_1ModePreset_ae8e474735a8ce548c11ffc7ddb44bc06}{algorithm}};}
+\DoxyCodeLine{00020\ \ \ \ \ \mbox{\hyperlink{namespacefilevault_1_1core_ad5938d2ac317833646f1d8b965e3768f}{KDFType}}\ \mbox{\hyperlink{structfilevault_1_1core_1_1ModePreset_aa13f29e45beb796f9bc2cc15e692e9c7}{kdf}};}
+\DoxyCodeLine{00021\ \ \ \ \ \mbox{\hyperlink{namespacefilevault_1_1core_abcb3b3d896f7dc00926903183b3e2dc9}{SecurityLevel}}\ \mbox{\hyperlink{structfilevault_1_1core_1_1ModePreset_a0526e7587ff0f115cd5ef3f48aa308e6}{security\_level}};}
+\DoxyCodeLine{00022\ \ \ \ \ \mbox{\hyperlink{namespacefilevault_1_1core_ac7e3615724bd970e96e131cab64ef303}{CompressionType}}\ \mbox{\hyperlink{structfilevault_1_1core_1_1ModePreset_abed868e8b5fd96d869464e5412c99f8a}{compression}};}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structfilevault_1_1core_1_1ModePreset_ad1e24cdce535c80b8d7c03f11ec1a3cc}{compression\_level}};}
+\DoxyCodeLine{00024\ \ \ \ \ }
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{comment}{//\ KDF\ parameters}}
+\DoxyCodeLine{00026\ \ \ \ \ uint32\_t\ \mbox{\hyperlink{structfilevault_1_1core_1_1ModePreset_a5804b780affc241adb22b8b974a1da2b}{kdf\_iterations}};}
+\DoxyCodeLine{00027\ \ \ \ \ uint32\_t\ \mbox{\hyperlink{structfilevault_1_1core_1_1ModePreset_a481c3396a7187e36f1c6d39e3f0d1d2f}{kdf\_memory\_kb}};}
+\DoxyCodeLine{00028\ \ \ \ \ uint32\_t\ \mbox{\hyperlink{structfilevault_1_1core_1_1ModePreset_a8c6ee8bce76a8e50e0cde61502d00162}{kdf\_parallelism}};}
+\DoxyCodeLine{00029\ \ \ \ \ }
+\DoxyCodeLine{00030\ \ \ \ \ std::string\ \mbox{\hyperlink{structfilevault_1_1core_1_1ModePreset_abb99689d1f5455ef429258671de3fec5}{name}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00031\ \ \ \ \ std::string\ \mbox{\hyperlink{structfilevault_1_1core_1_1ModePreset_a6c8c0ab5611b1bfcd04477e7369757ac}{description}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00032\ \ \ \ \ }
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{structfilevault_1_1core_1_1ModePreset_a372a2297a2b04d3e0897ae6835812dff}{apply\_to}}(\mbox{\hyperlink{structfilevault_1_1core_1_1EncryptionConfig}{EncryptionConfig}}\&\ config)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00037\ \ \ \ \ }
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{structfilevault_1_1core_1_1ModePreset}{ModePreset}}\ \mbox{\hyperlink{structfilevault_1_1core_1_1ModePreset_a97375208bea327b9acbf3d640638faef}{get\_preset}}(\mbox{\hyperlink{namespacefilevault_1_1core_a89d269facaa3468c9c64583832084d2d}{UserMode}}\ \mbox{\hyperlink{structfilevault_1_1core_1_1ModePreset_a3bfea1e893696b01047c7a8881802a32}{mode}});}
+\DoxyCodeLine{00042\ \ \ \ \ }
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{namespacefilevault_1_1core_a89d269facaa3468c9c64583832084d2d}{UserMode}}\ \mbox{\hyperlink{structfilevault_1_1core_1_1ModePreset_aa732fcad671f42822e58a4ebab876bef}{parse\_mode}}(\textcolor{keyword}{const}\ std::string\&\ \mbox{\hyperlink{structfilevault_1_1core_1_1ModePreset_abb99689d1f5455ef429258671de3fec5}{name}});}
+\DoxyCodeLine{00047\ \ \ \ \ }
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keyword}{static}\ std::vector<ModePreset>\ \mbox{\hyperlink{structfilevault_1_1core_1_1ModePreset_af6a7fa4cff1f83595a746cfb9bbeeb4e}{get\_all\_presets}}();}
+\DoxyCodeLine{00052\ \};}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \textcolor{comment}{//\ Predefined\ presets}}
+\DoxyCodeLine{00055\ \textcolor{keyword}{namespace\ }presets\ \{}
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structfilevault_1_1core_1_1ModePreset}{ModePreset}}\ \mbox{\hyperlink{namespacefilevault_1_1core_1_1presets_a0f7543f9f77219bf5bdb985f747dcc9b}{BASIC}};}
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structfilevault_1_1core_1_1ModePreset}{ModePreset}}\ \mbox{\hyperlink{namespacefilevault_1_1core_1_1presets_ae130f54e47e9be21f3d77d2bf5567045}{STANDARD}};}
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structfilevault_1_1core_1_1ModePreset}{ModePreset}}\ \mbox{\hyperlink{namespacefilevault_1_1core_1_1presets_a3ffa6dca731f4f3861131677b1f34c51}{ADVANCED}};}
+\DoxyCodeLine{00059\ \}}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \}\ \textcolor{comment}{//\ namespace\ core}}
+\DoxyCodeLine{00062\ \}\ \textcolor{comment}{//\ namespace\ filevault}}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ FILEVAULT\_CORE\_MODES\_HPP}}
+
+\end{DoxyCode}

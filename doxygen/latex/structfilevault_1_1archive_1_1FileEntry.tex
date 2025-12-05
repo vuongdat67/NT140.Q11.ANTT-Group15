@@ -1,0 +1,99 @@
+\doxysection{filevault\+::archive\+::File\+Entry Struct Reference}
+\hypertarget{structfilevault_1_1archive_1_1FileEntry}{}\label{structfilevault_1_1archive_1_1FileEntry}\index{filevault::archive::FileEntry@{filevault::archive::FileEntry}}
+
+
+Archive file entry metadata.  
+
+
+
+
+{\ttfamily \#include $<$archive\+\_\+format.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ uint8\+\_\+t $>$ \mbox{\hyperlink{structfilevault_1_1archive_1_1FileEntry_afd3b0db849cd2c51db33e573851fccc8}{serialize}} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{structfilevault_1_1archive_1_1FileEntry}{File\+Entry}} \mbox{\hyperlink{structfilevault_1_1archive_1_1FileEntry_abf4602786a4e78872542350c22e7f639}{deserialize}} (std\+::span$<$ const uint8\+\_\+t $>$ data, size\+\_\+t \&\mbox{\hyperlink{structfilevault_1_1archive_1_1FileEntry_a2cc173df76e6e28139bea2b109a48874}{offset}})
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{structfilevault_1_1archive_1_1FileEntry_a974b176d15d50cf9de97763324c65ed6}{filename}}
+\item 
+uint64\+\_\+t \mbox{\hyperlink{structfilevault_1_1archive_1_1FileEntry_a6cb4cf414324bd0bfb6437ee839cc543}{file\+\_\+size}}
+\item 
+uint64\+\_\+t \mbox{\hyperlink{structfilevault_1_1archive_1_1FileEntry_a2cc173df76e6e28139bea2b109a48874}{offset}}
+\item 
+uint64\+\_\+t \mbox{\hyperlink{structfilevault_1_1archive_1_1FileEntry_a46373ae6668e3590529b5685e68d1544}{modified\+\_\+time}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{structfilevault_1_1archive_1_1FileEntry_ad354960c19dc8a2eb095f563988bc6a2}{permissions}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Archive file entry metadata. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{structfilevault_1_1archive_1_1FileEntry_abf4602786a4e78872542350c22e7f639}\label{structfilevault_1_1archive_1_1FileEntry_abf4602786a4e78872542350c22e7f639} 
+\index{filevault::archive::FileEntry@{filevault::archive::FileEntry}!deserialize@{deserialize}}
+\index{deserialize@{deserialize}!filevault::archive::FileEntry@{filevault::archive::FileEntry}}
+\doxysubsubsection{\texorpdfstring{deserialize()}{deserialize()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structfilevault_1_1archive_1_1FileEntry}{File\+Entry}} filevault\+::archive\+::\+File\+Entry\+::deserialize (\begin{DoxyParamCaption}\item[{std\+::span$<$ const uint8\+\_\+t $>$}]{data,  }\item[{size\+\_\+t \&}]{offset }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structfilevault_1_1archive_1_1FileEntry_abf4602786a4e78872542350c22e7f639_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{structfilevault_1_1archive_1_1FileEntry_afd3b0db849cd2c51db33e573851fccc8}\label{structfilevault_1_1archive_1_1FileEntry_afd3b0db849cd2c51db33e573851fccc8} 
+\index{filevault::archive::FileEntry@{filevault::archive::FileEntry}!serialize@{serialize}}
+\index{serialize@{serialize}!filevault::archive::FileEntry@{filevault::archive::FileEntry}}
+\doxysubsubsection{\texorpdfstring{serialize()}{serialize()}}
+{\footnotesize\ttfamily std\+::vector$<$ uint8\+\_\+t $>$ filevault\+::archive\+::\+File\+Entry\+::serialize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{structfilevault_1_1archive_1_1FileEntry_a6cb4cf414324bd0bfb6437ee839cc543}\label{structfilevault_1_1archive_1_1FileEntry_a6cb4cf414324bd0bfb6437ee839cc543} 
+\index{filevault::archive::FileEntry@{filevault::archive::FileEntry}!file\_size@{file\_size}}
+\index{file\_size@{file\_size}!filevault::archive::FileEntry@{filevault::archive::FileEntry}}
+\doxysubsubsection{\texorpdfstring{file\_size}{file\_size}}
+{\footnotesize\ttfamily uint64\+\_\+t filevault\+::archive\+::\+File\+Entry\+::file\+\_\+size}
+
+\Hypertarget{structfilevault_1_1archive_1_1FileEntry_a974b176d15d50cf9de97763324c65ed6}\label{structfilevault_1_1archive_1_1FileEntry_a974b176d15d50cf9de97763324c65ed6} 
+\index{filevault::archive::FileEntry@{filevault::archive::FileEntry}!filename@{filename}}
+\index{filename@{filename}!filevault::archive::FileEntry@{filevault::archive::FileEntry}}
+\doxysubsubsection{\texorpdfstring{filename}{filename}}
+{\footnotesize\ttfamily std\+::string filevault\+::archive\+::\+File\+Entry\+::filename}
+
+\Hypertarget{structfilevault_1_1archive_1_1FileEntry_a46373ae6668e3590529b5685e68d1544}\label{structfilevault_1_1archive_1_1FileEntry_a46373ae6668e3590529b5685e68d1544} 
+\index{filevault::archive::FileEntry@{filevault::archive::FileEntry}!modified\_time@{modified\_time}}
+\index{modified\_time@{modified\_time}!filevault::archive::FileEntry@{filevault::archive::FileEntry}}
+\doxysubsubsection{\texorpdfstring{modified\_time}{modified\_time}}
+{\footnotesize\ttfamily uint64\+\_\+t filevault\+::archive\+::\+File\+Entry\+::modified\+\_\+time}
+
+\Hypertarget{structfilevault_1_1archive_1_1FileEntry_a2cc173df76e6e28139bea2b109a48874}\label{structfilevault_1_1archive_1_1FileEntry_a2cc173df76e6e28139bea2b109a48874} 
+\index{filevault::archive::FileEntry@{filevault::archive::FileEntry}!offset@{offset}}
+\index{offset@{offset}!filevault::archive::FileEntry@{filevault::archive::FileEntry}}
+\doxysubsubsection{\texorpdfstring{offset}{offset}}
+{\footnotesize\ttfamily uint64\+\_\+t filevault\+::archive\+::\+File\+Entry\+::offset}
+
+\Hypertarget{structfilevault_1_1archive_1_1FileEntry_ad354960c19dc8a2eb095f563988bc6a2}\label{structfilevault_1_1archive_1_1FileEntry_ad354960c19dc8a2eb095f563988bc6a2} 
+\index{filevault::archive::FileEntry@{filevault::archive::FileEntry}!permissions@{permissions}}
+\index{permissions@{permissions}!filevault::archive::FileEntry@{filevault::archive::FileEntry}}
+\doxysubsubsection{\texorpdfstring{permissions}{permissions}}
+{\footnotesize\ttfamily uint32\+\_\+t filevault\+::archive\+::\+File\+Entry\+::permissions}
+
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/filevault/archive/\mbox{\hyperlink{archive__format_8hpp}{archive\+\_\+format.\+hpp}}\item 
+src/archive/\mbox{\hyperlink{archive__format_8cpp}{archive\+\_\+format.\+cpp}}\end{DoxyCompactItemize}

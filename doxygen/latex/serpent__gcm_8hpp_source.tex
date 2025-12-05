@@ -1,0 +1,57 @@
+\doxysection{serpent\+\_\+gcm.\+hpp}
+\hypertarget{serpent__gcm_8hpp_source}{}\label{serpent__gcm_8hpp_source}\index{include/filevault/algorithms/symmetric/serpent\_gcm.hpp@{include/filevault/algorithms/symmetric/serpent\_gcm.hpp}}
+\mbox{\hyperlink{serpent__gcm_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ FILEVAULT\_ALGORITHMS\_SYMMETRIC\_SERPENT\_GCM\_HPP}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ FILEVAULT\_ALGORITHMS\_SYMMETRIC\_SERPENT\_GCM\_HPP}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{types_8hpp}{filevault/core/types.hpp}}"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{crypto__algorithm_8hpp}{filevault/core/crypto\_algorithm.hpp}}"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <span>}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacefilevault}{filevault}}\ \{}
+\DoxyCodeLine{00010\ \textcolor{keyword}{namespace\ }algorithms\ \{}
+\DoxyCodeLine{00011\ \textcolor{keyword}{namespace\ }symmetric\ \{}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00036\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1Serpent__GCM}{Serpent\_GCM}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classfilevault_1_1core_1_1ICryptoAlgorithm}{core::ICryptoAlgorithm}}\ \{}
+\DoxyCodeLine{00037\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00041\ \ \ \ \ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1Serpent__GCM_acb25216fcc135ac64eeba12df6b66b70}{Serpent\_GCM}}();}
+\DoxyCodeLine{00042\ \ \ \ \ }
+\DoxyCodeLine{00046\ \ \ \ \ std::string\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1Serpent__GCM_a9be4f16a630a241ee033332c36debec0}{name}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00047\ \ \ \ \ }
+\DoxyCodeLine{00051\ \ \ \ \ \mbox{\hyperlink{namespacefilevault_1_1core_ab1ba257a0205c63e9e1e3623170940a2}{core::AlgorithmType}}\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1Serpent__GCM_ab6b2766f0ae887175039e157364027f7}{type}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00052\ \ \ \ \ }
+\DoxyCodeLine{00061\ \ \ \ \ \mbox{\hyperlink{structfilevault_1_1core_1_1CryptoResult}{core::CryptoResult}}\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1Serpent__GCM_a8b40c667d182153201fdd578da382c04}{encrypt}}(}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ std::span<const\ uint8\_t>\ plaintext,}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ std::span<const\ uint8\_t>\ key,}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structfilevault_1_1core_1_1EncryptionConfig}{core::EncryptionConfig}}\&\ config}
+\DoxyCodeLine{00065\ \ \ \ \ )\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00066\ \ \ \ \ }
+\DoxyCodeLine{00075\ \ \ \ \ \mbox{\hyperlink{structfilevault_1_1core_1_1CryptoResult}{core::CryptoResult}}\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1Serpent__GCM_a67355c040c00455fc6e0ab3c9eedcdef}{decrypt}}(}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ std::span<const\ uint8\_t>\ ciphertext,}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ std::span<const\ uint8\_t>\ key,}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structfilevault_1_1core_1_1EncryptionConfig}{core::EncryptionConfig}}\&\ config}
+\DoxyCodeLine{00079\ \ \ \ \ )\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00080\ \ \ \ \ }
+\DoxyCodeLine{00084\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1Serpent__GCM_af39dc77346065c819afc2bf142056327}{key\_size}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00085\ \ \ \ \ }
+\DoxyCodeLine{00089\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1Serpent__GCM_ad9b4e2da6c8173e28eda37a94eb4fa23}{is\_suitable\_for}}(\mbox{\hyperlink{namespacefilevault_1_1core_abcb3b3d896f7dc00926903183b3e2dc9}{core::SecurityLevel}}\ level)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00091\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00102\ \ \ \ \ std::vector<uint8\_t>\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1Serpent__GCM_af79e9affc7f6a78e8fecffc5166ca204}{process\_gcm}}(}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ std::span<const\ uint8\_t>\ input,}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ std::span<const\ uint8\_t>\ key,}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ std::span<const\ uint8\_t>\ nonce,}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ std::span<const\ uint8\_t>\ tag,}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1Serpent__GCM_a8b40c667d182153201fdd578da382c04}{encrypt}}}
+\DoxyCodeLine{00108\ \ \ \ \ );}
+\DoxyCodeLine{00109\ \};}
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00111\ \}\ \textcolor{comment}{//\ namespace\ symmetric}}
+\DoxyCodeLine{00112\ \}\ \textcolor{comment}{//\ namespace\ algorithms}}
+\DoxyCodeLine{00113\ \}\ \textcolor{comment}{//\ namespace\ filevault}}
+\DoxyCodeLine{00114\ }
+\DoxyCodeLine{00115\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ FILEVAULT\_ALGORITHMS\_SYMMETRIC\_SERPENT\_GCM\_HPP}}
+
+\end{DoxyCode}

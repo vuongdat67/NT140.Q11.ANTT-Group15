@@ -1,0 +1,77 @@
+\doxysection{filevault\+::core\+::presets Namespace Reference}
+\hypertarget{namespacefilevault_1_1core_1_1presets}{}\label{namespacefilevault_1_1core_1_1presets}\index{filevault::core::presets@{filevault::core::presets}}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const \mbox{\hyperlink{structfilevault_1_1core_1_1ModePreset}{Mode\+Preset}} \mbox{\hyperlink{namespacefilevault_1_1core_1_1presets_a0f7543f9f77219bf5bdb985f747dcc9b}{BASIC}}
+\item 
+const \mbox{\hyperlink{structfilevault_1_1core_1_1ModePreset}{Mode\+Preset}} \mbox{\hyperlink{namespacefilevault_1_1core_1_1presets_ae130f54e47e9be21f3d77d2bf5567045}{STANDARD}}
+\item 
+const \mbox{\hyperlink{structfilevault_1_1core_1_1ModePreset}{Mode\+Preset}} \mbox{\hyperlink{namespacefilevault_1_1core_1_1presets_a3ffa6dca731f4f3861131677b1f34c51}{ADVANCED}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{namespacefilevault_1_1core_1_1presets_a3ffa6dca731f4f3861131677b1f34c51}\label{namespacefilevault_1_1core_1_1presets_a3ffa6dca731f4f3861131677b1f34c51} 
+\index{filevault::core::presets@{filevault::core::presets}!ADVANCED@{ADVANCED}}
+\index{ADVANCED@{ADVANCED}!filevault::core::presets@{filevault::core::presets}}
+\doxysubsubsection{\texorpdfstring{ADVANCED}{ADVANCED}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{structfilevault_1_1core_1_1ModePreset}{Mode\+Preset}} filevault\+::core\+::presets\+::\+ADVANCED}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ .mode\ =\ UserMode::ADVANCED,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ .algorithm\ =\ AlgorithmType::AES\_256\_GCM,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ .kdf\ =\ KDFType::ARGON2ID,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ .security\_level\ =\ SecurityLevel::PARANOID,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ .compression\ =\ CompressionType::LZMA,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ .compression\_level\ =\ 9,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ .kdf\_iterations\ =\ 200000,\ \ \ \ \ \ }
+\DoxyCodeLine{\ \ \ \ \ \ \ \ .kdf\_memory\_kb\ =\ 131072,\ \ \ \ \ \ \ }
+\DoxyCodeLine{\ \ \ \ \ \ \ \ .kdf\_parallelism\ =\ 8}
+\DoxyCodeLine{\ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{namespacefilevault_1_1core_1_1presets_a0f7543f9f77219bf5bdb985f747dcc9b}\label{namespacefilevault_1_1core_1_1presets_a0f7543f9f77219bf5bdb985f747dcc9b} 
+\index{filevault::core::presets@{filevault::core::presets}!BASIC@{BASIC}}
+\index{BASIC@{BASIC}!filevault::core::presets@{filevault::core::presets}}
+\doxysubsubsection{\texorpdfstring{BASIC}{BASIC}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{structfilevault_1_1core_1_1ModePreset}{Mode\+Preset}} filevault\+::core\+::presets\+::\+BASIC}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ .mode\ =\ UserMode::STUDENT,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ .algorithm\ =\ AlgorithmType::AES\_256\_GCM,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ .kdf\ =\ KDFType::PBKDF2\_SHA256,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ .security\_level\ =\ SecurityLevel::MEDIUM,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ .compression\ =\ CompressionType::ZLIB,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ .compression\_level\ =\ 6,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ .kdf\_iterations\ =\ 100000,\ \ \ \ \ \ }
+\DoxyCodeLine{\ \ \ \ \ \ \ \ .kdf\_memory\_kb\ =\ 32768,\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\ \ \ \ \ \ \ \ .kdf\_parallelism\ =\ 2}
+\DoxyCodeLine{\ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{namespacefilevault_1_1core_1_1presets_ae130f54e47e9be21f3d77d2bf5567045}\label{namespacefilevault_1_1core_1_1presets_ae130f54e47e9be21f3d77d2bf5567045} 
+\index{filevault::core::presets@{filevault::core::presets}!STANDARD@{STANDARD}}
+\index{STANDARD@{STANDARD}!filevault::core::presets@{filevault::core::presets}}
+\doxysubsubsection{\texorpdfstring{STANDARD}{STANDARD}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{structfilevault_1_1core_1_1ModePreset}{Mode\+Preset}} filevault\+::core\+::presets\+::\+STANDARD}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ .mode\ =\ UserMode::PROFESSIONAL,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ .algorithm\ =\ AlgorithmType::AES\_256\_GCM,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ .kdf\ =\ KDFType::ARGON2ID,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ .security\_level\ =\ SecurityLevel::STRONG,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ .compression\ =\ CompressionType::ZLIB,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ .compression\_level\ =\ 9,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ .kdf\_iterations\ =\ 100000,\ \ \ \ \ \ }
+\DoxyCodeLine{\ \ \ \ \ \ \ \ .kdf\_memory\_kb\ =\ 65536,\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\ \ \ \ \ \ \ \ .kdf\_parallelism\ =\ 4}
+\DoxyCodeLine{\ \ \ \ \}}
+
+\end{DoxyCode}

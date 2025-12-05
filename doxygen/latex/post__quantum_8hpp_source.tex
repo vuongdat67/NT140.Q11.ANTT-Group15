@@ -1,0 +1,138 @@
+\doxysection{post\+\_\+quantum.\+hpp}
+\hypertarget{post__quantum_8hpp_source}{}\label{post__quantum_8hpp_source}\index{include/filevault/algorithms/pqc/post\_quantum.hpp@{include/filevault/algorithms/pqc/post\_quantum.hpp}}
+\mbox{\hyperlink{post__quantum_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ FILEVAULT\_ALGORITHMS\_POST\_QUANTUM\_HPP}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ FILEVAULT\_ALGORITHMS\_POST\_QUANTUM\_HPP}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{crypto__algorithm_8hpp}{filevault/core/crypto\_algorithm.hpp}}"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacefilevault}{filevault}}\ \{}
+\DoxyCodeLine{00009\ \textcolor{keyword}{namespace\ }algorithms\ \{}
+\DoxyCodeLine{00010\ \textcolor{keyword}{namespace\ }pqc\ \{}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00015\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structfilevault_1_1algorithms_1_1pqc_1_1PQKeyPair}{PQKeyPair}}\ \{}
+\DoxyCodeLine{00016\ \ \ \ \ std::vector<uint8\_t>\ \mbox{\hyperlink{structfilevault_1_1algorithms_1_1pqc_1_1PQKeyPair_a0159560a385092bd1be62c5bee0815cd}{public\_key}};}
+\DoxyCodeLine{00017\ \ \ \ \ std::vector<uint8\_t>\ \mbox{\hyperlink{structfilevault_1_1algorithms_1_1pqc_1_1PQKeyPair_a6a856dfd05cbbe3adee254bd63fdcf0c}{private\_key}};}
+\DoxyCodeLine{00018\ \ \ \ \ std::string\ \mbox{\hyperlink{structfilevault_1_1algorithms_1_1pqc_1_1PQKeyPair_aa36c9b2d18eca9803f60058655eaf280}{algorithm}};}
+\DoxyCodeLine{00019\ \};}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00036\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classfilevault_1_1algorithms_1_1pqc_1_1Kyber}{Kyber}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classfilevault_1_1core_1_1ICryptoAlgorithm}{core::ICryptoAlgorithm}}\ \{}
+\DoxyCodeLine{00037\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1pqc_1_1Kyber_a2a1b6b7fc7a7ab8e89c7847f6f03a659}{Variant}}\ \{}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1pqc_1_1Kyber_a2a1b6b7fc7a7ab8e89c7847f6f03a659a88e80bf5711f70d7147e90d1be84d75a}{Kyber512}},\ \ \ \textcolor{comment}{//\ AES-\/128\ equivalent}}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1pqc_1_1Kyber_a2a1b6b7fc7a7ab8e89c7847f6f03a659ad0a2cb37f22c49d046991761ac806940}{Kyber768}},\ \ \ \textcolor{comment}{//\ AES-\/192\ equivalent\ (recommended)}}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1pqc_1_1Kyber_a2a1b6b7fc7a7ab8e89c7847f6f03a659ad8eef2dfd13eaf63836bbef360cf6b87}{Kyber1024}}\ \ \ \textcolor{comment}{//\ AES-\/256\ equivalent}}
+\DoxyCodeLine{00042\ \ \ \ \ \};}
+\DoxyCodeLine{00043\ \ \ \ \ }
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1pqc_1_1Kyber}{Kyber}}(\mbox{\hyperlink{classfilevault_1_1algorithms_1_1pqc_1_1Kyber_a2a1b6b7fc7a7ab8e89c7847f6f03a659}{Variant}}\ variant\ =\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1pqc_1_1Kyber_a2a1b6b7fc7a7ab8e89c7847f6f03a659ad0a2cb37f22c49d046991761ac806940}{Variant::Kyber768}});}
+\DoxyCodeLine{00045\ \ \ \ \ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1pqc_1_1Kyber_a06aec1464dc2f428804a8d5068042fa6}{\string~Kyber}}()\ \textcolor{keyword}{override}\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00046\ \ \ \ \ }
+\DoxyCodeLine{00047\ \ \ \ \ std::string\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1pqc_1_1Kyber_a80c01876d9dd875b916dd841741d38f5}{name}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00048\ \ \ \ \ \mbox{\hyperlink{namespacefilevault_1_1core_ab1ba257a0205c63e9e1e3623170940a2}{core::AlgorithmType}}\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1pqc_1_1Kyber_a82ba8c96b365392774cbb7a883cbb761}{type}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00049\ \ \ \ \ }
+\DoxyCodeLine{00061\ \ \ \ \ \mbox{\hyperlink{structfilevault_1_1core_1_1CryptoResult}{core::CryptoResult}}\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1pqc_1_1Kyber_a059f9d557f0a05af86fed237209ee19f}{encrypt}}(}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ std::span<const\ uint8\_t>\ plaintext,}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ std::span<const\ uint8\_t>\ key,}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structfilevault_1_1core_1_1EncryptionConfig}{core::EncryptionConfig}}\&\ config}
+\DoxyCodeLine{00065\ \ \ \ \ )\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00066\ \ \ \ \ }
+\DoxyCodeLine{00077\ \ \ \ \ \mbox{\hyperlink{structfilevault_1_1core_1_1CryptoResult}{core::CryptoResult}}\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1pqc_1_1Kyber_aa93c489432dceeb07c388bd0c4e7e5b3}{decrypt}}(}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ std::span<const\ uint8\_t>\ ciphertext,}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ std::span<const\ uint8\_t>\ key,}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structfilevault_1_1core_1_1EncryptionConfig}{core::EncryptionConfig}}\&\ config}
+\DoxyCodeLine{00081\ \ \ \ \ )\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00082\ \ \ \ \ }
+\DoxyCodeLine{00083\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1pqc_1_1Kyber_aa11711bd5ad858ed0b2fed4ad56b2526}{key\_size}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00084\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1pqc_1_1Kyber_a7d1883de98e989d8907ebc0b29515a1e}{is\_suitable\_for}}(\mbox{\hyperlink{namespacefilevault_1_1core_abcb3b3d896f7dc00926903183b3e2dc9}{core::SecurityLevel}}\ level)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00085\ \ \ \ \ }
+\DoxyCodeLine{00089\ \ \ \ \ \mbox{\hyperlink{structfilevault_1_1algorithms_1_1pqc_1_1PQKeyPair}{PQKeyPair}}\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1pqc_1_1Kyber_a47acea9288386641a7a08f99eea03441}{generate\_keypair}}();}
+\DoxyCodeLine{00090\ \ \ \ \ }
+\DoxyCodeLine{00094\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1pqc_1_1Kyber_a0d8a31b49ac131c80741cc78b9ee0c9a}{public\_key\_size}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00095\ \ \ \ \ }
+\DoxyCodeLine{00099\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1pqc_1_1Kyber_a6d4ae09d07f7fcf5a13ea4af20a4600e}{private\_key\_size}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00100\ \ \ \ \ }
+\DoxyCodeLine{00104\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1pqc_1_1Kyber_aa762b0dea798567185fdf56d06273a10}{ciphertext\_size}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00105\ \ \ \ \ }
+\DoxyCodeLine{00109\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1pqc_1_1Kyber_a98986ef0a6d0e88dff347efbed6fc064}{shared\_secret\_size}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ 32;\ \}}
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00111\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00112\ \ \ \ \ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1pqc_1_1Kyber_a2a1b6b7fc7a7ab8e89c7847f6f03a659}{Variant}}\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1pqc_1_1Kyber_a49f1803e9a1abd92b729aeee94004e51}{variant\_}};}
+\DoxyCodeLine{00113\ \ \ \ \ std::string\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1pqc_1_1Kyber_afec18f01bb348ae76b58496c0f0bb0d9}{botan\_name\_}};}
+\DoxyCodeLine{00114\ \ \ \ \ \mbox{\hyperlink{namespacefilevault_1_1core_ab1ba257a0205c63e9e1e3623170940a2}{core::AlgorithmType}}\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1pqc_1_1Kyber_aa3e2337851cd2bc7bc00e70bba0a0b15}{type\_}};}
+\DoxyCodeLine{00115\ \};}
+\DoxyCodeLine{00116\ }
+\DoxyCodeLine{00132\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classfilevault_1_1algorithms_1_1pqc_1_1Dilithium}{Dilithium}}\ \{}
+\DoxyCodeLine{00133\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00134\ \ \ \ \ \textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1pqc_1_1Dilithium_af4621ffb3514a8472a05e80592b8270f}{Variant}}\ \{}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1pqc_1_1Dilithium_af4621ffb3514a8472a05e80592b8270faf08f0144fc2bea5f2eed697cb4936cf8}{Dilithium2}},\ \ \textcolor{comment}{//\ Level\ 2\ security}}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1pqc_1_1Dilithium_af4621ffb3514a8472a05e80592b8270fa1e7f3436097ccf8a3260470dcbc79197}{Dilithium3}},\ \ \textcolor{comment}{//\ Level\ 3\ security\ (recommended)}}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1pqc_1_1Dilithium_af4621ffb3514a8472a05e80592b8270fa29d405889d7e72dea3503c5a0e819ad9}{Dilithium5}}\ \ \ \textcolor{comment}{//\ Level\ 5\ security}}
+\DoxyCodeLine{00138\ \ \ \ \ \};}
+\DoxyCodeLine{00139\ \ \ \ \ }
+\DoxyCodeLine{00140\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1pqc_1_1Dilithium}{Dilithium}}(\mbox{\hyperlink{classfilevault_1_1algorithms_1_1pqc_1_1Dilithium_af4621ffb3514a8472a05e80592b8270f}{Variant}}\ variant\ =\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1pqc_1_1Dilithium_af4621ffb3514a8472a05e80592b8270fa1e7f3436097ccf8a3260470dcbc79197}{Variant::Dilithium3}});}
+\DoxyCodeLine{00141\ \ \ \ \ }
+\DoxyCodeLine{00142\ \ \ \ \ std::string\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1pqc_1_1Dilithium_ad9d5f8fe37bc41512f2becb907db208b}{name}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00143\ \ \ \ \ }
+\DoxyCodeLine{00147\ \ \ \ \ \mbox{\hyperlink{structfilevault_1_1algorithms_1_1pqc_1_1PQKeyPair}{PQKeyPair}}\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1pqc_1_1Dilithium_a23939a3f91ec6fa9f322347218755fdb}{generate\_keypair}}();}
+\DoxyCodeLine{00148\ \ \ \ \ }
+\DoxyCodeLine{00155\ \ \ \ \ std::vector<uint8\_t>\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1pqc_1_1Dilithium_adb793e96b7626cb55fc5daeec35be9d7}{sign}}(}
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ std::span<const\ uint8\_t>\ message,}
+\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ std::span<const\ uint8\_t>\ private\_key}
+\DoxyCodeLine{00158\ \ \ \ \ );}
+\DoxyCodeLine{00159\ \ \ \ \ }
+\DoxyCodeLine{00167\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1pqc_1_1Dilithium_a82c0d297dd80fe3567ad603728426d23}{verify}}(}
+\DoxyCodeLine{00168\ \ \ \ \ \ \ \ \ std::span<const\ uint8\_t>\ message,}
+\DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ std::span<const\ uint8\_t>\ signature,}
+\DoxyCodeLine{00170\ \ \ \ \ \ \ \ \ std::span<const\ uint8\_t>\ public\_key}
+\DoxyCodeLine{00171\ \ \ \ \ );}
+\DoxyCodeLine{00172\ \ \ \ \ }
+\DoxyCodeLine{00176\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1pqc_1_1Dilithium_a5f63bd8c91d304ad5fbf447c05d620e5}{public\_key\_size}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00177\ \ \ \ \ }
+\DoxyCodeLine{00181\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1pqc_1_1Dilithium_ab9a28ac6653924b0149a382d0bbfc9a5}{private\_key\_size}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00182\ \ \ \ \ }
+\DoxyCodeLine{00186\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1pqc_1_1Dilithium_ae2cca391c6cdccfd70826d895a5b5a7f}{signature\_size}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00187\ }
+\DoxyCodeLine{00188\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00189\ \ \ \ \ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1pqc_1_1Dilithium_af4621ffb3514a8472a05e80592b8270f}{Variant}}\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1pqc_1_1Dilithium_ab61854ddfe62925858d93cea5f1cf254}{variant\_}};}
+\DoxyCodeLine{00190\ \ \ \ \ std::string\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1pqc_1_1Dilithium_aded33b74f449ad2c4b8f33aee56452db}{botan\_name\_}};}
+\DoxyCodeLine{00191\ \};}
+\DoxyCodeLine{00192\ }
+\DoxyCodeLine{00202\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classfilevault_1_1algorithms_1_1pqc_1_1KyberHybrid}{KyberHybrid}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classfilevault_1_1core_1_1ICryptoAlgorithm}{core::ICryptoAlgorithm}}\ \{}
+\DoxyCodeLine{00203\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00204\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1pqc_1_1KyberHybrid}{KyberHybrid}}(\mbox{\hyperlink{classfilevault_1_1algorithms_1_1pqc_1_1Kyber_a2a1b6b7fc7a7ab8e89c7847f6f03a659}{Kyber::Variant}}\ variant\ =\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1pqc_1_1Kyber_a2a1b6b7fc7a7ab8e89c7847f6f03a659ad0a2cb37f22c49d046991761ac806940}{Kyber::Variant::Kyber768}});}
+\DoxyCodeLine{00205\ \ \ \ \ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1pqc_1_1KyberHybrid_af88e67e6b18217fad1a2519f8815a448}{\string~KyberHybrid}}()\ \textcolor{keyword}{override}\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00206\ \ \ \ \ }
+\DoxyCodeLine{00207\ \ \ \ \ std::string\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1pqc_1_1KyberHybrid_a596be8406182d3f0ef656b22c8825dc0}{name}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00208\ \ \ \ \ \mbox{\hyperlink{namespacefilevault_1_1core_ab1ba257a0205c63e9e1e3623170940a2}{core::AlgorithmType}}\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1pqc_1_1KyberHybrid_a7317ab62840df642a7ec2ed7c42686ca}{type}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00209\ \ \ \ \ }
+\DoxyCodeLine{00222\ \ \ \ \ \mbox{\hyperlink{structfilevault_1_1core_1_1CryptoResult}{core::CryptoResult}}\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1pqc_1_1KyberHybrid_aac2a5696257e3f9240555282710a1b18}{encrypt}}(}
+\DoxyCodeLine{00223\ \ \ \ \ \ \ \ \ std::span<const\ uint8\_t>\ plaintext,}
+\DoxyCodeLine{00224\ \ \ \ \ \ \ \ \ std::span<const\ uint8\_t>\ key,}
+\DoxyCodeLine{00225\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structfilevault_1_1core_1_1EncryptionConfig}{core::EncryptionConfig}}\&\ config}
+\DoxyCodeLine{00226\ \ \ \ \ )\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00227\ \ \ \ \ }
+\DoxyCodeLine{00240\ \ \ \ \ \mbox{\hyperlink{structfilevault_1_1core_1_1CryptoResult}{core::CryptoResult}}\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1pqc_1_1KyberHybrid_aa9b605d329aad998422eef0cb21beb7e}{decrypt}}(}
+\DoxyCodeLine{00241\ \ \ \ \ \ \ \ \ std::span<const\ uint8\_t>\ ciphertext,}
+\DoxyCodeLine{00242\ \ \ \ \ \ \ \ \ std::span<const\ uint8\_t>\ key,}
+\DoxyCodeLine{00243\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structfilevault_1_1core_1_1EncryptionConfig}{core::EncryptionConfig}}\&\ config}
+\DoxyCodeLine{00244\ \ \ \ \ )\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00245\ \ \ \ \ }
+\DoxyCodeLine{00246\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1pqc_1_1KyberHybrid_a6e332e9cf7f8e6ceef5fda7f18f1ed14}{key\_size}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00247\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1pqc_1_1KyberHybrid_ae86959d7985107e1186243eefce6be44}{is\_suitable\_for}}(\mbox{\hyperlink{namespacefilevault_1_1core_abcb3b3d896f7dc00926903183b3e2dc9}{core::SecurityLevel}}\ level)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00248\ \ \ \ \ }
+\DoxyCodeLine{00252\ \ \ \ \ \mbox{\hyperlink{structfilevault_1_1algorithms_1_1pqc_1_1PQKeyPair}{PQKeyPair}}\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1pqc_1_1KyberHybrid_a56b4fd1fd9575e4c9693237eb8ed9645}{generate\_keypair}}();}
+\DoxyCodeLine{00253\ }
+\DoxyCodeLine{00254\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00255\ \ \ \ \ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1pqc_1_1Kyber}{Kyber}}\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1pqc_1_1KyberHybrid_a788f812a478129405d927dc524fcefa1}{kyber\_}};}
+\DoxyCodeLine{00256\ \};}
+\DoxyCodeLine{00257\ }
+\DoxyCodeLine{00258\ \}\ \textcolor{comment}{//\ namespace\ pqc}}
+\DoxyCodeLine{00259\ \}\ \textcolor{comment}{//\ namespace\ algorithms}}
+\DoxyCodeLine{00260\ \}\ \textcolor{comment}{//\ namespace\ filevault}}
+\DoxyCodeLine{00261\ }
+\DoxyCodeLine{00262\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ FILEVAULT\_ALGORITHMS\_POST\_QUANTUM\_HPP}}
+
+\end{DoxyCode}

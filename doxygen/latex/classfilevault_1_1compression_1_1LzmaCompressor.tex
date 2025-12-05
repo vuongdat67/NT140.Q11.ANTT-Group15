@@ -1,0 +1,117 @@
+\doxysection{filevault\+::compression\+::Lzma\+Compressor Class Reference}
+\hypertarget{classfilevault_1_1compression_1_1LzmaCompressor}{}\label{classfilevault_1_1compression_1_1LzmaCompressor}\index{filevault::compression::LzmaCompressor@{filevault::compression::LzmaCompressor}}
+
+
+LZMA compressor (maximum compression, slowest)  
+
+
+
+
+{\ttfamily \#include $<$compressor.\+hpp$>$}
+
+
+
+Inheritance diagram for filevault\+::compression\+::Lzma\+Compressor\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=205pt]{classfilevault_1_1compression_1_1LzmaCompressor__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for filevault\+::compression\+::Lzma\+Compressor\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=205pt]{classfilevault_1_1compression_1_1LzmaCompressor__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{classfilevault_1_1compression_1_1LzmaCompressor_ae4bc7f04889a0d9e0ddd2680a54bb55e}{name}} () const override
+\begin{DoxyCompactList}\small\item\em Get compressor name. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structfilevault_1_1compression_1_1CompressionResult}{Compression\+Result}} \mbox{\hyperlink{classfilevault_1_1compression_1_1LzmaCompressor_a9343e005b1b6f040a4898b9fd6e0a71d}{compress}} (std\+::span$<$ const uint8\+\_\+t $>$ input, int level=6) override
+\begin{DoxyCompactList}\small\item\em Compress data. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structfilevault_1_1compression_1_1CompressionResult}{Compression\+Result}} \mbox{\hyperlink{classfilevault_1_1compression_1_1LzmaCompressor_a43155962756ebbbf9c6e758b5dfd602b}{decompress}} (std\+::span$<$ const uint8\+\_\+t $>$ input) override
+\begin{DoxyCompactList}\small\item\em Decompress data. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classfilevault_1_1compression_1_1ICompressor}{filevault\+::compression\+::\+ICompressor}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classfilevault_1_1compression_1_1ICompressor_a0f7a59ccdc3d563924a70ba0f0b70f5c}{\texorpdfstring{$\sim$}{\string~}\+ICompressor}} ()=default
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+LZMA compressor (maximum compression, slowest) 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classfilevault_1_1compression_1_1LzmaCompressor_a9343e005b1b6f040a4898b9fd6e0a71d}\label{classfilevault_1_1compression_1_1LzmaCompressor_a9343e005b1b6f040a4898b9fd6e0a71d} 
+\index{filevault::compression::LzmaCompressor@{filevault::compression::LzmaCompressor}!compress@{compress}}
+\index{compress@{compress}!filevault::compression::LzmaCompressor@{filevault::compression::LzmaCompressor}}
+\doxysubsubsection{\texorpdfstring{compress()}{compress()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structfilevault_1_1compression_1_1CompressionResult}{Compression\+Result}} filevault\+::compression\+::\+Lzma\+Compressor\+::compress (\begin{DoxyParamCaption}\item[{std\+::span$<$ const uint8\+\_\+t $>$}]{input,  }\item[{int}]{level = {\ttfamily 6} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Compress data. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em input} & Data to compress \\
+\hline
+{\em level} & Compression level (1-\/9, algorithm-\/specific) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Compressed data 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classfilevault_1_1compression_1_1ICompressor_a9f5965e075283a118a99119a9359f102}{filevault\+::compression\+::\+ICompressor}}.
+
+\Hypertarget{classfilevault_1_1compression_1_1LzmaCompressor_a43155962756ebbbf9c6e758b5dfd602b}\label{classfilevault_1_1compression_1_1LzmaCompressor_a43155962756ebbbf9c6e758b5dfd602b} 
+\index{filevault::compression::LzmaCompressor@{filevault::compression::LzmaCompressor}!decompress@{decompress}}
+\index{decompress@{decompress}!filevault::compression::LzmaCompressor@{filevault::compression::LzmaCompressor}}
+\doxysubsubsection{\texorpdfstring{decompress()}{decompress()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structfilevault_1_1compression_1_1CompressionResult}{Compression\+Result}} filevault\+::compression\+::\+Lzma\+Compressor\+::decompress (\begin{DoxyParamCaption}\item[{std\+::span$<$ const uint8\+\_\+t $>$}]{input }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Decompress data. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em input} & Compressed data \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Decompressed data 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classfilevault_1_1compression_1_1ICompressor_a5ffea9c3e4bf9304dcacad2fc6a2c575}{filevault\+::compression\+::\+ICompressor}}.
+
+\Hypertarget{classfilevault_1_1compression_1_1LzmaCompressor_ae4bc7f04889a0d9e0ddd2680a54bb55e}\label{classfilevault_1_1compression_1_1LzmaCompressor_ae4bc7f04889a0d9e0ddd2680a54bb55e} 
+\index{filevault::compression::LzmaCompressor@{filevault::compression::LzmaCompressor}!name@{name}}
+\index{name@{name}!filevault::compression::LzmaCompressor@{filevault::compression::LzmaCompressor}}
+\doxysubsubsection{\texorpdfstring{name()}{name()}}
+{\footnotesize\ttfamily std\+::string filevault\+::compression\+::\+Lzma\+Compressor\+::name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get compressor name. 
+
+
+
+Implements \mbox{\hyperlink{classfilevault_1_1compression_1_1ICompressor_ad73882b08b0b4f3bc455a0a723ddcda7}{filevault\+::compression\+::\+ICompressor}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/filevault/compression/\mbox{\hyperlink{compressor_8hpp}{compressor.\+hpp}}\item 
+src/compression/\mbox{\hyperlink{compressor_8cpp}{compressor.\+cpp}}\end{DoxyCompactItemize}

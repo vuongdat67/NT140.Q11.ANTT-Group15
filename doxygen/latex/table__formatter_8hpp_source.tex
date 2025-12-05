@@ -1,0 +1,66 @@
+\doxysection{table\+\_\+formatter.\+hpp}
+\hypertarget{table__formatter_8hpp_source}{}\label{table__formatter_8hpp_source}\index{include/filevault/utils/table\_formatter.hpp@{include/filevault/utils/table\_formatter.hpp}}
+\mbox{\hyperlink{table__formatter_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <tabulate/table.hpp>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacefilevault}{filevault}}\ \{}
+\DoxyCodeLine{00008\ \textcolor{keyword}{namespace\ }utils\ \{}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00013\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classfilevault_1_1utils_1_1TableFormatter}{TableFormatter}}\ \{}
+\DoxyCodeLine{00014\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00015\ \ \ \ \ \mbox{\hyperlink{classfilevault_1_1utils_1_1TableFormatter}{TableFormatter}}(\textcolor{keyword}{const}\ std::vector<std::string>\&\ headers);}
+\DoxyCodeLine{00016\ \ \ \ \ }
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classfilevault_1_1utils_1_1TableFormatter_a3b35aee3a031babffb8d2b039b2eb62f}{add\_row}}(\textcolor{keyword}{const}\ std::vector<std::string>\&\ row);}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classfilevault_1_1utils_1_1TableFormatter_ad34bc09343bc28c97e24f7063116f548}{print}}();}
+\DoxyCodeLine{00019\ \ \ \ \ std::string\ \mbox{\hyperlink{classfilevault_1_1utils_1_1TableFormatter_a9bedc5367a07101689f578a40ddac9be}{to\_string}}();}
+\DoxyCodeLine{00020\ \ \ \ \ }
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{comment}{//\ Styling}}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classfilevault_1_1utils_1_1TableFormatter_a06444f26ae706a757d3aec8c177ce5f6}{set\_border\_style}}(\textcolor{keyword}{const}\ std::string\&\ style);\ \ \textcolor{comment}{//\ "{}ascii"{},\ "{}unicode"{},\ "{}markdown"{}}}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classfilevault_1_1utils_1_1TableFormatter_a518166b3afa8571f1a98931666e246fc}{set\_column\_alignment}}(\textcolor{keywordtype}{size\_t}\ col\_index,\ tabulate::FontAlign\ align);}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classfilevault_1_1utils_1_1TableFormatter_a959b1d345b2f01e3d34a0bee3c55ca40}{set\_column\_format}}(\textcolor{keywordtype}{size\_t}\ col\_index,\ tabulate::Color\ color);}
+\DoxyCodeLine{00025\ \ \ \ \ }
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{comment}{//\ Pre-\/built\ themes}}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{classfilevault_1_1utils_1_1TableFormatter}{TableFormatter}}\ \mbox{\hyperlink{classfilevault_1_1utils_1_1TableFormatter_a51103407f33e1ff0fc877a38960cfa78}{algorithm\_list\_table}}();}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{classfilevault_1_1utils_1_1TableFormatter}{TableFormatter}}\ \mbox{\hyperlink{classfilevault_1_1utils_1_1TableFormatter_a0d4686f0de8b3575ef1b88c50f897e9e}{benchmark\_table}}();}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{classfilevault_1_1utils_1_1TableFormatter}{TableFormatter}}\ \mbox{\hyperlink{classfilevault_1_1utils_1_1TableFormatter_a1198bc19ae5e56a740626772d234c755}{file\_info\_table}}();}
+\DoxyCodeLine{00030\ \ \ \ \ }
+\DoxyCodeLine{00031\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00032\ \ \ \ \ tabulate::Table\ \mbox{\hyperlink{classfilevault_1_1utils_1_1TableFormatter_a27331610e21fddb66d46a8175323e6a9}{table\_}};}
+\DoxyCodeLine{00033\ \};}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00038\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classfilevault_1_1utils_1_1TableBuilder}{TableBuilder}}\ \{}
+\DoxyCodeLine{00039\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classfilevault_1_1utils_1_1TableBuilder_a433762195a125e5bee25c1ea97cc1eec}{print\_algorithm\_list}}(}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<std::tuple<std::string,\ std::string,\ std::string>>\&\ algorithms}
+\DoxyCodeLine{00042\ \ \ \ \ );}
+\DoxyCodeLine{00043\ \ \ \ \ }
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classfilevault_1_1utils_1_1TableBuilder_a14bf4019529c603305eb71746eb5d845}{print\_benchmark\_results}}(}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<std::tuple<std::string,\ double,\ double>>\&\ results}
+\DoxyCodeLine{00046\ \ \ \ \ );}
+\DoxyCodeLine{00047\ \ \ \ \ }
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classfilevault_1_1utils_1_1TableBuilder_a67ed394aae6527e7493bc557f1503b21}{print\_file\_summary}}(}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ input\_file,}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ output\_file,}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ input\_size,}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ output\_size,}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ processing\_time\_ms}
+\DoxyCodeLine{00054\ \ \ \ \ );}
+\DoxyCodeLine{00055\ \ \ \ \ }
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classfilevault_1_1utils_1_1TableBuilder_a55e23dc6f0ea857c67df214ebcf8a212}{print\_encryption\_config}}(}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ algorithm,}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ kdf,}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ security\_level,}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ kdf\_iterations,}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ kdf\_memory\_kb}
+\DoxyCodeLine{00062\ \ \ \ \ );}
+\DoxyCodeLine{00063\ \};}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \}\ \textcolor{comment}{//\ namespace\ utils}}
+\DoxyCodeLine{00066\ \}\ \textcolor{comment}{//\ namespace\ filevault}}
+
+\end{DoxyCode}

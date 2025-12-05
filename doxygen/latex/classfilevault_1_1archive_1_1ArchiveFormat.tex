@@ -1,0 +1,201 @@
+\doxysection{filevault\+::archive\+::Archive\+Format Class Reference}
+\hypertarget{classfilevault_1_1archive_1_1ArchiveFormat}{}\label{classfilevault_1_1archive_1_1ArchiveFormat}\index{filevault::archive::ArchiveFormat@{filevault::archive::ArchiveFormat}}
+
+
+Simple archive format handler.  
+
+
+
+
+{\ttfamily \#include $<$archive\+\_\+format.\+hpp$>$}
+
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::vector$<$ uint8\+\_\+t $>$ \mbox{\hyperlink{classfilevault_1_1archive_1_1ArchiveFormat_a56db58970e0d63112f9462b8ebb3a3e8}{create\+\_\+archive}} (const std\+::vector$<$ std\+::filesystem\+::path $>$ \&files)
+\begin{DoxyCompactList}\small\item\em Create archive from multiple files. \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{classfilevault_1_1archive_1_1ArchiveFormat_a1375960eeac0b8ddd971b06e8b510095}{extract\+\_\+archive}} (std\+::span$<$ const uint8\+\_\+t $>$ archive\+\_\+data, const std\+::filesystem\+::path \&output\+\_\+dir)
+\begin{DoxyCompactList}\small\item\em Extract files from archive. \end{DoxyCompactList}\item 
+static std\+::vector$<$ \mbox{\hyperlink{structfilevault_1_1archive_1_1FileEntry}{File\+Entry}} $>$ \mbox{\hyperlink{classfilevault_1_1archive_1_1ArchiveFormat_aa90cabc46b42c8b558fa4aaa9fef4070}{list\+\_\+files}} (std\+::span$<$ const uint8\+\_\+t $>$ archive\+\_\+data)
+\begin{DoxyCompactList}\small\item\em List files in archive. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static constexpr char \mbox{\hyperlink{classfilevault_1_1archive_1_1ArchiveFormat_a85526996820baea14ef475d341463d1c}{MAGIC}} \mbox{[}7\mbox{]} = "{}FVARCH"{}
+\item 
+static constexpr uint8\+\_\+t \mbox{\hyperlink{classfilevault_1_1archive_1_1ArchiveFormat_a598bfdc20f2406c55601ad4ce3b5f0e0}{VERSION}} = 1
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{classfilevault_1_1archive_1_1ArchiveFormat_a434c2f181a013e9045ea66cb19167d7b}{write\+\_\+uint32}} (std\+::vector$<$ uint8\+\_\+t $>$ \&buffer, uint32\+\_\+t value)
+\item 
+static void \mbox{\hyperlink{classfilevault_1_1archive_1_1ArchiveFormat_a219ea92f75f9d81019011bde3e960916}{write\+\_\+uint64}} (std\+::vector$<$ uint8\+\_\+t $>$ \&buffer, uint64\+\_\+t value)
+\item 
+static uint32\+\_\+t \mbox{\hyperlink{classfilevault_1_1archive_1_1ArchiveFormat_a1416e9a3391f192b01245dd918988889}{read\+\_\+uint32}} (std\+::span$<$ const uint8\+\_\+t $>$ data, size\+\_\+t \&offset)
+\item 
+static uint64\+\_\+t \mbox{\hyperlink{classfilevault_1_1archive_1_1ArchiveFormat_ac5f3f387380a73f370a9f4b289666977}{read\+\_\+uint64}} (std\+::span$<$ const uint8\+\_\+t $>$ data, size\+\_\+t \&offset)
+\item 
+static std\+::string \mbox{\hyperlink{classfilevault_1_1archive_1_1ArchiveFormat_a3a4a1fd92484c81a145597e5923fa9b5}{read\+\_\+string}} (std\+::span$<$ const uint8\+\_\+t $>$ data, size\+\_\+t \&offset)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Simple archive format handler. 
+
+Format\+: \mbox{[}Magic\+: "{}\+FVARCH"{}\mbox{]} \mbox{[}Version\+: 1 byte\mbox{]} \mbox{[}Entry count\+: 4 bytes\mbox{]} \mbox{[}Entry1 metadata\mbox{]} \mbox{[}Entry2 metadata\mbox{]} ... \mbox{[}File1 data\mbox{]} \mbox{[}File2 data\mbox{]} ... 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classfilevault_1_1archive_1_1ArchiveFormat_a56db58970e0d63112f9462b8ebb3a3e8}\label{classfilevault_1_1archive_1_1ArchiveFormat_a56db58970e0d63112f9462b8ebb3a3e8} 
+\index{filevault::archive::ArchiveFormat@{filevault::archive::ArchiveFormat}!create\_archive@{create\_archive}}
+\index{create\_archive@{create\_archive}!filevault::archive::ArchiveFormat@{filevault::archive::ArchiveFormat}}
+\doxysubsubsection{\texorpdfstring{create\_archive()}{create\_archive()}}
+{\footnotesize\ttfamily std\+::vector$<$ uint8\+\_\+t $>$ filevault\+::archive\+::\+Archive\+Format\+::create\+\_\+archive (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::filesystem\+::path $>$ \&}]{files }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Create archive from multiple files. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1archive_1_1ArchiveFormat_a56db58970e0d63112f9462b8ebb3a3e8_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1archive_1_1ArchiveFormat_a56db58970e0d63112f9462b8ebb3a3e8_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1archive_1_1ArchiveFormat_a1375960eeac0b8ddd971b06e8b510095}\label{classfilevault_1_1archive_1_1ArchiveFormat_a1375960eeac0b8ddd971b06e8b510095} 
+\index{filevault::archive::ArchiveFormat@{filevault::archive::ArchiveFormat}!extract\_archive@{extract\_archive}}
+\index{extract\_archive@{extract\_archive}!filevault::archive::ArchiveFormat@{filevault::archive::ArchiveFormat}}
+\doxysubsubsection{\texorpdfstring{extract\_archive()}{extract\_archive()}}
+{\footnotesize\ttfamily bool filevault\+::archive\+::\+Archive\+Format\+::extract\+\_\+archive (\begin{DoxyParamCaption}\item[{std\+::span$<$ const uint8\+\_\+t $>$}]{archive\+\_\+data,  }\item[{const std\+::filesystem\+::path \&}]{output\+\_\+dir }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Extract files from archive. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1archive_1_1ArchiveFormat_a1375960eeac0b8ddd971b06e8b510095_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1archive_1_1ArchiveFormat_a1375960eeac0b8ddd971b06e8b510095_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1archive_1_1ArchiveFormat_aa90cabc46b42c8b558fa4aaa9fef4070}\label{classfilevault_1_1archive_1_1ArchiveFormat_aa90cabc46b42c8b558fa4aaa9fef4070} 
+\index{filevault::archive::ArchiveFormat@{filevault::archive::ArchiveFormat}!list\_files@{list\_files}}
+\index{list\_files@{list\_files}!filevault::archive::ArchiveFormat@{filevault::archive::ArchiveFormat}}
+\doxysubsubsection{\texorpdfstring{list\_files()}{list\_files()}}
+{\footnotesize\ttfamily std\+::vector$<$ \mbox{\hyperlink{structfilevault_1_1archive_1_1FileEntry}{File\+Entry}} $>$ filevault\+::archive\+::\+Archive\+Format\+::list\+\_\+files (\begin{DoxyParamCaption}\item[{std\+::span$<$ const uint8\+\_\+t $>$}]{archive\+\_\+data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+List files in archive. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1archive_1_1ArchiveFormat_aa90cabc46b42c8b558fa4aaa9fef4070_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1archive_1_1ArchiveFormat_aa90cabc46b42c8b558fa4aaa9fef4070_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1archive_1_1ArchiveFormat_a3a4a1fd92484c81a145597e5923fa9b5}\label{classfilevault_1_1archive_1_1ArchiveFormat_a3a4a1fd92484c81a145597e5923fa9b5} 
+\index{filevault::archive::ArchiveFormat@{filevault::archive::ArchiveFormat}!read\_string@{read\_string}}
+\index{read\_string@{read\_string}!filevault::archive::ArchiveFormat@{filevault::archive::ArchiveFormat}}
+\doxysubsubsection{\texorpdfstring{read\_string()}{read\_string()}}
+{\footnotesize\ttfamily std\+::string filevault\+::archive\+::\+Archive\+Format\+::read\+\_\+string (\begin{DoxyParamCaption}\item[{std\+::span$<$ const uint8\+\_\+t $>$}]{data,  }\item[{size\+\_\+t \&}]{offset }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1archive_1_1ArchiveFormat_a3a4a1fd92484c81a145597e5923fa9b5_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1archive_1_1ArchiveFormat_a1416e9a3391f192b01245dd918988889}\label{classfilevault_1_1archive_1_1ArchiveFormat_a1416e9a3391f192b01245dd918988889} 
+\index{filevault::archive::ArchiveFormat@{filevault::archive::ArchiveFormat}!read\_uint32@{read\_uint32}}
+\index{read\_uint32@{read\_uint32}!filevault::archive::ArchiveFormat@{filevault::archive::ArchiveFormat}}
+\doxysubsubsection{\texorpdfstring{read\_uint32()}{read\_uint32()}}
+{\footnotesize\ttfamily uint32\+\_\+t filevault\+::archive\+::\+Archive\+Format\+::read\+\_\+uint32 (\begin{DoxyParamCaption}\item[{std\+::span$<$ const uint8\+\_\+t $>$}]{data,  }\item[{size\+\_\+t \&}]{offset }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1archive_1_1ArchiveFormat_a1416e9a3391f192b01245dd918988889_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1archive_1_1ArchiveFormat_ac5f3f387380a73f370a9f4b289666977}\label{classfilevault_1_1archive_1_1ArchiveFormat_ac5f3f387380a73f370a9f4b289666977} 
+\index{filevault::archive::ArchiveFormat@{filevault::archive::ArchiveFormat}!read\_uint64@{read\_uint64}}
+\index{read\_uint64@{read\_uint64}!filevault::archive::ArchiveFormat@{filevault::archive::ArchiveFormat}}
+\doxysubsubsection{\texorpdfstring{read\_uint64()}{read\_uint64()}}
+{\footnotesize\ttfamily uint64\+\_\+t filevault\+::archive\+::\+Archive\+Format\+::read\+\_\+uint64 (\begin{DoxyParamCaption}\item[{std\+::span$<$ const uint8\+\_\+t $>$}]{data,  }\item[{size\+\_\+t \&}]{offset }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\Hypertarget{classfilevault_1_1archive_1_1ArchiveFormat_a434c2f181a013e9045ea66cb19167d7b}\label{classfilevault_1_1archive_1_1ArchiveFormat_a434c2f181a013e9045ea66cb19167d7b} 
+\index{filevault::archive::ArchiveFormat@{filevault::archive::ArchiveFormat}!write\_uint32@{write\_uint32}}
+\index{write\_uint32@{write\_uint32}!filevault::archive::ArchiveFormat@{filevault::archive::ArchiveFormat}}
+\doxysubsubsection{\texorpdfstring{write\_uint32()}{write\_uint32()}}
+{\footnotesize\ttfamily void filevault\+::archive\+::\+Archive\+Format\+::write\+\_\+uint32 (\begin{DoxyParamCaption}\item[{std\+::vector$<$ uint8\+\_\+t $>$ \&}]{buffer,  }\item[{uint32\+\_\+t}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1archive_1_1ArchiveFormat_a434c2f181a013e9045ea66cb19167d7b_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1archive_1_1ArchiveFormat_a219ea92f75f9d81019011bde3e960916}\label{classfilevault_1_1archive_1_1ArchiveFormat_a219ea92f75f9d81019011bde3e960916} 
+\index{filevault::archive::ArchiveFormat@{filevault::archive::ArchiveFormat}!write\_uint64@{write\_uint64}}
+\index{write\_uint64@{write\_uint64}!filevault::archive::ArchiveFormat@{filevault::archive::ArchiveFormat}}
+\doxysubsubsection{\texorpdfstring{write\_uint64()}{write\_uint64()}}
+{\footnotesize\ttfamily void filevault\+::archive\+::\+Archive\+Format\+::write\+\_\+uint64 (\begin{DoxyParamCaption}\item[{std\+::vector$<$ uint8\+\_\+t $>$ \&}]{buffer,  }\item[{uint64\+\_\+t}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classfilevault_1_1archive_1_1ArchiveFormat_a85526996820baea14ef475d341463d1c}\label{classfilevault_1_1archive_1_1ArchiveFormat_a85526996820baea14ef475d341463d1c} 
+\index{filevault::archive::ArchiveFormat@{filevault::archive::ArchiveFormat}!MAGIC@{MAGIC}}
+\index{MAGIC@{MAGIC}!filevault::archive::ArchiveFormat@{filevault::archive::ArchiveFormat}}
+\doxysubsubsection{\texorpdfstring{MAGIC}{MAGIC}}
+{\footnotesize\ttfamily constexpr char filevault\+::archive\+::\+Archive\+Format\+::\+MAGIC\mbox{[}7\mbox{]} = "{}FVARCH"{}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}}
+
+\Hypertarget{classfilevault_1_1archive_1_1ArchiveFormat_a598bfdc20f2406c55601ad4ce3b5f0e0}\label{classfilevault_1_1archive_1_1ArchiveFormat_a598bfdc20f2406c55601ad4ce3b5f0e0} 
+\index{filevault::archive::ArchiveFormat@{filevault::archive::ArchiveFormat}!VERSION@{VERSION}}
+\index{VERSION@{VERSION}!filevault::archive::ArchiveFormat@{filevault::archive::ArchiveFormat}}
+\doxysubsubsection{\texorpdfstring{VERSION}{VERSION}}
+{\footnotesize\ttfamily constexpr uint8\+\_\+t filevault\+::archive\+::\+Archive\+Format\+::\+VERSION = 1\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/filevault/archive/\mbox{\hyperlink{archive__format_8hpp}{archive\+\_\+format.\+hpp}}\item 
+src/archive/\mbox{\hyperlink{archive__format_8cpp}{archive\+\_\+format.\+cpp}}\end{DoxyCompactItemize}

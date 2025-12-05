@@ -1,0 +1,212 @@
+\doxysection{filevault\+::cli\+::Decrypt\+Command Class Reference}
+\hypertarget{classfilevault_1_1cli_1_1DecryptCommand}{}\label{classfilevault_1_1cli_1_1DecryptCommand}\index{filevault::cli::DecryptCommand@{filevault::cli::DecryptCommand}}
+
+
+{\ttfamily \#include $<$decrypt\+\_\+cmd.\+hpp$>$}
+
+
+
+Inheritance diagram for filevault\+::cli\+::Decrypt\+Command\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=248pt]{classfilevault_1_1cli_1_1DecryptCommand__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for filevault\+::cli\+::Decrypt\+Command\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1cli_1_1DecryptCommand__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classfilevault_1_1cli_1_1DecryptCommand_a4a1d2fc35675b842dde5b95c586890d5}{Decrypt\+Command}} (\mbox{\hyperlink{classfilevault_1_1core_1_1CryptoEngine}{core\+::\+Crypto\+Engine}} \&engine)
+\item 
+std\+::string \mbox{\hyperlink{classfilevault_1_1cli_1_1DecryptCommand_af9a41220ba704171d3602a4afee1ebea}{name}} () const override
+\begin{DoxyCompactList}\small\item\em Get command name. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classfilevault_1_1cli_1_1DecryptCommand_a7ef50dfbf8c766b98f16b7e1176b3a25}{description}} () const override
+\begin{DoxyCompactList}\small\item\em Get command description. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classfilevault_1_1cli_1_1DecryptCommand_ac7f8f8226b99377a0eef459e9ba1f782}{setup}} (CLI\+::\+App \&app) override
+\begin{DoxyCompactList}\small\item\em Setup CLI11 subcommand. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classfilevault_1_1cli_1_1DecryptCommand_a7a190b9d06ea57aa3c3903c7b89fcd53}{execute}} () override
+\begin{DoxyCompactList}\small\item\em Execute the command. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classfilevault_1_1cli_1_1ICommand}{filevault\+::cli\+::\+ICommand}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classfilevault_1_1cli_1_1ICommand_a358ce6bf0db6a1ff7f53eec427481a5d}{\texorpdfstring{$\sim$}{\string~}\+ICommand}} ()=default
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classfilevault_1_1core_1_1CryptoEngine}{core\+::\+Crypto\+Engine}} \& \mbox{\hyperlink{classfilevault_1_1cli_1_1DecryptCommand_aa8b466c7f0d20f84d4ce18fb923fe976}{engine\+\_\+}}
+\item 
+std\+::string \mbox{\hyperlink{classfilevault_1_1cli_1_1DecryptCommand_a3f68c41be80a90610fd2ebf58437f845}{input\+\_\+file\+\_\+}}
+\item 
+std\+::string \mbox{\hyperlink{classfilevault_1_1cli_1_1DecryptCommand_acc5d7136435ef6da2a70e9e231ffaf21}{output\+\_\+file\+\_\+}}
+\item 
+std\+::string \mbox{\hyperlink{classfilevault_1_1cli_1_1DecryptCommand_a5d44f59f247c77680722ee5556ff51d8}{password\+\_\+}}
+\item 
+bool \mbox{\hyperlink{classfilevault_1_1cli_1_1DecryptCommand_a7bd6f6a08e19d5b3a328f55f9982f92a}{verbose\+\_\+}} = false
+\item 
+bool \mbox{\hyperlink{classfilevault_1_1cli_1_1DecryptCommand_a2eb2716a39fa3e5afe55b12706567617}{no\+\_\+progress\+\_\+}} = false
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classfilevault_1_1cli_1_1DecryptCommand_a4a1d2fc35675b842dde5b95c586890d5}\label{classfilevault_1_1cli_1_1DecryptCommand_a4a1d2fc35675b842dde5b95c586890d5} 
+\index{filevault::cli::DecryptCommand@{filevault::cli::DecryptCommand}!DecryptCommand@{DecryptCommand}}
+\index{DecryptCommand@{DecryptCommand}!filevault::cli::DecryptCommand@{filevault::cli::DecryptCommand}}
+\doxysubsubsection{\texorpdfstring{DecryptCommand()}{DecryptCommand()}}
+{\footnotesize\ttfamily filevault\+::cli\+::\+Decrypt\+Command\+::\+Decrypt\+Command (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classfilevault_1_1core_1_1CryptoEngine}{core\+::\+Crypto\+Engine}} \&}]{engine }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classfilevault_1_1cli_1_1DecryptCommand_a7ef50dfbf8c766b98f16b7e1176b3a25}\label{classfilevault_1_1cli_1_1DecryptCommand_a7ef50dfbf8c766b98f16b7e1176b3a25} 
+\index{filevault::cli::DecryptCommand@{filevault::cli::DecryptCommand}!description@{description}}
+\index{description@{description}!filevault::cli::DecryptCommand@{filevault::cli::DecryptCommand}}
+\doxysubsubsection{\texorpdfstring{description()}{description()}}
+{\footnotesize\ttfamily std\+::string filevault\+::cli\+::\+Decrypt\+Command\+::description (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get command description. 
+
+
+
+Implements \mbox{\hyperlink{classfilevault_1_1cli_1_1ICommand_a154cdd3f87273142e70814445abd48ea}{filevault\+::cli\+::\+ICommand}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1cli_1_1DecryptCommand_a7ef50dfbf8c766b98f16b7e1176b3a25_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1cli_1_1DecryptCommand_a7a190b9d06ea57aa3c3903c7b89fcd53}\label{classfilevault_1_1cli_1_1DecryptCommand_a7a190b9d06ea57aa3c3903c7b89fcd53} 
+\index{filevault::cli::DecryptCommand@{filevault::cli::DecryptCommand}!execute@{execute}}
+\index{execute@{execute}!filevault::cli::DecryptCommand@{filevault::cli::DecryptCommand}}
+\doxysubsubsection{\texorpdfstring{execute()}{execute()}}
+{\footnotesize\ttfamily int filevault\+::cli\+::\+Decrypt\+Command\+::execute (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Execute the command. 
+
+
+
+Implements \mbox{\hyperlink{classfilevault_1_1cli_1_1ICommand_a2fdc36b29a23b94a6e52bc3d4eb0c1ed}{filevault\+::cli\+::\+ICommand}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1cli_1_1DecryptCommand_a7a190b9d06ea57aa3c3903c7b89fcd53_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1cli_1_1DecryptCommand_a7a190b9d06ea57aa3c3903c7b89fcd53_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1cli_1_1DecryptCommand_af9a41220ba704171d3602a4afee1ebea}\label{classfilevault_1_1cli_1_1DecryptCommand_af9a41220ba704171d3602a4afee1ebea} 
+\index{filevault::cli::DecryptCommand@{filevault::cli::DecryptCommand}!name@{name}}
+\index{name@{name}!filevault::cli::DecryptCommand@{filevault::cli::DecryptCommand}}
+\doxysubsubsection{\texorpdfstring{name()}{name()}}
+{\footnotesize\ttfamily std\+::string filevault\+::cli\+::\+Decrypt\+Command\+::name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get command name. 
+
+
+
+Implements \mbox{\hyperlink{classfilevault_1_1cli_1_1ICommand_a60aa4bc7c96c2e80feeb1a184d7ae2f7}{filevault\+::cli\+::\+ICommand}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1cli_1_1DecryptCommand_af9a41220ba704171d3602a4afee1ebea_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1cli_1_1DecryptCommand_ac7f8f8226b99377a0eef459e9ba1f782}\label{classfilevault_1_1cli_1_1DecryptCommand_ac7f8f8226b99377a0eef459e9ba1f782} 
+\index{filevault::cli::DecryptCommand@{filevault::cli::DecryptCommand}!setup@{setup}}
+\index{setup@{setup}!filevault::cli::DecryptCommand@{filevault::cli::DecryptCommand}}
+\doxysubsubsection{\texorpdfstring{setup()}{setup()}}
+{\footnotesize\ttfamily void filevault\+::cli\+::\+Decrypt\+Command\+::setup (\begin{DoxyParamCaption}\item[{CLI\+::\+App \&}]{app }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Setup CLI11 subcommand. 
+
+
+
+Implements \mbox{\hyperlink{classfilevault_1_1cli_1_1ICommand_aa43a60aabddff55d1060c334dade972c}{filevault\+::cli\+::\+ICommand}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1cli_1_1DecryptCommand_ac7f8f8226b99377a0eef459e9ba1f782_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classfilevault_1_1cli_1_1DecryptCommand_aa8b466c7f0d20f84d4ce18fb923fe976}\label{classfilevault_1_1cli_1_1DecryptCommand_aa8b466c7f0d20f84d4ce18fb923fe976} 
+\index{filevault::cli::DecryptCommand@{filevault::cli::DecryptCommand}!engine\_@{engine\_}}
+\index{engine\_@{engine\_}!filevault::cli::DecryptCommand@{filevault::cli::DecryptCommand}}
+\doxysubsubsection{\texorpdfstring{engine\_}{engine\_}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classfilevault_1_1core_1_1CryptoEngine}{core\+::\+Crypto\+Engine}}\& filevault\+::cli\+::\+Decrypt\+Command\+::engine\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classfilevault_1_1cli_1_1DecryptCommand_a3f68c41be80a90610fd2ebf58437f845}\label{classfilevault_1_1cli_1_1DecryptCommand_a3f68c41be80a90610fd2ebf58437f845} 
+\index{filevault::cli::DecryptCommand@{filevault::cli::DecryptCommand}!input\_file\_@{input\_file\_}}
+\index{input\_file\_@{input\_file\_}!filevault::cli::DecryptCommand@{filevault::cli::DecryptCommand}}
+\doxysubsubsection{\texorpdfstring{input\_file\_}{input\_file\_}}
+{\footnotesize\ttfamily std\+::string filevault\+::cli\+::\+Decrypt\+Command\+::input\+\_\+file\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classfilevault_1_1cli_1_1DecryptCommand_a2eb2716a39fa3e5afe55b12706567617}\label{classfilevault_1_1cli_1_1DecryptCommand_a2eb2716a39fa3e5afe55b12706567617} 
+\index{filevault::cli::DecryptCommand@{filevault::cli::DecryptCommand}!no\_progress\_@{no\_progress\_}}
+\index{no\_progress\_@{no\_progress\_}!filevault::cli::DecryptCommand@{filevault::cli::DecryptCommand}}
+\doxysubsubsection{\texorpdfstring{no\_progress\_}{no\_progress\_}}
+{\footnotesize\ttfamily bool filevault\+::cli\+::\+Decrypt\+Command\+::no\+\_\+progress\+\_\+ = false\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classfilevault_1_1cli_1_1DecryptCommand_acc5d7136435ef6da2a70e9e231ffaf21}\label{classfilevault_1_1cli_1_1DecryptCommand_acc5d7136435ef6da2a70e9e231ffaf21} 
+\index{filevault::cli::DecryptCommand@{filevault::cli::DecryptCommand}!output\_file\_@{output\_file\_}}
+\index{output\_file\_@{output\_file\_}!filevault::cli::DecryptCommand@{filevault::cli::DecryptCommand}}
+\doxysubsubsection{\texorpdfstring{output\_file\_}{output\_file\_}}
+{\footnotesize\ttfamily std\+::string filevault\+::cli\+::\+Decrypt\+Command\+::output\+\_\+file\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classfilevault_1_1cli_1_1DecryptCommand_a5d44f59f247c77680722ee5556ff51d8}\label{classfilevault_1_1cli_1_1DecryptCommand_a5d44f59f247c77680722ee5556ff51d8} 
+\index{filevault::cli::DecryptCommand@{filevault::cli::DecryptCommand}!password\_@{password\_}}
+\index{password\_@{password\_}!filevault::cli::DecryptCommand@{filevault::cli::DecryptCommand}}
+\doxysubsubsection{\texorpdfstring{password\_}{password\_}}
+{\footnotesize\ttfamily std\+::string filevault\+::cli\+::\+Decrypt\+Command\+::password\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classfilevault_1_1cli_1_1DecryptCommand_a7bd6f6a08e19d5b3a328f55f9982f92a}\label{classfilevault_1_1cli_1_1DecryptCommand_a7bd6f6a08e19d5b3a328f55f9982f92a} 
+\index{filevault::cli::DecryptCommand@{filevault::cli::DecryptCommand}!verbose\_@{verbose\_}}
+\index{verbose\_@{verbose\_}!filevault::cli::DecryptCommand@{filevault::cli::DecryptCommand}}
+\doxysubsubsection{\texorpdfstring{verbose\_}{verbose\_}}
+{\footnotesize\ttfamily bool filevault\+::cli\+::\+Decrypt\+Command\+::verbose\+\_\+ = false\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/filevault/cli/commands/\mbox{\hyperlink{decrypt__cmd_8hpp}{decrypt\+\_\+cmd.\+hpp}}\item 
+src/cli/commands/\mbox{\hyperlink{decrypt__cmd_8cpp}{decrypt\+\_\+cmd.\+cpp}}\end{DoxyCompactItemize}

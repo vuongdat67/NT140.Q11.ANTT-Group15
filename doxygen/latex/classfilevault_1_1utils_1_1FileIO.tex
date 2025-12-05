@@ -1,0 +1,122 @@
+\doxysection{filevault\+::utils\+::File\+IO Class Reference}
+\hypertarget{classfilevault_1_1utils_1_1FileIO}{}\label{classfilevault_1_1utils_1_1FileIO}\index{filevault::utils::FileIO@{filevault::utils::FileIO}}
+
+
+File I/O utilities.  
+
+
+
+
+{\ttfamily \#include $<$file\+\_\+io.\+hpp$>$}
+
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{structfilevault_1_1core_1_1Result}{core\+::\+Result}}$<$ std\+::vector$<$ uint8\+\_\+t $>$ $>$ \mbox{\hyperlink{classfilevault_1_1utils_1_1FileIO_aeaf18516aaab9458054cd3ae2f14f534}{read\+\_\+file}} (const std\+::string \&path)
+\begin{DoxyCompactList}\small\item\em Read entire file into memory. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{structfilevault_1_1core_1_1Result}{core\+::\+Result}}$<$ void $>$ \mbox{\hyperlink{classfilevault_1_1utils_1_1FileIO_aa04405afe66cbfe09e222050793a40d6}{write\+\_\+file}} (const std\+::string \&path, std\+::span$<$ const uint8\+\_\+t $>$ data)
+\begin{DoxyCompactList}\small\item\em Write data to file. \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{classfilevault_1_1utils_1_1FileIO_a0a74316e6ed58ff0092d3365a3b6e9c4}{file\+\_\+exists}} (const std\+::string \&path)
+\begin{DoxyCompactList}\small\item\em Check if file exists. \end{DoxyCompactList}\item 
+static size\+\_\+t \mbox{\hyperlink{classfilevault_1_1utils_1_1FileIO_ab91d5f102e5ef3bb96e9b825cad23d04}{file\+\_\+size}} (const std\+::string \&path)
+\begin{DoxyCompactList}\small\item\em Get file size. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+File I/O utilities. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classfilevault_1_1utils_1_1FileIO_a0a74316e6ed58ff0092d3365a3b6e9c4}\label{classfilevault_1_1utils_1_1FileIO_a0a74316e6ed58ff0092d3365a3b6e9c4} 
+\index{filevault::utils::FileIO@{filevault::utils::FileIO}!file\_exists@{file\_exists}}
+\index{file\_exists@{file\_exists}!filevault::utils::FileIO@{filevault::utils::FileIO}}
+\doxysubsubsection{\texorpdfstring{file\_exists()}{file\_exists()}}
+{\footnotesize\ttfamily bool filevault\+::utils\+::\+File\+IO\+::file\+\_\+exists (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Check if file exists. 
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1utils_1_1FileIO_a0a74316e6ed58ff0092d3365a3b6e9c4_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1utils_1_1FileIO_ab91d5f102e5ef3bb96e9b825cad23d04}\label{classfilevault_1_1utils_1_1FileIO_ab91d5f102e5ef3bb96e9b825cad23d04} 
+\index{filevault::utils::FileIO@{filevault::utils::FileIO}!file\_size@{file\_size}}
+\index{file\_size@{file\_size}!filevault::utils::FileIO@{filevault::utils::FileIO}}
+\doxysubsubsection{\texorpdfstring{file\_size()}{file\_size()}}
+{\footnotesize\ttfamily size\+\_\+t filevault\+::utils\+::\+File\+IO\+::file\+\_\+size (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Get file size. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1utils_1_1FileIO_ab91d5f102e5ef3bb96e9b825cad23d04_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1utils_1_1FileIO_ab91d5f102e5ef3bb96e9b825cad23d04_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1utils_1_1FileIO_aeaf18516aaab9458054cd3ae2f14f534}\label{classfilevault_1_1utils_1_1FileIO_aeaf18516aaab9458054cd3ae2f14f534} 
+\index{filevault::utils::FileIO@{filevault::utils::FileIO}!read\_file@{read\_file}}
+\index{read\_file@{read\_file}!filevault::utils::FileIO@{filevault::utils::FileIO}}
+\doxysubsubsection{\texorpdfstring{read\_file()}{read\_file()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structfilevault_1_1core_1_1Result}{core\+::\+Result}}$<$ std\+::vector$<$ uint8\+\_\+t $>$ $>$ filevault\+::utils\+::\+File\+IO\+::read\+\_\+file (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Read entire file into memory. 
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1utils_1_1FileIO_aeaf18516aaab9458054cd3ae2f14f534_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1utils_1_1FileIO_aa04405afe66cbfe09e222050793a40d6}\label{classfilevault_1_1utils_1_1FileIO_aa04405afe66cbfe09e222050793a40d6} 
+\index{filevault::utils::FileIO@{filevault::utils::FileIO}!write\_file@{write\_file}}
+\index{write\_file@{write\_file}!filevault::utils::FileIO@{filevault::utils::FileIO}}
+\doxysubsubsection{\texorpdfstring{write\_file()}{write\_file()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structfilevault_1_1core_1_1Result}{core\+::\+Result}}$<$ void $>$ filevault\+::utils\+::\+File\+IO\+::write\+\_\+file (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{path,  }\item[{std\+::span$<$ const uint8\+\_\+t $>$}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Write data to file. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1utils_1_1FileIO_aa04405afe66cbfe09e222050793a40d6_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1utils_1_1FileIO_aa04405afe66cbfe09e222050793a40d6_icgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/filevault/utils/\mbox{\hyperlink{file__io_8hpp}{file\+\_\+io.\+hpp}}\item 
+src/utils/\mbox{\hyperlink{file__io_8cpp}{file\+\_\+io.\+cpp}}\end{DoxyCompactItemize}

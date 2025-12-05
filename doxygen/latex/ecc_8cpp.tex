@@ -1,0 +1,47 @@
+\doxysection{src/algorithms/asymmetric/ecc.cpp File Reference}
+\hypertarget{ecc_8cpp}{}\label{ecc_8cpp}\index{src/algorithms/asymmetric/ecc.cpp@{src/algorithms/asymmetric/ecc.cpp}}
+
+
+Elliptic Curve Cryptography implementation.  
+
+
+{\ttfamily \#include "{}filevault/algorithms/asymmetric/ecc.\+hpp"{}}\newline
+{\ttfamily \#include $<$botan/auto\+\_\+rng.\+h$>$}\newline
+{\ttfamily \#include $<$botan/pkcs8.\+h$>$}\newline
+{\ttfamily \#include $<$botan/x509\+\_\+key.\+h$>$}\newline
+{\ttfamily \#include $<$botan/pubkey.\+h$>$}\newline
+{\ttfamily \#include $<$botan/kdf.\+h$>$}\newline
+{\ttfamily \#include $<$botan/cipher\+\_\+mode.\+h$>$}\newline
+{\ttfamily \#include $<$botan/hex.\+h$>$}\newline
+{\ttfamily \#include $<$spdlog/spdlog.\+h$>$}\newline
+{\ttfamily \#include $<$chrono$>$}\newline
+{\ttfamily \#include $<$stdexcept$>$}\newline
+Include dependency graph for ecc.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ecc_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespacefilevault}{filevault}}
+\item 
+namespace \mbox{\hyperlink{namespacefilevault_1_1algorithms}{filevault\+::algorithms}}
+\item 
+namespace \mbox{\hyperlink{namespacefilevault_1_1algorithms_1_1asymmetric}{filevault\+::algorithms\+::asymmetric}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::string \mbox{\hyperlink{namespacefilevault_1_1algorithms_1_1asymmetric_ac0145e772ab69cce412d1e0865d2ba0c}{filevault\+::algorithms\+::asymmetric\+::get\+\_\+botan\+\_\+curve\+\_\+name}} (\mbox{\hyperlink{namespacefilevault_1_1algorithms_1_1asymmetric_a5955f778874f5a3eaa61006b00c2ab02}{ECCurve}} curve)
+\item 
+static size\+\_\+t \mbox{\hyperlink{namespacefilevault_1_1algorithms_1_1asymmetric_ab8033174c16a6c51bc0182401f0f4b16}{filevault\+::algorithms\+::asymmetric\+::get\+\_\+curve\+\_\+key\+\_\+size}} (\mbox{\hyperlink{namespacefilevault_1_1algorithms_1_1asymmetric_a5955f778874f5a3eaa61006b00c2ab02}{ECCurve}} curve)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Elliptic Curve Cryptography implementation. 
+

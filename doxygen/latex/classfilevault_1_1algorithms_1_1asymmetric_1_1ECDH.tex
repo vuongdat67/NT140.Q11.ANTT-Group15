@@ -1,0 +1,176 @@
+\doxysection{filevault\+::algorithms\+::asymmetric\+::ECDH Class Reference}
+\hypertarget{classfilevault_1_1algorithms_1_1asymmetric_1_1ECDH}{}\label{classfilevault_1_1algorithms_1_1asymmetric_1_1ECDH}\index{filevault::algorithms::asymmetric::ECDH@{filevault::algorithms::asymmetric::ECDH}}
+
+
+Elliptic Curve Diffie-\/\+Hellman (\doxylink{classfilevault_1_1algorithms_1_1asymmetric_1_1ECDH}{ECDH}) key exchange.  
+
+
+
+
+{\ttfamily \#include $<$ecc.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classfilevault_1_1algorithms_1_1asymmetric_1_1ECDH_a9ab0b1020365ef9fd5c8b3c87560e777}{ECDH}} (\mbox{\hyperlink{namespacefilevault_1_1algorithms_1_1asymmetric_a5955f778874f5a3eaa61006b00c2ab02}{ECCurve}} curve=\mbox{\hyperlink{namespacefilevault_1_1algorithms_1_1asymmetric_a5955f778874f5a3eaa61006b00c2ab02ae391840247cc176f98c8bd36b74393ce}{ECCurve\+::\+SECP256\+R1}})
+\begin{DoxyCompactList}\small\item\em Construct \doxylink{classfilevault_1_1algorithms_1_1asymmetric_1_1ECDH}{ECDH} with specified curve. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfilevault_1_1algorithms_1_1asymmetric_1_1ECDH_ae4de7903a6cc97d36a704e3563e65363}{\texorpdfstring{$\sim$}{\string~}\+ECDH}} ()=default
+\item 
+\mbox{\hyperlink{structfilevault_1_1algorithms_1_1asymmetric_1_1ECCKeyPair}{ECCKey\+Pair}} \mbox{\hyperlink{classfilevault_1_1algorithms_1_1asymmetric_1_1ECDH_a9866ae80680e10453caeeb3aab3acdf4}{generate\+\_\+key\+\_\+pair}} ()
+\begin{DoxyCompactList}\small\item\em Generate a new \doxylink{classfilevault_1_1algorithms_1_1asymmetric_1_1ECDH}{ECDH} key pair. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structfilevault_1_1algorithms_1_1asymmetric_1_1ECDHResult}{ECDHResult}} \mbox{\hyperlink{classfilevault_1_1algorithms_1_1asymmetric_1_1ECDH_abf1a1f3fde41b1c154e68df2bd1aa64d}{derive\+\_\+shared\+\_\+secret}} (std\+::span$<$ const uint8\+\_\+t $>$ own\+\_\+private\+\_\+key, std\+::span$<$ const uint8\+\_\+t $>$ peer\+\_\+public\+\_\+key)
+\begin{DoxyCompactList}\small\item\em Derive shared secret from own private key and peer\textquotesingle{}s public key. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classfilevault_1_1algorithms_1_1asymmetric_1_1ECDH_aae211ce3d9e99dacac5176149e835114}{name}} () const
+\item 
+std\+::string \mbox{\hyperlink{classfilevault_1_1algorithms_1_1asymmetric_1_1ECDH_a09d637751aa988b6cd33c3c205ea2c8f}{curve\+\_\+name}} () const
+\item 
+size\+\_\+t \mbox{\hyperlink{classfilevault_1_1algorithms_1_1asymmetric_1_1ECDH_a7ec191e461401d9ebb17c9f4c37e57b3}{key\+\_\+size}} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespacefilevault_1_1algorithms_1_1asymmetric_a5955f778874f5a3eaa61006b00c2ab02}{ECCurve}} \mbox{\hyperlink{classfilevault_1_1algorithms_1_1asymmetric_1_1ECDH_ae08262219f984eb0733b74482889ec9a}{curve\+\_\+}}
+\item 
+std\+::string \mbox{\hyperlink{classfilevault_1_1algorithms_1_1asymmetric_1_1ECDH_ad0a6eb0c3d5560e83c3722af30be9752}{botan\+\_\+curve\+\_\+name\+\_\+}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Elliptic Curve Diffie-\/\+Hellman (\doxylink{classfilevault_1_1algorithms_1_1asymmetric_1_1ECDH}{ECDH}) key exchange. 
+
+Used for secure key agreement between two parties. Each party generates a key pair, exchanges public keys, and derives the same shared secret. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classfilevault_1_1algorithms_1_1asymmetric_1_1ECDH_a9ab0b1020365ef9fd5c8b3c87560e777}\label{classfilevault_1_1algorithms_1_1asymmetric_1_1ECDH_a9ab0b1020365ef9fd5c8b3c87560e777} 
+\index{filevault::algorithms::asymmetric::ECDH@{filevault::algorithms::asymmetric::ECDH}!ECDH@{ECDH}}
+\index{ECDH@{ECDH}!filevault::algorithms::asymmetric::ECDH@{filevault::algorithms::asymmetric::ECDH}}
+\doxysubsubsection{\texorpdfstring{ECDH()}{ECDH()}}
+{\footnotesize\ttfamily filevault\+::algorithms\+::asymmetric\+::\+ECDH\+::\+ECDH (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacefilevault_1_1algorithms_1_1asymmetric_a5955f778874f5a3eaa61006b00c2ab02}{ECCurve}}}]{curve = {\ttfamily \mbox{\hyperlink{namespacefilevault_1_1algorithms_1_1asymmetric_a5955f778874f5a3eaa61006b00c2ab02ae391840247cc176f98c8bd36b74393ce}{ECCurve\+::\+SECP256\+R1}}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Construct \doxylink{classfilevault_1_1algorithms_1_1asymmetric_1_1ECDH}{ECDH} with specified curve. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em curve} & Elliptic curve to use \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classfilevault_1_1algorithms_1_1asymmetric_1_1ECDH_ae4de7903a6cc97d36a704e3563e65363}\label{classfilevault_1_1algorithms_1_1asymmetric_1_1ECDH_ae4de7903a6cc97d36a704e3563e65363} 
+\index{filevault::algorithms::asymmetric::ECDH@{filevault::algorithms::asymmetric::ECDH}!````~ECDH@{\texorpdfstring{$\sim$}{\string~}ECDH}}
+\index{````~ECDH@{\texorpdfstring{$\sim$}{\string~}ECDH}!filevault::algorithms::asymmetric::ECDH@{filevault::algorithms::asymmetric::ECDH}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}ECDH()}{\string~ECDH()}}
+{\footnotesize\ttfamily filevault\+::algorithms\+::asymmetric\+::\+ECDH\+::\texorpdfstring{$\sim$}{\string~}\+ECDH (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classfilevault_1_1algorithms_1_1asymmetric_1_1ECDH_a09d637751aa988b6cd33c3c205ea2c8f}\label{classfilevault_1_1algorithms_1_1asymmetric_1_1ECDH_a09d637751aa988b6cd33c3c205ea2c8f} 
+\index{filevault::algorithms::asymmetric::ECDH@{filevault::algorithms::asymmetric::ECDH}!curve\_name@{curve\_name}}
+\index{curve\_name@{curve\_name}!filevault::algorithms::asymmetric::ECDH@{filevault::algorithms::asymmetric::ECDH}}
+\doxysubsubsection{\texorpdfstring{curve\_name()}{curve\_name()}}
+{\footnotesize\ttfamily std\+::string filevault\+::algorithms\+::asymmetric\+::\+ECDH\+::curve\+\_\+name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\Hypertarget{classfilevault_1_1algorithms_1_1asymmetric_1_1ECDH_abf1a1f3fde41b1c154e68df2bd1aa64d}\label{classfilevault_1_1algorithms_1_1asymmetric_1_1ECDH_abf1a1f3fde41b1c154e68df2bd1aa64d} 
+\index{filevault::algorithms::asymmetric::ECDH@{filevault::algorithms::asymmetric::ECDH}!derive\_shared\_secret@{derive\_shared\_secret}}
+\index{derive\_shared\_secret@{derive\_shared\_secret}!filevault::algorithms::asymmetric::ECDH@{filevault::algorithms::asymmetric::ECDH}}
+\doxysubsubsection{\texorpdfstring{derive\_shared\_secret()}{derive\_shared\_secret()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structfilevault_1_1algorithms_1_1asymmetric_1_1ECDHResult}{ECDHResult}} filevault\+::algorithms\+::asymmetric\+::\+ECDH\+::derive\+\_\+shared\+\_\+secret (\begin{DoxyParamCaption}\item[{std\+::span$<$ const uint8\+\_\+t $>$}]{own\+\_\+private\+\_\+key,  }\item[{std\+::span$<$ const uint8\+\_\+t $>$}]{peer\+\_\+public\+\_\+key }\end{DoxyParamCaption})}
+
+
+
+Derive shared secret from own private key and peer\textquotesingle{}s public key. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em own\+\_\+private\+\_\+key} & Our private key \\
+\hline
+{\em peer\+\_\+public\+\_\+key} & Peer\textquotesingle{}s public key \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Shared secret that both parties can derive 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1algorithms_1_1asymmetric_1_1ECDH_abf1a1f3fde41b1c154e68df2bd1aa64d_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1algorithms_1_1asymmetric_1_1ECDH_abf1a1f3fde41b1c154e68df2bd1aa64d_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1algorithms_1_1asymmetric_1_1ECDH_a9866ae80680e10453caeeb3aab3acdf4}\label{classfilevault_1_1algorithms_1_1asymmetric_1_1ECDH_a9866ae80680e10453caeeb3aab3acdf4} 
+\index{filevault::algorithms::asymmetric::ECDH@{filevault::algorithms::asymmetric::ECDH}!generate\_key\_pair@{generate\_key\_pair}}
+\index{generate\_key\_pair@{generate\_key\_pair}!filevault::algorithms::asymmetric::ECDH@{filevault::algorithms::asymmetric::ECDH}}
+\doxysubsubsection{\texorpdfstring{generate\_key\_pair()}{generate\_key\_pair()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structfilevault_1_1algorithms_1_1asymmetric_1_1ECCKeyPair}{ECCKey\+Pair}} filevault\+::algorithms\+::asymmetric\+::\+ECDH\+::generate\+\_\+key\+\_\+pair (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Generate a new \doxylink{classfilevault_1_1algorithms_1_1asymmetric_1_1ECDH}{ECDH} key pair. 
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1algorithms_1_1asymmetric_1_1ECDH_a9866ae80680e10453caeeb3aab3acdf4_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1algorithms_1_1asymmetric_1_1ECDH_a7ec191e461401d9ebb17c9f4c37e57b3}\label{classfilevault_1_1algorithms_1_1asymmetric_1_1ECDH_a7ec191e461401d9ebb17c9f4c37e57b3} 
+\index{filevault::algorithms::asymmetric::ECDH@{filevault::algorithms::asymmetric::ECDH}!key\_size@{key\_size}}
+\index{key\_size@{key\_size}!filevault::algorithms::asymmetric::ECDH@{filevault::algorithms::asymmetric::ECDH}}
+\doxysubsubsection{\texorpdfstring{key\_size()}{key\_size()}}
+{\footnotesize\ttfamily size\+\_\+t filevault\+::algorithms\+::asymmetric\+::\+ECDH\+::key\+\_\+size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1algorithms_1_1asymmetric_1_1ECDH_a7ec191e461401d9ebb17c9f4c37e57b3_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1algorithms_1_1asymmetric_1_1ECDH_a7ec191e461401d9ebb17c9f4c37e57b3_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1algorithms_1_1asymmetric_1_1ECDH_aae211ce3d9e99dacac5176149e835114}\label{classfilevault_1_1algorithms_1_1asymmetric_1_1ECDH_aae211ce3d9e99dacac5176149e835114} 
+\index{filevault::algorithms::asymmetric::ECDH@{filevault::algorithms::asymmetric::ECDH}!name@{name}}
+\index{name@{name}!filevault::algorithms::asymmetric::ECDH@{filevault::algorithms::asymmetric::ECDH}}
+\doxysubsubsection{\texorpdfstring{name()}{name()}}
+{\footnotesize\ttfamily std\+::string filevault\+::algorithms\+::asymmetric\+::\+ECDH\+::name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classfilevault_1_1algorithms_1_1asymmetric_1_1ECDH_ad0a6eb0c3d5560e83c3722af30be9752}\label{classfilevault_1_1algorithms_1_1asymmetric_1_1ECDH_ad0a6eb0c3d5560e83c3722af30be9752} 
+\index{filevault::algorithms::asymmetric::ECDH@{filevault::algorithms::asymmetric::ECDH}!botan\_curve\_name\_@{botan\_curve\_name\_}}
+\index{botan\_curve\_name\_@{botan\_curve\_name\_}!filevault::algorithms::asymmetric::ECDH@{filevault::algorithms::asymmetric::ECDH}}
+\doxysubsubsection{\texorpdfstring{botan\_curve\_name\_}{botan\_curve\_name\_}}
+{\footnotesize\ttfamily std\+::string filevault\+::algorithms\+::asymmetric\+::\+ECDH\+::botan\+\_\+curve\+\_\+name\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classfilevault_1_1algorithms_1_1asymmetric_1_1ECDH_ae08262219f984eb0733b74482889ec9a}\label{classfilevault_1_1algorithms_1_1asymmetric_1_1ECDH_ae08262219f984eb0733b74482889ec9a} 
+\index{filevault::algorithms::asymmetric::ECDH@{filevault::algorithms::asymmetric::ECDH}!curve\_@{curve\_}}
+\index{curve\_@{curve\_}!filevault::algorithms::asymmetric::ECDH@{filevault::algorithms::asymmetric::ECDH}}
+\doxysubsubsection{\texorpdfstring{curve\_}{curve\_}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacefilevault_1_1algorithms_1_1asymmetric_a5955f778874f5a3eaa61006b00c2ab02}{ECCurve}} filevault\+::algorithms\+::asymmetric\+::\+ECDH\+::curve\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/filevault/algorithms/asymmetric/\mbox{\hyperlink{ecc_8hpp}{ecc.\+hpp}}\item 
+src/algorithms/asymmetric/\mbox{\hyperlink{ecc_8cpp}{ecc.\+cpp}}\end{DoxyCompactItemize}

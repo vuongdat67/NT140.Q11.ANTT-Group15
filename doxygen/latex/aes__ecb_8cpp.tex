@@ -1,0 +1,45 @@
+\doxysection{src/algorithms/symmetric/aes\+\_\+ecb.cpp File Reference}
+\hypertarget{aes__ecb_8cpp}{}\label{aes__ecb_8cpp}\index{src/algorithms/symmetric/aes\_ecb.cpp@{src/algorithms/symmetric/aes\_ecb.cpp}}
+
+
+AES-\/\+ECB encryption implementation.  
+
+
+{\ttfamily \#include "{}filevault/algorithms/symmetric/aes\+\_\+ecb.\+hpp"{}}\newline
+{\ttfamily \#include $<$botan/block\+\_\+cipher.\+h$>$}\newline
+{\ttfamily \#include $<$botan/auto\+\_\+rng.\+h$>$}\newline
+{\ttfamily \#include $<$botan/hex.\+h$>$}\newline
+{\ttfamily \#include $<$spdlog/spdlog.\+h$>$}\newline
+{\ttfamily \#include $<$chrono$>$}\newline
+Include dependency graph for aes\+\_\+ecb.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{aes__ecb_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespacefilevault}{filevault}}
+\item 
+namespace \mbox{\hyperlink{namespacefilevault_1_1algorithms}{filevault\+::algorithms}}
+\item 
+namespace \mbox{\hyperlink{namespacefilevault_1_1algorithms_1_1symmetric}{filevault\+::algorithms\+::symmetric}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::vector$<$ uint8\+\_\+t $>$ \mbox{\hyperlink{namespacefilevault_1_1algorithms_1_1symmetric_ae00ebfcc5f938459f52a94e2f5342405}{filevault\+::algorithms\+::symmetric\+::add\+\_\+pkcs7\+\_\+padding}} (std\+::span$<$ const uint8\+\_\+t $>$ data, size\+\_\+t block\+\_\+size)
+\item 
+static std\+::vector$<$ uint8\+\_\+t $>$ \mbox{\hyperlink{namespacefilevault_1_1algorithms_1_1symmetric_a00260240009e4cc8f60ae461fe19aba9}{filevault\+::algorithms\+::symmetric\+::remove\+\_\+pkcs7\+\_\+padding}} (std\+::span$<$ const uint8\+\_\+t $>$ data)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+AES-\/\+ECB encryption implementation. 
+
+WARNING\+: ECB mode is NOT secure for most uses!
+
+Note\+: Botan 3.\+x doesn\textquotesingle{}t expose ECB through Cipher\+\_\+\+Mode, so we use Block\+Cipher directly with manual PKCS7 padding. 

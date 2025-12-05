@@ -1,0 +1,602 @@
+\doxysection{filevault\+::format\+::File\+Header Class Reference}
+\hypertarget{classfilevault_1_1format_1_1FileHeader}{}\label{classfilevault_1_1format_1_1FileHeader}\index{filevault::format::FileHeader@{filevault::format::FileHeader}}
+
+
+File\+Vault encrypted file format.  
+
+
+
+
+{\ttfamily \#include $<$file\+\_\+header.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classfilevault_1_1format_1_1FileHeader_ac1696920c642f8a4020542035e80ab48}{File\+Header}} ()
+\item 
+void \mbox{\hyperlink{classfilevault_1_1format_1_1FileHeader_a7576390f7aea4966dc2bf570d3ff87f1}{set\+\_\+algorithm}} (\mbox{\hyperlink{namespacefilevault_1_1core_ab1ba257a0205c63e9e1e3623170940a2}{core\+::\+Algorithm\+Type}} algo)
+\item 
+void \mbox{\hyperlink{classfilevault_1_1format_1_1FileHeader_aee6f331c58c09846a5923c87fcfd26c3}{set\+\_\+kdf}} (\mbox{\hyperlink{namespacefilevault_1_1core_ad5938d2ac317833646f1d8b965e3768f}{core\+::\+KDFType}} \mbox{\hyperlink{classfilevault_1_1format_1_1FileHeader_abcdbcf80fe66ec8825c1922e3f8f3913}{kdf}})
+\item 
+void \mbox{\hyperlink{classfilevault_1_1format_1_1FileHeader_abb74fd5f735a16be0f014b75d3b9da0f}{set\+\_\+security\+\_\+level}} (\mbox{\hyperlink{namespacefilevault_1_1core_abcb3b3d896f7dc00926903183b3e2dc9}{core\+::\+Security\+Level}} level)
+\item 
+void \mbox{\hyperlink{classfilevault_1_1format_1_1FileHeader_a4227814d5f8cb9209a384e96dec6f593}{set\+\_\+salt}} (const std\+::vector$<$ uint8\+\_\+t $>$ \&\mbox{\hyperlink{classfilevault_1_1format_1_1FileHeader_ad354ecb097b3b80856ab05ea3cb7ac47}{salt}})
+\item 
+void \mbox{\hyperlink{classfilevault_1_1format_1_1FileHeader_af6661728b77f62ef513211a9d3e48859}{set\+\_\+nonce}} (const std\+::vector$<$ uint8\+\_\+t $>$ \&\mbox{\hyperlink{classfilevault_1_1format_1_1FileHeader_a5b9a6a58492450ed8e25e41368cf3cd1}{nonce}})
+\item 
+void \mbox{\hyperlink{classfilevault_1_1format_1_1FileHeader_afdcca9ee791e38f99cdf532808799d83}{set\+\_\+tag}} (const std\+::vector$<$ uint8\+\_\+t $>$ \&\mbox{\hyperlink{classfilevault_1_1format_1_1FileHeader_a28bd31be862dbec10b1e77dacda09808}{tag}})
+\item 
+void \mbox{\hyperlink{classfilevault_1_1format_1_1FileHeader_a6820c57db7fbcd3364597e55b37918d8}{set\+\_\+original\+\_\+size}} (uint64\+\_\+t size)
+\item 
+void \mbox{\hyperlink{classfilevault_1_1format_1_1FileHeader_a9235d991419d4dedd40f48156bdc44e0}{set\+\_\+encrypted\+\_\+size}} (uint64\+\_\+t size)
+\item 
+void \mbox{\hyperlink{classfilevault_1_1format_1_1FileHeader_a7322f2737450dac07cf341eda24c5e25}{set\+\_\+timestamp}} (uint64\+\_\+t ts)
+\item 
+void \mbox{\hyperlink{classfilevault_1_1format_1_1FileHeader_ad3195349f7816ddd9833f0e71bb7015e}{set\+\_\+compressed}} (bool compressed)
+\item 
+\mbox{\hyperlink{namespacefilevault_1_1core_ab1ba257a0205c63e9e1e3623170940a2}{core\+::\+Algorithm\+Type}} \mbox{\hyperlink{classfilevault_1_1format_1_1FileHeader_ae539f7f6a46d7653dafdff84d599fb63}{algorithm}} () const
+\item 
+\mbox{\hyperlink{namespacefilevault_1_1core_ad5938d2ac317833646f1d8b965e3768f}{core\+::\+KDFType}} \mbox{\hyperlink{classfilevault_1_1format_1_1FileHeader_abcdbcf80fe66ec8825c1922e3f8f3913}{kdf}} () const
+\item 
+\mbox{\hyperlink{namespacefilevault_1_1core_abcb3b3d896f7dc00926903183b3e2dc9}{core\+::\+Security\+Level}} \mbox{\hyperlink{classfilevault_1_1format_1_1FileHeader_af9b497de8ec43df54952293ff9aa2d88}{security\+\_\+level}} () const
+\item 
+const std\+::vector$<$ uint8\+\_\+t $>$ \& \mbox{\hyperlink{classfilevault_1_1format_1_1FileHeader_ad354ecb097b3b80856ab05ea3cb7ac47}{salt}} () const
+\item 
+const std\+::vector$<$ uint8\+\_\+t $>$ \& \mbox{\hyperlink{classfilevault_1_1format_1_1FileHeader_a5b9a6a58492450ed8e25e41368cf3cd1}{nonce}} () const
+\item 
+const std\+::vector$<$ uint8\+\_\+t $>$ \& \mbox{\hyperlink{classfilevault_1_1format_1_1FileHeader_a28bd31be862dbec10b1e77dacda09808}{tag}} () const
+\item 
+uint64\+\_\+t \mbox{\hyperlink{classfilevault_1_1format_1_1FileHeader_ad680fdca2b46ecd96fc99c57f926506a}{original\+\_\+size}} () const
+\item 
+uint64\+\_\+t \mbox{\hyperlink{classfilevault_1_1format_1_1FileHeader_a96e821b8663baba8928b0ba6c6db2299}{encrypted\+\_\+size}} () const
+\item 
+uint64\+\_\+t \mbox{\hyperlink{classfilevault_1_1format_1_1FileHeader_a6be77a967ad2ccf86c0db70de8fd9997}{timestamp}} () const
+\item 
+bool \mbox{\hyperlink{classfilevault_1_1format_1_1FileHeader_a9f4f441f15ed9dbc4b97995f94ea4fe6}{is\+\_\+compressed}} () const
+\item 
+uint32\+\_\+t \mbox{\hyperlink{classfilevault_1_1format_1_1FileHeader_a72f2e35ce1a3237d3df9fb8c34dce71e}{flags}} () const
+\item 
+std\+::vector$<$ uint8\+\_\+t $>$ \mbox{\hyperlink{classfilevault_1_1format_1_1FileHeader_a3d8d894532c159f15a42bf1b0a27cbbd}{serialize}} () const
+\item 
+bool \mbox{\hyperlink{classfilevault_1_1format_1_1FileHeader_a9f5af4fb41e2e7676f31852e70af4a9e}{validate}} () const
+\item 
+size\+\_\+t \mbox{\hyperlink{classfilevault_1_1format_1_1FileHeader_a3b44d387e7b41eb1e09e174f1d38690e}{total\+\_\+size}} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{structfilevault_1_1core_1_1Result}{core\+::\+Result}}$<$ \mbox{\hyperlink{classfilevault_1_1format_1_1FileHeader}{File\+Header}} $>$ \mbox{\hyperlink{classfilevault_1_1format_1_1FileHeader_a4a5d31a42cc66484f9f47060d9e9745d}{deserialize}} (std\+::span$<$ const uint8\+\_\+t $>$ data)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static constexpr uint32\+\_\+t \mbox{\hyperlink{classfilevault_1_1format_1_1FileHeader_ad8fc05967d9ec3fcb83cd43c6abe98ad}{MAGIC}} = 0x544\+C5646
+\item 
+static constexpr uint8\+\_\+t \mbox{\hyperlink{classfilevault_1_1format_1_1FileHeader_acee971dad13b3aedcf51924973d8a847}{VERSION\+\_\+\+MAJOR}} = 1
+\item 
+static constexpr uint8\+\_\+t \mbox{\hyperlink{classfilevault_1_1format_1_1FileHeader_acaf28c9918e66bb58b7b47417fc49738}{VERSION\+\_\+\+MINOR}} = 0
+\item 
+static constexpr size\+\_\+t \mbox{\hyperlink{classfilevault_1_1format_1_1FileHeader_aae8162b50b443ff8fcf1fe607cfc2134}{MIN\+\_\+\+HEADER\+\_\+\+SIZE}} = 64
+\item 
+static constexpr uint32\+\_\+t \mbox{\hyperlink{classfilevault_1_1format_1_1FileHeader_abc8e30941ac18d8f897b32aa5a9f079a}{FLAG\+\_\+\+COMPRESSED}} = 0x00000001
+\item 
+static constexpr uint32\+\_\+t \mbox{\hyperlink{classfilevault_1_1format_1_1FileHeader_a7617b01cc6fa61217be631d6516e8be1}{FLAG\+\_\+\+METADATA}} = 0x00000002
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{classfilevault_1_1format_1_1FileHeader_a17f177861fb83ff1ab2d36c6ab3b4ddc}{write\+\_\+uint16}} (std\+::vector$<$ uint8\+\_\+t $>$ \&buf, uint16\+\_\+t val)
+\item 
+static void \mbox{\hyperlink{classfilevault_1_1format_1_1FileHeader_a714ec7c1808f6b68149d093ba1f3593b}{write\+\_\+uint32}} (std\+::vector$<$ uint8\+\_\+t $>$ \&buf, uint32\+\_\+t val)
+\item 
+static void \mbox{\hyperlink{classfilevault_1_1format_1_1FileHeader_a2040d48a9e88c0b5be6af08a113a4973}{write\+\_\+uint64}} (std\+::vector$<$ uint8\+\_\+t $>$ \&buf, uint64\+\_\+t val)
+\item 
+static uint16\+\_\+t \mbox{\hyperlink{classfilevault_1_1format_1_1FileHeader_a8f966bede74571649aff6975942caccc}{read\+\_\+uint16}} (std\+::span$<$ const uint8\+\_\+t $>$ data, size\+\_\+t \&offset)
+\item 
+static uint32\+\_\+t \mbox{\hyperlink{classfilevault_1_1format_1_1FileHeader_af7010f9fd16f22ddbea93cc456f6b048}{read\+\_\+uint32}} (std\+::span$<$ const uint8\+\_\+t $>$ data, size\+\_\+t \&offset)
+\item 
+static uint64\+\_\+t \mbox{\hyperlink{classfilevault_1_1format_1_1FileHeader_a1aaa202318e742e4d6caf0e8cbb61e55}{read\+\_\+uint64}} (std\+::span$<$ const uint8\+\_\+t $>$ data, size\+\_\+t \&offset)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespacefilevault_1_1core_ab1ba257a0205c63e9e1e3623170940a2}{core\+::\+Algorithm\+Type}} \mbox{\hyperlink{classfilevault_1_1format_1_1FileHeader_a6554adbc7d63d97876ee4b0587c72499}{algorithm\+\_\+}}
+\item 
+\mbox{\hyperlink{namespacefilevault_1_1core_ad5938d2ac317833646f1d8b965e3768f}{core\+::\+KDFType}} \mbox{\hyperlink{classfilevault_1_1format_1_1FileHeader_acbe736c00ddd5a4cb1aa31406efdf58f}{kdf\+\_\+}}
+\item 
+\mbox{\hyperlink{namespacefilevault_1_1core_abcb3b3d896f7dc00926903183b3e2dc9}{core\+::\+Security\+Level}} \mbox{\hyperlink{classfilevault_1_1format_1_1FileHeader_ab72c4132966c3bc351f81bd7a83d56b0}{security\+\_\+level\+\_\+}}
+\item 
+std\+::vector$<$ uint8\+\_\+t $>$ \mbox{\hyperlink{classfilevault_1_1format_1_1FileHeader_a8965cd7a9081993219bd878f161078ce}{salt\+\_\+}}
+\item 
+std\+::vector$<$ uint8\+\_\+t $>$ \mbox{\hyperlink{classfilevault_1_1format_1_1FileHeader_a5aaabbdb2ede22c79a61f02408eba80a}{nonce\+\_\+}}
+\item 
+std\+::vector$<$ uint8\+\_\+t $>$ \mbox{\hyperlink{classfilevault_1_1format_1_1FileHeader_a9dfb30622e6beced6dddebec4b901c49}{tag\+\_\+}}
+\item 
+uint64\+\_\+t \mbox{\hyperlink{classfilevault_1_1format_1_1FileHeader_a7be72506a6211bb66e323847ab22104a}{original\+\_\+size\+\_\+}}
+\item 
+uint64\+\_\+t \mbox{\hyperlink{classfilevault_1_1format_1_1FileHeader_ab2ba4c1628c6948db26b569ca777a913}{encrypted\+\_\+size\+\_\+}}
+\item 
+uint64\+\_\+t \mbox{\hyperlink{classfilevault_1_1format_1_1FileHeader_aa3611d40c6a44b520c3983676cf4d9d3}{timestamp\+\_\+}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{classfilevault_1_1format_1_1FileHeader_a54fefa6f0fcc4e3699188a7ed211f86f}{flags\+\_\+}}
+\item 
+std\+::array$<$ uint8\+\_\+t, 16 $>$ \mbox{\hyperlink{classfilevault_1_1format_1_1FileHeader_a2ba76f5d4571a3b98e8d6bcc8bcc7962}{reserved\+\_\+}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+File\+Vault encrypted file format. 
+
+Structure\+:
+\begin{DoxyItemize}
+\item Magic bytes (4)\+: "{}\+FVLT"{}
+\item Version (2)\+: major.\+minor
+\item Algorithm (1)\+: Algorithm\+Type enum
+\item KDF (1)\+: KDFType enum
+\item Security level (1)\+: Security\+Level enum
+\item Salt length (2)\+: uint16\+\_\+t
+\item Salt (variable)
+\item Nonce length (2)\+: uint16\+\_\+t ~\newline
+
+\item Nonce (variable)
+\item Tag length (2)\+: uint16\+\_\+t
+\item Tag (variable, for AEAD)
+\item Original size (8)\+: uint64\+\_\+t
+\item Encrypted size (8)\+: uint64\+\_\+t
+\item Timestamp (8)\+: uint64\+\_\+t (Unix epoch)
+\item Flags (4)\+: compression, etc.
+\item Reserved (16)\+: future use
+\item Encrypted data (variable) 
+\end{DoxyItemize}
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classfilevault_1_1format_1_1FileHeader_ac1696920c642f8a4020542035e80ab48}\label{classfilevault_1_1format_1_1FileHeader_ac1696920c642f8a4020542035e80ab48} 
+\index{filevault::format::FileHeader@{filevault::format::FileHeader}!FileHeader@{FileHeader}}
+\index{FileHeader@{FileHeader}!filevault::format::FileHeader@{filevault::format::FileHeader}}
+\doxysubsubsection{\texorpdfstring{FileHeader()}{FileHeader()}}
+{\footnotesize\ttfamily filevault\+::format\+::\+File\+Header\+::\+File\+Header (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classfilevault_1_1format_1_1FileHeader_ae539f7f6a46d7653dafdff84d599fb63}\label{classfilevault_1_1format_1_1FileHeader_ae539f7f6a46d7653dafdff84d599fb63} 
+\index{filevault::format::FileHeader@{filevault::format::FileHeader}!algorithm@{algorithm}}
+\index{algorithm@{algorithm}!filevault::format::FileHeader@{filevault::format::FileHeader}}
+\doxysubsubsection{\texorpdfstring{algorithm()}{algorithm()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacefilevault_1_1core_ab1ba257a0205c63e9e1e3623170940a2}{core\+::\+Algorithm\+Type}} filevault\+::format\+::\+File\+Header\+::algorithm (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classfilevault_1_1format_1_1FileHeader_a4a5d31a42cc66484f9f47060d9e9745d}\label{classfilevault_1_1format_1_1FileHeader_a4a5d31a42cc66484f9f47060d9e9745d} 
+\index{filevault::format::FileHeader@{filevault::format::FileHeader}!deserialize@{deserialize}}
+\index{deserialize@{deserialize}!filevault::format::FileHeader@{filevault::format::FileHeader}}
+\doxysubsubsection{\texorpdfstring{deserialize()}{deserialize()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structfilevault_1_1core_1_1Result}{core\+::\+Result}}$<$ \mbox{\hyperlink{classfilevault_1_1format_1_1FileHeader}{File\+Header}} $>$ filevault\+::format\+::\+File\+Header\+::deserialize (\begin{DoxyParamCaption}\item[{std\+::span$<$ const uint8\+\_\+t $>$}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1format_1_1FileHeader_a4a5d31a42cc66484f9f47060d9e9745d_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1format_1_1FileHeader_a4a5d31a42cc66484f9f47060d9e9745d_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1format_1_1FileHeader_a96e821b8663baba8928b0ba6c6db2299}\label{classfilevault_1_1format_1_1FileHeader_a96e821b8663baba8928b0ba6c6db2299} 
+\index{filevault::format::FileHeader@{filevault::format::FileHeader}!encrypted\_size@{encrypted\_size}}
+\index{encrypted\_size@{encrypted\_size}!filevault::format::FileHeader@{filevault::format::FileHeader}}
+\doxysubsubsection{\texorpdfstring{encrypted\_size()}{encrypted\_size()}}
+{\footnotesize\ttfamily uint64\+\_\+t filevault\+::format\+::\+File\+Header\+::encrypted\+\_\+size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classfilevault_1_1format_1_1FileHeader_a72f2e35ce1a3237d3df9fb8c34dce71e}\label{classfilevault_1_1format_1_1FileHeader_a72f2e35ce1a3237d3df9fb8c34dce71e} 
+\index{filevault::format::FileHeader@{filevault::format::FileHeader}!flags@{flags}}
+\index{flags@{flags}!filevault::format::FileHeader@{filevault::format::FileHeader}}
+\doxysubsubsection{\texorpdfstring{flags()}{flags()}}
+{\footnotesize\ttfamily uint32\+\_\+t filevault\+::format\+::\+File\+Header\+::flags (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classfilevault_1_1format_1_1FileHeader_a9f4f441f15ed9dbc4b97995f94ea4fe6}\label{classfilevault_1_1format_1_1FileHeader_a9f4f441f15ed9dbc4b97995f94ea4fe6} 
+\index{filevault::format::FileHeader@{filevault::format::FileHeader}!is\_compressed@{is\_compressed}}
+\index{is\_compressed@{is\_compressed}!filevault::format::FileHeader@{filevault::format::FileHeader}}
+\doxysubsubsection{\texorpdfstring{is\_compressed()}{is\_compressed()}}
+{\footnotesize\ttfamily bool filevault\+::format\+::\+File\+Header\+::is\+\_\+compressed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classfilevault_1_1format_1_1FileHeader_abcdbcf80fe66ec8825c1922e3f8f3913}\label{classfilevault_1_1format_1_1FileHeader_abcdbcf80fe66ec8825c1922e3f8f3913} 
+\index{filevault::format::FileHeader@{filevault::format::FileHeader}!kdf@{kdf}}
+\index{kdf@{kdf}!filevault::format::FileHeader@{filevault::format::FileHeader}}
+\doxysubsubsection{\texorpdfstring{kdf()}{kdf()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacefilevault_1_1core_ad5938d2ac317833646f1d8b965e3768f}{core\+::\+KDFType}} filevault\+::format\+::\+File\+Header\+::kdf (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=328pt]{classfilevault_1_1format_1_1FileHeader_abcdbcf80fe66ec8825c1922e3f8f3913_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1format_1_1FileHeader_a5b9a6a58492450ed8e25e41368cf3cd1}\label{classfilevault_1_1format_1_1FileHeader_a5b9a6a58492450ed8e25e41368cf3cd1} 
+\index{filevault::format::FileHeader@{filevault::format::FileHeader}!nonce@{nonce}}
+\index{nonce@{nonce}!filevault::format::FileHeader@{filevault::format::FileHeader}}
+\doxysubsubsection{\texorpdfstring{nonce()}{nonce()}}
+{\footnotesize\ttfamily const std\+::vector$<$ uint8\+\_\+t $>$ \& filevault\+::format\+::\+File\+Header\+::nonce (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=345pt]{classfilevault_1_1format_1_1FileHeader_a5b9a6a58492450ed8e25e41368cf3cd1_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1format_1_1FileHeader_ad680fdca2b46ecd96fc99c57f926506a}\label{classfilevault_1_1format_1_1FileHeader_ad680fdca2b46ecd96fc99c57f926506a} 
+\index{filevault::format::FileHeader@{filevault::format::FileHeader}!original\_size@{original\_size}}
+\index{original\_size@{original\_size}!filevault::format::FileHeader@{filevault::format::FileHeader}}
+\doxysubsubsection{\texorpdfstring{original\_size()}{original\_size()}}
+{\footnotesize\ttfamily uint64\+\_\+t filevault\+::format\+::\+File\+Header\+::original\+\_\+size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classfilevault_1_1format_1_1FileHeader_a8f966bede74571649aff6975942caccc}\label{classfilevault_1_1format_1_1FileHeader_a8f966bede74571649aff6975942caccc} 
+\index{filevault::format::FileHeader@{filevault::format::FileHeader}!read\_uint16@{read\_uint16}}
+\index{read\_uint16@{read\_uint16}!filevault::format::FileHeader@{filevault::format::FileHeader}}
+\doxysubsubsection{\texorpdfstring{read\_uint16()}{read\_uint16()}}
+{\footnotesize\ttfamily uint16\+\_\+t filevault\+::format\+::\+File\+Header\+::read\+\_\+uint16 (\begin{DoxyParamCaption}\item[{std\+::span$<$ const uint8\+\_\+t $>$}]{data,  }\item[{size\+\_\+t \&}]{offset }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1format_1_1FileHeader_a8f966bede74571649aff6975942caccc_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1format_1_1FileHeader_af7010f9fd16f22ddbea93cc456f6b048}\label{classfilevault_1_1format_1_1FileHeader_af7010f9fd16f22ddbea93cc456f6b048} 
+\index{filevault::format::FileHeader@{filevault::format::FileHeader}!read\_uint32@{read\_uint32}}
+\index{read\_uint32@{read\_uint32}!filevault::format::FileHeader@{filevault::format::FileHeader}}
+\doxysubsubsection{\texorpdfstring{read\_uint32()}{read\_uint32()}}
+{\footnotesize\ttfamily uint32\+\_\+t filevault\+::format\+::\+File\+Header\+::read\+\_\+uint32 (\begin{DoxyParamCaption}\item[{std\+::span$<$ const uint8\+\_\+t $>$}]{data,  }\item[{size\+\_\+t \&}]{offset }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1format_1_1FileHeader_af7010f9fd16f22ddbea93cc456f6b048_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1format_1_1FileHeader_a1aaa202318e742e4d6caf0e8cbb61e55}\label{classfilevault_1_1format_1_1FileHeader_a1aaa202318e742e4d6caf0e8cbb61e55} 
+\index{filevault::format::FileHeader@{filevault::format::FileHeader}!read\_uint64@{read\_uint64}}
+\index{read\_uint64@{read\_uint64}!filevault::format::FileHeader@{filevault::format::FileHeader}}
+\doxysubsubsection{\texorpdfstring{read\_uint64()}{read\_uint64()}}
+{\footnotesize\ttfamily uint64\+\_\+t filevault\+::format\+::\+File\+Header\+::read\+\_\+uint64 (\begin{DoxyParamCaption}\item[{std\+::span$<$ const uint8\+\_\+t $>$}]{data,  }\item[{size\+\_\+t \&}]{offset }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1format_1_1FileHeader_a1aaa202318e742e4d6caf0e8cbb61e55_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1format_1_1FileHeader_ad354ecb097b3b80856ab05ea3cb7ac47}\label{classfilevault_1_1format_1_1FileHeader_ad354ecb097b3b80856ab05ea3cb7ac47} 
+\index{filevault::format::FileHeader@{filevault::format::FileHeader}!salt@{salt}}
+\index{salt@{salt}!filevault::format::FileHeader@{filevault::format::FileHeader}}
+\doxysubsubsection{\texorpdfstring{salt()}{salt()}}
+{\footnotesize\ttfamily const std\+::vector$<$ uint8\+\_\+t $>$ \& filevault\+::format\+::\+File\+Header\+::salt (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=330pt]{classfilevault_1_1format_1_1FileHeader_ad354ecb097b3b80856ab05ea3cb7ac47_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1format_1_1FileHeader_af9b497de8ec43df54952293ff9aa2d88}\label{classfilevault_1_1format_1_1FileHeader_af9b497de8ec43df54952293ff9aa2d88} 
+\index{filevault::format::FileHeader@{filevault::format::FileHeader}!security\_level@{security\_level}}
+\index{security\_level@{security\_level}!filevault::format::FileHeader@{filevault::format::FileHeader}}
+\doxysubsubsection{\texorpdfstring{security\_level()}{security\_level()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacefilevault_1_1core_abcb3b3d896f7dc00926903183b3e2dc9}{core\+::\+Security\+Level}} filevault\+::format\+::\+File\+Header\+::security\+\_\+level (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classfilevault_1_1format_1_1FileHeader_a3d8d894532c159f15a42bf1b0a27cbbd}\label{classfilevault_1_1format_1_1FileHeader_a3d8d894532c159f15a42bf1b0a27cbbd} 
+\index{filevault::format::FileHeader@{filevault::format::FileHeader}!serialize@{serialize}}
+\index{serialize@{serialize}!filevault::format::FileHeader@{filevault::format::FileHeader}}
+\doxysubsubsection{\texorpdfstring{serialize()}{serialize()}}
+{\footnotesize\ttfamily std\+::vector$<$ uint8\+\_\+t $>$ filevault\+::format\+::\+File\+Header\+::serialize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1format_1_1FileHeader_a3d8d894532c159f15a42bf1b0a27cbbd_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1format_1_1FileHeader_a7576390f7aea4966dc2bf570d3ff87f1}\label{classfilevault_1_1format_1_1FileHeader_a7576390f7aea4966dc2bf570d3ff87f1} 
+\index{filevault::format::FileHeader@{filevault::format::FileHeader}!set\_algorithm@{set\_algorithm}}
+\index{set\_algorithm@{set\_algorithm}!filevault::format::FileHeader@{filevault::format::FileHeader}}
+\doxysubsubsection{\texorpdfstring{set\_algorithm()}{set\_algorithm()}}
+{\footnotesize\ttfamily void filevault\+::format\+::\+File\+Header\+::set\+\_\+algorithm (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacefilevault_1_1core_ab1ba257a0205c63e9e1e3623170940a2}{core\+::\+Algorithm\+Type}}}]{algo }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classfilevault_1_1format_1_1FileHeader_ad3195349f7816ddd9833f0e71bb7015e}\label{classfilevault_1_1format_1_1FileHeader_ad3195349f7816ddd9833f0e71bb7015e} 
+\index{filevault::format::FileHeader@{filevault::format::FileHeader}!set\_compressed@{set\_compressed}}
+\index{set\_compressed@{set\_compressed}!filevault::format::FileHeader@{filevault::format::FileHeader}}
+\doxysubsubsection{\texorpdfstring{set\_compressed()}{set\_compressed()}}
+{\footnotesize\ttfamily void filevault\+::format\+::\+File\+Header\+::set\+\_\+compressed (\begin{DoxyParamCaption}\item[{bool}]{compressed }\end{DoxyParamCaption})}
+
+\Hypertarget{classfilevault_1_1format_1_1FileHeader_a9235d991419d4dedd40f48156bdc44e0}\label{classfilevault_1_1format_1_1FileHeader_a9235d991419d4dedd40f48156bdc44e0} 
+\index{filevault::format::FileHeader@{filevault::format::FileHeader}!set\_encrypted\_size@{set\_encrypted\_size}}
+\index{set\_encrypted\_size@{set\_encrypted\_size}!filevault::format::FileHeader@{filevault::format::FileHeader}}
+\doxysubsubsection{\texorpdfstring{set\_encrypted\_size()}{set\_encrypted\_size()}}
+{\footnotesize\ttfamily void filevault\+::format\+::\+File\+Header\+::set\+\_\+encrypted\+\_\+size (\begin{DoxyParamCaption}\item[{uint64\+\_\+t}]{size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classfilevault_1_1format_1_1FileHeader_aee6f331c58c09846a5923c87fcfd26c3}\label{classfilevault_1_1format_1_1FileHeader_aee6f331c58c09846a5923c87fcfd26c3} 
+\index{filevault::format::FileHeader@{filevault::format::FileHeader}!set\_kdf@{set\_kdf}}
+\index{set\_kdf@{set\_kdf}!filevault::format::FileHeader@{filevault::format::FileHeader}}
+\doxysubsubsection{\texorpdfstring{set\_kdf()}{set\_kdf()}}
+{\footnotesize\ttfamily void filevault\+::format\+::\+File\+Header\+::set\+\_\+kdf (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacefilevault_1_1core_ad5938d2ac317833646f1d8b965e3768f}{core\+::\+KDFType}}}]{kdf }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=328pt]{classfilevault_1_1format_1_1FileHeader_aee6f331c58c09846a5923c87fcfd26c3_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1format_1_1FileHeader_af6661728b77f62ef513211a9d3e48859}\label{classfilevault_1_1format_1_1FileHeader_af6661728b77f62ef513211a9d3e48859} 
+\index{filevault::format::FileHeader@{filevault::format::FileHeader}!set\_nonce@{set\_nonce}}
+\index{set\_nonce@{set\_nonce}!filevault::format::FileHeader@{filevault::format::FileHeader}}
+\doxysubsubsection{\texorpdfstring{set\_nonce()}{set\_nonce()}}
+{\footnotesize\ttfamily void filevault\+::format\+::\+File\+Header\+::set\+\_\+nonce (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ uint8\+\_\+t $>$ \&}]{nonce }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=345pt]{classfilevault_1_1format_1_1FileHeader_af6661728b77f62ef513211a9d3e48859_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1format_1_1FileHeader_a6820c57db7fbcd3364597e55b37918d8}\label{classfilevault_1_1format_1_1FileHeader_a6820c57db7fbcd3364597e55b37918d8} 
+\index{filevault::format::FileHeader@{filevault::format::FileHeader}!set\_original\_size@{set\_original\_size}}
+\index{set\_original\_size@{set\_original\_size}!filevault::format::FileHeader@{filevault::format::FileHeader}}
+\doxysubsubsection{\texorpdfstring{set\_original\_size()}{set\_original\_size()}}
+{\footnotesize\ttfamily void filevault\+::format\+::\+File\+Header\+::set\+\_\+original\+\_\+size (\begin{DoxyParamCaption}\item[{uint64\+\_\+t}]{size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classfilevault_1_1format_1_1FileHeader_a4227814d5f8cb9209a384e96dec6f593}\label{classfilevault_1_1format_1_1FileHeader_a4227814d5f8cb9209a384e96dec6f593} 
+\index{filevault::format::FileHeader@{filevault::format::FileHeader}!set\_salt@{set\_salt}}
+\index{set\_salt@{set\_salt}!filevault::format::FileHeader@{filevault::format::FileHeader}}
+\doxysubsubsection{\texorpdfstring{set\_salt()}{set\_salt()}}
+{\footnotesize\ttfamily void filevault\+::format\+::\+File\+Header\+::set\+\_\+salt (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ uint8\+\_\+t $>$ \&}]{salt }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=330pt]{classfilevault_1_1format_1_1FileHeader_a4227814d5f8cb9209a384e96dec6f593_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1format_1_1FileHeader_abb74fd5f735a16be0f014b75d3b9da0f}\label{classfilevault_1_1format_1_1FileHeader_abb74fd5f735a16be0f014b75d3b9da0f} 
+\index{filevault::format::FileHeader@{filevault::format::FileHeader}!set\_security\_level@{set\_security\_level}}
+\index{set\_security\_level@{set\_security\_level}!filevault::format::FileHeader@{filevault::format::FileHeader}}
+\doxysubsubsection{\texorpdfstring{set\_security\_level()}{set\_security\_level()}}
+{\footnotesize\ttfamily void filevault\+::format\+::\+File\+Header\+::set\+\_\+security\+\_\+level (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacefilevault_1_1core_abcb3b3d896f7dc00926903183b3e2dc9}{core\+::\+Security\+Level}}}]{level }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classfilevault_1_1format_1_1FileHeader_afdcca9ee791e38f99cdf532808799d83}\label{classfilevault_1_1format_1_1FileHeader_afdcca9ee791e38f99cdf532808799d83} 
+\index{filevault::format::FileHeader@{filevault::format::FileHeader}!set\_tag@{set\_tag}}
+\index{set\_tag@{set\_tag}!filevault::format::FileHeader@{filevault::format::FileHeader}}
+\doxysubsubsection{\texorpdfstring{set\_tag()}{set\_tag()}}
+{\footnotesize\ttfamily void filevault\+::format\+::\+File\+Header\+::set\+\_\+tag (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ uint8\+\_\+t $>$ \&}]{tag }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=328pt]{classfilevault_1_1format_1_1FileHeader_afdcca9ee791e38f99cdf532808799d83_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1format_1_1FileHeader_a7322f2737450dac07cf341eda24c5e25}\label{classfilevault_1_1format_1_1FileHeader_a7322f2737450dac07cf341eda24c5e25} 
+\index{filevault::format::FileHeader@{filevault::format::FileHeader}!set\_timestamp@{set\_timestamp}}
+\index{set\_timestamp@{set\_timestamp}!filevault::format::FileHeader@{filevault::format::FileHeader}}
+\doxysubsubsection{\texorpdfstring{set\_timestamp()}{set\_timestamp()}}
+{\footnotesize\ttfamily void filevault\+::format\+::\+File\+Header\+::set\+\_\+timestamp (\begin{DoxyParamCaption}\item[{uint64\+\_\+t}]{ts }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classfilevault_1_1format_1_1FileHeader_a28bd31be862dbec10b1e77dacda09808}\label{classfilevault_1_1format_1_1FileHeader_a28bd31be862dbec10b1e77dacda09808} 
+\index{filevault::format::FileHeader@{filevault::format::FileHeader}!tag@{tag}}
+\index{tag@{tag}!filevault::format::FileHeader@{filevault::format::FileHeader}}
+\doxysubsubsection{\texorpdfstring{tag()}{tag()}}
+{\footnotesize\ttfamily const std\+::vector$<$ uint8\+\_\+t $>$ \& filevault\+::format\+::\+File\+Header\+::tag (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=328pt]{classfilevault_1_1format_1_1FileHeader_a28bd31be862dbec10b1e77dacda09808_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1format_1_1FileHeader_a6be77a967ad2ccf86c0db70de8fd9997}\label{classfilevault_1_1format_1_1FileHeader_a6be77a967ad2ccf86c0db70de8fd9997} 
+\index{filevault::format::FileHeader@{filevault::format::FileHeader}!timestamp@{timestamp}}
+\index{timestamp@{timestamp}!filevault::format::FileHeader@{filevault::format::FileHeader}}
+\doxysubsubsection{\texorpdfstring{timestamp()}{timestamp()}}
+{\footnotesize\ttfamily uint64\+\_\+t filevault\+::format\+::\+File\+Header\+::timestamp (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classfilevault_1_1format_1_1FileHeader_a3b44d387e7b41eb1e09e174f1d38690e}\label{classfilevault_1_1format_1_1FileHeader_a3b44d387e7b41eb1e09e174f1d38690e} 
+\index{filevault::format::FileHeader@{filevault::format::FileHeader}!total\_size@{total\_size}}
+\index{total\_size@{total\_size}!filevault::format::FileHeader@{filevault::format::FileHeader}}
+\doxysubsubsection{\texorpdfstring{total\_size()}{total\_size()}}
+{\footnotesize\ttfamily size\+\_\+t filevault\+::format\+::\+File\+Header\+::total\+\_\+size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1format_1_1FileHeader_a3b44d387e7b41eb1e09e174f1d38690e_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1format_1_1FileHeader_a9f5af4fb41e2e7676f31852e70af4a9e}\label{classfilevault_1_1format_1_1FileHeader_a9f5af4fb41e2e7676f31852e70af4a9e} 
+\index{filevault::format::FileHeader@{filevault::format::FileHeader}!validate@{validate}}
+\index{validate@{validate}!filevault::format::FileHeader@{filevault::format::FileHeader}}
+\doxysubsubsection{\texorpdfstring{validate()}{validate()}}
+{\footnotesize\ttfamily bool filevault\+::format\+::\+File\+Header\+::validate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\Hypertarget{classfilevault_1_1format_1_1FileHeader_a17f177861fb83ff1ab2d36c6ab3b4ddc}\label{classfilevault_1_1format_1_1FileHeader_a17f177861fb83ff1ab2d36c6ab3b4ddc} 
+\index{filevault::format::FileHeader@{filevault::format::FileHeader}!write\_uint16@{write\_uint16}}
+\index{write\_uint16@{write\_uint16}!filevault::format::FileHeader@{filevault::format::FileHeader}}
+\doxysubsubsection{\texorpdfstring{write\_uint16()}{write\_uint16()}}
+{\footnotesize\ttfamily void filevault\+::format\+::\+File\+Header\+::write\+\_\+uint16 (\begin{DoxyParamCaption}\item[{std\+::vector$<$ uint8\+\_\+t $>$ \&}]{buf,  }\item[{uint16\+\_\+t}]{val }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1format_1_1FileHeader_a17f177861fb83ff1ab2d36c6ab3b4ddc_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1format_1_1FileHeader_a714ec7c1808f6b68149d093ba1f3593b}\label{classfilevault_1_1format_1_1FileHeader_a714ec7c1808f6b68149d093ba1f3593b} 
+\index{filevault::format::FileHeader@{filevault::format::FileHeader}!write\_uint32@{write\_uint32}}
+\index{write\_uint32@{write\_uint32}!filevault::format::FileHeader@{filevault::format::FileHeader}}
+\doxysubsubsection{\texorpdfstring{write\_uint32()}{write\_uint32()}}
+{\footnotesize\ttfamily void filevault\+::format\+::\+File\+Header\+::write\+\_\+uint32 (\begin{DoxyParamCaption}\item[{std\+::vector$<$ uint8\+\_\+t $>$ \&}]{buf,  }\item[{uint32\+\_\+t}]{val }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1format_1_1FileHeader_a714ec7c1808f6b68149d093ba1f3593b_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1format_1_1FileHeader_a2040d48a9e88c0b5be6af08a113a4973}\label{classfilevault_1_1format_1_1FileHeader_a2040d48a9e88c0b5be6af08a113a4973} 
+\index{filevault::format::FileHeader@{filevault::format::FileHeader}!write\_uint64@{write\_uint64}}
+\index{write\_uint64@{write\_uint64}!filevault::format::FileHeader@{filevault::format::FileHeader}}
+\doxysubsubsection{\texorpdfstring{write\_uint64()}{write\_uint64()}}
+{\footnotesize\ttfamily void filevault\+::format\+::\+File\+Header\+::write\+\_\+uint64 (\begin{DoxyParamCaption}\item[{std\+::vector$<$ uint8\+\_\+t $>$ \&}]{buf,  }\item[{uint64\+\_\+t}]{val }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1format_1_1FileHeader_a2040d48a9e88c0b5be6af08a113a4973_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classfilevault_1_1format_1_1FileHeader_a6554adbc7d63d97876ee4b0587c72499}\label{classfilevault_1_1format_1_1FileHeader_a6554adbc7d63d97876ee4b0587c72499} 
+\index{filevault::format::FileHeader@{filevault::format::FileHeader}!algorithm\_@{algorithm\_}}
+\index{algorithm\_@{algorithm\_}!filevault::format::FileHeader@{filevault::format::FileHeader}}
+\doxysubsubsection{\texorpdfstring{algorithm\_}{algorithm\_}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacefilevault_1_1core_ab1ba257a0205c63e9e1e3623170940a2}{core\+::\+Algorithm\+Type}} filevault\+::format\+::\+File\+Header\+::algorithm\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classfilevault_1_1format_1_1FileHeader_ab2ba4c1628c6948db26b569ca777a913}\label{classfilevault_1_1format_1_1FileHeader_ab2ba4c1628c6948db26b569ca777a913} 
+\index{filevault::format::FileHeader@{filevault::format::FileHeader}!encrypted\_size\_@{encrypted\_size\_}}
+\index{encrypted\_size\_@{encrypted\_size\_}!filevault::format::FileHeader@{filevault::format::FileHeader}}
+\doxysubsubsection{\texorpdfstring{encrypted\_size\_}{encrypted\_size\_}}
+{\footnotesize\ttfamily uint64\+\_\+t filevault\+::format\+::\+File\+Header\+::encrypted\+\_\+size\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classfilevault_1_1format_1_1FileHeader_abc8e30941ac18d8f897b32aa5a9f079a}\label{classfilevault_1_1format_1_1FileHeader_abc8e30941ac18d8f897b32aa5a9f079a} 
+\index{filevault::format::FileHeader@{filevault::format::FileHeader}!FLAG\_COMPRESSED@{FLAG\_COMPRESSED}}
+\index{FLAG\_COMPRESSED@{FLAG\_COMPRESSED}!filevault::format::FileHeader@{filevault::format::FileHeader}}
+\doxysubsubsection{\texorpdfstring{FLAG\_COMPRESSED}{FLAG\_COMPRESSED}}
+{\footnotesize\ttfamily constexpr uint32\+\_\+t filevault\+::format\+::\+File\+Header\+::\+FLAG\+\_\+\+COMPRESSED = 0x00000001\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}}
+
+\Hypertarget{classfilevault_1_1format_1_1FileHeader_a7617b01cc6fa61217be631d6516e8be1}\label{classfilevault_1_1format_1_1FileHeader_a7617b01cc6fa61217be631d6516e8be1} 
+\index{filevault::format::FileHeader@{filevault::format::FileHeader}!FLAG\_METADATA@{FLAG\_METADATA}}
+\index{FLAG\_METADATA@{FLAG\_METADATA}!filevault::format::FileHeader@{filevault::format::FileHeader}}
+\doxysubsubsection{\texorpdfstring{FLAG\_METADATA}{FLAG\_METADATA}}
+{\footnotesize\ttfamily constexpr uint32\+\_\+t filevault\+::format\+::\+File\+Header\+::\+FLAG\+\_\+\+METADATA = 0x00000002\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}}
+
+\Hypertarget{classfilevault_1_1format_1_1FileHeader_a54fefa6f0fcc4e3699188a7ed211f86f}\label{classfilevault_1_1format_1_1FileHeader_a54fefa6f0fcc4e3699188a7ed211f86f} 
+\index{filevault::format::FileHeader@{filevault::format::FileHeader}!flags\_@{flags\_}}
+\index{flags\_@{flags\_}!filevault::format::FileHeader@{filevault::format::FileHeader}}
+\doxysubsubsection{\texorpdfstring{flags\_}{flags\_}}
+{\footnotesize\ttfamily uint32\+\_\+t filevault\+::format\+::\+File\+Header\+::flags\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classfilevault_1_1format_1_1FileHeader_acbe736c00ddd5a4cb1aa31406efdf58f}\label{classfilevault_1_1format_1_1FileHeader_acbe736c00ddd5a4cb1aa31406efdf58f} 
+\index{filevault::format::FileHeader@{filevault::format::FileHeader}!kdf\_@{kdf\_}}
+\index{kdf\_@{kdf\_}!filevault::format::FileHeader@{filevault::format::FileHeader}}
+\doxysubsubsection{\texorpdfstring{kdf\_}{kdf\_}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacefilevault_1_1core_ad5938d2ac317833646f1d8b965e3768f}{core\+::\+KDFType}} filevault\+::format\+::\+File\+Header\+::kdf\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classfilevault_1_1format_1_1FileHeader_ad8fc05967d9ec3fcb83cd43c6abe98ad}\label{classfilevault_1_1format_1_1FileHeader_ad8fc05967d9ec3fcb83cd43c6abe98ad} 
+\index{filevault::format::FileHeader@{filevault::format::FileHeader}!MAGIC@{MAGIC}}
+\index{MAGIC@{MAGIC}!filevault::format::FileHeader@{filevault::format::FileHeader}}
+\doxysubsubsection{\texorpdfstring{MAGIC}{MAGIC}}
+{\footnotesize\ttfamily constexpr uint32\+\_\+t filevault\+::format\+::\+File\+Header\+::\+MAGIC = 0x544\+C5646\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}}
+
+\Hypertarget{classfilevault_1_1format_1_1FileHeader_aae8162b50b443ff8fcf1fe607cfc2134}\label{classfilevault_1_1format_1_1FileHeader_aae8162b50b443ff8fcf1fe607cfc2134} 
+\index{filevault::format::FileHeader@{filevault::format::FileHeader}!MIN\_HEADER\_SIZE@{MIN\_HEADER\_SIZE}}
+\index{MIN\_HEADER\_SIZE@{MIN\_HEADER\_SIZE}!filevault::format::FileHeader@{filevault::format::FileHeader}}
+\doxysubsubsection{\texorpdfstring{MIN\_HEADER\_SIZE}{MIN\_HEADER\_SIZE}}
+{\footnotesize\ttfamily constexpr size\+\_\+t filevault\+::format\+::\+File\+Header\+::\+MIN\+\_\+\+HEADER\+\_\+\+SIZE = 64\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}}
+
+\Hypertarget{classfilevault_1_1format_1_1FileHeader_a5aaabbdb2ede22c79a61f02408eba80a}\label{classfilevault_1_1format_1_1FileHeader_a5aaabbdb2ede22c79a61f02408eba80a} 
+\index{filevault::format::FileHeader@{filevault::format::FileHeader}!nonce\_@{nonce\_}}
+\index{nonce\_@{nonce\_}!filevault::format::FileHeader@{filevault::format::FileHeader}}
+\doxysubsubsection{\texorpdfstring{nonce\_}{nonce\_}}
+{\footnotesize\ttfamily std\+::vector$<$uint8\+\_\+t$>$ filevault\+::format\+::\+File\+Header\+::nonce\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classfilevault_1_1format_1_1FileHeader_a7be72506a6211bb66e323847ab22104a}\label{classfilevault_1_1format_1_1FileHeader_a7be72506a6211bb66e323847ab22104a} 
+\index{filevault::format::FileHeader@{filevault::format::FileHeader}!original\_size\_@{original\_size\_}}
+\index{original\_size\_@{original\_size\_}!filevault::format::FileHeader@{filevault::format::FileHeader}}
+\doxysubsubsection{\texorpdfstring{original\_size\_}{original\_size\_}}
+{\footnotesize\ttfamily uint64\+\_\+t filevault\+::format\+::\+File\+Header\+::original\+\_\+size\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classfilevault_1_1format_1_1FileHeader_a2ba76f5d4571a3b98e8d6bcc8bcc7962}\label{classfilevault_1_1format_1_1FileHeader_a2ba76f5d4571a3b98e8d6bcc8bcc7962} 
+\index{filevault::format::FileHeader@{filevault::format::FileHeader}!reserved\_@{reserved\_}}
+\index{reserved\_@{reserved\_}!filevault::format::FileHeader@{filevault::format::FileHeader}}
+\doxysubsubsection{\texorpdfstring{reserved\_}{reserved\_}}
+{\footnotesize\ttfamily std\+::array$<$uint8\+\_\+t, 16$>$ filevault\+::format\+::\+File\+Header\+::reserved\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classfilevault_1_1format_1_1FileHeader_a8965cd7a9081993219bd878f161078ce}\label{classfilevault_1_1format_1_1FileHeader_a8965cd7a9081993219bd878f161078ce} 
+\index{filevault::format::FileHeader@{filevault::format::FileHeader}!salt\_@{salt\_}}
+\index{salt\_@{salt\_}!filevault::format::FileHeader@{filevault::format::FileHeader}}
+\doxysubsubsection{\texorpdfstring{salt\_}{salt\_}}
+{\footnotesize\ttfamily std\+::vector$<$uint8\+\_\+t$>$ filevault\+::format\+::\+File\+Header\+::salt\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classfilevault_1_1format_1_1FileHeader_ab72c4132966c3bc351f81bd7a83d56b0}\label{classfilevault_1_1format_1_1FileHeader_ab72c4132966c3bc351f81bd7a83d56b0} 
+\index{filevault::format::FileHeader@{filevault::format::FileHeader}!security\_level\_@{security\_level\_}}
+\index{security\_level\_@{security\_level\_}!filevault::format::FileHeader@{filevault::format::FileHeader}}
+\doxysubsubsection{\texorpdfstring{security\_level\_}{security\_level\_}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacefilevault_1_1core_abcb3b3d896f7dc00926903183b3e2dc9}{core\+::\+Security\+Level}} filevault\+::format\+::\+File\+Header\+::security\+\_\+level\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classfilevault_1_1format_1_1FileHeader_a9dfb30622e6beced6dddebec4b901c49}\label{classfilevault_1_1format_1_1FileHeader_a9dfb30622e6beced6dddebec4b901c49} 
+\index{filevault::format::FileHeader@{filevault::format::FileHeader}!tag\_@{tag\_}}
+\index{tag\_@{tag\_}!filevault::format::FileHeader@{filevault::format::FileHeader}}
+\doxysubsubsection{\texorpdfstring{tag\_}{tag\_}}
+{\footnotesize\ttfamily std\+::vector$<$uint8\+\_\+t$>$ filevault\+::format\+::\+File\+Header\+::tag\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classfilevault_1_1format_1_1FileHeader_aa3611d40c6a44b520c3983676cf4d9d3}\label{classfilevault_1_1format_1_1FileHeader_aa3611d40c6a44b520c3983676cf4d9d3} 
+\index{filevault::format::FileHeader@{filevault::format::FileHeader}!timestamp\_@{timestamp\_}}
+\index{timestamp\_@{timestamp\_}!filevault::format::FileHeader@{filevault::format::FileHeader}}
+\doxysubsubsection{\texorpdfstring{timestamp\_}{timestamp\_}}
+{\footnotesize\ttfamily uint64\+\_\+t filevault\+::format\+::\+File\+Header\+::timestamp\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classfilevault_1_1format_1_1FileHeader_acee971dad13b3aedcf51924973d8a847}\label{classfilevault_1_1format_1_1FileHeader_acee971dad13b3aedcf51924973d8a847} 
+\index{filevault::format::FileHeader@{filevault::format::FileHeader}!VERSION\_MAJOR@{VERSION\_MAJOR}}
+\index{VERSION\_MAJOR@{VERSION\_MAJOR}!filevault::format::FileHeader@{filevault::format::FileHeader}}
+\doxysubsubsection{\texorpdfstring{VERSION\_MAJOR}{VERSION\_MAJOR}}
+{\footnotesize\ttfamily constexpr uint8\+\_\+t filevault\+::format\+::\+File\+Header\+::\+VERSION\+\_\+\+MAJOR = 1\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}}
+
+\Hypertarget{classfilevault_1_1format_1_1FileHeader_acaf28c9918e66bb58b7b47417fc49738}\label{classfilevault_1_1format_1_1FileHeader_acaf28c9918e66bb58b7b47417fc49738} 
+\index{filevault::format::FileHeader@{filevault::format::FileHeader}!VERSION\_MINOR@{VERSION\_MINOR}}
+\index{VERSION\_MINOR@{VERSION\_MINOR}!filevault::format::FileHeader@{filevault::format::FileHeader}}
+\doxysubsubsection{\texorpdfstring{VERSION\_MINOR}{VERSION\_MINOR}}
+{\footnotesize\ttfamily constexpr uint8\+\_\+t filevault\+::format\+::\+File\+Header\+::\+VERSION\+\_\+\+MINOR = 0\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/filevault/format/\mbox{\hyperlink{file__header_8hpp}{file\+\_\+header.\+hpp}}\item 
+src/format/\mbox{\hyperlink{file__header_8cpp}{file\+\_\+header.\+cpp}}\end{DoxyCompactItemize}

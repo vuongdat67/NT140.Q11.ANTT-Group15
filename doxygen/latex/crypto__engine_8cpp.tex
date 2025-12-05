@@ -1,0 +1,47 @@
+\doxysection{src/core/crypto\+\_\+engine.cpp File Reference}
+\hypertarget{crypto__engine_8cpp}{}\label{crypto__engine_8cpp}\index{src/core/crypto\_engine.cpp@{src/core/crypto\_engine.cpp}}
+{\ttfamily \#include "{}filevault/core/crypto\+\_\+engine.\+hpp"{}}\newline
+{\ttfamily \#include "{}filevault/core/types.\+hpp"{}}\newline
+{\ttfamily \#include "{}filevault/algorithms/symmetric/aes\+\_\+gcm.\+hpp"{}}\newline
+{\ttfamily \#include "{}filevault/algorithms/symmetric/aes\+\_\+cbc.\+hpp"{}}\newline
+{\ttfamily \#include "{}filevault/algorithms/symmetric/aes\+\_\+ctr.\+hpp"{}}\newline
+{\ttfamily \#include "{}filevault/algorithms/symmetric/aes\+\_\+cfb.\+hpp"{}}\newline
+{\ttfamily \#include "{}filevault/algorithms/symmetric/aes\+\_\+ofb.\+hpp"{}}\newline
+{\ttfamily \#include "{}filevault/algorithms/symmetric/aes\+\_\+ecb.\+hpp"{}}\newline
+{\ttfamily \#include "{}filevault/algorithms/symmetric/aes\+\_\+xts.\+hpp"{}}\newline
+{\ttfamily \#include "{}filevault/algorithms/symmetric/triple\+\_\+des.\+hpp"{}}\newline
+{\ttfamily \#include "{}filevault/algorithms/symmetric/chacha20\+\_\+poly1305.\+hpp"{}}\newline
+{\ttfamily \#include "{}filevault/algorithms/symmetric/serpent\+\_\+gcm.\+hpp"{}}\newline
+{\ttfamily \#include "{}filevault/algorithms/symmetric/twofish\+\_\+gcm.\+hpp"{}}\newline
+{\ttfamily \#include "{}filevault/algorithms/symmetric/camellia\+\_\+gcm.\+hpp"{}}\newline
+{\ttfamily \#include "{}filevault/algorithms/symmetric/aria\+\_\+gcm.\+hpp"{}}\newline
+{\ttfamily \#include "{}filevault/algorithms/symmetric/sm4\+\_\+gcm.\+hpp"{}}\newline
+{\ttfamily \#include "{}filevault/algorithms/asymmetric/rsa.\+hpp"{}}\newline
+{\ttfamily \#include "{}filevault/algorithms/asymmetric/ecc.\+hpp"{}}\newline
+{\ttfamily \#include "{}filevault/algorithms/pqc/post\+\_\+quantum.\+hpp"{}}\newline
+{\ttfamily \#include "{}filevault/algorithms/classical/caesar.\+hpp"{}}\newline
+{\ttfamily \#include "{}filevault/algorithms/classical/vigenere.\+hpp"{}}\newline
+{\ttfamily \#include "{}filevault/algorithms/classical/playfair.\+hpp"{}}\newline
+{\ttfamily \#include "{}filevault/algorithms/classical/hill.\+hpp"{}}\newline
+{\ttfamily \#include "{}filevault/algorithms/classical/substitution.\+hpp"{}}\newline
+{\ttfamily \#include $<$botan/auto\+\_\+rng.\+h$>$}\newline
+{\ttfamily \#include $<$botan/argon2.\+h$>$}\newline
+{\ttfamily \#include $<$botan/pwdhash.\+h$>$}\newline
+{\ttfamily \#include $<$spdlog/spdlog.\+h$>$}\newline
+{\ttfamily \#include $<$algorithm$>$}\newline
+{\ttfamily \#include $<$cctype$>$}\newline
+Include dependency graph for crypto\+\_\+engine.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{crypto__engine_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespacefilevault}{filevault}}
+\item 
+namespace \mbox{\hyperlink{namespacefilevault_1_1core}{filevault\+::core}}
+\end{DoxyCompactItemize}

@@ -1,0 +1,66 @@
+\doxysection{hash\+\_\+cmd.\+hpp}
+\hypertarget{hash__cmd_8hpp_source}{}\label{hash__cmd_8hpp_source}\index{include/filevault/cli/commands/hash\_cmd.hpp@{include/filevault/cli/commands/hash\_cmd.hpp}}
+\mbox{\hyperlink{hash__cmd_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ FILEVAULT\_CLI\_COMMANDS\_HASH\_CMD\_HPP}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ FILEVAULT\_CLI\_COMMANDS\_HASH\_CMD\_HPP}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{command_8hpp}{filevault/cli/command.hpp}}"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{crypto__engine_8hpp}{filevault/core/crypto\_engine.hpp}}"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <unordered\_map>}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacefilevault}{filevault}}\ \{}
+\DoxyCodeLine{00010\ \textcolor{keyword}{namespace\ }cli\ \{}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00024\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classfilevault_1_1cli_1_1HashCommand}{HashCommand}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classfilevault_1_1cli_1_1ICommand}{ICommand}}\ \{}
+\DoxyCodeLine{00025\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classfilevault_1_1cli_1_1HashCommand}{HashCommand}}(\mbox{\hyperlink{classfilevault_1_1core_1_1CryptoEngine}{core::CryptoEngine}}\&\ engine);}
+\DoxyCodeLine{00027\ \ \ \ \ }
+\DoxyCodeLine{00028\ \ \ \ \ std::string\ \mbox{\hyperlink{classfilevault_1_1cli_1_1HashCommand_a851d0623c1cda066171f255d3e441d82}{name}}()\textcolor{keyword}{\ const\ override\ }\{\ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}hash"{}};\ \}}
+\DoxyCodeLine{00029\ \ \ \ \ std::string\ \mbox{\hyperlink{classfilevault_1_1cli_1_1HashCommand_a0958b3a4ea698150ee74d8a543a2ed0f}{description}}()\textcolor{keyword}{\ const\ override\ }\{\ }
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Calculate\ cryptographic\ hash\ of\ files\ (MD5,\ SHA1-\/3,\ BLAKE2)"{}};\ }
+\DoxyCodeLine{00031\ \ \ \ \ \}}
+\DoxyCodeLine{00032\ \ \ \ \ }
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classfilevault_1_1cli_1_1HashCommand_a902dad711cc03489cdf0eac774ce8752}{setup}}(CLI::App\&\ app)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classfilevault_1_1cli_1_1HashCommand_a101a84dad18cfffee77ca84ac88615b3}{execute}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00037\ \ \ \ \ \mbox{\hyperlink{classfilevault_1_1core_1_1CryptoEngine}{core::CryptoEngine}}\&\ \mbox{\hyperlink{classfilevault_1_1cli_1_1HashCommand_aea71026df9c0c9cf21246d55f18bd2ea}{engine\_}};}
+\DoxyCodeLine{00038\ \ \ \ \ }
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{comment}{//\ Options}}
+\DoxyCodeLine{00040\ \ \ \ \ std::string\ \mbox{\hyperlink{classfilevault_1_1cli_1_1HashCommand_a021ffa7f23516745c1d8f4cb961871d8}{input\_file\_}};}
+\DoxyCodeLine{00041\ \ \ \ \ std::string\ \mbox{\hyperlink{classfilevault_1_1cli_1_1HashCommand_aff855c069c5b15a67a427156f3dbd2a0}{output\_file\_}};}
+\DoxyCodeLine{00042\ \ \ \ \ std::string\ \mbox{\hyperlink{classfilevault_1_1cli_1_1HashCommand_a4c5f31ec2a24d16abdeac40469e24e11}{algorithm\_}}\ =\ \textcolor{stringliteral}{"{}sha256"{}};}
+\DoxyCodeLine{00043\ \ \ \ \ std::string\ \mbox{\hyperlink{classfilevault_1_1cli_1_1HashCommand_aba9e76057268f2d0145d84edccd3185e}{output\_format\_}}\ =\ \textcolor{stringliteral}{"{}hex"{}};}
+\DoxyCodeLine{00044\ \ \ \ \ std::string\ \mbox{\hyperlink{classfilevault_1_1cli_1_1HashCommand_ae3283ce268c234b82f468254b07b889b}{verify\_hash\_}};}
+\DoxyCodeLine{00045\ \ \ \ \ std::string\ \mbox{\hyperlink{classfilevault_1_1cli_1_1HashCommand_a6baefce49b562623c53c1667906c6c86}{hmac\_key\_}};}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classfilevault_1_1cli_1_1HashCommand_a1ab8e2ad8fecdc3ba4379821432f279e}{uppercase\_}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classfilevault_1_1cli_1_1HashCommand_a9d4b02821b722995ff573780479ff686}{no\_filename\_}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classfilevault_1_1cli_1_1HashCommand_a15ccb8e2f865b1ce54dd3dd1de516938}{verbose\_}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classfilevault_1_1cli_1_1HashCommand_afdbfdaaaf370e7f437244546bc565122}{benchmark\_}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00050\ \ \ \ \ }
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{comment}{//\ Helper\ methods}}
+\DoxyCodeLine{00052\ \ \ \ \ std::string\ \mbox{\hyperlink{classfilevault_1_1cli_1_1HashCommand_a5d8f3cbd7f65b9009c532f0d64a8e42f}{get\_botan\_algorithm\_name}}(\textcolor{keyword}{const}\ std::string\&\ algo);}
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classfilevault_1_1cli_1_1HashCommand_ad4a931317994b0cef3ff1119df3a09f0}{is\_secure\_algorithm}}(\textcolor{keyword}{const}\ std::string\&\ algo);}
+\DoxyCodeLine{00054\ \ \ \ \ }
+\DoxyCodeLine{00055\ \ \ \ \ std::string\ \mbox{\hyperlink{classfilevault_1_1cli_1_1HashCommand_ae49310e22964f47b767a5f87873fcc99}{calculate\_file\_hash}}(}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ filepath,}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ algorithm}
+\DoxyCodeLine{00058\ \ \ \ \ );}
+\DoxyCodeLine{00059\ \ \ \ \ }
+\DoxyCodeLine{00060\ \ \ \ \ std::string\ \mbox{\hyperlink{classfilevault_1_1cli_1_1HashCommand_a6cc228dedaa6784ec976b27e32be7e08}{calculate\_file\_hmac}}(}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ filepath,}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ hash\_algorithm,}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ key}
+\DoxyCodeLine{00064\ \ \ \ \ );}
+\DoxyCodeLine{00065\ \ \ \ \ }
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classfilevault_1_1cli_1_1HashCommand_a482d075223c2bbb8b5841b1ce9ffdba6}{verify\_mode}}(\textcolor{keyword}{const}\ std::string\&\ calculated\_hash);}
+\DoxyCodeLine{00067\ \};}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \}\ \textcolor{comment}{//\ namespace\ cli}}
+\DoxyCodeLine{00070\ \}\ \textcolor{comment}{//\ namespace\ filevault}}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ FILEVAULT\_CLI\_COMMANDS\_HASH\_CMD\_HPP}}
+
+\end{DoxyCode}

@@ -1,0 +1,52 @@
+\doxysection{archive\+\_\+cmd.\+hpp}
+\hypertarget{archive__cmd_8hpp_source}{}\label{archive__cmd_8hpp_source}\index{include/filevault/cli/commands/archive\_cmd.hpp@{include/filevault/cli/commands/archive\_cmd.hpp}}
+\mbox{\hyperlink{archive__cmd_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ FILEVAULT\_CLI\_COMMANDS\_ARCHIVE\_CMD\_HPP}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ FILEVAULT\_CLI\_COMMANDS\_ARCHIVE\_CMD\_HPP}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{command_8hpp}{filevault/cli/command.hpp}}"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{crypto__engine_8hpp}{filevault/core/crypto\_engine.hpp}}"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacefilevault_1_1cli_1_1commands}{filevault::cli::commands}}\ \{}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00017\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classfilevault_1_1cli_1_1commands_1_1ArchiveCommand}{ArchiveCommand}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classfilevault_1_1cli_1_1ICommand}{cli::ICommand}}\ \{}
+\DoxyCodeLine{00018\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classfilevault_1_1cli_1_1commands_1_1ArchiveCommand_ac4bdbaba26bfe21eb30f014d2713fc52}{ArchiveCommand}}(\mbox{\hyperlink{classfilevault_1_1core_1_1CryptoEngine}{core::CryptoEngine}}\&\ engine)\ }
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{classfilevault_1_1cli_1_1commands_1_1ArchiveCommand_a70d585fbc6e775b317691d9361e34747}{engine\_}}(engine)\ \{\}}
+\DoxyCodeLine{00021\ \ \ \ \ }
+\DoxyCodeLine{00022\ \ \ \ \ std::string\ \mbox{\hyperlink{classfilevault_1_1cli_1_1commands_1_1ArchiveCommand_ab610bdda80f7a544a366e1c24e357b34}{name}}()\textcolor{keyword}{\ const\ override\ }\{\ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}archive"{}};\ \}}
+\DoxyCodeLine{00023\ \ \ \ \ }
+\DoxyCodeLine{00024\ \ \ \ \ std::string\ \mbox{\hyperlink{classfilevault_1_1cli_1_1commands_1_1ArchiveCommand_a4ca923e5ab05840c929448a1cb1dd213}{description}}()\textcolor{keyword}{\ const\ override\ }\{}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Create\ encrypted\ archive\ from\ multiple\ files"{}};}
+\DoxyCodeLine{00026\ \ \ \ \ \}}
+\DoxyCodeLine{00027\ \ \ \ \ }
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classfilevault_1_1cli_1_1commands_1_1ArchiveCommand_a115297ec242afc4bec5d4d4e3f23713c}{setup}}(CLI::App\&\ app)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classfilevault_1_1cli_1_1commands_1_1ArchiveCommand_a162338a7beb4768289e9bfb5636ed776}{execute}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00030\ \ \ \ \ }
+\DoxyCodeLine{00031\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classfilevault_1_1cli_1_1commands_1_1ArchiveCommand_a1a183289c7a40e379f41aa0217ab1f93}{do\_create}}();}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classfilevault_1_1cli_1_1commands_1_1ArchiveCommand_ad3f36b6946e3df00b1b4f5b88422da74}{do\_extract}}();}
+\DoxyCodeLine{00034\ \ \ \ \ }
+\DoxyCodeLine{00035\ \ \ \ \ \mbox{\hyperlink{classfilevault_1_1core_1_1CryptoEngine}{core::CryptoEngine}}\&\ \mbox{\hyperlink{classfilevault_1_1cli_1_1commands_1_1ArchiveCommand_a70d585fbc6e775b317691d9361e34747}{engine\_}};}
+\DoxyCodeLine{00036\ \ \ \ \ }
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{comment}{//\ Options}}
+\DoxyCodeLine{00038\ \ \ \ \ std::vector<std::string>\ \mbox{\hyperlink{classfilevault_1_1cli_1_1commands_1_1ArchiveCommand_af4f5891ac8cbf74c320ade06fc107f57}{input\_files\_}};}
+\DoxyCodeLine{00039\ \ \ \ \ std::string\ \mbox{\hyperlink{classfilevault_1_1cli_1_1commands_1_1ArchiveCommand_a0d9a461e4b6467a8dd896764b92e6b1a}{output\_file\_}};}
+\DoxyCodeLine{00040\ \ \ \ \ std::string\ \mbox{\hyperlink{classfilevault_1_1cli_1_1commands_1_1ArchiveCommand_ab2666b9efd16c35e9347c80cc3f33e03}{password\_}};}
+\DoxyCodeLine{00041\ \ \ \ \ std::string\ \mbox{\hyperlink{classfilevault_1_1cli_1_1commands_1_1ArchiveCommand_a4bb0e6128f6103b6b5cd0a1df44aa821}{algorithm\_}}\ =\ \textcolor{stringliteral}{"{}aes-\/256-\/gcm"{}};}
+\DoxyCodeLine{00042\ \ \ \ \ std::string\ \mbox{\hyperlink{classfilevault_1_1cli_1_1commands_1_1ArchiveCommand_a38183cd2832fc239dd4b068f4412a033}{compression\_}}\ =\ \textcolor{stringliteral}{"{}zlib"{}};}
+\DoxyCodeLine{00043\ \ \ \ \ std::string\ \mbox{\hyperlink{classfilevault_1_1cli_1_1commands_1_1ArchiveCommand_a7b70a3798c7f8fbf6a1f686dd4cfbed1}{kdf\_}}\ =\ \textcolor{stringliteral}{"{}argon2id"{}};}
+\DoxyCodeLine{00044\ \ \ \ \ std::string\ \mbox{\hyperlink{classfilevault_1_1cli_1_1commands_1_1ArchiveCommand_ac88489cec5cce411670e91dc7f46dda6}{security\_level\_}}\ =\ \textcolor{stringliteral}{"{}medium"{}};}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classfilevault_1_1cli_1_1commands_1_1ArchiveCommand_a66a6ac0183d0887a7f94fa1541c7e6c7}{extract\_}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classfilevault_1_1cli_1_1commands_1_1ArchiveCommand_aac66a97312d2eea6c2e14d43780454db}{verbose\_}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00047\ \ \ \ \ std::string\ \mbox{\hyperlink{classfilevault_1_1cli_1_1commands_1_1ArchiveCommand_a090a946815abad7a55ed6fabdaf7e603}{extract\_dir\_}}\ =\ \textcolor{stringliteral}{"{}."{}};}
+\DoxyCodeLine{00048\ \};}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \}\ \textcolor{comment}{//\ namespace\ filevault::cli::commands}}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ FILEVAULT\_CLI\_COMMANDS\_ARCHIVE\_CMD\_HPP}}
+
+\end{DoxyCode}

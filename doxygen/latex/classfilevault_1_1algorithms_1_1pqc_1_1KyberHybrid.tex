@@ -1,0 +1,326 @@
+\doxysection{filevault\+::algorithms\+::pqc\+::Kyber\+Hybrid Class Reference}
+\hypertarget{classfilevault_1_1algorithms_1_1pqc_1_1KyberHybrid}{}\label{classfilevault_1_1algorithms_1_1pqc_1_1KyberHybrid}\index{filevault::algorithms::pqc::KyberHybrid@{filevault::algorithms::pqc::KyberHybrid}}
+
+
+Hybrid encryption combining \doxylink{classfilevault_1_1algorithms_1_1pqc_1_1Kyber}{Kyber} with AES-\/\+GCM.  
+
+
+
+
+{\ttfamily \#include $<$post\+\_\+quantum.\+hpp$>$}
+
+
+
+Inheritance diagram for filevault\+::algorithms\+::pqc\+::Kyber\+Hybrid\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=205pt]{classfilevault_1_1algorithms_1_1pqc_1_1KyberHybrid__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for filevault\+::algorithms\+::pqc\+::Kyber\+Hybrid\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=274pt]{classfilevault_1_1algorithms_1_1pqc_1_1KyberHybrid__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classfilevault_1_1algorithms_1_1pqc_1_1KyberHybrid_a443bfa251b8718ff95d224cdca6a429c}{Kyber\+Hybrid}} (\mbox{\hyperlink{classfilevault_1_1algorithms_1_1pqc_1_1Kyber_a2a1b6b7fc7a7ab8e89c7847f6f03a659}{Kyber\+::\+Variant}} variant=\mbox{\hyperlink{classfilevault_1_1algorithms_1_1pqc_1_1Kyber_a2a1b6b7fc7a7ab8e89c7847f6f03a659ad0a2cb37f22c49d046991761ac806940}{Kyber\+::\+Variant\+::\+Kyber768}})
+\item 
+\mbox{\hyperlink{classfilevault_1_1algorithms_1_1pqc_1_1KyberHybrid_af88e67e6b18217fad1a2519f8815a448}{\texorpdfstring{$\sim$}{\string~}\+Kyber\+Hybrid}} () override=default
+\item 
+std\+::string \mbox{\hyperlink{classfilevault_1_1algorithms_1_1pqc_1_1KyberHybrid_a596be8406182d3f0ef656b22c8825dc0}{name}} () const override
+\begin{DoxyCompactList}\small\item\em Get algorithm name. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacefilevault_1_1core_ab1ba257a0205c63e9e1e3623170940a2}{core\+::\+Algorithm\+Type}} \mbox{\hyperlink{classfilevault_1_1algorithms_1_1pqc_1_1KyberHybrid_a7317ab62840df642a7ec2ed7c42686ca}{type}} () const override
+\begin{DoxyCompactList}\small\item\em Get algorithm type. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structfilevault_1_1core_1_1CryptoResult}{core\+::\+Crypto\+Result}} \mbox{\hyperlink{classfilevault_1_1algorithms_1_1pqc_1_1KyberHybrid_aac2a5696257e3f9240555282710a1b18}{encrypt}} (std\+::span$<$ const uint8\+\_\+t $>$ plaintext, std\+::span$<$ const uint8\+\_\+t $>$ key, const \mbox{\hyperlink{structfilevault_1_1core_1_1EncryptionConfig}{core\+::\+Encryption\+Config}} \&config) override
+\begin{DoxyCompactList}\small\item\em Encrypt data using Kyber+\+AES-\/\+GCM hybrid. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structfilevault_1_1core_1_1CryptoResult}{core\+::\+Crypto\+Result}} \mbox{\hyperlink{classfilevault_1_1algorithms_1_1pqc_1_1KyberHybrid_aa9b605d329aad998422eef0cb21beb7e}{decrypt}} (std\+::span$<$ const uint8\+\_\+t $>$ ciphertext, std\+::span$<$ const uint8\+\_\+t $>$ key, const \mbox{\hyperlink{structfilevault_1_1core_1_1EncryptionConfig}{core\+::\+Encryption\+Config}} \&config) override
+\begin{DoxyCompactList}\small\item\em Decrypt data using Kyber+\+AES-\/\+GCM hybrid. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{classfilevault_1_1algorithms_1_1pqc_1_1KyberHybrid_a6e332e9cf7f8e6ceef5fda7f18f1ed14}{key\+\_\+size}} () const override
+\begin{DoxyCompactList}\small\item\em Get recommended key size in bytes. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classfilevault_1_1algorithms_1_1pqc_1_1KyberHybrid_ae86959d7985107e1186243eefce6be44}{is\+\_\+suitable\+\_\+for}} (\mbox{\hyperlink{namespacefilevault_1_1core_abcb3b3d896f7dc00926903183b3e2dc9}{core\+::\+Security\+Level}} level) const override
+\begin{DoxyCompactList}\small\item\em Check if algorithm is suitable for security level. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structfilevault_1_1algorithms_1_1pqc_1_1PQKeyPair}{PQKey\+Pair}} \mbox{\hyperlink{classfilevault_1_1algorithms_1_1pqc_1_1KyberHybrid_a56b4fd1fd9575e4c9693237eb8ed9645}{generate\+\_\+keypair}} ()
+\begin{DoxyCompactList}\small\item\em Generate hybrid key pair. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classfilevault_1_1core_1_1ICryptoAlgorithm}{filevault\+::core\+::\+ICrypto\+Algorithm}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classfilevault_1_1core_1_1ICryptoAlgorithm_a36383558169617931374ca3b64399818}{\texorpdfstring{$\sim$}{\string~}\+ICrypto\+Algorithm}} ()=default
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classfilevault_1_1algorithms_1_1pqc_1_1Kyber}{Kyber}} \mbox{\hyperlink{classfilevault_1_1algorithms_1_1pqc_1_1KyberHybrid_a788f812a478129405d927dc524fcefa1}{kyber\+\_\+}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Hybrid encryption combining \doxylink{classfilevault_1_1algorithms_1_1pqc_1_1Kyber}{Kyber} with AES-\/\+GCM. 
+
+This provides defense-\/in-\/depth by combining\+:
+\begin{DoxyItemize}
+\item \doxylink{classfilevault_1_1algorithms_1_1pqc_1_1Kyber}{Kyber} for post-\/quantum secure key encapsulation
+\item AES-\/256-\/\+GCM for symmetric encryption
+\end{DoxyItemize}
+
+Even if one algorithm is broken, the other provides protection. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classfilevault_1_1algorithms_1_1pqc_1_1KyberHybrid_a443bfa251b8718ff95d224cdca6a429c}\label{classfilevault_1_1algorithms_1_1pqc_1_1KyberHybrid_a443bfa251b8718ff95d224cdca6a429c} 
+\index{filevault::algorithms::pqc::KyberHybrid@{filevault::algorithms::pqc::KyberHybrid}!KyberHybrid@{KyberHybrid}}
+\index{KyberHybrid@{KyberHybrid}!filevault::algorithms::pqc::KyberHybrid@{filevault::algorithms::pqc::KyberHybrid}}
+\doxysubsubsection{\texorpdfstring{KyberHybrid()}{KyberHybrid()}}
+{\footnotesize\ttfamily filevault\+::algorithms\+::pqc\+::\+Kyber\+Hybrid\+::\+Kyber\+Hybrid (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classfilevault_1_1algorithms_1_1pqc_1_1Kyber_a2a1b6b7fc7a7ab8e89c7847f6f03a659}{Kyber\+::\+Variant}}}]{variant = {\ttfamily \mbox{\hyperlink{classfilevault_1_1algorithms_1_1pqc_1_1Kyber_a2a1b6b7fc7a7ab8e89c7847f6f03a659ad0a2cb37f22c49d046991761ac806940}{Kyber\+::\+Variant\+::\+Kyber768}}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1algorithms_1_1pqc_1_1KyberHybrid_a443bfa251b8718ff95d224cdca6a429c_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1algorithms_1_1pqc_1_1KyberHybrid_af88e67e6b18217fad1a2519f8815a448}\label{classfilevault_1_1algorithms_1_1pqc_1_1KyberHybrid_af88e67e6b18217fad1a2519f8815a448} 
+\index{filevault::algorithms::pqc::KyberHybrid@{filevault::algorithms::pqc::KyberHybrid}!````~KyberHybrid@{\texorpdfstring{$\sim$}{\string~}KyberHybrid}}
+\index{````~KyberHybrid@{\texorpdfstring{$\sim$}{\string~}KyberHybrid}!filevault::algorithms::pqc::KyberHybrid@{filevault::algorithms::pqc::KyberHybrid}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}KyberHybrid()}{\string~KyberHybrid()}}
+{\footnotesize\ttfamily filevault\+::algorithms\+::pqc\+::\+Kyber\+Hybrid\+::\texorpdfstring{$\sim$}{\string~}\+Kyber\+Hybrid (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [default]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classfilevault_1_1algorithms_1_1pqc_1_1KyberHybrid_aa9b605d329aad998422eef0cb21beb7e}\label{classfilevault_1_1algorithms_1_1pqc_1_1KyberHybrid_aa9b605d329aad998422eef0cb21beb7e} 
+\index{filevault::algorithms::pqc::KyberHybrid@{filevault::algorithms::pqc::KyberHybrid}!decrypt@{decrypt}}
+\index{decrypt@{decrypt}!filevault::algorithms::pqc::KyberHybrid@{filevault::algorithms::pqc::KyberHybrid}}
+\doxysubsubsection{\texorpdfstring{decrypt()}{decrypt()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structfilevault_1_1core_1_1CryptoResult}{core\+::\+Crypto\+Result}} filevault\+::algorithms\+::pqc\+::\+Kyber\+Hybrid\+::decrypt (\begin{DoxyParamCaption}\item[{std\+::span$<$ const uint8\+\_\+t $>$}]{ciphertext,  }\item[{std\+::span$<$ const uint8\+\_\+t $>$}]{key,  }\item[{const \mbox{\hyperlink{structfilevault_1_1core_1_1EncryptionConfig}{core\+::\+Encryption\+Config}} \&}]{config }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Decrypt data using Kyber+\+AES-\/\+GCM hybrid. 
+
+
+\begin{DoxyEnumerate}
+\item Decapsulate \doxylink{classfilevault_1_1algorithms_1_1pqc_1_1Kyber}{Kyber} ciphertext to get shared secret
+\item Use shared secret as AES key
+\item Decrypt data with AES-\/256-\/\+GCM
+\end{DoxyEnumerate}
+
+
+\begin{DoxyParams}{Parameters}
+{\em ciphertext} & Encrypted data \\
+\hline
+{\em key} & Own \doxylink{classfilevault_1_1algorithms_1_1pqc_1_1Kyber}{Kyber} private key \\
+\hline
+{\em config} & Configuration \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Decrypted plaintext 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classfilevault_1_1core_1_1ICryptoAlgorithm_a5ad6e9e19a3ed1dd3f0b49106bcaac0d}{filevault\+::core\+::\+ICrypto\+Algorithm}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1algorithms_1_1pqc_1_1KyberHybrid_aa9b605d329aad998422eef0cb21beb7e_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1algorithms_1_1pqc_1_1KyberHybrid_aa9b605d329aad998422eef0cb21beb7e_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1algorithms_1_1pqc_1_1KyberHybrid_aac2a5696257e3f9240555282710a1b18}\label{classfilevault_1_1algorithms_1_1pqc_1_1KyberHybrid_aac2a5696257e3f9240555282710a1b18} 
+\index{filevault::algorithms::pqc::KyberHybrid@{filevault::algorithms::pqc::KyberHybrid}!encrypt@{encrypt}}
+\index{encrypt@{encrypt}!filevault::algorithms::pqc::KyberHybrid@{filevault::algorithms::pqc::KyberHybrid}}
+\doxysubsubsection{\texorpdfstring{encrypt()}{encrypt()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structfilevault_1_1core_1_1CryptoResult}{core\+::\+Crypto\+Result}} filevault\+::algorithms\+::pqc\+::\+Kyber\+Hybrid\+::encrypt (\begin{DoxyParamCaption}\item[{std\+::span$<$ const uint8\+\_\+t $>$}]{plaintext,  }\item[{std\+::span$<$ const uint8\+\_\+t $>$}]{key,  }\item[{const \mbox{\hyperlink{structfilevault_1_1core_1_1EncryptionConfig}{core\+::\+Encryption\+Config}} \&}]{config }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Encrypt data using Kyber+\+AES-\/\+GCM hybrid. 
+
+
+\begin{DoxyEnumerate}
+\item Encapsulate with \doxylink{classfilevault_1_1algorithms_1_1pqc_1_1Kyber}{Kyber} to get shared secret
+\item Use shared secret as AES key
+\item Encrypt data with AES-\/256-\/\+GCM
+\end{DoxyEnumerate}
+
+
+\begin{DoxyParams}{Parameters}
+{\em plaintext} & Data to encrypt \\
+\hline
+{\em key} & Recipient\textquotesingle{}s \doxylink{classfilevault_1_1algorithms_1_1pqc_1_1Kyber}{Kyber} public key \\
+\hline
+{\em config} & Configuration \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Ciphertext containing \doxylink{classfilevault_1_1algorithms_1_1pqc_1_1Kyber}{Kyber} ciphertext + AES ciphertext 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classfilevault_1_1core_1_1ICryptoAlgorithm_a5b9102cef54b84b54feea1dc16561a2d}{filevault\+::core\+::\+ICrypto\+Algorithm}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1algorithms_1_1pqc_1_1KyberHybrid_aac2a5696257e3f9240555282710a1b18_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1algorithms_1_1pqc_1_1KyberHybrid_aac2a5696257e3f9240555282710a1b18_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1algorithms_1_1pqc_1_1KyberHybrid_a56b4fd1fd9575e4c9693237eb8ed9645}\label{classfilevault_1_1algorithms_1_1pqc_1_1KyberHybrid_a56b4fd1fd9575e4c9693237eb8ed9645} 
+\index{filevault::algorithms::pqc::KyberHybrid@{filevault::algorithms::pqc::KyberHybrid}!generate\_keypair@{generate\_keypair}}
+\index{generate\_keypair@{generate\_keypair}!filevault::algorithms::pqc::KyberHybrid@{filevault::algorithms::pqc::KyberHybrid}}
+\doxysubsubsection{\texorpdfstring{generate\_keypair()}{generate\_keypair()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structfilevault_1_1algorithms_1_1pqc_1_1PQKeyPair}{PQKey\+Pair}} filevault\+::algorithms\+::pqc\+::\+Kyber\+Hybrid\+::generate\+\_\+keypair (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Generate hybrid key pair. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1algorithms_1_1pqc_1_1KyberHybrid_a56b4fd1fd9575e4c9693237eb8ed9645_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1algorithms_1_1pqc_1_1KyberHybrid_a56b4fd1fd9575e4c9693237eb8ed9645_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1algorithms_1_1pqc_1_1KyberHybrid_ae86959d7985107e1186243eefce6be44}\label{classfilevault_1_1algorithms_1_1pqc_1_1KyberHybrid_ae86959d7985107e1186243eefce6be44} 
+\index{filevault::algorithms::pqc::KyberHybrid@{filevault::algorithms::pqc::KyberHybrid}!is\_suitable\_for@{is\_suitable\_for}}
+\index{is\_suitable\_for@{is\_suitable\_for}!filevault::algorithms::pqc::KyberHybrid@{filevault::algorithms::pqc::KyberHybrid}}
+\doxysubsubsection{\texorpdfstring{is\_suitable\_for()}{is\_suitable\_for()}}
+{\footnotesize\ttfamily bool filevault\+::algorithms\+::pqc\+::\+Kyber\+Hybrid\+::is\+\_\+suitable\+\_\+for (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacefilevault_1_1core_abcb3b3d896f7dc00926903183b3e2dc9}{core\+::\+Security\+Level}}}]{level }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Check if algorithm is suitable for security level. 
+
+
+
+Implements \mbox{\hyperlink{classfilevault_1_1core_1_1ICryptoAlgorithm_aab479734daf06d3f76af5d916c0285fa}{filevault\+::core\+::\+ICrypto\+Algorithm}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1algorithms_1_1pqc_1_1KyberHybrid_ae86959d7985107e1186243eefce6be44_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1algorithms_1_1pqc_1_1KyberHybrid_a6e332e9cf7f8e6ceef5fda7f18f1ed14}\label{classfilevault_1_1algorithms_1_1pqc_1_1KyberHybrid_a6e332e9cf7f8e6ceef5fda7f18f1ed14} 
+\index{filevault::algorithms::pqc::KyberHybrid@{filevault::algorithms::pqc::KyberHybrid}!key\_size@{key\_size}}
+\index{key\_size@{key\_size}!filevault::algorithms::pqc::KyberHybrid@{filevault::algorithms::pqc::KyberHybrid}}
+\doxysubsubsection{\texorpdfstring{key\_size()}{key\_size()}}
+{\footnotesize\ttfamily size\+\_\+t filevault\+::algorithms\+::pqc\+::\+Kyber\+Hybrid\+::key\+\_\+size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get recommended key size in bytes. 
+
+
+
+Implements \mbox{\hyperlink{classfilevault_1_1core_1_1ICryptoAlgorithm_af9ccb47457495eb99988fef0b5b2bbe8}{filevault\+::core\+::\+ICrypto\+Algorithm}}.
+
+\Hypertarget{classfilevault_1_1algorithms_1_1pqc_1_1KyberHybrid_a596be8406182d3f0ef656b22c8825dc0}\label{classfilevault_1_1algorithms_1_1pqc_1_1KyberHybrid_a596be8406182d3f0ef656b22c8825dc0} 
+\index{filevault::algorithms::pqc::KyberHybrid@{filevault::algorithms::pqc::KyberHybrid}!name@{name}}
+\index{name@{name}!filevault::algorithms::pqc::KyberHybrid@{filevault::algorithms::pqc::KyberHybrid}}
+\doxysubsubsection{\texorpdfstring{name()}{name()}}
+{\footnotesize\ttfamily std\+::string filevault\+::algorithms\+::pqc\+::\+Kyber\+Hybrid\+::name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get algorithm name. 
+
+
+
+Implements \mbox{\hyperlink{classfilevault_1_1core_1_1ICryptoAlgorithm_a8acdc23e4f2ea77bb4a5b9820b27fa66}{filevault\+::core\+::\+ICrypto\+Algorithm}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1algorithms_1_1pqc_1_1KyberHybrid_a596be8406182d3f0ef656b22c8825dc0_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1algorithms_1_1pqc_1_1KyberHybrid_a7317ab62840df642a7ec2ed7c42686ca}\label{classfilevault_1_1algorithms_1_1pqc_1_1KyberHybrid_a7317ab62840df642a7ec2ed7c42686ca} 
+\index{filevault::algorithms::pqc::KyberHybrid@{filevault::algorithms::pqc::KyberHybrid}!type@{type}}
+\index{type@{type}!filevault::algorithms::pqc::KyberHybrid@{filevault::algorithms::pqc::KyberHybrid}}
+\doxysubsubsection{\texorpdfstring{type()}{type()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacefilevault_1_1core_ab1ba257a0205c63e9e1e3623170940a2}{core\+::\+Algorithm\+Type}} filevault\+::algorithms\+::pqc\+::\+Kyber\+Hybrid\+::type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get algorithm type. 
+
+
+
+Implements \mbox{\hyperlink{classfilevault_1_1core_1_1ICryptoAlgorithm_a11b7820f7b0bbb5fd6668fac3b78a7e1}{filevault\+::core\+::\+ICrypto\+Algorithm}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1algorithms_1_1pqc_1_1KyberHybrid_a7317ab62840df642a7ec2ed7c42686ca_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1algorithms_1_1pqc_1_1KyberHybrid_a7317ab62840df642a7ec2ed7c42686ca_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classfilevault_1_1algorithms_1_1pqc_1_1KyberHybrid_a788f812a478129405d927dc524fcefa1}\label{classfilevault_1_1algorithms_1_1pqc_1_1KyberHybrid_a788f812a478129405d927dc524fcefa1} 
+\index{filevault::algorithms::pqc::KyberHybrid@{filevault::algorithms::pqc::KyberHybrid}!kyber\_@{kyber\_}}
+\index{kyber\_@{kyber\_}!filevault::algorithms::pqc::KyberHybrid@{filevault::algorithms::pqc::KyberHybrid}}
+\doxysubsubsection{\texorpdfstring{kyber\_}{kyber\_}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classfilevault_1_1algorithms_1_1pqc_1_1Kyber}{Kyber}} filevault\+::algorithms\+::pqc\+::\+Kyber\+Hybrid\+::kyber\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/filevault/algorithms/pqc/\mbox{\hyperlink{post__quantum_8hpp}{post\+\_\+quantum.\+hpp}}\item 
+src/algorithms/pqc/\mbox{\hyperlink{post__quantum_8cpp}{post\+\_\+quantum.\+cpp}}\end{DoxyCompactItemize}

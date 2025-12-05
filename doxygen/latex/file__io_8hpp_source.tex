@@ -1,0 +1,33 @@
+\doxysection{file\+\_\+io.\+hpp}
+\hypertarget{file__io_8hpp_source}{}\label{file__io_8hpp_source}\index{include/filevault/utils/file\_io.hpp@{include/filevault/utils/file\_io.hpp}}
+\mbox{\hyperlink{file__io_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ FILEVAULT\_UTILS\_FILE\_IO\_HPP}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ FILEVAULT\_UTILS\_FILE\_IO\_HPP}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <cstdint>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <span>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{result_8hpp}{filevault/core/result.hpp}}"{}}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacefilevault}{filevault}}\ \{}
+\DoxyCodeLine{00011\ \textcolor{keyword}{namespace\ }utils\ \{}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00016\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classfilevault_1_1utils_1_1FileIO}{FileIO}}\ \{}
+\DoxyCodeLine{00017\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{structfilevault_1_1core_1_1Result}{core::Result<std::vector<uint8\_t>}}>\ \mbox{\hyperlink{classfilevault_1_1utils_1_1FileIO_aeaf18516aaab9458054cd3ae2f14f534}{read\_file}}(\textcolor{keyword}{const}\ std::string\&\ path);}
+\DoxyCodeLine{00022\ \ \ \ \ }
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{structfilevault_1_1core_1_1Result}{core::Result<void>}}\ \mbox{\hyperlink{classfilevault_1_1utils_1_1FileIO_aa04405afe66cbfe09e222050793a40d6}{write\_file}}(\textcolor{keyword}{const}\ std::string\&\ path,\ std::span<const\ uint8\_t>\ data);}
+\DoxyCodeLine{00027\ \ \ \ \ }
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classfilevault_1_1utils_1_1FileIO_a0a74316e6ed58ff0092d3365a3b6e9c4}{file\_exists}}(\textcolor{keyword}{const}\ std::string\&\ path);}
+\DoxyCodeLine{00032\ \ \ \ \ }
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classfilevault_1_1utils_1_1FileIO_ab91d5f102e5ef3bb96e9b825cad23d04}{file\_size}}(\textcolor{keyword}{const}\ std::string\&\ path);}
+\DoxyCodeLine{00037\ \};}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \}\ \textcolor{comment}{//\ namespace\ utils}}
+\DoxyCodeLine{00040\ \}\ \textcolor{comment}{//\ namespace\ filevault}}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ FILEVAULT\_UTILS\_FILE\_IO\_HPP}}
+
+\end{DoxyCode}

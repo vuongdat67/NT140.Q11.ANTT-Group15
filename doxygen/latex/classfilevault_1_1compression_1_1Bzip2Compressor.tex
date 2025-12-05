@@ -1,0 +1,117 @@
+\doxysection{filevault\+::compression\+::Bzip2\+Compressor Class Reference}
+\hypertarget{classfilevault_1_1compression_1_1Bzip2Compressor}{}\label{classfilevault_1_1compression_1_1Bzip2Compressor}\index{filevault::compression::Bzip2Compressor@{filevault::compression::Bzip2Compressor}}
+
+
+BZIP2 compressor (better ratio, slower)  
+
+
+
+
+{\ttfamily \#include $<$compressor.\+hpp$>$}
+
+
+
+Inheritance diagram for filevault\+::compression\+::Bzip2\+Compressor\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=205pt]{classfilevault_1_1compression_1_1Bzip2Compressor__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for filevault\+::compression\+::Bzip2\+Compressor\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=205pt]{classfilevault_1_1compression_1_1Bzip2Compressor__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{classfilevault_1_1compression_1_1Bzip2Compressor_af704acf1ce91d1e844e1a6963e762f9f}{name}} () const override
+\begin{DoxyCompactList}\small\item\em Get compressor name. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structfilevault_1_1compression_1_1CompressionResult}{Compression\+Result}} \mbox{\hyperlink{classfilevault_1_1compression_1_1Bzip2Compressor_a6bd9ee11ba6b30c116d262f36f27435a}{compress}} (std\+::span$<$ const uint8\+\_\+t $>$ input, int level=6) override
+\begin{DoxyCompactList}\small\item\em Compress data. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structfilevault_1_1compression_1_1CompressionResult}{Compression\+Result}} \mbox{\hyperlink{classfilevault_1_1compression_1_1Bzip2Compressor_a2db0671e3ca386030ce06c9217a11631}{decompress}} (std\+::span$<$ const uint8\+\_\+t $>$ input) override
+\begin{DoxyCompactList}\small\item\em Decompress data. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classfilevault_1_1compression_1_1ICompressor}{filevault\+::compression\+::\+ICompressor}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classfilevault_1_1compression_1_1ICompressor_a0f7a59ccdc3d563924a70ba0f0b70f5c}{\texorpdfstring{$\sim$}{\string~}\+ICompressor}} ()=default
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+BZIP2 compressor (better ratio, slower) 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classfilevault_1_1compression_1_1Bzip2Compressor_a6bd9ee11ba6b30c116d262f36f27435a}\label{classfilevault_1_1compression_1_1Bzip2Compressor_a6bd9ee11ba6b30c116d262f36f27435a} 
+\index{filevault::compression::Bzip2Compressor@{filevault::compression::Bzip2Compressor}!compress@{compress}}
+\index{compress@{compress}!filevault::compression::Bzip2Compressor@{filevault::compression::Bzip2Compressor}}
+\doxysubsubsection{\texorpdfstring{compress()}{compress()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structfilevault_1_1compression_1_1CompressionResult}{Compression\+Result}} filevault\+::compression\+::\+Bzip2\+Compressor\+::compress (\begin{DoxyParamCaption}\item[{std\+::span$<$ const uint8\+\_\+t $>$}]{input,  }\item[{int}]{level = {\ttfamily 6} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Compress data. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em input} & Data to compress \\
+\hline
+{\em level} & Compression level (1-\/9, algorithm-\/specific) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Compressed data 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classfilevault_1_1compression_1_1ICompressor_a9f5965e075283a118a99119a9359f102}{filevault\+::compression\+::\+ICompressor}}.
+
+\Hypertarget{classfilevault_1_1compression_1_1Bzip2Compressor_a2db0671e3ca386030ce06c9217a11631}\label{classfilevault_1_1compression_1_1Bzip2Compressor_a2db0671e3ca386030ce06c9217a11631} 
+\index{filevault::compression::Bzip2Compressor@{filevault::compression::Bzip2Compressor}!decompress@{decompress}}
+\index{decompress@{decompress}!filevault::compression::Bzip2Compressor@{filevault::compression::Bzip2Compressor}}
+\doxysubsubsection{\texorpdfstring{decompress()}{decompress()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structfilevault_1_1compression_1_1CompressionResult}{Compression\+Result}} filevault\+::compression\+::\+Bzip2\+Compressor\+::decompress (\begin{DoxyParamCaption}\item[{std\+::span$<$ const uint8\+\_\+t $>$}]{input }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Decompress data. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em input} & Compressed data \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Decompressed data 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classfilevault_1_1compression_1_1ICompressor_a5ffea9c3e4bf9304dcacad2fc6a2c575}{filevault\+::compression\+::\+ICompressor}}.
+
+\Hypertarget{classfilevault_1_1compression_1_1Bzip2Compressor_af704acf1ce91d1e844e1a6963e762f9f}\label{classfilevault_1_1compression_1_1Bzip2Compressor_af704acf1ce91d1e844e1a6963e762f9f} 
+\index{filevault::compression::Bzip2Compressor@{filevault::compression::Bzip2Compressor}!name@{name}}
+\index{name@{name}!filevault::compression::Bzip2Compressor@{filevault::compression::Bzip2Compressor}}
+\doxysubsubsection{\texorpdfstring{name()}{name()}}
+{\footnotesize\ttfamily std\+::string filevault\+::compression\+::\+Bzip2\+Compressor\+::name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get compressor name. 
+
+
+
+Implements \mbox{\hyperlink{classfilevault_1_1compression_1_1ICompressor_ad73882b08b0b4f3bc455a0a723ddcda7}{filevault\+::compression\+::\+ICompressor}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/filevault/compression/\mbox{\hyperlink{compressor_8hpp}{compressor.\+hpp}}\item 
+src/compression/\mbox{\hyperlink{compressor_8cpp}{compressor.\+cpp}}\end{DoxyCompactItemize}

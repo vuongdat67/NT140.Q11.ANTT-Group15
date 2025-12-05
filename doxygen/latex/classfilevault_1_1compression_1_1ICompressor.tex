@@ -1,0 +1,112 @@
+\doxysection{filevault\+::compression\+::ICompressor Class Reference}
+\hypertarget{classfilevault_1_1compression_1_1ICompressor}{}\label{classfilevault_1_1compression_1_1ICompressor}\index{filevault::compression::ICompressor@{filevault::compression::ICompressor}}
+
+
+Interface for compression algorithms.  
+
+
+
+
+{\ttfamily \#include $<$compressor.\+hpp$>$}
+
+
+
+Inheritance diagram for filevault\+::compression\+::ICompressor\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1compression_1_1ICompressor__inherit__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classfilevault_1_1compression_1_1ICompressor_a0f7a59ccdc3d563924a70ba0f0b70f5c}{\texorpdfstring{$\sim$}{\string~}\+ICompressor}} ()=default
+\item 
+virtual std\+::string \mbox{\hyperlink{classfilevault_1_1compression_1_1ICompressor_ad73882b08b0b4f3bc455a0a723ddcda7}{name}} () const =0
+\begin{DoxyCompactList}\small\item\em Get compressor name. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{structfilevault_1_1compression_1_1CompressionResult}{Compression\+Result}} \mbox{\hyperlink{classfilevault_1_1compression_1_1ICompressor_a9f5965e075283a118a99119a9359f102}{compress}} (std\+::span$<$ const uint8\+\_\+t $>$ input, int level=6)=0
+\begin{DoxyCompactList}\small\item\em Compress data. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{structfilevault_1_1compression_1_1CompressionResult}{Compression\+Result}} \mbox{\hyperlink{classfilevault_1_1compression_1_1ICompressor_a5ffea9c3e4bf9304dcacad2fc6a2c575}{decompress}} (std\+::span$<$ const uint8\+\_\+t $>$ input)=0
+\begin{DoxyCompactList}\small\item\em Decompress data. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Interface for compression algorithms. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classfilevault_1_1compression_1_1ICompressor_a0f7a59ccdc3d563924a70ba0f0b70f5c}\label{classfilevault_1_1compression_1_1ICompressor_a0f7a59ccdc3d563924a70ba0f0b70f5c} 
+\index{filevault::compression::ICompressor@{filevault::compression::ICompressor}!````~ICompressor@{\texorpdfstring{$\sim$}{\string~}ICompressor}}
+\index{````~ICompressor@{\texorpdfstring{$\sim$}{\string~}ICompressor}!filevault::compression::ICompressor@{filevault::compression::ICompressor}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}ICompressor()}{\string~ICompressor()}}
+{\footnotesize\ttfamily virtual filevault\+::compression\+::\+ICompressor\+::\texorpdfstring{$\sim$}{\string~}\+ICompressor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classfilevault_1_1compression_1_1ICompressor_a9f5965e075283a118a99119a9359f102}\label{classfilevault_1_1compression_1_1ICompressor_a9f5965e075283a118a99119a9359f102} 
+\index{filevault::compression::ICompressor@{filevault::compression::ICompressor}!compress@{compress}}
+\index{compress@{compress}!filevault::compression::ICompressor@{filevault::compression::ICompressor}}
+\doxysubsubsection{\texorpdfstring{compress()}{compress()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{structfilevault_1_1compression_1_1CompressionResult}{Compression\+Result}} filevault\+::compression\+::\+ICompressor\+::compress (\begin{DoxyParamCaption}\item[{std\+::span$<$ const uint8\+\_\+t $>$}]{input,  }\item[{int}]{level = {\ttfamily 6} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Compress data. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em input} & Data to compress \\
+\hline
+{\em level} & Compression level (1-\/9, algorithm-\/specific) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Compressed data 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classfilevault_1_1compression_1_1ZlibCompressor_a7e925f8f86d240fb0fdf682611b1b55b}{filevault\+::compression\+::\+Zlib\+Compressor}}, \mbox{\hyperlink{classfilevault_1_1compression_1_1Bzip2Compressor_a6bd9ee11ba6b30c116d262f36f27435a}{filevault\+::compression\+::\+Bzip2\+Compressor}}, and \mbox{\hyperlink{classfilevault_1_1compression_1_1LzmaCompressor_a9343e005b1b6f040a4898b9fd6e0a71d}{filevault\+::compression\+::\+Lzma\+Compressor}}.
+
+\Hypertarget{classfilevault_1_1compression_1_1ICompressor_a5ffea9c3e4bf9304dcacad2fc6a2c575}\label{classfilevault_1_1compression_1_1ICompressor_a5ffea9c3e4bf9304dcacad2fc6a2c575} 
+\index{filevault::compression::ICompressor@{filevault::compression::ICompressor}!decompress@{decompress}}
+\index{decompress@{decompress}!filevault::compression::ICompressor@{filevault::compression::ICompressor}}
+\doxysubsubsection{\texorpdfstring{decompress()}{decompress()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{structfilevault_1_1compression_1_1CompressionResult}{Compression\+Result}} filevault\+::compression\+::\+ICompressor\+::decompress (\begin{DoxyParamCaption}\item[{std\+::span$<$ const uint8\+\_\+t $>$}]{input }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Decompress data. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em input} & Compressed data \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Decompressed data 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classfilevault_1_1compression_1_1ZlibCompressor_ad9008bd8fb5503d1fddbb440de8ea190}{filevault\+::compression\+::\+Zlib\+Compressor}}, \mbox{\hyperlink{classfilevault_1_1compression_1_1Bzip2Compressor_a2db0671e3ca386030ce06c9217a11631}{filevault\+::compression\+::\+Bzip2\+Compressor}}, and \mbox{\hyperlink{classfilevault_1_1compression_1_1LzmaCompressor_a43155962756ebbbf9c6e758b5dfd602b}{filevault\+::compression\+::\+Lzma\+Compressor}}.
+
+\Hypertarget{classfilevault_1_1compression_1_1ICompressor_ad73882b08b0b4f3bc455a0a723ddcda7}\label{classfilevault_1_1compression_1_1ICompressor_ad73882b08b0b4f3bc455a0a723ddcda7} 
+\index{filevault::compression::ICompressor@{filevault::compression::ICompressor}!name@{name}}
+\index{name@{name}!filevault::compression::ICompressor@{filevault::compression::ICompressor}}
+\doxysubsubsection{\texorpdfstring{name()}{name()}}
+{\footnotesize\ttfamily virtual std\+::string filevault\+::compression\+::\+ICompressor\+::name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Get compressor name. 
+
+
+
+Implemented in \mbox{\hyperlink{classfilevault_1_1compression_1_1ZlibCompressor_a9889af9a97b10fb16a2c1f74c714c7e0}{filevault\+::compression\+::\+Zlib\+Compressor}}, \mbox{\hyperlink{classfilevault_1_1compression_1_1Bzip2Compressor_af704acf1ce91d1e844e1a6963e762f9f}{filevault\+::compression\+::\+Bzip2\+Compressor}}, and \mbox{\hyperlink{classfilevault_1_1compression_1_1LzmaCompressor_ae4bc7f04889a0d9e0ddd2680a54bb55e}{filevault\+::compression\+::\+Lzma\+Compressor}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/filevault/compression/\mbox{\hyperlink{compressor_8hpp}{compressor.\+hpp}}\end{DoxyCompactItemize}

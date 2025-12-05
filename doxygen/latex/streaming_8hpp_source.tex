@@ -1,0 +1,101 @@
+\doxysection{streaming.\+hpp}
+\hypertarget{streaming_8hpp_source}{}\label{streaming_8hpp_source}\index{include/filevault/core/streaming.hpp@{include/filevault/core/streaming.hpp}}
+\mbox{\hyperlink{streaming_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ FILEVAULT\_CORE\_STREAMING\_HPP}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ FILEVAULT\_CORE\_STREAMING\_HPP}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <cstdint>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <functional>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <fstream>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{types_8hpp}{types.hpp}}"{}}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{result_8hpp}{result.hpp}}"{}}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacefilevault}{filevault}}\ \{}
+\DoxyCodeLine{00013\ \textcolor{keyword}{namespace\ }core\ \{}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00018\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structfilevault_1_1core_1_1ChunkInfo}{ChunkInfo}}\ \{}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{structfilevault_1_1core_1_1ChunkInfo_a5019d3c8ef763ed1f30874ee0c900de8}{chunk\_index}};}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{structfilevault_1_1core_1_1ChunkInfo_a070ee398baa6a619cf022521a9499153}{chunk\_size}};}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{structfilevault_1_1core_1_1ChunkInfo_a92c86002fbd4b454e37dfc123ed03322}{total\_chunks}};}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{structfilevault_1_1core_1_1ChunkInfo_abe5a93de433d3120e77826c4b25db51b}{bytes\_processed}};}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{structfilevault_1_1core_1_1ChunkInfo_a591ccbdeac55e132be7429ef31137b41}{total\_bytes}};}
+\DoxyCodeLine{00024\ \};}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00031\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespacefilevault_1_1core_addf387e7b32c628f1b2b0d33c5ce6dc4}{StreamProgressCallback}}\ =\ std::function<bool(\textcolor{keyword}{const}\ \mbox{\hyperlink{structfilevault_1_1core_1_1ChunkInfo}{ChunkInfo}}\&\ info)>;}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00036\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structfilevault_1_1core_1_1StreamingConfig}{StreamingConfig}}\ \{}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{structfilevault_1_1core_1_1StreamingConfig_ad9a33ec5be949dcdd18570b5c9928aa8}{chunk\_size}}\ =\ 64\ *\ 1024\ *\ 1024;\ \ \textcolor{comment}{//\ 64MB\ default\ chunk\ size}}
+\DoxyCodeLine{00038\ \ \ \ \ \mbox{\hyperlink{namespacefilevault_1_1core_ab1ba257a0205c63e9e1e3623170940a2}{AlgorithmType}}\ \mbox{\hyperlink{structfilevault_1_1core_1_1StreamingConfig_a3f31afa99c6309bb64bc3a5f0dd710d7}{algorithm}}\ =\ \mbox{\hyperlink{namespacefilevault_1_1core_ab1ba257a0205c63e9e1e3623170940a2abe0f06b885034bb30ebb9fd868bba087}{AlgorithmType::AES\_256\_GCM}};}
+\DoxyCodeLine{00039\ \ \ \ \ \mbox{\hyperlink{namespacefilevault_1_1core_ad5938d2ac317833646f1d8b965e3768f}{KDFType}}\ \mbox{\hyperlink{structfilevault_1_1core_1_1StreamingConfig_a76dd4a748229fb91652e1fcbe7b6d242}{kdf}}\ =\ \mbox{\hyperlink{namespacefilevault_1_1core_ad5938d2ac317833646f1d8b965e3768fa0b06f1bf38e4ec2b1c827b6c31fd6510}{KDFType::ARGON2ID}};}
+\DoxyCodeLine{00040\ \ \ \ \ \mbox{\hyperlink{namespacefilevault_1_1core_abcb3b3d896f7dc00926903183b3e2dc9}{SecurityLevel}}\ \mbox{\hyperlink{structfilevault_1_1core_1_1StreamingConfig_a550da1afe48f09119090c21073128fdb}{level}}\ =\ \mbox{\hyperlink{namespacefilevault_1_1core_abcb3b3d896f7dc00926903183b3e2dc9a3dfb3ae3cdaa322f0388f1a531c39520}{SecurityLevel::STRONG}};}
+\DoxyCodeLine{00041\ \ \ \ \ \mbox{\hyperlink{namespacefilevault_1_1core_ac7e3615724bd970e96e131cab64ef303}{CompressionType}}\ \mbox{\hyperlink{structfilevault_1_1core_1_1StreamingConfig_ae0b1c4268c7bd8e6a77b74b6f5bf27b3}{compression}}\ =\ \mbox{\hyperlink{namespacefilevault_1_1core_ac7e3615724bd970e96e131cab64ef303ab50339a10e1de285ac99d4c3990b8693}{CompressionType::NONE}};}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structfilevault_1_1core_1_1StreamingConfig_ab1dcdcc1d812046cc3f4025614795bfc}{compression\_level}}\ =\ 6;}
+\DoxyCodeLine{00043\ \ \ \ \ \mbox{\hyperlink{namespacefilevault_1_1core_addf387e7b32c628f1b2b0d33c5ce6dc4}{StreamProgressCallback}}\ \mbox{\hyperlink{structfilevault_1_1core_1_1StreamingConfig_aace1c6fbd02944a258cdf3e48a79ccc0}{progress\_callback}}\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00044\ \};}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00049\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structfilevault_1_1core_1_1StreamingResult}{StreamingResult}}\ \{}
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structfilevault_1_1core_1_1StreamingResult_afe74d93ab118287768b0512367dda6ba}{success}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00051\ \ \ \ \ std::string\ \mbox{\hyperlink{structfilevault_1_1core_1_1StreamingResult_ad948fd738e381c5e776ced6788403f84}{error\_message}};}
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{structfilevault_1_1core_1_1StreamingResult_a6229b80993cf11fe05e4e0392ea2d6f2}{bytes\_processed}}\ =\ 0;}
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{structfilevault_1_1core_1_1StreamingResult_ae4b5af24afd0c89ed6e5badf88c3a159}{chunks\_processed}}\ =\ 0;}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{structfilevault_1_1core_1_1StreamingResult_a03ed8d350e44dd126bdd77ad035fecd0}{processing\_time\_ms}}\ =\ 0.0;}
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{structfilevault_1_1core_1_1StreamingResult_ab243e6f2f02cd986c79cc11808b39e3c}{throughput\_mbps}}\ =\ 0.0;}
+\DoxyCodeLine{00056\ \};}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00071\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classfilevault_1_1core_1_1StreamingCrypto}{StreamingCrypto}}\ \{}
+\DoxyCodeLine{00072\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{structfilevault_1_1core_1_1StreamingResult}{StreamingResult}}\ \mbox{\hyperlink{classfilevault_1_1core_1_1StreamingCrypto_af24fc5198c0965a7f7224d35e6db26bc}{encrypt\_file}}(}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ input\_path,}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ output\_path,}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ password,}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structfilevault_1_1core_1_1StreamingConfig}{StreamingConfig}}\&\ config\ =\ \{\}}
+\DoxyCodeLine{00086\ \ \ \ \ );}
+\DoxyCodeLine{00087\ \ \ \ \ }
+\DoxyCodeLine{00096\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{structfilevault_1_1core_1_1StreamingResult}{StreamingResult}}\ \mbox{\hyperlink{classfilevault_1_1core_1_1StreamingCrypto_ac7f926a4f7a3a6afcce63a5ece7df84a}{decrypt\_file}}(}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ input\_path,}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ output\_path,}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ password,}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespacefilevault_1_1core_addf387e7b32c628f1b2b0d33c5ce6dc4}{StreamProgressCallback}}\ progress\_callback\ =\ \textcolor{keyword}{nullptr}}
+\DoxyCodeLine{00101\ \ \ \ \ );}
+\DoxyCodeLine{00102\ \ \ \ \ }
+\DoxyCodeLine{00109\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classfilevault_1_1core_1_1StreamingCrypto_a661f6fee24eba6d526983efe0de0cfce}{should\_use\_streaming}}(}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ file\_path,}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ threshold\ =\ 100\ *\ 1024\ *\ 1024}
+\DoxyCodeLine{00112\ \ \ \ \ );}
+\DoxyCodeLine{00113\ \ \ \ \ }
+\DoxyCodeLine{00118\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classfilevault_1_1core_1_1StreamingCrypto_ab3f5fcb98258d7294df1a49072afe902}{get\_recommended\_chunk\_size}}();}
+\DoxyCodeLine{00119\ }
+\DoxyCodeLine{00120\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00124\ \ \ \ \ \textcolor{keyword}{static}\ std::vector<uint8\_t>\ \mbox{\hyperlink{classfilevault_1_1core_1_1StreamingCrypto_a5402145fe43280b8bf994ac371aa52f8}{derive\_chunk\_nonce}}(}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<uint8\_t>\&\ base\_nonce,}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ chunk\_index}
+\DoxyCodeLine{00127\ \ \ \ \ );}
+\DoxyCodeLine{00128\ \ \ \ \ }
+\DoxyCodeLine{00132\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classfilevault_1_1core_1_1StreamingCrypto_ac3915140893c7cd4d8b96ea38d18597d}{write\_stream\_header}}(}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ std::ofstream\&\ file,}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structfilevault_1_1core_1_1StreamingConfig}{StreamingConfig}}\&\ config,}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<uint8\_t>\&\ salt,}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<uint8\_t>\&\ base\_nonce,}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ total\_size,}
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ chunk\_count}
+\DoxyCodeLine{00139\ \ \ \ \ );}
+\DoxyCodeLine{00140\ \ \ \ \ }
+\DoxyCodeLine{00144\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classfilevault_1_1core_1_1StreamingCrypto_aed32c0bcf8bd237fd4e05049e351dcc8}{read\_stream\_header}}(}
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ std::ifstream\&\ file,}
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structfilevault_1_1core_1_1StreamingConfig}{StreamingConfig}}\&\ config,}
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ std::vector<uint8\_t>\&\ salt,}
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ std::vector<uint8\_t>\&\ base\_nonce,}
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\&\ original\_size,}
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\&\ chunk\_count}
+\DoxyCodeLine{00151\ \ \ \ \ );}
+\DoxyCodeLine{00152\ \};}
+\DoxyCodeLine{00153\ }
+\DoxyCodeLine{00154\ \}\ \textcolor{comment}{//\ namespace\ core}}
+\DoxyCodeLine{00155\ \}\ \textcolor{comment}{//\ namespace\ filevault}}
+\DoxyCodeLine{00156\ }
+\DoxyCodeLine{00157\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ FILEVAULT\_CORE\_STREAMING\_HPP}}
+
+\end{DoxyCode}

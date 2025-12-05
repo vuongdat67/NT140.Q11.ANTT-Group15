@@ -1,0 +1,310 @@
+\doxysection{filevault\+::algorithms\+::symmetric\+::AES\+\_\+\+XTS Class Reference}
+\hypertarget{classfilevault_1_1algorithms_1_1symmetric_1_1AES__XTS}{}\label{classfilevault_1_1algorithms_1_1symmetric_1_1AES__XTS}\index{filevault::algorithms::symmetric::AES\_XTS@{filevault::algorithms::symmetric::AES\_XTS}}
+
+
+AES-\/\+XTS encryption algorithm.  
+
+
+
+
+{\ttfamily \#include $<$aes\+\_\+xts.\+hpp$>$}
+
+
+
+Inheritance diagram for filevault\+::algorithms\+::symmetric\+::AES\+\_\+\+XTS\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=205pt]{classfilevault_1_1algorithms_1_1symmetric_1_1AES__XTS__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for filevault\+::algorithms\+::symmetric\+::AES\+\_\+\+XTS\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=205pt]{classfilevault_1_1algorithms_1_1symmetric_1_1AES__XTS__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1AES__XTS_a959079f8588157b06f851095431714f6}{AES\+\_\+\+XTS}} (size\+\_\+t key\+\_\+bits=256)
+\begin{DoxyCompactList}\small\item\em Construct AES-\/\+XTS with specified key size. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1AES__XTS_ad38e715ff65367072fed4294cfc2f356}{\texorpdfstring{$\sim$}{\string~}\+AES\+\_\+\+XTS}} () override=default
+\item 
+std\+::string \mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1AES__XTS_a29d0af17fc42ff20f0fb48074e6bb668}{name}} () const override
+\begin{DoxyCompactList}\small\item\em Get algorithm name. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacefilevault_1_1core_ab1ba257a0205c63e9e1e3623170940a2}{core\+::\+Algorithm\+Type}} \mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1AES__XTS_a7c8d8b97997f37d7c7e5396735ffa530}{type}} () const override
+\begin{DoxyCompactList}\small\item\em Get algorithm type. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structfilevault_1_1core_1_1CryptoResult}{core\+::\+Crypto\+Result}} \mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1AES__XTS_aedaafdbb4d6500874697422f385f7d6a}{encrypt}} (std\+::span$<$ const uint8\+\_\+t $>$ plaintext, std\+::span$<$ const uint8\+\_\+t $>$ key, const \mbox{\hyperlink{structfilevault_1_1core_1_1EncryptionConfig}{core\+::\+Encryption\+Config}} \&config) override
+\begin{DoxyCompactList}\small\item\em Encrypt data. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structfilevault_1_1core_1_1CryptoResult}{core\+::\+Crypto\+Result}} \mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1AES__XTS_ac961825bc311ac87a4ad5d050491833d}{decrypt}} (std\+::span$<$ const uint8\+\_\+t $>$ ciphertext, std\+::span$<$ const uint8\+\_\+t $>$ key, const \mbox{\hyperlink{structfilevault_1_1core_1_1EncryptionConfig}{core\+::\+Encryption\+Config}} \&config) override
+\begin{DoxyCompactList}\small\item\em Decrypt data. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1AES__XTS_a39b71ae5037e825f2f19a3ae6ae49047}{key\+\_\+size}} () const override
+\begin{DoxyCompactList}\small\item\em Get recommended key size in bytes. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1AES__XTS_aef2eb960196b86f51c4a1f4fa4c98276}{tweak\+\_\+size}} () const
+\item 
+size\+\_\+t \mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1AES__XTS_aec6b2da7cc7ad77ca4dc71ab5ba1100f}{block\+\_\+size}} () const
+\item 
+bool \mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1AES__XTS_a63095cc30e42f01319c75ad0e83aaf0c}{requires\+\_\+padding}} () const
+\item 
+bool \mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1AES__XTS_a0492d8df0e24d98e851e6f4553ee9aeb}{is\+\_\+authenticated}} () const
+\item 
+bool \mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1AES__XTS_a41659aed3059d44922f8e8ff92da7578}{is\+\_\+suitable\+\_\+for}} (\mbox{\hyperlink{namespacefilevault_1_1core_abcb3b3d896f7dc00926903183b3e2dc9}{core\+::\+Security\+Level}} level) const override
+\begin{DoxyCompactList}\small\item\em Check if algorithm is suitable for security level. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classfilevault_1_1core_1_1ICryptoAlgorithm}{filevault\+::core\+::\+ICrypto\+Algorithm}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classfilevault_1_1core_1_1ICryptoAlgorithm_a36383558169617931374ca3b64399818}{\texorpdfstring{$\sim$}{\string~}\+ICrypto\+Algorithm}} ()=default
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+size\+\_\+t \mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1AES__XTS_af6db99c59d0d071c1f500ef8cc14307a}{key\+\_\+bits\+\_\+}}
+\item 
+\mbox{\hyperlink{namespacefilevault_1_1core_ab1ba257a0205c63e9e1e3623170940a2}{core\+::\+Algorithm\+Type}} \mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1AES__XTS_a6f3dcd23ce5b59ecd5b15f5740e84a2d}{type\+\_\+}}
+\item 
+std\+::string \mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1AES__XTS_a90d0888049d35f91da5baddf6db7ef32}{botan\+\_\+name\+\_\+}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+AES-\/\+XTS encryption algorithm. 
+
+Features\+:
+\begin{DoxyItemize}
+\item Designed for disk/sector encryption
+\item Uses two keys (effectively double key size)
+\item Tweak value provides sector-\/level randomization
+\item No ciphertext expansion (same size as plaintext)
+\item Not suitable for streaming data 
+\end{DoxyItemize}
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classfilevault_1_1algorithms_1_1symmetric_1_1AES__XTS_a959079f8588157b06f851095431714f6}\label{classfilevault_1_1algorithms_1_1symmetric_1_1AES__XTS_a959079f8588157b06f851095431714f6} 
+\index{filevault::algorithms::symmetric::AES\_XTS@{filevault::algorithms::symmetric::AES\_XTS}!AES\_XTS@{AES\_XTS}}
+\index{AES\_XTS@{AES\_XTS}!filevault::algorithms::symmetric::AES\_XTS@{filevault::algorithms::symmetric::AES\_XTS}}
+\doxysubsubsection{\texorpdfstring{AES\_XTS()}{AES\_XTS()}}
+{\footnotesize\ttfamily filevault\+::algorithms\+::symmetric\+::\+AES\+\_\+\+XTS\+::\+AES\+\_\+\+XTS (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{key\+\_\+bits = {\ttfamily 256} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Construct AES-\/\+XTS with specified key size. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em key\+\_\+bits} & Key size per cipher in bits (128 or 256) Total key is 2x this (256 or 512 bits) \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classfilevault_1_1algorithms_1_1symmetric_1_1AES__XTS_ad38e715ff65367072fed4294cfc2f356}\label{classfilevault_1_1algorithms_1_1symmetric_1_1AES__XTS_ad38e715ff65367072fed4294cfc2f356} 
+\index{filevault::algorithms::symmetric::AES\_XTS@{filevault::algorithms::symmetric::AES\_XTS}!````~AES\_XTS@{\texorpdfstring{$\sim$}{\string~}AES\_XTS}}
+\index{````~AES\_XTS@{\texorpdfstring{$\sim$}{\string~}AES\_XTS}!filevault::algorithms::symmetric::AES\_XTS@{filevault::algorithms::symmetric::AES\_XTS}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}AES\_XTS()}{\string~AES\_XTS()}}
+{\footnotesize\ttfamily filevault\+::algorithms\+::symmetric\+::\+AES\+\_\+\+XTS\+::\texorpdfstring{$\sim$}{\string~}\+AES\+\_\+\+XTS (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [default]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classfilevault_1_1algorithms_1_1symmetric_1_1AES__XTS_aec6b2da7cc7ad77ca4dc71ab5ba1100f}\label{classfilevault_1_1algorithms_1_1symmetric_1_1AES__XTS_aec6b2da7cc7ad77ca4dc71ab5ba1100f} 
+\index{filevault::algorithms::symmetric::AES\_XTS@{filevault::algorithms::symmetric::AES\_XTS}!block\_size@{block\_size}}
+\index{block\_size@{block\_size}!filevault::algorithms::symmetric::AES\_XTS@{filevault::algorithms::symmetric::AES\_XTS}}
+\doxysubsubsection{\texorpdfstring{block\_size()}{block\_size()}}
+{\footnotesize\ttfamily size\+\_\+t filevault\+::algorithms\+::symmetric\+::\+AES\+\_\+\+XTS\+::block\+\_\+size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1algorithms_1_1symmetric_1_1AES__XTS_aec6b2da7cc7ad77ca4dc71ab5ba1100f_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1algorithms_1_1symmetric_1_1AES__XTS_ac961825bc311ac87a4ad5d050491833d}\label{classfilevault_1_1algorithms_1_1symmetric_1_1AES__XTS_ac961825bc311ac87a4ad5d050491833d} 
+\index{filevault::algorithms::symmetric::AES\_XTS@{filevault::algorithms::symmetric::AES\_XTS}!decrypt@{decrypt}}
+\index{decrypt@{decrypt}!filevault::algorithms::symmetric::AES\_XTS@{filevault::algorithms::symmetric::AES\_XTS}}
+\doxysubsubsection{\texorpdfstring{decrypt()}{decrypt()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structfilevault_1_1core_1_1CryptoResult}{core\+::\+Crypto\+Result}} filevault\+::algorithms\+::symmetric\+::\+AES\+\_\+\+XTS\+::decrypt (\begin{DoxyParamCaption}\item[{std\+::span$<$ const uint8\+\_\+t $>$}]{ciphertext,  }\item[{std\+::span$<$ const uint8\+\_\+t $>$}]{key,  }\item[{const \mbox{\hyperlink{structfilevault_1_1core_1_1EncryptionConfig}{core\+::\+Encryption\+Config}} \&}]{config }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Decrypt data. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ciphertext} & Encrypted data \\
+\hline
+{\em key} & Decryption key (derived from password) \\
+\hline
+{\em config} & Decryption configuration \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Decrypted data 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classfilevault_1_1core_1_1ICryptoAlgorithm_a5ad6e9e19a3ed1dd3f0b49106bcaac0d}{filevault\+::core\+::\+ICrypto\+Algorithm}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1algorithms_1_1symmetric_1_1AES__XTS_ac961825bc311ac87a4ad5d050491833d_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1algorithms_1_1symmetric_1_1AES__XTS_aedaafdbb4d6500874697422f385f7d6a}\label{classfilevault_1_1algorithms_1_1symmetric_1_1AES__XTS_aedaafdbb4d6500874697422f385f7d6a} 
+\index{filevault::algorithms::symmetric::AES\_XTS@{filevault::algorithms::symmetric::AES\_XTS}!encrypt@{encrypt}}
+\index{encrypt@{encrypt}!filevault::algorithms::symmetric::AES\_XTS@{filevault::algorithms::symmetric::AES\_XTS}}
+\doxysubsubsection{\texorpdfstring{encrypt()}{encrypt()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structfilevault_1_1core_1_1CryptoResult}{core\+::\+Crypto\+Result}} filevault\+::algorithms\+::symmetric\+::\+AES\+\_\+\+XTS\+::encrypt (\begin{DoxyParamCaption}\item[{std\+::span$<$ const uint8\+\_\+t $>$}]{plaintext,  }\item[{std\+::span$<$ const uint8\+\_\+t $>$}]{key,  }\item[{const \mbox{\hyperlink{structfilevault_1_1core_1_1EncryptionConfig}{core\+::\+Encryption\+Config}} \&}]{config }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Encrypt data. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em plaintext} & Input data to encrypt \\
+\hline
+{\em key} & Encryption key (derived from password) \\
+\hline
+{\em config} & Encryption configuration \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Encrypted data with metadata 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classfilevault_1_1core_1_1ICryptoAlgorithm_a5b9102cef54b84b54feea1dc16561a2d}{filevault\+::core\+::\+ICrypto\+Algorithm}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1algorithms_1_1symmetric_1_1AES__XTS_aedaafdbb4d6500874697422f385f7d6a_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1algorithms_1_1symmetric_1_1AES__XTS_a0492d8df0e24d98e851e6f4553ee9aeb}\label{classfilevault_1_1algorithms_1_1symmetric_1_1AES__XTS_a0492d8df0e24d98e851e6f4553ee9aeb} 
+\index{filevault::algorithms::symmetric::AES\_XTS@{filevault::algorithms::symmetric::AES\_XTS}!is\_authenticated@{is\_authenticated}}
+\index{is\_authenticated@{is\_authenticated}!filevault::algorithms::symmetric::AES\_XTS@{filevault::algorithms::symmetric::AES\_XTS}}
+\doxysubsubsection{\texorpdfstring{is\_authenticated()}{is\_authenticated()}}
+{\footnotesize\ttfamily bool filevault\+::algorithms\+::symmetric\+::\+AES\+\_\+\+XTS\+::is\+\_\+authenticated (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classfilevault_1_1algorithms_1_1symmetric_1_1AES__XTS_a41659aed3059d44922f8e8ff92da7578}\label{classfilevault_1_1algorithms_1_1symmetric_1_1AES__XTS_a41659aed3059d44922f8e8ff92da7578} 
+\index{filevault::algorithms::symmetric::AES\_XTS@{filevault::algorithms::symmetric::AES\_XTS}!is\_suitable\_for@{is\_suitable\_for}}
+\index{is\_suitable\_for@{is\_suitable\_for}!filevault::algorithms::symmetric::AES\_XTS@{filevault::algorithms::symmetric::AES\_XTS}}
+\doxysubsubsection{\texorpdfstring{is\_suitable\_for()}{is\_suitable\_for()}}
+{\footnotesize\ttfamily bool filevault\+::algorithms\+::symmetric\+::\+AES\+\_\+\+XTS\+::is\+\_\+suitable\+\_\+for (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacefilevault_1_1core_abcb3b3d896f7dc00926903183b3e2dc9}{core\+::\+Security\+Level}}}]{level }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Check if algorithm is suitable for security level. 
+
+
+
+Implements \mbox{\hyperlink{classfilevault_1_1core_1_1ICryptoAlgorithm_aab479734daf06d3f76af5d916c0285fa}{filevault\+::core\+::\+ICrypto\+Algorithm}}.
+
+\Hypertarget{classfilevault_1_1algorithms_1_1symmetric_1_1AES__XTS_a39b71ae5037e825f2f19a3ae6ae49047}\label{classfilevault_1_1algorithms_1_1symmetric_1_1AES__XTS_a39b71ae5037e825f2f19a3ae6ae49047} 
+\index{filevault::algorithms::symmetric::AES\_XTS@{filevault::algorithms::symmetric::AES\_XTS}!key\_size@{key\_size}}
+\index{key\_size@{key\_size}!filevault::algorithms::symmetric::AES\_XTS@{filevault::algorithms::symmetric::AES\_XTS}}
+\doxysubsubsection{\texorpdfstring{key\_size()}{key\_size()}}
+{\footnotesize\ttfamily size\+\_\+t filevault\+::algorithms\+::symmetric\+::\+AES\+\_\+\+XTS\+::key\+\_\+size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get recommended key size in bytes. 
+
+
+
+Implements \mbox{\hyperlink{classfilevault_1_1core_1_1ICryptoAlgorithm_af9ccb47457495eb99988fef0b5b2bbe8}{filevault\+::core\+::\+ICrypto\+Algorithm}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1algorithms_1_1symmetric_1_1AES__XTS_a39b71ae5037e825f2f19a3ae6ae49047_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1algorithms_1_1symmetric_1_1AES__XTS_a29d0af17fc42ff20f0fb48074e6bb668}\label{classfilevault_1_1algorithms_1_1symmetric_1_1AES__XTS_a29d0af17fc42ff20f0fb48074e6bb668} 
+\index{filevault::algorithms::symmetric::AES\_XTS@{filevault::algorithms::symmetric::AES\_XTS}!name@{name}}
+\index{name@{name}!filevault::algorithms::symmetric::AES\_XTS@{filevault::algorithms::symmetric::AES\_XTS}}
+\doxysubsubsection{\texorpdfstring{name()}{name()}}
+{\footnotesize\ttfamily std\+::string filevault\+::algorithms\+::symmetric\+::\+AES\+\_\+\+XTS\+::name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get algorithm name. 
+
+
+
+Implements \mbox{\hyperlink{classfilevault_1_1core_1_1ICryptoAlgorithm_a8acdc23e4f2ea77bb4a5b9820b27fa66}{filevault\+::core\+::\+ICrypto\+Algorithm}}.
+
+\Hypertarget{classfilevault_1_1algorithms_1_1symmetric_1_1AES__XTS_a63095cc30e42f01319c75ad0e83aaf0c}\label{classfilevault_1_1algorithms_1_1symmetric_1_1AES__XTS_a63095cc30e42f01319c75ad0e83aaf0c} 
+\index{filevault::algorithms::symmetric::AES\_XTS@{filevault::algorithms::symmetric::AES\_XTS}!requires\_padding@{requires\_padding}}
+\index{requires\_padding@{requires\_padding}!filevault::algorithms::symmetric::AES\_XTS@{filevault::algorithms::symmetric::AES\_XTS}}
+\doxysubsubsection{\texorpdfstring{requires\_padding()}{requires\_padding()}}
+{\footnotesize\ttfamily bool filevault\+::algorithms\+::symmetric\+::\+AES\+\_\+\+XTS\+::requires\+\_\+padding (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classfilevault_1_1algorithms_1_1symmetric_1_1AES__XTS_aef2eb960196b86f51c4a1f4fa4c98276}\label{classfilevault_1_1algorithms_1_1symmetric_1_1AES__XTS_aef2eb960196b86f51c4a1f4fa4c98276} 
+\index{filevault::algorithms::symmetric::AES\_XTS@{filevault::algorithms::symmetric::AES\_XTS}!tweak\_size@{tweak\_size}}
+\index{tweak\_size@{tweak\_size}!filevault::algorithms::symmetric::AES\_XTS@{filevault::algorithms::symmetric::AES\_XTS}}
+\doxysubsubsection{\texorpdfstring{tweak\_size()}{tweak\_size()}}
+{\footnotesize\ttfamily size\+\_\+t filevault\+::algorithms\+::symmetric\+::\+AES\+\_\+\+XTS\+::tweak\+\_\+size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1algorithms_1_1symmetric_1_1AES__XTS_aef2eb960196b86f51c4a1f4fa4c98276_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1algorithms_1_1symmetric_1_1AES__XTS_a7c8d8b97997f37d7c7e5396735ffa530}\label{classfilevault_1_1algorithms_1_1symmetric_1_1AES__XTS_a7c8d8b97997f37d7c7e5396735ffa530} 
+\index{filevault::algorithms::symmetric::AES\_XTS@{filevault::algorithms::symmetric::AES\_XTS}!type@{type}}
+\index{type@{type}!filevault::algorithms::symmetric::AES\_XTS@{filevault::algorithms::symmetric::AES\_XTS}}
+\doxysubsubsection{\texorpdfstring{type()}{type()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacefilevault_1_1core_ab1ba257a0205c63e9e1e3623170940a2}{core\+::\+Algorithm\+Type}} filevault\+::algorithms\+::symmetric\+::\+AES\+\_\+\+XTS\+::type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get algorithm type. 
+
+
+
+Implements \mbox{\hyperlink{classfilevault_1_1core_1_1ICryptoAlgorithm_a11b7820f7b0bbb5fd6668fac3b78a7e1}{filevault\+::core\+::\+ICrypto\+Algorithm}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classfilevault_1_1algorithms_1_1symmetric_1_1AES__XTS_a90d0888049d35f91da5baddf6db7ef32}\label{classfilevault_1_1algorithms_1_1symmetric_1_1AES__XTS_a90d0888049d35f91da5baddf6db7ef32} 
+\index{filevault::algorithms::symmetric::AES\_XTS@{filevault::algorithms::symmetric::AES\_XTS}!botan\_name\_@{botan\_name\_}}
+\index{botan\_name\_@{botan\_name\_}!filevault::algorithms::symmetric::AES\_XTS@{filevault::algorithms::symmetric::AES\_XTS}}
+\doxysubsubsection{\texorpdfstring{botan\_name\_}{botan\_name\_}}
+{\footnotesize\ttfamily std\+::string filevault\+::algorithms\+::symmetric\+::\+AES\+\_\+\+XTS\+::botan\+\_\+name\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classfilevault_1_1algorithms_1_1symmetric_1_1AES__XTS_af6db99c59d0d071c1f500ef8cc14307a}\label{classfilevault_1_1algorithms_1_1symmetric_1_1AES__XTS_af6db99c59d0d071c1f500ef8cc14307a} 
+\index{filevault::algorithms::symmetric::AES\_XTS@{filevault::algorithms::symmetric::AES\_XTS}!key\_bits\_@{key\_bits\_}}
+\index{key\_bits\_@{key\_bits\_}!filevault::algorithms::symmetric::AES\_XTS@{filevault::algorithms::symmetric::AES\_XTS}}
+\doxysubsubsection{\texorpdfstring{key\_bits\_}{key\_bits\_}}
+{\footnotesize\ttfamily size\+\_\+t filevault\+::algorithms\+::symmetric\+::\+AES\+\_\+\+XTS\+::key\+\_\+bits\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classfilevault_1_1algorithms_1_1symmetric_1_1AES__XTS_a6f3dcd23ce5b59ecd5b15f5740e84a2d}\label{classfilevault_1_1algorithms_1_1symmetric_1_1AES__XTS_a6f3dcd23ce5b59ecd5b15f5740e84a2d} 
+\index{filevault::algorithms::symmetric::AES\_XTS@{filevault::algorithms::symmetric::AES\_XTS}!type\_@{type\_}}
+\index{type\_@{type\_}!filevault::algorithms::symmetric::AES\_XTS@{filevault::algorithms::symmetric::AES\_XTS}}
+\doxysubsubsection{\texorpdfstring{type\_}{type\_}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacefilevault_1_1core_ab1ba257a0205c63e9e1e3623170940a2}{core\+::\+Algorithm\+Type}} filevault\+::algorithms\+::symmetric\+::\+AES\+\_\+\+XTS\+::type\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/filevault/algorithms/symmetric/\mbox{\hyperlink{aes__xts_8hpp}{aes\+\_\+xts.\+hpp}}\item 
+src/algorithms/symmetric/\mbox{\hyperlink{aes__xts_8cpp}{aes\+\_\+xts.\+cpp}}\end{DoxyCompactItemize}

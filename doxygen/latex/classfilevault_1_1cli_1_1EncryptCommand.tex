@@ -1,0 +1,276 @@
+\doxysection{filevault\+::cli\+::Encrypt\+Command Class Reference}
+\hypertarget{classfilevault_1_1cli_1_1EncryptCommand}{}\label{classfilevault_1_1cli_1_1EncryptCommand}\index{filevault::cli::EncryptCommand@{filevault::cli::EncryptCommand}}
+
+
+Encrypt command.  
+
+
+
+
+{\ttfamily \#include $<$encrypt\+\_\+cmd.\+hpp$>$}
+
+
+
+Inheritance diagram for filevault\+::cli\+::Encrypt\+Command\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=247pt]{classfilevault_1_1cli_1_1EncryptCommand__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for filevault\+::cli\+::Encrypt\+Command\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1cli_1_1EncryptCommand__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classfilevault_1_1cli_1_1EncryptCommand_a71b38414c2994f61c4c811eb1f24e207}{Encrypt\+Command}} (\mbox{\hyperlink{classfilevault_1_1core_1_1CryptoEngine}{core\+::\+Crypto\+Engine}} \&engine)
+\item 
+std\+::string \mbox{\hyperlink{classfilevault_1_1cli_1_1EncryptCommand_a72f6b179613852d7c981853073d40710}{name}} () const override
+\begin{DoxyCompactList}\small\item\em Get command name. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classfilevault_1_1cli_1_1EncryptCommand_a0d3a5580a5ed89afc9f78d77a563ce85}{description}} () const override
+\begin{DoxyCompactList}\small\item\em Get command description. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classfilevault_1_1cli_1_1EncryptCommand_a49a6bf319c88ad28435c6de290a9ad57}{setup}} (CLI\+::\+App \&app) override
+\begin{DoxyCompactList}\small\item\em Setup CLI11 subcommand. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classfilevault_1_1cli_1_1EncryptCommand_ab864b533aafa2be17b895ad80a213244}{execute}} () override
+\begin{DoxyCompactList}\small\item\em Execute the command. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classfilevault_1_1cli_1_1ICommand}{filevault\+::cli\+::\+ICommand}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classfilevault_1_1cli_1_1ICommand_a358ce6bf0db6a1ff7f53eec427481a5d}{\texorpdfstring{$\sim$}{\string~}\+ICommand}} ()=default
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classfilevault_1_1core_1_1CryptoEngine}{core\+::\+Crypto\+Engine}} \& \mbox{\hyperlink{classfilevault_1_1cli_1_1EncryptCommand_a6e3421d7492b83d36a57adad8aee37e8}{engine\+\_\+}}
+\item 
+std\+::string \mbox{\hyperlink{classfilevault_1_1cli_1_1EncryptCommand_ab2e24a32ebbf8762589523c02846b84e}{input\+\_\+file\+\_\+}}
+\item 
+std\+::string \mbox{\hyperlink{classfilevault_1_1cli_1_1EncryptCommand_a710d9eea9ee16c7ea7edc4ae676eb433}{output\+\_\+file\+\_\+}}
+\item 
+std\+::string \mbox{\hyperlink{classfilevault_1_1cli_1_1EncryptCommand_af89bfc9fff05c457851848cb8bd69935}{password\+\_\+}}
+\item 
+std\+::string \mbox{\hyperlink{classfilevault_1_1cli_1_1EncryptCommand_aa3bb6dff93e5e81f58f1c7beaca41629}{mode\+\_\+}}
+\item 
+std\+::string \mbox{\hyperlink{classfilevault_1_1cli_1_1EncryptCommand_a6be306c1a97add73e20bd1a538b88d19}{algorithm\+\_\+}} = "{}aes-\/256-\/gcm"{}
+\item 
+std\+::string \mbox{\hyperlink{classfilevault_1_1cli_1_1EncryptCommand_af4f447aa642c6ade3962a015c33ca237}{security\+\_\+level\+\_\+}} = "{}medium"{}
+\item 
+std\+::string \mbox{\hyperlink{classfilevault_1_1cli_1_1EncryptCommand_ae8ffef1039948b7620133dbe6e1f1766}{kdf\+\_\+}} = "{}argon2id"{}
+\item 
+std\+::string \mbox{\hyperlink{classfilevault_1_1cli_1_1EncryptCommand_ab000d7dcc9506da8fe9b123c0720fe24}{compression\+\_\+type\+\_\+}} = "{}none"{}
+\item 
+int \mbox{\hyperlink{classfilevault_1_1cli_1_1EncryptCommand_a2af2cf9e670baf46af85f2c57aaa6bec}{compression\+\_\+level\+\_\+}} = 6
+\item 
+bool \mbox{\hyperlink{classfilevault_1_1cli_1_1EncryptCommand_a961ccf6642546420706c79c4f0968362}{verbose\+\_\+}} = false
+\item 
+bool \mbox{\hyperlink{classfilevault_1_1cli_1_1EncryptCommand_a741717d4d85079e6be49cf6b9f3af84b}{no\+\_\+progress\+\_\+}} = false
+\item 
+bool \mbox{\hyperlink{classfilevault_1_1cli_1_1EncryptCommand_a827fbd7f2601bd5ee55ae2af9df19dc0}{force\+\_\+weak\+\_\+password\+\_\+}} = false
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Encrypt command. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classfilevault_1_1cli_1_1EncryptCommand_a71b38414c2994f61c4c811eb1f24e207}\label{classfilevault_1_1cli_1_1EncryptCommand_a71b38414c2994f61c4c811eb1f24e207} 
+\index{filevault::cli::EncryptCommand@{filevault::cli::EncryptCommand}!EncryptCommand@{EncryptCommand}}
+\index{EncryptCommand@{EncryptCommand}!filevault::cli::EncryptCommand@{filevault::cli::EncryptCommand}}
+\doxysubsubsection{\texorpdfstring{EncryptCommand()}{EncryptCommand()}}
+{\footnotesize\ttfamily filevault\+::cli\+::\+Encrypt\+Command\+::\+Encrypt\+Command (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classfilevault_1_1core_1_1CryptoEngine}{core\+::\+Crypto\+Engine}} \&}]{engine }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classfilevault_1_1cli_1_1EncryptCommand_a0d3a5580a5ed89afc9f78d77a563ce85}\label{classfilevault_1_1cli_1_1EncryptCommand_a0d3a5580a5ed89afc9f78d77a563ce85} 
+\index{filevault::cli::EncryptCommand@{filevault::cli::EncryptCommand}!description@{description}}
+\index{description@{description}!filevault::cli::EncryptCommand@{filevault::cli::EncryptCommand}}
+\doxysubsubsection{\texorpdfstring{description()}{description()}}
+{\footnotesize\ttfamily std\+::string filevault\+::cli\+::\+Encrypt\+Command\+::description (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get command description. 
+
+
+
+Implements \mbox{\hyperlink{classfilevault_1_1cli_1_1ICommand_a154cdd3f87273142e70814445abd48ea}{filevault\+::cli\+::\+ICommand}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1cli_1_1EncryptCommand_a0d3a5580a5ed89afc9f78d77a563ce85_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1cli_1_1EncryptCommand_ab864b533aafa2be17b895ad80a213244}\label{classfilevault_1_1cli_1_1EncryptCommand_ab864b533aafa2be17b895ad80a213244} 
+\index{filevault::cli::EncryptCommand@{filevault::cli::EncryptCommand}!execute@{execute}}
+\index{execute@{execute}!filevault::cli::EncryptCommand@{filevault::cli::EncryptCommand}}
+\doxysubsubsection{\texorpdfstring{execute()}{execute()}}
+{\footnotesize\ttfamily int filevault\+::cli\+::\+Encrypt\+Command\+::execute (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Execute the command. 
+
+
+
+Implements \mbox{\hyperlink{classfilevault_1_1cli_1_1ICommand_a2fdc36b29a23b94a6e52bc3d4eb0c1ed}{filevault\+::cli\+::\+ICommand}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classfilevault_1_1cli_1_1EncryptCommand_ab864b533aafa2be17b895ad80a213244_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1cli_1_1EncryptCommand_ab864b533aafa2be17b895ad80a213244_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1cli_1_1EncryptCommand_a72f6b179613852d7c981853073d40710}\label{classfilevault_1_1cli_1_1EncryptCommand_a72f6b179613852d7c981853073d40710} 
+\index{filevault::cli::EncryptCommand@{filevault::cli::EncryptCommand}!name@{name}}
+\index{name@{name}!filevault::cli::EncryptCommand@{filevault::cli::EncryptCommand}}
+\doxysubsubsection{\texorpdfstring{name()}{name()}}
+{\footnotesize\ttfamily std\+::string filevault\+::cli\+::\+Encrypt\+Command\+::name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get command name. 
+
+
+
+Implements \mbox{\hyperlink{classfilevault_1_1cli_1_1ICommand_a60aa4bc7c96c2e80feeb1a184d7ae2f7}{filevault\+::cli\+::\+ICommand}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1cli_1_1EncryptCommand_a72f6b179613852d7c981853073d40710_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1cli_1_1EncryptCommand_a49a6bf319c88ad28435c6de290a9ad57}\label{classfilevault_1_1cli_1_1EncryptCommand_a49a6bf319c88ad28435c6de290a9ad57} 
+\index{filevault::cli::EncryptCommand@{filevault::cli::EncryptCommand}!setup@{setup}}
+\index{setup@{setup}!filevault::cli::EncryptCommand@{filevault::cli::EncryptCommand}}
+\doxysubsubsection{\texorpdfstring{setup()}{setup()}}
+{\footnotesize\ttfamily void filevault\+::cli\+::\+Encrypt\+Command\+::setup (\begin{DoxyParamCaption}\item[{CLI\+::\+App \&}]{app }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Setup CLI11 subcommand. 
+
+
+
+Implements \mbox{\hyperlink{classfilevault_1_1cli_1_1ICommand_aa43a60aabddff55d1060c334dade972c}{filevault\+::cli\+::\+ICommand}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1cli_1_1EncryptCommand_a49a6bf319c88ad28435c6de290a9ad57_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classfilevault_1_1cli_1_1EncryptCommand_a6be306c1a97add73e20bd1a538b88d19}\label{classfilevault_1_1cli_1_1EncryptCommand_a6be306c1a97add73e20bd1a538b88d19} 
+\index{filevault::cli::EncryptCommand@{filevault::cli::EncryptCommand}!algorithm\_@{algorithm\_}}
+\index{algorithm\_@{algorithm\_}!filevault::cli::EncryptCommand@{filevault::cli::EncryptCommand}}
+\doxysubsubsection{\texorpdfstring{algorithm\_}{algorithm\_}}
+{\footnotesize\ttfamily std\+::string filevault\+::cli\+::\+Encrypt\+Command\+::algorithm\+\_\+ = "{}aes-\/256-\/gcm"{}\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classfilevault_1_1cli_1_1EncryptCommand_a2af2cf9e670baf46af85f2c57aaa6bec}\label{classfilevault_1_1cli_1_1EncryptCommand_a2af2cf9e670baf46af85f2c57aaa6bec} 
+\index{filevault::cli::EncryptCommand@{filevault::cli::EncryptCommand}!compression\_level\_@{compression\_level\_}}
+\index{compression\_level\_@{compression\_level\_}!filevault::cli::EncryptCommand@{filevault::cli::EncryptCommand}}
+\doxysubsubsection{\texorpdfstring{compression\_level\_}{compression\_level\_}}
+{\footnotesize\ttfamily int filevault\+::cli\+::\+Encrypt\+Command\+::compression\+\_\+level\+\_\+ = 6\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classfilevault_1_1cli_1_1EncryptCommand_ab000d7dcc9506da8fe9b123c0720fe24}\label{classfilevault_1_1cli_1_1EncryptCommand_ab000d7dcc9506da8fe9b123c0720fe24} 
+\index{filevault::cli::EncryptCommand@{filevault::cli::EncryptCommand}!compression\_type\_@{compression\_type\_}}
+\index{compression\_type\_@{compression\_type\_}!filevault::cli::EncryptCommand@{filevault::cli::EncryptCommand}}
+\doxysubsubsection{\texorpdfstring{compression\_type\_}{compression\_type\_}}
+{\footnotesize\ttfamily std\+::string filevault\+::cli\+::\+Encrypt\+Command\+::compression\+\_\+type\+\_\+ = "{}none"{}\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classfilevault_1_1cli_1_1EncryptCommand_a6e3421d7492b83d36a57adad8aee37e8}\label{classfilevault_1_1cli_1_1EncryptCommand_a6e3421d7492b83d36a57adad8aee37e8} 
+\index{filevault::cli::EncryptCommand@{filevault::cli::EncryptCommand}!engine\_@{engine\_}}
+\index{engine\_@{engine\_}!filevault::cli::EncryptCommand@{filevault::cli::EncryptCommand}}
+\doxysubsubsection{\texorpdfstring{engine\_}{engine\_}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classfilevault_1_1core_1_1CryptoEngine}{core\+::\+Crypto\+Engine}}\& filevault\+::cli\+::\+Encrypt\+Command\+::engine\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classfilevault_1_1cli_1_1EncryptCommand_a827fbd7f2601bd5ee55ae2af9df19dc0}\label{classfilevault_1_1cli_1_1EncryptCommand_a827fbd7f2601bd5ee55ae2af9df19dc0} 
+\index{filevault::cli::EncryptCommand@{filevault::cli::EncryptCommand}!force\_weak\_password\_@{force\_weak\_password\_}}
+\index{force\_weak\_password\_@{force\_weak\_password\_}!filevault::cli::EncryptCommand@{filevault::cli::EncryptCommand}}
+\doxysubsubsection{\texorpdfstring{force\_weak\_password\_}{force\_weak\_password\_}}
+{\footnotesize\ttfamily bool filevault\+::cli\+::\+Encrypt\+Command\+::force\+\_\+weak\+\_\+password\+\_\+ = false\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classfilevault_1_1cli_1_1EncryptCommand_ab2e24a32ebbf8762589523c02846b84e}\label{classfilevault_1_1cli_1_1EncryptCommand_ab2e24a32ebbf8762589523c02846b84e} 
+\index{filevault::cli::EncryptCommand@{filevault::cli::EncryptCommand}!input\_file\_@{input\_file\_}}
+\index{input\_file\_@{input\_file\_}!filevault::cli::EncryptCommand@{filevault::cli::EncryptCommand}}
+\doxysubsubsection{\texorpdfstring{input\_file\_}{input\_file\_}}
+{\footnotesize\ttfamily std\+::string filevault\+::cli\+::\+Encrypt\+Command\+::input\+\_\+file\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classfilevault_1_1cli_1_1EncryptCommand_ae8ffef1039948b7620133dbe6e1f1766}\label{classfilevault_1_1cli_1_1EncryptCommand_ae8ffef1039948b7620133dbe6e1f1766} 
+\index{filevault::cli::EncryptCommand@{filevault::cli::EncryptCommand}!kdf\_@{kdf\_}}
+\index{kdf\_@{kdf\_}!filevault::cli::EncryptCommand@{filevault::cli::EncryptCommand}}
+\doxysubsubsection{\texorpdfstring{kdf\_}{kdf\_}}
+{\footnotesize\ttfamily std\+::string filevault\+::cli\+::\+Encrypt\+Command\+::kdf\+\_\+ = "{}argon2id"{}\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classfilevault_1_1cli_1_1EncryptCommand_aa3bb6dff93e5e81f58f1c7beaca41629}\label{classfilevault_1_1cli_1_1EncryptCommand_aa3bb6dff93e5e81f58f1c7beaca41629} 
+\index{filevault::cli::EncryptCommand@{filevault::cli::EncryptCommand}!mode\_@{mode\_}}
+\index{mode\_@{mode\_}!filevault::cli::EncryptCommand@{filevault::cli::EncryptCommand}}
+\doxysubsubsection{\texorpdfstring{mode\_}{mode\_}}
+{\footnotesize\ttfamily std\+::string filevault\+::cli\+::\+Encrypt\+Command\+::mode\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classfilevault_1_1cli_1_1EncryptCommand_a741717d4d85079e6be49cf6b9f3af84b}\label{classfilevault_1_1cli_1_1EncryptCommand_a741717d4d85079e6be49cf6b9f3af84b} 
+\index{filevault::cli::EncryptCommand@{filevault::cli::EncryptCommand}!no\_progress\_@{no\_progress\_}}
+\index{no\_progress\_@{no\_progress\_}!filevault::cli::EncryptCommand@{filevault::cli::EncryptCommand}}
+\doxysubsubsection{\texorpdfstring{no\_progress\_}{no\_progress\_}}
+{\footnotesize\ttfamily bool filevault\+::cli\+::\+Encrypt\+Command\+::no\+\_\+progress\+\_\+ = false\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classfilevault_1_1cli_1_1EncryptCommand_a710d9eea9ee16c7ea7edc4ae676eb433}\label{classfilevault_1_1cli_1_1EncryptCommand_a710d9eea9ee16c7ea7edc4ae676eb433} 
+\index{filevault::cli::EncryptCommand@{filevault::cli::EncryptCommand}!output\_file\_@{output\_file\_}}
+\index{output\_file\_@{output\_file\_}!filevault::cli::EncryptCommand@{filevault::cli::EncryptCommand}}
+\doxysubsubsection{\texorpdfstring{output\_file\_}{output\_file\_}}
+{\footnotesize\ttfamily std\+::string filevault\+::cli\+::\+Encrypt\+Command\+::output\+\_\+file\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classfilevault_1_1cli_1_1EncryptCommand_af89bfc9fff05c457851848cb8bd69935}\label{classfilevault_1_1cli_1_1EncryptCommand_af89bfc9fff05c457851848cb8bd69935} 
+\index{filevault::cli::EncryptCommand@{filevault::cli::EncryptCommand}!password\_@{password\_}}
+\index{password\_@{password\_}!filevault::cli::EncryptCommand@{filevault::cli::EncryptCommand}}
+\doxysubsubsection{\texorpdfstring{password\_}{password\_}}
+{\footnotesize\ttfamily std\+::string filevault\+::cli\+::\+Encrypt\+Command\+::password\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classfilevault_1_1cli_1_1EncryptCommand_af4f447aa642c6ade3962a015c33ca237}\label{classfilevault_1_1cli_1_1EncryptCommand_af4f447aa642c6ade3962a015c33ca237} 
+\index{filevault::cli::EncryptCommand@{filevault::cli::EncryptCommand}!security\_level\_@{security\_level\_}}
+\index{security\_level\_@{security\_level\_}!filevault::cli::EncryptCommand@{filevault::cli::EncryptCommand}}
+\doxysubsubsection{\texorpdfstring{security\_level\_}{security\_level\_}}
+{\footnotesize\ttfamily std\+::string filevault\+::cli\+::\+Encrypt\+Command\+::security\+\_\+level\+\_\+ = "{}medium"{}\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classfilevault_1_1cli_1_1EncryptCommand_a961ccf6642546420706c79c4f0968362}\label{classfilevault_1_1cli_1_1EncryptCommand_a961ccf6642546420706c79c4f0968362} 
+\index{filevault::cli::EncryptCommand@{filevault::cli::EncryptCommand}!verbose\_@{verbose\_}}
+\index{verbose\_@{verbose\_}!filevault::cli::EncryptCommand@{filevault::cli::EncryptCommand}}
+\doxysubsubsection{\texorpdfstring{verbose\_}{verbose\_}}
+{\footnotesize\ttfamily bool filevault\+::cli\+::\+Encrypt\+Command\+::verbose\+\_\+ = false\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/filevault/cli/commands/\mbox{\hyperlink{encrypt__cmd_8hpp}{encrypt\+\_\+cmd.\+hpp}}\item 
+src/cli/commands/\mbox{\hyperlink{encrypt__cmd_8cpp}{encrypt\+\_\+cmd.\+cpp}}\end{DoxyCompactItemize}

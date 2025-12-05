@@ -1,0 +1,278 @@
+\doxysection{filevault\+::algorithms\+::classical\+::Substitution\+Cipher Class Reference}
+\hypertarget{classfilevault_1_1algorithms_1_1classical_1_1SubstitutionCipher}{}\label{classfilevault_1_1algorithms_1_1classical_1_1SubstitutionCipher}\index{filevault::algorithms::classical::SubstitutionCipher@{filevault::algorithms::classical::SubstitutionCipher}}
+
+
+Simple substitution cipher.  
+
+
+
+
+{\ttfamily \#include $<$substitution.\+hpp$>$}
+
+
+
+Inheritance diagram for filevault\+::algorithms\+::classical\+::Substitution\+Cipher\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=241pt]{classfilevault_1_1algorithms_1_1classical_1_1SubstitutionCipher__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for filevault\+::algorithms\+::classical\+::Substitution\+Cipher\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=241pt]{classfilevault_1_1algorithms_1_1classical_1_1SubstitutionCipher__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{classfilevault_1_1algorithms_1_1classical_1_1SubstitutionCipher_a07e438805da191f5457d6a712d351bad}{name}} () const override
+\begin{DoxyCompactList}\small\item\em Get algorithm name. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacefilevault_1_1core_ab1ba257a0205c63e9e1e3623170940a2}{core\+::\+Algorithm\+Type}} \mbox{\hyperlink{classfilevault_1_1algorithms_1_1classical_1_1SubstitutionCipher_a92cf10975f8653bfc4e61988ea17392c}{type}} () const override
+\begin{DoxyCompactList}\small\item\em Get algorithm type. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structfilevault_1_1core_1_1CryptoResult}{core\+::\+Crypto\+Result}} \mbox{\hyperlink{classfilevault_1_1algorithms_1_1classical_1_1SubstitutionCipher_a928b824d31e9338c6cf0b8bb39f04407}{encrypt}} (std\+::span$<$ const uint8\+\_\+t $>$ plaintext, std\+::span$<$ const uint8\+\_\+t $>$ key, const \mbox{\hyperlink{structfilevault_1_1core_1_1EncryptionConfig}{core\+::\+Encryption\+Config}} \&config) override
+\begin{DoxyCompactList}\small\item\em Encrypt data. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structfilevault_1_1core_1_1CryptoResult}{core\+::\+Crypto\+Result}} \mbox{\hyperlink{classfilevault_1_1algorithms_1_1classical_1_1SubstitutionCipher_ab012398f7f317a200742e8adfe14c6b0}{decrypt}} (std\+::span$<$ const uint8\+\_\+t $>$ ciphertext, std\+::span$<$ const uint8\+\_\+t $>$ key, const \mbox{\hyperlink{structfilevault_1_1core_1_1EncryptionConfig}{core\+::\+Encryption\+Config}} \&config) override
+\begin{DoxyCompactList}\small\item\em Decrypt data. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{classfilevault_1_1algorithms_1_1classical_1_1SubstitutionCipher_a5c2b4e89dcb3a5ff45a33ca05e905d7a}{key\+\_\+size}} () const override
+\begin{DoxyCompactList}\small\item\em Get recommended key size in bytes. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classfilevault_1_1algorithms_1_1classical_1_1SubstitutionCipher_a79e3fc909e42d38e5f3469a0d1a5a302}{is\+\_\+suitable\+\_\+for}} (\mbox{\hyperlink{namespacefilevault_1_1core_abcb3b3d896f7dc00926903183b3e2dc9}{core\+::\+Security\+Level}} level) const override
+\begin{DoxyCompactList}\small\item\em Check if algorithm is suitable for security level. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classfilevault_1_1core_1_1ICryptoAlgorithm}{filevault\+::core\+::\+ICrypto\+Algorithm}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classfilevault_1_1core_1_1ICryptoAlgorithm_a36383558169617931374ca3b64399818}{\texorpdfstring{$\sim$}{\string~}\+ICrypto\+Algorithm}} ()=default
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Types}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{classfilevault_1_1algorithms_1_1classical_1_1SubstitutionCipher_a2a724abf0eb8613b997f706f2af2c12e}{Substitution\+Map}} = std\+::array$<$ char, 26 $>$
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classfilevault_1_1algorithms_1_1classical_1_1SubstitutionCipher_a2a724abf0eb8613b997f706f2af2c12e}{Substitution\+Map}} \mbox{\hyperlink{classfilevault_1_1algorithms_1_1classical_1_1SubstitutionCipher_add7fb58c413fb43416b190523a760126}{parse\+\_\+key}} (std\+::span$<$ const uint8\+\_\+t $>$ key)
+\item 
+\mbox{\hyperlink{classfilevault_1_1algorithms_1_1classical_1_1SubstitutionCipher_a2a724abf0eb8613b997f706f2af2c12e}{Substitution\+Map}} \mbox{\hyperlink{classfilevault_1_1algorithms_1_1classical_1_1SubstitutionCipher_abcc7c1a6345c4d5eb74e1ed37b96ff1c}{create\+\_\+reverse\+\_\+map}} (const \mbox{\hyperlink{classfilevault_1_1algorithms_1_1classical_1_1SubstitutionCipher_a2a724abf0eb8613b997f706f2af2c12e}{Substitution\+Map}} \&forward\+\_\+map)
+\item 
+bool \mbox{\hyperlink{classfilevault_1_1algorithms_1_1classical_1_1SubstitutionCipher_a41f6bb061bc83c43b0458f8c7b3fa633}{is\+\_\+valid\+\_\+key}} (const \mbox{\hyperlink{classfilevault_1_1algorithms_1_1classical_1_1SubstitutionCipher_a2a724abf0eb8613b997f706f2af2c12e}{Substitution\+Map}} \&map)
+\item 
+std\+::string \mbox{\hyperlink{classfilevault_1_1algorithms_1_1classical_1_1SubstitutionCipher_ac2af638c3ac78baebb52b239a904f137}{apply\+\_\+substitution}} (const std\+::string \&text, const \mbox{\hyperlink{classfilevault_1_1algorithms_1_1classical_1_1SubstitutionCipher_a2a724abf0eb8613b997f706f2af2c12e}{Substitution\+Map}} \&map)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Simple substitution cipher. 
+
+Educational cipher using a 26-\/letter substitution alphabet Key\+: 26-\/character permutation of the alphabet 
+
+\doxysubsection{Member Typedef Documentation}
+\Hypertarget{classfilevault_1_1algorithms_1_1classical_1_1SubstitutionCipher_a2a724abf0eb8613b997f706f2af2c12e}\label{classfilevault_1_1algorithms_1_1classical_1_1SubstitutionCipher_a2a724abf0eb8613b997f706f2af2c12e} 
+\index{filevault::algorithms::classical::SubstitutionCipher@{filevault::algorithms::classical::SubstitutionCipher}!SubstitutionMap@{SubstitutionMap}}
+\index{SubstitutionMap@{SubstitutionMap}!filevault::algorithms::classical::SubstitutionCipher@{filevault::algorithms::classical::SubstitutionCipher}}
+\doxysubsubsection{\texorpdfstring{SubstitutionMap}{SubstitutionMap}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{classfilevault_1_1algorithms_1_1classical_1_1SubstitutionCipher_a2a724abf0eb8613b997f706f2af2c12e}{filevault\+::algorithms\+::classical\+::\+Substitution\+Cipher\+::\+Substitution\+Map}} =  std\+::array$<$char, 26$>$\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classfilevault_1_1algorithms_1_1classical_1_1SubstitutionCipher_ac2af638c3ac78baebb52b239a904f137}\label{classfilevault_1_1algorithms_1_1classical_1_1SubstitutionCipher_ac2af638c3ac78baebb52b239a904f137} 
+\index{filevault::algorithms::classical::SubstitutionCipher@{filevault::algorithms::classical::SubstitutionCipher}!apply\_substitution@{apply\_substitution}}
+\index{apply\_substitution@{apply\_substitution}!filevault::algorithms::classical::SubstitutionCipher@{filevault::algorithms::classical::SubstitutionCipher}}
+\doxysubsubsection{\texorpdfstring{apply\_substitution()}{apply\_substitution()}}
+{\footnotesize\ttfamily std\+::string filevault\+::algorithms\+::classical\+::\+Substitution\+Cipher\+::apply\+\_\+substitution (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{text,  }\item[{const \mbox{\hyperlink{classfilevault_1_1algorithms_1_1classical_1_1SubstitutionCipher_a2a724abf0eb8613b997f706f2af2c12e}{Substitution\+Map}} \&}]{map }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1algorithms_1_1classical_1_1SubstitutionCipher_ac2af638c3ac78baebb52b239a904f137_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1algorithms_1_1classical_1_1SubstitutionCipher_abcc7c1a6345c4d5eb74e1ed37b96ff1c}\label{classfilevault_1_1algorithms_1_1classical_1_1SubstitutionCipher_abcc7c1a6345c4d5eb74e1ed37b96ff1c} 
+\index{filevault::algorithms::classical::SubstitutionCipher@{filevault::algorithms::classical::SubstitutionCipher}!create\_reverse\_map@{create\_reverse\_map}}
+\index{create\_reverse\_map@{create\_reverse\_map}!filevault::algorithms::classical::SubstitutionCipher@{filevault::algorithms::classical::SubstitutionCipher}}
+\doxysubsubsection{\texorpdfstring{create\_reverse\_map()}{create\_reverse\_map()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classfilevault_1_1algorithms_1_1classical_1_1SubstitutionCipher_a2a724abf0eb8613b997f706f2af2c12e}{Substitution\+Cipher\+::\+Substitution\+Map}} filevault\+::algorithms\+::classical\+::\+Substitution\+Cipher\+::create\+\_\+reverse\+\_\+map (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classfilevault_1_1algorithms_1_1classical_1_1SubstitutionCipher_a2a724abf0eb8613b997f706f2af2c12e}{Substitution\+Map}} \&}]{forward\+\_\+map }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1algorithms_1_1classical_1_1SubstitutionCipher_abcc7c1a6345c4d5eb74e1ed37b96ff1c_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1algorithms_1_1classical_1_1SubstitutionCipher_ab012398f7f317a200742e8adfe14c6b0}\label{classfilevault_1_1algorithms_1_1classical_1_1SubstitutionCipher_ab012398f7f317a200742e8adfe14c6b0} 
+\index{filevault::algorithms::classical::SubstitutionCipher@{filevault::algorithms::classical::SubstitutionCipher}!decrypt@{decrypt}}
+\index{decrypt@{decrypt}!filevault::algorithms::classical::SubstitutionCipher@{filevault::algorithms::classical::SubstitutionCipher}}
+\doxysubsubsection{\texorpdfstring{decrypt()}{decrypt()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structfilevault_1_1core_1_1CryptoResult}{core\+::\+Crypto\+Result}} filevault\+::algorithms\+::classical\+::\+Substitution\+Cipher\+::decrypt (\begin{DoxyParamCaption}\item[{std\+::span$<$ const uint8\+\_\+t $>$}]{ciphertext,  }\item[{std\+::span$<$ const uint8\+\_\+t $>$}]{key,  }\item[{const \mbox{\hyperlink{structfilevault_1_1core_1_1EncryptionConfig}{core\+::\+Encryption\+Config}} \&}]{config }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Decrypt data. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ciphertext} & Encrypted data \\
+\hline
+{\em key} & Decryption key (derived from password) \\
+\hline
+{\em config} & Decryption configuration \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Decrypted data 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classfilevault_1_1core_1_1ICryptoAlgorithm_a5ad6e9e19a3ed1dd3f0b49106bcaac0d}{filevault\+::core\+::\+ICrypto\+Algorithm}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1algorithms_1_1classical_1_1SubstitutionCipher_ab012398f7f317a200742e8adfe14c6b0_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1algorithms_1_1classical_1_1SubstitutionCipher_a928b824d31e9338c6cf0b8bb39f04407}\label{classfilevault_1_1algorithms_1_1classical_1_1SubstitutionCipher_a928b824d31e9338c6cf0b8bb39f04407} 
+\index{filevault::algorithms::classical::SubstitutionCipher@{filevault::algorithms::classical::SubstitutionCipher}!encrypt@{encrypt}}
+\index{encrypt@{encrypt}!filevault::algorithms::classical::SubstitutionCipher@{filevault::algorithms::classical::SubstitutionCipher}}
+\doxysubsubsection{\texorpdfstring{encrypt()}{encrypt()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structfilevault_1_1core_1_1CryptoResult}{core\+::\+Crypto\+Result}} filevault\+::algorithms\+::classical\+::\+Substitution\+Cipher\+::encrypt (\begin{DoxyParamCaption}\item[{std\+::span$<$ const uint8\+\_\+t $>$}]{plaintext,  }\item[{std\+::span$<$ const uint8\+\_\+t $>$}]{key,  }\item[{const \mbox{\hyperlink{structfilevault_1_1core_1_1EncryptionConfig}{core\+::\+Encryption\+Config}} \&}]{config }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Encrypt data. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em plaintext} & Input data to encrypt \\
+\hline
+{\em key} & Encryption key (derived from password) \\
+\hline
+{\em config} & Encryption configuration \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Encrypted data with metadata 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classfilevault_1_1core_1_1ICryptoAlgorithm_a5b9102cef54b84b54feea1dc16561a2d}{filevault\+::core\+::\+ICrypto\+Algorithm}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1algorithms_1_1classical_1_1SubstitutionCipher_a928b824d31e9338c6cf0b8bb39f04407_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1algorithms_1_1classical_1_1SubstitutionCipher_a79e3fc909e42d38e5f3469a0d1a5a302}\label{classfilevault_1_1algorithms_1_1classical_1_1SubstitutionCipher_a79e3fc909e42d38e5f3469a0d1a5a302} 
+\index{filevault::algorithms::classical::SubstitutionCipher@{filevault::algorithms::classical::SubstitutionCipher}!is\_suitable\_for@{is\_suitable\_for}}
+\index{is\_suitable\_for@{is\_suitable\_for}!filevault::algorithms::classical::SubstitutionCipher@{filevault::algorithms::classical::SubstitutionCipher}}
+\doxysubsubsection{\texorpdfstring{is\_suitable\_for()}{is\_suitable\_for()}}
+{\footnotesize\ttfamily bool filevault\+::algorithms\+::classical\+::\+Substitution\+Cipher\+::is\+\_\+suitable\+\_\+for (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacefilevault_1_1core_abcb3b3d896f7dc00926903183b3e2dc9}{core\+::\+Security\+Level}}}]{level }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Check if algorithm is suitable for security level. 
+
+
+
+Implements \mbox{\hyperlink{classfilevault_1_1core_1_1ICryptoAlgorithm_aab479734daf06d3f76af5d916c0285fa}{filevault\+::core\+::\+ICrypto\+Algorithm}}.
+
+\Hypertarget{classfilevault_1_1algorithms_1_1classical_1_1SubstitutionCipher_a41f6bb061bc83c43b0458f8c7b3fa633}\label{classfilevault_1_1algorithms_1_1classical_1_1SubstitutionCipher_a41f6bb061bc83c43b0458f8c7b3fa633} 
+\index{filevault::algorithms::classical::SubstitutionCipher@{filevault::algorithms::classical::SubstitutionCipher}!is\_valid\_key@{is\_valid\_key}}
+\index{is\_valid\_key@{is\_valid\_key}!filevault::algorithms::classical::SubstitutionCipher@{filevault::algorithms::classical::SubstitutionCipher}}
+\doxysubsubsection{\texorpdfstring{is\_valid\_key()}{is\_valid\_key()}}
+{\footnotesize\ttfamily bool filevault\+::algorithms\+::classical\+::\+Substitution\+Cipher\+::is\+\_\+valid\+\_\+key (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classfilevault_1_1algorithms_1_1classical_1_1SubstitutionCipher_a2a724abf0eb8613b997f706f2af2c12e}{Substitution\+Map}} \&}]{map }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1algorithms_1_1classical_1_1SubstitutionCipher_a41f6bb061bc83c43b0458f8c7b3fa633_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1algorithms_1_1classical_1_1SubstitutionCipher_a5c2b4e89dcb3a5ff45a33ca05e905d7a}\label{classfilevault_1_1algorithms_1_1classical_1_1SubstitutionCipher_a5c2b4e89dcb3a5ff45a33ca05e905d7a} 
+\index{filevault::algorithms::classical::SubstitutionCipher@{filevault::algorithms::classical::SubstitutionCipher}!key\_size@{key\_size}}
+\index{key\_size@{key\_size}!filevault::algorithms::classical::SubstitutionCipher@{filevault::algorithms::classical::SubstitutionCipher}}
+\doxysubsubsection{\texorpdfstring{key\_size()}{key\_size()}}
+{\footnotesize\ttfamily size\+\_\+t filevault\+::algorithms\+::classical\+::\+Substitution\+Cipher\+::key\+\_\+size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get recommended key size in bytes. 
+
+
+
+Implements \mbox{\hyperlink{classfilevault_1_1core_1_1ICryptoAlgorithm_af9ccb47457495eb99988fef0b5b2bbe8}{filevault\+::core\+::\+ICrypto\+Algorithm}}.
+
+\Hypertarget{classfilevault_1_1algorithms_1_1classical_1_1SubstitutionCipher_a07e438805da191f5457d6a712d351bad}\label{classfilevault_1_1algorithms_1_1classical_1_1SubstitutionCipher_a07e438805da191f5457d6a712d351bad} 
+\index{filevault::algorithms::classical::SubstitutionCipher@{filevault::algorithms::classical::SubstitutionCipher}!name@{name}}
+\index{name@{name}!filevault::algorithms::classical::SubstitutionCipher@{filevault::algorithms::classical::SubstitutionCipher}}
+\doxysubsubsection{\texorpdfstring{name()}{name()}}
+{\footnotesize\ttfamily std\+::string filevault\+::algorithms\+::classical\+::\+Substitution\+Cipher\+::name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get algorithm name. 
+
+
+
+Implements \mbox{\hyperlink{classfilevault_1_1core_1_1ICryptoAlgorithm_a8acdc23e4f2ea77bb4a5b9820b27fa66}{filevault\+::core\+::\+ICrypto\+Algorithm}}.
+
+\Hypertarget{classfilevault_1_1algorithms_1_1classical_1_1SubstitutionCipher_add7fb58c413fb43416b190523a760126}\label{classfilevault_1_1algorithms_1_1classical_1_1SubstitutionCipher_add7fb58c413fb43416b190523a760126} 
+\index{filevault::algorithms::classical::SubstitutionCipher@{filevault::algorithms::classical::SubstitutionCipher}!parse\_key@{parse\_key}}
+\index{parse\_key@{parse\_key}!filevault::algorithms::classical::SubstitutionCipher@{filevault::algorithms::classical::SubstitutionCipher}}
+\doxysubsubsection{\texorpdfstring{parse\_key()}{parse\_key()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classfilevault_1_1algorithms_1_1classical_1_1SubstitutionCipher_a2a724abf0eb8613b997f706f2af2c12e}{Substitution\+Cipher\+::\+Substitution\+Map}} filevault\+::algorithms\+::classical\+::\+Substitution\+Cipher\+::parse\+\_\+key (\begin{DoxyParamCaption}\item[{std\+::span$<$ const uint8\+\_\+t $>$}]{key }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1algorithms_1_1classical_1_1SubstitutionCipher_add7fb58c413fb43416b190523a760126_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1algorithms_1_1classical_1_1SubstitutionCipher_a92cf10975f8653bfc4e61988ea17392c}\label{classfilevault_1_1algorithms_1_1classical_1_1SubstitutionCipher_a92cf10975f8653bfc4e61988ea17392c} 
+\index{filevault::algorithms::classical::SubstitutionCipher@{filevault::algorithms::classical::SubstitutionCipher}!type@{type}}
+\index{type@{type}!filevault::algorithms::classical::SubstitutionCipher@{filevault::algorithms::classical::SubstitutionCipher}}
+\doxysubsubsection{\texorpdfstring{type()}{type()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacefilevault_1_1core_ab1ba257a0205c63e9e1e3623170940a2}{core\+::\+Algorithm\+Type}} filevault\+::algorithms\+::classical\+::\+Substitution\+Cipher\+::type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get algorithm type. 
+
+
+
+Implements \mbox{\hyperlink{classfilevault_1_1core_1_1ICryptoAlgorithm_a11b7820f7b0bbb5fd6668fac3b78a7e1}{filevault\+::core\+::\+ICrypto\+Algorithm}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1algorithms_1_1classical_1_1SubstitutionCipher_a92cf10975f8653bfc4e61988ea17392c_icgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/filevault/algorithms/classical/\mbox{\hyperlink{substitution_8hpp}{substitution.\+hpp}}\item 
+src/algorithms/classical/\mbox{\hyperlink{substitution_8cpp}{substitution.\+cpp}}\end{DoxyCompactItemize}

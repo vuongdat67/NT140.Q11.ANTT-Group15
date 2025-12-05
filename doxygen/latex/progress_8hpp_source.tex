@@ -1,0 +1,56 @@
+\doxysection{progress.\+hpp}
+\hypertarget{progress_8hpp_source}{}\label{progress_8hpp_source}\index{include/filevault/utils/progress.hpp@{include/filevault/utils/progress.hpp}}
+\mbox{\hyperlink{progress_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <cstdint>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <indicators/progress\_bar.hpp>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <indicators/block\_progress\_bar.hpp>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <indicators/cursor\_control.hpp>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacefilevault}{filevault}}\ \{}
+\DoxyCodeLine{00012\ \textcolor{keyword}{namespace\ }utils\ \{}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00017\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classfilevault_1_1utils_1_1ProgressBar}{ProgressBar}}\ \{}
+\DoxyCodeLine{00018\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00019\ \ \ \ \ \mbox{\hyperlink{classfilevault_1_1utils_1_1ProgressBar}{ProgressBar}}(\textcolor{keyword}{const}\ std::string\&\ prefix,\ \textcolor{keywordtype}{size\_t}\ max\_progress\ =\ 100);}
+\DoxyCodeLine{00020\ \ \ \ \ \mbox{\hyperlink{classfilevault_1_1utils_1_1ProgressBar_afc9bd13639230f8b7212ada18bb7ed17}{\string~ProgressBar}}();}
+\DoxyCodeLine{00021\ \ \ \ \ }
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classfilevault_1_1utils_1_1ProgressBar_a1818c0f6580286b16506b792c83f6bed}{set\_progress}}(\textcolor{keywordtype}{size\_t}\ progress);}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classfilevault_1_1utils_1_1ProgressBar_a056f40dac4cf39b8e4cb56b915989622}{tick}}();}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classfilevault_1_1utils_1_1ProgressBar_aa841da0c62578eb3e0822899fb39b909}{set\_postfix}}(\textcolor{keyword}{const}\ std::string\&\ text);}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classfilevault_1_1utils_1_1ProgressBar_afb66db4e08306eaa2affb290b07370e9}{mark\_as\_completed}}();}
+\DoxyCodeLine{00026\ \ \ \ \ }
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classfilevault_1_1utils_1_1ProgressBar_a47e62a1f5e79fa02f5829f758df1a053}{hide}}();}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classfilevault_1_1utils_1_1ProgressBar_a37c26589ff98448aa4f70a708f864be1}{show}}();}
+\DoxyCodeLine{00029\ \ \ \ \ }
+\DoxyCodeLine{00030\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00031\ \ \ \ \ std::unique\_ptr<indicators::ProgressBar>\ \mbox{\hyperlink{classfilevault_1_1utils_1_1ProgressBar_aa97901e3560605cc014f8a720dddcb8c}{bar\_}};}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classfilevault_1_1utils_1_1ProgressBar_a33fddd748a7c1c2ef43f71ca9078651e}{current\_progress\_}};}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classfilevault_1_1utils_1_1ProgressBar_a13eaaaf3ed14504c4858c6211fd6b136}{max\_progress\_}};}
+\DoxyCodeLine{00034\ \};}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00039\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classfilevault_1_1utils_1_1BlockProgressBar}{BlockProgressBar}}\ \{}
+\DoxyCodeLine{00040\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00041\ \ \ \ \ \mbox{\hyperlink{classfilevault_1_1utils_1_1BlockProgressBar}{BlockProgressBar}}(\textcolor{keyword}{const}\ std::string\&\ prefix,\ \textcolor{keywordtype}{size\_t}\ max\_progress\ =\ 100);}
+\DoxyCodeLine{00042\ \ \ \ \ }
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classfilevault_1_1utils_1_1BlockProgressBar_a49be95c00fe008bd7b3359383ba17aef}{set\_progress}}(\textcolor{keywordtype}{size\_t}\ progress);}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classfilevault_1_1utils_1_1BlockProgressBar_a0943cfd8699cfb54c732162a3fd844cc}{set\_option\_text}}(\textcolor{keyword}{const}\ std::string\&\ text);}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classfilevault_1_1utils_1_1BlockProgressBar_a4dae10a035bd17bf97e09ef189562789}{mark\_as\_completed}}();}
+\DoxyCodeLine{00046\ \ \ \ \ }
+\DoxyCodeLine{00047\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00048\ \ \ \ \ std::unique\_ptr<indicators::BlockProgressBar>\ \mbox{\hyperlink{classfilevault_1_1utils_1_1BlockProgressBar_a1cebee9fdb3fbf811e786d3d4fe62777}{bar\_}};}
+\DoxyCodeLine{00049\ \};}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \textcolor{comment}{//\ MultiProgress\ removed\ -\/\ not\ compatible\ with\ indicators\ API}}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \textcolor{comment}{//\ Spinner\ removed\ -\/\ use\ ProgressBar\ instead}}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \}\ \textcolor{comment}{//\ namespace\ utils}}
+\DoxyCodeLine{00056\ \}\ \textcolor{comment}{//\ namespace\ filevault}}
+
+\end{DoxyCode}

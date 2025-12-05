@@ -1,0 +1,271 @@
+\doxysection{filevault\+::cli\+::Config\+Command Class Reference}
+\hypertarget{classfilevault_1_1cli_1_1ConfigCommand}{}\label{classfilevault_1_1cli_1_1ConfigCommand}\index{filevault::cli::ConfigCommand@{filevault::cli::ConfigCommand}}
+
+
+Config command -\/ manage File\+Vault configuration.  
+
+
+
+
+{\ttfamily \#include $<$config\+\_\+cmd.\+hpp$>$}
+
+
+
+Inheritance diagram for filevault\+::cli\+::Config\+Command\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=241pt]{classfilevault_1_1cli_1_1ConfigCommand__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for filevault\+::cli\+::Config\+Command\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=241pt]{classfilevault_1_1cli_1_1ConfigCommand__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classfilevault_1_1cli_1_1ConfigCommand_a9977bc7f110593c0b3da38448ee3a168}{Config\+Command}} ()=default
+\item 
+std\+::string \mbox{\hyperlink{classfilevault_1_1cli_1_1ConfigCommand_abc4895d4201a99d4680523cf377132f4}{name}} () const override
+\begin{DoxyCompactList}\small\item\em Get command name. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classfilevault_1_1cli_1_1ConfigCommand_af24e65a29984e32172ca408eb77754a9}{description}} () const override
+\begin{DoxyCompactList}\small\item\em Get command description. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classfilevault_1_1cli_1_1ConfigCommand_a8cde6159de491e6ae22dc72a56792576}{setup}} (CLI\+::\+App \&app) override
+\begin{DoxyCompactList}\small\item\em Setup CLI11 subcommand. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classfilevault_1_1cli_1_1ConfigCommand_a55fbd5fe84773781f211af14aa15b3c6}{execute}} () override
+\begin{DoxyCompactList}\small\item\em Execute the command. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classfilevault_1_1cli_1_1ICommand}{filevault\+::cli\+::\+ICommand}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classfilevault_1_1cli_1_1ICommand_a358ce6bf0db6a1ff7f53eec427481a5d}{\texorpdfstring{$\sim$}{\string~}\+ICommand}} ()=default
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{classfilevault_1_1cli_1_1ConfigCommand_afad8af9edf484d2d6c7c94bc5886f8a4}{show\+\_\+config}} ()
+\item 
+int \mbox{\hyperlink{classfilevault_1_1cli_1_1ConfigCommand_a0fb097164ebdbd0156e6d7703709305d}{set\+\_\+value}} ()
+\item 
+int \mbox{\hyperlink{classfilevault_1_1cli_1_1ConfigCommand_a7724b54794fe7b48e9432cce35e57eb5}{reset\+\_\+config}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{classfilevault_1_1cli_1_1ConfigCommand_a6ce19b75cf7423776864bb6dbe6d7f82}{subcommand\+\_\+}}
+\item 
+std\+::string \mbox{\hyperlink{classfilevault_1_1cli_1_1ConfigCommand_ae8b362d1acb6238b49f44a33e6b65754}{key\+\_\+}}
+\item 
+std\+::string \mbox{\hyperlink{classfilevault_1_1cli_1_1ConfigCommand_af9705cb6e4649fe94f6423a69e65dd9a}{value\+\_\+}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Config command -\/ manage File\+Vault configuration. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classfilevault_1_1cli_1_1ConfigCommand_a9977bc7f110593c0b3da38448ee3a168}\label{classfilevault_1_1cli_1_1ConfigCommand_a9977bc7f110593c0b3da38448ee3a168} 
+\index{filevault::cli::ConfigCommand@{filevault::cli::ConfigCommand}!ConfigCommand@{ConfigCommand}}
+\index{ConfigCommand@{ConfigCommand}!filevault::cli::ConfigCommand@{filevault::cli::ConfigCommand}}
+\doxysubsubsection{\texorpdfstring{ConfigCommand()}{ConfigCommand()}}
+{\footnotesize\ttfamily filevault\+::cli\+::\+Config\+Command\+::\+Config\+Command (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classfilevault_1_1cli_1_1ConfigCommand_af24e65a29984e32172ca408eb77754a9}\label{classfilevault_1_1cli_1_1ConfigCommand_af24e65a29984e32172ca408eb77754a9} 
+\index{filevault::cli::ConfigCommand@{filevault::cli::ConfigCommand}!description@{description}}
+\index{description@{description}!filevault::cli::ConfigCommand@{filevault::cli::ConfigCommand}}
+\doxysubsubsection{\texorpdfstring{description()}{description()}}
+{\footnotesize\ttfamily std\+::string filevault\+::cli\+::\+Config\+Command\+::description (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get command description. 
+
+
+
+Implements \mbox{\hyperlink{classfilevault_1_1cli_1_1ICommand_a154cdd3f87273142e70814445abd48ea}{filevault\+::cli\+::\+ICommand}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1cli_1_1ConfigCommand_af24e65a29984e32172ca408eb77754a9_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1cli_1_1ConfigCommand_a55fbd5fe84773781f211af14aa15b3c6}\label{classfilevault_1_1cli_1_1ConfigCommand_a55fbd5fe84773781f211af14aa15b3c6} 
+\index{filevault::cli::ConfigCommand@{filevault::cli::ConfigCommand}!execute@{execute}}
+\index{execute@{execute}!filevault::cli::ConfigCommand@{filevault::cli::ConfigCommand}}
+\doxysubsubsection{\texorpdfstring{execute()}{execute()}}
+{\footnotesize\ttfamily int filevault\+::cli\+::\+Config\+Command\+::execute (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Execute the command. 
+
+
+
+Implements \mbox{\hyperlink{classfilevault_1_1cli_1_1ICommand_a2fdc36b29a23b94a6e52bc3d4eb0c1ed}{filevault\+::cli\+::\+ICommand}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1cli_1_1ConfigCommand_a55fbd5fe84773781f211af14aa15b3c6_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1cli_1_1ConfigCommand_a55fbd5fe84773781f211af14aa15b3c6_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1cli_1_1ConfigCommand_abc4895d4201a99d4680523cf377132f4}\label{classfilevault_1_1cli_1_1ConfigCommand_abc4895d4201a99d4680523cf377132f4} 
+\index{filevault::cli::ConfigCommand@{filevault::cli::ConfigCommand}!name@{name}}
+\index{name@{name}!filevault::cli::ConfigCommand@{filevault::cli::ConfigCommand}}
+\doxysubsubsection{\texorpdfstring{name()}{name()}}
+{\footnotesize\ttfamily std\+::string filevault\+::cli\+::\+Config\+Command\+::name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get command name. 
+
+
+
+Implements \mbox{\hyperlink{classfilevault_1_1cli_1_1ICommand_a60aa4bc7c96c2e80feeb1a184d7ae2f7}{filevault\+::cli\+::\+ICommand}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1cli_1_1ConfigCommand_abc4895d4201a99d4680523cf377132f4_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1cli_1_1ConfigCommand_a7724b54794fe7b48e9432cce35e57eb5}\label{classfilevault_1_1cli_1_1ConfigCommand_a7724b54794fe7b48e9432cce35e57eb5} 
+\index{filevault::cli::ConfigCommand@{filevault::cli::ConfigCommand}!reset\_config@{reset\_config}}
+\index{reset\_config@{reset\_config}!filevault::cli::ConfigCommand@{filevault::cli::ConfigCommand}}
+\doxysubsubsection{\texorpdfstring{reset\_config()}{reset\_config()}}
+{\footnotesize\ttfamily int filevault\+::cli\+::\+Config\+Command\+::reset\+\_\+config (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1cli_1_1ConfigCommand_a7724b54794fe7b48e9432cce35e57eb5_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1cli_1_1ConfigCommand_a7724b54794fe7b48e9432cce35e57eb5_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1cli_1_1ConfigCommand_a0fb097164ebdbd0156e6d7703709305d}\label{classfilevault_1_1cli_1_1ConfigCommand_a0fb097164ebdbd0156e6d7703709305d} 
+\index{filevault::cli::ConfigCommand@{filevault::cli::ConfigCommand}!set\_value@{set\_value}}
+\index{set\_value@{set\_value}!filevault::cli::ConfigCommand@{filevault::cli::ConfigCommand}}
+\doxysubsubsection{\texorpdfstring{set\_value()}{set\_value()}}
+{\footnotesize\ttfamily int filevault\+::cli\+::\+Config\+Command\+::set\+\_\+value (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1cli_1_1ConfigCommand_a0fb097164ebdbd0156e6d7703709305d_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1cli_1_1ConfigCommand_a0fb097164ebdbd0156e6d7703709305d_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1cli_1_1ConfigCommand_a8cde6159de491e6ae22dc72a56792576}\label{classfilevault_1_1cli_1_1ConfigCommand_a8cde6159de491e6ae22dc72a56792576} 
+\index{filevault::cli::ConfigCommand@{filevault::cli::ConfigCommand}!setup@{setup}}
+\index{setup@{setup}!filevault::cli::ConfigCommand@{filevault::cli::ConfigCommand}}
+\doxysubsubsection{\texorpdfstring{setup()}{setup()}}
+{\footnotesize\ttfamily void filevault\+::cli\+::\+Config\+Command\+::setup (\begin{DoxyParamCaption}\item[{CLI\+::\+App \&}]{app }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Setup CLI11 subcommand. 
+
+
+
+Implements \mbox{\hyperlink{classfilevault_1_1cli_1_1ICommand_aa43a60aabddff55d1060c334dade972c}{filevault\+::cli\+::\+ICommand}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1cli_1_1ConfigCommand_a8cde6159de491e6ae22dc72a56792576_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1cli_1_1ConfigCommand_afad8af9edf484d2d6c7c94bc5886f8a4}\label{classfilevault_1_1cli_1_1ConfigCommand_afad8af9edf484d2d6c7c94bc5886f8a4} 
+\index{filevault::cli::ConfigCommand@{filevault::cli::ConfigCommand}!show\_config@{show\_config}}
+\index{show\_config@{show\_config}!filevault::cli::ConfigCommand@{filevault::cli::ConfigCommand}}
+\doxysubsubsection{\texorpdfstring{show\_config()}{show\_config()}}
+{\footnotesize\ttfamily int filevault\+::cli\+::\+Config\+Command\+::show\+\_\+config (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1cli_1_1ConfigCommand_afad8af9edf484d2d6c7c94bc5886f8a4_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1cli_1_1ConfigCommand_afad8af9edf484d2d6c7c94bc5886f8a4_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classfilevault_1_1cli_1_1ConfigCommand_ae8b362d1acb6238b49f44a33e6b65754}\label{classfilevault_1_1cli_1_1ConfigCommand_ae8b362d1acb6238b49f44a33e6b65754} 
+\index{filevault::cli::ConfigCommand@{filevault::cli::ConfigCommand}!key\_@{key\_}}
+\index{key\_@{key\_}!filevault::cli::ConfigCommand@{filevault::cli::ConfigCommand}}
+\doxysubsubsection{\texorpdfstring{key\_}{key\_}}
+{\footnotesize\ttfamily std\+::string filevault\+::cli\+::\+Config\+Command\+::key\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classfilevault_1_1cli_1_1ConfigCommand_a6ce19b75cf7423776864bb6dbe6d7f82}\label{classfilevault_1_1cli_1_1ConfigCommand_a6ce19b75cf7423776864bb6dbe6d7f82} 
+\index{filevault::cli::ConfigCommand@{filevault::cli::ConfigCommand}!subcommand\_@{subcommand\_}}
+\index{subcommand\_@{subcommand\_}!filevault::cli::ConfigCommand@{filevault::cli::ConfigCommand}}
+\doxysubsubsection{\texorpdfstring{subcommand\_}{subcommand\_}}
+{\footnotesize\ttfamily std\+::string filevault\+::cli\+::\+Config\+Command\+::subcommand\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classfilevault_1_1cli_1_1ConfigCommand_af9705cb6e4649fe94f6423a69e65dd9a}\label{classfilevault_1_1cli_1_1ConfigCommand_af9705cb6e4649fe94f6423a69e65dd9a} 
+\index{filevault::cli::ConfigCommand@{filevault::cli::ConfigCommand}!value\_@{value\_}}
+\index{value\_@{value\_}!filevault::cli::ConfigCommand@{filevault::cli::ConfigCommand}}
+\doxysubsubsection{\texorpdfstring{value\_}{value\_}}
+{\footnotesize\ttfamily std\+::string filevault\+::cli\+::\+Config\+Command\+::value\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/filevault/cli/commands/\mbox{\hyperlink{config__cmd_8hpp}{config\+\_\+cmd.\+hpp}}\item 
+src/cli/commands/\mbox{\hyperlink{config__cmd_8cpp}{config\+\_\+cmd.\+cpp}}\end{DoxyCompactItemize}

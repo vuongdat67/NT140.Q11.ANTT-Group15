@@ -1,0 +1,212 @@
+\doxysection{filevault\+::cli\+::commands\+::Dump\+Command Class Reference}
+\hypertarget{classfilevault_1_1cli_1_1commands_1_1DumpCommand}{}\label{classfilevault_1_1cli_1_1commands_1_1DumpCommand}\index{filevault::cli::commands::DumpCommand@{filevault::cli::commands::DumpCommand}}
+
+
+Command to dump file content in various formats (hex, binary, base64)  
+
+
+
+
+{\ttfamily \#include $<$dump\+\_\+cmd.\+hpp$>$}
+
+
+
+Inheritance diagram for filevault\+::cli\+::commands\+::Dump\+Command\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=214pt]{classfilevault_1_1cli_1_1commands_1_1DumpCommand__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for filevault\+::cli\+::commands\+::Dump\+Command\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=214pt]{classfilevault_1_1cli_1_1commands_1_1DumpCommand__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classfilevault_1_1cli_1_1commands_1_1DumpCommand_aa0475313890ce1e5089371a43a367eeb}{Dump\+Command}} ()
+\item 
+std\+::string \mbox{\hyperlink{classfilevault_1_1cli_1_1commands_1_1DumpCommand_aac7a7f9def896a8c750d72430e1c4ebe}{name}} () const override
+\begin{DoxyCompactList}\small\item\em Get command name. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classfilevault_1_1cli_1_1commands_1_1DumpCommand_a0230217d7e5faa9531f5f674032ad943}{description}} () const override
+\begin{DoxyCompactList}\small\item\em Get command description. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classfilevault_1_1cli_1_1commands_1_1DumpCommand_ac1f6ef852c8c9ba0fe96f440d8a06819}{setup}} (CLI\+::\+App \&app) override
+\begin{DoxyCompactList}\small\item\em Setup CLI11 subcommand. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classfilevault_1_1cli_1_1commands_1_1DumpCommand_a5d3167faa948f2aa1bd9b692a683a806}{execute}} () override
+\begin{DoxyCompactList}\small\item\em Execute the command. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classfilevault_1_1cli_1_1ICommand}{filevault\+::cli\+::\+ICommand}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classfilevault_1_1cli_1_1ICommand_a358ce6bf0db6a1ff7f53eec427481a5d}{\texorpdfstring{$\sim$}{\string~}\+ICommand}} ()=default
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{classfilevault_1_1cli_1_1commands_1_1DumpCommand_ac06a19bb532e6ecdfda41a9d61ca1a29}{name\+\_\+}} = "{}dump"{}
+\item 
+std\+::string \mbox{\hyperlink{classfilevault_1_1cli_1_1commands_1_1DumpCommand_ab51eada337cf0f73b1a17a4cdd0e476f}{description\+\_\+}} = "{}View file content in hex, binary, or base64 format"{}
+\item 
+std\+::string \mbox{\hyperlink{classfilevault_1_1cli_1_1commands_1_1DumpCommand_aefa22b8e5bd65711c08bde45c8a2b1dd}{file\+\_\+path\+\_\+}}
+\item 
+std\+::string \mbox{\hyperlink{classfilevault_1_1cli_1_1commands_1_1DumpCommand_a156d7f0110adae87c59c9deaf12be242}{format\+\_\+}} = "{}hex"{}
+\item 
+size\+\_\+t \mbox{\hyperlink{classfilevault_1_1cli_1_1commands_1_1DumpCommand_a2cb089adb936443b2898eae29de5f114}{max\+\_\+bytes\+\_\+}} = 0
+\item 
+bool \mbox{\hyperlink{classfilevault_1_1cli_1_1commands_1_1DumpCommand_a1790fd874c05f28864152a69569bc11e}{show\+\_\+offset\+\_\+}} = true
+\item 
+bool \mbox{\hyperlink{classfilevault_1_1cli_1_1commands_1_1DumpCommand_a78c7c95574f39f747db640b43492b7de}{show\+\_\+ascii\+\_\+}} = true
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Command to dump file content in various formats (hex, binary, base64) 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classfilevault_1_1cli_1_1commands_1_1DumpCommand_aa0475313890ce1e5089371a43a367eeb}\label{classfilevault_1_1cli_1_1commands_1_1DumpCommand_aa0475313890ce1e5089371a43a367eeb} 
+\index{filevault::cli::commands::DumpCommand@{filevault::cli::commands::DumpCommand}!DumpCommand@{DumpCommand}}
+\index{DumpCommand@{DumpCommand}!filevault::cli::commands::DumpCommand@{filevault::cli::commands::DumpCommand}}
+\doxysubsubsection{\texorpdfstring{DumpCommand()}{DumpCommand()}}
+{\footnotesize\ttfamily filevault\+::cli\+::commands\+::\+Dump\+Command\+::\+Dump\+Command (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classfilevault_1_1cli_1_1commands_1_1DumpCommand_a0230217d7e5faa9531f5f674032ad943}\label{classfilevault_1_1cli_1_1commands_1_1DumpCommand_a0230217d7e5faa9531f5f674032ad943} 
+\index{filevault::cli::commands::DumpCommand@{filevault::cli::commands::DumpCommand}!description@{description}}
+\index{description@{description}!filevault::cli::commands::DumpCommand@{filevault::cli::commands::DumpCommand}}
+\doxysubsubsection{\texorpdfstring{description()}{description()}}
+{\footnotesize\ttfamily std\+::string filevault\+::cli\+::commands\+::\+Dump\+Command\+::description (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get command description. 
+
+
+
+Implements \mbox{\hyperlink{classfilevault_1_1cli_1_1ICommand_a154cdd3f87273142e70814445abd48ea}{filevault\+::cli\+::\+ICommand}}.
+
+\Hypertarget{classfilevault_1_1cli_1_1commands_1_1DumpCommand_a5d3167faa948f2aa1bd9b692a683a806}\label{classfilevault_1_1cli_1_1commands_1_1DumpCommand_a5d3167faa948f2aa1bd9b692a683a806} 
+\index{filevault::cli::commands::DumpCommand@{filevault::cli::commands::DumpCommand}!execute@{execute}}
+\index{execute@{execute}!filevault::cli::commands::DumpCommand@{filevault::cli::commands::DumpCommand}}
+\doxysubsubsection{\texorpdfstring{execute()}{execute()}}
+{\footnotesize\ttfamily int filevault\+::cli\+::commands\+::\+Dump\+Command\+::execute (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Execute the command. 
+
+
+
+Implements \mbox{\hyperlink{classfilevault_1_1cli_1_1ICommand_a2fdc36b29a23b94a6e52bc3d4eb0c1ed}{filevault\+::cli\+::\+ICommand}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1cli_1_1commands_1_1DumpCommand_a5d3167faa948f2aa1bd9b692a683a806_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1cli_1_1commands_1_1DumpCommand_a5d3167faa948f2aa1bd9b692a683a806_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1cli_1_1commands_1_1DumpCommand_aac7a7f9def896a8c750d72430e1c4ebe}\label{classfilevault_1_1cli_1_1commands_1_1DumpCommand_aac7a7f9def896a8c750d72430e1c4ebe} 
+\index{filevault::cli::commands::DumpCommand@{filevault::cli::commands::DumpCommand}!name@{name}}
+\index{name@{name}!filevault::cli::commands::DumpCommand@{filevault::cli::commands::DumpCommand}}
+\doxysubsubsection{\texorpdfstring{name()}{name()}}
+{\footnotesize\ttfamily std\+::string filevault\+::cli\+::commands\+::\+Dump\+Command\+::name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get command name. 
+
+
+
+Implements \mbox{\hyperlink{classfilevault_1_1cli_1_1ICommand_a60aa4bc7c96c2e80feeb1a184d7ae2f7}{filevault\+::cli\+::\+ICommand}}.
+
+\Hypertarget{classfilevault_1_1cli_1_1commands_1_1DumpCommand_ac1f6ef852c8c9ba0fe96f440d8a06819}\label{classfilevault_1_1cli_1_1commands_1_1DumpCommand_ac1f6ef852c8c9ba0fe96f440d8a06819} 
+\index{filevault::cli::commands::DumpCommand@{filevault::cli::commands::DumpCommand}!setup@{setup}}
+\index{setup@{setup}!filevault::cli::commands::DumpCommand@{filevault::cli::commands::DumpCommand}}
+\doxysubsubsection{\texorpdfstring{setup()}{setup()}}
+{\footnotesize\ttfamily void filevault\+::cli\+::commands\+::\+Dump\+Command\+::setup (\begin{DoxyParamCaption}\item[{CLI\+::\+App \&}]{app }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Setup CLI11 subcommand. 
+
+
+
+Implements \mbox{\hyperlink{classfilevault_1_1cli_1_1ICommand_aa43a60aabddff55d1060c334dade972c}{filevault\+::cli\+::\+ICommand}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1cli_1_1commands_1_1DumpCommand_ac1f6ef852c8c9ba0fe96f440d8a06819_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classfilevault_1_1cli_1_1commands_1_1DumpCommand_ab51eada337cf0f73b1a17a4cdd0e476f}\label{classfilevault_1_1cli_1_1commands_1_1DumpCommand_ab51eada337cf0f73b1a17a4cdd0e476f} 
+\index{filevault::cli::commands::DumpCommand@{filevault::cli::commands::DumpCommand}!description\_@{description\_}}
+\index{description\_@{description\_}!filevault::cli::commands::DumpCommand@{filevault::cli::commands::DumpCommand}}
+\doxysubsubsection{\texorpdfstring{description\_}{description\_}}
+{\footnotesize\ttfamily std\+::string filevault\+::cli\+::commands\+::\+Dump\+Command\+::description\+\_\+ = "{}View file content in hex, binary, or base64 format"{}\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classfilevault_1_1cli_1_1commands_1_1DumpCommand_aefa22b8e5bd65711c08bde45c8a2b1dd}\label{classfilevault_1_1cli_1_1commands_1_1DumpCommand_aefa22b8e5bd65711c08bde45c8a2b1dd} 
+\index{filevault::cli::commands::DumpCommand@{filevault::cli::commands::DumpCommand}!file\_path\_@{file\_path\_}}
+\index{file\_path\_@{file\_path\_}!filevault::cli::commands::DumpCommand@{filevault::cli::commands::DumpCommand}}
+\doxysubsubsection{\texorpdfstring{file\_path\_}{file\_path\_}}
+{\footnotesize\ttfamily std\+::string filevault\+::cli\+::commands\+::\+Dump\+Command\+::file\+\_\+path\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classfilevault_1_1cli_1_1commands_1_1DumpCommand_a156d7f0110adae87c59c9deaf12be242}\label{classfilevault_1_1cli_1_1commands_1_1DumpCommand_a156d7f0110adae87c59c9deaf12be242} 
+\index{filevault::cli::commands::DumpCommand@{filevault::cli::commands::DumpCommand}!format\_@{format\_}}
+\index{format\_@{format\_}!filevault::cli::commands::DumpCommand@{filevault::cli::commands::DumpCommand}}
+\doxysubsubsection{\texorpdfstring{format\_}{format\_}}
+{\footnotesize\ttfamily std\+::string filevault\+::cli\+::commands\+::\+Dump\+Command\+::format\+\_\+ = "{}hex"{}\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classfilevault_1_1cli_1_1commands_1_1DumpCommand_a2cb089adb936443b2898eae29de5f114}\label{classfilevault_1_1cli_1_1commands_1_1DumpCommand_a2cb089adb936443b2898eae29de5f114} 
+\index{filevault::cli::commands::DumpCommand@{filevault::cli::commands::DumpCommand}!max\_bytes\_@{max\_bytes\_}}
+\index{max\_bytes\_@{max\_bytes\_}!filevault::cli::commands::DumpCommand@{filevault::cli::commands::DumpCommand}}
+\doxysubsubsection{\texorpdfstring{max\_bytes\_}{max\_bytes\_}}
+{\footnotesize\ttfamily size\+\_\+t filevault\+::cli\+::commands\+::\+Dump\+Command\+::max\+\_\+bytes\+\_\+ = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classfilevault_1_1cli_1_1commands_1_1DumpCommand_ac06a19bb532e6ecdfda41a9d61ca1a29}\label{classfilevault_1_1cli_1_1commands_1_1DumpCommand_ac06a19bb532e6ecdfda41a9d61ca1a29} 
+\index{filevault::cli::commands::DumpCommand@{filevault::cli::commands::DumpCommand}!name\_@{name\_}}
+\index{name\_@{name\_}!filevault::cli::commands::DumpCommand@{filevault::cli::commands::DumpCommand}}
+\doxysubsubsection{\texorpdfstring{name\_}{name\_}}
+{\footnotesize\ttfamily std\+::string filevault\+::cli\+::commands\+::\+Dump\+Command\+::name\+\_\+ = "{}dump"{}\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classfilevault_1_1cli_1_1commands_1_1DumpCommand_a78c7c95574f39f747db640b43492b7de}\label{classfilevault_1_1cli_1_1commands_1_1DumpCommand_a78c7c95574f39f747db640b43492b7de} 
+\index{filevault::cli::commands::DumpCommand@{filevault::cli::commands::DumpCommand}!show\_ascii\_@{show\_ascii\_}}
+\index{show\_ascii\_@{show\_ascii\_}!filevault::cli::commands::DumpCommand@{filevault::cli::commands::DumpCommand}}
+\doxysubsubsection{\texorpdfstring{show\_ascii\_}{show\_ascii\_}}
+{\footnotesize\ttfamily bool filevault\+::cli\+::commands\+::\+Dump\+Command\+::show\+\_\+ascii\+\_\+ = true\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classfilevault_1_1cli_1_1commands_1_1DumpCommand_a1790fd874c05f28864152a69569bc11e}\label{classfilevault_1_1cli_1_1commands_1_1DumpCommand_a1790fd874c05f28864152a69569bc11e} 
+\index{filevault::cli::commands::DumpCommand@{filevault::cli::commands::DumpCommand}!show\_offset\_@{show\_offset\_}}
+\index{show\_offset\_@{show\_offset\_}!filevault::cli::commands::DumpCommand@{filevault::cli::commands::DumpCommand}}
+\doxysubsubsection{\texorpdfstring{show\_offset\_}{show\_offset\_}}
+{\footnotesize\ttfamily bool filevault\+::cli\+::commands\+::\+Dump\+Command\+::show\+\_\+offset\+\_\+ = true\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/filevault/cli/commands/\mbox{\hyperlink{dump__cmd_8hpp}{dump\+\_\+cmd.\+hpp}}\item 
+src/cli/commands/\mbox{\hyperlink{dump__cmd_8cpp}{dump\+\_\+cmd.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,81 @@
+\doxysection{filevault\+::core\+::Streaming\+Config Struct Reference}
+\hypertarget{structfilevault_1_1core_1_1StreamingConfig}{}\label{structfilevault_1_1core_1_1StreamingConfig}\index{filevault::core::StreamingConfig@{filevault::core::StreamingConfig}}
+
+
+Configuration for streaming encryption.  
+
+
+
+
+{\ttfamily \#include $<$streaming.\+hpp$>$}
+
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+size\+\_\+t \mbox{\hyperlink{structfilevault_1_1core_1_1StreamingConfig_ad9a33ec5be949dcdd18570b5c9928aa8}{chunk\+\_\+size}} = 64 \texorpdfstring{$\ast$}{*} 1024 \texorpdfstring{$\ast$}{*} 1024
+\item 
+\mbox{\hyperlink{namespacefilevault_1_1core_ab1ba257a0205c63e9e1e3623170940a2}{Algorithm\+Type}} \mbox{\hyperlink{structfilevault_1_1core_1_1StreamingConfig_a3f31afa99c6309bb64bc3a5f0dd710d7}{algorithm}} = \mbox{\hyperlink{namespacefilevault_1_1core_ab1ba257a0205c63e9e1e3623170940a2abe0f06b885034bb30ebb9fd868bba087}{Algorithm\+Type\+::\+AES\+\_\+256\+\_\+\+GCM}}
+\item 
+\mbox{\hyperlink{namespacefilevault_1_1core_ad5938d2ac317833646f1d8b965e3768f}{KDFType}} \mbox{\hyperlink{structfilevault_1_1core_1_1StreamingConfig_a76dd4a748229fb91652e1fcbe7b6d242}{kdf}} = \mbox{\hyperlink{namespacefilevault_1_1core_ad5938d2ac317833646f1d8b965e3768fa0b06f1bf38e4ec2b1c827b6c31fd6510}{KDFType\+::\+ARGON2\+ID}}
+\item 
+\mbox{\hyperlink{namespacefilevault_1_1core_abcb3b3d896f7dc00926903183b3e2dc9}{Security\+Level}} \mbox{\hyperlink{structfilevault_1_1core_1_1StreamingConfig_a550da1afe48f09119090c21073128fdb}{level}} = \mbox{\hyperlink{namespacefilevault_1_1core_abcb3b3d896f7dc00926903183b3e2dc9a3dfb3ae3cdaa322f0388f1a531c39520}{Security\+Level\+::\+STRONG}}
+\item 
+\mbox{\hyperlink{namespacefilevault_1_1core_ac7e3615724bd970e96e131cab64ef303}{Compression\+Type}} \mbox{\hyperlink{structfilevault_1_1core_1_1StreamingConfig_ae0b1c4268c7bd8e6a77b74b6f5bf27b3}{compression}} = \mbox{\hyperlink{namespacefilevault_1_1core_ac7e3615724bd970e96e131cab64ef303ab50339a10e1de285ac99d4c3990b8693}{Compression\+Type\+::\+NONE}}
+\item 
+int \mbox{\hyperlink{structfilevault_1_1core_1_1StreamingConfig_ab1dcdcc1d812046cc3f4025614795bfc}{compression\+\_\+level}} = 6
+\item 
+\mbox{\hyperlink{namespacefilevault_1_1core_addf387e7b32c628f1b2b0d33c5ce6dc4}{Stream\+Progress\+Callback}} \mbox{\hyperlink{structfilevault_1_1core_1_1StreamingConfig_aace1c6fbd02944a258cdf3e48a79ccc0}{progress\+\_\+callback}} = nullptr
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Configuration for streaming encryption. 
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{structfilevault_1_1core_1_1StreamingConfig_a3f31afa99c6309bb64bc3a5f0dd710d7}\label{structfilevault_1_1core_1_1StreamingConfig_a3f31afa99c6309bb64bc3a5f0dd710d7} 
+\index{filevault::core::StreamingConfig@{filevault::core::StreamingConfig}!algorithm@{algorithm}}
+\index{algorithm@{algorithm}!filevault::core::StreamingConfig@{filevault::core::StreamingConfig}}
+\doxysubsubsection{\texorpdfstring{algorithm}{algorithm}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacefilevault_1_1core_ab1ba257a0205c63e9e1e3623170940a2}{Algorithm\+Type}} filevault\+::core\+::\+Streaming\+Config\+::algorithm = \mbox{\hyperlink{namespacefilevault_1_1core_ab1ba257a0205c63e9e1e3623170940a2abe0f06b885034bb30ebb9fd868bba087}{Algorithm\+Type\+::\+AES\+\_\+256\+\_\+\+GCM}}}
+
+\Hypertarget{structfilevault_1_1core_1_1StreamingConfig_ad9a33ec5be949dcdd18570b5c9928aa8}\label{structfilevault_1_1core_1_1StreamingConfig_ad9a33ec5be949dcdd18570b5c9928aa8} 
+\index{filevault::core::StreamingConfig@{filevault::core::StreamingConfig}!chunk\_size@{chunk\_size}}
+\index{chunk\_size@{chunk\_size}!filevault::core::StreamingConfig@{filevault::core::StreamingConfig}}
+\doxysubsubsection{\texorpdfstring{chunk\_size}{chunk\_size}}
+{\footnotesize\ttfamily size\+\_\+t filevault\+::core\+::\+Streaming\+Config\+::chunk\+\_\+size = 64 \texorpdfstring{$\ast$}{*} 1024 \texorpdfstring{$\ast$}{*} 1024}
+
+\Hypertarget{structfilevault_1_1core_1_1StreamingConfig_ae0b1c4268c7bd8e6a77b74b6f5bf27b3}\label{structfilevault_1_1core_1_1StreamingConfig_ae0b1c4268c7bd8e6a77b74b6f5bf27b3} 
+\index{filevault::core::StreamingConfig@{filevault::core::StreamingConfig}!compression@{compression}}
+\index{compression@{compression}!filevault::core::StreamingConfig@{filevault::core::StreamingConfig}}
+\doxysubsubsection{\texorpdfstring{compression}{compression}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacefilevault_1_1core_ac7e3615724bd970e96e131cab64ef303}{Compression\+Type}} filevault\+::core\+::\+Streaming\+Config\+::compression = \mbox{\hyperlink{namespacefilevault_1_1core_ac7e3615724bd970e96e131cab64ef303ab50339a10e1de285ac99d4c3990b8693}{Compression\+Type\+::\+NONE}}}
+
+\Hypertarget{structfilevault_1_1core_1_1StreamingConfig_ab1dcdcc1d812046cc3f4025614795bfc}\label{structfilevault_1_1core_1_1StreamingConfig_ab1dcdcc1d812046cc3f4025614795bfc} 
+\index{filevault::core::StreamingConfig@{filevault::core::StreamingConfig}!compression\_level@{compression\_level}}
+\index{compression\_level@{compression\_level}!filevault::core::StreamingConfig@{filevault::core::StreamingConfig}}
+\doxysubsubsection{\texorpdfstring{compression\_level}{compression\_level}}
+{\footnotesize\ttfamily int filevault\+::core\+::\+Streaming\+Config\+::compression\+\_\+level = 6}
+
+\Hypertarget{structfilevault_1_1core_1_1StreamingConfig_a76dd4a748229fb91652e1fcbe7b6d242}\label{structfilevault_1_1core_1_1StreamingConfig_a76dd4a748229fb91652e1fcbe7b6d242} 
+\index{filevault::core::StreamingConfig@{filevault::core::StreamingConfig}!kdf@{kdf}}
+\index{kdf@{kdf}!filevault::core::StreamingConfig@{filevault::core::StreamingConfig}}
+\doxysubsubsection{\texorpdfstring{kdf}{kdf}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacefilevault_1_1core_ad5938d2ac317833646f1d8b965e3768f}{KDFType}} filevault\+::core\+::\+Streaming\+Config\+::kdf = \mbox{\hyperlink{namespacefilevault_1_1core_ad5938d2ac317833646f1d8b965e3768fa0b06f1bf38e4ec2b1c827b6c31fd6510}{KDFType\+::\+ARGON2\+ID}}}
+
+\Hypertarget{structfilevault_1_1core_1_1StreamingConfig_a550da1afe48f09119090c21073128fdb}\label{structfilevault_1_1core_1_1StreamingConfig_a550da1afe48f09119090c21073128fdb} 
+\index{filevault::core::StreamingConfig@{filevault::core::StreamingConfig}!level@{level}}
+\index{level@{level}!filevault::core::StreamingConfig@{filevault::core::StreamingConfig}}
+\doxysubsubsection{\texorpdfstring{level}{level}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacefilevault_1_1core_abcb3b3d896f7dc00926903183b3e2dc9}{Security\+Level}} filevault\+::core\+::\+Streaming\+Config\+::level = \mbox{\hyperlink{namespacefilevault_1_1core_abcb3b3d896f7dc00926903183b3e2dc9a3dfb3ae3cdaa322f0388f1a531c39520}{Security\+Level\+::\+STRONG}}}
+
+\Hypertarget{structfilevault_1_1core_1_1StreamingConfig_aace1c6fbd02944a258cdf3e48a79ccc0}\label{structfilevault_1_1core_1_1StreamingConfig_aace1c6fbd02944a258cdf3e48a79ccc0} 
+\index{filevault::core::StreamingConfig@{filevault::core::StreamingConfig}!progress\_callback@{progress\_callback}}
+\index{progress\_callback@{progress\_callback}!filevault::core::StreamingConfig@{filevault::core::StreamingConfig}}
+\doxysubsubsection{\texorpdfstring{progress\_callback}{progress\_callback}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacefilevault_1_1core_addf387e7b32c628f1b2b0d33c5ce6dc4}{Stream\+Progress\+Callback}} filevault\+::core\+::\+Streaming\+Config\+::progress\+\_\+callback = nullptr}
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/filevault/core/\mbox{\hyperlink{streaming_8hpp}{streaming.\+hpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,39 @@
+\doxysection{config\+\_\+cmd.\+hpp}
+\hypertarget{config__cmd_8hpp_source}{}\label{config__cmd_8hpp_source}\index{include/filevault/cli/commands/config\_cmd.hpp@{include/filevault/cli/commands/config\_cmd.hpp}}
+\mbox{\hyperlink{config__cmd_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ FILEVAULT\_CLI\_COMMANDS\_CONFIG\_CMD\_HPP}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ FILEVAULT\_CLI\_COMMANDS\_CONFIG\_CMD\_HPP}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{command_8hpp}{filevault/cli/command.hpp}}"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{config_8hpp}{filevault/utils/config.hpp}}"{}}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacefilevault}{filevault}}\ \{}
+\DoxyCodeLine{00008\ \textcolor{keyword}{namespace\ }cli\ \{}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00013\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classfilevault_1_1cli_1_1ConfigCommand}{ConfigCommand}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classfilevault_1_1cli_1_1ICommand}{ICommand}}\ \{}
+\DoxyCodeLine{00014\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00015\ \ \ \ \ \mbox{\hyperlink{classfilevault_1_1cli_1_1ConfigCommand_a9977bc7f110593c0b3da38448ee3a168}{ConfigCommand}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00016\ \ \ \ \ }
+\DoxyCodeLine{00017\ \ \ \ \ std::string\ \mbox{\hyperlink{classfilevault_1_1cli_1_1ConfigCommand_abc4895d4201a99d4680523cf377132f4}{name}}()\textcolor{keyword}{\ const\ override\ }\{\ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}config"{}};\ \}}
+\DoxyCodeLine{00018\ \ \ \ \ std::string\ \mbox{\hyperlink{classfilevault_1_1cli_1_1ConfigCommand_af24e65a29984e32172ca408eb77754a9}{description}}()\textcolor{keyword}{\ const\ override\ }\{\ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Manage\ FileVault\ configuration"{}};\ \}}
+\DoxyCodeLine{00019\ \ \ \ \ }
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classfilevault_1_1cli_1_1ConfigCommand_a8cde6159de491e6ae22dc72a56792576}{setup}}(CLI::App\&\ app)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classfilevault_1_1cli_1_1ConfigCommand_a55fbd5fe84773781f211af14aa15b3c6}{execute}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classfilevault_1_1cli_1_1ConfigCommand_afad8af9edf484d2d6c7c94bc5886f8a4}{show\_config}}();}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classfilevault_1_1cli_1_1ConfigCommand_a0fb097164ebdbd0156e6d7703709305d}{set\_value}}();}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classfilevault_1_1cli_1_1ConfigCommand_a7724b54794fe7b48e9432cce35e57eb5}{reset\_config}}();}
+\DoxyCodeLine{00027\ \ \ \ \ }
+\DoxyCodeLine{00028\ \ \ \ \ std::string\ \mbox{\hyperlink{classfilevault_1_1cli_1_1ConfigCommand_a6ce19b75cf7423776864bb6dbe6d7f82}{subcommand\_}};}
+\DoxyCodeLine{00029\ \ \ \ \ std::string\ \mbox{\hyperlink{classfilevault_1_1cli_1_1ConfigCommand_ae8b362d1acb6238b49f44a33e6b65754}{key\_}};}
+\DoxyCodeLine{00030\ \ \ \ \ std::string\ \mbox{\hyperlink{classfilevault_1_1cli_1_1ConfigCommand_af9705cb6e4649fe94f6423a69e65dd9a}{value\_}};}
+\DoxyCodeLine{00031\ \};}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \}\ \textcolor{comment}{//\ namespace\ cli}}
+\DoxyCodeLine{00034\ \}\ \textcolor{comment}{//\ namespace\ filevault}}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ FILEVAULT\_CLI\_COMMANDS\_CONFIG\_CMD\_HPP}}
+
+\end{DoxyCode}

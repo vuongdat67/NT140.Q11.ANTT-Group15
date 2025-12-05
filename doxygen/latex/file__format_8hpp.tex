@@ -1,0 +1,130 @@
+\doxysection{include/filevault/core/file\+\_\+format.hpp File Reference}
+\hypertarget{file__format_8hpp}{}\label{file__format_8hpp}\index{include/filevault/core/file\_format.hpp@{include/filevault/core/file\_format.hpp}}
+{\ttfamily \#include "{}filevault/core/types.\+hpp"{}}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$cstdint$>$}\newline
+{\ttfamily \#include $<$span$>$}\newline
+Include dependency graph for file\+\_\+format.\+hpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{file__format_8hpp__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{file__format_8hpp__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structfilevault_1_1core_1_1Argon2Params}{filevault\+::core\+::\+Argon2\+Params}}
+\begin{DoxyCompactList}\small\item\em KDF parameters for Argon2. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structfilevault_1_1core_1_1PBKDF2Params}{filevault\+::core\+::\+PBKDF2\+Params}}
+\begin{DoxyCompactList}\small\item\em KDF parameters for PBKDF2. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structfilevault_1_1core_1_1ScryptParams}{filevault\+::core\+::\+Scrypt\+Params}}
+\begin{DoxyCompactList}\small\item\em KDF parameters for Scrypt. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structfilevault_1_1core_1_1FileHeader}{filevault\+::core\+::\+File\+Header}}
+\begin{DoxyCompactList}\small\item\em File format header. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classfilevault_1_1core_1_1FileFormatHandler}{filevault\+::core\+::\+File\+Format\+Handler}}
+\begin{DoxyCompactList}\small\item\em File format handler. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespacefilevault}{filevault}}
+\item 
+namespace \mbox{\hyperlink{namespacefilevault_1_1core}{filevault\+::core}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum class \mbox{\hyperlink{namespacefilevault_1_1core_a4bffcb3f9b484a5d110fa7c4b7d182da}{filevault\+::core\+::\+Algorithm\+ID}} \+: uint8\+\_\+t \{ \newline
+\mbox{\hyperlink{namespacefilevault_1_1core_a4bffcb3f9b484a5d110fa7c4b7d182daa696b031073e74bf2cb98e5ef201d4aa3}{filevault\+::core\+::\+UNKNOWN}} = 0x00
+, \mbox{\hyperlink{namespacefilevault_1_1core_a4bffcb3f9b484a5d110fa7c4b7d182daa563888880c969f3d0822a1eaf5c25155}{filevault\+::core\+::\+AES\+\_\+128\+\_\+\+GCM}} = 0x01
+, \mbox{\hyperlink{namespacefilevault_1_1core_a4bffcb3f9b484a5d110fa7c4b7d182daad6b4df9c0ec8c6ab16f9a2fc1c8cc457}{filevault\+::core\+::\+AES\+\_\+192\+\_\+\+GCM}} = 0x02
+, \mbox{\hyperlink{namespacefilevault_1_1core_a4bffcb3f9b484a5d110fa7c4b7d182daabe0f06b885034bb30ebb9fd868bba087}{filevault\+::core\+::\+AES\+\_\+256\+\_\+\+GCM}} = 0x03
+, \newline
+\mbox{\hyperlink{namespacefilevault_1_1core_a4bffcb3f9b484a5d110fa7c4b7d182daa31a23b8b2578a404dd9994c89a772bc6}{filevault\+::core\+::\+CHACHA20\+\_\+\+POLY1305}} = 0x04
+, \mbox{\hyperlink{namespacefilevault_1_1core_a4bffcb3f9b484a5d110fa7c4b7d182daa1a2beddd2bf5c37edde3cb3162c6e42f}{filevault\+::core\+::\+SERPENT\+\_\+256\+\_\+\+GCM}} = 0x05
+, \mbox{\hyperlink{namespacefilevault_1_1core_a4bffcb3f9b484a5d110fa7c4b7d182daa3d63e4840891b12d1a3fa81da2503a3e}{filevault\+::core\+::\+TWOFISH\+\_\+128\+\_\+\+GCM}} = 0x06
+, \mbox{\hyperlink{namespacefilevault_1_1core_a4bffcb3f9b484a5d110fa7c4b7d182daad756ee46a3266bb958a103890f41cf94}{filevault\+::core\+::\+TWOFISH\+\_\+192\+\_\+\+GCM}} = 0x07
+, \newline
+\mbox{\hyperlink{namespacefilevault_1_1core_a4bffcb3f9b484a5d110fa7c4b7d182daa6e1a2885526019433ac8475ef8aad04c}{filevault\+::core\+::\+TWOFISH\+\_\+256\+\_\+\+GCM}} = 0x08
+, \mbox{\hyperlink{namespacefilevault_1_1core_a4bffcb3f9b484a5d110fa7c4b7d182daa063660af65748a7d4915df6700d4c019}{filevault\+::core\+::\+CAMELLIA\+\_\+128\+\_\+\+GCM}} = 0x09
+, \mbox{\hyperlink{namespacefilevault_1_1core_a4bffcb3f9b484a5d110fa7c4b7d182daa222a7b6f28583f4e007d3129b59f6ec6}{filevault\+::core\+::\+CAMELLIA\+\_\+192\+\_\+\+GCM}} = 0x0A
+, \mbox{\hyperlink{namespacefilevault_1_1core_a4bffcb3f9b484a5d110fa7c4b7d182daaa98e39f4a192ca1a0df0ea5da16290d4}{filevault\+::core\+::\+CAMELLIA\+\_\+256\+\_\+\+GCM}} = 0x0B
+, \newline
+\mbox{\hyperlink{namespacefilevault_1_1core_a4bffcb3f9b484a5d110fa7c4b7d182daa1eb5a4a433258042a744b85ecff0d1c3}{filevault\+::core\+::\+ARIA\+\_\+128\+\_\+\+GCM}} = 0x0C
+, \mbox{\hyperlink{namespacefilevault_1_1core_a4bffcb3f9b484a5d110fa7c4b7d182daa7f5da338a66386f0c38ff9bbca1e50ab}{filevault\+::core\+::\+ARIA\+\_\+192\+\_\+\+GCM}} = 0x0D
+, \mbox{\hyperlink{namespacefilevault_1_1core_a4bffcb3f9b484a5d110fa7c4b7d182daaa3e66a572409ed951885b845a2505f54}{filevault\+::core\+::\+ARIA\+\_\+256\+\_\+\+GCM}} = 0x0E
+, \mbox{\hyperlink{namespacefilevault_1_1core_a4bffcb3f9b484a5d110fa7c4b7d182daa7d32b56e3de44351ea53fccc7d45088b}{filevault\+::core\+::\+SM4\+\_\+\+GCM}} = 0x0F
+, \newline
+\mbox{\hyperlink{namespacefilevault_1_1core_a4bffcb3f9b484a5d110fa7c4b7d182daa154bb57e2ecdbc2de013e140df5930e9}{filevault\+::core\+::\+CAESAR}} = 0x10
+, \mbox{\hyperlink{namespacefilevault_1_1core_a4bffcb3f9b484a5d110fa7c4b7d182daa72df12cbf45652307ffee3ce5138b95a}{filevault\+::core\+::\+VIGENERE}} = 0x11
+, \mbox{\hyperlink{namespacefilevault_1_1core_a4bffcb3f9b484a5d110fa7c4b7d182daaad900b7d4fc34fc14862086e1c267b33}{filevault\+::core\+::\+PLAYFAIR}} = 0x12
+, \mbox{\hyperlink{namespacefilevault_1_1core_a4bffcb3f9b484a5d110fa7c4b7d182daae637679b66688b9f8c9441147fceb023}{filevault\+::core\+::\+SUBSTITUTION}} = 0x13
+, \newline
+\mbox{\hyperlink{namespacefilevault_1_1core_a4bffcb3f9b484a5d110fa7c4b7d182daab279edd63cb7ea76ae038c4810e2cbd1}{filevault\+::core\+::\+HILL}} = 0x14
+, \mbox{\hyperlink{namespacefilevault_1_1core_a4bffcb3f9b484a5d110fa7c4b7d182daa50fe100f77cd51758b3cd75006dbf224}{filevault\+::core\+::\+AES\+\_\+128\+\_\+\+CBC}} = 0x20
+, \mbox{\hyperlink{namespacefilevault_1_1core_a4bffcb3f9b484a5d110fa7c4b7d182daabc7819d62caa5b84d21dbdb124ae58cf}{filevault\+::core\+::\+AES\+\_\+192\+\_\+\+CBC}} = 0x21
+, \mbox{\hyperlink{namespacefilevault_1_1core_a4bffcb3f9b484a5d110fa7c4b7d182daa676df607811c40945c7a99fabcda098c}{filevault\+::core\+::\+AES\+\_\+256\+\_\+\+CBC}} = 0x22
+, \newline
+\mbox{\hyperlink{namespacefilevault_1_1core_a4bffcb3f9b484a5d110fa7c4b7d182daa2f58e8203171f1ce6501bada66206da8}{filevault\+::core\+::\+AES\+\_\+128\+\_\+\+CTR}} = 0x23
+, \mbox{\hyperlink{namespacefilevault_1_1core_a4bffcb3f9b484a5d110fa7c4b7d182daa3d12da190d20d1a0620dd275aaca87e6}{filevault\+::core\+::\+AES\+\_\+192\+\_\+\+CTR}} = 0x24
+, \mbox{\hyperlink{namespacefilevault_1_1core_a4bffcb3f9b484a5d110fa7c4b7d182daa9b820f72a588d2f478254412c10475f9}{filevault\+::core\+::\+AES\+\_\+256\+\_\+\+CTR}} = 0x25
+, \mbox{\hyperlink{namespacefilevault_1_1core_a4bffcb3f9b484a5d110fa7c4b7d182daa34adc4be01df42646bc3537276807dfe}{filevault\+::core\+::\+AES\+\_\+128\+\_\+\+CFB}} = 0x26
+, \newline
+\mbox{\hyperlink{namespacefilevault_1_1core_a4bffcb3f9b484a5d110fa7c4b7d182daa1e801bc6ece58588f971ad322ca191e3}{filevault\+::core\+::\+AES\+\_\+192\+\_\+\+CFB}} = 0x27
+, \mbox{\hyperlink{namespacefilevault_1_1core_a4bffcb3f9b484a5d110fa7c4b7d182daa223b83913299e7f78e14acb73c6fa7fb}{filevault\+::core\+::\+AES\+\_\+256\+\_\+\+CFB}} = 0x28
+, \mbox{\hyperlink{namespacefilevault_1_1core_a4bffcb3f9b484a5d110fa7c4b7d182daa405ca1146505f789acd4d32c91b5bbe7}{filevault\+::core\+::\+AES\+\_\+128\+\_\+\+OFB}} = 0x29
+, \mbox{\hyperlink{namespacefilevault_1_1core_a4bffcb3f9b484a5d110fa7c4b7d182daaab21093e6552113ba0ba1186f94ba40e}{filevault\+::core\+::\+AES\+\_\+192\+\_\+\+OFB}} = 0x2A
+, \newline
+\mbox{\hyperlink{namespacefilevault_1_1core_a4bffcb3f9b484a5d110fa7c4b7d182daac28a5d52b7df936419fc668500f88fe8}{filevault\+::core\+::\+AES\+\_\+256\+\_\+\+OFB}} = 0x2B
+, \mbox{\hyperlink{namespacefilevault_1_1core_a4bffcb3f9b484a5d110fa7c4b7d182daab49aa46d4a21fd193afe95c73fd35578}{filevault\+::core\+::\+AES\+\_\+128\+\_\+\+ECB}} = 0x2C
+, \mbox{\hyperlink{namespacefilevault_1_1core_a4bffcb3f9b484a5d110fa7c4b7d182daa37875941d20a5b5351a347b2b073d7d3}{filevault\+::core\+::\+AES\+\_\+192\+\_\+\+ECB}} = 0x2D
+, \mbox{\hyperlink{namespacefilevault_1_1core_a4bffcb3f9b484a5d110fa7c4b7d182daa95ab3d7e379ab8a2e5979d5427db4b8c}{filevault\+::core\+::\+AES\+\_\+256\+\_\+\+ECB}} = 0x2E
+, \newline
+\mbox{\hyperlink{namespacefilevault_1_1core_a4bffcb3f9b484a5d110fa7c4b7d182daac8bf4acb1165b5fa37ca145dbf8e114f}{filevault\+::core\+::\+AES\+\_\+128\+\_\+\+XTS}} = 0x2F
+, \mbox{\hyperlink{namespacefilevault_1_1core_a4bffcb3f9b484a5d110fa7c4b7d182daad0500b2fcd899b977027a786515412ca}{filevault\+::core\+::\+AES\+\_\+256\+\_\+\+XTS}} = 0x30
+, \mbox{\hyperlink{namespacefilevault_1_1core_a4bffcb3f9b484a5d110fa7c4b7d182daa4cc418d388fd8ef547bce9360c45ff6f}{filevault\+::core\+::\+TRIPLE\+\_\+\+DES\+\_\+\+CBC}} = 0x40
+, \mbox{\hyperlink{namespacefilevault_1_1core_a4bffcb3f9b484a5d110fa7c4b7d182daa5b3bf47dace955c9874047820a78d5b8}{filevault\+::core\+::\+RSA\+\_\+2048}} = 0x50
+, \newline
+\mbox{\hyperlink{namespacefilevault_1_1core_a4bffcb3f9b484a5d110fa7c4b7d182daa67538512a7a454af72127006a8b7d536}{filevault\+::core\+::\+RSA\+\_\+3072}} = 0x51
+, \mbox{\hyperlink{namespacefilevault_1_1core_a4bffcb3f9b484a5d110fa7c4b7d182daa92fe71714ec7684d00e86d85efe27190}{filevault\+::core\+::\+RSA\+\_\+4096}} = 0x52
+, \mbox{\hyperlink{namespacefilevault_1_1core_a4bffcb3f9b484a5d110fa7c4b7d182daa76f70b72d84d1736cc8ed018b0b454c9}{filevault\+::core\+::\+ECC\+\_\+\+P256}} = 0x60
+, \mbox{\hyperlink{namespacefilevault_1_1core_a4bffcb3f9b484a5d110fa7c4b7d182daa236262ba47ef36e64636801765049b26}{filevault\+::core\+::\+ECC\+\_\+\+P384}} = 0x61
+, \newline
+\mbox{\hyperlink{namespacefilevault_1_1core_a4bffcb3f9b484a5d110fa7c4b7d182daa669ef67584b835c3fc2324c161cc1cbc}{filevault\+::core\+::\+ECC\+\_\+\+P521}} = 0x62
+ \}
+\begin{DoxyCompactList}\small\item\em Algorithm identifiers. \end{DoxyCompactList}\item 
+enum class \mbox{\hyperlink{namespacefilevault_1_1core_a71f7621637ca5fbd225b12230940776c}{filevault\+::core\+::\+KDFID}} \+: uint8\+\_\+t \{ \newline
+\mbox{\hyperlink{namespacefilevault_1_1core_a71f7621637ca5fbd225b12230940776cab50339a10e1de285ac99d4c3990b8693}{filevault\+::core\+::\+NONE}} = 0x00
+, \mbox{\hyperlink{namespacefilevault_1_1core_a71f7621637ca5fbd225b12230940776ca0b06f1bf38e4ec2b1c827b6c31fd6510}{filevault\+::core\+::\+ARGON2\+ID}} = 0x01
+, \mbox{\hyperlink{namespacefilevault_1_1core_a71f7621637ca5fbd225b12230940776ca82b2185b3a9e804eb54f74f321514b6c}{filevault\+::core\+::\+ARGON2I}} = 0x02
+, \mbox{\hyperlink{namespacefilevault_1_1core_a71f7621637ca5fbd225b12230940776ca3f62dbde2ad0b6d8f1a24dd2f2375091}{filevault\+::core\+::\+PBKDF2\+\_\+\+SHA256}} = 0x03
+, \newline
+\mbox{\hyperlink{namespacefilevault_1_1core_a71f7621637ca5fbd225b12230940776ca33c665d4accae817b7faa420a8b2554b}{filevault\+::core\+::\+PBKDF2\+\_\+\+SHA512}} = 0x04
+, \mbox{\hyperlink{namespacefilevault_1_1core_a71f7621637ca5fbd225b12230940776cab1721204ae2a3addbf2d282e99fa7bea}{filevault\+::core\+::\+SCRYPT}} = 0x05
+ \}
+\begin{DoxyCompactList}\small\item\em KDF identifiers. \end{DoxyCompactList}\item 
+enum class \mbox{\hyperlink{namespacefilevault_1_1core_a27d87235901fbdf385ab615dd984511d}{filevault\+::core\+::\+Compression\+ID}} \+: uint8\+\_\+t \{ \mbox{\hyperlink{namespacefilevault_1_1core_a27d87235901fbdf385ab615dd984511dab50339a10e1de285ac99d4c3990b8693}{filevault\+::core\+::\+NONE}} = 0x00
+, \mbox{\hyperlink{namespacefilevault_1_1core_a27d87235901fbdf385ab615dd984511da87c23ff88ac9b1c4390a679b63ea3b8c}{filevault\+::core\+::\+ZLIB}} = 0x01
+, \mbox{\hyperlink{namespacefilevault_1_1core_a27d87235901fbdf385ab615dd984511da800edd55a1e18b397e3d5d826f85ce34}{filevault\+::core\+::\+BZIP2}} = 0x02
+, \mbox{\hyperlink{namespacefilevault_1_1core_a27d87235901fbdf385ab615dd984511daf42190e84ceca474c5c77e4ddad30fb1}{filevault\+::core\+::\+LZMA}} = 0x03
+ \}
+\begin{DoxyCompactList}\small\item\em Compression identifiers. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+constexpr uint8\+\_\+t \mbox{\hyperlink{namespacefilevault_1_1core_a9cffd165aa268600bd1cd1966fafba37}{filevault\+::core\+::\+FILE\+\_\+\+FORMAT\+\_\+\+MAGIC}} \mbox{[}8\mbox{]} = \{\textquotesingle{}F\textquotesingle{}, \textquotesingle{}V\textquotesingle{}, \textquotesingle{}A\textquotesingle{}, \textquotesingle{}U\textquotesingle{}, \textquotesingle{}L\textquotesingle{}, \textquotesingle{}T\textquotesingle{}, \textquotesingle{}0\textquotesingle{}, \textquotesingle{}1\textquotesingle{}\}
+\begin{DoxyCompactList}\small\item\em File\+Vault file format version 1.\+0. \end{DoxyCompactList}\item 
+constexpr uint8\+\_\+t \mbox{\hyperlink{namespacefilevault_1_1core_ad50ee40e67efb784d1d42b34c3ee1ca4}{filevault\+::core\+::\+FILE\+\_\+\+FORMAT\+\_\+\+VERSION\+\_\+\+MAJOR}} = 1
+\item 
+constexpr uint8\+\_\+t \mbox{\hyperlink{namespacefilevault_1_1core_ac6e5674a94657ff90785f7cb70a4717b}{filevault\+::core\+::\+FILE\+\_\+\+FORMAT\+\_\+\+VERSION\+\_\+\+MINOR}} = 0
+\end{DoxyCompactItemize}

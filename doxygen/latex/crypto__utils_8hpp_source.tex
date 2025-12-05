@@ -1,0 +1,30 @@
+\doxysection{crypto\+\_\+utils.\+hpp}
+\hypertarget{crypto__utils_8hpp_source}{}\label{crypto__utils_8hpp_source}\index{include/filevault/utils/crypto\_utils.hpp@{include/filevault/utils/crypto\_utils.hpp}}
+\mbox{\hyperlink{crypto__utils_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ FILEVAULT\_UTILS\_CRYPTO\_UTILS\_HPP}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ FILEVAULT\_UTILS\_CRYPTO\_UTILS\_HPP}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <cstdint>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <span>}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacefilevault}{filevault}}\ \{}
+\DoxyCodeLine{00010\ \textcolor{keyword}{namespace\ }utils\ \{}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00015\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classfilevault_1_1utils_1_1CryptoUtils}{CryptoUtils}}\ \{}
+\DoxyCodeLine{00016\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keyword}{static}\ std::string\ \mbox{\hyperlink{classfilevault_1_1utils_1_1CryptoUtils_af5c2f3ca22dc1bf08448756e8a27bdc4}{hex\_encode}}(std::span<const\ uint8\_t>\ data);}
+\DoxyCodeLine{00021\ \ \ \ \ }
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keyword}{static}\ std::vector<uint8\_t>\ \mbox{\hyperlink{classfilevault_1_1utils_1_1CryptoUtils_a4c4749f18ce0668d9e826a5cc048f182}{hex\_decode}}(\textcolor{keyword}{const}\ std::string\&\ hex);}
+\DoxyCodeLine{00026\ \ \ \ \ }
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keyword}{static}\ std::string\ \mbox{\hyperlink{classfilevault_1_1utils_1_1CryptoUtils_a7144189b6883070241f2bb38b70e0b46}{format\_bytes}}(\textcolor{keywordtype}{size\_t}\ bytes);}
+\DoxyCodeLine{00031\ \};}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \}\ \textcolor{comment}{//\ namespace\ utils}}
+\DoxyCodeLine{00034\ \}\ \textcolor{comment}{//\ namespace\ filevault}}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ FILEVAULT\_UTILS\_CRYPTO\_UTILS\_HPP}}
+
+\end{DoxyCode}

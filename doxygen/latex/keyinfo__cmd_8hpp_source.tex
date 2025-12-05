@@ -1,0 +1,43 @@
+\doxysection{keyinfo\+\_\+cmd.\+hpp}
+\hypertarget{keyinfo__cmd_8hpp_source}{}\label{keyinfo__cmd_8hpp_source}\index{include/filevault/cli/commands/keyinfo\_cmd.hpp@{include/filevault/cli/commands/keyinfo\_cmd.hpp}}
+\mbox{\hyperlink{keyinfo__cmd_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ FILEVAULT\_CLI\_COMMANDS\_KEYINFO\_CMD\_HPP}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ FILEVAULT\_CLI\_COMMANDS\_KEYINFO\_CMD\_HPP}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}../command.hpp"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{crypto__engine_8hpp}{filevault/core/crypto\_engine.hpp}}"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacefilevault}{filevault}}\ \{}
+\DoxyCodeLine{00009\ \textcolor{keyword}{namespace\ }cli\ \{}
+\DoxyCodeLine{00010\ \textcolor{keyword}{namespace\ }commands\ \{}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00015\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classfilevault_1_1cli_1_1commands_1_1KeyInfoCommand}{KeyInfoCommand}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classfilevault_1_1cli_1_1ICommand}{ICommand}}\ \{}
+\DoxyCodeLine{00016\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classfilevault_1_1cli_1_1commands_1_1KeyInfoCommand}{KeyInfoCommand}}(\mbox{\hyperlink{classfilevault_1_1core_1_1CryptoEngine}{core::CryptoEngine}}\&\ engine);}
+\DoxyCodeLine{00018\ \ \ \ \ }
+\DoxyCodeLine{00019\ \ \ \ \ std::string\ \mbox{\hyperlink{classfilevault_1_1cli_1_1commands_1_1KeyInfoCommand_a440ffc83a217d64d0b50e4c63a2c40ed}{name}}()\textcolor{keyword}{\ const\ override\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classfilevault_1_1cli_1_1commands_1_1KeyInfoCommand_aa504398a2aa98309f5bbffa54250e459}{name\_}};\ \}}
+\DoxyCodeLine{00020\ \ \ \ \ std::string\ \mbox{\hyperlink{classfilevault_1_1cli_1_1commands_1_1KeyInfoCommand_a9cc2430a3e96b8fec006925a50fd7b0d}{description}}()\textcolor{keyword}{\ const\ override\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classfilevault_1_1cli_1_1commands_1_1KeyInfoCommand_a76b5672f88bbf3c93ffca60b31776206}{description\_}};\ \}}
+\DoxyCodeLine{00021\ \ \ \ \ }
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classfilevault_1_1cli_1_1commands_1_1KeyInfoCommand_aa1a1d706d9c9a597198e24f20b409671}{setup}}(CLI::App\&\ app)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classfilevault_1_1cli_1_1commands_1_1KeyInfoCommand_aecd0006aa400ce42ee14ca696fb3b12a}{execute}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00024\ \ \ \ \ }
+\DoxyCodeLine{00025\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00026\ \ \ \ \ std::string\ \mbox{\hyperlink{classfilevault_1_1cli_1_1commands_1_1KeyInfoCommand_aa504398a2aa98309f5bbffa54250e459}{name\_}}\ =\ \textcolor{stringliteral}{"{}keyinfo"{}};}
+\DoxyCodeLine{00027\ \ \ \ \ std::string\ \mbox{\hyperlink{classfilevault_1_1cli_1_1commands_1_1KeyInfoCommand_a76b5672f88bbf3c93ffca60b31776206}{description\_}}\ =\ \textcolor{stringliteral}{"{}Display\ information\ about\ cryptographic\ keys"{}};}
+\DoxyCodeLine{00028\ \ \ \ \ }
+\DoxyCodeLine{00029\ \ \ \ \ \mbox{\hyperlink{classfilevault_1_1core_1_1CryptoEngine}{core::CryptoEngine}}\&\ \mbox{\hyperlink{classfilevault_1_1cli_1_1commands_1_1KeyInfoCommand_afe704d0241d4322a3da1bc3772a375ad}{engine\_}};}
+\DoxyCodeLine{00030\ \ \ \ \ std::string\ \mbox{\hyperlink{classfilevault_1_1cli_1_1commands_1_1KeyInfoCommand_a49320c3007508129a81158d29e434add}{key\_path\_}};}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classfilevault_1_1cli_1_1commands_1_1KeyInfoCommand_a584efaba51f568f1cc3aefb7782827d9}{show\_public\_}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classfilevault_1_1cli_1_1commands_1_1KeyInfoCommand_a0ced46dd4db1f34fa322cce044c003db}{check\_pair\_}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00033\ \ \ \ \ std::string\ \mbox{\hyperlink{classfilevault_1_1cli_1_1commands_1_1KeyInfoCommand_ac026ed7f258e74c6a7d36a440553027f}{pair\_key\_path\_}};}
+\DoxyCodeLine{00034\ \};}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \}\ \textcolor{comment}{//\ namespace\ commands}}
+\DoxyCodeLine{00037\ \}\ \textcolor{comment}{//\ namespace\ cli}}
+\DoxyCodeLine{00038\ \}\ \textcolor{comment}{//\ namespace\ filevault}}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ FILEVAULT\_CLI\_COMMANDS\_KEYINFO\_CMD\_HPP}}
+
+\end{DoxyCode}

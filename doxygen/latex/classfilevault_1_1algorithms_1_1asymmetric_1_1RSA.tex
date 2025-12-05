@@ -1,0 +1,378 @@
+\doxysection{filevault\+::algorithms\+::asymmetric\+::RSA Class Reference}
+\hypertarget{classfilevault_1_1algorithms_1_1asymmetric_1_1RSA}{}\label{classfilevault_1_1algorithms_1_1asymmetric_1_1RSA}\index{filevault::algorithms::asymmetric::RSA@{filevault::algorithms::asymmetric::RSA}}
+
+
+\doxylink{classfilevault_1_1algorithms_1_1asymmetric_1_1RSA}{RSA} asymmetric encryption algorithm.  
+
+
+
+
+{\ttfamily \#include $<$rsa.\+hpp$>$}
+
+
+
+Inheritance diagram for filevault\+::algorithms\+::asymmetric\+::RSA\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=205pt]{classfilevault_1_1algorithms_1_1asymmetric_1_1RSA__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for filevault\+::algorithms\+::asymmetric\+::RSA\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=205pt]{classfilevault_1_1algorithms_1_1asymmetric_1_1RSA__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classfilevault_1_1algorithms_1_1asymmetric_1_1RSA_a6db46b84d8ecc15516de4f5fe88fc16e}{RSA}} (size\+\_\+t key\+\_\+bits=2048)
+\begin{DoxyCompactList}\small\item\em Construct \doxylink{classfilevault_1_1algorithms_1_1asymmetric_1_1RSA}{RSA} with specified key size. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfilevault_1_1algorithms_1_1asymmetric_1_1RSA_ae78ad13a2d10a9b72afb387fcbcd1713}{\texorpdfstring{$\sim$}{\string~}\+RSA}} () override=default
+\item 
+std\+::string \mbox{\hyperlink{classfilevault_1_1algorithms_1_1asymmetric_1_1RSA_aee734db6a1dac6ebe855a812818ad3c4}{name}} () const override
+\begin{DoxyCompactList}\small\item\em Get algorithm name. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacefilevault_1_1core_ab1ba257a0205c63e9e1e3623170940a2}{core\+::\+Algorithm\+Type}} \mbox{\hyperlink{classfilevault_1_1algorithms_1_1asymmetric_1_1RSA_a1be468ac3934c4c457668a00f5429cb1}{type}} () const override
+\begin{DoxyCompactList}\small\item\em Get algorithm type. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structfilevault_1_1core_1_1CryptoResult}{core\+::\+Crypto\+Result}} \mbox{\hyperlink{classfilevault_1_1algorithms_1_1asymmetric_1_1RSA_a10d9eb4d9975f23e0f7c2817315bf94d}{encrypt}} (std\+::span$<$ const uint8\+\_\+t $>$ plaintext, std\+::span$<$ const uint8\+\_\+t $>$ key, const \mbox{\hyperlink{structfilevault_1_1core_1_1EncryptionConfig}{core\+::\+Encryption\+Config}} \&config) override
+\begin{DoxyCompactList}\small\item\em Encrypt with public key. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structfilevault_1_1core_1_1CryptoResult}{core\+::\+Crypto\+Result}} \mbox{\hyperlink{classfilevault_1_1algorithms_1_1asymmetric_1_1RSA_adb633ac2bd12112232aeb165fc593912}{decrypt}} (std\+::span$<$ const uint8\+\_\+t $>$ ciphertext, std\+::span$<$ const uint8\+\_\+t $>$ key, const \mbox{\hyperlink{structfilevault_1_1core_1_1EncryptionConfig}{core\+::\+Encryption\+Config}} \&config) override
+\begin{DoxyCompactList}\small\item\em Decrypt with private key. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structfilevault_1_1algorithms_1_1asymmetric_1_1RSAKeyPair}{RSAKey\+Pair}} \mbox{\hyperlink{classfilevault_1_1algorithms_1_1asymmetric_1_1RSA_aa727bac0b5fbfdd903099153fe7499c2}{generate\+\_\+key\+\_\+pair}} ()
+\begin{DoxyCompactList}\small\item\em Generate a new \doxylink{classfilevault_1_1algorithms_1_1asymmetric_1_1RSA}{RSA} key pair. \end{DoxyCompactList}\item 
+std\+::vector$<$ uint8\+\_\+t $>$ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1asymmetric_1_1RSA_ab93eea9a86c84053bb3c1b89e56f5bb0}{sign}} (std\+::span$<$ const uint8\+\_\+t $>$ data, std\+::span$<$ const uint8\+\_\+t $>$ private\+\_\+key)
+\begin{DoxyCompactList}\small\item\em Sign data with private key. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classfilevault_1_1algorithms_1_1asymmetric_1_1RSA_a4efbc42c1942f9727183e88a26601601}{verify}} (std\+::span$<$ const uint8\+\_\+t $>$ data, std\+::span$<$ const uint8\+\_\+t $>$ signature, std\+::span$<$ const uint8\+\_\+t $>$ public\+\_\+key)
+\begin{DoxyCompactList}\small\item\em Verify signature with public key. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{classfilevault_1_1algorithms_1_1asymmetric_1_1RSA_a089444b56551c82071fde28aa7ef921b}{key\+\_\+size}} () const override
+\begin{DoxyCompactList}\small\item\em Get recommended key size in bytes. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{classfilevault_1_1algorithms_1_1asymmetric_1_1RSA_a8514d36499b8f02480495997550cb7a7}{max\+\_\+plaintext\+\_\+size}} () const
+\begin{DoxyCompactList}\small\item\em Maximum plaintext size that can be encrypted For OAEP with SHA-\/256\+: key\+\_\+bytes -\/ 2\texorpdfstring{$\ast$}{*}hash\+\_\+len -\/ 2 = key\+\_\+bytes -\/ 66. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classfilevault_1_1algorithms_1_1asymmetric_1_1RSA_a09bbb9c49300fbac2e89dbb8ea3bbf86}{requires\+\_\+padding}} () const
+\item 
+bool \mbox{\hyperlink{classfilevault_1_1algorithms_1_1asymmetric_1_1RSA_a35ffd93d2fb30654c168ce3025608460}{is\+\_\+authenticated}} () const
+\item 
+bool \mbox{\hyperlink{classfilevault_1_1algorithms_1_1asymmetric_1_1RSA_a60ab7f2f23a1f14860b3d806a8c55bcb}{is\+\_\+suitable\+\_\+for}} (\mbox{\hyperlink{namespacefilevault_1_1core_abcb3b3d896f7dc00926903183b3e2dc9}{core\+::\+Security\+Level}} level) const override
+\begin{DoxyCompactList}\small\item\em Check if algorithm is suitable for security level. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classfilevault_1_1core_1_1ICryptoAlgorithm}{filevault\+::core\+::\+ICrypto\+Algorithm}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classfilevault_1_1core_1_1ICryptoAlgorithm_a36383558169617931374ca3b64399818}{\texorpdfstring{$\sim$}{\string~}\+ICrypto\+Algorithm}} ()=default
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+size\+\_\+t \mbox{\hyperlink{classfilevault_1_1algorithms_1_1asymmetric_1_1RSA_a0d32dc59e5f026e3b98c457e01e3bbd4}{key\+\_\+bits\+\_\+}}
+\item 
+\mbox{\hyperlink{namespacefilevault_1_1core_ab1ba257a0205c63e9e1e3623170940a2}{core\+::\+Algorithm\+Type}} \mbox{\hyperlink{classfilevault_1_1algorithms_1_1asymmetric_1_1RSA_a26bf8f93c7376761e1006cd1e8730d71}{type\+\_\+}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\doxylink{classfilevault_1_1algorithms_1_1asymmetric_1_1RSA}{RSA} asymmetric encryption algorithm. 
+
+Features\+:
+\begin{DoxyItemize}
+\item Public key encryption, private key decryption
+\item Key sizes\+: 2048, 3072, 4096 bits
+\item OAEP padding (PKCS\#1 v2.\+1) for encryption
+\item PSS padding for signatures
+\end{DoxyItemize}
+
+Note\+: \doxylink{classfilevault_1_1algorithms_1_1asymmetric_1_1RSA}{RSA} encrypts limited data (key\+\_\+size -\/ padding overhead). For large data, use hybrid encryption (\doxylink{classfilevault_1_1algorithms_1_1asymmetric_1_1RSA}{RSA} + symmetric cipher). 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classfilevault_1_1algorithms_1_1asymmetric_1_1RSA_a6db46b84d8ecc15516de4f5fe88fc16e}\label{classfilevault_1_1algorithms_1_1asymmetric_1_1RSA_a6db46b84d8ecc15516de4f5fe88fc16e} 
+\index{filevault::algorithms::asymmetric::RSA@{filevault::algorithms::asymmetric::RSA}!RSA@{RSA}}
+\index{RSA@{RSA}!filevault::algorithms::asymmetric::RSA@{filevault::algorithms::asymmetric::RSA}}
+\doxysubsubsection{\texorpdfstring{RSA()}{RSA()}}
+{\footnotesize\ttfamily filevault\+::algorithms\+::asymmetric\+::\+RSA\+::\+RSA (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{key\+\_\+bits = {\ttfamily 2048} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Construct \doxylink{classfilevault_1_1algorithms_1_1asymmetric_1_1RSA}{RSA} with specified key size. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em key\+\_\+bits} & Key size in bits (2048, 3072, or 4096) \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classfilevault_1_1algorithms_1_1asymmetric_1_1RSA_ae78ad13a2d10a9b72afb387fcbcd1713}\label{classfilevault_1_1algorithms_1_1asymmetric_1_1RSA_ae78ad13a2d10a9b72afb387fcbcd1713} 
+\index{filevault::algorithms::asymmetric::RSA@{filevault::algorithms::asymmetric::RSA}!````~RSA@{\texorpdfstring{$\sim$}{\string~}RSA}}
+\index{````~RSA@{\texorpdfstring{$\sim$}{\string~}RSA}!filevault::algorithms::asymmetric::RSA@{filevault::algorithms::asymmetric::RSA}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}RSA()}{\string~RSA()}}
+{\footnotesize\ttfamily filevault\+::algorithms\+::asymmetric\+::\+RSA\+::\texorpdfstring{$\sim$}{\string~}\+RSA (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [default]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classfilevault_1_1algorithms_1_1asymmetric_1_1RSA_adb633ac2bd12112232aeb165fc593912}\label{classfilevault_1_1algorithms_1_1asymmetric_1_1RSA_adb633ac2bd12112232aeb165fc593912} 
+\index{filevault::algorithms::asymmetric::RSA@{filevault::algorithms::asymmetric::RSA}!decrypt@{decrypt}}
+\index{decrypt@{decrypt}!filevault::algorithms::asymmetric::RSA@{filevault::algorithms::asymmetric::RSA}}
+\doxysubsubsection{\texorpdfstring{decrypt()}{decrypt()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structfilevault_1_1core_1_1CryptoResult}{core\+::\+Crypto\+Result}} filevault\+::algorithms\+::asymmetric\+::\+RSA\+::decrypt (\begin{DoxyParamCaption}\item[{std\+::span$<$ const uint8\+\_\+t $>$}]{ciphertext,  }\item[{std\+::span$<$ const uint8\+\_\+t $>$}]{key,  }\item[{const \mbox{\hyperlink{structfilevault_1_1core_1_1EncryptionConfig}{core\+::\+Encryption\+Config}} \&}]{config }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Decrypt with private key. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ciphertext} & Data to decrypt \\
+\hline
+{\em key} & Private key (PEM or DER encoded) \\
+\hline
+{\em config} & Encryption configuration \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classfilevault_1_1core_1_1ICryptoAlgorithm_a5ad6e9e19a3ed1dd3f0b49106bcaac0d}{filevault\+::core\+::\+ICrypto\+Algorithm}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1algorithms_1_1asymmetric_1_1RSA_adb633ac2bd12112232aeb165fc593912_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1algorithms_1_1asymmetric_1_1RSA_a10d9eb4d9975f23e0f7c2817315bf94d}\label{classfilevault_1_1algorithms_1_1asymmetric_1_1RSA_a10d9eb4d9975f23e0f7c2817315bf94d} 
+\index{filevault::algorithms::asymmetric::RSA@{filevault::algorithms::asymmetric::RSA}!encrypt@{encrypt}}
+\index{encrypt@{encrypt}!filevault::algorithms::asymmetric::RSA@{filevault::algorithms::asymmetric::RSA}}
+\doxysubsubsection{\texorpdfstring{encrypt()}{encrypt()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structfilevault_1_1core_1_1CryptoResult}{core\+::\+Crypto\+Result}} filevault\+::algorithms\+::asymmetric\+::\+RSA\+::encrypt (\begin{DoxyParamCaption}\item[{std\+::span$<$ const uint8\+\_\+t $>$}]{plaintext,  }\item[{std\+::span$<$ const uint8\+\_\+t $>$}]{key,  }\item[{const \mbox{\hyperlink{structfilevault_1_1core_1_1EncryptionConfig}{core\+::\+Encryption\+Config}} \&}]{config }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Encrypt with public key. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em plaintext} & Data to encrypt (limited by key size) \\
+\hline
+{\em key} & Public key (PEM or DER encoded) \\
+\hline
+{\em config} & Encryption configuration \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classfilevault_1_1core_1_1ICryptoAlgorithm_a5b9102cef54b84b54feea1dc16561a2d}{filevault\+::core\+::\+ICrypto\+Algorithm}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1algorithms_1_1asymmetric_1_1RSA_a10d9eb4d9975f23e0f7c2817315bf94d_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1algorithms_1_1asymmetric_1_1RSA_a10d9eb4d9975f23e0f7c2817315bf94d_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1algorithms_1_1asymmetric_1_1RSA_aa727bac0b5fbfdd903099153fe7499c2}\label{classfilevault_1_1algorithms_1_1asymmetric_1_1RSA_aa727bac0b5fbfdd903099153fe7499c2} 
+\index{filevault::algorithms::asymmetric::RSA@{filevault::algorithms::asymmetric::RSA}!generate\_key\_pair@{generate\_key\_pair}}
+\index{generate\_key\_pair@{generate\_key\_pair}!filevault::algorithms::asymmetric::RSA@{filevault::algorithms::asymmetric::RSA}}
+\doxysubsubsection{\texorpdfstring{generate\_key\_pair()}{generate\_key\_pair()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structfilevault_1_1algorithms_1_1asymmetric_1_1RSAKeyPair}{RSAKey\+Pair}} filevault\+::algorithms\+::asymmetric\+::\+RSA\+::generate\+\_\+key\+\_\+pair (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Generate a new \doxylink{classfilevault_1_1algorithms_1_1asymmetric_1_1RSA}{RSA} key pair. 
+
+\begin{DoxyReturn}{Returns}
+\doxylink{structfilevault_1_1algorithms_1_1asymmetric_1_1RSAKeyPair}{RSAKey\+Pair} containing public and private keys 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1algorithms_1_1asymmetric_1_1RSA_aa727bac0b5fbfdd903099153fe7499c2_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1algorithms_1_1asymmetric_1_1RSA_a35ffd93d2fb30654c168ce3025608460}\label{classfilevault_1_1algorithms_1_1asymmetric_1_1RSA_a35ffd93d2fb30654c168ce3025608460} 
+\index{filevault::algorithms::asymmetric::RSA@{filevault::algorithms::asymmetric::RSA}!is\_authenticated@{is\_authenticated}}
+\index{is\_authenticated@{is\_authenticated}!filevault::algorithms::asymmetric::RSA@{filevault::algorithms::asymmetric::RSA}}
+\doxysubsubsection{\texorpdfstring{is\_authenticated()}{is\_authenticated()}}
+{\footnotesize\ttfamily bool filevault\+::algorithms\+::asymmetric\+::\+RSA\+::is\+\_\+authenticated (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classfilevault_1_1algorithms_1_1asymmetric_1_1RSA_a60ab7f2f23a1f14860b3d806a8c55bcb}\label{classfilevault_1_1algorithms_1_1asymmetric_1_1RSA_a60ab7f2f23a1f14860b3d806a8c55bcb} 
+\index{filevault::algorithms::asymmetric::RSA@{filevault::algorithms::asymmetric::RSA}!is\_suitable\_for@{is\_suitable\_for}}
+\index{is\_suitable\_for@{is\_suitable\_for}!filevault::algorithms::asymmetric::RSA@{filevault::algorithms::asymmetric::RSA}}
+\doxysubsubsection{\texorpdfstring{is\_suitable\_for()}{is\_suitable\_for()}}
+{\footnotesize\ttfamily bool filevault\+::algorithms\+::asymmetric\+::\+RSA\+::is\+\_\+suitable\+\_\+for (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacefilevault_1_1core_abcb3b3d896f7dc00926903183b3e2dc9}{core\+::\+Security\+Level}}}]{level }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Check if algorithm is suitable for security level. 
+
+
+
+Implements \mbox{\hyperlink{classfilevault_1_1core_1_1ICryptoAlgorithm_aab479734daf06d3f76af5d916c0285fa}{filevault\+::core\+::\+ICrypto\+Algorithm}}.
+
+\Hypertarget{classfilevault_1_1algorithms_1_1asymmetric_1_1RSA_a089444b56551c82071fde28aa7ef921b}\label{classfilevault_1_1algorithms_1_1asymmetric_1_1RSA_a089444b56551c82071fde28aa7ef921b} 
+\index{filevault::algorithms::asymmetric::RSA@{filevault::algorithms::asymmetric::RSA}!key\_size@{key\_size}}
+\index{key\_size@{key\_size}!filevault::algorithms::asymmetric::RSA@{filevault::algorithms::asymmetric::RSA}}
+\doxysubsubsection{\texorpdfstring{key\_size()}{key\_size()}}
+{\footnotesize\ttfamily size\+\_\+t filevault\+::algorithms\+::asymmetric\+::\+RSA\+::key\+\_\+size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get recommended key size in bytes. 
+
+
+
+Implements \mbox{\hyperlink{classfilevault_1_1core_1_1ICryptoAlgorithm_af9ccb47457495eb99988fef0b5b2bbe8}{filevault\+::core\+::\+ICrypto\+Algorithm}}.
+
+\Hypertarget{classfilevault_1_1algorithms_1_1asymmetric_1_1RSA_a8514d36499b8f02480495997550cb7a7}\label{classfilevault_1_1algorithms_1_1asymmetric_1_1RSA_a8514d36499b8f02480495997550cb7a7} 
+\index{filevault::algorithms::asymmetric::RSA@{filevault::algorithms::asymmetric::RSA}!max\_plaintext\_size@{max\_plaintext\_size}}
+\index{max\_plaintext\_size@{max\_plaintext\_size}!filevault::algorithms::asymmetric::RSA@{filevault::algorithms::asymmetric::RSA}}
+\doxysubsubsection{\texorpdfstring{max\_plaintext\_size()}{max\_plaintext\_size()}}
+{\footnotesize\ttfamily size\+\_\+t filevault\+::algorithms\+::asymmetric\+::\+RSA\+::max\+\_\+plaintext\+\_\+size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Maximum plaintext size that can be encrypted For OAEP with SHA-\/256\+: key\+\_\+bytes -\/ 2\texorpdfstring{$\ast$}{*}hash\+\_\+len -\/ 2 = key\+\_\+bytes -\/ 66. 
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1algorithms_1_1asymmetric_1_1RSA_a8514d36499b8f02480495997550cb7a7_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1algorithms_1_1asymmetric_1_1RSA_aee734db6a1dac6ebe855a812818ad3c4}\label{classfilevault_1_1algorithms_1_1asymmetric_1_1RSA_aee734db6a1dac6ebe855a812818ad3c4} 
+\index{filevault::algorithms::asymmetric::RSA@{filevault::algorithms::asymmetric::RSA}!name@{name}}
+\index{name@{name}!filevault::algorithms::asymmetric::RSA@{filevault::algorithms::asymmetric::RSA}}
+\doxysubsubsection{\texorpdfstring{name()}{name()}}
+{\footnotesize\ttfamily std\+::string filevault\+::algorithms\+::asymmetric\+::\+RSA\+::name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get algorithm name. 
+
+
+
+Implements \mbox{\hyperlink{classfilevault_1_1core_1_1ICryptoAlgorithm_a8acdc23e4f2ea77bb4a5b9820b27fa66}{filevault\+::core\+::\+ICrypto\+Algorithm}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1algorithms_1_1asymmetric_1_1RSA_aee734db6a1dac6ebe855a812818ad3c4_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1algorithms_1_1asymmetric_1_1RSA_a09bbb9c49300fbac2e89dbb8ea3bbf86}\label{classfilevault_1_1algorithms_1_1asymmetric_1_1RSA_a09bbb9c49300fbac2e89dbb8ea3bbf86} 
+\index{filevault::algorithms::asymmetric::RSA@{filevault::algorithms::asymmetric::RSA}!requires\_padding@{requires\_padding}}
+\index{requires\_padding@{requires\_padding}!filevault::algorithms::asymmetric::RSA@{filevault::algorithms::asymmetric::RSA}}
+\doxysubsubsection{\texorpdfstring{requires\_padding()}{requires\_padding()}}
+{\footnotesize\ttfamily bool filevault\+::algorithms\+::asymmetric\+::\+RSA\+::requires\+\_\+padding (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classfilevault_1_1algorithms_1_1asymmetric_1_1RSA_ab93eea9a86c84053bb3c1b89e56f5bb0}\label{classfilevault_1_1algorithms_1_1asymmetric_1_1RSA_ab93eea9a86c84053bb3c1b89e56f5bb0} 
+\index{filevault::algorithms::asymmetric::RSA@{filevault::algorithms::asymmetric::RSA}!sign@{sign}}
+\index{sign@{sign}!filevault::algorithms::asymmetric::RSA@{filevault::algorithms::asymmetric::RSA}}
+\doxysubsubsection{\texorpdfstring{sign()}{sign()}}
+{\footnotesize\ttfamily std\+::vector$<$ uint8\+\_\+t $>$ filevault\+::algorithms\+::asymmetric\+::\+RSA\+::sign (\begin{DoxyParamCaption}\item[{std\+::span$<$ const uint8\+\_\+t $>$}]{data,  }\item[{std\+::span$<$ const uint8\+\_\+t $>$}]{private\+\_\+key }\end{DoxyParamCaption})}
+
+
+
+Sign data with private key. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & Data to sign \\
+\hline
+{\em private\+\_\+key} & Private key (PEM encoded) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Signature bytes 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1algorithms_1_1asymmetric_1_1RSA_ab93eea9a86c84053bb3c1b89e56f5bb0_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1algorithms_1_1asymmetric_1_1RSA_a1be468ac3934c4c457668a00f5429cb1}\label{classfilevault_1_1algorithms_1_1asymmetric_1_1RSA_a1be468ac3934c4c457668a00f5429cb1} 
+\index{filevault::algorithms::asymmetric::RSA@{filevault::algorithms::asymmetric::RSA}!type@{type}}
+\index{type@{type}!filevault::algorithms::asymmetric::RSA@{filevault::algorithms::asymmetric::RSA}}
+\doxysubsubsection{\texorpdfstring{type()}{type()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacefilevault_1_1core_ab1ba257a0205c63e9e1e3623170940a2}{core\+::\+Algorithm\+Type}} filevault\+::algorithms\+::asymmetric\+::\+RSA\+::type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get algorithm type. 
+
+
+
+Implements \mbox{\hyperlink{classfilevault_1_1core_1_1ICryptoAlgorithm_a11b7820f7b0bbb5fd6668fac3b78a7e1}{filevault\+::core\+::\+ICrypto\+Algorithm}}.
+
+\Hypertarget{classfilevault_1_1algorithms_1_1asymmetric_1_1RSA_a4efbc42c1942f9727183e88a26601601}\label{classfilevault_1_1algorithms_1_1asymmetric_1_1RSA_a4efbc42c1942f9727183e88a26601601} 
+\index{filevault::algorithms::asymmetric::RSA@{filevault::algorithms::asymmetric::RSA}!verify@{verify}}
+\index{verify@{verify}!filevault::algorithms::asymmetric::RSA@{filevault::algorithms::asymmetric::RSA}}
+\doxysubsubsection{\texorpdfstring{verify()}{verify()}}
+{\footnotesize\ttfamily bool filevault\+::algorithms\+::asymmetric\+::\+RSA\+::verify (\begin{DoxyParamCaption}\item[{std\+::span$<$ const uint8\+\_\+t $>$}]{data,  }\item[{std\+::span$<$ const uint8\+\_\+t $>$}]{signature,  }\item[{std\+::span$<$ const uint8\+\_\+t $>$}]{public\+\_\+key }\end{DoxyParamCaption})}
+
+
+
+Verify signature with public key. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & Original data \\
+\hline
+{\em signature} & Signature to verify \\
+\hline
+{\em public\+\_\+key} & Public key (PEM encoded) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if signature is valid 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1algorithms_1_1asymmetric_1_1RSA_a4efbc42c1942f9727183e88a26601601_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classfilevault_1_1algorithms_1_1asymmetric_1_1RSA_a0d32dc59e5f026e3b98c457e01e3bbd4}\label{classfilevault_1_1algorithms_1_1asymmetric_1_1RSA_a0d32dc59e5f026e3b98c457e01e3bbd4} 
+\index{filevault::algorithms::asymmetric::RSA@{filevault::algorithms::asymmetric::RSA}!key\_bits\_@{key\_bits\_}}
+\index{key\_bits\_@{key\_bits\_}!filevault::algorithms::asymmetric::RSA@{filevault::algorithms::asymmetric::RSA}}
+\doxysubsubsection{\texorpdfstring{key\_bits\_}{key\_bits\_}}
+{\footnotesize\ttfamily size\+\_\+t filevault\+::algorithms\+::asymmetric\+::\+RSA\+::key\+\_\+bits\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classfilevault_1_1algorithms_1_1asymmetric_1_1RSA_a26bf8f93c7376761e1006cd1e8730d71}\label{classfilevault_1_1algorithms_1_1asymmetric_1_1RSA_a26bf8f93c7376761e1006cd1e8730d71} 
+\index{filevault::algorithms::asymmetric::RSA@{filevault::algorithms::asymmetric::RSA}!type\_@{type\_}}
+\index{type\_@{type\_}!filevault::algorithms::asymmetric::RSA@{filevault::algorithms::asymmetric::RSA}}
+\doxysubsubsection{\texorpdfstring{type\_}{type\_}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacefilevault_1_1core_ab1ba257a0205c63e9e1e3623170940a2}{core\+::\+Algorithm\+Type}} filevault\+::algorithms\+::asymmetric\+::\+RSA\+::type\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/filevault/algorithms/asymmetric/\mbox{\hyperlink{rsa_8hpp}{rsa.\+hpp}}\item 
+src/algorithms/asymmetric/\mbox{\hyperlink{rsa_8cpp}{rsa.\+cpp}}\end{DoxyCompactItemize}

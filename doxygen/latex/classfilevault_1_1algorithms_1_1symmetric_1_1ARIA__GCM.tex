@@ -1,0 +1,287 @@
+\doxysection{filevault\+::algorithms\+::symmetric\+::ARIA\+\_\+\+GCM Class Reference}
+\hypertarget{classfilevault_1_1algorithms_1_1symmetric_1_1ARIA__GCM}{}\label{classfilevault_1_1algorithms_1_1symmetric_1_1ARIA__GCM}\index{filevault::algorithms::symmetric::ARIA\_GCM@{filevault::algorithms::symmetric::ARIA\_GCM}}
+
+
+ARIA-\/\+GCM AEAD encryption.  
+
+
+
+
+{\ttfamily \#include $<$aria\+\_\+gcm.\+hpp$>$}
+
+
+
+Inheritance diagram for filevault\+::algorithms\+::symmetric\+::ARIA\+\_\+\+GCM\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=213pt]{classfilevault_1_1algorithms_1_1symmetric_1_1ARIA__GCM__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for filevault\+::algorithms\+::symmetric\+::ARIA\+\_\+\+GCM\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=213pt]{classfilevault_1_1algorithms_1_1symmetric_1_1ARIA__GCM__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1ARIA__GCM_a42e1a2dbf513dd6994afba6983e96a31}{ARIA\+\_\+\+GCM}} (size\+\_\+t key\+\_\+bits=256)
+\begin{DoxyCompactList}\small\item\em Construct ARIA-\/\+GCM with specified key size. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1ARIA__GCM_a37acd9557fb4049aa3922e5db5d2b097}{\texorpdfstring{$\sim$}{\string~}\+ARIA\+\_\+\+GCM}} ()=default
+\item 
+std\+::string \mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1ARIA__GCM_aac2275c9bb6edf65ac7a4b701b0ca80a}{name}} () const override
+\begin{DoxyCompactList}\small\item\em Get algorithm name. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacefilevault_1_1core_ab1ba257a0205c63e9e1e3623170940a2}{core\+::\+Algorithm\+Type}} \mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1ARIA__GCM_ac18663b31585c878546c0ee6934680c1}{type}} () const override
+\begin{DoxyCompactList}\small\item\em Get algorithm type. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structfilevault_1_1core_1_1CryptoResult}{core\+::\+Crypto\+Result}} \mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1ARIA__GCM_a20b7925d6899e9aeee59fe4ad9651068}{encrypt}} (std\+::span$<$ const uint8\+\_\+t $>$ plaintext, std\+::span$<$ const uint8\+\_\+t $>$ key, const \mbox{\hyperlink{structfilevault_1_1core_1_1EncryptionConfig}{core\+::\+Encryption\+Config}} \&config) override
+\begin{DoxyCompactList}\small\item\em Encrypt data. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structfilevault_1_1core_1_1CryptoResult}{core\+::\+Crypto\+Result}} \mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1ARIA__GCM_a48c35419046065d03bdabd8bef8e4325}{decrypt}} (std\+::span$<$ const uint8\+\_\+t $>$ ciphertext, std\+::span$<$ const uint8\+\_\+t $>$ key, const \mbox{\hyperlink{structfilevault_1_1core_1_1EncryptionConfig}{core\+::\+Encryption\+Config}} \&config) override
+\begin{DoxyCompactList}\small\item\em Decrypt data. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1ARIA__GCM_ab85e4fd51e8189520d4a225945044895}{key\+\_\+size}} () const override
+\begin{DoxyCompactList}\small\item\em Get recommended key size in bytes. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1ARIA__GCM_abaaf2dda621dc0b411784e3c50fff0f5}{nonce\+\_\+size}} () const
+\item 
+size\+\_\+t \mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1ARIA__GCM_aa06827cc1cf408eeea02a62162fe521e}{tag\+\_\+size}} () const
+\item 
+bool \mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1ARIA__GCM_ae2e5f482004401d0f950aa6f9c1f3091}{is\+\_\+suitable\+\_\+for}} (\mbox{\hyperlink{namespacefilevault_1_1core_abcb3b3d896f7dc00926903183b3e2dc9}{core\+::\+Security\+Level}} level) const override
+\begin{DoxyCompactList}\small\item\em Check if algorithm is suitable for security level. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classfilevault_1_1core_1_1ICryptoAlgorithm}{filevault\+::core\+::\+ICrypto\+Algorithm}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classfilevault_1_1core_1_1ICryptoAlgorithm_a36383558169617931374ca3b64399818}{\texorpdfstring{$\sim$}{\string~}\+ICrypto\+Algorithm}} ()=default
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+size\+\_\+t \mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1ARIA__GCM_a3c263cdda145a881c73367acb9cf5827}{key\+\_\+bits\+\_\+}}
+\item 
+\mbox{\hyperlink{namespacefilevault_1_1core_ab1ba257a0205c63e9e1e3623170940a2}{core\+::\+Algorithm\+Type}} \mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1ARIA__GCM_a7e3bb3e3840c32e3aaba615b55c396ad}{type\+\_\+}}
+\item 
+std\+::string \mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1ARIA__GCM_a25ba3150f5e99a8ef6c144608ef507c8}{botan\+\_\+name\+\_\+}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+ARIA-\/\+GCM AEAD encryption. 
+
+Supports 128, 192, and 256-\/bit keys. Uses GCM mode for authenticated encryption. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classfilevault_1_1algorithms_1_1symmetric_1_1ARIA__GCM_a42e1a2dbf513dd6994afba6983e96a31}\label{classfilevault_1_1algorithms_1_1symmetric_1_1ARIA__GCM_a42e1a2dbf513dd6994afba6983e96a31} 
+\index{filevault::algorithms::symmetric::ARIA\_GCM@{filevault::algorithms::symmetric::ARIA\_GCM}!ARIA\_GCM@{ARIA\_GCM}}
+\index{ARIA\_GCM@{ARIA\_GCM}!filevault::algorithms::symmetric::ARIA\_GCM@{filevault::algorithms::symmetric::ARIA\_GCM}}
+\doxysubsubsection{\texorpdfstring{ARIA\_GCM()}{ARIA\_GCM()}}
+{\footnotesize\ttfamily filevault\+::algorithms\+::symmetric\+::\+ARIA\+\_\+\+GCM\+::\+ARIA\+\_\+\+GCM (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{key\+\_\+bits = {\ttfamily 256} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Construct ARIA-\/\+GCM with specified key size. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em key\+\_\+bits} & Key size in bits (128, 192, or 256) \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classfilevault_1_1algorithms_1_1symmetric_1_1ARIA__GCM_a37acd9557fb4049aa3922e5db5d2b097}\label{classfilevault_1_1algorithms_1_1symmetric_1_1ARIA__GCM_a37acd9557fb4049aa3922e5db5d2b097} 
+\index{filevault::algorithms::symmetric::ARIA\_GCM@{filevault::algorithms::symmetric::ARIA\_GCM}!````~ARIA\_GCM@{\texorpdfstring{$\sim$}{\string~}ARIA\_GCM}}
+\index{````~ARIA\_GCM@{\texorpdfstring{$\sim$}{\string~}ARIA\_GCM}!filevault::algorithms::symmetric::ARIA\_GCM@{filevault::algorithms::symmetric::ARIA\_GCM}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}ARIA\_GCM()}{\string~ARIA\_GCM()}}
+{\footnotesize\ttfamily virtual filevault\+::algorithms\+::symmetric\+::\+ARIA\+\_\+\+GCM\+::\texorpdfstring{$\sim$}{\string~}\+ARIA\+\_\+\+GCM (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classfilevault_1_1algorithms_1_1symmetric_1_1ARIA__GCM_a48c35419046065d03bdabd8bef8e4325}\label{classfilevault_1_1algorithms_1_1symmetric_1_1ARIA__GCM_a48c35419046065d03bdabd8bef8e4325} 
+\index{filevault::algorithms::symmetric::ARIA\_GCM@{filevault::algorithms::symmetric::ARIA\_GCM}!decrypt@{decrypt}}
+\index{decrypt@{decrypt}!filevault::algorithms::symmetric::ARIA\_GCM@{filevault::algorithms::symmetric::ARIA\_GCM}}
+\doxysubsubsection{\texorpdfstring{decrypt()}{decrypt()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structfilevault_1_1core_1_1CryptoResult}{core\+::\+Crypto\+Result}} filevault\+::algorithms\+::symmetric\+::\+ARIA\+\_\+\+GCM\+::decrypt (\begin{DoxyParamCaption}\item[{std\+::span$<$ const uint8\+\_\+t $>$}]{ciphertext,  }\item[{std\+::span$<$ const uint8\+\_\+t $>$}]{key,  }\item[{const \mbox{\hyperlink{structfilevault_1_1core_1_1EncryptionConfig}{core\+::\+Encryption\+Config}} \&}]{config }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Decrypt data. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ciphertext} & Encrypted data \\
+\hline
+{\em key} & Decryption key (derived from password) \\
+\hline
+{\em config} & Decryption configuration \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Decrypted data 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classfilevault_1_1core_1_1ICryptoAlgorithm_a5ad6e9e19a3ed1dd3f0b49106bcaac0d}{filevault\+::core\+::\+ICrypto\+Algorithm}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1algorithms_1_1symmetric_1_1ARIA__GCM_a48c35419046065d03bdabd8bef8e4325_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1algorithms_1_1symmetric_1_1ARIA__GCM_a20b7925d6899e9aeee59fe4ad9651068}\label{classfilevault_1_1algorithms_1_1symmetric_1_1ARIA__GCM_a20b7925d6899e9aeee59fe4ad9651068} 
+\index{filevault::algorithms::symmetric::ARIA\_GCM@{filevault::algorithms::symmetric::ARIA\_GCM}!encrypt@{encrypt}}
+\index{encrypt@{encrypt}!filevault::algorithms::symmetric::ARIA\_GCM@{filevault::algorithms::symmetric::ARIA\_GCM}}
+\doxysubsubsection{\texorpdfstring{encrypt()}{encrypt()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structfilevault_1_1core_1_1CryptoResult}{core\+::\+Crypto\+Result}} filevault\+::algorithms\+::symmetric\+::\+ARIA\+\_\+\+GCM\+::encrypt (\begin{DoxyParamCaption}\item[{std\+::span$<$ const uint8\+\_\+t $>$}]{plaintext,  }\item[{std\+::span$<$ const uint8\+\_\+t $>$}]{key,  }\item[{const \mbox{\hyperlink{structfilevault_1_1core_1_1EncryptionConfig}{core\+::\+Encryption\+Config}} \&}]{config }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Encrypt data. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em plaintext} & Input data to encrypt \\
+\hline
+{\em key} & Encryption key (derived from password) \\
+\hline
+{\em config} & Encryption configuration \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Encrypted data with metadata 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classfilevault_1_1core_1_1ICryptoAlgorithm_a5b9102cef54b84b54feea1dc16561a2d}{filevault\+::core\+::\+ICrypto\+Algorithm}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1algorithms_1_1symmetric_1_1ARIA__GCM_a20b7925d6899e9aeee59fe4ad9651068_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1algorithms_1_1symmetric_1_1ARIA__GCM_ae2e5f482004401d0f950aa6f9c1f3091}\label{classfilevault_1_1algorithms_1_1symmetric_1_1ARIA__GCM_ae2e5f482004401d0f950aa6f9c1f3091} 
+\index{filevault::algorithms::symmetric::ARIA\_GCM@{filevault::algorithms::symmetric::ARIA\_GCM}!is\_suitable\_for@{is\_suitable\_for}}
+\index{is\_suitable\_for@{is\_suitable\_for}!filevault::algorithms::symmetric::ARIA\_GCM@{filevault::algorithms::symmetric::ARIA\_GCM}}
+\doxysubsubsection{\texorpdfstring{is\_suitable\_for()}{is\_suitable\_for()}}
+{\footnotesize\ttfamily bool filevault\+::algorithms\+::symmetric\+::\+ARIA\+\_\+\+GCM\+::is\+\_\+suitable\+\_\+for (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacefilevault_1_1core_abcb3b3d896f7dc00926903183b3e2dc9}{core\+::\+Security\+Level}}}]{level }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Check if algorithm is suitable for security level. 
+
+
+
+Implements \mbox{\hyperlink{classfilevault_1_1core_1_1ICryptoAlgorithm_aab479734daf06d3f76af5d916c0285fa}{filevault\+::core\+::\+ICrypto\+Algorithm}}.
+
+\Hypertarget{classfilevault_1_1algorithms_1_1symmetric_1_1ARIA__GCM_ab85e4fd51e8189520d4a225945044895}\label{classfilevault_1_1algorithms_1_1symmetric_1_1ARIA__GCM_ab85e4fd51e8189520d4a225945044895} 
+\index{filevault::algorithms::symmetric::ARIA\_GCM@{filevault::algorithms::symmetric::ARIA\_GCM}!key\_size@{key\_size}}
+\index{key\_size@{key\_size}!filevault::algorithms::symmetric::ARIA\_GCM@{filevault::algorithms::symmetric::ARIA\_GCM}}
+\doxysubsubsection{\texorpdfstring{key\_size()}{key\_size()}}
+{\footnotesize\ttfamily size\+\_\+t filevault\+::algorithms\+::symmetric\+::\+ARIA\+\_\+\+GCM\+::key\+\_\+size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get recommended key size in bytes. 
+
+
+
+Implements \mbox{\hyperlink{classfilevault_1_1core_1_1ICryptoAlgorithm_af9ccb47457495eb99988fef0b5b2bbe8}{filevault\+::core\+::\+ICrypto\+Algorithm}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1algorithms_1_1symmetric_1_1ARIA__GCM_ab85e4fd51e8189520d4a225945044895_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1algorithms_1_1symmetric_1_1ARIA__GCM_aac2275c9bb6edf65ac7a4b701b0ca80a}\label{classfilevault_1_1algorithms_1_1symmetric_1_1ARIA__GCM_aac2275c9bb6edf65ac7a4b701b0ca80a} 
+\index{filevault::algorithms::symmetric::ARIA\_GCM@{filevault::algorithms::symmetric::ARIA\_GCM}!name@{name}}
+\index{name@{name}!filevault::algorithms::symmetric::ARIA\_GCM@{filevault::algorithms::symmetric::ARIA\_GCM}}
+\doxysubsubsection{\texorpdfstring{name()}{name()}}
+{\footnotesize\ttfamily std\+::string filevault\+::algorithms\+::symmetric\+::\+ARIA\+\_\+\+GCM\+::name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get algorithm name. 
+
+
+
+Implements \mbox{\hyperlink{classfilevault_1_1core_1_1ICryptoAlgorithm_a8acdc23e4f2ea77bb4a5b9820b27fa66}{filevault\+::core\+::\+ICrypto\+Algorithm}}.
+
+\Hypertarget{classfilevault_1_1algorithms_1_1symmetric_1_1ARIA__GCM_abaaf2dda621dc0b411784e3c50fff0f5}\label{classfilevault_1_1algorithms_1_1symmetric_1_1ARIA__GCM_abaaf2dda621dc0b411784e3c50fff0f5} 
+\index{filevault::algorithms::symmetric::ARIA\_GCM@{filevault::algorithms::symmetric::ARIA\_GCM}!nonce\_size@{nonce\_size}}
+\index{nonce\_size@{nonce\_size}!filevault::algorithms::symmetric::ARIA\_GCM@{filevault::algorithms::symmetric::ARIA\_GCM}}
+\doxysubsubsection{\texorpdfstring{nonce\_size()}{nonce\_size()}}
+{\footnotesize\ttfamily size\+\_\+t filevault\+::algorithms\+::symmetric\+::\+ARIA\+\_\+\+GCM\+::nonce\+\_\+size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1algorithms_1_1symmetric_1_1ARIA__GCM_abaaf2dda621dc0b411784e3c50fff0f5_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1algorithms_1_1symmetric_1_1ARIA__GCM_aa06827cc1cf408eeea02a62162fe521e}\label{classfilevault_1_1algorithms_1_1symmetric_1_1ARIA__GCM_aa06827cc1cf408eeea02a62162fe521e} 
+\index{filevault::algorithms::symmetric::ARIA\_GCM@{filevault::algorithms::symmetric::ARIA\_GCM}!tag\_size@{tag\_size}}
+\index{tag\_size@{tag\_size}!filevault::algorithms::symmetric::ARIA\_GCM@{filevault::algorithms::symmetric::ARIA\_GCM}}
+\doxysubsubsection{\texorpdfstring{tag\_size()}{tag\_size()}}
+{\footnotesize\ttfamily size\+\_\+t filevault\+::algorithms\+::symmetric\+::\+ARIA\+\_\+\+GCM\+::tag\+\_\+size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1algorithms_1_1symmetric_1_1ARIA__GCM_aa06827cc1cf408eeea02a62162fe521e_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1algorithms_1_1symmetric_1_1ARIA__GCM_ac18663b31585c878546c0ee6934680c1}\label{classfilevault_1_1algorithms_1_1symmetric_1_1ARIA__GCM_ac18663b31585c878546c0ee6934680c1} 
+\index{filevault::algorithms::symmetric::ARIA\_GCM@{filevault::algorithms::symmetric::ARIA\_GCM}!type@{type}}
+\index{type@{type}!filevault::algorithms::symmetric::ARIA\_GCM@{filevault::algorithms::symmetric::ARIA\_GCM}}
+\doxysubsubsection{\texorpdfstring{type()}{type()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacefilevault_1_1core_ab1ba257a0205c63e9e1e3623170940a2}{core\+::\+Algorithm\+Type}} filevault\+::algorithms\+::symmetric\+::\+ARIA\+\_\+\+GCM\+::type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get algorithm type. 
+
+
+
+Implements \mbox{\hyperlink{classfilevault_1_1core_1_1ICryptoAlgorithm_a11b7820f7b0bbb5fd6668fac3b78a7e1}{filevault\+::core\+::\+ICrypto\+Algorithm}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classfilevault_1_1algorithms_1_1symmetric_1_1ARIA__GCM_a25ba3150f5e99a8ef6c144608ef507c8}\label{classfilevault_1_1algorithms_1_1symmetric_1_1ARIA__GCM_a25ba3150f5e99a8ef6c144608ef507c8} 
+\index{filevault::algorithms::symmetric::ARIA\_GCM@{filevault::algorithms::symmetric::ARIA\_GCM}!botan\_name\_@{botan\_name\_}}
+\index{botan\_name\_@{botan\_name\_}!filevault::algorithms::symmetric::ARIA\_GCM@{filevault::algorithms::symmetric::ARIA\_GCM}}
+\doxysubsubsection{\texorpdfstring{botan\_name\_}{botan\_name\_}}
+{\footnotesize\ttfamily std\+::string filevault\+::algorithms\+::symmetric\+::\+ARIA\+\_\+\+GCM\+::botan\+\_\+name\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classfilevault_1_1algorithms_1_1symmetric_1_1ARIA__GCM_a3c263cdda145a881c73367acb9cf5827}\label{classfilevault_1_1algorithms_1_1symmetric_1_1ARIA__GCM_a3c263cdda145a881c73367acb9cf5827} 
+\index{filevault::algorithms::symmetric::ARIA\_GCM@{filevault::algorithms::symmetric::ARIA\_GCM}!key\_bits\_@{key\_bits\_}}
+\index{key\_bits\_@{key\_bits\_}!filevault::algorithms::symmetric::ARIA\_GCM@{filevault::algorithms::symmetric::ARIA\_GCM}}
+\doxysubsubsection{\texorpdfstring{key\_bits\_}{key\_bits\_}}
+{\footnotesize\ttfamily size\+\_\+t filevault\+::algorithms\+::symmetric\+::\+ARIA\+\_\+\+GCM\+::key\+\_\+bits\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classfilevault_1_1algorithms_1_1symmetric_1_1ARIA__GCM_a7e3bb3e3840c32e3aaba615b55c396ad}\label{classfilevault_1_1algorithms_1_1symmetric_1_1ARIA__GCM_a7e3bb3e3840c32e3aaba615b55c396ad} 
+\index{filevault::algorithms::symmetric::ARIA\_GCM@{filevault::algorithms::symmetric::ARIA\_GCM}!type\_@{type\_}}
+\index{type\_@{type\_}!filevault::algorithms::symmetric::ARIA\_GCM@{filevault::algorithms::symmetric::ARIA\_GCM}}
+\doxysubsubsection{\texorpdfstring{type\_}{type\_}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacefilevault_1_1core_ab1ba257a0205c63e9e1e3623170940a2}{core\+::\+Algorithm\+Type}} filevault\+::algorithms\+::symmetric\+::\+ARIA\+\_\+\+GCM\+::type\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/filevault/algorithms/symmetric/\mbox{\hyperlink{aria__gcm_8hpp}{aria\+\_\+gcm.\+hpp}}\item 
+src/algorithms/symmetric/\mbox{\hyperlink{aria__gcm_8cpp}{aria\+\_\+gcm.\+cpp}}\end{DoxyCompactItemize}

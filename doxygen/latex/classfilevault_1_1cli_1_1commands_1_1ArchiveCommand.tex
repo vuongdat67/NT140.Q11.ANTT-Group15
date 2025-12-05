@@ -1,0 +1,313 @@
+\doxysection{filevault\+::cli\+::commands\+::Archive\+Command Class Reference}
+\hypertarget{classfilevault_1_1cli_1_1commands_1_1ArchiveCommand}{}\label{classfilevault_1_1cli_1_1commands_1_1ArchiveCommand}\index{filevault::cli::commands::ArchiveCommand@{filevault::cli::commands::ArchiveCommand}}
+
+
+Archive command -\/ compress and encrypt multiple files.  
+
+
+
+
+{\ttfamily \#include $<$archive\+\_\+cmd.\+hpp$>$}
+
+
+
+Inheritance diagram for filevault\+::cli\+::commands\+::Archive\+Command\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=214pt]{classfilevault_1_1cli_1_1commands_1_1ArchiveCommand__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for filevault\+::cli\+::commands\+::Archive\+Command\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1cli_1_1commands_1_1ArchiveCommand__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classfilevault_1_1cli_1_1commands_1_1ArchiveCommand_ac4bdbaba26bfe21eb30f014d2713fc52}{Archive\+Command}} (\mbox{\hyperlink{classfilevault_1_1core_1_1CryptoEngine}{core\+::\+Crypto\+Engine}} \&engine)
+\item 
+std\+::string \mbox{\hyperlink{classfilevault_1_1cli_1_1commands_1_1ArchiveCommand_ab610bdda80f7a544a366e1c24e357b34}{name}} () const override
+\begin{DoxyCompactList}\small\item\em Get command name. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classfilevault_1_1cli_1_1commands_1_1ArchiveCommand_a4ca923e5ab05840c929448a1cb1dd213}{description}} () const override
+\begin{DoxyCompactList}\small\item\em Get command description. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classfilevault_1_1cli_1_1commands_1_1ArchiveCommand_a115297ec242afc4bec5d4d4e3f23713c}{setup}} (CLI\+::\+App \&app) override
+\begin{DoxyCompactList}\small\item\em Setup CLI11 subcommand. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classfilevault_1_1cli_1_1commands_1_1ArchiveCommand_a162338a7beb4768289e9bfb5636ed776}{execute}} () override
+\begin{DoxyCompactList}\small\item\em Execute the command. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classfilevault_1_1cli_1_1ICommand}{filevault\+::cli\+::\+ICommand}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classfilevault_1_1cli_1_1ICommand_a358ce6bf0db6a1ff7f53eec427481a5d}{\texorpdfstring{$\sim$}{\string~}\+ICommand}} ()=default
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{classfilevault_1_1cli_1_1commands_1_1ArchiveCommand_a1a183289c7a40e379f41aa0217ab1f93}{do\+\_\+create}} ()
+\item 
+int \mbox{\hyperlink{classfilevault_1_1cli_1_1commands_1_1ArchiveCommand_ad3f36b6946e3df00b1b4f5b88422da74}{do\+\_\+extract}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classfilevault_1_1core_1_1CryptoEngine}{core\+::\+Crypto\+Engine}} \& \mbox{\hyperlink{classfilevault_1_1cli_1_1commands_1_1ArchiveCommand_a70d585fbc6e775b317691d9361e34747}{engine\+\_\+}}
+\item 
+std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{classfilevault_1_1cli_1_1commands_1_1ArchiveCommand_af4f5891ac8cbf74c320ade06fc107f57}{input\+\_\+files\+\_\+}}
+\item 
+std\+::string \mbox{\hyperlink{classfilevault_1_1cli_1_1commands_1_1ArchiveCommand_a0d9a461e4b6467a8dd896764b92e6b1a}{output\+\_\+file\+\_\+}}
+\item 
+std\+::string \mbox{\hyperlink{classfilevault_1_1cli_1_1commands_1_1ArchiveCommand_ab2666b9efd16c35e9347c80cc3f33e03}{password\+\_\+}}
+\item 
+std\+::string \mbox{\hyperlink{classfilevault_1_1cli_1_1commands_1_1ArchiveCommand_a4bb0e6128f6103b6b5cd0a1df44aa821}{algorithm\+\_\+}} = "{}aes-\/256-\/gcm"{}
+\item 
+std\+::string \mbox{\hyperlink{classfilevault_1_1cli_1_1commands_1_1ArchiveCommand_a38183cd2832fc239dd4b068f4412a033}{compression\+\_\+}} = "{}zlib"{}
+\item 
+std\+::string \mbox{\hyperlink{classfilevault_1_1cli_1_1commands_1_1ArchiveCommand_a7b70a3798c7f8fbf6a1f686dd4cfbed1}{kdf\+\_\+}} = "{}argon2id"{}
+\item 
+std\+::string \mbox{\hyperlink{classfilevault_1_1cli_1_1commands_1_1ArchiveCommand_ac88489cec5cce411670e91dc7f46dda6}{security\+\_\+level\+\_\+}} = "{}medium"{}
+\item 
+bool \mbox{\hyperlink{classfilevault_1_1cli_1_1commands_1_1ArchiveCommand_a66a6ac0183d0887a7f94fa1541c7e6c7}{extract\+\_\+}} = false
+\item 
+bool \mbox{\hyperlink{classfilevault_1_1cli_1_1commands_1_1ArchiveCommand_aac66a97312d2eea6c2e14d43780454db}{verbose\+\_\+}} = false
+\item 
+std\+::string \mbox{\hyperlink{classfilevault_1_1cli_1_1commands_1_1ArchiveCommand_a090a946815abad7a55ed6fabdaf7e603}{extract\+\_\+dir\+\_\+}} = "{}."{}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Archive command -\/ compress and encrypt multiple files. 
+
+Creates an archive from multiple files, compresses it, then encrypts. Format\+: \mbox{[}metadata\mbox{]}\mbox{[}file1\+\_\+data\mbox{]}\mbox{[}file2\+\_\+data\mbox{]}... 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classfilevault_1_1cli_1_1commands_1_1ArchiveCommand_ac4bdbaba26bfe21eb30f014d2713fc52}\label{classfilevault_1_1cli_1_1commands_1_1ArchiveCommand_ac4bdbaba26bfe21eb30f014d2713fc52} 
+\index{filevault::cli::commands::ArchiveCommand@{filevault::cli::commands::ArchiveCommand}!ArchiveCommand@{ArchiveCommand}}
+\index{ArchiveCommand@{ArchiveCommand}!filevault::cli::commands::ArchiveCommand@{filevault::cli::commands::ArchiveCommand}}
+\doxysubsubsection{\texorpdfstring{ArchiveCommand()}{ArchiveCommand()}}
+{\footnotesize\ttfamily filevault\+::cli\+::commands\+::\+Archive\+Command\+::\+Archive\+Command (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classfilevault_1_1core_1_1CryptoEngine}{core\+::\+Crypto\+Engine}} \&}]{engine }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classfilevault_1_1cli_1_1commands_1_1ArchiveCommand_a4ca923e5ab05840c929448a1cb1dd213}\label{classfilevault_1_1cli_1_1commands_1_1ArchiveCommand_a4ca923e5ab05840c929448a1cb1dd213} 
+\index{filevault::cli::commands::ArchiveCommand@{filevault::cli::commands::ArchiveCommand}!description@{description}}
+\index{description@{description}!filevault::cli::commands::ArchiveCommand@{filevault::cli::commands::ArchiveCommand}}
+\doxysubsubsection{\texorpdfstring{description()}{description()}}
+{\footnotesize\ttfamily std\+::string filevault\+::cli\+::commands\+::\+Archive\+Command\+::description (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get command description. 
+
+
+
+Implements \mbox{\hyperlink{classfilevault_1_1cli_1_1ICommand_a154cdd3f87273142e70814445abd48ea}{filevault\+::cli\+::\+ICommand}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1cli_1_1commands_1_1ArchiveCommand_a4ca923e5ab05840c929448a1cb1dd213_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1cli_1_1commands_1_1ArchiveCommand_a1a183289c7a40e379f41aa0217ab1f93}\label{classfilevault_1_1cli_1_1commands_1_1ArchiveCommand_a1a183289c7a40e379f41aa0217ab1f93} 
+\index{filevault::cli::commands::ArchiveCommand@{filevault::cli::commands::ArchiveCommand}!do\_create@{do\_create}}
+\index{do\_create@{do\_create}!filevault::cli::commands::ArchiveCommand@{filevault::cli::commands::ArchiveCommand}}
+\doxysubsubsection{\texorpdfstring{do\_create()}{do\_create()}}
+{\footnotesize\ttfamily int filevault\+::cli\+::commands\+::\+Archive\+Command\+::do\+\_\+create (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1cli_1_1commands_1_1ArchiveCommand_a1a183289c7a40e379f41aa0217ab1f93_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1cli_1_1commands_1_1ArchiveCommand_a1a183289c7a40e379f41aa0217ab1f93_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1cli_1_1commands_1_1ArchiveCommand_ad3f36b6946e3df00b1b4f5b88422da74}\label{classfilevault_1_1cli_1_1commands_1_1ArchiveCommand_ad3f36b6946e3df00b1b4f5b88422da74} 
+\index{filevault::cli::commands::ArchiveCommand@{filevault::cli::commands::ArchiveCommand}!do\_extract@{do\_extract}}
+\index{do\_extract@{do\_extract}!filevault::cli::commands::ArchiveCommand@{filevault::cli::commands::ArchiveCommand}}
+\doxysubsubsection{\texorpdfstring{do\_extract()}{do\_extract()}}
+{\footnotesize\ttfamily int filevault\+::cli\+::commands\+::\+Archive\+Command\+::do\+\_\+extract (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1cli_1_1commands_1_1ArchiveCommand_ad3f36b6946e3df00b1b4f5b88422da74_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1cli_1_1commands_1_1ArchiveCommand_ad3f36b6946e3df00b1b4f5b88422da74_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1cli_1_1commands_1_1ArchiveCommand_a162338a7beb4768289e9bfb5636ed776}\label{classfilevault_1_1cli_1_1commands_1_1ArchiveCommand_a162338a7beb4768289e9bfb5636ed776} 
+\index{filevault::cli::commands::ArchiveCommand@{filevault::cli::commands::ArchiveCommand}!execute@{execute}}
+\index{execute@{execute}!filevault::cli::commands::ArchiveCommand@{filevault::cli::commands::ArchiveCommand}}
+\doxysubsubsection{\texorpdfstring{execute()}{execute()}}
+{\footnotesize\ttfamily int filevault\+::cli\+::commands\+::\+Archive\+Command\+::execute (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Execute the command. 
+
+
+
+Implements \mbox{\hyperlink{classfilevault_1_1cli_1_1ICommand_a2fdc36b29a23b94a6e52bc3d4eb0c1ed}{filevault\+::cli\+::\+ICommand}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1cli_1_1commands_1_1ArchiveCommand_a162338a7beb4768289e9bfb5636ed776_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1cli_1_1commands_1_1ArchiveCommand_a162338a7beb4768289e9bfb5636ed776_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1cli_1_1commands_1_1ArchiveCommand_ab610bdda80f7a544a366e1c24e357b34}\label{classfilevault_1_1cli_1_1commands_1_1ArchiveCommand_ab610bdda80f7a544a366e1c24e357b34} 
+\index{filevault::cli::commands::ArchiveCommand@{filevault::cli::commands::ArchiveCommand}!name@{name}}
+\index{name@{name}!filevault::cli::commands::ArchiveCommand@{filevault::cli::commands::ArchiveCommand}}
+\doxysubsubsection{\texorpdfstring{name()}{name()}}
+{\footnotesize\ttfamily std\+::string filevault\+::cli\+::commands\+::\+Archive\+Command\+::name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get command name. 
+
+
+
+Implements \mbox{\hyperlink{classfilevault_1_1cli_1_1ICommand_a60aa4bc7c96c2e80feeb1a184d7ae2f7}{filevault\+::cli\+::\+ICommand}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1cli_1_1commands_1_1ArchiveCommand_ab610bdda80f7a544a366e1c24e357b34_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1cli_1_1commands_1_1ArchiveCommand_a115297ec242afc4bec5d4d4e3f23713c}\label{classfilevault_1_1cli_1_1commands_1_1ArchiveCommand_a115297ec242afc4bec5d4d4e3f23713c} 
+\index{filevault::cli::commands::ArchiveCommand@{filevault::cli::commands::ArchiveCommand}!setup@{setup}}
+\index{setup@{setup}!filevault::cli::commands::ArchiveCommand@{filevault::cli::commands::ArchiveCommand}}
+\doxysubsubsection{\texorpdfstring{setup()}{setup()}}
+{\footnotesize\ttfamily void filevault\+::cli\+::commands\+::\+Archive\+Command\+::setup (\begin{DoxyParamCaption}\item[{CLI\+::\+App \&}]{app }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Setup CLI11 subcommand. 
+
+
+
+Implements \mbox{\hyperlink{classfilevault_1_1cli_1_1ICommand_aa43a60aabddff55d1060c334dade972c}{filevault\+::cli\+::\+ICommand}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1cli_1_1commands_1_1ArchiveCommand_a115297ec242afc4bec5d4d4e3f23713c_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classfilevault_1_1cli_1_1commands_1_1ArchiveCommand_a4bb0e6128f6103b6b5cd0a1df44aa821}\label{classfilevault_1_1cli_1_1commands_1_1ArchiveCommand_a4bb0e6128f6103b6b5cd0a1df44aa821} 
+\index{filevault::cli::commands::ArchiveCommand@{filevault::cli::commands::ArchiveCommand}!algorithm\_@{algorithm\_}}
+\index{algorithm\_@{algorithm\_}!filevault::cli::commands::ArchiveCommand@{filevault::cli::commands::ArchiveCommand}}
+\doxysubsubsection{\texorpdfstring{algorithm\_}{algorithm\_}}
+{\footnotesize\ttfamily std\+::string filevault\+::cli\+::commands\+::\+Archive\+Command\+::algorithm\+\_\+ = "{}aes-\/256-\/gcm"{}\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classfilevault_1_1cli_1_1commands_1_1ArchiveCommand_a38183cd2832fc239dd4b068f4412a033}\label{classfilevault_1_1cli_1_1commands_1_1ArchiveCommand_a38183cd2832fc239dd4b068f4412a033} 
+\index{filevault::cli::commands::ArchiveCommand@{filevault::cli::commands::ArchiveCommand}!compression\_@{compression\_}}
+\index{compression\_@{compression\_}!filevault::cli::commands::ArchiveCommand@{filevault::cli::commands::ArchiveCommand}}
+\doxysubsubsection{\texorpdfstring{compression\_}{compression\_}}
+{\footnotesize\ttfamily std\+::string filevault\+::cli\+::commands\+::\+Archive\+Command\+::compression\+\_\+ = "{}zlib"{}\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classfilevault_1_1cli_1_1commands_1_1ArchiveCommand_a70d585fbc6e775b317691d9361e34747}\label{classfilevault_1_1cli_1_1commands_1_1ArchiveCommand_a70d585fbc6e775b317691d9361e34747} 
+\index{filevault::cli::commands::ArchiveCommand@{filevault::cli::commands::ArchiveCommand}!engine\_@{engine\_}}
+\index{engine\_@{engine\_}!filevault::cli::commands::ArchiveCommand@{filevault::cli::commands::ArchiveCommand}}
+\doxysubsubsection{\texorpdfstring{engine\_}{engine\_}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classfilevault_1_1core_1_1CryptoEngine}{core\+::\+Crypto\+Engine}}\& filevault\+::cli\+::commands\+::\+Archive\+Command\+::engine\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classfilevault_1_1cli_1_1commands_1_1ArchiveCommand_a66a6ac0183d0887a7f94fa1541c7e6c7}\label{classfilevault_1_1cli_1_1commands_1_1ArchiveCommand_a66a6ac0183d0887a7f94fa1541c7e6c7} 
+\index{filevault::cli::commands::ArchiveCommand@{filevault::cli::commands::ArchiveCommand}!extract\_@{extract\_}}
+\index{extract\_@{extract\_}!filevault::cli::commands::ArchiveCommand@{filevault::cli::commands::ArchiveCommand}}
+\doxysubsubsection{\texorpdfstring{extract\_}{extract\_}}
+{\footnotesize\ttfamily bool filevault\+::cli\+::commands\+::\+Archive\+Command\+::extract\+\_\+ = false\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classfilevault_1_1cli_1_1commands_1_1ArchiveCommand_a090a946815abad7a55ed6fabdaf7e603}\label{classfilevault_1_1cli_1_1commands_1_1ArchiveCommand_a090a946815abad7a55ed6fabdaf7e603} 
+\index{filevault::cli::commands::ArchiveCommand@{filevault::cli::commands::ArchiveCommand}!extract\_dir\_@{extract\_dir\_}}
+\index{extract\_dir\_@{extract\_dir\_}!filevault::cli::commands::ArchiveCommand@{filevault::cli::commands::ArchiveCommand}}
+\doxysubsubsection{\texorpdfstring{extract\_dir\_}{extract\_dir\_}}
+{\footnotesize\ttfamily std\+::string filevault\+::cli\+::commands\+::\+Archive\+Command\+::extract\+\_\+dir\+\_\+ = "{}."{}\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classfilevault_1_1cli_1_1commands_1_1ArchiveCommand_af4f5891ac8cbf74c320ade06fc107f57}\label{classfilevault_1_1cli_1_1commands_1_1ArchiveCommand_af4f5891ac8cbf74c320ade06fc107f57} 
+\index{filevault::cli::commands::ArchiveCommand@{filevault::cli::commands::ArchiveCommand}!input\_files\_@{input\_files\_}}
+\index{input\_files\_@{input\_files\_}!filevault::cli::commands::ArchiveCommand@{filevault::cli::commands::ArchiveCommand}}
+\doxysubsubsection{\texorpdfstring{input\_files\_}{input\_files\_}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::string$>$ filevault\+::cli\+::commands\+::\+Archive\+Command\+::input\+\_\+files\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classfilevault_1_1cli_1_1commands_1_1ArchiveCommand_a7b70a3798c7f8fbf6a1f686dd4cfbed1}\label{classfilevault_1_1cli_1_1commands_1_1ArchiveCommand_a7b70a3798c7f8fbf6a1f686dd4cfbed1} 
+\index{filevault::cli::commands::ArchiveCommand@{filevault::cli::commands::ArchiveCommand}!kdf\_@{kdf\_}}
+\index{kdf\_@{kdf\_}!filevault::cli::commands::ArchiveCommand@{filevault::cli::commands::ArchiveCommand}}
+\doxysubsubsection{\texorpdfstring{kdf\_}{kdf\_}}
+{\footnotesize\ttfamily std\+::string filevault\+::cli\+::commands\+::\+Archive\+Command\+::kdf\+\_\+ = "{}argon2id"{}\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classfilevault_1_1cli_1_1commands_1_1ArchiveCommand_a0d9a461e4b6467a8dd896764b92e6b1a}\label{classfilevault_1_1cli_1_1commands_1_1ArchiveCommand_a0d9a461e4b6467a8dd896764b92e6b1a} 
+\index{filevault::cli::commands::ArchiveCommand@{filevault::cli::commands::ArchiveCommand}!output\_file\_@{output\_file\_}}
+\index{output\_file\_@{output\_file\_}!filevault::cli::commands::ArchiveCommand@{filevault::cli::commands::ArchiveCommand}}
+\doxysubsubsection{\texorpdfstring{output\_file\_}{output\_file\_}}
+{\footnotesize\ttfamily std\+::string filevault\+::cli\+::commands\+::\+Archive\+Command\+::output\+\_\+file\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classfilevault_1_1cli_1_1commands_1_1ArchiveCommand_ab2666b9efd16c35e9347c80cc3f33e03}\label{classfilevault_1_1cli_1_1commands_1_1ArchiveCommand_ab2666b9efd16c35e9347c80cc3f33e03} 
+\index{filevault::cli::commands::ArchiveCommand@{filevault::cli::commands::ArchiveCommand}!password\_@{password\_}}
+\index{password\_@{password\_}!filevault::cli::commands::ArchiveCommand@{filevault::cli::commands::ArchiveCommand}}
+\doxysubsubsection{\texorpdfstring{password\_}{password\_}}
+{\footnotesize\ttfamily std\+::string filevault\+::cli\+::commands\+::\+Archive\+Command\+::password\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classfilevault_1_1cli_1_1commands_1_1ArchiveCommand_ac88489cec5cce411670e91dc7f46dda6}\label{classfilevault_1_1cli_1_1commands_1_1ArchiveCommand_ac88489cec5cce411670e91dc7f46dda6} 
+\index{filevault::cli::commands::ArchiveCommand@{filevault::cli::commands::ArchiveCommand}!security\_level\_@{security\_level\_}}
+\index{security\_level\_@{security\_level\_}!filevault::cli::commands::ArchiveCommand@{filevault::cli::commands::ArchiveCommand}}
+\doxysubsubsection{\texorpdfstring{security\_level\_}{security\_level\_}}
+{\footnotesize\ttfamily std\+::string filevault\+::cli\+::commands\+::\+Archive\+Command\+::security\+\_\+level\+\_\+ = "{}medium"{}\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classfilevault_1_1cli_1_1commands_1_1ArchiveCommand_aac66a97312d2eea6c2e14d43780454db}\label{classfilevault_1_1cli_1_1commands_1_1ArchiveCommand_aac66a97312d2eea6c2e14d43780454db} 
+\index{filevault::cli::commands::ArchiveCommand@{filevault::cli::commands::ArchiveCommand}!verbose\_@{verbose\_}}
+\index{verbose\_@{verbose\_}!filevault::cli::commands::ArchiveCommand@{filevault::cli::commands::ArchiveCommand}}
+\doxysubsubsection{\texorpdfstring{verbose\_}{verbose\_}}
+{\footnotesize\ttfamily bool filevault\+::cli\+::commands\+::\+Archive\+Command\+::verbose\+\_\+ = false\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/filevault/cli/commands/\mbox{\hyperlink{archive__cmd_8hpp}{archive\+\_\+cmd.\+hpp}}\item 
+src/cli/commands/\mbox{\hyperlink{archive__cmd_8cpp}{archive\+\_\+cmd.\+cpp}}\end{DoxyCompactItemize}

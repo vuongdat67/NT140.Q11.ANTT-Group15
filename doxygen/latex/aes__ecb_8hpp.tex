@@ -1,0 +1,45 @@
+\doxysection{include/filevault/algorithms/symmetric/aes\+\_\+ecb.hpp File Reference}
+\hypertarget{aes__ecb_8hpp}{}\label{aes__ecb_8hpp}\index{include/filevault/algorithms/symmetric/aes\_ecb.hpp@{include/filevault/algorithms/symmetric/aes\_ecb.hpp}}
+
+
+AES-\/\+ECB (Electronic Codebook) mode encryption.  
+
+
+{\ttfamily \#include "{}filevault/core/crypto\+\_\+algorithm.\+hpp"{}}\newline
+{\ttfamily \#include $<$botan/cipher\+\_\+mode.\+h$>$}\newline
+Include dependency graph for aes\+\_\+ecb.\+hpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{aes__ecb_8hpp__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{aes__ecb_8hpp__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1AES__ECB}{filevault\+::algorithms\+::symmetric\+::\+AES\+\_\+\+ECB}}
+\begin{DoxyCompactList}\small\item\em AES-\/\+ECB encryption algorithm. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespacefilevault}{filevault}}
+\item 
+namespace \mbox{\hyperlink{namespacefilevault_1_1algorithms}{filevault\+::algorithms}}
+\item 
+namespace \mbox{\hyperlink{namespacefilevault_1_1algorithms_1_1symmetric}{filevault\+::algorithms\+::symmetric}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+AES-\/\+ECB (Electronic Codebook) mode encryption. 
+
+WARNING\+: ECB mode is NOT secure for most purposes! Each block is encrypted independently, which leaks patterns. This is provided for educational purposes and legacy compatibility only. 

@@ -1,0 +1,45 @@
+\doxysection{include/filevault/algorithms/symmetric/aes\+\_\+cfb.hpp File Reference}
+\hypertarget{aes__cfb_8hpp}{}\label{aes__cfb_8hpp}\index{include/filevault/algorithms/symmetric/aes\_cfb.hpp@{include/filevault/algorithms/symmetric/aes\_cfb.hpp}}
+
+
+AES-\/\+CFB (Cipher Feedback) mode encryption.  
+
+
+{\ttfamily \#include "{}filevault/core/crypto\+\_\+algorithm.\+hpp"{}}\newline
+{\ttfamily \#include $<$botan/cipher\+\_\+mode.\+h$>$}\newline
+Include dependency graph for aes\+\_\+cfb.\+hpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{aes__cfb_8hpp__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{aes__cfb_8hpp__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1AES__CFB}{filevault\+::algorithms\+::symmetric\+::\+AES\+\_\+\+CFB}}
+\begin{DoxyCompactList}\small\item\em AES-\/\+CFB encryption algorithm. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespacefilevault}{filevault}}
+\item 
+namespace \mbox{\hyperlink{namespacefilevault_1_1algorithms}{filevault\+::algorithms}}
+\item 
+namespace \mbox{\hyperlink{namespacefilevault_1_1algorithms_1_1symmetric}{filevault\+::algorithms\+::symmetric}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+AES-\/\+CFB (Cipher Feedback) mode encryption. 
+
+CFB mode is a stream cipher mode that turns a block cipher into a self-\/synchronizing stream cipher. It\textquotesingle{}s similar to CBC but encrypts the previous ciphertext block instead of XORing. 

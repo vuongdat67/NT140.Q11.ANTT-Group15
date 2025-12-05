@@ -1,0 +1,43 @@
+\doxysection{src/core/streaming.cpp File Reference}
+\hypertarget{streaming_8cpp}{}\label{streaming_8cpp}\index{src/core/streaming.cpp@{src/core/streaming.cpp}}
+
+
+Streaming encryption implementation for large files.  
+
+
+{\ttfamily \#include "{}filevault/core/streaming.\+hpp"{}}\newline
+{\ttfamily \#include "{}filevault/core/crypto\+\_\+engine.\+hpp"{}}\newline
+{\ttfamily \#include "{}filevault/compression/compressor.\+hpp"{}}\newline
+{\ttfamily \#include $<$botan/auto\+\_\+rng.\+h$>$}\newline
+{\ttfamily \#include $<$spdlog/spdlog.\+h$>$}\newline
+{\ttfamily \#include $<$chrono$>$}\newline
+{\ttfamily \#include $<$cstring$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+{\ttfamily \#include $<$sys/sysinfo.\+h$>$}\newline
+Include dependency graph for streaming.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{streaming_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespacefilevault}{filevault}}
+\item 
+namespace \mbox{\hyperlink{namespacefilevault_1_1core}{filevault\+::core}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+static constexpr uint8\+\_\+t \mbox{\hyperlink{namespacefilevault_1_1core_a03297cd387c9a8e2ee9ca5205579738c}{filevault\+::core\+::\+STREAM\+\_\+\+MAGIC}} \mbox{[}4\mbox{]} = \{\textquotesingle{}F\textquotesingle{}, \textquotesingle{}V\textquotesingle{}, \textquotesingle{}S\textquotesingle{}, \textquotesingle{}T\textquotesingle{}\}
+\item 
+static constexpr uint8\+\_\+t \mbox{\hyperlink{namespacefilevault_1_1core_a0d5d7bd8c458bdd3af01e327a16904b6}{filevault\+::core\+::\+STREAM\+\_\+\+VERSION}} = 1
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Streaming encryption implementation for large files. 
+

@@ -1,0 +1,70 @@
+\doxysection{filevault\+::utils\+::Crypto\+Utils Class Reference}
+\hypertarget{classfilevault_1_1utils_1_1CryptoUtils}{}\label{classfilevault_1_1utils_1_1CryptoUtils}\index{filevault::utils::CryptoUtils@{filevault::utils::CryptoUtils}}
+
+
+Crypto utility functions.  
+
+
+
+
+{\ttfamily \#include $<$crypto\+\_\+utils.\+hpp$>$}
+
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::string \mbox{\hyperlink{classfilevault_1_1utils_1_1CryptoUtils_af5c2f3ca22dc1bf08448756e8a27bdc4}{hex\+\_\+encode}} (std\+::span$<$ const uint8\+\_\+t $>$ data)
+\begin{DoxyCompactList}\small\item\em Encode bytes to hexadecimal string. \end{DoxyCompactList}\item 
+static std\+::vector$<$ uint8\+\_\+t $>$ \mbox{\hyperlink{classfilevault_1_1utils_1_1CryptoUtils_a4c4749f18ce0668d9e826a5cc048f182}{hex\+\_\+decode}} (const std\+::string \&hex)
+\begin{DoxyCompactList}\small\item\em Decode hexadecimal string to bytes. \end{DoxyCompactList}\item 
+static std\+::string \mbox{\hyperlink{classfilevault_1_1utils_1_1CryptoUtils_a7144189b6883070241f2bb38b70e0b46}{format\+\_\+bytes}} (size\+\_\+t bytes)
+\begin{DoxyCompactList}\small\item\em Format bytes as human-\/readable size. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Crypto utility functions. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classfilevault_1_1utils_1_1CryptoUtils_a7144189b6883070241f2bb38b70e0b46}\label{classfilevault_1_1utils_1_1CryptoUtils_a7144189b6883070241f2bb38b70e0b46} 
+\index{filevault::utils::CryptoUtils@{filevault::utils::CryptoUtils}!format\_bytes@{format\_bytes}}
+\index{format\_bytes@{format\_bytes}!filevault::utils::CryptoUtils@{filevault::utils::CryptoUtils}}
+\doxysubsubsection{\texorpdfstring{format\_bytes()}{format\_bytes()}}
+{\footnotesize\ttfamily std\+::string filevault\+::utils\+::\+Crypto\+Utils\+::format\+\_\+bytes (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{bytes }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Format bytes as human-\/readable size. 
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1utils_1_1CryptoUtils_a7144189b6883070241f2bb38b70e0b46_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1utils_1_1CryptoUtils_a4c4749f18ce0668d9e826a5cc048f182}\label{classfilevault_1_1utils_1_1CryptoUtils_a4c4749f18ce0668d9e826a5cc048f182} 
+\index{filevault::utils::CryptoUtils@{filevault::utils::CryptoUtils}!hex\_decode@{hex\_decode}}
+\index{hex\_decode@{hex\_decode}!filevault::utils::CryptoUtils@{filevault::utils::CryptoUtils}}
+\doxysubsubsection{\texorpdfstring{hex\_decode()}{hex\_decode()}}
+{\footnotesize\ttfamily std\+::vector$<$ uint8\+\_\+t $>$ filevault\+::utils\+::\+Crypto\+Utils\+::hex\+\_\+decode (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{hex }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Decode hexadecimal string to bytes. 
+
+\Hypertarget{classfilevault_1_1utils_1_1CryptoUtils_af5c2f3ca22dc1bf08448756e8a27bdc4}\label{classfilevault_1_1utils_1_1CryptoUtils_af5c2f3ca22dc1bf08448756e8a27bdc4} 
+\index{filevault::utils::CryptoUtils@{filevault::utils::CryptoUtils}!hex\_encode@{hex\_encode}}
+\index{hex\_encode@{hex\_encode}!filevault::utils::CryptoUtils@{filevault::utils::CryptoUtils}}
+\doxysubsubsection{\texorpdfstring{hex\_encode()}{hex\_encode()}}
+{\footnotesize\ttfamily std\+::string filevault\+::utils\+::\+Crypto\+Utils\+::hex\+\_\+encode (\begin{DoxyParamCaption}\item[{std\+::span$<$ const uint8\+\_\+t $>$}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Encode bytes to hexadecimal string. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/filevault/utils/\mbox{\hyperlink{crypto__utils_8hpp}{crypto\+\_\+utils.\+hpp}}\item 
+src/utils/\mbox{\hyperlink{crypto__utils_8cpp}{crypto\+\_\+utils.\+cpp}}\end{DoxyCompactItemize}
