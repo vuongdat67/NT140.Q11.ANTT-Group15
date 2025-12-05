@@ -35,6 +35,7 @@ private:
     int compression_level_ = 6;
     bool verbose_ = false;
     bool no_progress_ = false;
+    bool force_weak_password_ = false;
 };
 
 } // namespace cli

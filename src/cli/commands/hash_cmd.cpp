@@ -6,10 +6,13 @@
 #include <botan/hash.h>
 #include <botan/hex.h>
 #include <botan/mac.h>
+#include <botan/base64.h>
 #include <fmt/color.h>
 #include <chrono>
 #include <fstream>
 #include <algorithm>
+#include <bitset>
+#include <sstream>
 
 namespace filevault {
 namespace cli {
@@ -38,6 +41,11 @@ void HashCommand::setup(CLI::App& app) {
     
     cmd->add_option("--hmac", hmac_key_, 
                    "Calculate HMAC with key (hex or string)");
+    
+    cmd->add_option("--format", output_format_,
+                   "Output format: hex, base64, binary")
+        ->check(CLI::IsMember({"hex", "base64", "binary"}))
+        ->default_val("hex");
     
     cmd->add_flag("--uppercase", uppercase_, 
                  "Output hash in uppercase");
@@ -113,11 +121,33 @@ int HashCommand::execute() {
         auto duration_ms = std::chrono::duration_cast<std::chrono::milliseconds>(
             end_time - start_time).count();
         
-        // Format output
-        if (uppercase_) {
-            std::transform(hash_result.begin(), hash_result.end(), 
-                          hash_result.begin(), ::toupper);
+        // Convert to requested format
+        std::string formatted_hash;
+        if (output_format_ == "hex") {
+            formatted_hash = hash_result;
+            if (uppercase_) {
+                std::transform(formatted_hash.begin(), formatted_hash.end(), 
+                              formatted_hash.begin(), ::toupper);
+            }
+        } else if (output_format_ == "base64") {
+            // Convert hex to base64
+            auto bytes = Botan::hex_decode(hash_result);
+            formatted_hash = Botan::base64_encode(bytes);
+        } else if (output_format_ == "binary") {
+            // Convert hex to binary string
+            auto bytes = Botan::hex_decode(hash_result);
+            std::ostringstream binary_stream;
+            for (size_t i = 0; i < bytes.size(); ++i) {
+                if (i > 0) binary_stream << " ";
+                binary_stream << std::bitset<8>(bytes[i]);
+            }
+            formatted_hash = binary_stream.str();
+        } else {
+            formatted_hash = hash_result;
         }
+        
+        // Uppercase only applies to hex format
+        hash_result = formatted_hash;
         
         // Verify mode
         if (!verify_hash_.empty()) {

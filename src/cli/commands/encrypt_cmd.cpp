@@ -85,6 +85,9 @@ void EncryptCommand::setup(CLI::App& app) {
     
     encrypt_cmd->add_flag("--no-progress", no_progress_, "Disable progress bars");
     
+    encrypt_cmd->add_flag("-y,--yes,--force", force_weak_password_, 
+                         "Skip weak password prompt (accept automatically)");
+    
     encrypt_cmd->callback([this]() { execute(); });
 }
 
@@ -146,13 +149,17 @@ int EncryptCommand::execute() {
                                        utils::Password::get_strength_label(strength_analysis.strength),
                                        static_cast<int>(strength_analysis.score)));
                 
-                fmt::print("Continue with weak password? (y/N): ");
-                std::string response;
-                std::getline(std::cin, response);
-                
-                if (response != "y" && response != "Y") {
-                    utils::Console::info("Encryption cancelled");
-                    return 0;
+                if (!force_weak_password_) {
+                    fmt::print("Continue with weak password? (y/N): ");
+                    std::string response;
+                    std::getline(std::cin, response);
+                    
+                    if (response != "y" && response != "Y") {
+                        utils::Console::info("Encryption cancelled");
+                        return 0;
+                    }
+                } else {
+                    utils::Console::info("Weak password accepted (--force/--yes flag)");
                 }
             }
         }

@@ -332,6 +332,7 @@ async function encryptFile(uri?: vscode.Uri) {
             }
             
             args.push('-p', password);
+            args.push('--yes');  // Skip weak password prompt
             
             await runFileVault(args);
         });
@@ -757,16 +758,16 @@ async function calculateHash(uri?: vscode.Uri) {
             return;
         }
         
-        const args = ['hash', filePath, '-a', algorithm.value];
-        if (format.value !== 'hex') {
-            args.push('--format', format.value);
-        }
-        
+        // Use CLI --format flag
+        const args = ['hash', filePath, '-a', algorithm.value, '--format', format.value];
         const result = await runFileVault(args);
         
-        // Extract hash from output
-        const hashMatch = result.stdout.match(/^([A-Za-z0-9+/=]+)/m);
-        const hash = hashMatch ? hashMatch[1] : result.stdout.trim();
+        // Extract hash from output (format depends on --format flag)
+        const hashMatch = result.stdout.match(/^([A-Za-z0-9+/= ]+)/m);
+        if (!hashMatch) {
+            throw new Error('Failed to extract hash from output');
+        }
+        const hash = hashMatch[1].trim();
         
         const action = await vscode.window.showInformationMessage(
             `${algorithm.label}: ${hash.substring(0, 16)}...`,

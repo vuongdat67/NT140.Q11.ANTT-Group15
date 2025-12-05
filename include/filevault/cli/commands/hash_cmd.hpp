@@ -40,6 +40,7 @@ private:
     std::string input_file_;
     std::string output_file_;
     std::string algorithm_ = "sha256";
+    std::string output_format_ = "hex";
     std::string verify_hash_;
     std::string hmac_key_;
     bool uppercase_ = false;
