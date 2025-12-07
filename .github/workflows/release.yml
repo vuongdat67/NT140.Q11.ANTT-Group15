@@ -347,7 +347,7 @@ jobs:
       id: find-bundle
       shell: bash
       run: |
-        BUNDLE_DIR="gui/src-tauri/target/release/bundle"
+        BUNDLE_DIR="src-tauri/target/release/bundle"
         if [ -d "$BUNDLE_DIR" ]; then
           FILES=$(find "$BUNDLE_DIR" -type f \( -name "*.msi" -o -name "*.exe" -o -name "*.dmg" -o -name "*.app.tar.gz" -o -name "*.AppImage" -o -name "*.deb" -o -name "*.rpm" \) 2>/dev/null | head -20)
           if [ -n "$FILES" ]; then
@@ -368,13 +368,13 @@ jobs:
       with:
         name: tauri-gui-${{ matrix.platform }}
         path: |
-          gui/src-tauri/target/release/bundle/**/*.msi
-          gui/src-tauri/target/release/bundle/**/*.exe
-          gui/src-tauri/target/release/bundle/**/*.dmg
-          gui/src-tauri/target/release/bundle/**/*.app.tar.gz
-          gui/src-tauri/target/release/bundle/**/*.AppImage
-          gui/src-tauri/target/release/bundle/**/*.deb
-          gui/src-tauri/target/release/bundle/**/*.rpm
+          src-tauri/target/release/bundle/**/*.msi
+          src-tauri/target/release/bundle/**/*.exe
+          src-tauri/target/release/bundle/**/*.dmg
+          src-tauri/target/release/bundle/**/*.app.tar.gz
+          src-tauri/target/release/bundle/**/*.AppImage
+          src-tauri/target/release/bundle/**/*.deb
+          src-tauri/target/release/bundle/**/*.rpm
         if-no-files-found: warn
 
   # ===========================================
