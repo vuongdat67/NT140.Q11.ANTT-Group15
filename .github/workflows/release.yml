@@ -350,17 +350,11 @@ jobs:
       run: |
         BUNDLE_DIR="gui/src-tauri/target/release/bundle"
         if [ -d "$BUNDLE_DIR" ]; then
-          FILES=$(find "$BUNDLE_DIR" -type f \( -name "*.msi" -o -name "*.exe" -o -name "*.dmg" -o -name "*.app.tar.gz" -o -name "*.AppImage" -o -name "*.deb" -o -name "*.rpm" \) 2>/dev/null | head -20)
-          if [ -n "$FILES" ]; then
-            echo "$FILES"
-            echo "bundle_exists=true" >> $GITHUB_OUTPUT
-          else
-            echo "⚠️ No bundle files found in $BUNDLE_DIR"
-            echo "bundle_exists=false" >> $GITHUB_OUTPUT
-          fi
+          find "$BUNDLE_DIR" -type f \( -name "*.msi" -o -name "*.exe" -o -name "*.dmg" -o -name "*.app.tar.gz" -o -name "*.AppImage" -o -name "*.deb" -o -name "*.rpm" \) | head -20
+          echo "bundle_exists=true" >> $GITHUB_OUTPUT
         else
-          echo "⚠️ Bundle directory not found: $BUNDLE_DIR"
           echo "bundle_exists=false" >> $GITHUB_OUTPUT
+          echo "⚠️ Bundle directory not found: $BUNDLE_DIR"
         fi
 
     - name: Upload Tauri installers
