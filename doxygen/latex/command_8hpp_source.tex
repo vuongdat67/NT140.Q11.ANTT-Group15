@@ -1,0 +1,32 @@
+\doxysection{command.\+hpp}
+\hypertarget{command_8hpp_source}{}\label{command_8hpp_source}\index{include/filevault/cli/command.hpp@{include/filevault/cli/command.hpp}}
+\mbox{\hyperlink{command_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ FILEVAULT\_CLI\_COMMAND\_HPP}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ FILEVAULT\_CLI\_COMMAND\_HPP}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <CLI/CLI.hpp>}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacefilevault}{filevault}}\ \{}
+\DoxyCodeLine{00008\ \textcolor{keyword}{namespace\ }cli\ \{}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00013\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classfilevault_1_1cli_1_1ICommand}{ICommand}}\ \{}
+\DoxyCodeLine{00014\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classfilevault_1_1cli_1_1ICommand_a358ce6bf0db6a1ff7f53eec427481a5d}{\string~ICommand}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00016\ \ \ \ \ }
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keyword}{virtual}\ std::string\ \mbox{\hyperlink{classfilevault_1_1cli_1_1ICommand_a60aa4bc7c96c2e80feeb1a184d7ae2f7}{name}}()\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00021\ \ \ \ \ }
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keyword}{virtual}\ std::string\ \mbox{\hyperlink{classfilevault_1_1cli_1_1ICommand_a154cdd3f87273142e70814445abd48ea}{description}}()\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00026\ \ \ \ \ }
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classfilevault_1_1cli_1_1ICommand_aa43a60aabddff55d1060c334dade972c}{setup}}(CLI::App\&\ app)\ =\ 0;}
+\DoxyCodeLine{00031\ \ \ \ \ }
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classfilevault_1_1cli_1_1ICommand_a2fdc36b29a23b94a6e52bc3d4eb0c1ed}{execute}}()\ =\ 0;}
+\DoxyCodeLine{00036\ \};}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \}\ \textcolor{comment}{//\ namespace\ cli}}
+\DoxyCodeLine{00039\ \}\ \textcolor{comment}{//\ namespace\ filevault}}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ FILEVAULT\_CLI\_COMMAND\_HPP}}
+
+\end{DoxyCode}

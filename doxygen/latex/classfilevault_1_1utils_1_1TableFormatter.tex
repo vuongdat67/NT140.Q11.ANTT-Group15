@@ -1,0 +1,182 @@
+\doxysection{filevault\+::utils\+::Table\+Formatter Class Reference}
+\hypertarget{classfilevault_1_1utils_1_1TableFormatter}{}\label{classfilevault_1_1utils_1_1TableFormatter}\index{filevault::utils::TableFormatter@{filevault::utils::TableFormatter}}
+
+
+Beautiful table formatter.  
+
+
+
+
+{\ttfamily \#include $<$table\+\_\+formatter.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classfilevault_1_1utils_1_1TableFormatter_adb207742dde68fd18332d25f914d50ac}{Table\+Formatter}} (const std\+::vector$<$ std\+::string $>$ \&headers)
+\item 
+void \mbox{\hyperlink{classfilevault_1_1utils_1_1TableFormatter_a3b35aee3a031babffb8d2b039b2eb62f}{add\+\_\+row}} (const std\+::vector$<$ std\+::string $>$ \&row)
+\item 
+void \mbox{\hyperlink{classfilevault_1_1utils_1_1TableFormatter_ad34bc09343bc28c97e24f7063116f548}{print}} ()
+\item 
+std\+::string \mbox{\hyperlink{classfilevault_1_1utils_1_1TableFormatter_a9bedc5367a07101689f578a40ddac9be}{to\+\_\+string}} ()
+\item 
+void \mbox{\hyperlink{classfilevault_1_1utils_1_1TableFormatter_a06444f26ae706a757d3aec8c177ce5f6}{set\+\_\+border\+\_\+style}} (const std\+::string \&style)
+\item 
+void \mbox{\hyperlink{classfilevault_1_1utils_1_1TableFormatter_a518166b3afa8571f1a98931666e246fc}{set\+\_\+column\+\_\+alignment}} (size\+\_\+t col\+\_\+index, tabulate\+::\+Font\+Align align)
+\item 
+void \mbox{\hyperlink{classfilevault_1_1utils_1_1TableFormatter_a959b1d345b2f01e3d34a0bee3c55ca40}{set\+\_\+column\+\_\+format}} (size\+\_\+t col\+\_\+index, tabulate\+::\+Color color)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classfilevault_1_1utils_1_1TableFormatter}{Table\+Formatter}} \mbox{\hyperlink{classfilevault_1_1utils_1_1TableFormatter_a51103407f33e1ff0fc877a38960cfa78}{algorithm\+\_\+list\+\_\+table}} ()
+\item 
+static \mbox{\hyperlink{classfilevault_1_1utils_1_1TableFormatter}{Table\+Formatter}} \mbox{\hyperlink{classfilevault_1_1utils_1_1TableFormatter_a0d4686f0de8b3575ef1b88c50f897e9e}{benchmark\+\_\+table}} ()
+\item 
+static \mbox{\hyperlink{classfilevault_1_1utils_1_1TableFormatter}{Table\+Formatter}} \mbox{\hyperlink{classfilevault_1_1utils_1_1TableFormatter_a1198bc19ae5e56a740626772d234c755}{file\+\_\+info\+\_\+table}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+tabulate\+::\+Table \mbox{\hyperlink{classfilevault_1_1utils_1_1TableFormatter_a27331610e21fddb66d46a8175323e6a9}{table\+\_\+}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Beautiful table formatter. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classfilevault_1_1utils_1_1TableFormatter_adb207742dde68fd18332d25f914d50ac}\label{classfilevault_1_1utils_1_1TableFormatter_adb207742dde68fd18332d25f914d50ac} 
+\index{filevault::utils::TableFormatter@{filevault::utils::TableFormatter}!TableFormatter@{TableFormatter}}
+\index{TableFormatter@{TableFormatter}!filevault::utils::TableFormatter@{filevault::utils::TableFormatter}}
+\doxysubsubsection{\texorpdfstring{TableFormatter()}{TableFormatter()}}
+{\footnotesize\ttfamily filevault\+::utils\+::\+Table\+Formatter\+::\+Table\+Formatter (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::string $>$ \&}]{headers }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classfilevault_1_1utils_1_1TableFormatter_a3b35aee3a031babffb8d2b039b2eb62f}\label{classfilevault_1_1utils_1_1TableFormatter_a3b35aee3a031babffb8d2b039b2eb62f} 
+\index{filevault::utils::TableFormatter@{filevault::utils::TableFormatter}!add\_row@{add\_row}}
+\index{add\_row@{add\_row}!filevault::utils::TableFormatter@{filevault::utils::TableFormatter}}
+\doxysubsubsection{\texorpdfstring{add\_row()}{add\_row()}}
+{\footnotesize\ttfamily void filevault\+::utils\+::\+Table\+Formatter\+::add\+\_\+row (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::string $>$ \&}]{row }\end{DoxyParamCaption})}
+
+\Hypertarget{classfilevault_1_1utils_1_1TableFormatter_a51103407f33e1ff0fc877a38960cfa78}\label{classfilevault_1_1utils_1_1TableFormatter_a51103407f33e1ff0fc877a38960cfa78} 
+\index{filevault::utils::TableFormatter@{filevault::utils::TableFormatter}!algorithm\_list\_table@{algorithm\_list\_table}}
+\index{algorithm\_list\_table@{algorithm\_list\_table}!filevault::utils::TableFormatter@{filevault::utils::TableFormatter}}
+\doxysubsubsection{\texorpdfstring{algorithm\_list\_table()}{algorithm\_list\_table()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classfilevault_1_1utils_1_1TableFormatter}{Table\+Formatter}} filevault\+::utils\+::\+Table\+Formatter\+::algorithm\+\_\+list\+\_\+table (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1utils_1_1TableFormatter_a51103407f33e1ff0fc877a38960cfa78_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1utils_1_1TableFormatter_a51103407f33e1ff0fc877a38960cfa78_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1utils_1_1TableFormatter_a0d4686f0de8b3575ef1b88c50f897e9e}\label{classfilevault_1_1utils_1_1TableFormatter_a0d4686f0de8b3575ef1b88c50f897e9e} 
+\index{filevault::utils::TableFormatter@{filevault::utils::TableFormatter}!benchmark\_table@{benchmark\_table}}
+\index{benchmark\_table@{benchmark\_table}!filevault::utils::TableFormatter@{filevault::utils::TableFormatter}}
+\doxysubsubsection{\texorpdfstring{benchmark\_table()}{benchmark\_table()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classfilevault_1_1utils_1_1TableFormatter}{Table\+Formatter}} filevault\+::utils\+::\+Table\+Formatter\+::benchmark\+\_\+table (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1utils_1_1TableFormatter_a0d4686f0de8b3575ef1b88c50f897e9e_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1utils_1_1TableFormatter_a0d4686f0de8b3575ef1b88c50f897e9e_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1utils_1_1TableFormatter_a1198bc19ae5e56a740626772d234c755}\label{classfilevault_1_1utils_1_1TableFormatter_a1198bc19ae5e56a740626772d234c755} 
+\index{filevault::utils::TableFormatter@{filevault::utils::TableFormatter}!file\_info\_table@{file\_info\_table}}
+\index{file\_info\_table@{file\_info\_table}!filevault::utils::TableFormatter@{filevault::utils::TableFormatter}}
+\doxysubsubsection{\texorpdfstring{file\_info\_table()}{file\_info\_table()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classfilevault_1_1utils_1_1TableFormatter}{Table\+Formatter}} filevault\+::utils\+::\+Table\+Formatter\+::file\+\_\+info\+\_\+table (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1utils_1_1TableFormatter_a1198bc19ae5e56a740626772d234c755_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1utils_1_1TableFormatter_a1198bc19ae5e56a740626772d234c755_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1utils_1_1TableFormatter_ad34bc09343bc28c97e24f7063116f548}\label{classfilevault_1_1utils_1_1TableFormatter_ad34bc09343bc28c97e24f7063116f548} 
+\index{filevault::utils::TableFormatter@{filevault::utils::TableFormatter}!print@{print}}
+\index{print@{print}!filevault::utils::TableFormatter@{filevault::utils::TableFormatter}}
+\doxysubsubsection{\texorpdfstring{print()}{print()}}
+{\footnotesize\ttfamily void filevault\+::utils\+::\+Table\+Formatter\+::print (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{classfilevault_1_1utils_1_1TableFormatter_a06444f26ae706a757d3aec8c177ce5f6}\label{classfilevault_1_1utils_1_1TableFormatter_a06444f26ae706a757d3aec8c177ce5f6} 
+\index{filevault::utils::TableFormatter@{filevault::utils::TableFormatter}!set\_border\_style@{set\_border\_style}}
+\index{set\_border\_style@{set\_border\_style}!filevault::utils::TableFormatter@{filevault::utils::TableFormatter}}
+\doxysubsubsection{\texorpdfstring{set\_border\_style()}{set\_border\_style()}}
+{\footnotesize\ttfamily void filevault\+::utils\+::\+Table\+Formatter\+::set\+\_\+border\+\_\+style (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{style }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1utils_1_1TableFormatter_a06444f26ae706a757d3aec8c177ce5f6_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1utils_1_1TableFormatter_a518166b3afa8571f1a98931666e246fc}\label{classfilevault_1_1utils_1_1TableFormatter_a518166b3afa8571f1a98931666e246fc} 
+\index{filevault::utils::TableFormatter@{filevault::utils::TableFormatter}!set\_column\_alignment@{set\_column\_alignment}}
+\index{set\_column\_alignment@{set\_column\_alignment}!filevault::utils::TableFormatter@{filevault::utils::TableFormatter}}
+\doxysubsubsection{\texorpdfstring{set\_column\_alignment()}{set\_column\_alignment()}}
+{\footnotesize\ttfamily void filevault\+::utils\+::\+Table\+Formatter\+::set\+\_\+column\+\_\+alignment (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{col\+\_\+index,  }\item[{tabulate\+::\+Font\+Align}]{align }\end{DoxyParamCaption})}
+
+\Hypertarget{classfilevault_1_1utils_1_1TableFormatter_a959b1d345b2f01e3d34a0bee3c55ca40}\label{classfilevault_1_1utils_1_1TableFormatter_a959b1d345b2f01e3d34a0bee3c55ca40} 
+\index{filevault::utils::TableFormatter@{filevault::utils::TableFormatter}!set\_column\_format@{set\_column\_format}}
+\index{set\_column\_format@{set\_column\_format}!filevault::utils::TableFormatter@{filevault::utils::TableFormatter}}
+\doxysubsubsection{\texorpdfstring{set\_column\_format()}{set\_column\_format()}}
+{\footnotesize\ttfamily void filevault\+::utils\+::\+Table\+Formatter\+::set\+\_\+column\+\_\+format (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{col\+\_\+index,  }\item[{tabulate\+::\+Color}]{color }\end{DoxyParamCaption})}
+
+\Hypertarget{classfilevault_1_1utils_1_1TableFormatter_a9bedc5367a07101689f578a40ddac9be}\label{classfilevault_1_1utils_1_1TableFormatter_a9bedc5367a07101689f578a40ddac9be} 
+\index{filevault::utils::TableFormatter@{filevault::utils::TableFormatter}!to\_string@{to\_string}}
+\index{to\_string@{to\_string}!filevault::utils::TableFormatter@{filevault::utils::TableFormatter}}
+\doxysubsubsection{\texorpdfstring{to\_string()}{to\_string()}}
+{\footnotesize\ttfamily std\+::string filevault\+::utils\+::\+Table\+Formatter\+::to\+\_\+string (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classfilevault_1_1utils_1_1TableFormatter_a27331610e21fddb66d46a8175323e6a9}\label{classfilevault_1_1utils_1_1TableFormatter_a27331610e21fddb66d46a8175323e6a9} 
+\index{filevault::utils::TableFormatter@{filevault::utils::TableFormatter}!table\_@{table\_}}
+\index{table\_@{table\_}!filevault::utils::TableFormatter@{filevault::utils::TableFormatter}}
+\doxysubsubsection{\texorpdfstring{table\_}{table\_}}
+{\footnotesize\ttfamily tabulate\+::\+Table filevault\+::utils\+::\+Table\+Formatter\+::table\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/filevault/utils/\mbox{\hyperlink{table__formatter_8hpp}{table\+\_\+formatter.\+hpp}}\item 
+src/utils/\mbox{\hyperlink{table__formatter_8cpp}{table\+\_\+formatter.\+cpp}}\end{DoxyCompactItemize}

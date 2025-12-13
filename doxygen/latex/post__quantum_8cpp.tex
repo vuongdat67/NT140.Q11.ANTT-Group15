@@ -1,0 +1,47 @@
+\doxysection{src/algorithms/pqc/post\+\_\+quantum.cpp File Reference}
+\hypertarget{post__quantum_8cpp}{}\label{post__quantum_8cpp}\index{src/algorithms/pqc/post\_quantum.cpp@{src/algorithms/pqc/post\_quantum.cpp}}
+
+
+Post-\/\+Quantum Cryptography implementations using Botan 3.\+x.  
+
+
+{\ttfamily \#include "{}filevault/algorithms/pqc/post\+\_\+quantum.\+hpp"{}}\newline
+{\ttfamily \#include "{}filevault/algorithms/symmetric/aes\+\_\+gcm.\+hpp"{}}\newline
+{\ttfamily \#include $<$botan/auto\+\_\+rng.\+h$>$}\newline
+{\ttfamily \#include $<$botan/pubkey.\+h$>$}\newline
+{\ttfamily \#include $<$botan/pk\+\_\+keys.\+h$>$}\newline
+{\ttfamily \#include $<$botan/kyber.\+h$>$}\newline
+{\ttfamily \#include $<$botan/dilithium.\+h$>$}\newline
+{\ttfamily \#include $<$botan/secmem.\+h$>$}\newline
+{\ttfamily \#include $<$spdlog/spdlog.\+h$>$}\newline
+{\ttfamily \#include $<$chrono$>$}\newline
+Include dependency graph for post\+\_\+quantum.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{post__quantum_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespacefilevault}{filevault}}
+\item 
+namespace \mbox{\hyperlink{namespacefilevault_1_1algorithms}{filevault\+::algorithms}}
+\item 
+namespace \mbox{\hyperlink{namespacefilevault_1_1algorithms_1_1pqc}{filevault\+::algorithms\+::pqc}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+static Botan\+::\+Kyber\+Mode \mbox{\hyperlink{namespacefilevault_1_1algorithms_1_1pqc_a0b481194ace95ba3d806e8192ee34dbb}{filevault\+::algorithms\+::pqc\+::get\+\_\+kyber\+\_\+mode}} (\mbox{\hyperlink{classfilevault_1_1algorithms_1_1pqc_1_1Kyber_a2a1b6b7fc7a7ab8e89c7847f6f03a659}{Kyber\+::\+Variant}} variant)
+\item 
+static Botan\+::\+Dilithium\+Mode \mbox{\hyperlink{namespacefilevault_1_1algorithms_1_1pqc_aa242152118cd528f63e4325d38fe97e6}{filevault\+::algorithms\+::pqc\+::get\+\_\+dilithium\+\_\+mode}} (\mbox{\hyperlink{classfilevault_1_1algorithms_1_1pqc_1_1Dilithium_af4621ffb3514a8472a05e80592b8270f}{Dilithium\+::\+Variant}} variant)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Post-\/\+Quantum Cryptography implementations using Botan 3.\+x. 
+
+Implements Kyber (ML-\/\+KEM) and Dilithium (ML-\/\+DSA) from NIST PQC standards. 

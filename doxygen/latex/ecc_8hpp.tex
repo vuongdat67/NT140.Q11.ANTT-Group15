@@ -1,0 +1,68 @@
+\doxysection{include/filevault/algorithms/asymmetric/ecc.hpp File Reference}
+\hypertarget{ecc_8hpp}{}\label{ecc_8hpp}\index{include/filevault/algorithms/asymmetric/ecc.hpp@{include/filevault/algorithms/asymmetric/ecc.hpp}}
+
+
+Elliptic Curve Cryptography (ECC) implementation.  
+
+
+{\ttfamily \#include "{}filevault/core/crypto\+\_\+algorithm.\+hpp"{}}\newline
+{\ttfamily \#include $<$botan/ecdh.\+h$>$}\newline
+{\ttfamily \#include $<$botan/ecdsa.\+h$>$}\newline
+{\ttfamily \#include $<$botan/ec\+\_\+group.\+h$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+Include dependency graph for ecc.\+hpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ecc_8hpp__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ecc_8hpp__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structfilevault_1_1algorithms_1_1asymmetric_1_1ECCKeyPair}{filevault\+::algorithms\+::asymmetric\+::\+ECCKey\+Pair}}
+\begin{DoxyCompactList}\small\item\em ECC key pair (\doxylink{classfilevault_1_1algorithms_1_1asymmetric_1_1ECDH}{ECDH} or \doxylink{classfilevault_1_1algorithms_1_1asymmetric_1_1ECDSA}{ECDSA}) \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structfilevault_1_1algorithms_1_1asymmetric_1_1ECDHResult}{filevault\+::algorithms\+::asymmetric\+::\+ECDHResult}}
+\begin{DoxyCompactList}\small\item\em \doxylink{classfilevault_1_1algorithms_1_1asymmetric_1_1ECDH}{ECDH} Key Exchange result. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structfilevault_1_1algorithms_1_1asymmetric_1_1ECDSASignResult}{filevault\+::algorithms\+::asymmetric\+::\+ECDSASign\+Result}}
+\begin{DoxyCompactList}\small\item\em \doxylink{classfilevault_1_1algorithms_1_1asymmetric_1_1ECDSA}{ECDSA} signature result. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classfilevault_1_1algorithms_1_1asymmetric_1_1ECDH}{filevault\+::algorithms\+::asymmetric\+::\+ECDH}}
+\begin{DoxyCompactList}\small\item\em Elliptic Curve Diffie-\/\+Hellman (\doxylink{classfilevault_1_1algorithms_1_1asymmetric_1_1ECDH}{ECDH}) key exchange. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classfilevault_1_1algorithms_1_1asymmetric_1_1ECDSA}{filevault\+::algorithms\+::asymmetric\+::\+ECDSA}}
+\begin{DoxyCompactList}\small\item\em Elliptic Curve Digital Signature Algorithm (\doxylink{classfilevault_1_1algorithms_1_1asymmetric_1_1ECDSA}{ECDSA}) \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classfilevault_1_1algorithms_1_1asymmetric_1_1ECCHybrid}{filevault\+::algorithms\+::asymmetric\+::\+ECCHybrid}}
+\begin{DoxyCompactList}\small\item\em Hybrid encryption using \doxylink{classfilevault_1_1algorithms_1_1asymmetric_1_1ECDH}{ECDH} + AES-\/\+GCM. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespacefilevault}{filevault}}
+\item 
+namespace \mbox{\hyperlink{namespacefilevault_1_1algorithms}{filevault\+::algorithms}}
+\item 
+namespace \mbox{\hyperlink{namespacefilevault_1_1algorithms_1_1asymmetric}{filevault\+::algorithms\+::asymmetric}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum class \mbox{\hyperlink{namespacefilevault_1_1algorithms_1_1asymmetric_a5955f778874f5a3eaa61006b00c2ab02}{filevault\+::algorithms\+::asymmetric\+::\+ECCurve}} \{ \mbox{\hyperlink{namespacefilevault_1_1algorithms_1_1asymmetric_a5955f778874f5a3eaa61006b00c2ab02ae391840247cc176f98c8bd36b74393ce}{filevault\+::algorithms\+::asymmetric\+::\+SECP256\+R1}}
+, \mbox{\hyperlink{namespacefilevault_1_1algorithms_1_1asymmetric_a5955f778874f5a3eaa61006b00c2ab02a22e60bed6bdf68bf51c8017786b26d27}{filevault\+::algorithms\+::asymmetric\+::\+SECP384\+R1}}
+, \mbox{\hyperlink{namespacefilevault_1_1algorithms_1_1asymmetric_a5955f778874f5a3eaa61006b00c2ab02a2bd7340fbb5bdefe99376e3865cfb799}{filevault\+::algorithms\+::asymmetric\+::\+SECP521\+R1}}
+, \mbox{\hyperlink{namespacefilevault_1_1algorithms_1_1asymmetric_a5955f778874f5a3eaa61006b00c2ab02af2c08fed6488d1d51758a6b692d9f832}{filevault\+::algorithms\+::asymmetric\+::\+X25519}}
+ \}
+\begin{DoxyCompactList}\small\item\em Supported elliptic curves. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Elliptic Curve Cryptography (ECC) implementation. 
+
+Provides ECDH key exchange and ECDSA digital signatures using standard NIST curves. 

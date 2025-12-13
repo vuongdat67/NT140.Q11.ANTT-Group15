@@ -1,0 +1,261 @@
+\doxysection{filevault\+::algorithms\+::symmetric\+::Triple\+DES Class Reference}
+\hypertarget{classfilevault_1_1algorithms_1_1symmetric_1_1TripleDES}{}\label{classfilevault_1_1algorithms_1_1symmetric_1_1TripleDES}\index{filevault::algorithms::symmetric::TripleDES@{filevault::algorithms::symmetric::TripleDES}}
+
+
+Triple-\/\+DES (3DES/\+TDEA) encryption.  
+
+
+
+
+{\ttfamily \#include $<$triple\+\_\+des.\+hpp$>$}
+
+
+
+Inheritance diagram for filevault\+::algorithms\+::symmetric\+::Triple\+DES\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=207pt]{classfilevault_1_1algorithms_1_1symmetric_1_1TripleDES__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for filevault\+::algorithms\+::symmetric\+::Triple\+DES\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=207pt]{classfilevault_1_1algorithms_1_1symmetric_1_1TripleDES__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1TripleDES_a39c8392ed716e5e5da691f7d8675728e}{Triple\+DES}} ()
+\item 
+virtual \mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1TripleDES_a267685aa7c824b9dac884475b5523a7f}{\texorpdfstring{$\sim$}{\string~}\+Triple\+DES}} ()=default
+\item 
+std\+::string \mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1TripleDES_a08dee0926c8adc54dcd441e994cc1d97}{name}} () const override
+\begin{DoxyCompactList}\small\item\em Get algorithm name. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacefilevault_1_1core_ab1ba257a0205c63e9e1e3623170940a2}{core\+::\+Algorithm\+Type}} \mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1TripleDES_af48f771906900f4e77aa7912c6088eaf}{type}} () const override
+\begin{DoxyCompactList}\small\item\em Get algorithm type. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structfilevault_1_1core_1_1CryptoResult}{core\+::\+Crypto\+Result}} \mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1TripleDES_a90ba3e15757c07f58df3fc384c7a8b16}{encrypt}} (std\+::span$<$ const uint8\+\_\+t $>$ plaintext, std\+::span$<$ const uint8\+\_\+t $>$ key, const \mbox{\hyperlink{structfilevault_1_1core_1_1EncryptionConfig}{core\+::\+Encryption\+Config}} \&config) override
+\begin{DoxyCompactList}\small\item\em Encrypt data. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structfilevault_1_1core_1_1CryptoResult}{core\+::\+Crypto\+Result}} \mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1TripleDES_ac2bc933ee762aa0985c7985a59123d3d}{decrypt}} (std\+::span$<$ const uint8\+\_\+t $>$ ciphertext, std\+::span$<$ const uint8\+\_\+t $>$ key, const \mbox{\hyperlink{structfilevault_1_1core_1_1EncryptionConfig}{core\+::\+Encryption\+Config}} \&config) override
+\begin{DoxyCompactList}\small\item\em Decrypt data. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1TripleDES_a5d4a4e31337efdec4e63a8163f687408}{key\+\_\+size}} () const override
+\begin{DoxyCompactList}\small\item\em Get recommended key size in bytes. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1TripleDES_aa774bb0065ad893fad7955284bec6901}{iv\+\_\+size}} () const
+\item 
+size\+\_\+t \mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1TripleDES_a4983187a480f5c6dd6f4891507dd634f}{block\+\_\+size}} () const
+\item 
+bool \mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1TripleDES_a49356de41065525043d10f066ceb70ae}{is\+\_\+suitable\+\_\+for}} (\mbox{\hyperlink{namespacefilevault_1_1core_abcb3b3d896f7dc00926903183b3e2dc9}{core\+::\+Security\+Level}} level) const override
+\begin{DoxyCompactList}\small\item\em Check if algorithm is suitable for security level. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classfilevault_1_1core_1_1ICryptoAlgorithm}{filevault\+::core\+::\+ICrypto\+Algorithm}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classfilevault_1_1core_1_1ICryptoAlgorithm_a36383558169617931374ca3b64399818}{\texorpdfstring{$\sim$}{\string~}\+ICrypto\+Algorithm}} ()=default
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Triple-\/\+DES (3DES/\+TDEA) encryption. 
+
+Uses three DES operations\+: Encrypt-\/\+Decrypt-\/\+Encrypt (EDE) 168-\/bit key (112 bits effective security) 64-\/bit block size
+
+\begin{DoxyWarning}{Warning}
+Legacy algorithm! Prefer AES for new applications. Block size of 64 bits is vulnerable to birthday attacks on large datasets (Sweet32 attack). 
+\end{DoxyWarning}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classfilevault_1_1algorithms_1_1symmetric_1_1TripleDES_a39c8392ed716e5e5da691f7d8675728e}\label{classfilevault_1_1algorithms_1_1symmetric_1_1TripleDES_a39c8392ed716e5e5da691f7d8675728e} 
+\index{filevault::algorithms::symmetric::TripleDES@{filevault::algorithms::symmetric::TripleDES}!TripleDES@{TripleDES}}
+\index{TripleDES@{TripleDES}!filevault::algorithms::symmetric::TripleDES@{filevault::algorithms::symmetric::TripleDES}}
+\doxysubsubsection{\texorpdfstring{TripleDES()}{TripleDES()}}
+{\footnotesize\ttfamily filevault\+::algorithms\+::symmetric\+::\+Triple\+DES\+::\+Triple\+DES (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+\Hypertarget{classfilevault_1_1algorithms_1_1symmetric_1_1TripleDES_a267685aa7c824b9dac884475b5523a7f}\label{classfilevault_1_1algorithms_1_1symmetric_1_1TripleDES_a267685aa7c824b9dac884475b5523a7f} 
+\index{filevault::algorithms::symmetric::TripleDES@{filevault::algorithms::symmetric::TripleDES}!````~TripleDES@{\texorpdfstring{$\sim$}{\string~}TripleDES}}
+\index{````~TripleDES@{\texorpdfstring{$\sim$}{\string~}TripleDES}!filevault::algorithms::symmetric::TripleDES@{filevault::algorithms::symmetric::TripleDES}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}TripleDES()}{\string~TripleDES()}}
+{\footnotesize\ttfamily virtual filevault\+::algorithms\+::symmetric\+::\+Triple\+DES\+::\texorpdfstring{$\sim$}{\string~}\+Triple\+DES (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classfilevault_1_1algorithms_1_1symmetric_1_1TripleDES_a4983187a480f5c6dd6f4891507dd634f}\label{classfilevault_1_1algorithms_1_1symmetric_1_1TripleDES_a4983187a480f5c6dd6f4891507dd634f} 
+\index{filevault::algorithms::symmetric::TripleDES@{filevault::algorithms::symmetric::TripleDES}!block\_size@{block\_size}}
+\index{block\_size@{block\_size}!filevault::algorithms::symmetric::TripleDES@{filevault::algorithms::symmetric::TripleDES}}
+\doxysubsubsection{\texorpdfstring{block\_size()}{block\_size()}}
+{\footnotesize\ttfamily size\+\_\+t filevault\+::algorithms\+::symmetric\+::\+Triple\+DES\+::block\+\_\+size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1algorithms_1_1symmetric_1_1TripleDES_a4983187a480f5c6dd6f4891507dd634f_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1algorithms_1_1symmetric_1_1TripleDES_ac2bc933ee762aa0985c7985a59123d3d}\label{classfilevault_1_1algorithms_1_1symmetric_1_1TripleDES_ac2bc933ee762aa0985c7985a59123d3d} 
+\index{filevault::algorithms::symmetric::TripleDES@{filevault::algorithms::symmetric::TripleDES}!decrypt@{decrypt}}
+\index{decrypt@{decrypt}!filevault::algorithms::symmetric::TripleDES@{filevault::algorithms::symmetric::TripleDES}}
+\doxysubsubsection{\texorpdfstring{decrypt()}{decrypt()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structfilevault_1_1core_1_1CryptoResult}{core\+::\+Crypto\+Result}} filevault\+::algorithms\+::symmetric\+::\+Triple\+DES\+::decrypt (\begin{DoxyParamCaption}\item[{std\+::span$<$ const uint8\+\_\+t $>$}]{ciphertext,  }\item[{std\+::span$<$ const uint8\+\_\+t $>$}]{key,  }\item[{const \mbox{\hyperlink{structfilevault_1_1core_1_1EncryptionConfig}{core\+::\+Encryption\+Config}} \&}]{config }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Decrypt data. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ciphertext} & Encrypted data \\
+\hline
+{\em key} & Decryption key (derived from password) \\
+\hline
+{\em config} & Decryption configuration \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Decrypted data 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classfilevault_1_1core_1_1ICryptoAlgorithm_a5ad6e9e19a3ed1dd3f0b49106bcaac0d}{filevault\+::core\+::\+ICrypto\+Algorithm}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1algorithms_1_1symmetric_1_1TripleDES_ac2bc933ee762aa0985c7985a59123d3d_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1algorithms_1_1symmetric_1_1TripleDES_a90ba3e15757c07f58df3fc384c7a8b16}\label{classfilevault_1_1algorithms_1_1symmetric_1_1TripleDES_a90ba3e15757c07f58df3fc384c7a8b16} 
+\index{filevault::algorithms::symmetric::TripleDES@{filevault::algorithms::symmetric::TripleDES}!encrypt@{encrypt}}
+\index{encrypt@{encrypt}!filevault::algorithms::symmetric::TripleDES@{filevault::algorithms::symmetric::TripleDES}}
+\doxysubsubsection{\texorpdfstring{encrypt()}{encrypt()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structfilevault_1_1core_1_1CryptoResult}{core\+::\+Crypto\+Result}} filevault\+::algorithms\+::symmetric\+::\+Triple\+DES\+::encrypt (\begin{DoxyParamCaption}\item[{std\+::span$<$ const uint8\+\_\+t $>$}]{plaintext,  }\item[{std\+::span$<$ const uint8\+\_\+t $>$}]{key,  }\item[{const \mbox{\hyperlink{structfilevault_1_1core_1_1EncryptionConfig}{core\+::\+Encryption\+Config}} \&}]{config }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Encrypt data. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em plaintext} & Input data to encrypt \\
+\hline
+{\em key} & Encryption key (derived from password) \\
+\hline
+{\em config} & Encryption configuration \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Encrypted data with metadata 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classfilevault_1_1core_1_1ICryptoAlgorithm_a5b9102cef54b84b54feea1dc16561a2d}{filevault\+::core\+::\+ICrypto\+Algorithm}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1algorithms_1_1symmetric_1_1TripleDES_a90ba3e15757c07f58df3fc384c7a8b16_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1algorithms_1_1symmetric_1_1TripleDES_a49356de41065525043d10f066ceb70ae}\label{classfilevault_1_1algorithms_1_1symmetric_1_1TripleDES_a49356de41065525043d10f066ceb70ae} 
+\index{filevault::algorithms::symmetric::TripleDES@{filevault::algorithms::symmetric::TripleDES}!is\_suitable\_for@{is\_suitable\_for}}
+\index{is\_suitable\_for@{is\_suitable\_for}!filevault::algorithms::symmetric::TripleDES@{filevault::algorithms::symmetric::TripleDES}}
+\doxysubsubsection{\texorpdfstring{is\_suitable\_for()}{is\_suitable\_for()}}
+{\footnotesize\ttfamily bool filevault\+::algorithms\+::symmetric\+::\+Triple\+DES\+::is\+\_\+suitable\+\_\+for (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacefilevault_1_1core_abcb3b3d896f7dc00926903183b3e2dc9}{core\+::\+Security\+Level}}}]{level }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Check if algorithm is suitable for security level. 
+
+
+
+Implements \mbox{\hyperlink{classfilevault_1_1core_1_1ICryptoAlgorithm_aab479734daf06d3f76af5d916c0285fa}{filevault\+::core\+::\+ICrypto\+Algorithm}}.
+
+\Hypertarget{classfilevault_1_1algorithms_1_1symmetric_1_1TripleDES_aa774bb0065ad893fad7955284bec6901}\label{classfilevault_1_1algorithms_1_1symmetric_1_1TripleDES_aa774bb0065ad893fad7955284bec6901} 
+\index{filevault::algorithms::symmetric::TripleDES@{filevault::algorithms::symmetric::TripleDES}!iv\_size@{iv\_size}}
+\index{iv\_size@{iv\_size}!filevault::algorithms::symmetric::TripleDES@{filevault::algorithms::symmetric::TripleDES}}
+\doxysubsubsection{\texorpdfstring{iv\_size()}{iv\_size()}}
+{\footnotesize\ttfamily size\+\_\+t filevault\+::algorithms\+::symmetric\+::\+Triple\+DES\+::iv\+\_\+size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1algorithms_1_1symmetric_1_1TripleDES_aa774bb0065ad893fad7955284bec6901_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1algorithms_1_1symmetric_1_1TripleDES_a5d4a4e31337efdec4e63a8163f687408}\label{classfilevault_1_1algorithms_1_1symmetric_1_1TripleDES_a5d4a4e31337efdec4e63a8163f687408} 
+\index{filevault::algorithms::symmetric::TripleDES@{filevault::algorithms::symmetric::TripleDES}!key\_size@{key\_size}}
+\index{key\_size@{key\_size}!filevault::algorithms::symmetric::TripleDES@{filevault::algorithms::symmetric::TripleDES}}
+\doxysubsubsection{\texorpdfstring{key\_size()}{key\_size()}}
+{\footnotesize\ttfamily size\+\_\+t filevault\+::algorithms\+::symmetric\+::\+Triple\+DES\+::key\+\_\+size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get recommended key size in bytes. 
+
+
+
+Implements \mbox{\hyperlink{classfilevault_1_1core_1_1ICryptoAlgorithm_af9ccb47457495eb99988fef0b5b2bbe8}{filevault\+::core\+::\+ICrypto\+Algorithm}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1algorithms_1_1symmetric_1_1TripleDES_a5d4a4e31337efdec4e63a8163f687408_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1algorithms_1_1symmetric_1_1TripleDES_a08dee0926c8adc54dcd441e994cc1d97}\label{classfilevault_1_1algorithms_1_1symmetric_1_1TripleDES_a08dee0926c8adc54dcd441e994cc1d97} 
+\index{filevault::algorithms::symmetric::TripleDES@{filevault::algorithms::symmetric::TripleDES}!name@{name}}
+\index{name@{name}!filevault::algorithms::symmetric::TripleDES@{filevault::algorithms::symmetric::TripleDES}}
+\doxysubsubsection{\texorpdfstring{name()}{name()}}
+{\footnotesize\ttfamily std\+::string filevault\+::algorithms\+::symmetric\+::\+Triple\+DES\+::name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get algorithm name. 
+
+
+
+Implements \mbox{\hyperlink{classfilevault_1_1core_1_1ICryptoAlgorithm_a8acdc23e4f2ea77bb4a5b9820b27fa66}{filevault\+::core\+::\+ICrypto\+Algorithm}}.
+
+\Hypertarget{classfilevault_1_1algorithms_1_1symmetric_1_1TripleDES_af48f771906900f4e77aa7912c6088eaf}\label{classfilevault_1_1algorithms_1_1symmetric_1_1TripleDES_af48f771906900f4e77aa7912c6088eaf} 
+\index{filevault::algorithms::symmetric::TripleDES@{filevault::algorithms::symmetric::TripleDES}!type@{type}}
+\index{type@{type}!filevault::algorithms::symmetric::TripleDES@{filevault::algorithms::symmetric::TripleDES}}
+\doxysubsubsection{\texorpdfstring{type()}{type()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacefilevault_1_1core_ab1ba257a0205c63e9e1e3623170940a2}{core\+::\+Algorithm\+Type}} filevault\+::algorithms\+::symmetric\+::\+Triple\+DES\+::type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get algorithm type. 
+
+
+
+Implements \mbox{\hyperlink{classfilevault_1_1core_1_1ICryptoAlgorithm_a11b7820f7b0bbb5fd6668fac3b78a7e1}{filevault\+::core\+::\+ICrypto\+Algorithm}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1algorithms_1_1symmetric_1_1TripleDES_af48f771906900f4e77aa7912c6088eaf_icgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/filevault/algorithms/symmetric/\mbox{\hyperlink{triple__des_8hpp}{triple\+\_\+des.\+hpp}}\item 
+src/algorithms/symmetric/\mbox{\hyperlink{triple__des_8cpp}{triple\+\_\+des.\+cpp}}\end{DoxyCompactItemize}

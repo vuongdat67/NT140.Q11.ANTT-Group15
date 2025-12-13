@@ -1,0 +1,182 @@
+\doxysection{filevault\+::cli\+::Application Class Reference}
+\hypertarget{classfilevault_1_1cli_1_1Application}{}\label{classfilevault_1_1cli_1_1Application}\index{filevault::cli::Application@{filevault::cli::Application}}
+
+
+Main CLI application.  
+
+
+
+
+{\ttfamily \#include $<$app.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classfilevault_1_1cli_1_1Application_ac4726ec9d0fa46b1ae465e58ce6e67a0}{Application}} ()
+\item 
+\mbox{\hyperlink{classfilevault_1_1cli_1_1Application_afc4d860ed83b047cf570cdceb4536035}{\texorpdfstring{$\sim$}{\string~}\+Application}} ()
+\item 
+void \mbox{\hyperlink{classfilevault_1_1cli_1_1Application_a37da8b30d6b31f8a9ec19a0c091494ba}{initialize}} ()
+\begin{DoxyCompactList}\small\item\em Initialize application and register commands. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classfilevault_1_1cli_1_1Application_adb3e77f66dc003b4724b6b27470452df}{run}} (int argc, char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}argv)
+\begin{DoxyCompactList}\small\item\em Run application with command line arguments. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classfilevault_1_1cli_1_1Application_aadbd120ad3d34d4e8b39722c9c07bd7f}{register\+\_\+commands}} ()
+\item 
+void \mbox{\hyperlink{classfilevault_1_1cli_1_1Application_a6f6fdc4bdf50399f93c331537a6f781f}{setup\+\_\+logging}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+CLI\+::\+App \mbox{\hyperlink{classfilevault_1_1cli_1_1Application_a6a96b25a1968a8a4d9a98f4a1dd140b7}{app\+\_\+}}
+\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classfilevault_1_1core_1_1CryptoEngine}{core\+::\+Crypto\+Engine}} $>$ \mbox{\hyperlink{classfilevault_1_1cli_1_1Application_a68061fa2fdfe51379b721c08e2244b97}{engine\+\_\+}}
+\item 
+std\+::vector$<$ std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classfilevault_1_1cli_1_1ICommand}{ICommand}} $>$ $>$ \mbox{\hyperlink{classfilevault_1_1cli_1_1Application_a32987f902be10e1ad9909b5eb7e729d0}{commands\+\_\+}}
+\item 
+bool \mbox{\hyperlink{classfilevault_1_1cli_1_1Application_a0b8120b2438fc834145f782376b87f4a}{verbose\+\_\+}} = false
+\item 
+std\+::string \mbox{\hyperlink{classfilevault_1_1cli_1_1Application_a6daf401e0ab98e3bc0a488aa509034d4}{log\+\_\+level\+\_\+}} = "{}info"{}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Main CLI application. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classfilevault_1_1cli_1_1Application_ac4726ec9d0fa46b1ae465e58ce6e67a0}\label{classfilevault_1_1cli_1_1Application_ac4726ec9d0fa46b1ae465e58ce6e67a0} 
+\index{filevault::cli::Application@{filevault::cli::Application}!Application@{Application}}
+\index{Application@{Application}!filevault::cli::Application@{filevault::cli::Application}}
+\doxysubsubsection{\texorpdfstring{Application()}{Application()}}
+{\footnotesize\ttfamily filevault\+::cli\+::\+Application\+::\+Application (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{classfilevault_1_1cli_1_1Application_afc4d860ed83b047cf570cdceb4536035}\label{classfilevault_1_1cli_1_1Application_afc4d860ed83b047cf570cdceb4536035} 
+\index{filevault::cli::Application@{filevault::cli::Application}!````~Application@{\texorpdfstring{$\sim$}{\string~}Application}}
+\index{````~Application@{\texorpdfstring{$\sim$}{\string~}Application}!filevault::cli::Application@{filevault::cli::Application}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Application()}{\string~Application()}}
+{\footnotesize\ttfamily filevault\+::cli\+::\+Application\+::\texorpdfstring{$\sim$}{\string~}\+Application (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classfilevault_1_1cli_1_1Application_a37da8b30d6b31f8a9ec19a0c091494ba}\label{classfilevault_1_1cli_1_1Application_a37da8b30d6b31f8a9ec19a0c091494ba} 
+\index{filevault::cli::Application@{filevault::cli::Application}!initialize@{initialize}}
+\index{initialize@{initialize}!filevault::cli::Application@{filevault::cli::Application}}
+\doxysubsubsection{\texorpdfstring{initialize()}{initialize()}}
+{\footnotesize\ttfamily void filevault\+::cli\+::\+Application\+::initialize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Initialize application and register commands. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1cli_1_1Application_a37da8b30d6b31f8a9ec19a0c091494ba_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=291pt]{classfilevault_1_1cli_1_1Application_a37da8b30d6b31f8a9ec19a0c091494ba_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1cli_1_1Application_aadbd120ad3d34d4e8b39722c9c07bd7f}\label{classfilevault_1_1cli_1_1Application_aadbd120ad3d34d4e8b39722c9c07bd7f} 
+\index{filevault::cli::Application@{filevault::cli::Application}!register\_commands@{register\_commands}}
+\index{register\_commands@{register\_commands}!filevault::cli::Application@{filevault::cli::Application}}
+\doxysubsubsection{\texorpdfstring{register\_commands()}{register\_commands()}}
+{\footnotesize\ttfamily void filevault\+::cli\+::\+Application\+::register\+\_\+commands (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1cli_1_1Application_aadbd120ad3d34d4e8b39722c9c07bd7f_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1cli_1_1Application_adb3e77f66dc003b4724b6b27470452df}\label{classfilevault_1_1cli_1_1Application_adb3e77f66dc003b4724b6b27470452df} 
+\index{filevault::cli::Application@{filevault::cli::Application}!run@{run}}
+\index{run@{run}!filevault::cli::Application@{filevault::cli::Application}}
+\doxysubsubsection{\texorpdfstring{run()}{run()}}
+{\footnotesize\ttfamily int filevault\+::cli\+::\+Application\+::run (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{argv }\end{DoxyParamCaption})}
+
+
+
+Run application with command line arguments. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1cli_1_1Application_adb3e77f66dc003b4724b6b27470452df_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=313pt]{classfilevault_1_1cli_1_1Application_adb3e77f66dc003b4724b6b27470452df_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1cli_1_1Application_a6f6fdc4bdf50399f93c331537a6f781f}\label{classfilevault_1_1cli_1_1Application_a6f6fdc4bdf50399f93c331537a6f781f} 
+\index{filevault::cli::Application@{filevault::cli::Application}!setup\_logging@{setup\_logging}}
+\index{setup\_logging@{setup\_logging}!filevault::cli::Application@{filevault::cli::Application}}
+\doxysubsubsection{\texorpdfstring{setup\_logging()}{setup\_logging()}}
+{\footnotesize\ttfamily void filevault\+::cli\+::\+Application\+::setup\+\_\+logging (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1cli_1_1Application_a6f6fdc4bdf50399f93c331537a6f781f_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classfilevault_1_1cli_1_1Application_a6a96b25a1968a8a4d9a98f4a1dd140b7}\label{classfilevault_1_1cli_1_1Application_a6a96b25a1968a8a4d9a98f4a1dd140b7} 
+\index{filevault::cli::Application@{filevault::cli::Application}!app\_@{app\_}}
+\index{app\_@{app\_}!filevault::cli::Application@{filevault::cli::Application}}
+\doxysubsubsection{\texorpdfstring{app\_}{app\_}}
+{\footnotesize\ttfamily CLI\+::\+App filevault\+::cli\+::\+Application\+::app\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classfilevault_1_1cli_1_1Application_a32987f902be10e1ad9909b5eb7e729d0}\label{classfilevault_1_1cli_1_1Application_a32987f902be10e1ad9909b5eb7e729d0} 
+\index{filevault::cli::Application@{filevault::cli::Application}!commands\_@{commands\_}}
+\index{commands\_@{commands\_}!filevault::cli::Application@{filevault::cli::Application}}
+\doxysubsubsection{\texorpdfstring{commands\_}{commands\_}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::unique\+\_\+ptr$<$\mbox{\hyperlink{classfilevault_1_1cli_1_1ICommand}{ICommand}}$>$ $>$ filevault\+::cli\+::\+Application\+::commands\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classfilevault_1_1cli_1_1Application_a68061fa2fdfe51379b721c08e2244b97}\label{classfilevault_1_1cli_1_1Application_a68061fa2fdfe51379b721c08e2244b97} 
+\index{filevault::cli::Application@{filevault::cli::Application}!engine\_@{engine\_}}
+\index{engine\_@{engine\_}!filevault::cli::Application@{filevault::cli::Application}}
+\doxysubsubsection{\texorpdfstring{engine\_}{engine\_}}
+{\footnotesize\ttfamily std\+::unique\+\_\+ptr$<$\mbox{\hyperlink{classfilevault_1_1core_1_1CryptoEngine}{core\+::\+Crypto\+Engine}}$>$ filevault\+::cli\+::\+Application\+::engine\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classfilevault_1_1cli_1_1Application_a6daf401e0ab98e3bc0a488aa509034d4}\label{classfilevault_1_1cli_1_1Application_a6daf401e0ab98e3bc0a488aa509034d4} 
+\index{filevault::cli::Application@{filevault::cli::Application}!log\_level\_@{log\_level\_}}
+\index{log\_level\_@{log\_level\_}!filevault::cli::Application@{filevault::cli::Application}}
+\doxysubsubsection{\texorpdfstring{log\_level\_}{log\_level\_}}
+{\footnotesize\ttfamily std\+::string filevault\+::cli\+::\+Application\+::log\+\_\+level\+\_\+ = "{}info"{}\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classfilevault_1_1cli_1_1Application_a0b8120b2438fc834145f782376b87f4a}\label{classfilevault_1_1cli_1_1Application_a0b8120b2438fc834145f782376b87f4a} 
+\index{filevault::cli::Application@{filevault::cli::Application}!verbose\_@{verbose\_}}
+\index{verbose\_@{verbose\_}!filevault::cli::Application@{filevault::cli::Application}}
+\doxysubsubsection{\texorpdfstring{verbose\_}{verbose\_}}
+{\footnotesize\ttfamily bool filevault\+::cli\+::\+Application\+::verbose\+\_\+ = false\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/filevault/cli/\mbox{\hyperlink{app_8hpp}{app.\+hpp}}\item 
+src/cli/\mbox{\hyperlink{app_8cpp}{app.\+cpp}}\end{DoxyCompactItemize}

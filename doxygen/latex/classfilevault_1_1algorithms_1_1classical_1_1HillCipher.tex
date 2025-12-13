@@ -1,0 +1,350 @@
+\doxysection{filevault\+::algorithms\+::classical\+::Hill\+Cipher Class Reference}
+\hypertarget{classfilevault_1_1algorithms_1_1classical_1_1HillCipher}{}\label{classfilevault_1_1algorithms_1_1classical_1_1HillCipher}\index{filevault::algorithms::classical::HillCipher@{filevault::algorithms::classical::HillCipher}}
+
+
+Hill cipher (2x2 matrix)  
+
+
+
+
+{\ttfamily \#include $<$hill.\+hpp$>$}
+
+
+
+Inheritance diagram for filevault\+::algorithms\+::classical\+::Hill\+Cipher\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=205pt]{classfilevault_1_1algorithms_1_1classical_1_1HillCipher__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for filevault\+::algorithms\+::classical\+::Hill\+Cipher\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=205pt]{classfilevault_1_1algorithms_1_1classical_1_1HillCipher__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{classfilevault_1_1algorithms_1_1classical_1_1HillCipher_a298cff4ac01cf9af6e6c1875a9564cd2}{name}} () const override
+\begin{DoxyCompactList}\small\item\em Get algorithm name. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacefilevault_1_1core_ab1ba257a0205c63e9e1e3623170940a2}{core\+::\+Algorithm\+Type}} \mbox{\hyperlink{classfilevault_1_1algorithms_1_1classical_1_1HillCipher_abaad2d0c383311de06c48b9afc83efcf}{type}} () const override
+\begin{DoxyCompactList}\small\item\em Get algorithm type. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structfilevault_1_1core_1_1CryptoResult}{core\+::\+Crypto\+Result}} \mbox{\hyperlink{classfilevault_1_1algorithms_1_1classical_1_1HillCipher_a31af4604bd6ba08f41c01e3cd351623f}{encrypt}} (std\+::span$<$ const uint8\+\_\+t $>$ plaintext, std\+::span$<$ const uint8\+\_\+t $>$ key, const \mbox{\hyperlink{structfilevault_1_1core_1_1EncryptionConfig}{core\+::\+Encryption\+Config}} \&config) override
+\begin{DoxyCompactList}\small\item\em Encrypt data. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structfilevault_1_1core_1_1CryptoResult}{core\+::\+Crypto\+Result}} \mbox{\hyperlink{classfilevault_1_1algorithms_1_1classical_1_1HillCipher_a98d48c76afdb860835363a283be7283d}{decrypt}} (std\+::span$<$ const uint8\+\_\+t $>$ ciphertext, std\+::span$<$ const uint8\+\_\+t $>$ key, const \mbox{\hyperlink{structfilevault_1_1core_1_1EncryptionConfig}{core\+::\+Encryption\+Config}} \&config) override
+\begin{DoxyCompactList}\small\item\em Decrypt data. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{classfilevault_1_1algorithms_1_1classical_1_1HillCipher_a18060b7c79615b59719bbbee8744f2a4}{key\+\_\+size}} () const override
+\begin{DoxyCompactList}\small\item\em Get recommended key size in bytes. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classfilevault_1_1algorithms_1_1classical_1_1HillCipher_a02b6d019f7140c8e099fc2c8c6b3b012}{is\+\_\+suitable\+\_\+for}} (\mbox{\hyperlink{namespacefilevault_1_1core_abcb3b3d896f7dc00926903183b3e2dc9}{core\+::\+Security\+Level}} level) const override
+\begin{DoxyCompactList}\small\item\em Check if algorithm is suitable for security level. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classfilevault_1_1core_1_1ICryptoAlgorithm}{filevault\+::core\+::\+ICrypto\+Algorithm}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classfilevault_1_1core_1_1ICryptoAlgorithm_a36383558169617931374ca3b64399818}{\texorpdfstring{$\sim$}{\string~}\+ICrypto\+Algorithm}} ()=default
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Types}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{classfilevault_1_1algorithms_1_1classical_1_1HillCipher_adc23f745afadf8849eb49e9542c35452}{Matrix2x2}} = std\+::array$<$ int, 4 $>$
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classfilevault_1_1algorithms_1_1classical_1_1HillCipher_adc23f745afadf8849eb49e9542c35452}{Matrix2x2}} \mbox{\hyperlink{classfilevault_1_1algorithms_1_1classical_1_1HillCipher_a7e4486145e43cd1037ad48e4df9ec81b}{parse\+\_\+key}} (std\+::span$<$ const uint8\+\_\+t $>$ key)
+\item 
+\mbox{\hyperlink{classfilevault_1_1algorithms_1_1classical_1_1HillCipher_adc23f745afadf8849eb49e9542c35452}{Matrix2x2}} \mbox{\hyperlink{classfilevault_1_1algorithms_1_1classical_1_1HillCipher_a6e2f64975b55791204ee3c2fd1fd73d6}{invert\+\_\+matrix}} (const \mbox{\hyperlink{classfilevault_1_1algorithms_1_1classical_1_1HillCipher_adc23f745afadf8849eb49e9542c35452}{Matrix2x2}} \&matrix)
+\item 
+int \mbox{\hyperlink{classfilevault_1_1algorithms_1_1classical_1_1HillCipher_a38cee2645186b1ba9ca44b02a139069b}{mod\+\_\+inverse}} (int a, int m)
+\item 
+int \mbox{\hyperlink{classfilevault_1_1algorithms_1_1classical_1_1HillCipher_a068fae43428f2af62d383b249bef0c16}{determinant}} (const \mbox{\hyperlink{classfilevault_1_1algorithms_1_1classical_1_1HillCipher_adc23f745afadf8849eb49e9542c35452}{Matrix2x2}} \&matrix)
+\item 
+bool \mbox{\hyperlink{classfilevault_1_1algorithms_1_1classical_1_1HillCipher_ad262a8b13fde7782104f84c2551dc041}{is\+\_\+valid\+\_\+key}} (const \mbox{\hyperlink{classfilevault_1_1algorithms_1_1classical_1_1HillCipher_adc23f745afadf8849eb49e9542c35452}{Matrix2x2}} \&matrix)
+\item 
+std\+::string \mbox{\hyperlink{classfilevault_1_1algorithms_1_1classical_1_1HillCipher_a775077aecd69606292b6ab21c48099d6}{encrypt\+\_\+block}} (const std\+::string \&block, const \mbox{\hyperlink{classfilevault_1_1algorithms_1_1classical_1_1HillCipher_adc23f745afadf8849eb49e9542c35452}{Matrix2x2}} \&key\+\_\+matrix)
+\item 
+std\+::string \mbox{\hyperlink{classfilevault_1_1algorithms_1_1classical_1_1HillCipher_a9772be28c3fef1c8f7e2fc22fd98ed48}{decrypt\+\_\+block}} (const std\+::string \&block, const \mbox{\hyperlink{classfilevault_1_1algorithms_1_1classical_1_1HillCipher_adc23f745afadf8849eb49e9542c35452}{Matrix2x2}} \&inv\+\_\+matrix)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Hill cipher (2x2 matrix) 
+
+Educational cipher using matrix multiplication Key\+: 4 integers forming invertible 2x2 matrix mod 26 
+
+\doxysubsection{Member Typedef Documentation}
+\Hypertarget{classfilevault_1_1algorithms_1_1classical_1_1HillCipher_adc23f745afadf8849eb49e9542c35452}\label{classfilevault_1_1algorithms_1_1classical_1_1HillCipher_adc23f745afadf8849eb49e9542c35452} 
+\index{filevault::algorithms::classical::HillCipher@{filevault::algorithms::classical::HillCipher}!Matrix2x2@{Matrix2x2}}
+\index{Matrix2x2@{Matrix2x2}!filevault::algorithms::classical::HillCipher@{filevault::algorithms::classical::HillCipher}}
+\doxysubsubsection{\texorpdfstring{Matrix2x2}{Matrix2x2}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{classfilevault_1_1algorithms_1_1classical_1_1HillCipher_adc23f745afadf8849eb49e9542c35452}{filevault\+::algorithms\+::classical\+::\+Hill\+Cipher\+::\+Matrix2x2}} =  std\+::array$<$int, 4$>$\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classfilevault_1_1algorithms_1_1classical_1_1HillCipher_a98d48c76afdb860835363a283be7283d}\label{classfilevault_1_1algorithms_1_1classical_1_1HillCipher_a98d48c76afdb860835363a283be7283d} 
+\index{filevault::algorithms::classical::HillCipher@{filevault::algorithms::classical::HillCipher}!decrypt@{decrypt}}
+\index{decrypt@{decrypt}!filevault::algorithms::classical::HillCipher@{filevault::algorithms::classical::HillCipher}}
+\doxysubsubsection{\texorpdfstring{decrypt()}{decrypt()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structfilevault_1_1core_1_1CryptoResult}{core\+::\+Crypto\+Result}} filevault\+::algorithms\+::classical\+::\+Hill\+Cipher\+::decrypt (\begin{DoxyParamCaption}\item[{std\+::span$<$ const uint8\+\_\+t $>$}]{ciphertext,  }\item[{std\+::span$<$ const uint8\+\_\+t $>$}]{key,  }\item[{const \mbox{\hyperlink{structfilevault_1_1core_1_1EncryptionConfig}{core\+::\+Encryption\+Config}} \&}]{config }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Decrypt data. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ciphertext} & Encrypted data \\
+\hline
+{\em key} & Decryption key (derived from password) \\
+\hline
+{\em config} & Decryption configuration \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Decrypted data 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classfilevault_1_1core_1_1ICryptoAlgorithm_a5ad6e9e19a3ed1dd3f0b49106bcaac0d}{filevault\+::core\+::\+ICrypto\+Algorithm}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1algorithms_1_1classical_1_1HillCipher_a98d48c76afdb860835363a283be7283d_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1algorithms_1_1classical_1_1HillCipher_a9772be28c3fef1c8f7e2fc22fd98ed48}\label{classfilevault_1_1algorithms_1_1classical_1_1HillCipher_a9772be28c3fef1c8f7e2fc22fd98ed48} 
+\index{filevault::algorithms::classical::HillCipher@{filevault::algorithms::classical::HillCipher}!decrypt\_block@{decrypt\_block}}
+\index{decrypt\_block@{decrypt\_block}!filevault::algorithms::classical::HillCipher@{filevault::algorithms::classical::HillCipher}}
+\doxysubsubsection{\texorpdfstring{decrypt\_block()}{decrypt\_block()}}
+{\footnotesize\ttfamily std\+::string filevault\+::algorithms\+::classical\+::\+Hill\+Cipher\+::decrypt\+\_\+block (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{block,  }\item[{const \mbox{\hyperlink{classfilevault_1_1algorithms_1_1classical_1_1HillCipher_adc23f745afadf8849eb49e9542c35452}{Matrix2x2}} \&}]{inv\+\_\+matrix }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1algorithms_1_1classical_1_1HillCipher_a9772be28c3fef1c8f7e2fc22fd98ed48_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1algorithms_1_1classical_1_1HillCipher_a9772be28c3fef1c8f7e2fc22fd98ed48_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1algorithms_1_1classical_1_1HillCipher_a068fae43428f2af62d383b249bef0c16}\label{classfilevault_1_1algorithms_1_1classical_1_1HillCipher_a068fae43428f2af62d383b249bef0c16} 
+\index{filevault::algorithms::classical::HillCipher@{filevault::algorithms::classical::HillCipher}!determinant@{determinant}}
+\index{determinant@{determinant}!filevault::algorithms::classical::HillCipher@{filevault::algorithms::classical::HillCipher}}
+\doxysubsubsection{\texorpdfstring{determinant()}{determinant()}}
+{\footnotesize\ttfamily int filevault\+::algorithms\+::classical\+::\+Hill\+Cipher\+::determinant (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classfilevault_1_1algorithms_1_1classical_1_1HillCipher_adc23f745afadf8849eb49e9542c35452}{Matrix2x2}} \&}]{matrix }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1algorithms_1_1classical_1_1HillCipher_a068fae43428f2af62d383b249bef0c16_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1algorithms_1_1classical_1_1HillCipher_a31af4604bd6ba08f41c01e3cd351623f}\label{classfilevault_1_1algorithms_1_1classical_1_1HillCipher_a31af4604bd6ba08f41c01e3cd351623f} 
+\index{filevault::algorithms::classical::HillCipher@{filevault::algorithms::classical::HillCipher}!encrypt@{encrypt}}
+\index{encrypt@{encrypt}!filevault::algorithms::classical::HillCipher@{filevault::algorithms::classical::HillCipher}}
+\doxysubsubsection{\texorpdfstring{encrypt()}{encrypt()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structfilevault_1_1core_1_1CryptoResult}{core\+::\+Crypto\+Result}} filevault\+::algorithms\+::classical\+::\+Hill\+Cipher\+::encrypt (\begin{DoxyParamCaption}\item[{std\+::span$<$ const uint8\+\_\+t $>$}]{plaintext,  }\item[{std\+::span$<$ const uint8\+\_\+t $>$}]{key,  }\item[{const \mbox{\hyperlink{structfilevault_1_1core_1_1EncryptionConfig}{core\+::\+Encryption\+Config}} \&}]{config }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Encrypt data. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em plaintext} & Input data to encrypt \\
+\hline
+{\em key} & Encryption key (derived from password) \\
+\hline
+{\em config} & Encryption configuration \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Encrypted data with metadata 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classfilevault_1_1core_1_1ICryptoAlgorithm_a5b9102cef54b84b54feea1dc16561a2d}{filevault\+::core\+::\+ICrypto\+Algorithm}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1algorithms_1_1classical_1_1HillCipher_a31af4604bd6ba08f41c01e3cd351623f_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1algorithms_1_1classical_1_1HillCipher_a775077aecd69606292b6ab21c48099d6}\label{classfilevault_1_1algorithms_1_1classical_1_1HillCipher_a775077aecd69606292b6ab21c48099d6} 
+\index{filevault::algorithms::classical::HillCipher@{filevault::algorithms::classical::HillCipher}!encrypt\_block@{encrypt\_block}}
+\index{encrypt\_block@{encrypt\_block}!filevault::algorithms::classical::HillCipher@{filevault::algorithms::classical::HillCipher}}
+\doxysubsubsection{\texorpdfstring{encrypt\_block()}{encrypt\_block()}}
+{\footnotesize\ttfamily std\+::string filevault\+::algorithms\+::classical\+::\+Hill\+Cipher\+::encrypt\+\_\+block (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{block,  }\item[{const \mbox{\hyperlink{classfilevault_1_1algorithms_1_1classical_1_1HillCipher_adc23f745afadf8849eb49e9542c35452}{Matrix2x2}} \&}]{key\+\_\+matrix }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1algorithms_1_1classical_1_1HillCipher_a775077aecd69606292b6ab21c48099d6_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1algorithms_1_1classical_1_1HillCipher_a6e2f64975b55791204ee3c2fd1fd73d6}\label{classfilevault_1_1algorithms_1_1classical_1_1HillCipher_a6e2f64975b55791204ee3c2fd1fd73d6} 
+\index{filevault::algorithms::classical::HillCipher@{filevault::algorithms::classical::HillCipher}!invert\_matrix@{invert\_matrix}}
+\index{invert\_matrix@{invert\_matrix}!filevault::algorithms::classical::HillCipher@{filevault::algorithms::classical::HillCipher}}
+\doxysubsubsection{\texorpdfstring{invert\_matrix()}{invert\_matrix()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classfilevault_1_1algorithms_1_1classical_1_1HillCipher_adc23f745afadf8849eb49e9542c35452}{Hill\+Cipher\+::\+Matrix2x2}} filevault\+::algorithms\+::classical\+::\+Hill\+Cipher\+::invert\+\_\+matrix (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classfilevault_1_1algorithms_1_1classical_1_1HillCipher_adc23f745afadf8849eb49e9542c35452}{Matrix2x2}} \&}]{matrix }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1algorithms_1_1classical_1_1HillCipher_a6e2f64975b55791204ee3c2fd1fd73d6_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1algorithms_1_1classical_1_1HillCipher_a6e2f64975b55791204ee3c2fd1fd73d6_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1algorithms_1_1classical_1_1HillCipher_a02b6d019f7140c8e099fc2c8c6b3b012}\label{classfilevault_1_1algorithms_1_1classical_1_1HillCipher_a02b6d019f7140c8e099fc2c8c6b3b012} 
+\index{filevault::algorithms::classical::HillCipher@{filevault::algorithms::classical::HillCipher}!is\_suitable\_for@{is\_suitable\_for}}
+\index{is\_suitable\_for@{is\_suitable\_for}!filevault::algorithms::classical::HillCipher@{filevault::algorithms::classical::HillCipher}}
+\doxysubsubsection{\texorpdfstring{is\_suitable\_for()}{is\_suitable\_for()}}
+{\footnotesize\ttfamily bool filevault\+::algorithms\+::classical\+::\+Hill\+Cipher\+::is\+\_\+suitable\+\_\+for (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacefilevault_1_1core_abcb3b3d896f7dc00926903183b3e2dc9}{core\+::\+Security\+Level}}}]{level }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Check if algorithm is suitable for security level. 
+
+
+
+Implements \mbox{\hyperlink{classfilevault_1_1core_1_1ICryptoAlgorithm_aab479734daf06d3f76af5d916c0285fa}{filevault\+::core\+::\+ICrypto\+Algorithm}}.
+
+\Hypertarget{classfilevault_1_1algorithms_1_1classical_1_1HillCipher_ad262a8b13fde7782104f84c2551dc041}\label{classfilevault_1_1algorithms_1_1classical_1_1HillCipher_ad262a8b13fde7782104f84c2551dc041} 
+\index{filevault::algorithms::classical::HillCipher@{filevault::algorithms::classical::HillCipher}!is\_valid\_key@{is\_valid\_key}}
+\index{is\_valid\_key@{is\_valid\_key}!filevault::algorithms::classical::HillCipher@{filevault::algorithms::classical::HillCipher}}
+\doxysubsubsection{\texorpdfstring{is\_valid\_key()}{is\_valid\_key()}}
+{\footnotesize\ttfamily bool filevault\+::algorithms\+::classical\+::\+Hill\+Cipher\+::is\+\_\+valid\+\_\+key (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classfilevault_1_1algorithms_1_1classical_1_1HillCipher_adc23f745afadf8849eb49e9542c35452}{Matrix2x2}} \&}]{matrix }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1algorithms_1_1classical_1_1HillCipher_ad262a8b13fde7782104f84c2551dc041_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1algorithms_1_1classical_1_1HillCipher_ad262a8b13fde7782104f84c2551dc041_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1algorithms_1_1classical_1_1HillCipher_a18060b7c79615b59719bbbee8744f2a4}\label{classfilevault_1_1algorithms_1_1classical_1_1HillCipher_a18060b7c79615b59719bbbee8744f2a4} 
+\index{filevault::algorithms::classical::HillCipher@{filevault::algorithms::classical::HillCipher}!key\_size@{key\_size}}
+\index{key\_size@{key\_size}!filevault::algorithms::classical::HillCipher@{filevault::algorithms::classical::HillCipher}}
+\doxysubsubsection{\texorpdfstring{key\_size()}{key\_size()}}
+{\footnotesize\ttfamily size\+\_\+t filevault\+::algorithms\+::classical\+::\+Hill\+Cipher\+::key\+\_\+size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get recommended key size in bytes. 
+
+
+
+Implements \mbox{\hyperlink{classfilevault_1_1core_1_1ICryptoAlgorithm_af9ccb47457495eb99988fef0b5b2bbe8}{filevault\+::core\+::\+ICrypto\+Algorithm}}.
+
+\Hypertarget{classfilevault_1_1algorithms_1_1classical_1_1HillCipher_a38cee2645186b1ba9ca44b02a139069b}\label{classfilevault_1_1algorithms_1_1classical_1_1HillCipher_a38cee2645186b1ba9ca44b02a139069b} 
+\index{filevault::algorithms::classical::HillCipher@{filevault::algorithms::classical::HillCipher}!mod\_inverse@{mod\_inverse}}
+\index{mod\_inverse@{mod\_inverse}!filevault::algorithms::classical::HillCipher@{filevault::algorithms::classical::HillCipher}}
+\doxysubsubsection{\texorpdfstring{mod\_inverse()}{mod\_inverse()}}
+{\footnotesize\ttfamily int filevault\+::algorithms\+::classical\+::\+Hill\+Cipher\+::mod\+\_\+inverse (\begin{DoxyParamCaption}\item[{int}]{a,  }\item[{int}]{m }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1algorithms_1_1classical_1_1HillCipher_a38cee2645186b1ba9ca44b02a139069b_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1algorithms_1_1classical_1_1HillCipher_a298cff4ac01cf9af6e6c1875a9564cd2}\label{classfilevault_1_1algorithms_1_1classical_1_1HillCipher_a298cff4ac01cf9af6e6c1875a9564cd2} 
+\index{filevault::algorithms::classical::HillCipher@{filevault::algorithms::classical::HillCipher}!name@{name}}
+\index{name@{name}!filevault::algorithms::classical::HillCipher@{filevault::algorithms::classical::HillCipher}}
+\doxysubsubsection{\texorpdfstring{name()}{name()}}
+{\footnotesize\ttfamily std\+::string filevault\+::algorithms\+::classical\+::\+Hill\+Cipher\+::name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get algorithm name. 
+
+
+
+Implements \mbox{\hyperlink{classfilevault_1_1core_1_1ICryptoAlgorithm_a8acdc23e4f2ea77bb4a5b9820b27fa66}{filevault\+::core\+::\+ICrypto\+Algorithm}}.
+
+\Hypertarget{classfilevault_1_1algorithms_1_1classical_1_1HillCipher_a7e4486145e43cd1037ad48e4df9ec81b}\label{classfilevault_1_1algorithms_1_1classical_1_1HillCipher_a7e4486145e43cd1037ad48e4df9ec81b} 
+\index{filevault::algorithms::classical::HillCipher@{filevault::algorithms::classical::HillCipher}!parse\_key@{parse\_key}}
+\index{parse\_key@{parse\_key}!filevault::algorithms::classical::HillCipher@{filevault::algorithms::classical::HillCipher}}
+\doxysubsubsection{\texorpdfstring{parse\_key()}{parse\_key()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classfilevault_1_1algorithms_1_1classical_1_1HillCipher_adc23f745afadf8849eb49e9542c35452}{Hill\+Cipher\+::\+Matrix2x2}} filevault\+::algorithms\+::classical\+::\+Hill\+Cipher\+::parse\+\_\+key (\begin{DoxyParamCaption}\item[{std\+::span$<$ const uint8\+\_\+t $>$}]{key }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1algorithms_1_1classical_1_1HillCipher_a7e4486145e43cd1037ad48e4df9ec81b_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1algorithms_1_1classical_1_1HillCipher_abaad2d0c383311de06c48b9afc83efcf}\label{classfilevault_1_1algorithms_1_1classical_1_1HillCipher_abaad2d0c383311de06c48b9afc83efcf} 
+\index{filevault::algorithms::classical::HillCipher@{filevault::algorithms::classical::HillCipher}!type@{type}}
+\index{type@{type}!filevault::algorithms::classical::HillCipher@{filevault::algorithms::classical::HillCipher}}
+\doxysubsubsection{\texorpdfstring{type()}{type()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacefilevault_1_1core_ab1ba257a0205c63e9e1e3623170940a2}{core\+::\+Algorithm\+Type}} filevault\+::algorithms\+::classical\+::\+Hill\+Cipher\+::type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get algorithm type. 
+
+
+
+Implements \mbox{\hyperlink{classfilevault_1_1core_1_1ICryptoAlgorithm_a11b7820f7b0bbb5fd6668fac3b78a7e1}{filevault\+::core\+::\+ICrypto\+Algorithm}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1algorithms_1_1classical_1_1HillCipher_abaad2d0c383311de06c48b9afc83efcf_icgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/filevault/algorithms/classical/\mbox{\hyperlink{hill_8hpp}{hill.\+hpp}}\item 
+src/algorithms/classical/\mbox{\hyperlink{hill_8cpp}{hill.\+cpp}}\end{DoxyCompactItemize}

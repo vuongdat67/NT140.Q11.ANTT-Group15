@@ -1,0 +1,261 @@
+\doxysection{filevault\+::cli\+::Info\+Command Class Reference}
+\hypertarget{classfilevault_1_1cli_1_1InfoCommand}{}\label{classfilevault_1_1cli_1_1InfoCommand}\index{filevault::cli::InfoCommand@{filevault::cli::InfoCommand}}
+
+
+Info command -\/ display encrypted file metadata.  
+
+
+
+
+{\ttfamily \#include $<$info\+\_\+cmd.\+hpp$>$}
+
+
+
+Inheritance diagram for filevault\+::cli\+::Info\+Command\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=229pt]{classfilevault_1_1cli_1_1InfoCommand__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for filevault\+::cli\+::Info\+Command\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1cli_1_1InfoCommand__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structfilevault_1_1cli_1_1InfoCommand_1_1FileInfo}{File\+Info}}
+\begin{DoxyCompactList}\small\item\em Parse encrypted file header. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classfilevault_1_1cli_1_1InfoCommand_aa1219b59a1f17dad950dc826c070451e}{Info\+Command}} (\mbox{\hyperlink{classfilevault_1_1core_1_1CryptoEngine}{core\+::\+Crypto\+Engine}} \&engine)
+\item 
+std\+::string \mbox{\hyperlink{classfilevault_1_1cli_1_1InfoCommand_acc48255b2dfbcf997e3b8cb17a7d7451}{name}} () const override
+\begin{DoxyCompactList}\small\item\em Get command name. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classfilevault_1_1cli_1_1InfoCommand_abcc7573ae04d534d5e4d6c0148da1abd}{description}} () const override
+\begin{DoxyCompactList}\small\item\em Get command description. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classfilevault_1_1cli_1_1InfoCommand_a39a2966dca60ae5e099cd1d244f854a0}{setup}} (CLI\+::\+App \&app) override
+\begin{DoxyCompactList}\small\item\em Setup CLI11 subcommand. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classfilevault_1_1cli_1_1InfoCommand_a5bfeea24e73f3bfac00fe683596a2f8d}{execute}} () override
+\begin{DoxyCompactList}\small\item\em Execute the command. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classfilevault_1_1cli_1_1ICommand}{filevault\+::cli\+::\+ICommand}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classfilevault_1_1cli_1_1ICommand_a358ce6bf0db6a1ff7f53eec427481a5d}{\texorpdfstring{$\sim$}{\string~}\+ICommand}} ()=default
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structfilevault_1_1cli_1_1InfoCommand_1_1FileInfo}{File\+Info}} \mbox{\hyperlink{classfilevault_1_1cli_1_1InfoCommand_aad0c34a74a317547b42133216acc92ca}{parse\+\_\+file}} (const std\+::string \&path)
+\item 
+void \mbox{\hyperlink{classfilevault_1_1cli_1_1InfoCommand_a793753edae24b3a54a5a9689fbe3625a}{display\+\_\+info}} (const \mbox{\hyperlink{structfilevault_1_1cli_1_1InfoCommand_1_1FileInfo}{File\+Info}} \&info)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classfilevault_1_1core_1_1CryptoEngine}{core\+::\+Crypto\+Engine}} \& \mbox{\hyperlink{classfilevault_1_1cli_1_1InfoCommand_a04513b90faef216fff9c17fc1c1fb502}{engine\+\_\+}}
+\item 
+std\+::string \mbox{\hyperlink{classfilevault_1_1cli_1_1InfoCommand_aa57eafecc7843e5ef3858e83b2be40b8}{input\+\_\+file\+\_\+}}
+\item 
+bool \mbox{\hyperlink{classfilevault_1_1cli_1_1InfoCommand_a1105d414f2b811f617ed4e64f8ad5d94}{verbose\+\_\+}} = false
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Info command -\/ display encrypted file metadata. 
+
+Shows information about encrypted files without decrypting\+:
+\begin{DoxyItemize}
+\item File size (original, encrypted, compression ratio)
+\item Encryption algorithm
+\item KDF type and parameters
+\item Compression type
+\item Timestamp (if available) 
+\end{DoxyItemize}
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classfilevault_1_1cli_1_1InfoCommand_aa1219b59a1f17dad950dc826c070451e}\label{classfilevault_1_1cli_1_1InfoCommand_aa1219b59a1f17dad950dc826c070451e} 
+\index{filevault::cli::InfoCommand@{filevault::cli::InfoCommand}!InfoCommand@{InfoCommand}}
+\index{InfoCommand@{InfoCommand}!filevault::cli::InfoCommand@{filevault::cli::InfoCommand}}
+\doxysubsubsection{\texorpdfstring{InfoCommand()}{InfoCommand()}}
+{\footnotesize\ttfamily filevault\+::cli\+::\+Info\+Command\+::\+Info\+Command (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classfilevault_1_1core_1_1CryptoEngine}{core\+::\+Crypto\+Engine}} \&}]{engine }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classfilevault_1_1cli_1_1InfoCommand_abcc7573ae04d534d5e4d6c0148da1abd}\label{classfilevault_1_1cli_1_1InfoCommand_abcc7573ae04d534d5e4d6c0148da1abd} 
+\index{filevault::cli::InfoCommand@{filevault::cli::InfoCommand}!description@{description}}
+\index{description@{description}!filevault::cli::InfoCommand@{filevault::cli::InfoCommand}}
+\doxysubsubsection{\texorpdfstring{description()}{description()}}
+{\footnotesize\ttfamily std\+::string filevault\+::cli\+::\+Info\+Command\+::description (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get command description. 
+
+
+
+Implements \mbox{\hyperlink{classfilevault_1_1cli_1_1ICommand_a154cdd3f87273142e70814445abd48ea}{filevault\+::cli\+::\+ICommand}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1cli_1_1InfoCommand_abcc7573ae04d534d5e4d6c0148da1abd_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1cli_1_1InfoCommand_a793753edae24b3a54a5a9689fbe3625a}\label{classfilevault_1_1cli_1_1InfoCommand_a793753edae24b3a54a5a9689fbe3625a} 
+\index{filevault::cli::InfoCommand@{filevault::cli::InfoCommand}!display\_info@{display\_info}}
+\index{display\_info@{display\_info}!filevault::cli::InfoCommand@{filevault::cli::InfoCommand}}
+\doxysubsubsection{\texorpdfstring{display\_info()}{display\_info()}}
+{\footnotesize\ttfamily void filevault\+::cli\+::\+Info\+Command\+::display\+\_\+info (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structfilevault_1_1cli_1_1InfoCommand_1_1FileInfo}{File\+Info}} \&}]{info }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1cli_1_1InfoCommand_a793753edae24b3a54a5a9689fbe3625a_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1cli_1_1InfoCommand_a793753edae24b3a54a5a9689fbe3625a_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1cli_1_1InfoCommand_a5bfeea24e73f3bfac00fe683596a2f8d}\label{classfilevault_1_1cli_1_1InfoCommand_a5bfeea24e73f3bfac00fe683596a2f8d} 
+\index{filevault::cli::InfoCommand@{filevault::cli::InfoCommand}!execute@{execute}}
+\index{execute@{execute}!filevault::cli::InfoCommand@{filevault::cli::InfoCommand}}
+\doxysubsubsection{\texorpdfstring{execute()}{execute()}}
+{\footnotesize\ttfamily int filevault\+::cli\+::\+Info\+Command\+::execute (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Execute the command. 
+
+
+
+Implements \mbox{\hyperlink{classfilevault_1_1cli_1_1ICommand_a2fdc36b29a23b94a6e52bc3d4eb0c1ed}{filevault\+::cli\+::\+ICommand}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1cli_1_1InfoCommand_a5bfeea24e73f3bfac00fe683596a2f8d_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1cli_1_1InfoCommand_a5bfeea24e73f3bfac00fe683596a2f8d_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1cli_1_1InfoCommand_acc48255b2dfbcf997e3b8cb17a7d7451}\label{classfilevault_1_1cli_1_1InfoCommand_acc48255b2dfbcf997e3b8cb17a7d7451} 
+\index{filevault::cli::InfoCommand@{filevault::cli::InfoCommand}!name@{name}}
+\index{name@{name}!filevault::cli::InfoCommand@{filevault::cli::InfoCommand}}
+\doxysubsubsection{\texorpdfstring{name()}{name()}}
+{\footnotesize\ttfamily std\+::string filevault\+::cli\+::\+Info\+Command\+::name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get command name. 
+
+
+
+Implements \mbox{\hyperlink{classfilevault_1_1cli_1_1ICommand_a60aa4bc7c96c2e80feeb1a184d7ae2f7}{filevault\+::cli\+::\+ICommand}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1cli_1_1InfoCommand_acc48255b2dfbcf997e3b8cb17a7d7451_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1cli_1_1InfoCommand_aad0c34a74a317547b42133216acc92ca}\label{classfilevault_1_1cli_1_1InfoCommand_aad0c34a74a317547b42133216acc92ca} 
+\index{filevault::cli::InfoCommand@{filevault::cli::InfoCommand}!parse\_file@{parse\_file}}
+\index{parse\_file@{parse\_file}!filevault::cli::InfoCommand@{filevault::cli::InfoCommand}}
+\doxysubsubsection{\texorpdfstring{parse\_file()}{parse\_file()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structfilevault_1_1cli_1_1InfoCommand_1_1FileInfo}{Info\+Command\+::\+File\+Info}} filevault\+::cli\+::\+Info\+Command\+::parse\+\_\+file (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1cli_1_1InfoCommand_aad0c34a74a317547b42133216acc92ca_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1cli_1_1InfoCommand_aad0c34a74a317547b42133216acc92ca_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1cli_1_1InfoCommand_a39a2966dca60ae5e099cd1d244f854a0}\label{classfilevault_1_1cli_1_1InfoCommand_a39a2966dca60ae5e099cd1d244f854a0} 
+\index{filevault::cli::InfoCommand@{filevault::cli::InfoCommand}!setup@{setup}}
+\index{setup@{setup}!filevault::cli::InfoCommand@{filevault::cli::InfoCommand}}
+\doxysubsubsection{\texorpdfstring{setup()}{setup()}}
+{\footnotesize\ttfamily void filevault\+::cli\+::\+Info\+Command\+::setup (\begin{DoxyParamCaption}\item[{CLI\+::\+App \&}]{app }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Setup CLI11 subcommand. 
+
+
+
+Implements \mbox{\hyperlink{classfilevault_1_1cli_1_1ICommand_aa43a60aabddff55d1060c334dade972c}{filevault\+::cli\+::\+ICommand}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1cli_1_1InfoCommand_a39a2966dca60ae5e099cd1d244f854a0_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classfilevault_1_1cli_1_1InfoCommand_a04513b90faef216fff9c17fc1c1fb502}\label{classfilevault_1_1cli_1_1InfoCommand_a04513b90faef216fff9c17fc1c1fb502} 
+\index{filevault::cli::InfoCommand@{filevault::cli::InfoCommand}!engine\_@{engine\_}}
+\index{engine\_@{engine\_}!filevault::cli::InfoCommand@{filevault::cli::InfoCommand}}
+\doxysubsubsection{\texorpdfstring{engine\_}{engine\_}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classfilevault_1_1core_1_1CryptoEngine}{core\+::\+Crypto\+Engine}}\& filevault\+::cli\+::\+Info\+Command\+::engine\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classfilevault_1_1cli_1_1InfoCommand_aa57eafecc7843e5ef3858e83b2be40b8}\label{classfilevault_1_1cli_1_1InfoCommand_aa57eafecc7843e5ef3858e83b2be40b8} 
+\index{filevault::cli::InfoCommand@{filevault::cli::InfoCommand}!input\_file\_@{input\_file\_}}
+\index{input\_file\_@{input\_file\_}!filevault::cli::InfoCommand@{filevault::cli::InfoCommand}}
+\doxysubsubsection{\texorpdfstring{input\_file\_}{input\_file\_}}
+{\footnotesize\ttfamily std\+::string filevault\+::cli\+::\+Info\+Command\+::input\+\_\+file\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classfilevault_1_1cli_1_1InfoCommand_a1105d414f2b811f617ed4e64f8ad5d94}\label{classfilevault_1_1cli_1_1InfoCommand_a1105d414f2b811f617ed4e64f8ad5d94} 
+\index{filevault::cli::InfoCommand@{filevault::cli::InfoCommand}!verbose\_@{verbose\_}}
+\index{verbose\_@{verbose\_}!filevault::cli::InfoCommand@{filevault::cli::InfoCommand}}
+\doxysubsubsection{\texorpdfstring{verbose\_}{verbose\_}}
+{\footnotesize\ttfamily bool filevault\+::cli\+::\+Info\+Command\+::verbose\+\_\+ = false\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/filevault/cli/commands/\mbox{\hyperlink{info__cmd_8hpp}{info\+\_\+cmd.\+hpp}}\item 
+src/cli/commands/\mbox{\hyperlink{info__cmd_8cpp}{info\+\_\+cmd.\+cpp}}\end{DoxyCompactItemize}

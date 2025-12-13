@@ -1,0 +1,358 @@
+\doxysection{filevault\+::algorithms\+::classical\+::Vigenere Class Reference}
+\hypertarget{classfilevault_1_1algorithms_1_1classical_1_1Vigenere}{}\label{classfilevault_1_1algorithms_1_1classical_1_1Vigenere}\index{filevault::algorithms::classical::Vigenere@{filevault::algorithms::classical::Vigenere}}
+
+
+Vigenre Cipher -\/ Polyalphabetic substitution.  
+
+
+
+
+{\ttfamily \#include $<$classical\+\_\+ciphers.\+hpp$>$}
+
+
+
+Inheritance diagram for filevault\+::algorithms\+::classical\+::Vigenere\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=205pt]{classfilevault_1_1algorithms_1_1classical_1_1Vigenere__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for filevault\+::algorithms\+::classical\+::Vigenere\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=205pt]{classfilevault_1_1algorithms_1_1classical_1_1Vigenere__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classfilevault_1_1algorithms_1_1classical_1_1Vigenere_aa8db8002e87fdeeee291996d53a211d7}{Vigenere}} (const std\+::string \&keyword="{}KEY"{})
+\item 
+std\+::string \mbox{\hyperlink{classfilevault_1_1algorithms_1_1classical_1_1Vigenere_ab02b3ad23ae80b57aa67bb79a8dd6dc2}{name}} () const override
+\begin{DoxyCompactList}\small\item\em Get algorithm name. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacefilevault_1_1core_ab1ba257a0205c63e9e1e3623170940a2}{core\+::\+Algorithm\+Type}} \mbox{\hyperlink{classfilevault_1_1algorithms_1_1classical_1_1Vigenere_ac3fd1cdebc63d2c66e97e58f35bcbf74}{type}} () const override
+\begin{DoxyCompactList}\small\item\em Get algorithm type. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{classfilevault_1_1algorithms_1_1classical_1_1Vigenere_a8ec35106b800a454708718aba57a8f12}{key\+\_\+size}} () const override
+\begin{DoxyCompactList}\small\item\em Get recommended key size in bytes. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structfilevault_1_1core_1_1CryptoResult}{core\+::\+Crypto\+Result}} \mbox{\hyperlink{classfilevault_1_1algorithms_1_1classical_1_1Vigenere_a9a80560c498e953ff171c88cbdfe0823}{encrypt}} (std\+::span$<$ const uint8\+\_\+t $>$ plaintext, std\+::span$<$ const uint8\+\_\+t $>$ key, const \mbox{\hyperlink{structfilevault_1_1core_1_1EncryptionConfig}{core\+::\+Encryption\+Config}} \&config) override
+\begin{DoxyCompactList}\small\item\em Encrypt data. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structfilevault_1_1core_1_1CryptoResult}{core\+::\+Crypto\+Result}} \mbox{\hyperlink{classfilevault_1_1algorithms_1_1classical_1_1Vigenere_a6c1c3a6b3b7716c1c146dd32205e5982}{decrypt}} (std\+::span$<$ const uint8\+\_\+t $>$ ciphertext, std\+::span$<$ const uint8\+\_\+t $>$ key, const \mbox{\hyperlink{structfilevault_1_1core_1_1EncryptionConfig}{core\+::\+Encryption\+Config}} \&config) override
+\begin{DoxyCompactList}\small\item\em Decrypt data. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classfilevault_1_1algorithms_1_1classical_1_1Vigenere_ab1f1dfb4e8d727b40a494858bf494f68}{is\+\_\+suitable\+\_\+for}} (\mbox{\hyperlink{namespacefilevault_1_1core_abcb3b3d896f7dc00926903183b3e2dc9}{core\+::\+Security\+Level}} level) const override
+\begin{DoxyCompactList}\small\item\em Check if algorithm is suitable for security level. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfilevault_1_1algorithms_1_1classical_1_1Vigenere_aa8db8002e87fdeeee291996d53a211d7}{Vigenere}} (const std\+::string \&keyword="{}KEY"{})
+\item 
+std\+::string \mbox{\hyperlink{classfilevault_1_1algorithms_1_1classical_1_1Vigenere_ab02b3ad23ae80b57aa67bb79a8dd6dc2}{name}} () const override
+\begin{DoxyCompactList}\small\item\em Get algorithm name. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacefilevault_1_1core_ab1ba257a0205c63e9e1e3623170940a2}{core\+::\+Algorithm\+Type}} \mbox{\hyperlink{classfilevault_1_1algorithms_1_1classical_1_1Vigenere_ac3fd1cdebc63d2c66e97e58f35bcbf74}{type}} () const override
+\begin{DoxyCompactList}\small\item\em Get algorithm type. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{classfilevault_1_1algorithms_1_1classical_1_1Vigenere_a8ec35106b800a454708718aba57a8f12}{key\+\_\+size}} () const override
+\begin{DoxyCompactList}\small\item\em Get recommended key size in bytes. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structfilevault_1_1core_1_1CryptoResult}{core\+::\+Crypto\+Result}} \mbox{\hyperlink{classfilevault_1_1algorithms_1_1classical_1_1Vigenere_a9a80560c498e953ff171c88cbdfe0823}{encrypt}} (std\+::span$<$ const uint8\+\_\+t $>$ plaintext, std\+::span$<$ const uint8\+\_\+t $>$ key, const \mbox{\hyperlink{structfilevault_1_1core_1_1EncryptionConfig}{core\+::\+Encryption\+Config}} \&config) override
+\begin{DoxyCompactList}\small\item\em Encrypt data. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structfilevault_1_1core_1_1CryptoResult}{core\+::\+Crypto\+Result}} \mbox{\hyperlink{classfilevault_1_1algorithms_1_1classical_1_1Vigenere_a6c1c3a6b3b7716c1c146dd32205e5982}{decrypt}} (std\+::span$<$ const uint8\+\_\+t $>$ ciphertext, std\+::span$<$ const uint8\+\_\+t $>$ key, const \mbox{\hyperlink{structfilevault_1_1core_1_1EncryptionConfig}{core\+::\+Encryption\+Config}} \&config) override
+\begin{DoxyCompactList}\small\item\em Decrypt data. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classfilevault_1_1algorithms_1_1classical_1_1Vigenere_ab1f1dfb4e8d727b40a494858bf494f68}{is\+\_\+suitable\+\_\+for}} (\mbox{\hyperlink{namespacefilevault_1_1core_abcb3b3d896f7dc00926903183b3e2dc9}{core\+::\+Security\+Level}} level) const override
+\begin{DoxyCompactList}\small\item\em Check if algorithm is suitable for security level. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classfilevault_1_1core_1_1ICryptoAlgorithm}{filevault\+::core\+::\+ICrypto\+Algorithm}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classfilevault_1_1core_1_1ICryptoAlgorithm_a36383558169617931374ca3b64399818}{\texorpdfstring{$\sim$}{\string~}\+ICrypto\+Algorithm}} ()=default
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::vector$<$ size\+\_\+t $>$ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1classical_1_1Vigenere_ae69fc231d9ef1af4ae69fcd84db3aa54}{kasiski\+\_\+examination}} (const std\+::string \&ciphertext)
+\item 
+static size\+\_\+t \mbox{\hyperlink{classfilevault_1_1algorithms_1_1classical_1_1Vigenere_aa495ebdf29d449df8f0264522c094b52}{estimate\+\_\+key\+\_\+length}} (const std\+::string \&ciphertext)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{classfilevault_1_1algorithms_1_1classical_1_1Vigenere_a9f12fa11bfe7740150e007924a9335be}{keyword\+\_\+}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Vigenre Cipher -\/ Polyalphabetic substitution. 
+
+Uses a keyword to create multiple \doxylink{classfilevault_1_1algorithms_1_1classical_1_1Caesar}{Caesar} shifts. Considered "{}le chiffre indchiffrable"{} (unbreakable cipher) until 1863.
+
+Security\+: BROKEN -\/ Vulnerable to Kasiski examination Purpose\+: Educational -\/ shows improvement over monoalphabetic ciphers
+
+Uses a keyword to create multiple \doxylink{classfilevault_1_1algorithms_1_1classical_1_1Caesar}{Caesar} shifts. Considered "{}le chiffre indchiffrable"{} (unbreakable cipher) until 1863.
+
+Security\+: BROKEN -\/ Vulnerable to Kasiski examination Purpose\+: Educational -\/ shows improvement over monoalphabetic ciphers
+
+\begin{DoxySeeAlso}{See also}
+\href{https://en.wikipedia.org/wiki/Vigen\%C3\%A8re_cipher}{\texttt{ https\+://en.\+wikipedia.\+org/wiki/\+Vigen\%\+C3\%\+A8re\+\_\+cipher}} 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classfilevault_1_1algorithms_1_1classical_1_1Vigenere_aa8db8002e87fdeeee291996d53a211d7}\label{classfilevault_1_1algorithms_1_1classical_1_1Vigenere_aa8db8002e87fdeeee291996d53a211d7} 
+\index{filevault::algorithms::classical::Vigenere@{filevault::algorithms::classical::Vigenere}!Vigenere@{Vigenere}}
+\index{Vigenere@{Vigenere}!filevault::algorithms::classical::Vigenere@{filevault::algorithms::classical::Vigenere}}
+\doxysubsubsection{\texorpdfstring{Vigenere()}{Vigenere()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily filevault\+::algorithms\+::classical\+::\+Vigenere\+::\+Vigenere (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{keyword = {\ttfamily "{}KEY"{}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+\Hypertarget{classfilevault_1_1algorithms_1_1classical_1_1Vigenere_aa8db8002e87fdeeee291996d53a211d7}\label{classfilevault_1_1algorithms_1_1classical_1_1Vigenere_aa8db8002e87fdeeee291996d53a211d7} 
+\index{filevault::algorithms::classical::Vigenere@{filevault::algorithms::classical::Vigenere}!Vigenere@{Vigenere}}
+\index{Vigenere@{Vigenere}!filevault::algorithms::classical::Vigenere@{filevault::algorithms::classical::Vigenere}}
+\doxysubsubsection{\texorpdfstring{Vigenere()}{Vigenere()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily filevault\+::algorithms\+::classical\+::\+Vigenere\+::\+Vigenere (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{keyword = {\ttfamily "{}KEY"{}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classfilevault_1_1algorithms_1_1classical_1_1Vigenere_a6c1c3a6b3b7716c1c146dd32205e5982}\label{classfilevault_1_1algorithms_1_1classical_1_1Vigenere_a6c1c3a6b3b7716c1c146dd32205e5982} 
+\index{filevault::algorithms::classical::Vigenere@{filevault::algorithms::classical::Vigenere}!decrypt@{decrypt}}
+\index{decrypt@{decrypt}!filevault::algorithms::classical::Vigenere@{filevault::algorithms::classical::Vigenere}}
+\doxysubsubsection{\texorpdfstring{decrypt()}{decrypt()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structfilevault_1_1core_1_1CryptoResult}{core\+::\+Crypto\+Result}} filevault\+::algorithms\+::classical\+::\+Vigenere\+::decrypt (\begin{DoxyParamCaption}\item[{std\+::span$<$ const uint8\+\_\+t $>$}]{ciphertext,  }\item[{std\+::span$<$ const uint8\+\_\+t $>$}]{key,  }\item[{const \mbox{\hyperlink{structfilevault_1_1core_1_1EncryptionConfig}{core\+::\+Encryption\+Config}} \&}]{config }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Decrypt data. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ciphertext} & Encrypted data \\
+\hline
+{\em key} & Decryption key (derived from password) \\
+\hline
+{\em config} & Decryption configuration \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Decrypted data 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classfilevault_1_1core_1_1ICryptoAlgorithm_a5ad6e9e19a3ed1dd3f0b49106bcaac0d}{filevault\+::core\+::\+ICrypto\+Algorithm}}.
+
+\Hypertarget{classfilevault_1_1algorithms_1_1classical_1_1Vigenere_a6c1c3a6b3b7716c1c146dd32205e5982}\label{classfilevault_1_1algorithms_1_1classical_1_1Vigenere_a6c1c3a6b3b7716c1c146dd32205e5982} 
+\index{filevault::algorithms::classical::Vigenere@{filevault::algorithms::classical::Vigenere}!decrypt@{decrypt}}
+\index{decrypt@{decrypt}!filevault::algorithms::classical::Vigenere@{filevault::algorithms::classical::Vigenere}}
+\doxysubsubsection{\texorpdfstring{decrypt()}{decrypt()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structfilevault_1_1core_1_1CryptoResult}{core\+::\+Crypto\+Result}} filevault\+::algorithms\+::classical\+::\+Vigenere\+::decrypt (\begin{DoxyParamCaption}\item[{std\+::span$<$ const uint8\+\_\+t $>$}]{ciphertext,  }\item[{std\+::span$<$ const uint8\+\_\+t $>$}]{key,  }\item[{const \mbox{\hyperlink{structfilevault_1_1core_1_1EncryptionConfig}{core\+::\+Encryption\+Config}} \&}]{config }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Decrypt data. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ciphertext} & Encrypted data \\
+\hline
+{\em key} & Decryption key (derived from password) \\
+\hline
+{\em config} & Decryption configuration \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Decrypted data 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classfilevault_1_1core_1_1ICryptoAlgorithm_a5ad6e9e19a3ed1dd3f0b49106bcaac0d}{filevault\+::core\+::\+ICrypto\+Algorithm}}.
+
+\Hypertarget{classfilevault_1_1algorithms_1_1classical_1_1Vigenere_a9a80560c498e953ff171c88cbdfe0823}\label{classfilevault_1_1algorithms_1_1classical_1_1Vigenere_a9a80560c498e953ff171c88cbdfe0823} 
+\index{filevault::algorithms::classical::Vigenere@{filevault::algorithms::classical::Vigenere}!encrypt@{encrypt}}
+\index{encrypt@{encrypt}!filevault::algorithms::classical::Vigenere@{filevault::algorithms::classical::Vigenere}}
+\doxysubsubsection{\texorpdfstring{encrypt()}{encrypt()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structfilevault_1_1core_1_1CryptoResult}{core\+::\+Crypto\+Result}} filevault\+::algorithms\+::classical\+::\+Vigenere\+::encrypt (\begin{DoxyParamCaption}\item[{std\+::span$<$ const uint8\+\_\+t $>$}]{plaintext,  }\item[{std\+::span$<$ const uint8\+\_\+t $>$}]{key,  }\item[{const \mbox{\hyperlink{structfilevault_1_1core_1_1EncryptionConfig}{core\+::\+Encryption\+Config}} \&}]{config }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Encrypt data. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em plaintext} & Input data to encrypt \\
+\hline
+{\em key} & Encryption key (derived from password) \\
+\hline
+{\em config} & Encryption configuration \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Encrypted data with metadata 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classfilevault_1_1core_1_1ICryptoAlgorithm_a5b9102cef54b84b54feea1dc16561a2d}{filevault\+::core\+::\+ICrypto\+Algorithm}}.
+
+\Hypertarget{classfilevault_1_1algorithms_1_1classical_1_1Vigenere_a9a80560c498e953ff171c88cbdfe0823}\label{classfilevault_1_1algorithms_1_1classical_1_1Vigenere_a9a80560c498e953ff171c88cbdfe0823} 
+\index{filevault::algorithms::classical::Vigenere@{filevault::algorithms::classical::Vigenere}!encrypt@{encrypt}}
+\index{encrypt@{encrypt}!filevault::algorithms::classical::Vigenere@{filevault::algorithms::classical::Vigenere}}
+\doxysubsubsection{\texorpdfstring{encrypt()}{encrypt()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structfilevault_1_1core_1_1CryptoResult}{core\+::\+Crypto\+Result}} filevault\+::algorithms\+::classical\+::\+Vigenere\+::encrypt (\begin{DoxyParamCaption}\item[{std\+::span$<$ const uint8\+\_\+t $>$}]{plaintext,  }\item[{std\+::span$<$ const uint8\+\_\+t $>$}]{key,  }\item[{const \mbox{\hyperlink{structfilevault_1_1core_1_1EncryptionConfig}{core\+::\+Encryption\+Config}} \&}]{config }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Encrypt data. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em plaintext} & Input data to encrypt \\
+\hline
+{\em key} & Encryption key (derived from password) \\
+\hline
+{\em config} & Encryption configuration \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Encrypted data with metadata 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classfilevault_1_1core_1_1ICryptoAlgorithm_a5b9102cef54b84b54feea1dc16561a2d}{filevault\+::core\+::\+ICrypto\+Algorithm}}.
+
+\Hypertarget{classfilevault_1_1algorithms_1_1classical_1_1Vigenere_aa495ebdf29d449df8f0264522c094b52}\label{classfilevault_1_1algorithms_1_1classical_1_1Vigenere_aa495ebdf29d449df8f0264522c094b52} 
+\index{filevault::algorithms::classical::Vigenere@{filevault::algorithms::classical::Vigenere}!estimate\_key\_length@{estimate\_key\_length}}
+\index{estimate\_key\_length@{estimate\_key\_length}!filevault::algorithms::classical::Vigenere@{filevault::algorithms::classical::Vigenere}}
+\doxysubsubsection{\texorpdfstring{estimate\_key\_length()}{estimate\_key\_length()}}
+{\footnotesize\ttfamily static size\+\_\+t filevault\+::algorithms\+::classical\+::\+Vigenere\+::estimate\+\_\+key\+\_\+length (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{ciphertext }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{classfilevault_1_1algorithms_1_1classical_1_1Vigenere_ab1f1dfb4e8d727b40a494858bf494f68}\label{classfilevault_1_1algorithms_1_1classical_1_1Vigenere_ab1f1dfb4e8d727b40a494858bf494f68} 
+\index{filevault::algorithms::classical::Vigenere@{filevault::algorithms::classical::Vigenere}!is\_suitable\_for@{is\_suitable\_for}}
+\index{is\_suitable\_for@{is\_suitable\_for}!filevault::algorithms::classical::Vigenere@{filevault::algorithms::classical::Vigenere}}
+\doxysubsubsection{\texorpdfstring{is\_suitable\_for()}{is\_suitable\_for()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool filevault\+::algorithms\+::classical\+::\+Vigenere\+::is\+\_\+suitable\+\_\+for (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacefilevault_1_1core_abcb3b3d896f7dc00926903183b3e2dc9}{core\+::\+Security\+Level}}}]{level }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Check if algorithm is suitable for security level. 
+
+
+
+Implements \mbox{\hyperlink{classfilevault_1_1core_1_1ICryptoAlgorithm_aab479734daf06d3f76af5d916c0285fa}{filevault\+::core\+::\+ICrypto\+Algorithm}}.
+
+\Hypertarget{classfilevault_1_1algorithms_1_1classical_1_1Vigenere_ab1f1dfb4e8d727b40a494858bf494f68}\label{classfilevault_1_1algorithms_1_1classical_1_1Vigenere_ab1f1dfb4e8d727b40a494858bf494f68} 
+\index{filevault::algorithms::classical::Vigenere@{filevault::algorithms::classical::Vigenere}!is\_suitable\_for@{is\_suitable\_for}}
+\index{is\_suitable\_for@{is\_suitable\_for}!filevault::algorithms::classical::Vigenere@{filevault::algorithms::classical::Vigenere}}
+\doxysubsubsection{\texorpdfstring{is\_suitable\_for()}{is\_suitable\_for()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool filevault\+::algorithms\+::classical\+::\+Vigenere\+::is\+\_\+suitable\+\_\+for (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacefilevault_1_1core_abcb3b3d896f7dc00926903183b3e2dc9}{core\+::\+Security\+Level}}}]{level }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Check if algorithm is suitable for security level. 
+
+
+
+Implements \mbox{\hyperlink{classfilevault_1_1core_1_1ICryptoAlgorithm_aab479734daf06d3f76af5d916c0285fa}{filevault\+::core\+::\+ICrypto\+Algorithm}}.
+
+\Hypertarget{classfilevault_1_1algorithms_1_1classical_1_1Vigenere_ae69fc231d9ef1af4ae69fcd84db3aa54}\label{classfilevault_1_1algorithms_1_1classical_1_1Vigenere_ae69fc231d9ef1af4ae69fcd84db3aa54} 
+\index{filevault::algorithms::classical::Vigenere@{filevault::algorithms::classical::Vigenere}!kasiski\_examination@{kasiski\_examination}}
+\index{kasiski\_examination@{kasiski\_examination}!filevault::algorithms::classical::Vigenere@{filevault::algorithms::classical::Vigenere}}
+\doxysubsubsection{\texorpdfstring{kasiski\_examination()}{kasiski\_examination()}}
+{\footnotesize\ttfamily static std\+::vector$<$ size\+\_\+t $>$ filevault\+::algorithms\+::classical\+::\+Vigenere\+::kasiski\+\_\+examination (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{ciphertext }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{classfilevault_1_1algorithms_1_1classical_1_1Vigenere_a8ec35106b800a454708718aba57a8f12}\label{classfilevault_1_1algorithms_1_1classical_1_1Vigenere_a8ec35106b800a454708718aba57a8f12} 
+\index{filevault::algorithms::classical::Vigenere@{filevault::algorithms::classical::Vigenere}!key\_size@{key\_size}}
+\index{key\_size@{key\_size}!filevault::algorithms::classical::Vigenere@{filevault::algorithms::classical::Vigenere}}
+\doxysubsubsection{\texorpdfstring{key\_size()}{key\_size()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily size\+\_\+t filevault\+::algorithms\+::classical\+::\+Vigenere\+::key\+\_\+size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get recommended key size in bytes. 
+
+
+
+Implements \mbox{\hyperlink{classfilevault_1_1core_1_1ICryptoAlgorithm_af9ccb47457495eb99988fef0b5b2bbe8}{filevault\+::core\+::\+ICrypto\+Algorithm}}.
+
+\Hypertarget{classfilevault_1_1algorithms_1_1classical_1_1Vigenere_a8ec35106b800a454708718aba57a8f12}\label{classfilevault_1_1algorithms_1_1classical_1_1Vigenere_a8ec35106b800a454708718aba57a8f12} 
+\index{filevault::algorithms::classical::Vigenere@{filevault::algorithms::classical::Vigenere}!key\_size@{key\_size}}
+\index{key\_size@{key\_size}!filevault::algorithms::classical::Vigenere@{filevault::algorithms::classical::Vigenere}}
+\doxysubsubsection{\texorpdfstring{key\_size()}{key\_size()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily size\+\_\+t filevault\+::algorithms\+::classical\+::\+Vigenere\+::key\+\_\+size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get recommended key size in bytes. 
+
+
+
+Implements \mbox{\hyperlink{classfilevault_1_1core_1_1ICryptoAlgorithm_af9ccb47457495eb99988fef0b5b2bbe8}{filevault\+::core\+::\+ICrypto\+Algorithm}}.
+
+\Hypertarget{classfilevault_1_1algorithms_1_1classical_1_1Vigenere_ab02b3ad23ae80b57aa67bb79a8dd6dc2}\label{classfilevault_1_1algorithms_1_1classical_1_1Vigenere_ab02b3ad23ae80b57aa67bb79a8dd6dc2} 
+\index{filevault::algorithms::classical::Vigenere@{filevault::algorithms::classical::Vigenere}!name@{name}}
+\index{name@{name}!filevault::algorithms::classical::Vigenere@{filevault::algorithms::classical::Vigenere}}
+\doxysubsubsection{\texorpdfstring{name()}{name()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily std\+::string filevault\+::algorithms\+::classical\+::\+Vigenere\+::name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get algorithm name. 
+
+
+
+Implements \mbox{\hyperlink{classfilevault_1_1core_1_1ICryptoAlgorithm_a8acdc23e4f2ea77bb4a5b9820b27fa66}{filevault\+::core\+::\+ICrypto\+Algorithm}}.
+
+\Hypertarget{classfilevault_1_1algorithms_1_1classical_1_1Vigenere_ab02b3ad23ae80b57aa67bb79a8dd6dc2}\label{classfilevault_1_1algorithms_1_1classical_1_1Vigenere_ab02b3ad23ae80b57aa67bb79a8dd6dc2} 
+\index{filevault::algorithms::classical::Vigenere@{filevault::algorithms::classical::Vigenere}!name@{name}}
+\index{name@{name}!filevault::algorithms::classical::Vigenere@{filevault::algorithms::classical::Vigenere}}
+\doxysubsubsection{\texorpdfstring{name()}{name()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily std\+::string filevault\+::algorithms\+::classical\+::\+Vigenere\+::name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get algorithm name. 
+
+
+
+Implements \mbox{\hyperlink{classfilevault_1_1core_1_1ICryptoAlgorithm_a8acdc23e4f2ea77bb4a5b9820b27fa66}{filevault\+::core\+::\+ICrypto\+Algorithm}}.
+
+\Hypertarget{classfilevault_1_1algorithms_1_1classical_1_1Vigenere_ac3fd1cdebc63d2c66e97e58f35bcbf74}\label{classfilevault_1_1algorithms_1_1classical_1_1Vigenere_ac3fd1cdebc63d2c66e97e58f35bcbf74} 
+\index{filevault::algorithms::classical::Vigenere@{filevault::algorithms::classical::Vigenere}!type@{type}}
+\index{type@{type}!filevault::algorithms::classical::Vigenere@{filevault::algorithms::classical::Vigenere}}
+\doxysubsubsection{\texorpdfstring{type()}{type()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacefilevault_1_1core_ab1ba257a0205c63e9e1e3623170940a2}{core\+::\+Algorithm\+Type}} filevault\+::algorithms\+::classical\+::\+Vigenere\+::type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get algorithm type. 
+
+
+
+Implements \mbox{\hyperlink{classfilevault_1_1core_1_1ICryptoAlgorithm_a11b7820f7b0bbb5fd6668fac3b78a7e1}{filevault\+::core\+::\+ICrypto\+Algorithm}}.
+
+\Hypertarget{classfilevault_1_1algorithms_1_1classical_1_1Vigenere_ac3fd1cdebc63d2c66e97e58f35bcbf74}\label{classfilevault_1_1algorithms_1_1classical_1_1Vigenere_ac3fd1cdebc63d2c66e97e58f35bcbf74} 
+\index{filevault::algorithms::classical::Vigenere@{filevault::algorithms::classical::Vigenere}!type@{type}}
+\index{type@{type}!filevault::algorithms::classical::Vigenere@{filevault::algorithms::classical::Vigenere}}
+\doxysubsubsection{\texorpdfstring{type()}{type()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacefilevault_1_1core_ab1ba257a0205c63e9e1e3623170940a2}{core\+::\+Algorithm\+Type}} filevault\+::algorithms\+::classical\+::\+Vigenere\+::type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get algorithm type. 
+
+
+
+Implements \mbox{\hyperlink{classfilevault_1_1core_1_1ICryptoAlgorithm_a11b7820f7b0bbb5fd6668fac3b78a7e1}{filevault\+::core\+::\+ICrypto\+Algorithm}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classfilevault_1_1algorithms_1_1classical_1_1Vigenere_a9f12fa11bfe7740150e007924a9335be}\label{classfilevault_1_1algorithms_1_1classical_1_1Vigenere_a9f12fa11bfe7740150e007924a9335be} 
+\index{filevault::algorithms::classical::Vigenere@{filevault::algorithms::classical::Vigenere}!keyword\_@{keyword\_}}
+\index{keyword\_@{keyword\_}!filevault::algorithms::classical::Vigenere@{filevault::algorithms::classical::Vigenere}}
+\doxysubsubsection{\texorpdfstring{keyword\_}{keyword\_}}
+{\footnotesize\ttfamily std\+::string filevault\+::algorithms\+::classical\+::\+Vigenere\+::keyword\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/filevault/algorithms/classical/\mbox{\hyperlink{classical__ciphers_8hpp}{classical\+\_\+ciphers.\+hpp}}\item 
+include/filevault/algorithms/classical/\mbox{\hyperlink{vigenere_8hpp}{vigenere.\+hpp}}\item 
+src/algorithms/classical/\mbox{\hyperlink{classical__ciphers_8cpp}{classical\+\_\+ciphers.\+cpp}}\item 
+src/algorithms/classical/\mbox{\hyperlink{vigenere_8cpp}{vigenere.\+cpp}}\end{DoxyCompactItemize}

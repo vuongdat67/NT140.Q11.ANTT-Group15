@@ -1,0 +1,71 @@
+\doxysection{filevault\+::algorithms\+::symmetric Namespace Reference}
+\hypertarget{namespacefilevault_1_1algorithms_1_1symmetric}{}\label{namespacefilevault_1_1algorithms_1_1symmetric}\index{filevault::algorithms::symmetric@{filevault::algorithms::symmetric}}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1AES__CBC}{AES\+\_\+\+CBC}}
+\begin{DoxyCompactList}\small\item\em AES-\/\+CBC encryption (legacy mode, not authenticated) \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1AES__CFB}{AES\+\_\+\+CFB}}
+\begin{DoxyCompactList}\small\item\em AES-\/\+CFB encryption algorithm. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1AES__CTR}{AES\+\_\+\+CTR}}
+\begin{DoxyCompactList}\small\item\em AES-\/\+CTR encryption (stream cipher mode, not authenticated) \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1AES__ECB}{AES\+\_\+\+ECB}}
+\begin{DoxyCompactList}\small\item\em AES-\/\+ECB encryption algorithm. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1AES__GCM}{AES\+\_\+\+GCM}}
+\begin{DoxyCompactList}\small\item\em AES-\/\+GCM AEAD encryption. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1AES__OFB}{AES\+\_\+\+OFB}}
+\begin{DoxyCompactList}\small\item\em AES-\/\+OFB encryption algorithm. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1AES__XTS}{AES\+\_\+\+XTS}}
+\begin{DoxyCompactList}\small\item\em AES-\/\+XTS encryption algorithm. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1ARIA__GCM}{ARIA\+\_\+\+GCM}}
+\begin{DoxyCompactList}\small\item\em ARIA-\/\+GCM AEAD encryption. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1Camellia__GCM}{Camellia\+\_\+\+GCM}}
+\begin{DoxyCompactList}\small\item\em Camellia-\/\+GCM AEAD encryption. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1ChaCha20Poly1305}{Cha\+Cha20\+Poly1305}}
+\begin{DoxyCompactList}\small\item\em Cha\+Cha20-\/\+Poly1305 AEAD encryption. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1Serpent__GCM}{Serpent\+\_\+\+GCM}}
+\begin{DoxyCompactList}\small\item\em Serpent-\/256-\/\+GCM implementation. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1SM4__GCM}{SM4\+\_\+\+GCM}}
+\begin{DoxyCompactList}\small\item\em SM4-\/\+GCM AEAD encryption. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1TripleDES}{Triple\+DES}}
+\begin{DoxyCompactList}\small\item\em Triple-\/\+DES (3DES/\+TDEA) encryption. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1Twofish__GCM}{Twofish\+\_\+\+GCM}}
+\begin{DoxyCompactList}\small\item\em Twofish-\/256-\/\+GCM implementation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::vector$<$ uint8\+\_\+t $>$ \mbox{\hyperlink{namespacefilevault_1_1algorithms_1_1symmetric_ae00ebfcc5f938459f52a94e2f5342405}{add\+\_\+pkcs7\+\_\+padding}} (std\+::span$<$ const uint8\+\_\+t $>$ data, size\+\_\+t block\+\_\+size)
+\item 
+static std\+::vector$<$ uint8\+\_\+t $>$ \mbox{\hyperlink{namespacefilevault_1_1algorithms_1_1symmetric_a00260240009e4cc8f60ae461fe19aba9}{remove\+\_\+pkcs7\+\_\+padding}} (std\+::span$<$ const uint8\+\_\+t $>$ data)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{namespacefilevault_1_1algorithms_1_1symmetric_ae00ebfcc5f938459f52a94e2f5342405}\label{namespacefilevault_1_1algorithms_1_1symmetric_ae00ebfcc5f938459f52a94e2f5342405} 
+\index{filevault::algorithms::symmetric@{filevault::algorithms::symmetric}!add\_pkcs7\_padding@{add\_pkcs7\_padding}}
+\index{add\_pkcs7\_padding@{add\_pkcs7\_padding}!filevault::algorithms::symmetric@{filevault::algorithms::symmetric}}
+\doxysubsubsection{\texorpdfstring{add\_pkcs7\_padding()}{add\_pkcs7\_padding()}}
+{\footnotesize\ttfamily static std\+::vector$<$ uint8\+\_\+t $>$ filevault\+::algorithms\+::symmetric\+::add\+\_\+pkcs7\+\_\+padding (\begin{DoxyParamCaption}\item[{std\+::span$<$ const uint8\+\_\+t $>$}]{data,  }\item[{size\+\_\+t}]{block\+\_\+size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacefilevault_1_1algorithms_1_1symmetric_ae00ebfcc5f938459f52a94e2f5342405_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{namespacefilevault_1_1algorithms_1_1symmetric_a00260240009e4cc8f60ae461fe19aba9}\label{namespacefilevault_1_1algorithms_1_1symmetric_a00260240009e4cc8f60ae461fe19aba9} 
+\index{filevault::algorithms::symmetric@{filevault::algorithms::symmetric}!remove\_pkcs7\_padding@{remove\_pkcs7\_padding}}
+\index{remove\_pkcs7\_padding@{remove\_pkcs7\_padding}!filevault::algorithms::symmetric@{filevault::algorithms::symmetric}}
+\doxysubsubsection{\texorpdfstring{remove\_pkcs7\_padding()}{remove\_pkcs7\_padding()}}
+{\footnotesize\ttfamily static std\+::vector$<$ uint8\+\_\+t $>$ filevault\+::algorithms\+::symmetric\+::remove\+\_\+pkcs7\+\_\+padding (\begin{DoxyParamCaption}\item[{std\+::span$<$ const uint8\+\_\+t $>$}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacefilevault_1_1algorithms_1_1symmetric_a00260240009e4cc8f60ae461fe19aba9_icgraph}
+\end{center}
+\end{figure}

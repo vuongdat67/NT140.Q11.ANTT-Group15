@@ -1,0 +1,3475 @@
+\begin{theindex}
+
+  \item {\texorpdfstring{$\sim$}{\string~}AES\_CBC}
+    \subitem {filevault::algorithms::symmetric::AES\_CBC}, 
+		\hyperpage{36}
+  \item {\texorpdfstring{$\sim$}{\string~}AES\_CFB}
+    \subitem {filevault::algorithms::symmetric::AES\_CFB}, 
+		\hyperpage{42}
+  \item {\texorpdfstring{$\sim$}{\string~}AES\_CTR}
+    \subitem {filevault::algorithms::symmetric::AES\_CTR}, 
+		\hyperpage{47}
+  \item {\texorpdfstring{$\sim$}{\string~}AES\_ECB}
+    \subitem {filevault::algorithms::symmetric::AES\_ECB}, 
+		\hyperpage{52}
+  \item {\texorpdfstring{$\sim$}{\string~}AES\_GCM}
+    \subitem {filevault::algorithms::symmetric::AES\_GCM}, 
+		\hyperpage{57}
+  \item {\texorpdfstring{$\sim$}{\string~}AES\_OFB}
+    \subitem {filevault::algorithms::symmetric::AES\_OFB}, 
+		\hyperpage{62}
+  \item {\texorpdfstring{$\sim$}{\string~}AES\_XTS}
+    \subitem {filevault::algorithms::symmetric::AES\_XTS}, 
+		\hyperpage{67}
+  \item {\texorpdfstring{$\sim$}{\string~}ARIA\_GCM}
+    \subitem {filevault::algorithms::symmetric::ARIA\_GCM}, 
+		\hyperpage{89}
+  \item {\texorpdfstring{$\sim$}{\string~}Application}
+    \subitem {filevault::cli::Application}, \hyperpage{72}
+  \item {\texorpdfstring{$\sim$}{\string~}Camellia\_GCM}
+    \subitem {filevault::algorithms::symmetric::Camellia\_GCM}, 
+		\hyperpage{116}
+  \item {\texorpdfstring{$\sim$}{\string~}ChaCha20Poly1305}
+    \subitem {filevault::algorithms::symmetric::ChaCha20Poly1305}, 
+		\hyperpage{121}
+  \item {\texorpdfstring{$\sim$}{\string~}CompressCommand}
+    \subitem {filevault::cli::CompressCommand}, \hyperpage{127}
+  \item {\texorpdfstring{$\sim$}{\string~}CryptoEngine}
+    \subitem {filevault::core::CryptoEngine}, \hyperpage{154}
+  \item {\texorpdfstring{$\sim$}{\string~}ECCHybrid}
+    \subitem {filevault::algorithms::asymmetric::ECCHybrid}, 
+		\hyperpage{179}
+  \item {\texorpdfstring{$\sim$}{\string~}ECDH}
+    \subitem {filevault::algorithms::asymmetric::ECDH}, \hyperpage{183}
+  \item {\texorpdfstring{$\sim$}{\string~}ECDSA}
+    \subitem {filevault::algorithms::asymmetric::ECDSA}, 
+		\hyperpage{187}
+  \item {\texorpdfstring{$\sim$}{\string~}ICommand}
+    \subitem {filevault::cli::ICommand}, \hyperpage{238}
+  \item {\texorpdfstring{$\sim$}{\string~}ICompressor}
+    \subitem {filevault::compression::ICompressor}, \hyperpage{239}
+  \item {\texorpdfstring{$\sim$}{\string~}ICryptoAlgorithm}
+    \subitem {filevault::core::ICryptoAlgorithm}, \hyperpage{242}
+  \item {\texorpdfstring{$\sim$}{\string~}Kyber}
+    \subitem {filevault::algorithms::pqc::Kyber}, \hyperpage{258}
+  \item {\texorpdfstring{$\sim$}{\string~}KyberHybrid}
+    \subitem {filevault::algorithms::pqc::KyberHybrid}, \hyperpage{263}
+  \item {\texorpdfstring{$\sim$}{\string~}ProgressBar}
+    \subitem {filevault::utils::ProgressBar}, \hyperpage{295}
+  \item {\texorpdfstring{$\sim$}{\string~}RSA}
+    \subitem {filevault::algorithms::asymmetric::RSA}, \hyperpage{301}
+  \item {\texorpdfstring{$\sim$}{\string~}SM4\_GCM}
+    \subitem {filevault::algorithms::symmetric::SM4\_GCM}, 
+		\hyperpage{317}
+  \item {\texorpdfstring{$\sim$}{\string~}TripleDES}
+    \subitem {filevault::algorithms::symmetric::TripleDES}, 
+		\hyperpage{344}
+
+  \indexspace
+
+  \item {add\_pkcs7\_padding}
+    \subitem {filevault::algorithms::symmetric}, \hyperpage{22}
+  \item {add\_row}
+    \subitem {filevault::utils::TableFormatter}, \hyperpage{340}
+  \item {ADVANCED}
+    \subitem {filevault::core}, \hyperpage{31}
+    \subitem {filevault::core::presets}, \hyperpage{32}
+  \item {AES\_128\_CBC}
+    \subitem {filevault::core}, \hyperpage{27, 28}
+  \item {AES\_128\_CFB}
+    \subitem {filevault::core}, \hyperpage{27, 28}
+  \item {AES\_128\_CTR}
+    \subitem {filevault::core}, \hyperpage{27, 28}
+  \item {AES\_128\_ECB}
+    \subitem {filevault::core}, \hyperpage{28}
+  \item {AES\_128\_GCM}
+    \subitem {filevault::core}, \hyperpage{27, 28}
+  \item {AES\_128\_OFB}
+    \subitem {filevault::core}, \hyperpage{27, 28}
+  \item {AES\_128\_XTS}
+    \subitem {filevault::core}, \hyperpage{28, 29}
+  \item {AES\_192\_CBC}
+    \subitem {filevault::core}, \hyperpage{27, 28}
+  \item {AES\_192\_CFB}
+    \subitem {filevault::core}, \hyperpage{27, 28}
+  \item {AES\_192\_CTR}
+    \subitem {filevault::core}, \hyperpage{27, 28}
+  \item {AES\_192\_ECB}
+    \subitem {filevault::core}, \hyperpage{28, 29}
+  \item {AES\_192\_GCM}
+    \subitem {filevault::core}, \hyperpage{27, 28}
+  \item {AES\_192\_OFB}
+    \subitem {filevault::core}, \hyperpage{28}
+  \item {AES\_256\_CBC}
+    \subitem {filevault::core}, \hyperpage{27, 28}
+  \item {AES\_256\_CFB}
+    \subitem {filevault::core}, \hyperpage{27, 28}
+  \item {AES\_256\_CTR}
+    \subitem {filevault::core}, \hyperpage{27, 28}
+  \item {AES\_256\_ECB}
+    \subitem {filevault::core}, \hyperpage{28, 29}
+  \item {AES\_256\_GCM}
+    \subitem {filevault::core}, \hyperpage{27, 28}
+  \item {AES\_256\_OFB}
+    \subitem {filevault::core}, \hyperpage{28}
+  \item {AES\_256\_XTS}
+    \subitem {filevault::core}, \hyperpage{28, 29}
+  \item {AES\_CBC}
+    \subitem {filevault::algorithms::symmetric::AES\_CBC}, 
+		\hyperpage{36}
+  \item {AES\_CFB}
+    \subitem {filevault::algorithms::symmetric::AES\_CFB}, 
+		\hyperpage{42}
+  \item {AES\_CTR}
+    \subitem {filevault::algorithms::symmetric::AES\_CTR}, 
+		\hyperpage{47}
+  \item {AES\_ECB}
+    \subitem {filevault::algorithms::symmetric::AES\_ECB}, 
+		\hyperpage{52}
+  \item {AES\_GCM}
+    \subitem {filevault::algorithms::symmetric::AES\_GCM}, 
+		\hyperpage{57}
+  \item {AES\_OFB}
+    \subitem {filevault::algorithms::symmetric::AES\_OFB}, 
+		\hyperpage{62}
+  \item {AES\_XTS}
+    \subitem {filevault::algorithms::symmetric::AES\_XTS}, 
+		\hyperpage{67}
+  \item {algorithm}
+    \subitem {filevault::algorithms::pqc::PQKeyPair}, \hyperpage{294}
+    \subitem {filevault::cli::AsymmetricBenchmarkResult}, 
+		\hyperpage{93}
+    \subitem {filevault::cli::BenchmarkResult}, \hyperpage{105}
+    \subitem {filevault::cli::InfoCommand::FileInfo}, \hyperpage{218}
+    \subitem {filevault::cli::PQCBenchmarkResult}, \hyperpage{293}
+    \subitem {filevault::cli::SignatureBenchmarkResult}, 
+		\hyperpage{312}
+    \subitem {filevault::core::EncryptionConfig}, \hyperpage{197}
+    \subitem {filevault::core::FileHeader}, \hyperpage{206}
+    \subitem {filevault::core::HashConfig}, \hyperpage{228}
+    \subitem {filevault::core::ModePreset}, \hyperpage{277}
+    \subitem {filevault::core::StreamingConfig}, \hyperpage{327}
+    \subitem {filevault::format::FileHeader}, \hyperpage{209}
+  \item {algorithm\_}
+    \subitem {filevault::cli::BenchmarkCommand}, \hyperpage{104}
+    \subitem {filevault::cli::commands::ArchiveCommand}, \hyperpage{81}
+    \subitem {filevault::cli::commands::SignCommand}, \hyperpage{315}
+    \subitem {filevault::cli::commands::VerifyCommand}, \hyperpage{357}
+    \subitem {filevault::cli::CompressCommand}, \hyperpage{131}
+    \subitem {filevault::cli::DecompressCommand}, \hyperpage{165}
+    \subitem {filevault::cli::EncryptCommand}, \hyperpage{194}
+    \subitem {filevault::cli::HashCommand}, \hyperpage{227}
+    \subitem {filevault::cli::KeygenCommand}, \hyperpage{252}
+    \subitem {filevault::format::FileHeader}, \hyperpage{216}
+  \item {algorithm\_list\_table}
+    \subitem {filevault::utils::TableFormatter}, \hyperpage{340}
+  \item {algorithm\_name}
+    \subitem {filevault::core::CryptoEngine}, \hyperpage{154}
+  \item {algorithm\_used}
+    \subitem {filevault::core::CryptoResult}, \hyperpage{159}
+  \item {AlgorithmID}
+    \subitem {filevault::core}, \hyperpage{27}
+  \item {algorithms\_}
+    \subitem {filevault::core::CryptoEngine}, \hyperpage{159}
+  \item {AlgorithmType}
+    \subitem {filevault::core}, \hyperpage{28}
+  \item {all\_}
+    \subitem {filevault::cli::BenchmarkCommand}, \hyperpage{104}
+  \item {analyze\_strength}
+    \subitem {filevault::utils::Password}, \hyperpage{279}
+  \item {app\_}
+    \subitem {filevault::cli::Application}, \hyperpage{74}
+  \item {Application}
+    \subitem {filevault::cli::Application}, \hyperpage{72}
+  \item {apply\_security\_level}
+    \subitem {filevault::core::EncryptionConfig}, \hyperpage{196}
+  \item {apply\_substitution}
+    \subitem {filevault::algorithms::classical::SubstitutionCipher}, 
+		\hyperpage{334}
+  \item {apply\_to}
+    \subitem {filevault::core::ModePreset}, \hyperpage{276}
+  \item {apply\_user\_mode}
+    \subitem {filevault::core::EncryptionConfig}, \hyperpage{196}
+  \item {ArchiveCommand}
+    \subitem {filevault::cli::commands::ArchiveCommand}, \hyperpage{76}
+  \item {ARGON2I}
+    \subitem {filevault::core}, \hyperpage{30}
+  \item {ARGON2ID}
+    \subitem {filevault::core}, \hyperpage{30}
+  \item {ARIA\_128\_GCM}
+    \subitem {filevault::core}, \hyperpage{27, 28}
+  \item {ARIA\_192\_GCM}
+    \subitem {filevault::core}, \hyperpage{27, 28}
+  \item {ARIA\_256\_GCM}
+    \subitem {filevault::core}, \hyperpage{27, 28}
+  \item {ARIA\_GCM}
+    \subitem {filevault::algorithms::symmetric::ARIA\_GCM}, 
+		\hyperpage{89}
+  \item {associated\_data}
+    \subitem {filevault::core::EncryptionConfig}, \hyperpage{197}
+  \item {asymmetric\_only\_}
+    \subitem {filevault::cli::BenchmarkCommand}, \hyperpage{104}
+  \item {auto\_detect\_}
+    \subitem {filevault::cli::CompressCommand}, \hyperpage{131}
+    \subitem {filevault::cli::DecompressCommand}, \hyperpage{165}
+
+  \indexspace
+
+  \item {bar\_}
+    \subitem {filevault::utils::BlockProgressBar}, \hyperpage{107}
+    \subitem {filevault::utils::ProgressBar}, \hyperpage{296}
+  \item {BASIC}
+    \subitem {filevault::core::presets}, \hyperpage{32}
+  \item {benchmark\_}
+    \subitem {filevault::cli::CompressCommand}, \hyperpage{131}
+    \subitem {filevault::cli::DecompressCommand}, \hyperpage{165}
+    \subitem {filevault::cli::HashCommand}, \hyperpage{227}
+  \item {benchmark\_algorithm}
+    \subitem {filevault::cli::BenchmarkCommand}, \hyperpage{95}
+  \item {benchmark\_asymmetric}
+    \subitem {filevault::cli::BenchmarkCommand}, \hyperpage{95}
+  \item {benchmark\_asymmetric\_algorithm}
+    \subitem {filevault::cli::BenchmarkCommand}, \hyperpage{96}
+  \item {benchmark\_compression}
+    \subitem {filevault::cli::BenchmarkCommand}, \hyperpage{96}
+  \item {benchmark\_hash}
+    \subitem {filevault::cli::BenchmarkCommand}, \hyperpage{97}
+  \item {benchmark\_hybrid\_algorithm}
+    \subitem {filevault::cli::BenchmarkCommand}, \hyperpage{97}
+  \item {benchmark\_kdf}
+    \subitem {filevault::cli::BenchmarkCommand}, \hyperpage{98}
+  \item {benchmark\_pqc}
+    \subitem {filevault::cli::BenchmarkCommand}, \hyperpage{98}
+  \item {benchmark\_pqc\_algorithm}
+    \subitem {filevault::cli::BenchmarkCommand}, \hyperpage{99}
+  \item {benchmark\_signature\_algorithm}
+    \subitem {filevault::cli::BenchmarkCommand}, \hyperpage{100}
+  \item {benchmark\_symmetric}
+    \subitem {filevault::cli::BenchmarkCommand}, \hyperpage{100}
+  \item {benchmark\_table}
+    \subitem {filevault::utils::TableFormatter}, \hyperpage{340}
+  \item {BenchmarkCommand}
+    \subitem {filevault::cli::BenchmarkCommand}, \hyperpage{95}
+  \item {bits}
+    \subitem {filevault::algorithms::asymmetric::RSAKeyPair}, 
+		\hyperpage{305}
+  \item {bits\_per\_channel\_}
+    \subitem {filevault::cli::commands::StegoCommand}, \hyperpage{326}
+  \item {BLAKE2B\_256}
+    \subitem {filevault::core}, \hyperpage{30}
+  \item {BLAKE2B\_384}
+    \subitem {filevault::core}, \hyperpage{30}
+  \item {BLAKE2B\_512}
+    \subitem {filevault::core}, \hyperpage{30}
+  \item {BLAKE2S\_256}
+    \subitem {filevault::core}, \hyperpage{30}
+  \item {block\_size}
+    \subitem {filevault::algorithms::symmetric::AES\_CBC}, 
+		\hyperpage{37}
+    \subitem {filevault::algorithms::symmetric::AES\_CFB}, 
+		\hyperpage{42}
+    \subitem {filevault::algorithms::symmetric::AES\_ECB}, 
+		\hyperpage{52}
+    \subitem {filevault::algorithms::symmetric::AES\_OFB}, 
+		\hyperpage{63}
+    \subitem {filevault::algorithms::symmetric::AES\_XTS}, 
+		\hyperpage{67}
+    \subitem {filevault::algorithms::symmetric::TripleDES}, 
+		\hyperpage{344}
+  \item {BlockProgressBar}
+    \subitem {filevault::utils::BlockProgressBar}, \hyperpage{106}
+  \item {botan\_curve\_name\_}
+    \subitem {filevault::algorithms::asymmetric::ECCHybrid}, 
+		\hyperpage{182}
+    \subitem {filevault::algorithms::asymmetric::ECDH}, \hyperpage{185}
+    \subitem {filevault::algorithms::asymmetric::ECDSA}, 
+		\hyperpage{188}
+  \item {botan\_name\_}
+    \subitem {filevault::algorithms::pqc::Dilithium}, \hyperpage{174}
+    \subitem {filevault::algorithms::pqc::Kyber}, \hyperpage{261}
+    \subitem {filevault::algorithms::symmetric::AES\_CBC}, 
+		\hyperpage{40}
+    \subitem {filevault::algorithms::symmetric::AES\_CFB}, 
+		\hyperpage{45}
+    \subitem {filevault::algorithms::symmetric::AES\_CTR}, 
+		\hyperpage{50}
+    \subitem {filevault::algorithms::symmetric::AES\_ECB}, 
+		\hyperpage{55}
+    \subitem {filevault::algorithms::symmetric::AES\_GCM}, 
+		\hyperpage{60}
+    \subitem {filevault::algorithms::symmetric::AES\_OFB}, 
+		\hyperpage{65}
+    \subitem {filevault::algorithms::symmetric::AES\_XTS}, 
+		\hyperpage{71}
+    \subitem {filevault::algorithms::symmetric::ARIA\_GCM}, 
+		\hyperpage{92}
+    \subitem {filevault::algorithms::symmetric::Camellia\_GCM}, 
+		\hyperpage{120}
+    \subitem {filevault::algorithms::symmetric::Twofish\_GCM}, 
+		\hyperpage{354}
+  \item {brute\_force}
+    \subitem {filevault::algorithms::classical::Caesar}, 
+		\hyperpage{111}
+  \item {build\_matrix}
+    \subitem {filevault::algorithms::classical::Playfair}, 
+		\hyperpage{288, 289}
+  \item {bytes\_processed}
+    \subitem {filevault::core::ChunkInfo}, \hyperpage{125}
+    \subitem {filevault::core::StreamingResult}, \hyperpage{332}
+  \item {BZIP2}
+    \subitem {filevault::core}, \hyperpage{29}
+
+  \indexspace
+
+  \item {CAESAR}
+    \subitem {filevault::core}, \hyperpage{27}, \hyperpage{29}
+  \item {Caesar}
+    \subitem {filevault::algorithms::classical::Caesar}, 
+		\hyperpage{110}
+  \item {calculate\_capacity}
+    \subitem {filevault::steganography::LSBSteganography}, 
+		\hyperpage{271}
+  \item {calculate\_entropy}
+    \subitem {filevault::utils::Password}, \hyperpage{280}
+  \item {calculate\_file\_hash}
+    \subitem {filevault::cli::HashCommand}, \hyperpage{223}
+  \item {calculate\_file\_hmac}
+    \subitem {filevault::cli::HashCommand}, \hyperpage{223}
+  \item {CAMELLIA\_128\_GCM}
+    \subitem {filevault::core}, \hyperpage{27, 28}
+  \item {CAMELLIA\_192\_GCM}
+    \subitem {filevault::core}, \hyperpage{27, 28}
+  \item {CAMELLIA\_256\_GCM}
+    \subitem {filevault::core}, \hyperpage{27, 28}
+  \item {Camellia\_GCM}
+    \subitem {filevault::algorithms::symmetric::Camellia\_GCM}, 
+		\hyperpage{116}
+  \item {CHACHA20\_POLY1305}
+    \subitem {filevault::core}, \hyperpage{27, 28}
+  \item {ChaCha20Poly1305}
+    \subitem {filevault::algorithms::symmetric::ChaCha20Poly1305}, 
+		\hyperpage{121}
+  \item {check\_pair\_}
+    \subitem {filevault::cli::commands::KeyInfoCommand}, 
+		\hyperpage{255}
+  \item {chunk\_index}
+    \subitem {filevault::core::ChunkInfo}, \hyperpage{125}
+  \item {chunk\_size}
+    \subitem {filevault::core::ChunkInfo}, \hyperpage{125}
+    \subitem {filevault::core::StreamingConfig}, \hyperpage{327}
+  \item {chunks\_processed}
+    \subitem {filevault::core::StreamingResult}, \hyperpage{332}
+  \item {ciphertext\_size}
+    \subitem {filevault::algorithms::pqc::Kyber}, \hyperpage{258}
+  \item {commands\_}
+    \subitem {filevault::cli::Application}, \hyperpage{74}
+  \item {comment}
+    \subitem {filevault::core::EncryptionConfig}, \hyperpage{197}
+  \item {common\_passwords\_}
+    \subitem {filevault::utils::Password}, \hyperpage{283}
+  \item {compress}
+    \subitem {filevault::compression::Bzip2Compressor}, \hyperpage{108}
+    \subitem {filevault::compression::ICompressor}, \hyperpage{239}
+    \subitem {filevault::compression::LzmaCompressor}, \hyperpage{275}
+    \subitem {filevault::compression::ZlibCompressor}, \hyperpage{364}
+  \item {CompressCommand}
+    \subitem {filevault::cli::CompressCommand}, \hyperpage{127}
+  \item {compressed}
+    \subitem {filevault::cli::InfoCommand::FileInfo}, \hyperpage{218}
+    \subitem {filevault::core::FileHeader}, \hyperpage{206}
+  \item {compressed\_size}
+    \subitem {filevault::compression::CompressionResult}, 
+		\hyperpage{132}
+  \item {compression}
+    \subitem {filevault::cli::InfoCommand::FileInfo}, \hyperpage{218}
+    \subitem {filevault::core::EncryptionConfig}, \hyperpage{197}
+    \subitem {filevault::core::FileHeader}, \hyperpage{206}
+    \subitem {filevault::core::ModePreset}, \hyperpage{277}
+    \subitem {filevault::core::StreamingConfig}, \hyperpage{327}
+  \item {compression\_}
+    \subitem {filevault::cli::commands::ArchiveCommand}, \hyperpage{81}
+  \item {compression\_level}
+    \subitem {filevault::core::EncryptionConfig}, \hyperpage{197}
+    \subitem {filevault::core::ModePreset}, \hyperpage{278}
+    \subitem {filevault::core::StreamingConfig}, \hyperpage{327}
+  \item {compression\_level\_}
+    \subitem {filevault::cli::EncryptCommand}, \hyperpage{194}
+    \subitem {filevault::utils::Config}, \hyperpage{141}
+  \item {compression\_only\_}
+    \subitem {filevault::cli::BenchmarkCommand}, \hyperpage{104}
+  \item {compression\_ratio}
+    \subitem {filevault::compression::CompressionResult}, 
+		\hyperpage{132}
+  \item {compression\_type\_}
+    \subitem {filevault::cli::EncryptCommand}, \hyperpage{194}
+  \item {CompressionID}
+    \subitem {filevault::core}, \hyperpage{29}
+  \item {CompressionType}
+    \subitem {filevault::core}, \hyperpage{29}
+  \item {ConfigCommand}
+    \subitem {filevault::cli::ConfigCommand}, \hyperpage{143}
+  \item {cover\_image\_}
+    \subitem {filevault::cli::commands::StegoCommand}, \hyperpage{326}
+  \item {crack\_time\_offline}
+    \subitem {filevault::core::PasswordAnalysis}, \hyperpage{284}
+  \item {crack\_time\_online}
+    \subitem {filevault::core::PasswordAnalysis}, \hyperpage{284}
+  \item {create}
+    \subitem {filevault::compression::CompressionService}, 
+		\hyperpage{133}
+  \item {create\_archive}
+    \subitem {filevault::archive::ArchiveFormat}, \hyperpage{83}
+  \item {create\_header}
+    \subitem {filevault::core::FileFormatHandler}, \hyperpage{200}
+  \item {create\_reverse\_map}
+    \subitem {filevault::algorithms::classical::SubstitutionCipher}, 
+		\hyperpage{334}
+  \item {CryptoEngine}
+    \subitem {filevault::core::CryptoEngine}, \hyperpage{154}
+  \item {current\_progress\_}
+    \subitem {filevault::utils::ProgressBar}, \hyperpage{296}
+  \item {curve}
+    \subitem {filevault::algorithms::asymmetric::ECCKeyPair}, 
+		\hyperpage{182}
+  \item {curve\_}
+    \subitem {filevault::algorithms::asymmetric::ECCHybrid}, 
+		\hyperpage{182}
+    \subitem {filevault::algorithms::asymmetric::ECDH}, \hyperpage{185}
+    \subitem {filevault::algorithms::asymmetric::ECDSA}, 
+		\hyperpage{188}
+  \item {curve\_name}
+    \subitem {filevault::algorithms::asymmetric::ECCKeyPair}, 
+		\hyperpage{182}
+    \subitem {filevault::algorithms::asymmetric::ECDH}, \hyperpage{184}
+    \subitem {filevault::algorithms::asymmetric::ECDSA}, 
+		\hyperpage{187}
+
+  \indexspace
+
+  \item {data}
+    \subitem {filevault::compression::CompressionResult}, 
+		\hyperpage{132}
+    \subitem {filevault::core::CryptoResult}, \hyperpage{159}
+  \item {data\_size}
+    \subitem {filevault::cli::InfoCommand::FileInfo}, \hyperpage{218}
+  \item {data\_size\_}
+    \subitem {filevault::cli::BenchmarkCommand}, \hyperpage{104}
+  \item {debug}
+    \subitem {filevault::utils::Console}, \hyperpage{147}
+  \item {decaps\_ms}
+    \subitem {filevault::cli::PQCBenchmarkResult}, \hyperpage{293}
+  \item {decompress}
+    \subitem {filevault::compression::Bzip2Compressor}, \hyperpage{108}
+    \subitem {filevault::compression::ICompressor}, \hyperpage{240}
+    \subitem {filevault::compression::LzmaCompressor}, \hyperpage{275}
+    \subitem {filevault::compression::ZlibCompressor}, \hyperpage{364}
+  \item {decompress\_}
+    \subitem {filevault::cli::CompressCommand}, \hyperpage{131}
+  \item {decrypt}
+    \subitem {filevault::algorithms::asymmetric::ECCHybrid}, 
+		\hyperpage{179}
+    \subitem {filevault::algorithms::asymmetric::RSA}, \hyperpage{301}
+    \subitem {filevault::algorithms::classical::Caesar}, 
+		\hyperpage{111}
+    \subitem {filevault::algorithms::classical::HillCipher}, 
+		\hyperpage{230}
+    \subitem {filevault::algorithms::classical::Playfair}, 
+		\hyperpage{289, 290}
+    \subitem {filevault::algorithms::classical::SubstitutionCipher}, 
+		\hyperpage{334}
+    \subitem {filevault::algorithms::classical::Vigenere}, 
+		\hyperpage{360}
+    \subitem {filevault::algorithms::pqc::Kyber}, \hyperpage{258}
+    \subitem {filevault::algorithms::pqc::KyberHybrid}, \hyperpage{263}
+    \subitem {filevault::algorithms::symmetric::AES\_CBC}, 
+		\hyperpage{37}
+    \subitem {filevault::algorithms::symmetric::AES\_CFB}, 
+		\hyperpage{42}
+    \subitem {filevault::algorithms::symmetric::AES\_CTR}, 
+		\hyperpage{47}
+    \subitem {filevault::algorithms::symmetric::AES\_ECB}, 
+		\hyperpage{53}
+    \subitem {filevault::algorithms::symmetric::AES\_GCM}, 
+		\hyperpage{57}
+    \subitem {filevault::algorithms::symmetric::AES\_OFB}, 
+		\hyperpage{63}
+    \subitem {filevault::algorithms::symmetric::AES\_XTS}, 
+		\hyperpage{68}
+    \subitem {filevault::algorithms::symmetric::ARIA\_GCM}, 
+		\hyperpage{89}
+    \subitem {filevault::algorithms::symmetric::Camellia\_GCM}, 
+		\hyperpage{116}
+    \subitem {filevault::algorithms::symmetric::ChaCha20Poly1305}, 
+		\hyperpage{122}
+    \subitem {filevault::algorithms::symmetric::Serpent\_GCM}, 
+		\hyperpage{308}
+    \subitem {filevault::algorithms::symmetric::SM4\_GCM}, 
+		\hyperpage{317}
+    \subitem {filevault::algorithms::symmetric::TripleDES}, 
+		\hyperpage{344}
+    \subitem {filevault::algorithms::symmetric::Twofish\_GCM}, 
+		\hyperpage{350}
+    \subitem {filevault::core::ICryptoAlgorithm}, \hyperpage{242}
+  \item {decrypt\_block}
+    \subitem {filevault::algorithms::classical::HillCipher}, 
+		\hyperpage{231}
+  \item {decrypt\_file}
+    \subitem {filevault::core::StreamingCrypto}, \hyperpage{328}
+  \item {decrypt\_mbps}
+    \subitem {filevault::cli::BenchmarkResult}, \hyperpage{105}
+  \item {decrypt\_ms}
+    \subitem {filevault::cli::AsymmetricBenchmarkResult}, 
+		\hyperpage{93}
+    \subitem {filevault::cli::BenchmarkResult}, \hyperpage{105}
+  \item {DecryptCommand}
+    \subitem {filevault::cli::DecryptCommand}, \hyperpage{167}
+  \item {default\_algorithm\_}
+    \subitem {filevault::utils::Config}, \hyperpage{141}
+  \item {default\_compression\_}
+    \subitem {filevault::utils::Config}, \hyperpage{141}
+  \item {default\_kdf\_}
+    \subitem {filevault::utils::Config}, \hyperpage{141}
+  \item {default\_mode\_}
+    \subitem {filevault::utils::Config}, \hyperpage{141}
+  \item {derive\_chunk\_nonce}
+    \subitem {filevault::core::StreamingCrypto}, \hyperpage{329}
+  \item {derive\_key}
+    \subitem {filevault::core::CryptoEngine}, \hyperpage{154}
+  \item {derive\_shared\_secret}
+    \subitem {filevault::algorithms::asymmetric::ECDH}, \hyperpage{184}
+  \item {description}
+    \subitem {filevault::cli::BenchmarkCommand}, \hyperpage{101}
+    \subitem {filevault::cli::commands::ArchiveCommand}, \hyperpage{76}
+    \subitem {filevault::cli::commands::DumpCommand}, \hyperpage{176}
+    \subitem {filevault::cli::commands::KeyInfoCommand}, 
+		\hyperpage{254}
+    \subitem {filevault::cli::commands::SignCommand}, \hyperpage{314}
+    \subitem {filevault::cli::commands::StegoCommand}, \hyperpage{322}
+    \subitem {filevault::cli::commands::VerifyCommand}, \hyperpage{356}
+    \subitem {filevault::cli::CompressCommand}, \hyperpage{127}
+    \subitem {filevault::cli::ConfigCommand}, \hyperpage{143}
+    \subitem {filevault::cli::DecompressCommand}, \hyperpage{163}
+    \subitem {filevault::cli::DecryptCommand}, \hyperpage{167}
+    \subitem {filevault::cli::EncryptCommand}, \hyperpage{191}
+    \subitem {filevault::cli::HashCommand}, \hyperpage{224}
+    \subitem {filevault::cli::ICommand}, \hyperpage{238}
+    \subitem {filevault::cli::InfoCommand}, \hyperpage{246}
+    \subitem {filevault::cli::KeygenCommand}, \hyperpage{250}
+    \subitem {filevault::cli::ListCommand}, \hyperpage{269}
+    \subitem {filevault::core::ModePreset}, \hyperpage{276}
+  \item {description\_}
+    \subitem {filevault::cli::commands::DumpCommand}, \hyperpage{177}
+    \subitem {filevault::cli::commands::KeyInfoCommand}, 
+		\hyperpage{255}
+    \subitem {filevault::cli::commands::SignCommand}, \hyperpage{315}
+    \subitem {filevault::cli::commands::VerifyCommand}, \hyperpage{357}
+  \item {deserialize}
+    \subitem {filevault::archive::FileEntry}, \hyperpage{198}
+    \subitem {filevault::core::Argon2Params}, \hyperpage{86}
+    \subitem {filevault::core::FileHeader}, \hyperpage{205}
+    \subitem {filevault::core::PBKDF2Params}, \hyperpage{286}
+    \subitem {filevault::core::ScryptParams}, \hyperpage{306}
+    \subitem {filevault::format::FileHeader}, \hyperpage{209}
+  \item {detect\_algorithm}
+    \subitem {filevault::cli::CompressCommand}, \hyperpage{127}
+    \subitem {filevault::cli::DecompressCommand}, \hyperpage{163}
+  \item {determinant}
+    \subitem {filevault::algorithms::classical::HillCipher}, 
+		\hyperpage{232}
+  \item {Dilithium}
+    \subitem {filevault::algorithms::pqc::Dilithium}, \hyperpage{171}
+  \item {Dilithium2}
+    \subitem {filevault::algorithms::pqc::Dilithium}, \hyperpage{171}
+  \item {Dilithium3}
+    \subitem {filevault::algorithms::pqc::Dilithium}, \hyperpage{171}
+  \item {Dilithium5}
+    \subitem {filevault::algorithms::pqc::Dilithium}, \hyperpage{171}
+  \item {DILITHIUM\_2}
+    \subitem {filevault::core}, \hyperpage{29}
+  \item {DILITHIUM\_3}
+    \subitem {filevault::core}, \hyperpage{29}
+  \item {DILITHIUM\_5}
+    \subitem {filevault::core}, \hyperpage{29}
+  \item {disable\_echo}
+    \subitem {filevault::utils::Password}, \hyperpage{280}
+  \item {display\_info}
+    \subitem {filevault::cli::InfoCommand}, \hyperpage{246}
+  \item {display\_strength\_meter}
+    \subitem {filevault::utils::Password}, \hyperpage{280}
+  \item {do\_capacity}
+    \subitem {filevault::cli::commands::StegoCommand}, \hyperpage{322}
+  \item {do\_compress}
+    \subitem {filevault::cli::CompressCommand}, \hyperpage{128}
+  \item {do\_create}
+    \subitem {filevault::cli::commands::ArchiveCommand}, \hyperpage{76}
+  \item {do\_decompress}
+    \subitem {filevault::cli::CompressCommand}, \hyperpage{128}
+  \item {do\_embed}
+    \subitem {filevault::cli::commands::StegoCommand}, \hyperpage{323}
+  \item {do\_extract}
+    \subitem {filevault::cli::commands::ArchiveCommand}, \hyperpage{77}
+    \subitem {filevault::cli::commands::StegoCommand}, \hyperpage{324}
+  \item {DumpCommand}
+    \subitem {filevault::cli::commands::DumpCommand}, \hyperpage{175}
+
+  \indexspace
+
+  \item {ECC\_P256}
+    \subitem {filevault::core}, \hyperpage{28, 29}
+  \item {ECC\_P384}
+    \subitem {filevault::core}, \hyperpage{28, 29}
+  \item {ECC\_P521}
+    \subitem {filevault::core}, \hyperpage{28, 29}
+  \item {ECCHybrid}
+    \subitem {filevault::algorithms::asymmetric::ECCHybrid}, 
+		\hyperpage{179}
+  \item {ECCurve}
+    \subitem {filevault::algorithms::asymmetric}, \hyperpage{20}
+  \item {ECDH}
+    \subitem {filevault::algorithms::asymmetric::ECDH}, \hyperpage{183}
+  \item {ecdh\_}
+    \subitem {filevault::algorithms::asymmetric::ECCHybrid}, 
+		\hyperpage{182}
+  \item {ECDSA}
+    \subitem {filevault::algorithms::asymmetric::ECDSA}, 
+		\hyperpage{186}
+  \item {embed}
+    \subitem {filevault::steganography::LSBSteganography}, 
+		\hyperpage{271}
+  \item {embed\_byte}
+    \subitem {filevault::steganography::LSBSteganography}, 
+		\hyperpage{272}
+  \item {enable\_echo}
+    \subitem {filevault::utils::Password}, \hyperpage{281}
+  \item {encaps\_ms}
+    \subitem {filevault::cli::PQCBenchmarkResult}, \hyperpage{293}
+  \item {encrypt}
+    \subitem {filevault::algorithms::asymmetric::ECCHybrid}, 
+		\hyperpage{180}
+    \subitem {filevault::algorithms::asymmetric::RSA}, \hyperpage{302}
+    \subitem {filevault::algorithms::classical::Caesar}, 
+		\hyperpage{112}
+    \subitem {filevault::algorithms::classical::HillCipher}, 
+		\hyperpage{232}
+    \subitem {filevault::algorithms::classical::Playfair}, 
+		\hyperpage{290, 291}
+    \subitem {filevault::algorithms::classical::SubstitutionCipher}, 
+		\hyperpage{335}
+    \subitem {filevault::algorithms::classical::Vigenere}, 
+		\hyperpage{360, 361}
+    \subitem {filevault::algorithms::pqc::Kyber}, \hyperpage{258}
+    \subitem {filevault::algorithms::pqc::KyberHybrid}, \hyperpage{264}
+    \subitem {filevault::algorithms::symmetric::AES\_CBC}, 
+		\hyperpage{38}
+    \subitem {filevault::algorithms::symmetric::AES\_CFB}, 
+		\hyperpage{43}
+    \subitem {filevault::algorithms::symmetric::AES\_CTR}, 
+		\hyperpage{48}
+    \subitem {filevault::algorithms::symmetric::AES\_ECB}, 
+		\hyperpage{54}
+    \subitem {filevault::algorithms::symmetric::AES\_GCM}, 
+		\hyperpage{58}
+    \subitem {filevault::algorithms::symmetric::AES\_OFB}, 
+		\hyperpage{63}
+    \subitem {filevault::algorithms::symmetric::AES\_XTS}, 
+		\hyperpage{69}
+    \subitem {filevault::algorithms::symmetric::ARIA\_GCM}, 
+		\hyperpage{89}
+    \subitem {filevault::algorithms::symmetric::Camellia\_GCM}, 
+		\hyperpage{117}
+    \subitem {filevault::algorithms::symmetric::ChaCha20Poly1305}, 
+		\hyperpage{122}
+    \subitem {filevault::algorithms::symmetric::Serpent\_GCM}, 
+		\hyperpage{309}
+    \subitem {filevault::algorithms::symmetric::SM4\_GCM}, 
+		\hyperpage{318}
+    \subitem {filevault::algorithms::symmetric::TripleDES}, 
+		\hyperpage{345}
+    \subitem {filevault::algorithms::symmetric::Twofish\_GCM}, 
+		\hyperpage{350}
+    \subitem {filevault::core::ICryptoAlgorithm}, \hyperpage{242}
+  \item {encrypt\_block}
+    \subitem {filevault::algorithms::classical::HillCipher}, 
+		\hyperpage{232}
+  \item {encrypt\_file}
+    \subitem {filevault::core::StreamingCrypto}, \hyperpage{329}
+  \item {encrypt\_mbps}
+    \subitem {filevault::cli::BenchmarkResult}, \hyperpage{105}
+  \item {encrypt\_ms}
+    \subitem {filevault::cli::AsymmetricBenchmarkResult}, 
+		\hyperpage{93}
+    \subitem {filevault::cli::BenchmarkResult}, \hyperpage{105}
+  \item {EncryptCommand}
+    \subitem {filevault::cli::EncryptCommand}, \hyperpage{190}
+  \item {encrypted\_size}
+    \subitem {filevault::format::FileHeader}, \hyperpage{210}
+  \item {encrypted\_size\_}
+    \subitem {filevault::format::FileHeader}, \hyperpage{216}
+  \item {engine\_}
+    \subitem {filevault::cli::Application}, \hyperpage{74}
+    \subitem {filevault::cli::BenchmarkCommand}, \hyperpage{104}
+    \subitem {filevault::cli::commands::ArchiveCommand}, \hyperpage{81}
+    \subitem {filevault::cli::commands::KeyInfoCommand}, 
+		\hyperpage{255}
+    \subitem {filevault::cli::commands::SignCommand}, \hyperpage{315}
+    \subitem {filevault::cli::commands::VerifyCommand}, \hyperpage{357}
+    \subitem {filevault::cli::DecryptCommand}, \hyperpage{170}
+    \subitem {filevault::cli::EncryptCommand}, \hyperpage{195}
+    \subitem {filevault::cli::HashCommand}, \hyperpage{227}
+    \subitem {filevault::cli::InfoCommand}, \hyperpage{248}
+    \subitem {filevault::cli::KeygenCommand}, \hyperpage{252}
+    \subitem {filevault::cli::ListCommand}, \hyperpage{270}
+  \item {error}
+    \subitem {filevault::core::Result$<$ T $>$}, \hyperpage{297}
+    \subitem {filevault::core::Result$<$ void $>$}, \hyperpage{298}
+    \subitem {filevault::utils::Console}, \hyperpage{147}
+  \item {error\_message}
+    \subitem {filevault::algorithms::asymmetric::ECDHResult}, 
+		\hyperpage{186}
+    \subitem {filevault::algorithms::asymmetric::ECDSASignResult}, 
+		\hyperpage{189}
+    \subitem {filevault::compression::CompressionResult}, 
+		\hyperpage{132}
+    \subitem {filevault::core::CryptoResult}, \hyperpage{159}
+    \subitem {filevault::core::Result$<$ T $>$}, \hyperpage{298}
+    \subitem {filevault::core::Result$<$ void $>$}, \hyperpage{299}
+    \subitem {filevault::core::StreamingResult}, \hyperpage{332}
+  \item {estimate\_crack\_time}
+    \subitem {filevault::utils::Password}, \hyperpage{281}
+  \item {estimate\_key\_length}
+    \subitem {filevault::algorithms::classical::Vigenere}, 
+		\hyperpage{361}
+  \item {execute}
+    \subitem {filevault::cli::BenchmarkCommand}, \hyperpage{101}
+    \subitem {filevault::cli::commands::ArchiveCommand}, \hyperpage{78}
+    \subitem {filevault::cli::commands::DumpCommand}, \hyperpage{176}
+    \subitem {filevault::cli::commands::KeyInfoCommand}, 
+		\hyperpage{254}
+    \subitem {filevault::cli::commands::SignCommand}, \hyperpage{314}
+    \subitem {filevault::cli::commands::StegoCommand}, \hyperpage{324}
+    \subitem {filevault::cli::commands::VerifyCommand}, \hyperpage{356}
+    \subitem {filevault::cli::CompressCommand}, \hyperpage{129}
+    \subitem {filevault::cli::ConfigCommand}, \hyperpage{143}
+    \subitem {filevault::cli::DecompressCommand}, \hyperpage{163}
+    \subitem {filevault::cli::DecryptCommand}, \hyperpage{167}
+    \subitem {filevault::cli::EncryptCommand}, \hyperpage{191}
+    \subitem {filevault::cli::HashCommand}, \hyperpage{224}
+    \subitem {filevault::cli::ICommand}, \hyperpage{238}
+    \subitem {filevault::cli::InfoCommand}, \hyperpage{246}
+    \subitem {filevault::cli::KeygenCommand}, \hyperpage{250}
+    \subitem {filevault::cli::ListCommand}, \hyperpage{269}
+  \item {expected\_hash}
+    \subitem {filevault::core::HashConfig}, \hyperpage{228}
+  \item {extract}
+    \subitem {filevault::steganography::LSBSteganography}, 
+		\hyperpage{272}
+  \item {extract\_}
+    \subitem {filevault::cli::commands::ArchiveCommand}, \hyperpage{82}
+  \item {extract\_archive}
+    \subitem {filevault::archive::ArchiveFormat}, \hyperpage{83}
+  \item {extract\_byte}
+    \subitem {filevault::steganography::LSBSteganography}, 
+		\hyperpage{273}
+  \item {extract\_dir\_}
+    \subitem {filevault::cli::commands::ArchiveCommand}, \hyperpage{82}
+
+  \indexspace
+
+  \item {FAIR}
+    \subitem {filevault::core}, \hyperpage{31}
+  \item {file\_exists}
+    \subitem {filevault::utils::FileIO}, \hyperpage{219}
+  \item {FILE\_FORMAT\_MAGIC}
+    \subitem {filevault::core}, \hyperpage{31}
+  \item {FILE\_FORMAT\_VERSION\_MAJOR}
+    \subitem {filevault::core}, \hyperpage{31}
+  \item {FILE\_FORMAT\_VERSION\_MINOR}
+    \subitem {filevault::core}, \hyperpage{31}
+  \item {file\_info\_table}
+    \subitem {filevault::utils::TableFormatter}, \hyperpage{341}
+  \item {file\_path\_}
+    \subitem {filevault::cli::commands::DumpCommand}, \hyperpage{177}
+    \subitem {filevault::cli::commands::SignCommand}, \hyperpage{315}
+    \subitem {filevault::cli::commands::VerifyCommand}, \hyperpage{357}
+  \item {file\_size}
+    \subitem {filevault::archive::FileEntry}, \hyperpage{199}
+    \subitem {filevault::cli::InfoCommand::FileInfo}, \hyperpage{218}
+    \subitem {filevault::utils::FileIO}, \hyperpage{220}
+  \item {FileHeader}
+    \subitem {filevault::format::FileHeader}, \hyperpage{209}
+  \item {filename}
+    \subitem {filevault::archive::FileEntry}, \hyperpage{199}
+  \item {FILENO}
+    \subitem {progress.cpp}, \hyperpage{513}
+  \item {FileVault}, \hyperpage{1}
+  \item {filevault}, \hyperpage{19}
+  \item {filevault::algorithms}, \hyperpage{19}
+  \item {filevault::algorithms::asymmetric}, \hyperpage{19}
+    \subitem {ECCurve}, \hyperpage{20}
+    \subitem {get\_botan\_curve\_name}, \hyperpage{20}
+    \subitem {get\_curve\_key\_size}, \hyperpage{20}
+    \subitem {SECP256R1}, \hyperpage{20}
+    \subitem {SECP384R1}, \hyperpage{20}
+    \subitem {SECP521R1}, \hyperpage{20}
+    \subitem {X25519}, \hyperpage{20}
+  \item {filevault::algorithms::asymmetric::ECCHybrid}, \hyperpage{177}
+    \subitem {\texorpdfstring{$\sim$}{\string~}ECCHybrid}, 
+		\hyperpage{179}
+    \subitem {botan\_curve\_name\_}, \hyperpage{182}
+    \subitem {curve\_}, \hyperpage{182}
+    \subitem {decrypt}, \hyperpage{179}
+    \subitem {ECCHybrid}, \hyperpage{179}
+    \subitem {ecdh\_}, \hyperpage{182}
+    \subitem {encrypt}, \hyperpage{180}
+    \subitem {generate\_key\_pair}, \hyperpage{180}
+    \subitem {is\_suitable\_for}, \hyperpage{181}
+    \subitem {key\_size}, \hyperpage{181}
+    \subitem {name}, \hyperpage{181}
+    \subitem {type}, \hyperpage{182}
+    \subitem {type\_}, \hyperpage{182}
+  \item {filevault::algorithms::asymmetric::ECCKeyPair}, 
+		\hyperpage{182}
+    \subitem {curve}, \hyperpage{182}
+    \subitem {curve\_name}, \hyperpage{182}
+    \subitem {private\_key}, \hyperpage{183}
+    \subitem {public\_key}, \hyperpage{183}
+  \item {filevault::algorithms::asymmetric::ECDH}, \hyperpage{183}
+    \subitem {\texorpdfstring{$\sim$}{\string~}ECDH}, \hyperpage{183}
+    \subitem {botan\_curve\_name\_}, \hyperpage{185}
+    \subitem {curve\_}, \hyperpage{185}
+    \subitem {curve\_name}, \hyperpage{184}
+    \subitem {derive\_shared\_secret}, \hyperpage{184}
+    \subitem {ECDH}, \hyperpage{183}
+    \subitem {generate\_key\_pair}, \hyperpage{184}
+    \subitem {key\_size}, \hyperpage{184}
+    \subitem {name}, \hyperpage{185}
+  \item {filevault::algorithms::asymmetric::ECDHResult}, 
+		\hyperpage{185}
+    \subitem {error\_message}, \hyperpage{186}
+    \subitem {shared\_secret}, \hyperpage{186}
+    \subitem {success}, \hyperpage{186}
+  \item {filevault::algorithms::asymmetric::ECDSA}, \hyperpage{186}
+    \subitem {\texorpdfstring{$\sim$}{\string~}ECDSA}, \hyperpage{187}
+    \subitem {botan\_curve\_name\_}, \hyperpage{188}
+    \subitem {curve\_}, \hyperpage{188}
+    \subitem {curve\_name}, \hyperpage{187}
+    \subitem {ECDSA}, \hyperpage{186}
+    \subitem {generate\_key\_pair}, \hyperpage{187}
+    \subitem {key\_size}, \hyperpage{187}
+    \subitem {name}, \hyperpage{187}
+    \subitem {sign}, \hyperpage{187}
+    \subitem {signature\_size}, \hyperpage{188}
+    \subitem {verify}, \hyperpage{188}
+  \item {filevault::algorithms::asymmetric::ECDSASignResult}, 
+		\hyperpage{189}
+    \subitem {error\_message}, \hyperpage{189}
+    \subitem {signature}, \hyperpage{189}
+    \subitem {success}, \hyperpage{189}
+  \item {filevault::algorithms::asymmetric::RSA}, \hyperpage{299}
+    \subitem {\texorpdfstring{$\sim$}{\string~}RSA}, \hyperpage{301}
+    \subitem {decrypt}, \hyperpage{301}
+    \subitem {encrypt}, \hyperpage{302}
+    \subitem {generate\_key\_pair}, \hyperpage{302}
+    \subitem {is\_authenticated}, \hyperpage{303}
+    \subitem {is\_suitable\_for}, \hyperpage{303}
+    \subitem {key\_bits\_}, \hyperpage{305}
+    \subitem {key\_size}, \hyperpage{303}
+    \subitem {max\_plaintext\_size}, \hyperpage{303}
+    \subitem {name}, \hyperpage{303}
+    \subitem {requires\_padding}, \hyperpage{303}
+    \subitem {RSA}, \hyperpage{301}
+    \subitem {sign}, \hyperpage{303}
+    \subitem {type}, \hyperpage{304}
+    \subitem {type\_}, \hyperpage{305}
+    \subitem {verify}, \hyperpage{304}
+  \item {filevault::algorithms::asymmetric::RSAKeyPair}, 
+		\hyperpage{305}
+    \subitem {bits}, \hyperpage{305}
+    \subitem {private\_key}, \hyperpage{305}
+    \subitem {public\_key}, \hyperpage{305}
+  \item {filevault::algorithms::classical}, \hyperpage{20}
+  \item {filevault::algorithms::classical::Caesar}, \hyperpage{108}
+    \subitem {brute\_force}, \hyperpage{111}
+    \subitem {Caesar}, \hyperpage{110}
+    \subitem {decrypt}, \hyperpage{111}
+    \subitem {encrypt}, \hyperpage{112}
+    \subitem {frequency\_analysis}, \hyperpage{113}
+    \subitem {is\_suitable\_for}, \hyperpage{113}
+    \subitem {key\_size}, \hyperpage{113}
+    \subitem {name}, \hyperpage{113}
+    \subitem {shift\_}, \hyperpage{114}
+    \subitem {shift\_char}, \hyperpage{114}
+    \subitem {type}, \hyperpage{114}
+  \item {filevault::algorithms::classical::HillCipher}, \hyperpage{229}
+    \subitem {decrypt}, \hyperpage{230}
+    \subitem {decrypt\_block}, \hyperpage{231}
+    \subitem {determinant}, \hyperpage{232}
+    \subitem {encrypt}, \hyperpage{232}
+    \subitem {encrypt\_block}, \hyperpage{232}
+    \subitem {invert\_matrix}, \hyperpage{233}
+    \subitem {is\_suitable\_for}, \hyperpage{233}
+    \subitem {is\_valid\_key}, \hyperpage{234}
+    \subitem {key\_size}, \hyperpage{234}
+    \subitem {Matrix2x2}, \hyperpage{230}
+    \subitem {mod\_inverse}, \hyperpage{234}
+    \subitem {name}, \hyperpage{235}
+    \subitem {parse\_key}, \hyperpage{235}
+    \subitem {type}, \hyperpage{235}
+  \item {filevault::algorithms::classical::Playfair}, \hyperpage{286}
+    \subitem {build\_matrix}, \hyperpage{288, 289}
+    \subitem {decrypt}, \hyperpage{289, 290}
+    \subitem {encrypt}, \hyperpage{290, 291}
+    \subitem {find\_position}, \hyperpage{291, 292}
+    \subitem {is\_suitable\_for}, \hyperpage{292}
+    \subitem {key\_size}, \hyperpage{292}
+    \subitem {matrix\_}, \hyperpage{293}
+    \subitem {name}, \hyperpage{292}
+    \subitem {Playfair}, \hyperpage{288}
+    \subitem {type}, \hyperpage{293}
+  \item {filevault::algorithms::classical::SubstitutionCipher}, 
+		\hyperpage{332}
+    \subitem {apply\_substitution}, \hyperpage{334}
+    \subitem {create\_reverse\_map}, \hyperpage{334}
+    \subitem {decrypt}, \hyperpage{334}
+    \subitem {encrypt}, \hyperpage{335}
+    \subitem {is\_suitable\_for}, \hyperpage{336}
+    \subitem {is\_valid\_key}, \hyperpage{336}
+    \subitem {key\_size}, \hyperpage{336}
+    \subitem {name}, \hyperpage{337}
+    \subitem {parse\_key}, \hyperpage{337}
+    \subitem {SubstitutionMap}, \hyperpage{334}
+    \subitem {type}, \hyperpage{337}
+  \item {filevault::algorithms::classical::Vigenere}, \hyperpage{357}
+    \subitem {decrypt}, \hyperpage{360}
+    \subitem {encrypt}, \hyperpage{360, 361}
+    \subitem {estimate\_key\_length}, \hyperpage{361}
+    \subitem {is\_suitable\_for}, \hyperpage{361}
+    \subitem {kasiski\_examination}, \hyperpage{361}
+    \subitem {key\_size}, \hyperpage{361}
+    \subitem {keyword\_}, \hyperpage{362}
+    \subitem {name}, \hyperpage{362}
+    \subitem {type}, \hyperpage{362}
+    \subitem {Vigenere}, \hyperpage{359}
+  \item {filevault::algorithms::pqc}, \hyperpage{21}
+    \subitem {get\_dilithium\_mode}, \hyperpage{21}
+    \subitem {get\_kyber\_mode}, \hyperpage{21}
+  \item {filevault::algorithms::pqc::Dilithium}, \hyperpage{170}
+    \subitem {botan\_name\_}, \hyperpage{174}
+    \subitem {Dilithium}, \hyperpage{171}
+    \subitem {Dilithium2}, \hyperpage{171}
+    \subitem {Dilithium3}, \hyperpage{171}
+    \subitem {Dilithium5}, \hyperpage{171}
+    \subitem {generate\_keypair}, \hyperpage{171}
+    \subitem {name}, \hyperpage{172}
+    \subitem {private\_key\_size}, \hyperpage{172}
+    \subitem {public\_key\_size}, \hyperpage{172}
+    \subitem {sign}, \hyperpage{172}
+    \subitem {signature\_size}, \hyperpage{173}
+    \subitem {Variant}, \hyperpage{171}
+    \subitem {variant\_}, \hyperpage{174}
+    \subitem {verify}, \hyperpage{173}
+  \item {filevault::algorithms::pqc::Kyber}, \hyperpage{256}
+    \subitem {\texorpdfstring{$\sim$}{\string~}Kyber}, \hyperpage{258}
+    \subitem {botan\_name\_}, \hyperpage{261}
+    \subitem {ciphertext\_size}, \hyperpage{258}
+    \subitem {decrypt}, \hyperpage{258}
+    \subitem {encrypt}, \hyperpage{258}
+    \subitem {generate\_keypair}, \hyperpage{259}
+    \subitem {is\_suitable\_for}, \hyperpage{260}
+    \subitem {key\_size}, \hyperpage{260}
+    \subitem {Kyber}, \hyperpage{258}
+    \subitem {Kyber1024}, \hyperpage{257}
+    \subitem {Kyber512}, \hyperpage{257}
+    \subitem {Kyber768}, \hyperpage{257}
+    \subitem {name}, \hyperpage{260}
+    \subitem {private\_key\_size}, \hyperpage{261}
+    \subitem {public\_key\_size}, \hyperpage{261}
+    \subitem {shared\_secret\_size}, \hyperpage{261}
+    \subitem {type}, \hyperpage{261}
+    \subitem {type\_}, \hyperpage{261}
+    \subitem {Variant}, \hyperpage{257}
+    \subitem {variant\_}, \hyperpage{261}
+  \item {filevault::algorithms::pqc::KyberHybrid}, \hyperpage{262}
+    \subitem {\texorpdfstring{$\sim$}{\string~}KyberHybrid}, 
+		\hyperpage{263}
+    \subitem {decrypt}, \hyperpage{263}
+    \subitem {encrypt}, \hyperpage{264}
+    \subitem {generate\_keypair}, \hyperpage{265}
+    \subitem {is\_suitable\_for}, \hyperpage{266}
+    \subitem {key\_size}, \hyperpage{266}
+    \subitem {kyber\_}, \hyperpage{267}
+    \subitem {KyberHybrid}, \hyperpage{263}
+    \subitem {name}, \hyperpage{266}
+    \subitem {type}, \hyperpage{267}
+  \item {filevault::algorithms::pqc::PQKeyPair}, \hyperpage{294}
+    \subitem {algorithm}, \hyperpage{294}
+    \subitem {private\_key}, \hyperpage{294}
+    \subitem {public\_key}, \hyperpage{294}
+  \item {filevault::algorithms::symmetric}, \hyperpage{22}
+    \subitem {add\_pkcs7\_padding}, \hyperpage{22}
+    \subitem {remove\_pkcs7\_padding}, \hyperpage{23}
+  \item {filevault::algorithms::symmetric::AES\_CBC}, \hyperpage{35}
+    \subitem {\texorpdfstring{$\sim$}{\string~}AES\_CBC}, 
+		\hyperpage{36}
+    \subitem {AES\_CBC}, \hyperpage{36}
+    \subitem {block\_size}, \hyperpage{37}
+    \subitem {botan\_name\_}, \hyperpage{40}
+    \subitem {decrypt}, \hyperpage{37}
+    \subitem {encrypt}, \hyperpage{38}
+    \subitem {is\_suitable\_for}, \hyperpage{39}
+    \subitem {iv\_size}, \hyperpage{39}
+    \subitem {key\_bits\_}, \hyperpage{40}
+    \subitem {key\_size}, \hyperpage{39}
+    \subitem {name}, \hyperpage{40}
+    \subitem {type}, \hyperpage{40}
+    \subitem {type\_}, \hyperpage{40}
+  \item {filevault::algorithms::symmetric::AES\_CFB}, \hyperpage{40}
+    \subitem {\texorpdfstring{$\sim$}{\string~}AES\_CFB}, 
+		\hyperpage{42}
+    \subitem {AES\_CFB}, \hyperpage{42}
+    \subitem {block\_size}, \hyperpage{42}
+    \subitem {botan\_name\_}, \hyperpage{45}
+    \subitem {decrypt}, \hyperpage{42}
+    \subitem {encrypt}, \hyperpage{43}
+    \subitem {is\_authenticated}, \hyperpage{44}
+    \subitem {is\_suitable\_for}, \hyperpage{44}
+    \subitem {iv\_size}, \hyperpage{44}
+    \subitem {key\_bits\_}, \hyperpage{45}
+    \subitem {key\_size}, \hyperpage{44}
+    \subitem {name}, \hyperpage{45}
+    \subitem {requires\_padding}, \hyperpage{45}
+    \subitem {type}, \hyperpage{45}
+    \subitem {type\_}, \hyperpage{45}
+  \item {filevault::algorithms::symmetric::AES\_CTR}, \hyperpage{46}
+    \subitem {\texorpdfstring{$\sim$}{\string~}AES\_CTR}, 
+		\hyperpage{47}
+    \subitem {AES\_CTR}, \hyperpage{47}
+    \subitem {botan\_name\_}, \hyperpage{50}
+    \subitem {decrypt}, \hyperpage{47}
+    \subitem {encrypt}, \hyperpage{48}
+    \subitem {is\_suitable\_for}, \hyperpage{49}
+    \subitem {key\_bits\_}, \hyperpage{50}
+    \subitem {key\_size}, \hyperpage{49}
+    \subitem {name}, \hyperpage{49}
+    \subitem {nonce\_size}, \hyperpage{49}
+    \subitem {type}, \hyperpage{50}
+    \subitem {type\_}, \hyperpage{50}
+  \item {filevault::algorithms::symmetric::AES\_ECB}, \hyperpage{50}
+    \subitem {\texorpdfstring{$\sim$}{\string~}AES\_ECB}, 
+		\hyperpage{52}
+    \subitem {AES\_ECB}, \hyperpage{52}
+    \subitem {block\_size}, \hyperpage{52}
+    \subitem {botan\_name\_}, \hyperpage{55}
+    \subitem {decrypt}, \hyperpage{53}
+    \subitem {encrypt}, \hyperpage{54}
+    \subitem {is\_authenticated}, \hyperpage{54}
+    \subitem {is\_suitable\_for}, \hyperpage{54}
+    \subitem {key\_bits\_}, \hyperpage{55}
+    \subitem {key\_size}, \hyperpage{54}
+    \subitem {name}, \hyperpage{55}
+    \subitem {requires\_padding}, \hyperpage{55}
+    \subitem {type}, \hyperpage{55}
+    \subitem {type\_}, \hyperpage{55}
+  \item {filevault::algorithms::symmetric::AES\_GCM}, \hyperpage{55}
+    \subitem {\texorpdfstring{$\sim$}{\string~}AES\_GCM}, 
+		\hyperpage{57}
+    \subitem {AES\_GCM}, \hyperpage{57}
+    \subitem {botan\_name\_}, \hyperpage{60}
+    \subitem {decrypt}, \hyperpage{57}
+    \subitem {encrypt}, \hyperpage{58}
+    \subitem {is\_suitable\_for}, \hyperpage{59}
+    \subitem {key\_bits\_}, \hyperpage{60}
+    \subitem {key\_size}, \hyperpage{59}
+    \subitem {name}, \hyperpage{59}
+    \subitem {nonce\_size}, \hyperpage{60}
+    \subitem {tag\_size}, \hyperpage{60}
+    \subitem {type}, \hyperpage{60}
+    \subitem {type\_}, \hyperpage{60}
+  \item {filevault::algorithms::symmetric::AES\_OFB}, \hyperpage{61}
+    \subitem {\texorpdfstring{$\sim$}{\string~}AES\_OFB}, 
+		\hyperpage{62}
+    \subitem {AES\_OFB}, \hyperpage{62}
+    \subitem {block\_size}, \hyperpage{63}
+    \subitem {botan\_name\_}, \hyperpage{65}
+    \subitem {decrypt}, \hyperpage{63}
+    \subitem {encrypt}, \hyperpage{63}
+    \subitem {is\_authenticated}, \hyperpage{64}
+    \subitem {is\_suitable\_for}, \hyperpage{64}
+    \subitem {iv\_size}, \hyperpage{64}
+    \subitem {key\_bits\_}, \hyperpage{65}
+    \subitem {key\_size}, \hyperpage{64}
+    \subitem {name}, \hyperpage{65}
+    \subitem {requires\_padding}, \hyperpage{65}
+    \subitem {type}, \hyperpage{65}
+    \subitem {type\_}, \hyperpage{65}
+  \item {filevault::algorithms::symmetric::AES\_XTS}, \hyperpage{66}
+    \subitem {\texorpdfstring{$\sim$}{\string~}AES\_XTS}, 
+		\hyperpage{67}
+    \subitem {AES\_XTS}, \hyperpage{67}
+    \subitem {block\_size}, \hyperpage{67}
+    \subitem {botan\_name\_}, \hyperpage{71}
+    \subitem {decrypt}, \hyperpage{68}
+    \subitem {encrypt}, \hyperpage{69}
+    \subitem {is\_authenticated}, \hyperpage{70}
+    \subitem {is\_suitable\_for}, \hyperpage{70}
+    \subitem {key\_bits\_}, \hyperpage{71}
+    \subitem {key\_size}, \hyperpage{70}
+    \subitem {name}, \hyperpage{70}
+    \subitem {requires\_padding}, \hyperpage{71}
+    \subitem {tweak\_size}, \hyperpage{71}
+    \subitem {type}, \hyperpage{71}
+    \subitem {type\_}, \hyperpage{71}
+  \item {filevault::algorithms::symmetric::ARIA\_GCM}, \hyperpage{87}
+    \subitem {\texorpdfstring{$\sim$}{\string~}ARIA\_GCM}, 
+		\hyperpage{89}
+    \subitem {ARIA\_GCM}, \hyperpage{89}
+    \subitem {botan\_name\_}, \hyperpage{92}
+    \subitem {decrypt}, \hyperpage{89}
+    \subitem {encrypt}, \hyperpage{89}
+    \subitem {is\_suitable\_for}, \hyperpage{90}
+    \subitem {key\_bits\_}, \hyperpage{92}
+    \subitem {key\_size}, \hyperpage{90}
+    \subitem {name}, \hyperpage{91}
+    \subitem {nonce\_size}, \hyperpage{91}
+    \subitem {tag\_size}, \hyperpage{91}
+    \subitem {type}, \hyperpage{92}
+    \subitem {type\_}, \hyperpage{92}
+  \item {filevault::algorithms::symmetric::Camellia\_GCM}, 
+		\hyperpage{115}
+    \subitem {\texorpdfstring{$\sim$}{\string~}Camellia\_GCM}, 
+		\hyperpage{116}
+    \subitem {botan\_name\_}, \hyperpage{120}
+    \subitem {Camellia\_GCM}, \hyperpage{116}
+    \subitem {decrypt}, \hyperpage{116}
+    \subitem {encrypt}, \hyperpage{117}
+    \subitem {is\_suitable\_for}, \hyperpage{118}
+    \subitem {key\_bits\_}, \hyperpage{120}
+    \subitem {key\_size}, \hyperpage{118}
+    \subitem {name}, \hyperpage{118}
+    \subitem {nonce\_size}, \hyperpage{119}
+    \subitem {tag\_size}, \hyperpage{119}
+    \subitem {type}, \hyperpage{119}
+    \subitem {type\_}, \hyperpage{120}
+  \item {filevault::algorithms::symmetric::ChaCha20Poly1305}, 
+		\hyperpage{120}
+    \subitem {\texorpdfstring{$\sim$}{\string~}ChaCha20Poly1305}, 
+		\hyperpage{121}
+    \subitem {ChaCha20Poly1305}, \hyperpage{121}
+    \subitem {decrypt}, \hyperpage{122}
+    \subitem {encrypt}, \hyperpage{122}
+    \subitem {is\_suitable\_for}, \hyperpage{123}
+    \subitem {key\_size}, \hyperpage{123}
+    \subitem {name}, \hyperpage{123}
+    \subitem {nonce\_size}, \hyperpage{124}
+    \subitem {tag\_size}, \hyperpage{124}
+    \subitem {type}, \hyperpage{124}
+  \item {filevault::algorithms::symmetric::Serpent\_GCM}, 
+		\hyperpage{306}
+    \subitem {decrypt}, \hyperpage{308}
+    \subitem {encrypt}, \hyperpage{309}
+    \subitem {is\_suitable\_for}, \hyperpage{310}
+    \subitem {key\_size}, \hyperpage{310}
+    \subitem {name}, \hyperpage{310}
+    \subitem {process\_gcm}, \hyperpage{310}
+    \subitem {Serpent\_GCM}, \hyperpage{308}
+    \subitem {type}, \hyperpage{311}
+  \item {filevault::algorithms::symmetric::SM4\_GCM}, \hyperpage{315}
+    \subitem {\texorpdfstring{$\sim$}{\string~}SM4\_GCM}, 
+		\hyperpage{317}
+    \subitem {decrypt}, \hyperpage{317}
+    \subitem {encrypt}, \hyperpage{318}
+    \subitem {is\_suitable\_for}, \hyperpage{319}
+    \subitem {key\_size}, \hyperpage{319}
+    \subitem {name}, \hyperpage{319}
+    \subitem {nonce\_size}, \hyperpage{320}
+    \subitem {SM4\_GCM}, \hyperpage{317}
+    \subitem {tag\_size}, \hyperpage{320}
+    \subitem {type}, \hyperpage{320}
+  \item {filevault::algorithms::symmetric::TripleDES}, \hyperpage{342}
+    \subitem {\texorpdfstring{$\sim$}{\string~}TripleDES}, 
+		\hyperpage{344}
+    \subitem {block\_size}, \hyperpage{344}
+    \subitem {decrypt}, \hyperpage{344}
+    \subitem {encrypt}, \hyperpage{345}
+    \subitem {is\_suitable\_for}, \hyperpage{346}
+    \subitem {iv\_size}, \hyperpage{346}
+    \subitem {key\_size}, \hyperpage{346}
+    \subitem {name}, \hyperpage{347}
+    \subitem {TripleDES}, \hyperpage{344}
+    \subitem {type}, \hyperpage{347}
+  \item {filevault::algorithms::symmetric::Twofish\_GCM}, 
+		\hyperpage{347}
+    \subitem {botan\_name\_}, \hyperpage{354}
+    \subitem {decrypt}, \hyperpage{350}
+    \subitem {encrypt}, \hyperpage{350}
+    \subitem {is\_suitable\_for}, \hyperpage{351}
+    \subitem {key\_bits\_}, \hyperpage{354}
+    \subitem {key\_size}, \hyperpage{351}
+    \subitem {name}, \hyperpage{352}
+    \subitem {nonce\_size}, \hyperpage{352}
+    \subitem {process\_gcm}, \hyperpage{352}
+    \subitem {tag\_size}, \hyperpage{353}
+    \subitem {Twofish\_GCM}, \hyperpage{349}
+    \subitem {type}, \hyperpage{353}
+    \subitem {type\_}, \hyperpage{354}
+  \item {filevault::archive}, \hyperpage{23}
+  \item {filevault::archive::ArchiveFormat}, \hyperpage{82}
+    \subitem {create\_archive}, \hyperpage{83}
+    \subitem {extract\_archive}, \hyperpage{83}
+    \subitem {list\_files}, \hyperpage{84}
+    \subitem {MAGIC}, \hyperpage{86}
+    \subitem {read\_string}, \hyperpage{84}
+    \subitem {read\_uint32}, \hyperpage{85}
+    \subitem {read\_uint64}, \hyperpage{85}
+    \subitem {VERSION}, \hyperpage{86}
+    \subitem {write\_uint32}, \hyperpage{85}
+    \subitem {write\_uint64}, \hyperpage{85}
+  \item {filevault::archive::FileEntry}, \hyperpage{198}
+    \subitem {deserialize}, \hyperpage{198}
+    \subitem {file\_size}, \hyperpage{199}
+    \subitem {filename}, \hyperpage{199}
+    \subitem {modified\_time}, \hyperpage{199}
+    \subitem {offset}, \hyperpage{199}
+    \subitem {permissions}, \hyperpage{199}
+    \subitem {serialize}, \hyperpage{199}
+  \item {filevault::cli}, \hyperpage{23}
+  \item {filevault::cli::Application}, \hyperpage{72}
+    \subitem {\texorpdfstring{$\sim$}{\string~}Application}, 
+		\hyperpage{72}
+    \subitem {app\_}, \hyperpage{74}
+    \subitem {Application}, \hyperpage{72}
+    \subitem {commands\_}, \hyperpage{74}
+    \subitem {engine\_}, \hyperpage{74}
+    \subitem {initialize}, \hyperpage{72}
+    \subitem {log\_level\_}, \hyperpage{74}
+    \subitem {register\_commands}, \hyperpage{73}
+    \subitem {run}, \hyperpage{73}
+    \subitem {setup\_logging}, \hyperpage{74}
+    \subitem {verbose\_}, \hyperpage{74}
+  \item {filevault::cli::AsymmetricBenchmarkResult}, \hyperpage{92}
+    \subitem {algorithm}, \hyperpage{93}
+    \subitem {decrypt\_ms}, \hyperpage{93}
+    \subitem {encrypt\_ms}, \hyperpage{93}
+    \subitem {keygen\_ms}, \hyperpage{93}
+    \subitem {success}, \hyperpage{93}
+  \item {filevault::cli::BenchmarkCommand}, \hyperpage{93}
+    \subitem {algorithm\_}, \hyperpage{104}
+    \subitem {all\_}, \hyperpage{104}
+    \subitem {asymmetric\_only\_}, \hyperpage{104}
+    \subitem {benchmark\_algorithm}, \hyperpage{95}
+    \subitem {benchmark\_asymmetric}, \hyperpage{95}
+    \subitem {benchmark\_asymmetric\_algorithm}, \hyperpage{96}
+    \subitem {benchmark\_compression}, \hyperpage{96}
+    \subitem {benchmark\_hash}, \hyperpage{97}
+    \subitem {benchmark\_hybrid\_algorithm}, \hyperpage{97}
+    \subitem {benchmark\_kdf}, \hyperpage{98}
+    \subitem {benchmark\_pqc}, \hyperpage{98}
+    \subitem {benchmark\_pqc\_algorithm}, \hyperpage{99}
+    \subitem {benchmark\_signature\_algorithm}, \hyperpage{100}
+    \subitem {benchmark\_symmetric}, \hyperpage{100}
+    \subitem {BenchmarkCommand}, \hyperpage{95}
+    \subitem {compression\_only\_}, \hyperpage{104}
+    \subitem {data\_size\_}, \hyperpage{104}
+    \subitem {description}, \hyperpage{101}
+    \subitem {engine\_}, \hyperpage{104}
+    \subitem {execute}, \hyperpage{101}
+    \subitem {get\_platform\_info}, \hyperpage{102}
+    \subitem {hash\_only\_}, \hyperpage{104}
+    \subitem {iterations\_}, \hyperpage{104}
+    \subitem {json\_output\_}, \hyperpage{105}
+    \subitem {kdf\_only\_}, \hyperpage{105}
+    \subitem {name}, \hyperpage{103}
+    \subitem {output\_file\_}, \hyperpage{105}
+    \subitem {pqc\_only\_}, \hyperpage{105}
+    \subitem {save\_json\_output}, \hyperpage{103}
+    \subitem {save\_log\_output}, \hyperpage{103}
+    \subitem {setup}, \hyperpage{103}
+    \subitem {symmetric\_only\_}, \hyperpage{105}
+  \item {filevault::cli::BenchmarkResult}, \hyperpage{105}
+    \subitem {algorithm}, \hyperpage{105}
+    \subitem {decrypt\_mbps}, \hyperpage{105}
+    \subitem {decrypt\_ms}, \hyperpage{105}
+    \subitem {encrypt\_mbps}, \hyperpage{105}
+    \subitem {encrypt\_ms}, \hyperpage{105}
+    \subitem {success}, \hyperpage{106}
+  \item {filevault::cli::commands}, \hyperpage{24}
+  \item {filevault::cli::commands::ArchiveCommand}, \hyperpage{75}
+    \subitem {algorithm\_}, \hyperpage{81}
+    \subitem {ArchiveCommand}, \hyperpage{76}
+    \subitem {compression\_}, \hyperpage{81}
+    \subitem {description}, \hyperpage{76}
+    \subitem {do\_create}, \hyperpage{76}
+    \subitem {do\_extract}, \hyperpage{77}
+    \subitem {engine\_}, \hyperpage{81}
+    \subitem {execute}, \hyperpage{78}
+    \subitem {extract\_}, \hyperpage{82}
+    \subitem {extract\_dir\_}, \hyperpage{82}
+    \subitem {input\_files\_}, \hyperpage{82}
+    \subitem {kdf\_}, \hyperpage{82}
+    \subitem {name}, \hyperpage{80}
+    \subitem {output\_file\_}, \hyperpage{82}
+    \subitem {password\_}, \hyperpage{82}
+    \subitem {security\_level\_}, \hyperpage{82}
+    \subitem {setup}, \hyperpage{80}
+    \subitem {verbose\_}, \hyperpage{82}
+  \item {filevault::cli::commands::DumpCommand}, \hyperpage{174}
+    \subitem {description}, \hyperpage{176}
+    \subitem {description\_}, \hyperpage{177}
+    \subitem {DumpCommand}, \hyperpage{175}
+    \subitem {execute}, \hyperpage{176}
+    \subitem {file\_path\_}, \hyperpage{177}
+    \subitem {format\_}, \hyperpage{177}
+    \subitem {max\_bytes\_}, \hyperpage{177}
+    \subitem {name}, \hyperpage{176}
+    \subitem {name\_}, \hyperpage{177}
+    \subitem {setup}, \hyperpage{176}
+    \subitem {show\_ascii\_}, \hyperpage{177}
+    \subitem {show\_offset\_}, \hyperpage{177}
+  \item {filevault::cli::commands::KeyInfoCommand}, \hyperpage{252}
+    \subitem {check\_pair\_}, \hyperpage{255}
+    \subitem {description}, \hyperpage{254}
+    \subitem {description\_}, \hyperpage{255}
+    \subitem {engine\_}, \hyperpage{255}
+    \subitem {execute}, \hyperpage{254}
+    \subitem {key\_path\_}, \hyperpage{255}
+    \subitem {KeyInfoCommand}, \hyperpage{254}
+    \subitem {name}, \hyperpage{254}
+    \subitem {name\_}, \hyperpage{255}
+    \subitem {pair\_key\_path\_}, \hyperpage{255}
+    \subitem {setup}, \hyperpage{255}
+    \subitem {show\_public\_}, \hyperpage{255}
+  \item {filevault::cli::commands::SignCommand}, \hyperpage{312}
+    \subitem {algorithm\_}, \hyperpage{315}
+    \subitem {description}, \hyperpage{314}
+    \subitem {description\_}, \hyperpage{315}
+    \subitem {engine\_}, \hyperpage{315}
+    \subitem {execute}, \hyperpage{314}
+    \subitem {file\_path\_}, \hyperpage{315}
+    \subitem {name}, \hyperpage{314}
+    \subitem {name\_}, \hyperpage{315}
+    \subitem {output\_path\_}, \hyperpage{315}
+    \subitem {private\_key\_path\_}, \hyperpage{315}
+    \subitem {setup}, \hyperpage{314}
+    \subitem {SignCommand}, \hyperpage{313}
+  \item {filevault::cli::commands::StegoCommand}, \hyperpage{321}
+    \subitem {bits\_per\_channel\_}, \hyperpage{326}
+    \subitem {cover\_image\_}, \hyperpage{326}
+    \subitem {description}, \hyperpage{322}
+    \subitem {do\_capacity}, \hyperpage{322}
+    \subitem {do\_embed}, \hyperpage{323}
+    \subitem {do\_extract}, \hyperpage{324}
+    \subitem {execute}, \hyperpage{324}
+    \subitem {input\_file\_}, \hyperpage{326}
+    \subitem {name}, \hyperpage{325}
+    \subitem {operation\_}, \hyperpage{326}
+    \subitem {output\_file\_}, \hyperpage{326}
+    \subitem {setup}, \hyperpage{325}
+    \subitem {verbose\_}, \hyperpage{326}
+  \item {filevault::cli::commands::VerifyCommand}, \hyperpage{354}
+    \subitem {algorithm\_}, \hyperpage{357}
+    \subitem {description}, \hyperpage{356}
+    \subitem {description\_}, \hyperpage{357}
+    \subitem {engine\_}, \hyperpage{357}
+    \subitem {execute}, \hyperpage{356}
+    \subitem {file\_path\_}, \hyperpage{357}
+    \subitem {name}, \hyperpage{356}
+    \subitem {name\_}, \hyperpage{357}
+    \subitem {public\_key\_path\_}, \hyperpage{357}
+    \subitem {setup}, \hyperpage{356}
+    \subitem {signature\_path\_}, \hyperpage{357}
+    \subitem {VerifyCommand}, \hyperpage{355}
+  \item {filevault::cli::CompressCommand}, \hyperpage{126}
+    \subitem {\texorpdfstring{$\sim$}{\string~}CompressCommand}, 
+		\hyperpage{127}
+    \subitem {algorithm\_}, \hyperpage{131}
+    \subitem {auto\_detect\_}, \hyperpage{131}
+    \subitem {benchmark\_}, \hyperpage{131}
+    \subitem {CompressCommand}, \hyperpage{127}
+    \subitem {decompress\_}, \hyperpage{131}
+    \subitem {description}, \hyperpage{127}
+    \subitem {detect\_algorithm}, \hyperpage{127}
+    \subitem {do\_compress}, \hyperpage{128}
+    \subitem {do\_decompress}, \hyperpage{128}
+    \subitem {execute}, \hyperpage{129}
+    \subitem {generate\_output\_path}, \hyperpage{130}
+    \subitem {input\_file\_}, \hyperpage{131}
+    \subitem {level\_}, \hyperpage{132}
+    \subitem {name}, \hyperpage{130}
+    \subitem {output\_file\_}, \hyperpage{132}
+    \subitem {setup}, \hyperpage{131}
+    \subitem {subcommand\_}, \hyperpage{132}
+    \subitem {verbose\_}, \hyperpage{132}
+  \item {filevault::cli::ConfigCommand}, \hyperpage{142}
+    \subitem {ConfigCommand}, \hyperpage{143}
+    \subitem {description}, \hyperpage{143}
+    \subitem {execute}, \hyperpage{143}
+    \subitem {key\_}, \hyperpage{146}
+    \subitem {name}, \hyperpage{144}
+    \subitem {reset\_config}, \hyperpage{144}
+    \subitem {set\_value}, \hyperpage{145}
+    \subitem {setup}, \hyperpage{145}
+    \subitem {show\_config}, \hyperpage{146}
+    \subitem {subcommand\_}, \hyperpage{146}
+    \subitem {value\_}, \hyperpage{146}
+  \item {filevault::cli::DecompressCommand}, \hyperpage{161}
+    \subitem {algorithm\_}, \hyperpage{165}
+    \subitem {auto\_detect\_}, \hyperpage{165}
+    \subitem {benchmark\_}, \hyperpage{165}
+    \subitem {description}, \hyperpage{163}
+    \subitem {detect\_algorithm}, \hyperpage{163}
+    \subitem {execute}, \hyperpage{163}
+    \subitem {generate\_output\_path}, \hyperpage{164}
+    \subitem {input\_file\_}, \hyperpage{166}
+    \subitem {name}, \hyperpage{164}
+    \subitem {output\_file\_}, \hyperpage{166}
+    \subitem {setup}, \hyperpage{165}
+    \subitem {subcommand\_}, \hyperpage{166}
+    \subitem {verbose\_}, \hyperpage{166}
+  \item {filevault::cli::DecryptCommand}, \hyperpage{166}
+    \subitem {DecryptCommand}, \hyperpage{167}
+    \subitem {description}, \hyperpage{167}
+    \subitem {engine\_}, \hyperpage{170}
+    \subitem {execute}, \hyperpage{167}
+    \subitem {input\_file\_}, \hyperpage{170}
+    \subitem {name}, \hyperpage{168}
+    \subitem {no\_progress\_}, \hyperpage{170}
+    \subitem {output\_file\_}, \hyperpage{170}
+    \subitem {password\_}, \hyperpage{170}
+    \subitem {setup}, \hyperpage{169}
+    \subitem {verbose\_}, \hyperpage{170}
+  \item {filevault::cli::EncryptCommand}, \hyperpage{189}
+    \subitem {algorithm\_}, \hyperpage{194}
+    \subitem {compression\_level\_}, \hyperpage{194}
+    \subitem {compression\_type\_}, \hyperpage{194}
+    \subitem {description}, \hyperpage{191}
+    \subitem {EncryptCommand}, \hyperpage{190}
+    \subitem {engine\_}, \hyperpage{195}
+    \subitem {execute}, \hyperpage{191}
+    \subitem {force\_weak\_password\_}, \hyperpage{195}
+    \subitem {input\_file\_}, \hyperpage{195}
+    \subitem {kdf\_}, \hyperpage{195}
+    \subitem {mode\_}, \hyperpage{195}
+    \subitem {name}, \hyperpage{193}
+    \subitem {no\_progress\_}, \hyperpage{195}
+    \subitem {output\_file\_}, \hyperpage{195}
+    \subitem {password\_}, \hyperpage{195}
+    \subitem {security\_level\_}, \hyperpage{195}
+    \subitem {setup}, \hyperpage{193}
+    \subitem {verbose\_}, \hyperpage{195}
+  \item {filevault::cli::HashCommand}, \hyperpage{222}
+    \subitem {algorithm\_}, \hyperpage{227}
+    \subitem {benchmark\_}, \hyperpage{227}
+    \subitem {calculate\_file\_hash}, \hyperpage{223}
+    \subitem {calculate\_file\_hmac}, \hyperpage{223}
+    \subitem {description}, \hyperpage{224}
+    \subitem {engine\_}, \hyperpage{227}
+    \subitem {execute}, \hyperpage{224}
+    \subitem {get\_botan\_algorithm\_name}, \hyperpage{225}
+    \subitem {HashCommand}, \hyperpage{223}
+    \subitem {hmac\_key\_}, \hyperpage{227}
+    \subitem {input\_file\_}, \hyperpage{227}
+    \subitem {is\_secure\_algorithm}, \hyperpage{225}
+    \subitem {name}, \hyperpage{226}
+    \subitem {no\_filename\_}, \hyperpage{227}
+    \subitem {output\_file\_}, \hyperpage{227}
+    \subitem {output\_format\_}, \hyperpage{227}
+    \subitem {setup}, \hyperpage{226}
+    \subitem {uppercase\_}, \hyperpage{228}
+    \subitem {verbose\_}, \hyperpage{228}
+    \subitem {verify\_hash\_}, \hyperpage{228}
+    \subitem {verify\_mode}, \hyperpage{226}
+  \item {filevault::cli::ICommand}, \hyperpage{236}
+    \subitem {\texorpdfstring{$\sim$}{\string~}ICommand}, 
+		\hyperpage{238}
+    \subitem {description}, \hyperpage{238}
+    \subitem {execute}, \hyperpage{238}
+    \subitem {name}, \hyperpage{238}
+    \subitem {setup}, \hyperpage{238}
+  \item {filevault::cli::InfoCommand}, \hyperpage{244}
+    \subitem {description}, \hyperpage{246}
+    \subitem {display\_info}, \hyperpage{246}
+    \subitem {engine\_}, \hyperpage{248}
+    \subitem {execute}, \hyperpage{246}
+    \subitem {InfoCommand}, \hyperpage{245}
+    \subitem {input\_file\_}, \hyperpage{248}
+    \subitem {name}, \hyperpage{247}
+    \subitem {parse\_file}, \hyperpage{247}
+    \subitem {setup}, \hyperpage{248}
+    \subitem {verbose\_}, \hyperpage{249}
+  \item {filevault::cli::InfoCommand::FileInfo}, \hyperpage{218}
+    \subitem {algorithm}, \hyperpage{218}
+    \subitem {compressed}, \hyperpage{218}
+    \subitem {compression}, \hyperpage{218}
+    \subitem {data\_size}, \hyperpage{218}
+    \subitem {file\_size}, \hyperpage{218}
+    \subitem {has\_header}, \hyperpage{218}
+    \subitem {header\_size}, \hyperpage{218}
+    \subitem {kdf}, \hyperpage{219}
+    \subitem {nonce\_size}, \hyperpage{219}
+    \subitem {salt\_size}, \hyperpage{219}
+    \subitem {tag\_size}, \hyperpage{219}
+    \subitem {version}, \hyperpage{219}
+  \item {filevault::cli::KeygenCommand}, \hyperpage{249}
+    \subitem {algorithm\_}, \hyperpage{252}
+    \subitem {description}, \hyperpage{250}
+    \subitem {engine\_}, \hyperpage{252}
+    \subitem {execute}, \hyperpage{250}
+    \subitem {force\_}, \hyperpage{252}
+    \subitem {KeygenCommand}, \hyperpage{250}
+    \subitem {name}, \hyperpage{251}
+    \subitem {output\_prefix\_}, \hyperpage{252}
+    \subitem {setup}, \hyperpage{251}
+    \subitem {verbose\_}, \hyperpage{252}
+  \item {filevault::cli::ListCommand}, \hyperpage{267}
+    \subitem {description}, \hyperpage{269}
+    \subitem {engine\_}, \hyperpage{270}
+    \subitem {execute}, \hyperpage{269}
+    \subitem {ListCommand}, \hyperpage{268}
+    \subitem {name}, \hyperpage{269}
+    \subitem {setup}, \hyperpage{270}
+  \item {filevault::cli::PQCBenchmarkResult}, \hyperpage{293}
+    \subitem {algorithm}, \hyperpage{293}
+    \subitem {decaps\_ms}, \hyperpage{293}
+    \subitem {encaps\_ms}, \hyperpage{293}
+    \subitem {keygen\_ms}, \hyperpage{293}
+    \subitem {success}, \hyperpage{294}
+  \item {filevault::cli::SignatureBenchmarkResult}, \hyperpage{312}
+    \subitem {algorithm}, \hyperpage{312}
+    \subitem {keygen\_ms}, \hyperpage{312}
+    \subitem {sign\_ms}, \hyperpage{312}
+    \subitem {success}, \hyperpage{312}
+    \subitem {verify\_ms}, \hyperpage{312}
+  \item {filevault::compression}, \hyperpage{24}
+  \item {filevault::compression::Bzip2Compressor}, \hyperpage{107}
+    \subitem {compress}, \hyperpage{108}
+    \subitem {decompress}, \hyperpage{108}
+    \subitem {name}, \hyperpage{108}
+  \item {filevault::compression::CompressionResult}, \hyperpage{132}
+    \subitem {compressed\_size}, \hyperpage{132}
+    \subitem {compression\_ratio}, \hyperpage{132}
+    \subitem {data}, \hyperpage{132}
+    \subitem {error\_message}, \hyperpage{132}
+    \subitem {original\_size}, \hyperpage{132}
+    \subitem {processing\_time\_ms}, \hyperpage{133}
+    \subitem {success}, \hyperpage{133}
+  \item {filevault::compression::CompressionService}, \hyperpage{133}
+    \subitem {create}, \hyperpage{133}
+    \subitem {get\_algorithm\_name}, \hyperpage{134}
+    \subitem {parse\_algorithm}, \hyperpage{134}
+  \item {filevault::compression::ICompressor}, \hyperpage{239}
+    \subitem {\texorpdfstring{$\sim$}{\string~}ICompressor}, 
+		\hyperpage{239}
+    \subitem {compress}, \hyperpage{239}
+    \subitem {decompress}, \hyperpage{240}
+    \subitem {name}, \hyperpage{240}
+  \item {filevault::compression::LzmaCompressor}, \hyperpage{273}
+    \subitem {compress}, \hyperpage{275}
+    \subitem {decompress}, \hyperpage{275}
+    \subitem {name}, \hyperpage{275}
+  \item {filevault::compression::ZlibCompressor}, \hyperpage{362}
+    \subitem {compress}, \hyperpage{364}
+    \subitem {decompress}, \hyperpage{364}
+    \subitem {name}, \hyperpage{364}
+  \item {filevault::core}, \hyperpage{24}
+    \subitem {ADVANCED}, \hyperpage{31}
+    \subitem {AES\_128\_CBC}, \hyperpage{27, 28}
+    \subitem {AES\_128\_CFB}, \hyperpage{27, 28}
+    \subitem {AES\_128\_CTR}, \hyperpage{27, 28}
+    \subitem {AES\_128\_ECB}, \hyperpage{28}
+    \subitem {AES\_128\_GCM}, \hyperpage{27, 28}
+    \subitem {AES\_128\_OFB}, \hyperpage{27, 28}
+    \subitem {AES\_128\_XTS}, \hyperpage{28, 29}
+    \subitem {AES\_192\_CBC}, \hyperpage{27, 28}
+    \subitem {AES\_192\_CFB}, \hyperpage{27, 28}
+    \subitem {AES\_192\_CTR}, \hyperpage{27, 28}
+    \subitem {AES\_192\_ECB}, \hyperpage{28, 29}
+    \subitem {AES\_192\_GCM}, \hyperpage{27, 28}
+    \subitem {AES\_192\_OFB}, \hyperpage{28}
+    \subitem {AES\_256\_CBC}, \hyperpage{27, 28}
+    \subitem {AES\_256\_CFB}, \hyperpage{27, 28}
+    \subitem {AES\_256\_CTR}, \hyperpage{27, 28}
+    \subitem {AES\_256\_ECB}, \hyperpage{28, 29}
+    \subitem {AES\_256\_GCM}, \hyperpage{27, 28}
+    \subitem {AES\_256\_OFB}, \hyperpage{28}
+    \subitem {AES\_256\_XTS}, \hyperpage{28, 29}
+    \subitem {AlgorithmID}, \hyperpage{27}
+    \subitem {AlgorithmType}, \hyperpage{28}
+    \subitem {ARGON2I}, \hyperpage{30}
+    \subitem {ARGON2ID}, \hyperpage{30}
+    \subitem {ARIA\_128\_GCM}, \hyperpage{27, 28}
+    \subitem {ARIA\_192\_GCM}, \hyperpage{27, 28}
+    \subitem {ARIA\_256\_GCM}, \hyperpage{27, 28}
+    \subitem {BLAKE2B\_256}, \hyperpage{30}
+    \subitem {BLAKE2B\_384}, \hyperpage{30}
+    \subitem {BLAKE2B\_512}, \hyperpage{30}
+    \subitem {BLAKE2S\_256}, \hyperpage{30}
+    \subitem {BZIP2}, \hyperpage{29}
+    \subitem {CAESAR}, \hyperpage{27}, \hyperpage{29}
+    \subitem {CAMELLIA\_128\_GCM}, \hyperpage{27, 28}
+    \subitem {CAMELLIA\_192\_GCM}, \hyperpage{27, 28}
+    \subitem {CAMELLIA\_256\_GCM}, \hyperpage{27, 28}
+    \subitem {CHACHA20\_POLY1305}, \hyperpage{27, 28}
+    \subitem {CompressionID}, \hyperpage{29}
+    \subitem {CompressionType}, \hyperpage{29}
+    \subitem {DILITHIUM\_2}, \hyperpage{29}
+    \subitem {DILITHIUM\_3}, \hyperpage{29}
+    \subitem {DILITHIUM\_5}, \hyperpage{29}
+    \subitem {ECC\_P256}, \hyperpage{28, 29}
+    \subitem {ECC\_P384}, \hyperpage{28, 29}
+    \subitem {ECC\_P521}, \hyperpage{28, 29}
+    \subitem {FAIR}, \hyperpage{31}
+    \subitem {FILE\_FORMAT\_MAGIC}, \hyperpage{31}
+    \subitem {FILE\_FORMAT\_VERSION\_MAJOR}, \hyperpage{31}
+    \subitem {FILE\_FORMAT\_VERSION\_MINOR}, \hyperpage{31}
+    \subitem {HashType}, \hyperpage{29}
+    \subitem {HILL}, \hyperpage{27}, \hyperpage{29}
+    \subitem {KDFID}, \hyperpage{30}
+    \subitem {KDFType}, \hyperpage{30}
+    \subitem {KYBER\_1024}, \hyperpage{29}
+    \subitem {KYBER\_1024\_HYBRID}, \hyperpage{29}
+    \subitem {KYBER\_512}, \hyperpage{29}
+    \subitem {KYBER\_512\_HYBRID}, \hyperpage{29}
+    \subitem {KYBER\_768}, \hyperpage{29}
+    \subitem {KYBER\_768\_HYBRID}, \hyperpage{29}
+    \subitem {LZMA}, \hyperpage{29}
+    \subitem {MD5}, \hyperpage{30}
+    \subitem {MEDIUM}, \hyperpage{31}
+    \subitem {NONE}, \hyperpage{29, 30}
+    \subitem {PARANOID}, \hyperpage{31}
+    \subitem {PasswordStrength}, \hyperpage{30}
+    \subitem {PBKDF2\_SHA256}, \hyperpage{30}
+    \subitem {PBKDF2\_SHA512}, \hyperpage{30}
+    \subitem {PLAYFAIR}, \hyperpage{27}, \hyperpage{29}
+    \subitem {PROFESSIONAL}, \hyperpage{31}
+    \subitem {RSA\_2048}, \hyperpage{28, 29}
+    \subitem {RSA\_3072}, \hyperpage{28, 29}
+    \subitem {RSA\_4096}, \hyperpage{28, 29}
+    \subitem {SCRYPT}, \hyperpage{30}
+    \subitem {SecurityLevel}, \hyperpage{31}
+    \subitem {SERPENT\_256\_GCM}, \hyperpage{27, 28}
+    \subitem {SHA1}, \hyperpage{30}
+    \subitem {SHA224}, \hyperpage{30}
+    \subitem {SHA256}, \hyperpage{30}
+    \subitem {SHA384}, \hyperpage{30}
+    \subitem {SHA3\_224}, \hyperpage{30}
+    \subitem {SHA3\_256}, \hyperpage{30}
+    \subitem {SHA3\_384}, \hyperpage{30}
+    \subitem {SHA3\_512}, \hyperpage{30}
+    \subitem {SHA512}, \hyperpage{30}
+    \subitem {SHA512\_256}, \hyperpage{30}
+    \subitem {SM4\_GCM}, \hyperpage{27, 28}
+    \subitem {STREAM\_MAGIC}, \hyperpage{31}
+    \subitem {STREAM\_VERSION}, \hyperpage{32}
+    \subitem {StreamProgressCallback}, \hyperpage{27}
+    \subitem {STRONG}, \hyperpage{31}
+    \subitem {STUDENT}, \hyperpage{31}
+    \subitem {SUBSTITUTION}, \hyperpage{27}, \hyperpage{29}
+    \subitem {TRIPLE\_DES\_CBC}, \hyperpage{28, 29}
+    \subitem {TWOFISH\_128\_GCM}, \hyperpage{27, 28}
+    \subitem {TWOFISH\_192\_GCM}, \hyperpage{27, 28}
+    \subitem {TWOFISH\_256\_GCM}, \hyperpage{27, 28}
+    \subitem {UNKNOWN}, \hyperpage{27}
+    \subitem {UserMode}, \hyperpage{31}
+    \subitem {VERY\_STRONG}, \hyperpage{31}
+    \subitem {VERY\_WEAK}, \hyperpage{31}
+    \subitem {VIGENERE}, \hyperpage{27}, \hyperpage{29}
+    \subitem {WEAK}, \hyperpage{31}
+    \subitem {ZLIB}, \hyperpage{29}
+  \item {filevault::core::Argon2Params}, \hyperpage{86}
+    \subitem {deserialize}, \hyperpage{86}
+    \subitem {iterations}, \hyperpage{87}
+    \subitem {memory\_kb}, \hyperpage{87}
+    \subitem {parallelism}, \hyperpage{87}
+    \subitem {serialize}, \hyperpage{86}
+  \item {filevault::core::ChunkInfo}, \hyperpage{125}
+    \subitem {bytes\_processed}, \hyperpage{125}
+    \subitem {chunk\_index}, \hyperpage{125}
+    \subitem {chunk\_size}, \hyperpage{125}
+    \subitem {total\_bytes}, \hyperpage{125}
+    \subitem {total\_chunks}, \hyperpage{125}
+  \item {filevault::core::CryptoEngine}, \hyperpage{153}
+    \subitem {\texorpdfstring{$\sim$}{\string~}CryptoEngine}, 
+		\hyperpage{154}
+    \subitem {algorithm\_name}, \hyperpage{154}
+    \subitem {algorithms\_}, \hyperpage{159}
+    \subitem {CryptoEngine}, \hyperpage{154}
+    \subitem {derive\_key}, \hyperpage{154}
+    \subitem {generate\_nonce}, \hyperpage{155}
+    \subitem {generate\_salt}, \hyperpage{155}
+    \subitem {get\_algorithm}, \hyperpage{156}
+    \subitem {initialize}, \hyperpage{156}
+    \subitem {kdf\_name}, \hyperpage{157}
+    \subitem {operator=}, \hyperpage{157}
+    \subitem {parse\_algorithm}, \hyperpage{157}
+    \subitem {parse\_kdf}, \hyperpage{157}
+    \subitem {parse\_security\_level}, \hyperpage{158}
+    \subitem {register\_algorithm}, \hyperpage{158}
+    \subitem {security\_level\_name}, \hyperpage{158}
+  \item {filevault::core::CryptoResult}, \hyperpage{159}
+    \subitem {algorithm\_used}, \hyperpage{159}
+    \subitem {data}, \hyperpage{159}
+    \subitem {error\_message}, \hyperpage{159}
+    \subitem {final\_size}, \hyperpage{160}
+    \subitem {nonce}, \hyperpage{160}
+    \subitem {original\_size}, \hyperpage{160}
+    \subitem {processing\_time\_ms}, \hyperpage{160}
+    \subitem {salt}, \hyperpage{160}
+    \subitem {success}, \hyperpage{160}
+    \subitem {tag}, \hyperpage{160}
+  \item {filevault::core::EncryptionConfig}, \hyperpage{195}
+    \subitem {algorithm}, \hyperpage{197}
+    \subitem {apply\_security\_level}, \hyperpage{196}
+    \subitem {apply\_user\_mode}, \hyperpage{196}
+    \subitem {associated\_data}, \hyperpage{197}
+    \subitem {comment}, \hyperpage{197}
+    \subitem {compression}, \hyperpage{197}
+    \subitem {compression\_level}, \hyperpage{197}
+    \subitem {include\_metadata}, \hyperpage{197}
+    \subitem {kdf}, \hyperpage{197}
+    \subitem {kdf\_iterations}, \hyperpage{197}
+    \subitem {kdf\_memory\_kb}, \hyperpage{197}
+    \subitem {kdf\_parallelism}, \hyperpage{197}
+    \subitem {level}, \hyperpage{197}
+    \subitem {mode}, \hyperpage{197}
+    \subitem {nonce}, \hyperpage{197}
+    \subitem {salt}, \hyperpage{198}
+    \subitem {show\_progress}, \hyperpage{198}
+    \subitem {tag}, \hyperpage{198}
+    \subitem {verbose}, \hyperpage{198}
+  \item {filevault::core::FileFormatHandler}, \hyperpage{199}
+    \subitem {create\_header}, \hyperpage{200}
+    \subitem {from\_algorithm\_id}, \hyperpage{201}
+    \subitem {from\_compression\_id}, \hyperpage{201}
+    \subitem {from\_kdf\_id}, \hyperpage{202}
+    \subitem {is\_legacy\_format}, \hyperpage{202}
+    \subitem {read\_file}, \hyperpage{202}
+    \subitem {read\_legacy\_file}, \hyperpage{203}
+    \subitem {to\_algorithm\_id}, \hyperpage{203}
+    \subitem {to\_compression\_id}, \hyperpage{203}
+    \subitem {to\_kdf\_id}, \hyperpage{203}
+    \subitem {write\_file}, \hyperpage{204}
+  \item {filevault::core::FileHeader}, \hyperpage{204}
+    \subitem {algorithm}, \hyperpage{206}
+    \subitem {compressed}, \hyperpage{206}
+    \subitem {compression}, \hyperpage{206}
+    \subitem {deserialize}, \hyperpage{205}
+    \subitem {is\_valid}, \hyperpage{205}
+    \subitem {kdf}, \hyperpage{207}
+    \subitem {kdf\_params}, \hyperpage{207}
+    \subitem {magic}, \hyperpage{207}
+    \subitem {nonce}, \hyperpage{207}
+    \subitem {reserved}, \hyperpage{207}
+    \subitem {salt}, \hyperpage{207}
+    \subitem {serialize}, \hyperpage{206}
+    \subitem {size}, \hyperpage{206}
+    \subitem {version\_major}, \hyperpage{207}
+    \subitem {version\_minor}, \hyperpage{207}
+  \item {filevault::core::HashConfig}, \hyperpage{228}
+    \subitem {algorithm}, \hyperpage{228}
+    \subitem {expected\_hash}, \hyperpage{228}
+    \subitem {hmac\_key}, \hyperpage{228}
+    \subitem {hmac\_mode}, \hyperpage{228}
+    \subitem {include\_filename}, \hyperpage{228}
+    \subitem {uppercase}, \hyperpage{228}
+    \subitem {verify\_mode}, \hyperpage{229}
+  \item {filevault::core::ICryptoAlgorithm}, \hyperpage{240}
+    \subitem {\texorpdfstring{$\sim$}{\string~}ICryptoAlgorithm}, 
+		\hyperpage{242}
+    \subitem {decrypt}, \hyperpage{242}
+    \subitem {encrypt}, \hyperpage{242}
+    \subitem {is\_suitable\_for}, \hyperpage{243}
+    \subitem {key\_size}, \hyperpage{243}
+    \subitem {name}, \hyperpage{243}
+    \subitem {type}, \hyperpage{244}
+  \item {filevault::core::ModePreset}, \hyperpage{275}
+    \subitem {algorithm}, \hyperpage{277}
+    \subitem {apply\_to}, \hyperpage{276}
+    \subitem {compression}, \hyperpage{277}
+    \subitem {compression\_level}, \hyperpage{278}
+    \subitem {description}, \hyperpage{276}
+    \subitem {get\_all\_presets}, \hyperpage{276}
+    \subitem {get\_preset}, \hyperpage{276}
+    \subitem {kdf}, \hyperpage{278}
+    \subitem {kdf\_iterations}, \hyperpage{278}
+    \subitem {kdf\_memory\_kb}, \hyperpage{278}
+    \subitem {kdf\_parallelism}, \hyperpage{278}
+    \subitem {mode}, \hyperpage{278}
+    \subitem {name}, \hyperpage{277}
+    \subitem {parse\_mode}, \hyperpage{277}
+    \subitem {security\_level}, \hyperpage{278}
+  \item {filevault::core::PasswordAnalysis}, \hyperpage{284}
+    \subitem {crack\_time\_offline}, \hyperpage{284}
+    \subitem {crack\_time\_online}, \hyperpage{284}
+    \subitem {has\_digits}, \hyperpage{284}
+    \subitem {has\_lowercase}, \hyperpage{284}
+    \subitem {has\_repeated\_chars}, \hyperpage{284}
+    \subitem {has\_special}, \hyperpage{284}
+    \subitem {has\_uppercase}, \hyperpage{285}
+    \subitem {is\_common\_password}, \hyperpage{285}
+    \subitem {length}, \hyperpage{285}
+    \subitem {score}, \hyperpage{285}
+    \subitem {strength}, \hyperpage{285}
+    \subitem {suggestions}, \hyperpage{285}
+    \subitem {warnings}, \hyperpage{285}
+  \item {filevault::core::PBKDF2Params}, \hyperpage{285}
+    \subitem {deserialize}, \hyperpage{286}
+    \subitem {iterations}, \hyperpage{286}
+    \subitem {serialize}, \hyperpage{286}
+  \item {filevault::core::presets}, \hyperpage{32}
+    \subitem {ADVANCED}, \hyperpage{32}
+    \subitem {BASIC}, \hyperpage{32}
+    \subitem {STANDARD}, \hyperpage{32}
+  \item {filevault::core::Result$<$ T $>$}, \hyperpage{296}
+    \subitem {error}, \hyperpage{297}
+    \subitem {error\_message}, \hyperpage{298}
+    \subitem {ok}, \hyperpage{297}
+    \subitem {operator bool}, \hyperpage{297}
+    \subitem {success}, \hyperpage{298}
+    \subitem {unwrap}, \hyperpage{298}
+    \subitem {value}, \hyperpage{298}
+  \item {filevault::core::Result$<$ void $>$}, \hyperpage{298}
+    \subitem {error}, \hyperpage{298}
+    \subitem {error\_message}, \hyperpage{299}
+    \subitem {ok}, \hyperpage{298}
+    \subitem {operator bool}, \hyperpage{299}
+    \subitem {success}, \hyperpage{299}
+  \item {filevault::core::ScryptParams}, \hyperpage{305}
+    \subitem {deserialize}, \hyperpage{306}
+    \subitem {n}, \hyperpage{306}
+    \subitem {p}, \hyperpage{306}
+    \subitem {r}, \hyperpage{306}
+    \subitem {serialize}, \hyperpage{306}
+  \item {filevault::core::StreamingConfig}, \hyperpage{326}
+    \subitem {algorithm}, \hyperpage{327}
+    \subitem {chunk\_size}, \hyperpage{327}
+    \subitem {compression}, \hyperpage{327}
+    \subitem {compression\_level}, \hyperpage{327}
+    \subitem {kdf}, \hyperpage{327}
+    \subitem {level}, \hyperpage{327}
+    \subitem {progress\_callback}, \hyperpage{327}
+  \item {filevault::core::StreamingCrypto}, \hyperpage{327}
+    \subitem {decrypt\_file}, \hyperpage{328}
+    \subitem {derive\_chunk\_nonce}, \hyperpage{329}
+    \subitem {encrypt\_file}, \hyperpage{329}
+    \subitem {get\_recommended\_chunk\_size}, \hyperpage{330}
+    \subitem {read\_stream\_header}, \hyperpage{330}
+    \subitem {should\_use\_streaming}, \hyperpage{330}
+    \subitem {write\_stream\_header}, \hyperpage{331}
+  \item {filevault::core::StreamingResult}, \hyperpage{331}
+    \subitem {bytes\_processed}, \hyperpage{332}
+    \subitem {chunks\_processed}, \hyperpage{332}
+    \subitem {error\_message}, \hyperpage{332}
+    \subitem {processing\_time\_ms}, \hyperpage{332}
+    \subitem {success}, \hyperpage{332}
+    \subitem {throughput\_mbps}, \hyperpage{332}
+  \item {filevault::format}, \hyperpage{33}
+  \item {filevault::format::FileHeader}, \hyperpage{207}
+    \subitem {algorithm}, \hyperpage{209}
+    \subitem {algorithm\_}, \hyperpage{216}
+    \subitem {deserialize}, \hyperpage{209}
+    \subitem {encrypted\_size}, \hyperpage{210}
+    \subitem {encrypted\_size\_}, \hyperpage{216}
+    \subitem {FileHeader}, \hyperpage{209}
+    \subitem {FLAG\_COMPRESSED}, \hyperpage{217}
+    \subitem {FLAG\_METADATA}, \hyperpage{217}
+    \subitem {flags}, \hyperpage{210}
+    \subitem {flags\_}, \hyperpage{217}
+    \subitem {is\_compressed}, \hyperpage{210}
+    \subitem {kdf}, \hyperpage{210}
+    \subitem {kdf\_}, \hyperpage{217}
+    \subitem {MAGIC}, \hyperpage{217}
+    \subitem {MIN\_HEADER\_SIZE}, \hyperpage{217}
+    \subitem {nonce}, \hyperpage{211}
+    \subitem {nonce\_}, \hyperpage{217}
+    \subitem {original\_size}, \hyperpage{211}
+    \subitem {original\_size\_}, \hyperpage{217}
+    \subitem {read\_uint16}, \hyperpage{211}
+    \subitem {read\_uint32}, \hyperpage{211}
+    \subitem {read\_uint64}, \hyperpage{212}
+    \subitem {reserved\_}, \hyperpage{217}
+    \subitem {salt}, \hyperpage{212}
+    \subitem {salt\_}, \hyperpage{217}
+    \subitem {security\_level}, \hyperpage{212}
+    \subitem {security\_level\_}, \hyperpage{217}
+    \subitem {serialize}, \hyperpage{212}
+    \subitem {set\_algorithm}, \hyperpage{213}
+    \subitem {set\_compressed}, \hyperpage{213}
+    \subitem {set\_encrypted\_size}, \hyperpage{213}
+    \subitem {set\_kdf}, \hyperpage{213}
+    \subitem {set\_nonce}, \hyperpage{213}
+    \subitem {set\_original\_size}, \hyperpage{214}
+    \subitem {set\_salt}, \hyperpage{214}
+    \subitem {set\_security\_level}, \hyperpage{214}
+    \subitem {set\_tag}, \hyperpage{214}
+    \subitem {set\_timestamp}, \hyperpage{215}
+    \subitem {tag}, \hyperpage{215}
+    \subitem {tag\_}, \hyperpage{217}
+    \subitem {timestamp}, \hyperpage{215}
+    \subitem {timestamp\_}, \hyperpage{217}
+    \subitem {total\_size}, \hyperpage{215}
+    \subitem {validate}, \hyperpage{215}
+    \subitem {VERSION\_MAJOR}, \hyperpage{217}
+    \subitem {VERSION\_MINOR}, \hyperpage{217}
+    \subitem {write\_uint16}, \hyperpage{215}
+    \subitem {write\_uint32}, \hyperpage{216}
+    \subitem {write\_uint64}, \hyperpage{216}
+  \item {filevault::steganography}, \hyperpage{33}
+  \item {filevault::steganography::LSBSteganography}, \hyperpage{270}
+    \subitem {calculate\_capacity}, \hyperpage{271}
+    \subitem {embed}, \hyperpage{271}
+    \subitem {embed\_byte}, \hyperpage{272}
+    \subitem {extract}, \hyperpage{272}
+    \subitem {extract\_byte}, \hyperpage{273}
+    \subitem {LENGTH\_HEADER\_SIZE}, \hyperpage{273}
+  \item {filevault::utils}, \hyperpage{33}
+    \subitem {is\_terminal}, \hyperpage{33}
+    \subitem {mingw\_data}, \hyperpage{34}
+  \item {filevault::utils::BlockProgressBar}, \hyperpage{106}
+    \subitem {bar\_}, \hyperpage{107}
+    \subitem {BlockProgressBar}, \hyperpage{106}
+    \subitem {mark\_as\_completed}, \hyperpage{106}
+    \subitem {set\_option\_text}, \hyperpage{106}
+    \subitem {set\_progress}, \hyperpage{106}
+  \item {filevault::utils::Config}, \hyperpage{135}
+    \subitem {compression\_level\_}, \hyperpage{141}
+    \subitem {default\_algorithm\_}, \hyperpage{141}
+    \subitem {default\_compression\_}, \hyperpage{141}
+    \subitem {default\_kdf\_}, \hyperpage{141}
+    \subitem {default\_mode\_}, \hyperpage{141}
+    \subitem {from\_json}, \hyperpage{136}
+    \subitem {get}, \hyperpage{136}
+    \subitem {get\_compression\_level}, \hyperpage{137}
+    \subitem {get\_config\_path}, \hyperpage{137}
+    \subitem {get\_default}, \hyperpage{137}
+    \subitem {get\_default\_algorithm}, \hyperpage{138}
+    \subitem {get\_default\_compression}, \hyperpage{138}
+    \subitem {get\_default\_kdf}, \hyperpage{138}
+    \subitem {get\_default\_mode}, \hyperpage{138}
+    \subitem {get\_show\_progress}, \hyperpage{138}
+    \subitem {get\_verbose}, \hyperpage{138}
+    \subitem {load}, \hyperpage{138}
+    \subitem {reset}, \hyperpage{139}
+    \subitem {save}, \hyperpage{139}
+    \subitem {set}, \hyperpage{140}
+    \subitem {set\_compression\_level}, \hyperpage{140}
+    \subitem {set\_default\_algorithm}, \hyperpage{140}
+    \subitem {set\_default\_compression}, \hyperpage{140}
+    \subitem {set\_default\_kdf}, \hyperpage{141}
+    \subitem {set\_default\_mode}, \hyperpage{141}
+    \subitem {set\_show\_progress}, \hyperpage{141}
+    \subitem {set\_verbose}, \hyperpage{141}
+    \subitem {show\_progress\_}, \hyperpage{142}
+    \subitem {to\_json}, \hyperpage{141}
+    \subitem {verbose\_}, \hyperpage{142}
+  \item {filevault::utils::Console}, \hyperpage{147}
+    \subitem {debug}, \hyperpage{147}
+    \subitem {error}, \hyperpage{147}
+    \subitem {header}, \hyperpage{148}
+    \subitem {info}, \hyperpage{149}
+    \subitem {separator}, \hyperpage{150}
+    \subitem {success}, \hyperpage{151}
+    \subitem {warning}, \hyperpage{152}
+  \item {filevault::utils::CryptoUtils}, \hyperpage{160}
+    \subitem {format\_bytes}, \hyperpage{161}
+    \subitem {hex\_decode}, \hyperpage{161}
+    \subitem {hex\_encode}, \hyperpage{161}
+  \item {filevault::utils::FileIO}, \hyperpage{219}
+    \subitem {file\_exists}, \hyperpage{219}
+    \subitem {file\_size}, \hyperpage{220}
+    \subitem {read\_file}, \hyperpage{220}
+    \subitem {write\_file}, \hyperpage{221}
+  \item {filevault::utils::Password}, \hyperpage{278}
+    \subitem {analyze\_strength}, \hyperpage{279}
+    \subitem {calculate\_entropy}, \hyperpage{280}
+    \subitem {common\_passwords\_}, \hyperpage{283}
+    \subitem {disable\_echo}, \hyperpage{280}
+    \subitem {display\_strength\_meter}, \hyperpage{280}
+    \subitem {enable\_echo}, \hyperpage{281}
+    \subitem {estimate\_crack\_time}, \hyperpage{281}
+    \subitem {get\_strength\_color}, \hyperpage{282}
+    \subitem {get\_strength\_label}, \hyperpage{282}
+    \subitem {is\_common\_password}, \hyperpage{282}
+    \subitem {read\_secure}, \hyperpage{282}
+  \item {filevault::utils::ProgressBar}, \hyperpage{294}
+    \subitem {\texorpdfstring{$\sim$}{\string~}ProgressBar}, 
+		\hyperpage{295}
+    \subitem {bar\_}, \hyperpage{296}
+    \subitem {current\_progress\_}, \hyperpage{296}
+    \subitem {hide}, \hyperpage{295}
+    \subitem {mark\_as\_completed}, \hyperpage{295}
+    \subitem {max\_progress\_}, \hyperpage{296}
+    \subitem {ProgressBar}, \hyperpage{295}
+    \subitem {set\_postfix}, \hyperpage{295}
+    \subitem {set\_progress}, \hyperpage{295}
+    \subitem {show}, \hyperpage{296}
+    \subitem {tick}, \hyperpage{296}
+  \item {filevault::utils::TableBuilder}, \hyperpage{338}
+    \subitem {print\_algorithm\_list}, \hyperpage{338}
+    \subitem {print\_benchmark\_results}, \hyperpage{338}
+    \subitem {print\_encryption\_config}, \hyperpage{338}
+    \subitem {print\_file\_summary}, \hyperpage{339}
+  \item {filevault::utils::TableFormatter}, \hyperpage{339}
+    \subitem {add\_row}, \hyperpage{340}
+    \subitem {algorithm\_list\_table}, \hyperpage{340}
+    \subitem {benchmark\_table}, \hyperpage{340}
+    \subitem {file\_info\_table}, \hyperpage{341}
+    \subitem {print}, \hyperpage{341}
+    \subitem {set\_border\_style}, \hyperpage{341}
+    \subitem {set\_column\_alignment}, \hyperpage{342}
+    \subitem {set\_column\_format}, \hyperpage{342}
+    \subitem {table\_}, \hyperpage{342}
+    \subitem {TableFormatter}, \hyperpage{340}
+    \subitem {to\_string}, \hyperpage{342}
+  \item {final\_size}
+    \subitem {filevault::core::CryptoResult}, \hyperpage{160}
+  \item {find\_position}
+    \subitem {filevault::algorithms::classical::Playfair}, 
+		\hyperpage{291, 292}
+  \item {FLAG\_COMPRESSED}
+    \subitem {filevault::format::FileHeader}, \hyperpage{217}
+  \item {FLAG\_METADATA}
+    \subitem {filevault::format::FileHeader}, \hyperpage{217}
+  \item {flags}
+    \subitem {filevault::format::FileHeader}, \hyperpage{210}
+  \item {flags\_}
+    \subitem {filevault::format::FileHeader}, \hyperpage{217}
+  \item {force\_}
+    \subitem {filevault::cli::KeygenCommand}, \hyperpage{252}
+  \item {force\_weak\_password\_}
+    \subitem {filevault::cli::EncryptCommand}, \hyperpage{195}
+  \item {format\_}
+    \subitem {filevault::cli::commands::DumpCommand}, \hyperpage{177}
+  \item {format\_bytes}
+    \subitem {filevault::utils::CryptoUtils}, \hyperpage{161}
+  \item {frequency\_analysis}
+    \subitem {filevault::algorithms::classical::Caesar}, 
+		\hyperpage{113}
+  \item {from\_algorithm\_id}
+    \subitem {filevault::core::FileFormatHandler}, \hyperpage{201}
+  \item {from\_compression\_id}
+    \subitem {filevault::core::FileFormatHandler}, \hyperpage{201}
+  \item {from\_json}
+    \subitem {filevault::utils::Config}, \hyperpage{136}
+  \item {from\_kdf\_id}
+    \subitem {filevault::core::FileFormatHandler}, \hyperpage{202}
+
+  \indexspace
+
+  \item {generate\_key\_pair}
+    \subitem {filevault::algorithms::asymmetric::ECCHybrid}, 
+		\hyperpage{180}
+    \subitem {filevault::algorithms::asymmetric::ECDH}, \hyperpage{184}
+    \subitem {filevault::algorithms::asymmetric::ECDSA}, 
+		\hyperpage{187}
+    \subitem {filevault::algorithms::asymmetric::RSA}, \hyperpage{302}
+  \item {generate\_keypair}
+    \subitem {filevault::algorithms::pqc::Dilithium}, \hyperpage{171}
+    \subitem {filevault::algorithms::pqc::Kyber}, \hyperpage{259}
+    \subitem {filevault::algorithms::pqc::KyberHybrid}, \hyperpage{265}
+  \item {generate\_nonce}
+    \subitem {filevault::core::CryptoEngine}, \hyperpage{155}
+  \item {generate\_output\_path}
+    \subitem {filevault::cli::CompressCommand}, \hyperpage{130}
+    \subitem {filevault::cli::DecompressCommand}, \hyperpage{164}
+  \item {generate\_salt}
+    \subitem {filevault::core::CryptoEngine}, \hyperpage{155}
+  \item {get}
+    \subitem {filevault::utils::Config}, \hyperpage{136}
+  \item {get\_algorithm}
+    \subitem {filevault::core::CryptoEngine}, \hyperpage{156}
+  \item {get\_algorithm\_name}
+    \subitem {filevault::compression::CompressionService}, 
+		\hyperpage{134}
+  \item {get\_all\_presets}
+    \subitem {filevault::core::ModePreset}, \hyperpage{276}
+  \item {get\_botan\_algorithm\_name}
+    \subitem {filevault::cli::HashCommand}, \hyperpage{225}
+  \item {get\_botan\_curve\_name}
+    \subitem {filevault::algorithms::asymmetric}, \hyperpage{20}
+  \item {get\_compression\_level}
+    \subitem {filevault::utils::Config}, \hyperpage{137}
+  \item {get\_config\_path}
+    \subitem {filevault::utils::Config}, \hyperpage{137}
+  \item {get\_curve\_key\_size}
+    \subitem {filevault::algorithms::asymmetric}, \hyperpage{20}
+  \item {get\_default}
+    \subitem {filevault::utils::Config}, \hyperpage{137}
+  \item {get\_default\_algorithm}
+    \subitem {filevault::utils::Config}, \hyperpage{138}
+  \item {get\_default\_compression}
+    \subitem {filevault::utils::Config}, \hyperpage{138}
+  \item {get\_default\_kdf}
+    \subitem {filevault::utils::Config}, \hyperpage{138}
+  \item {get\_default\_mode}
+    \subitem {filevault::utils::Config}, \hyperpage{138}
+  \item {get\_dilithium\_mode}
+    \subitem {filevault::algorithms::pqc}, \hyperpage{21}
+  \item {get\_kyber\_mode}
+    \subitem {filevault::algorithms::pqc}, \hyperpage{21}
+  \item {get\_platform\_info}
+    \subitem {filevault::cli::BenchmarkCommand}, \hyperpage{102}
+  \item {get\_preset}
+    \subitem {filevault::core::ModePreset}, \hyperpage{276}
+  \item {get\_recommended\_chunk\_size}
+    \subitem {filevault::core::StreamingCrypto}, \hyperpage{330}
+  \item {get\_show\_progress}
+    \subitem {filevault::utils::Config}, \hyperpage{138}
+  \item {get\_strength\_color}
+    \subitem {filevault::utils::Password}, \hyperpage{282}
+  \item {get\_strength\_label}
+    \subitem {filevault::utils::Password}, \hyperpage{282}
+  \item {get\_verbose}
+    \subitem {filevault::utils::Config}, \hyperpage{138}
+
+  \indexspace
+
+  \item {has\_digits}
+    \subitem {filevault::core::PasswordAnalysis}, \hyperpage{284}
+  \item {has\_header}
+    \subitem {filevault::cli::InfoCommand::FileInfo}, \hyperpage{218}
+  \item {has\_lowercase}
+    \subitem {filevault::core::PasswordAnalysis}, \hyperpage{284}
+  \item {has\_repeated\_chars}
+    \subitem {filevault::core::PasswordAnalysis}, \hyperpage{284}
+  \item {has\_special}
+    \subitem {filevault::core::PasswordAnalysis}, \hyperpage{284}
+  \item {has\_uppercase}
+    \subitem {filevault::core::PasswordAnalysis}, \hyperpage{285}
+  \item {hash\_only\_}
+    \subitem {filevault::cli::BenchmarkCommand}, \hyperpage{104}
+  \item {HashCommand}
+    \subitem {filevault::cli::HashCommand}, \hyperpage{223}
+  \item {HashType}
+    \subitem {filevault::core}, \hyperpage{29}
+  \item {header}
+    \subitem {filevault::utils::Console}, \hyperpage{148}
+  \item {header\_size}
+    \subitem {filevault::cli::InfoCommand::FileInfo}, \hyperpage{218}
+  \item {hex\_decode}
+    \subitem {filevault::utils::CryptoUtils}, \hyperpage{161}
+  \item {hex\_encode}
+    \subitem {filevault::utils::CryptoUtils}, \hyperpage{161}
+  \item {hide}
+    \subitem {filevault::utils::ProgressBar}, \hyperpage{295}
+  \item {HILL}
+    \subitem {filevault::core}, \hyperpage{27}, \hyperpage{29}
+  \item {hmac\_key}
+    \subitem {filevault::core::HashConfig}, \hyperpage{228}
+  \item {hmac\_key\_}
+    \subitem {filevault::cli::HashCommand}, \hyperpage{227}
+  \item {hmac\_mode}
+    \subitem {filevault::core::HashConfig}, \hyperpage{228}
+
+  \indexspace
+
+  \item {include/filevault/algorithms/asymmetric/ecc.hpp}, 
+		\hyperpage{365, 366}
+  \item {include/filevault/algorithms/asymmetric/rsa.hpp}, 
+		\hyperpage{368, 369}
+  \item {include/filevault/algorithms/classical/caesar.hpp}, 
+		\hyperpage{370}
+  \item {include/filevault/algorithms/classical/classical\_ciphers.hpp}, 
+		\hyperpage{371, 372}
+  \item {include/filevault/algorithms/classical/hill.hpp}, 
+		\hyperpage{373, 374}
+  \item {include/filevault/algorithms/classical/playfair.hpp}, 
+		\hyperpage{375, 376}
+  \item {include/filevault/algorithms/classical/substitution.hpp}, 
+		\hyperpage{377, 378}
+  \item {include/filevault/algorithms/classical/vigenere.hpp}, 
+		\hyperpage{379, 380}
+  \item {include/filevault/algorithms/pqc/post\_quantum.hpp}, 
+		\hyperpage{381, 382}
+  \item {include/filevault/algorithms/symmetric/aes\_cbc.hpp}, 
+		\hyperpage{383}, \hyperpage{385}
+  \item {include/filevault/algorithms/symmetric/aes\_cfb.hpp}, 
+		\hyperpage{385}, \hyperpage{387}
+  \item {include/filevault/algorithms/symmetric/aes\_ctr.hpp}, 
+		\hyperpage{387}, \hyperpage{389}
+  \item {include/filevault/algorithms/symmetric/aes\_ecb.hpp}, 
+		\hyperpage{389}, \hyperpage{391}
+  \item {include/filevault/algorithms/symmetric/aes\_gcm.hpp}, 
+		\hyperpage{391, 392}
+  \item {include/filevault/algorithms/symmetric/aes\_ofb.hpp}, 
+		\hyperpage{393}, \hyperpage{395}
+  \item {include/filevault/algorithms/symmetric/aes\_xts.hpp}, 
+		\hyperpage{395}, \hyperpage{397}
+  \item {include/filevault/algorithms/symmetric/aria\_gcm.hpp}, 
+		\hyperpage{397}, \hyperpage{399}
+  \item {include/filevault/algorithms/symmetric/camellia\_gcm.hpp}, 
+		\hyperpage{399}, \hyperpage{401}
+  \item {include/filevault/algorithms/symmetric/chacha20\_poly1305.hpp}, 
+		\hyperpage{401}, \hyperpage{403}
+  \item {include/filevault/algorithms/symmetric/serpent\_gcm.hpp}, 
+		\hyperpage{403, 404}
+  \item {include/filevault/algorithms/symmetric/sm4\_gcm.hpp}, 
+		\hyperpage{405}, \hyperpage{407}
+  \item {include/filevault/algorithms/symmetric/triple\_des.hpp}, 
+		\hyperpage{407}, \hyperpage{409}
+  \item {include/filevault/algorithms/symmetric/twofish\_gcm.hpp}, 
+		\hyperpage{409}, \hyperpage{411}
+  \item {include/filevault/archive/archive\_format.hpp}, 
+		\hyperpage{411, 412}
+  \item {include/filevault/cli/app.hpp}, \hyperpage{413, 414}
+  \item {include/filevault/cli/command.hpp}, \hyperpage{415, 416}
+  \item {include/filevault/cli/commands/archive\_cmd.hpp}, 
+		\hyperpage{416, 417}
+  \item {include/filevault/cli/commands/benchmark\_cmd.hpp}, 
+		\hyperpage{418, 419}
+  \item {include/filevault/cli/commands/compress\_cmd.hpp}, 
+		\hyperpage{420, 421}
+  \item {include/filevault/cli/commands/config\_cmd.hpp}, 
+		\hyperpage{422}
+  \item {include/filevault/cli/commands/decompress\_cmd.hpp}, 
+		\hyperpage{423, 424}
+  \item {include/filevault/cli/commands/decrypt\_cmd.hpp}, 
+		\hyperpage{425}
+  \item {include/filevault/cli/commands/dump\_cmd.hpp}, 
+		\hyperpage{426, 427}
+  \item {include/filevault/cli/commands/encrypt\_cmd.hpp}, 
+		\hyperpage{428}
+  \item {include/filevault/cli/commands/hash\_cmd.hpp}, 
+		\hyperpage{429, 430}
+  \item {include/filevault/cli/commands/info\_cmd.hpp}, 
+		\hyperpage{431, 432}
+  \item {include/filevault/cli/commands/keygen\_cmd.hpp}, 
+		\hyperpage{432}, \hyperpage{434}
+  \item {include/filevault/cli/commands/keyinfo\_cmd.hpp}, 
+		\hyperpage{434, 435}
+  \item {include/filevault/cli/commands/list\_cmd.hpp}, \hyperpage{436}
+  \item {include/filevault/cli/commands/sign\_cmd.hpp}, 
+		\hyperpage{437, 438}
+  \item {include/filevault/cli/commands/stego\_cmd.hpp}, 
+		\hyperpage{439, 440}
+  \item {include/filevault/cli/commands/verify\_cmd.hpp}, 
+		\hyperpage{440, 441}
+  \item {include/filevault/compression/compressor.hpp}, 
+		\hyperpage{442, 443}
+  \item {include/filevault/core/crypto\_algorithm.hpp}, \hyperpage{444}
+  \item {include/filevault/core/crypto\_engine.hpp}, 
+		\hyperpage{445, 446}
+  \item {include/filevault/core/file\_format.hpp}, \hyperpage{447, 448}
+  \item {include/filevault/core/modes.hpp}, \hyperpage{451, 452}
+  \item {include/filevault/core/result.hpp}, \hyperpage{452, 453}
+  \item {include/filevault/core/streaming.hpp}, \hyperpage{454}, 
+		\hyperpage{456}
+  \item {include/filevault/core/types.hpp}, \hyperpage{457, 458}
+  \item {include/filevault/format/file\_header.hpp}, 
+		\hyperpage{461, 462}
+  \item {include/filevault/steganography/lsb.hpp}, \hyperpage{463, 464}
+  \item {include/filevault/utils/config.hpp}, \hyperpage{465, 466}
+  \item {include/filevault/utils/console.hpp}, \hyperpage{467, 468}
+  \item {include/filevault/utils/crypto\_utils.hpp}, 
+		\hyperpage{468, 469}
+  \item {include/filevault/utils/file\_io.hpp}, \hyperpage{469, 470}
+  \item {include/filevault/utils/password.hpp}, \hyperpage{471}
+  \item {include/filevault/utils/progress.hpp}, \hyperpage{472, 473}
+  \item {include/filevault/utils/table\_formatter.hpp}, 
+		\hyperpage{473, 474}
+  \item {include\_filename}
+    \subitem {filevault::core::HashConfig}, \hyperpage{228}
+  \item {include\_metadata}
+    \subitem {filevault::core::EncryptionConfig}, \hyperpage{197}
+  \item {info}
+    \subitem {filevault::utils::Console}, \hyperpage{149}
+  \item {InfoCommand}
+    \subitem {filevault::cli::InfoCommand}, \hyperpage{245}
+  \item {initialize}
+    \subitem {filevault::cli::Application}, \hyperpage{72}
+    \subitem {filevault::core::CryptoEngine}, \hyperpage{156}
+  \item {input\_file\_}
+    \subitem {filevault::cli::commands::StegoCommand}, \hyperpage{326}
+    \subitem {filevault::cli::CompressCommand}, \hyperpage{131}
+    \subitem {filevault::cli::DecompressCommand}, \hyperpage{166}
+    \subitem {filevault::cli::DecryptCommand}, \hyperpage{170}
+    \subitem {filevault::cli::EncryptCommand}, \hyperpage{195}
+    \subitem {filevault::cli::HashCommand}, \hyperpage{227}
+    \subitem {filevault::cli::InfoCommand}, \hyperpage{248}
+  \item {input\_files\_}
+    \subitem {filevault::cli::commands::ArchiveCommand}, \hyperpage{82}
+  \item {invert\_matrix}
+    \subitem {filevault::algorithms::classical::HillCipher}, 
+		\hyperpage{233}
+  \item {is\_authenticated}
+    \subitem {filevault::algorithms::asymmetric::RSA}, \hyperpage{303}
+    \subitem {filevault::algorithms::symmetric::AES\_CFB}, 
+		\hyperpage{44}
+    \subitem {filevault::algorithms::symmetric::AES\_ECB}, 
+		\hyperpage{54}
+    \subitem {filevault::algorithms::symmetric::AES\_OFB}, 
+		\hyperpage{64}
+    \subitem {filevault::algorithms::symmetric::AES\_XTS}, 
+		\hyperpage{70}
+  \item {is\_common\_password}
+    \subitem {filevault::core::PasswordAnalysis}, \hyperpage{285}
+    \subitem {filevault::utils::Password}, \hyperpage{282}
+  \item {is\_compressed}
+    \subitem {filevault::format::FileHeader}, \hyperpage{210}
+  \item {is\_legacy\_format}
+    \subitem {filevault::core::FileFormatHandler}, \hyperpage{202}
+  \item {is\_secure\_algorithm}
+    \subitem {filevault::cli::HashCommand}, \hyperpage{225}
+  \item {is\_suitable\_for}
+    \subitem {filevault::algorithms::asymmetric::ECCHybrid}, 
+		\hyperpage{181}
+    \subitem {filevault::algorithms::asymmetric::RSA}, \hyperpage{303}
+    \subitem {filevault::algorithms::classical::Caesar}, 
+		\hyperpage{113}
+    \subitem {filevault::algorithms::classical::HillCipher}, 
+		\hyperpage{233}
+    \subitem {filevault::algorithms::classical::Playfair}, 
+		\hyperpage{292}
+    \subitem {filevault::algorithms::classical::SubstitutionCipher}, 
+		\hyperpage{336}
+    \subitem {filevault::algorithms::classical::Vigenere}, 
+		\hyperpage{361}
+    \subitem {filevault::algorithms::pqc::Kyber}, \hyperpage{260}
+    \subitem {filevault::algorithms::pqc::KyberHybrid}, \hyperpage{266}
+    \subitem {filevault::algorithms::symmetric::AES\_CBC}, 
+		\hyperpage{39}
+    \subitem {filevault::algorithms::symmetric::AES\_CFB}, 
+		\hyperpage{44}
+    \subitem {filevault::algorithms::symmetric::AES\_CTR}, 
+		\hyperpage{49}
+    \subitem {filevault::algorithms::symmetric::AES\_ECB}, 
+		\hyperpage{54}
+    \subitem {filevault::algorithms::symmetric::AES\_GCM}, 
+		\hyperpage{59}
+    \subitem {filevault::algorithms::symmetric::AES\_OFB}, 
+		\hyperpage{64}
+    \subitem {filevault::algorithms::symmetric::AES\_XTS}, 
+		\hyperpage{70}
+    \subitem {filevault::algorithms::symmetric::ARIA\_GCM}, 
+		\hyperpage{90}
+    \subitem {filevault::algorithms::symmetric::Camellia\_GCM}, 
+		\hyperpage{118}
+    \subitem {filevault::algorithms::symmetric::ChaCha20Poly1305}, 
+		\hyperpage{123}
+    \subitem {filevault::algorithms::symmetric::Serpent\_GCM}, 
+		\hyperpage{310}
+    \subitem {filevault::algorithms::symmetric::SM4\_GCM}, 
+		\hyperpage{319}
+    \subitem {filevault::algorithms::symmetric::TripleDES}, 
+		\hyperpage{346}
+    \subitem {filevault::algorithms::symmetric::Twofish\_GCM}, 
+		\hyperpage{351}
+    \subitem {filevault::core::ICryptoAlgorithm}, \hyperpage{243}
+  \item {is\_terminal}
+    \subitem {filevault::utils}, \hyperpage{33}
+  \item {is\_valid}
+    \subitem {filevault::core::FileHeader}, \hyperpage{205}
+  \item {is\_valid\_key}
+    \subitem {filevault::algorithms::classical::HillCipher}, 
+		\hyperpage{234}
+    \subitem {filevault::algorithms::classical::SubstitutionCipher}, 
+		\hyperpage{336}
+  \item {ISATTY}
+    \subitem {progress.cpp}, \hyperpage{513}
+  \item {iterations}
+    \subitem {filevault::core::Argon2Params}, \hyperpage{87}
+    \subitem {filevault::core::PBKDF2Params}, \hyperpage{286}
+  \item {iterations\_}
+    \subitem {filevault::cli::BenchmarkCommand}, \hyperpage{104}
+  \item {iv\_size}
+    \subitem {filevault::algorithms::symmetric::AES\_CBC}, 
+		\hyperpage{39}
+    \subitem {filevault::algorithms::symmetric::AES\_CFB}, 
+		\hyperpage{44}
+    \subitem {filevault::algorithms::symmetric::AES\_OFB}, 
+		\hyperpage{64}
+    \subitem {filevault::algorithms::symmetric::TripleDES}, 
+		\hyperpage{346}
+
+  \indexspace
+
+  \item {json\_output\_}
+    \subitem {filevault::cli::BenchmarkCommand}, \hyperpage{105}
+
+  \indexspace
+
+  \item {kasiski\_examination}
+    \subitem {filevault::algorithms::classical::Vigenere}, 
+		\hyperpage{361}
+  \item {kdf}
+    \subitem {filevault::cli::InfoCommand::FileInfo}, \hyperpage{219}
+    \subitem {filevault::core::EncryptionConfig}, \hyperpage{197}
+    \subitem {filevault::core::FileHeader}, \hyperpage{207}
+    \subitem {filevault::core::ModePreset}, \hyperpage{278}
+    \subitem {filevault::core::StreamingConfig}, \hyperpage{327}
+    \subitem {filevault::format::FileHeader}, \hyperpage{210}
+  \item {kdf\_}
+    \subitem {filevault::cli::commands::ArchiveCommand}, \hyperpage{82}
+    \subitem {filevault::cli::EncryptCommand}, \hyperpage{195}
+    \subitem {filevault::format::FileHeader}, \hyperpage{217}
+  \item {kdf\_iterations}
+    \subitem {filevault::core::EncryptionConfig}, \hyperpage{197}
+    \subitem {filevault::core::ModePreset}, \hyperpage{278}
+  \item {kdf\_memory\_kb}
+    \subitem {filevault::core::EncryptionConfig}, \hyperpage{197}
+    \subitem {filevault::core::ModePreset}, \hyperpage{278}
+  \item {kdf\_name}
+    \subitem {filevault::core::CryptoEngine}, \hyperpage{157}
+  \item {kdf\_only\_}
+    \subitem {filevault::cli::BenchmarkCommand}, \hyperpage{105}
+  \item {kdf\_parallelism}
+    \subitem {filevault::core::EncryptionConfig}, \hyperpage{197}
+    \subitem {filevault::core::ModePreset}, \hyperpage{278}
+  \item {kdf\_params}
+    \subitem {filevault::core::FileHeader}, \hyperpage{207}
+  \item {KDFID}
+    \subitem {filevault::core}, \hyperpage{30}
+  \item {KDFType}
+    \subitem {filevault::core}, \hyperpage{30}
+  \item {key\_}
+    \subitem {filevault::cli::ConfigCommand}, \hyperpage{146}
+  \item {key\_bits\_}
+    \subitem {filevault::algorithms::asymmetric::RSA}, \hyperpage{305}
+    \subitem {filevault::algorithms::symmetric::AES\_CBC}, 
+		\hyperpage{40}
+    \subitem {filevault::algorithms::symmetric::AES\_CFB}, 
+		\hyperpage{45}
+    \subitem {filevault::algorithms::symmetric::AES\_CTR}, 
+		\hyperpage{50}
+    \subitem {filevault::algorithms::symmetric::AES\_ECB}, 
+		\hyperpage{55}
+    \subitem {filevault::algorithms::symmetric::AES\_GCM}, 
+		\hyperpage{60}
+    \subitem {filevault::algorithms::symmetric::AES\_OFB}, 
+		\hyperpage{65}
+    \subitem {filevault::algorithms::symmetric::AES\_XTS}, 
+		\hyperpage{71}
+    \subitem {filevault::algorithms::symmetric::ARIA\_GCM}, 
+		\hyperpage{92}
+    \subitem {filevault::algorithms::symmetric::Camellia\_GCM}, 
+		\hyperpage{120}
+    \subitem {filevault::algorithms::symmetric::Twofish\_GCM}, 
+		\hyperpage{354}
+  \item {key\_path\_}
+    \subitem {filevault::cli::commands::KeyInfoCommand}, 
+		\hyperpage{255}
+  \item {key\_size}
+    \subitem {filevault::algorithms::asymmetric::ECCHybrid}, 
+		\hyperpage{181}
+    \subitem {filevault::algorithms::asymmetric::ECDH}, \hyperpage{184}
+    \subitem {filevault::algorithms::asymmetric::ECDSA}, 
+		\hyperpage{187}
+    \subitem {filevault::algorithms::asymmetric::RSA}, \hyperpage{303}
+    \subitem {filevault::algorithms::classical::Caesar}, 
+		\hyperpage{113}
+    \subitem {filevault::algorithms::classical::HillCipher}, 
+		\hyperpage{234}
+    \subitem {filevault::algorithms::classical::Playfair}, 
+		\hyperpage{292}
+    \subitem {filevault::algorithms::classical::SubstitutionCipher}, 
+		\hyperpage{336}
+    \subitem {filevault::algorithms::classical::Vigenere}, 
+		\hyperpage{361}
+    \subitem {filevault::algorithms::pqc::Kyber}, \hyperpage{260}
+    \subitem {filevault::algorithms::pqc::KyberHybrid}, \hyperpage{266}
+    \subitem {filevault::algorithms::symmetric::AES\_CBC}, 
+		\hyperpage{39}
+    \subitem {filevault::algorithms::symmetric::AES\_CFB}, 
+		\hyperpage{44}
+    \subitem {filevault::algorithms::symmetric::AES\_CTR}, 
+		\hyperpage{49}
+    \subitem {filevault::algorithms::symmetric::AES\_ECB}, 
+		\hyperpage{54}
+    \subitem {filevault::algorithms::symmetric::AES\_GCM}, 
+		\hyperpage{59}
+    \subitem {filevault::algorithms::symmetric::AES\_OFB}, 
+		\hyperpage{64}
+    \subitem {filevault::algorithms::symmetric::AES\_XTS}, 
+		\hyperpage{70}
+    \subitem {filevault::algorithms::symmetric::ARIA\_GCM}, 
+		\hyperpage{90}
+    \subitem {filevault::algorithms::symmetric::Camellia\_GCM}, 
+		\hyperpage{118}
+    \subitem {filevault::algorithms::symmetric::ChaCha20Poly1305}, 
+		\hyperpage{123}
+    \subitem {filevault::algorithms::symmetric::Serpent\_GCM}, 
+		\hyperpage{310}
+    \subitem {filevault::algorithms::symmetric::SM4\_GCM}, 
+		\hyperpage{319}
+    \subitem {filevault::algorithms::symmetric::TripleDES}, 
+		\hyperpage{346}
+    \subitem {filevault::algorithms::symmetric::Twofish\_GCM}, 
+		\hyperpage{351}
+    \subitem {filevault::core::ICryptoAlgorithm}, \hyperpage{243}
+  \item {keygen\_ms}
+    \subitem {filevault::cli::AsymmetricBenchmarkResult}, 
+		\hyperpage{93}
+    \subitem {filevault::cli::PQCBenchmarkResult}, \hyperpage{293}
+    \subitem {filevault::cli::SignatureBenchmarkResult}, 
+		\hyperpage{312}
+  \item {KeygenCommand}
+    \subitem {filevault::cli::KeygenCommand}, \hyperpage{250}
+  \item {KeyInfoCommand}
+    \subitem {filevault::cli::commands::KeyInfoCommand}, 
+		\hyperpage{254}
+  \item {keyword\_}
+    \subitem {filevault::algorithms::classical::Vigenere}, 
+		\hyperpage{362}
+  \item {Kyber}
+    \subitem {filevault::algorithms::pqc::Kyber}, \hyperpage{258}
+  \item {Kyber1024}
+    \subitem {filevault::algorithms::pqc::Kyber}, \hyperpage{257}
+  \item {Kyber512}
+    \subitem {filevault::algorithms::pqc::Kyber}, \hyperpage{257}
+  \item {Kyber768}
+    \subitem {filevault::algorithms::pqc::Kyber}, \hyperpage{257}
+  \item {kyber\_}
+    \subitem {filevault::algorithms::pqc::KyberHybrid}, \hyperpage{267}
+  \item {KYBER\_1024}
+    \subitem {filevault::core}, \hyperpage{29}
+  \item {KYBER\_1024\_HYBRID}
+    \subitem {filevault::core}, \hyperpage{29}
+  \item {KYBER\_512}
+    \subitem {filevault::core}, \hyperpage{29}
+  \item {KYBER\_512\_HYBRID}
+    \subitem {filevault::core}, \hyperpage{29}
+  \item {KYBER\_768}
+    \subitem {filevault::core}, \hyperpage{29}
+  \item {KYBER\_768\_HYBRID}
+    \subitem {filevault::core}, \hyperpage{29}
+  \item {KyberHybrid}
+    \subitem {filevault::algorithms::pqc::KyberHybrid}, \hyperpage{263}
+
+  \indexspace
+
+  \item {length}
+    \subitem {filevault::core::PasswordAnalysis}, \hyperpage{285}
+  \item {LENGTH\_HEADER\_SIZE}
+    \subitem {filevault::steganography::LSBSteganography}, 
+		\hyperpage{273}
+  \item {level}
+    \subitem {filevault::core::EncryptionConfig}, \hyperpage{197}
+    \subitem {filevault::core::StreamingConfig}, \hyperpage{327}
+  \item {level\_}
+    \subitem {filevault::cli::CompressCommand}, \hyperpage{132}
+  \item {list\_files}
+    \subitem {filevault::archive::ArchiveFormat}, \hyperpage{84}
+  \item {ListCommand}
+    \subitem {filevault::cli::ListCommand}, \hyperpage{268}
+  \item {load}
+    \subitem {filevault::utils::Config}, \hyperpage{138}
+  \item {log\_level\_}
+    \subitem {filevault::cli::Application}, \hyperpage{74}
+  \item {lsb.cpp}
+    \subitem {STB\_IMAGE\_IMPLEMENTATION}, \hyperpage{509}
+    \subitem {STB\_IMAGE\_WRITE\_IMPLEMENTATION}, \hyperpage{509}
+    \subitem {STBI\_FAILURE\_USERMSG}, \hyperpage{509}
+  \item {LZMA}
+    \subitem {filevault::core}, \hyperpage{29}
+
+  \indexspace
+
+  \item {MAGIC}
+    \subitem {filevault::archive::ArchiveFormat}, \hyperpage{86}
+    \subitem {filevault::format::FileHeader}, \hyperpage{217}
+  \item {magic}
+    \subitem {filevault::core::FileHeader}, \hyperpage{207}
+  \item {main}
+    \subitem {main.cpp}, \hyperpage{508}
+  \item {main.cpp}
+    \subitem {main}, \hyperpage{508}
+  \item {mark\_as\_completed}
+    \subitem {filevault::utils::BlockProgressBar}, \hyperpage{106}
+    \subitem {filevault::utils::ProgressBar}, \hyperpage{295}
+  \item {Matrix2x2}
+    \subitem {filevault::algorithms::classical::HillCipher}, 
+		\hyperpage{230}
+  \item {matrix\_}
+    \subitem {filevault::algorithms::classical::Playfair}, 
+		\hyperpage{293}
+  \item {max\_bytes\_}
+    \subitem {filevault::cli::commands::DumpCommand}, \hyperpage{177}
+  \item {max\_plaintext\_size}
+    \subitem {filevault::algorithms::asymmetric::RSA}, \hyperpage{303}
+  \item {max\_progress\_}
+    \subitem {filevault::utils::ProgressBar}, \hyperpage{296}
+  \item {MD5}
+    \subitem {filevault::core}, \hyperpage{30}
+  \item {MEDIUM}
+    \subitem {filevault::core}, \hyperpage{31}
+  \item {memory\_kb}
+    \subitem {filevault::core::Argon2Params}, \hyperpage{87}
+  \item {MIN\_HEADER\_SIZE}
+    \subitem {filevault::format::FileHeader}, \hyperpage{217}
+  \item {mingw\_data}
+    \subitem {filevault::utils}, \hyperpage{34}
+  \item {mod\_inverse}
+    \subitem {filevault::algorithms::classical::HillCipher}, 
+		\hyperpage{234}
+  \item {mode}
+    \subitem {filevault::core::EncryptionConfig}, \hyperpage{197}
+    \subitem {filevault::core::ModePreset}, \hyperpage{278}
+  \item {mode\_}
+    \subitem {filevault::cli::EncryptCommand}, \hyperpage{195}
+  \item {modified\_time}
+    \subitem {filevault::archive::FileEntry}, \hyperpage{199}
+
+  \indexspace
+
+  \item {n}
+    \subitem {filevault::core::ScryptParams}, \hyperpage{306}
+  \item {name}
+    \subitem {filevault::algorithms::asymmetric::ECCHybrid}, 
+		\hyperpage{181}
+    \subitem {filevault::algorithms::asymmetric::ECDH}, \hyperpage{185}
+    \subitem {filevault::algorithms::asymmetric::ECDSA}, 
+		\hyperpage{187}
+    \subitem {filevault::algorithms::asymmetric::RSA}, \hyperpage{303}
+    \subitem {filevault::algorithms::classical::Caesar}, 
+		\hyperpage{113}
+    \subitem {filevault::algorithms::classical::HillCipher}, 
+		\hyperpage{235}
+    \subitem {filevault::algorithms::classical::Playfair}, 
+		\hyperpage{292}
+    \subitem {filevault::algorithms::classical::SubstitutionCipher}, 
+		\hyperpage{337}
+    \subitem {filevault::algorithms::classical::Vigenere}, 
+		\hyperpage{362}
+    \subitem {filevault::algorithms::pqc::Dilithium}, \hyperpage{172}
+    \subitem {filevault::algorithms::pqc::Kyber}, \hyperpage{260}
+    \subitem {filevault::algorithms::pqc::KyberHybrid}, \hyperpage{266}
+    \subitem {filevault::algorithms::symmetric::AES\_CBC}, 
+		\hyperpage{40}
+    \subitem {filevault::algorithms::symmetric::AES\_CFB}, 
+		\hyperpage{45}
+    \subitem {filevault::algorithms::symmetric::AES\_CTR}, 
+		\hyperpage{49}
+    \subitem {filevault::algorithms::symmetric::AES\_ECB}, 
+		\hyperpage{55}
+    \subitem {filevault::algorithms::symmetric::AES\_GCM}, 
+		\hyperpage{59}
+    \subitem {filevault::algorithms::symmetric::AES\_OFB}, 
+		\hyperpage{65}
+    \subitem {filevault::algorithms::symmetric::AES\_XTS}, 
+		\hyperpage{70}
+    \subitem {filevault::algorithms::symmetric::ARIA\_GCM}, 
+		\hyperpage{91}
+    \subitem {filevault::algorithms::symmetric::Camellia\_GCM}, 
+		\hyperpage{118}
+    \subitem {filevault::algorithms::symmetric::ChaCha20Poly1305}, 
+		\hyperpage{123}
+    \subitem {filevault::algorithms::symmetric::Serpent\_GCM}, 
+		\hyperpage{310}
+    \subitem {filevault::algorithms::symmetric::SM4\_GCM}, 
+		\hyperpage{319}
+    \subitem {filevault::algorithms::symmetric::TripleDES}, 
+		\hyperpage{347}
+    \subitem {filevault::algorithms::symmetric::Twofish\_GCM}, 
+		\hyperpage{352}
+    \subitem {filevault::cli::BenchmarkCommand}, \hyperpage{103}
+    \subitem {filevault::cli::commands::ArchiveCommand}, \hyperpage{80}
+    \subitem {filevault::cli::commands::DumpCommand}, \hyperpage{176}
+    \subitem {filevault::cli::commands::KeyInfoCommand}, 
+		\hyperpage{254}
+    \subitem {filevault::cli::commands::SignCommand}, \hyperpage{314}
+    \subitem {filevault::cli::commands::StegoCommand}, \hyperpage{325}
+    \subitem {filevault::cli::commands::VerifyCommand}, \hyperpage{356}
+    \subitem {filevault::cli::CompressCommand}, \hyperpage{130}
+    \subitem {filevault::cli::ConfigCommand}, \hyperpage{144}
+    \subitem {filevault::cli::DecompressCommand}, \hyperpage{164}
+    \subitem {filevault::cli::DecryptCommand}, \hyperpage{168}
+    \subitem {filevault::cli::EncryptCommand}, \hyperpage{193}
+    \subitem {filevault::cli::HashCommand}, \hyperpage{226}
+    \subitem {filevault::cli::ICommand}, \hyperpage{238}
+    \subitem {filevault::cli::InfoCommand}, \hyperpage{247}
+    \subitem {filevault::cli::KeygenCommand}, \hyperpage{251}
+    \subitem {filevault::cli::ListCommand}, \hyperpage{269}
+    \subitem {filevault::compression::Bzip2Compressor}, \hyperpage{108}
+    \subitem {filevault::compression::ICompressor}, \hyperpage{240}
+    \subitem {filevault::compression::LzmaCompressor}, \hyperpage{275}
+    \subitem {filevault::compression::ZlibCompressor}, \hyperpage{364}
+    \subitem {filevault::core::ICryptoAlgorithm}, \hyperpage{243}
+    \subitem {filevault::core::ModePreset}, \hyperpage{277}
+  \item {name\_}
+    \subitem {filevault::cli::commands::DumpCommand}, \hyperpage{177}
+    \subitem {filevault::cli::commands::KeyInfoCommand}, 
+		\hyperpage{255}
+    \subitem {filevault::cli::commands::SignCommand}, \hyperpage{315}
+    \subitem {filevault::cli::commands::VerifyCommand}, \hyperpage{357}
+  \item {no\_filename\_}
+    \subitem {filevault::cli::HashCommand}, \hyperpage{227}
+  \item {no\_progress\_}
+    \subitem {filevault::cli::DecryptCommand}, \hyperpage{170}
+    \subitem {filevault::cli::EncryptCommand}, \hyperpage{195}
+  \item {nonce}
+    \subitem {filevault::core::CryptoResult}, \hyperpage{160}
+    \subitem {filevault::core::EncryptionConfig}, \hyperpage{197}
+    \subitem {filevault::core::FileHeader}, \hyperpage{207}
+    \subitem {filevault::format::FileHeader}, \hyperpage{211}
+  \item {nonce\_}
+    \subitem {filevault::format::FileHeader}, \hyperpage{217}
+  \item {nonce\_size}
+    \subitem {filevault::algorithms::symmetric::AES\_CTR}, 
+		\hyperpage{49}
+    \subitem {filevault::algorithms::symmetric::AES\_GCM}, 
+		\hyperpage{60}
+    \subitem {filevault::algorithms::symmetric::ARIA\_GCM}, 
+		\hyperpage{91}
+    \subitem {filevault::algorithms::symmetric::Camellia\_GCM}, 
+		\hyperpage{119}
+    \subitem {filevault::algorithms::symmetric::ChaCha20Poly1305}, 
+		\hyperpage{124}
+    \subitem {filevault::algorithms::symmetric::SM4\_GCM}, 
+		\hyperpage{320}
+    \subitem {filevault::algorithms::symmetric::Twofish\_GCM}, 
+		\hyperpage{352}
+    \subitem {filevault::cli::InfoCommand::FileInfo}, \hyperpage{219}
+  \item {NONE}
+    \subitem {filevault::core}, \hyperpage{29, 30}
+
+  \indexspace
+
+  \item {offset}
+    \subitem {filevault::archive::FileEntry}, \hyperpage{199}
+  \item {ok}
+    \subitem {filevault::core::Result$<$ T $>$}, \hyperpage{297}
+    \subitem {filevault::core::Result$<$ void $>$}, \hyperpage{298}
+  \item {operation\_}
+    \subitem {filevault::cli::commands::StegoCommand}, \hyperpage{326}
+  \item {operator bool}
+    \subitem {filevault::core::Result$<$ T $>$}, \hyperpage{297}
+    \subitem {filevault::core::Result$<$ void $>$}, \hyperpage{299}
+  \item {operator=}
+    \subitem {filevault::core::CryptoEngine}, \hyperpage{157}
+  \item {original\_size}
+    \subitem {filevault::compression::CompressionResult}, 
+		\hyperpage{132}
+    \subitem {filevault::core::CryptoResult}, \hyperpage{160}
+    \subitem {filevault::format::FileHeader}, \hyperpage{211}
+  \item {original\_size\_}
+    \subitem {filevault::format::FileHeader}, \hyperpage{217}
+  \item {output\_file\_}
+    \subitem {filevault::cli::BenchmarkCommand}, \hyperpage{105}
+    \subitem {filevault::cli::commands::ArchiveCommand}, \hyperpage{82}
+    \subitem {filevault::cli::commands::StegoCommand}, \hyperpage{326}
+    \subitem {filevault::cli::CompressCommand}, \hyperpage{132}
+    \subitem {filevault::cli::DecompressCommand}, \hyperpage{166}
+    \subitem {filevault::cli::DecryptCommand}, \hyperpage{170}
+    \subitem {filevault::cli::EncryptCommand}, \hyperpage{195}
+    \subitem {filevault::cli::HashCommand}, \hyperpage{227}
+  \item {output\_format\_}
+    \subitem {filevault::cli::HashCommand}, \hyperpage{227}
+  \item {output\_path\_}
+    \subitem {filevault::cli::commands::SignCommand}, \hyperpage{315}
+  \item {output\_prefix\_}
+    \subitem {filevault::cli::KeygenCommand}, \hyperpage{252}
+
+  \indexspace
+
+  \item {p}
+    \subitem {filevault::core::ScryptParams}, \hyperpage{306}
+  \item {pair\_key\_path\_}
+    \subitem {filevault::cli::commands::KeyInfoCommand}, 
+		\hyperpage{255}
+  \item {parallelism}
+    \subitem {filevault::core::Argon2Params}, \hyperpage{87}
+  \item {PARANOID}
+    \subitem {filevault::core}, \hyperpage{31}
+  \item {parse\_algorithm}
+    \subitem {filevault::compression::CompressionService}, 
+		\hyperpage{134}
+    \subitem {filevault::core::CryptoEngine}, \hyperpage{157}
+  \item {parse\_file}
+    \subitem {filevault::cli::InfoCommand}, \hyperpage{247}
+  \item {parse\_kdf}
+    \subitem {filevault::core::CryptoEngine}, \hyperpage{157}
+  \item {parse\_key}
+    \subitem {filevault::algorithms::classical::HillCipher}, 
+		\hyperpage{235}
+    \subitem {filevault::algorithms::classical::SubstitutionCipher}, 
+		\hyperpage{337}
+  \item {parse\_mode}
+    \subitem {filevault::core::ModePreset}, \hyperpage{277}
+  \item {parse\_security\_level}
+    \subitem {filevault::core::CryptoEngine}, \hyperpage{158}
+  \item {password\_}
+    \subitem {filevault::cli::commands::ArchiveCommand}, \hyperpage{82}
+    \subitem {filevault::cli::DecryptCommand}, \hyperpage{170}
+    \subitem {filevault::cli::EncryptCommand}, \hyperpage{195}
+  \item {PasswordStrength}
+    \subitem {filevault::core}, \hyperpage{30}
+  \item {PBKDF2\_SHA256}
+    \subitem {filevault::core}, \hyperpage{30}
+  \item {PBKDF2\_SHA512}
+    \subitem {filevault::core}, \hyperpage{30}
+  \item {permissions}
+    \subitem {filevault::archive::FileEntry}, \hyperpage{199}
+  \item {PLAYFAIR}
+    \subitem {filevault::core}, \hyperpage{27}, \hyperpage{29}
+  \item {Playfair}
+    \subitem {filevault::algorithms::classical::Playfair}, 
+		\hyperpage{288}
+  \item {pqc\_only\_}
+    \subitem {filevault::cli::BenchmarkCommand}, \hyperpage{105}
+  \item {print}
+    \subitem {filevault::utils::TableFormatter}, \hyperpage{341}
+  \item {print\_algorithm\_list}
+    \subitem {filevault::utils::TableBuilder}, \hyperpage{338}
+  \item {print\_benchmark\_results}
+    \subitem {filevault::utils::TableBuilder}, \hyperpage{338}
+  \item {print\_encryption\_config}
+    \subitem {filevault::utils::TableBuilder}, \hyperpage{338}
+  \item {print\_file\_summary}
+    \subitem {filevault::utils::TableBuilder}, \hyperpage{339}
+  \item {private\_key}
+    \subitem {filevault::algorithms::asymmetric::ECCKeyPair}, 
+		\hyperpage{183}
+    \subitem {filevault::algorithms::asymmetric::RSAKeyPair}, 
+		\hyperpage{305}
+    \subitem {filevault::algorithms::pqc::PQKeyPair}, \hyperpage{294}
+  \item {private\_key\_path\_}
+    \subitem {filevault::cli::commands::SignCommand}, \hyperpage{315}
+  \item {private\_key\_size}
+    \subitem {filevault::algorithms::pqc::Dilithium}, \hyperpage{172}
+    \subitem {filevault::algorithms::pqc::Kyber}, \hyperpage{261}
+  \item {process\_gcm}
+    \subitem {filevault::algorithms::symmetric::Serpent\_GCM}, 
+		\hyperpage{310}
+    \subitem {filevault::algorithms::symmetric::Twofish\_GCM}, 
+		\hyperpage{352}
+  \item {processing\_time\_ms}
+    \subitem {filevault::compression::CompressionResult}, 
+		\hyperpage{133}
+    \subitem {filevault::core::CryptoResult}, \hyperpage{160}
+    \subitem {filevault::core::StreamingResult}, \hyperpage{332}
+  \item {PROFESSIONAL}
+    \subitem {filevault::core}, \hyperpage{31}
+  \item {progress.cpp}
+    \subitem {FILENO}, \hyperpage{513}
+    \subitem {ISATTY}, \hyperpage{513}
+  \item {progress\_callback}
+    \subitem {filevault::core::StreamingConfig}, \hyperpage{327}
+  \item {ProgressBar}
+    \subitem {filevault::utils::ProgressBar}, \hyperpage{295}
+  \item {public\_key}
+    \subitem {filevault::algorithms::asymmetric::ECCKeyPair}, 
+		\hyperpage{183}
+    \subitem {filevault::algorithms::asymmetric::RSAKeyPair}, 
+		\hyperpage{305}
+    \subitem {filevault::algorithms::pqc::PQKeyPair}, \hyperpage{294}
+  \item {public\_key\_path\_}
+    \subitem {filevault::cli::commands::VerifyCommand}, \hyperpage{357}
+  \item {public\_key\_size}
+    \subitem {filevault::algorithms::pqc::Dilithium}, \hyperpage{172}
+    \subitem {filevault::algorithms::pqc::Kyber}, \hyperpage{261}
+
+  \indexspace
+
+  \item {r}
+    \subitem {filevault::core::ScryptParams}, \hyperpage{306}
+  \item {read\_file}
+    \subitem {filevault::core::FileFormatHandler}, \hyperpage{202}
+    \subitem {filevault::utils::FileIO}, \hyperpage{220}
+  \item {read\_legacy\_file}
+    \subitem {filevault::core::FileFormatHandler}, \hyperpage{203}
+  \item {read\_secure}
+    \subitem {filevault::utils::Password}, \hyperpage{282}
+  \item {read\_stream\_header}
+    \subitem {filevault::core::StreamingCrypto}, \hyperpage{330}
+  \item {read\_string}
+    \subitem {filevault::archive::ArchiveFormat}, \hyperpage{84}
+  \item {read\_uint16}
+    \subitem {filevault::format::FileHeader}, \hyperpage{211}
+  \item {read\_uint32}
+    \subitem {filevault::archive::ArchiveFormat}, \hyperpage{85}
+    \subitem {filevault::format::FileHeader}, \hyperpage{211}
+  \item {read\_uint64}
+    \subitem {filevault::archive::ArchiveFormat}, \hyperpage{85}
+    \subitem {filevault::format::FileHeader}, \hyperpage{212}
+  \item {README.md}, \hyperpage{475}
+  \item {register\_algorithm}
+    \subitem {filevault::core::CryptoEngine}, \hyperpage{158}
+  \item {register\_commands}
+    \subitem {filevault::cli::Application}, \hyperpage{73}
+  \item {remove\_pkcs7\_padding}
+    \subitem {filevault::algorithms::symmetric}, \hyperpage{23}
+  \item {requires\_padding}
+    \subitem {filevault::algorithms::asymmetric::RSA}, \hyperpage{303}
+    \subitem {filevault::algorithms::symmetric::AES\_CFB}, 
+		\hyperpage{45}
+    \subitem {filevault::algorithms::symmetric::AES\_ECB}, 
+		\hyperpage{55}
+    \subitem {filevault::algorithms::symmetric::AES\_OFB}, 
+		\hyperpage{65}
+    \subitem {filevault::algorithms::symmetric::AES\_XTS}, 
+		\hyperpage{71}
+  \item {reserved}
+    \subitem {filevault::core::FileHeader}, \hyperpage{207}
+  \item {reserved\_}
+    \subitem {filevault::format::FileHeader}, \hyperpage{217}
+  \item {reset}
+    \subitem {filevault::utils::Config}, \hyperpage{139}
+  \item {reset\_config}
+    \subitem {filevault::cli::ConfigCommand}, \hyperpage{144}
+  \item {RSA}
+    \subitem {filevault::algorithms::asymmetric::RSA}, \hyperpage{301}
+  \item {RSA\_2048}
+    \subitem {filevault::core}, \hyperpage{28, 29}
+  \item {RSA\_3072}
+    \subitem {filevault::core}, \hyperpage{28, 29}
+  \item {RSA\_4096}
+    \subitem {filevault::core}, \hyperpage{28, 29}
+  \item {run}
+    \subitem {filevault::cli::Application}, \hyperpage{73}
+
+  \indexspace
+
+  \item {salt}
+    \subitem {filevault::core::CryptoResult}, \hyperpage{160}
+    \subitem {filevault::core::EncryptionConfig}, \hyperpage{198}
+    \subitem {filevault::core::FileHeader}, \hyperpage{207}
+    \subitem {filevault::format::FileHeader}, \hyperpage{212}
+  \item {salt\_}
+    \subitem {filevault::format::FileHeader}, \hyperpage{217}
+  \item {salt\_size}
+    \subitem {filevault::cli::InfoCommand::FileInfo}, \hyperpage{219}
+  \item {save}
+    \subitem {filevault::utils::Config}, \hyperpage{139}
+  \item {save\_json\_output}
+    \subitem {filevault::cli::BenchmarkCommand}, \hyperpage{103}
+  \item {save\_log\_output}
+    \subitem {filevault::cli::BenchmarkCommand}, \hyperpage{103}
+  \item {score}
+    \subitem {filevault::core::PasswordAnalysis}, \hyperpage{285}
+  \item {SCRYPT}
+    \subitem {filevault::core}, \hyperpage{30}
+  \item {SECP256R1}
+    \subitem {filevault::algorithms::asymmetric}, \hyperpage{20}
+  \item {SECP384R1}
+    \subitem {filevault::algorithms::asymmetric}, \hyperpage{20}
+  \item {SECP521R1}
+    \subitem {filevault::algorithms::asymmetric}, \hyperpage{20}
+  \item {security\_level}
+    \subitem {filevault::core::ModePreset}, \hyperpage{278}
+    \subitem {filevault::format::FileHeader}, \hyperpage{212}
+  \item {security\_level\_}
+    \subitem {filevault::cli::commands::ArchiveCommand}, \hyperpage{82}
+    \subitem {filevault::cli::EncryptCommand}, \hyperpage{195}
+    \subitem {filevault::format::FileHeader}, \hyperpage{217}
+  \item {security\_level\_name}
+    \subitem {filevault::core::CryptoEngine}, \hyperpage{158}
+  \item {SecurityLevel}
+    \subitem {filevault::core}, \hyperpage{31}
+  \item {separator}
+    \subitem {filevault::utils::Console}, \hyperpage{150}
+  \item {serialize}
+    \subitem {filevault::archive::FileEntry}, \hyperpage{199}
+    \subitem {filevault::core::Argon2Params}, \hyperpage{86}
+    \subitem {filevault::core::FileHeader}, \hyperpage{206}
+    \subitem {filevault::core::PBKDF2Params}, \hyperpage{286}
+    \subitem {filevault::core::ScryptParams}, \hyperpage{306}
+    \subitem {filevault::format::FileHeader}, \hyperpage{212}
+  \item {SERPENT\_256\_GCM}
+    \subitem {filevault::core}, \hyperpage{27, 28}
+  \item {Serpent\_GCM}
+    \subitem {filevault::algorithms::symmetric::Serpent\_GCM}, 
+		\hyperpage{308}
+  \item {set}
+    \subitem {filevault::utils::Config}, \hyperpage{140}
+  \item {set\_algorithm}
+    \subitem {filevault::format::FileHeader}, \hyperpage{213}
+  \item {set\_border\_style}
+    \subitem {filevault::utils::TableFormatter}, \hyperpage{341}
+  \item {set\_column\_alignment}
+    \subitem {filevault::utils::TableFormatter}, \hyperpage{342}
+  \item {set\_column\_format}
+    \subitem {filevault::utils::TableFormatter}, \hyperpage{342}
+  \item {set\_compressed}
+    \subitem {filevault::format::FileHeader}, \hyperpage{213}
+  \item {set\_compression\_level}
+    \subitem {filevault::utils::Config}, \hyperpage{140}
+  \item {set\_default\_algorithm}
+    \subitem {filevault::utils::Config}, \hyperpage{140}
+  \item {set\_default\_compression}
+    \subitem {filevault::utils::Config}, \hyperpage{140}
+  \item {set\_default\_kdf}
+    \subitem {filevault::utils::Config}, \hyperpage{141}
+  \item {set\_default\_mode}
+    \subitem {filevault::utils::Config}, \hyperpage{141}
+  \item {set\_encrypted\_size}
+    \subitem {filevault::format::FileHeader}, \hyperpage{213}
+  \item {set\_kdf}
+    \subitem {filevault::format::FileHeader}, \hyperpage{213}
+  \item {set\_nonce}
+    \subitem {filevault::format::FileHeader}, \hyperpage{213}
+  \item {set\_option\_text}
+    \subitem {filevault::utils::BlockProgressBar}, \hyperpage{106}
+  \item {set\_original\_size}
+    \subitem {filevault::format::FileHeader}, \hyperpage{214}
+  \item {set\_postfix}
+    \subitem {filevault::utils::ProgressBar}, \hyperpage{295}
+  \item {set\_progress}
+    \subitem {filevault::utils::BlockProgressBar}, \hyperpage{106}
+    \subitem {filevault::utils::ProgressBar}, \hyperpage{295}
+  \item {set\_salt}
+    \subitem {filevault::format::FileHeader}, \hyperpage{214}
+  \item {set\_security\_level}
+    \subitem {filevault::format::FileHeader}, \hyperpage{214}
+  \item {set\_show\_progress}
+    \subitem {filevault::utils::Config}, \hyperpage{141}
+  \item {set\_tag}
+    \subitem {filevault::format::FileHeader}, \hyperpage{214}
+  \item {set\_timestamp}
+    \subitem {filevault::format::FileHeader}, \hyperpage{215}
+  \item {set\_value}
+    \subitem {filevault::cli::ConfigCommand}, \hyperpage{145}
+  \item {set\_verbose}
+    \subitem {filevault::utils::Config}, \hyperpage{141}
+  \item {setup}
+    \subitem {filevault::cli::BenchmarkCommand}, \hyperpage{103}
+    \subitem {filevault::cli::commands::ArchiveCommand}, \hyperpage{80}
+    \subitem {filevault::cli::commands::DumpCommand}, \hyperpage{176}
+    \subitem {filevault::cli::commands::KeyInfoCommand}, 
+		\hyperpage{255}
+    \subitem {filevault::cli::commands::SignCommand}, \hyperpage{314}
+    \subitem {filevault::cli::commands::StegoCommand}, \hyperpage{325}
+    \subitem {filevault::cli::commands::VerifyCommand}, \hyperpage{356}
+    \subitem {filevault::cli::CompressCommand}, \hyperpage{131}
+    \subitem {filevault::cli::ConfigCommand}, \hyperpage{145}
+    \subitem {filevault::cli::DecompressCommand}, \hyperpage{165}
+    \subitem {filevault::cli::DecryptCommand}, \hyperpage{169}
+    \subitem {filevault::cli::EncryptCommand}, \hyperpage{193}
+    \subitem {filevault::cli::HashCommand}, \hyperpage{226}
+    \subitem {filevault::cli::ICommand}, \hyperpage{238}
+    \subitem {filevault::cli::InfoCommand}, \hyperpage{248}
+    \subitem {filevault::cli::KeygenCommand}, \hyperpage{251}
+    \subitem {filevault::cli::ListCommand}, \hyperpage{270}
+  \item {setup\_logging}
+    \subitem {filevault::cli::Application}, \hyperpage{74}
+  \item {SHA1}
+    \subitem {filevault::core}, \hyperpage{30}
+  \item {SHA224}
+    \subitem {filevault::core}, \hyperpage{30}
+  \item {SHA256}
+    \subitem {filevault::core}, \hyperpage{30}
+  \item {SHA384}
+    \subitem {filevault::core}, \hyperpage{30}
+  \item {SHA3\_224}
+    \subitem {filevault::core}, \hyperpage{30}
+  \item {SHA3\_256}
+    \subitem {filevault::core}, \hyperpage{30}
+  \item {SHA3\_384}
+    \subitem {filevault::core}, \hyperpage{30}
+  \item {SHA3\_512}
+    \subitem {filevault::core}, \hyperpage{30}
+  \item {SHA512}
+    \subitem {filevault::core}, \hyperpage{30}
+  \item {SHA512\_256}
+    \subitem {filevault::core}, \hyperpage{30}
+  \item {shared\_secret}
+    \subitem {filevault::algorithms::asymmetric::ECDHResult}, 
+		\hyperpage{186}
+  \item {shared\_secret\_size}
+    \subitem {filevault::algorithms::pqc::Kyber}, \hyperpage{261}
+  \item {shift\_}
+    \subitem {filevault::algorithms::classical::Caesar}, 
+		\hyperpage{114}
+  \item {shift\_char}
+    \subitem {filevault::algorithms::classical::Caesar}, 
+		\hyperpage{114}
+  \item {should\_use\_streaming}
+    \subitem {filevault::core::StreamingCrypto}, \hyperpage{330}
+  \item {show}
+    \subitem {filevault::utils::ProgressBar}, \hyperpage{296}
+  \item {show\_ascii\_}
+    \subitem {filevault::cli::commands::DumpCommand}, \hyperpage{177}
+  \item {show\_config}
+    \subitem {filevault::cli::ConfigCommand}, \hyperpage{146}
+  \item {show\_offset\_}
+    \subitem {filevault::cli::commands::DumpCommand}, \hyperpage{177}
+  \item {show\_progress}
+    \subitem {filevault::core::EncryptionConfig}, \hyperpage{198}
+  \item {show\_progress\_}
+    \subitem {filevault::utils::Config}, \hyperpage{142}
+  \item {show\_public\_}
+    \subitem {filevault::cli::commands::KeyInfoCommand}, 
+		\hyperpage{255}
+  \item {sign}
+    \subitem {filevault::algorithms::asymmetric::ECDSA}, 
+		\hyperpage{187}
+    \subitem {filevault::algorithms::asymmetric::RSA}, \hyperpage{303}
+    \subitem {filevault::algorithms::pqc::Dilithium}, \hyperpage{172}
+  \item {sign\_ms}
+    \subitem {filevault::cli::SignatureBenchmarkResult}, 
+		\hyperpage{312}
+  \item {signature}
+    \subitem {filevault::algorithms::asymmetric::ECDSASignResult}, 
+		\hyperpage{189}
+  \item {signature\_path\_}
+    \subitem {filevault::cli::commands::VerifyCommand}, \hyperpage{357}
+  \item {signature\_size}
+    \subitem {filevault::algorithms::asymmetric::ECDSA}, 
+		\hyperpage{188}
+    \subitem {filevault::algorithms::pqc::Dilithium}, \hyperpage{173}
+  \item {SignCommand}
+    \subitem {filevault::cli::commands::SignCommand}, \hyperpage{313}
+  \item {size}
+    \subitem {filevault::core::FileHeader}, \hyperpage{206}
+  \item {SM4\_GCM}
+    \subitem {filevault::algorithms::symmetric::SM4\_GCM}, 
+		\hyperpage{317}
+    \subitem {filevault::core}, \hyperpage{27, 28}
+  \item {src/algorithms/asymmetric/ecc.cpp}, \hyperpage{475}
+  \item {src/algorithms/asymmetric/rsa.cpp}, \hyperpage{476}
+  \item {src/algorithms/classical/caesar.cpp}, \hyperpage{476}
+  \item {src/algorithms/classical/classical\_ciphers.cpp}, 
+		\hyperpage{477}
+  \item {src/algorithms/classical/hill.cpp}, \hyperpage{478}
+  \item {src/algorithms/classical/playfair.cpp}, \hyperpage{479}
+  \item {src/algorithms/classical/substitution.cpp}, \hyperpage{479}
+  \item {src/algorithms/classical/vigenere.cpp}, \hyperpage{480}
+  \item {src/algorithms/pqc/post\_quantum.cpp}, \hyperpage{481}
+  \item {src/algorithms/symmetric/aes\_cbc.cpp}, \hyperpage{482}
+  \item {src/algorithms/symmetric/aes\_cfb.cpp}, \hyperpage{483}
+  \item {src/algorithms/symmetric/aes\_ctr.cpp}, \hyperpage{483}
+  \item {src/algorithms/symmetric/aes\_ecb.cpp}, \hyperpage{484}
+  \item {src/algorithms/symmetric/aes\_gcm.cpp}, \hyperpage{485}
+  \item {src/algorithms/symmetric/aes\_ofb.cpp}, \hyperpage{485}
+  \item {src/algorithms/symmetric/aes\_xts.cpp}, \hyperpage{486}
+  \item {src/algorithms/symmetric/aria\_gcm.cpp}, \hyperpage{487}
+  \item {src/algorithms/symmetric/camellia\_gcm.cpp}, \hyperpage{488}
+  \item {src/algorithms/symmetric/chacha20\_poly1305.cpp}, 
+		\hyperpage{489}
+  \item {src/algorithms/symmetric/serpent\_gcm.cpp}, \hyperpage{490}
+  \item {src/algorithms/symmetric/sm4\_gcm.cpp}, \hyperpage{490}
+  \item {src/algorithms/symmetric/triple\_des.cpp}, \hyperpage{491}
+  \item {src/algorithms/symmetric/twofish\_gcm.cpp}, \hyperpage{492}
+  \item {src/archive/archive\_format.cpp}, \hyperpage{492}
+  \item {src/cli/app.cpp}, \hyperpage{493}
+  \item {src/cli/commands/archive\_cmd.cpp}, \hyperpage{494}
+  \item {src/cli/commands/benchmark\_cmd.cpp}, \hyperpage{494}
+  \item {src/cli/commands/compress\_cmd.cpp}, \hyperpage{495}
+  \item {src/cli/commands/config\_cmd.cpp}, \hyperpage{495}
+  \item {src/cli/commands/decompress\_cmd.cpp}, \hyperpage{496}
+  \item {src/cli/commands/decrypt\_cmd.cpp}, \hyperpage{496}
+  \item {src/cli/commands/dump\_cmd.cpp}, \hyperpage{497}
+  \item {src/cli/commands/encrypt\_cmd.cpp}, \hyperpage{497}
+  \item {src/cli/commands/hash\_cmd.cpp}, \hyperpage{498}
+  \item {src/cli/commands/info\_cmd.cpp}, \hyperpage{499}
+  \item {src/cli/commands/keygen\_cmd.cpp}, \hyperpage{499}
+  \item {src/cli/commands/keyinfo\_cmd.cpp}, \hyperpage{500}
+  \item {src/cli/commands/list\_cmd.cpp}, \hyperpage{500}
+  \item {src/cli/commands/sign\_cmd.cpp}, \hyperpage{501}
+  \item {src/cli/commands/stego\_cmd.cpp}, \hyperpage{501}
+  \item {src/cli/commands/verify\_cmd.cpp}, \hyperpage{502}
+  \item {src/compression/compressor.cpp}, \hyperpage{503}
+  \item {src/core/crypto\_engine.cpp}, \hyperpage{503}
+  \item {src/core/modes.cpp}, \hyperpage{504}
+  \item {src/core/streaming.cpp}, \hyperpage{505}
+  \item {src/core/types.cpp}, \hyperpage{506}
+  \item {src/format/file\_format.cpp}, \hyperpage{506}
+  \item {src/format/file\_header.cpp}, \hyperpage{507}
+  \item {src/main.cpp}, \hyperpage{507}
+  \item {src/steganography/lsb.cpp}, \hyperpage{508}
+  \item {src/utils/config.cpp}, \hyperpage{509}
+  \item {src/utils/console.cpp}, \hyperpage{510}
+  \item {src/utils/crypto\_utils.cpp}, \hyperpage{510}
+  \item {src/utils/file\_io.cpp}, \hyperpage{511}
+  \item {src/utils/password.cpp}, \hyperpage{512}
+  \item {src/utils/progress.cpp}, \hyperpage{512}
+  \item {src/utils/table\_formatter.cpp}, \hyperpage{513}
+  \item {STANDARD}
+    \subitem {filevault::core::presets}, \hyperpage{32}
+  \item {STB\_IMAGE\_IMPLEMENTATION}
+    \subitem {lsb.cpp}, \hyperpage{509}
+  \item {STB\_IMAGE\_WRITE\_IMPLEMENTATION}
+    \subitem {lsb.cpp}, \hyperpage{509}
+  \item {STBI\_FAILURE\_USERMSG}
+    \subitem {lsb.cpp}, \hyperpage{509}
+  \item {STREAM\_MAGIC}
+    \subitem {filevault::core}, \hyperpage{31}
+  \item {STREAM\_VERSION}
+    \subitem {filevault::core}, \hyperpage{32}
+  \item {StreamProgressCallback}
+    \subitem {filevault::core}, \hyperpage{27}
+  \item {strength}
+    \subitem {filevault::core::PasswordAnalysis}, \hyperpage{285}
+  \item {STRONG}
+    \subitem {filevault::core}, \hyperpage{31}
+  \item {STUDENT}
+    \subitem {filevault::core}, \hyperpage{31}
+  \item {subcommand\_}
+    \subitem {filevault::cli::CompressCommand}, \hyperpage{132}
+    \subitem {filevault::cli::ConfigCommand}, \hyperpage{146}
+    \subitem {filevault::cli::DecompressCommand}, \hyperpage{166}
+  \item {SUBSTITUTION}
+    \subitem {filevault::core}, \hyperpage{27}, \hyperpage{29}
+  \item {SubstitutionMap}
+    \subitem {filevault::algorithms::classical::SubstitutionCipher}, 
+		\hyperpage{334}
+  \item {success}
+    \subitem {filevault::algorithms::asymmetric::ECDHResult}, 
+		\hyperpage{186}
+    \subitem {filevault::algorithms::asymmetric::ECDSASignResult}, 
+		\hyperpage{189}
+    \subitem {filevault::cli::AsymmetricBenchmarkResult}, 
+		\hyperpage{93}
+    \subitem {filevault::cli::BenchmarkResult}, \hyperpage{106}
+    \subitem {filevault::cli::PQCBenchmarkResult}, \hyperpage{294}
+    \subitem {filevault::cli::SignatureBenchmarkResult}, 
+		\hyperpage{312}
+    \subitem {filevault::compression::CompressionResult}, 
+		\hyperpage{133}
+    \subitem {filevault::core::CryptoResult}, \hyperpage{160}
+    \subitem {filevault::core::Result$<$ T $>$}, \hyperpage{298}
+    \subitem {filevault::core::Result$<$ void $>$}, \hyperpage{299}
+    \subitem {filevault::core::StreamingResult}, \hyperpage{332}
+    \subitem {filevault::utils::Console}, \hyperpage{151}
+  \item {suggestions}
+    \subitem {filevault::core::PasswordAnalysis}, \hyperpage{285}
+  \item {symmetric\_only\_}
+    \subitem {filevault::cli::BenchmarkCommand}, \hyperpage{105}
+
+  \indexspace
+
+  \item {table\_}
+    \subitem {filevault::utils::TableFormatter}, \hyperpage{342}
+  \item {TableFormatter}
+    \subitem {filevault::utils::TableFormatter}, \hyperpage{340}
+  \item {tag}
+    \subitem {filevault::core::CryptoResult}, \hyperpage{160}
+    \subitem {filevault::core::EncryptionConfig}, \hyperpage{198}
+    \subitem {filevault::format::FileHeader}, \hyperpage{215}
+  \item {tag\_}
+    \subitem {filevault::format::FileHeader}, \hyperpage{217}
+  \item {tag\_size}
+    \subitem {filevault::algorithms::symmetric::AES\_GCM}, 
+		\hyperpage{60}
+    \subitem {filevault::algorithms::symmetric::ARIA\_GCM}, 
+		\hyperpage{91}
+    \subitem {filevault::algorithms::symmetric::Camellia\_GCM}, 
+		\hyperpage{119}
+    \subitem {filevault::algorithms::symmetric::ChaCha20Poly1305}, 
+		\hyperpage{124}
+    \subitem {filevault::algorithms::symmetric::SM4\_GCM}, 
+		\hyperpage{320}
+    \subitem {filevault::algorithms::symmetric::Twofish\_GCM}, 
+		\hyperpage{353}
+    \subitem {filevault::cli::InfoCommand::FileInfo}, \hyperpage{219}
+  \item {throughput\_mbps}
+    \subitem {filevault::core::StreamingResult}, \hyperpage{332}
+  \item {tick}
+    \subitem {filevault::utils::ProgressBar}, \hyperpage{296}
+  \item {timestamp}
+    \subitem {filevault::format::FileHeader}, \hyperpage{215}
+  \item {timestamp\_}
+    \subitem {filevault::format::FileHeader}, \hyperpage{217}
+  \item {to\_algorithm\_id}
+    \subitem {filevault::core::FileFormatHandler}, \hyperpage{203}
+  \item {to\_compression\_id}
+    \subitem {filevault::core::FileFormatHandler}, \hyperpage{203}
+  \item {to\_json}
+    \subitem {filevault::utils::Config}, \hyperpage{141}
+  \item {to\_kdf\_id}
+    \subitem {filevault::core::FileFormatHandler}, \hyperpage{203}
+  \item {to\_string}
+    \subitem {filevault::utils::TableFormatter}, \hyperpage{342}
+  \item {total\_bytes}
+    \subitem {filevault::core::ChunkInfo}, \hyperpage{125}
+  \item {total\_chunks}
+    \subitem {filevault::core::ChunkInfo}, \hyperpage{125}
+  \item {total\_size}
+    \subitem {filevault::format::FileHeader}, \hyperpage{215}
+  \item {TRIPLE\_DES\_CBC}
+    \subitem {filevault::core}, \hyperpage{28, 29}
+  \item {TripleDES}
+    \subitem {filevault::algorithms::symmetric::TripleDES}, 
+		\hyperpage{344}
+  \item {tweak\_size}
+    \subitem {filevault::algorithms::symmetric::AES\_XTS}, 
+		\hyperpage{71}
+  \item {TWOFISH\_128\_GCM}
+    \subitem {filevault::core}, \hyperpage{27, 28}
+  \item {TWOFISH\_192\_GCM}
+    \subitem {filevault::core}, \hyperpage{27, 28}
+  \item {TWOFISH\_256\_GCM}
+    \subitem {filevault::core}, \hyperpage{27, 28}
+  \item {Twofish\_GCM}
+    \subitem {filevault::algorithms::symmetric::Twofish\_GCM}, 
+		\hyperpage{349}
+  \item {type}
+    \subitem {filevault::algorithms::asymmetric::ECCHybrid}, 
+		\hyperpage{182}
+    \subitem {filevault::algorithms::asymmetric::RSA}, \hyperpage{304}
+    \subitem {filevault::algorithms::classical::Caesar}, 
+		\hyperpage{114}
+    \subitem {filevault::algorithms::classical::HillCipher}, 
+		\hyperpage{235}
+    \subitem {filevault::algorithms::classical::Playfair}, 
+		\hyperpage{293}
+    \subitem {filevault::algorithms::classical::SubstitutionCipher}, 
+		\hyperpage{337}
+    \subitem {filevault::algorithms::classical::Vigenere}, 
+		\hyperpage{362}
+    \subitem {filevault::algorithms::pqc::Kyber}, \hyperpage{261}
+    \subitem {filevault::algorithms::pqc::KyberHybrid}, \hyperpage{267}
+    \subitem {filevault::algorithms::symmetric::AES\_CBC}, 
+		\hyperpage{40}
+    \subitem {filevault::algorithms::symmetric::AES\_CFB}, 
+		\hyperpage{45}
+    \subitem {filevault::algorithms::symmetric::AES\_CTR}, 
+		\hyperpage{50}
+    \subitem {filevault::algorithms::symmetric::AES\_ECB}, 
+		\hyperpage{55}
+    \subitem {filevault::algorithms::symmetric::AES\_GCM}, 
+		\hyperpage{60}
+    \subitem {filevault::algorithms::symmetric::AES\_OFB}, 
+		\hyperpage{65}
+    \subitem {filevault::algorithms::symmetric::AES\_XTS}, 
+		\hyperpage{71}
+    \subitem {filevault::algorithms::symmetric::ARIA\_GCM}, 
+		\hyperpage{92}
+    \subitem {filevault::algorithms::symmetric::Camellia\_GCM}, 
+		\hyperpage{119}
+    \subitem {filevault::algorithms::symmetric::ChaCha20Poly1305}, 
+		\hyperpage{124}
+    \subitem {filevault::algorithms::symmetric::Serpent\_GCM}, 
+		\hyperpage{311}
+    \subitem {filevault::algorithms::symmetric::SM4\_GCM}, 
+		\hyperpage{320}
+    \subitem {filevault::algorithms::symmetric::TripleDES}, 
+		\hyperpage{347}
+    \subitem {filevault::algorithms::symmetric::Twofish\_GCM}, 
+		\hyperpage{353}
+    \subitem {filevault::core::ICryptoAlgorithm}, \hyperpage{244}
+  \item {type\_}
+    \subitem {filevault::algorithms::asymmetric::ECCHybrid}, 
+		\hyperpage{182}
+    \subitem {filevault::algorithms::asymmetric::RSA}, \hyperpage{305}
+    \subitem {filevault::algorithms::pqc::Kyber}, \hyperpage{261}
+    \subitem {filevault::algorithms::symmetric::AES\_CBC}, 
+		\hyperpage{40}
+    \subitem {filevault::algorithms::symmetric::AES\_CFB}, 
+		\hyperpage{45}
+    \subitem {filevault::algorithms::symmetric::AES\_CTR}, 
+		\hyperpage{50}
+    \subitem {filevault::algorithms::symmetric::AES\_ECB}, 
+		\hyperpage{55}
+    \subitem {filevault::algorithms::symmetric::AES\_GCM}, 
+		\hyperpage{60}
+    \subitem {filevault::algorithms::symmetric::AES\_OFB}, 
+		\hyperpage{65}
+    \subitem {filevault::algorithms::symmetric::AES\_XTS}, 
+		\hyperpage{71}
+    \subitem {filevault::algorithms::symmetric::ARIA\_GCM}, 
+		\hyperpage{92}
+    \subitem {filevault::algorithms::symmetric::Camellia\_GCM}, 
+		\hyperpage{120}
+    \subitem {filevault::algorithms::symmetric::Twofish\_GCM}, 
+		\hyperpage{354}
+
+  \indexspace
+
+  \item {UNKNOWN}
+    \subitem {filevault::core}, \hyperpage{27}
+  \item {unwrap}
+    \subitem {filevault::core::Result$<$ T $>$}, \hyperpage{298}
+  \item {uppercase}
+    \subitem {filevault::core::HashConfig}, \hyperpage{228}
+  \item {uppercase\_}
+    \subitem {filevault::cli::HashCommand}, \hyperpage{228}
+  \item {UserMode}
+    \subitem {filevault::core}, \hyperpage{31}
+
+  \indexspace
+
+  \item {validate}
+    \subitem {filevault::format::FileHeader}, \hyperpage{215}
+  \item {value}
+    \subitem {filevault::core::Result$<$ T $>$}, \hyperpage{298}
+  \item {value\_}
+    \subitem {filevault::cli::ConfigCommand}, \hyperpage{146}
+  \item {Variant}
+    \subitem {filevault::algorithms::pqc::Dilithium}, \hyperpage{171}
+    \subitem {filevault::algorithms::pqc::Kyber}, \hyperpage{257}
+  \item {variant\_}
+    \subitem {filevault::algorithms::pqc::Dilithium}, \hyperpage{174}
+    \subitem {filevault::algorithms::pqc::Kyber}, \hyperpage{261}
+  \item {verbose}
+    \subitem {filevault::core::EncryptionConfig}, \hyperpage{198}
+  \item {verbose\_}
+    \subitem {filevault::cli::Application}, \hyperpage{74}
+    \subitem {filevault::cli::commands::ArchiveCommand}, \hyperpage{82}
+    \subitem {filevault::cli::commands::StegoCommand}, \hyperpage{326}
+    \subitem {filevault::cli::CompressCommand}, \hyperpage{132}
+    \subitem {filevault::cli::DecompressCommand}, \hyperpage{166}
+    \subitem {filevault::cli::DecryptCommand}, \hyperpage{170}
+    \subitem {filevault::cli::EncryptCommand}, \hyperpage{195}
+    \subitem {filevault::cli::HashCommand}, \hyperpage{228}
+    \subitem {filevault::cli::InfoCommand}, \hyperpage{249}
+    \subitem {filevault::cli::KeygenCommand}, \hyperpage{252}
+    \subitem {filevault::utils::Config}, \hyperpage{142}
+  \item {verify}
+    \subitem {filevault::algorithms::asymmetric::ECDSA}, 
+		\hyperpage{188}
+    \subitem {filevault::algorithms::asymmetric::RSA}, \hyperpage{304}
+    \subitem {filevault::algorithms::pqc::Dilithium}, \hyperpage{173}
+  \item {verify\_hash\_}
+    \subitem {filevault::cli::HashCommand}, \hyperpage{228}
+  \item {verify\_mode}
+    \subitem {filevault::cli::HashCommand}, \hyperpage{226}
+    \subitem {filevault::core::HashConfig}, \hyperpage{229}
+  \item {verify\_ms}
+    \subitem {filevault::cli::SignatureBenchmarkResult}, 
+		\hyperpage{312}
+  \item {VerifyCommand}
+    \subitem {filevault::cli::commands::VerifyCommand}, \hyperpage{355}
+  \item {VERSION}
+    \subitem {filevault::archive::ArchiveFormat}, \hyperpage{86}
+  \item {version}
+    \subitem {filevault::cli::InfoCommand::FileInfo}, \hyperpage{219}
+  \item {VERSION\_MAJOR}
+    \subitem {filevault::format::FileHeader}, \hyperpage{217}
+  \item {version\_major}
+    \subitem {filevault::core::FileHeader}, \hyperpage{207}
+  \item {VERSION\_MINOR}
+    \subitem {filevault::format::FileHeader}, \hyperpage{217}
+  \item {version\_minor}
+    \subitem {filevault::core::FileHeader}, \hyperpage{207}
+  \item {VERY\_STRONG}
+    \subitem {filevault::core}, \hyperpage{31}
+  \item {VERY\_WEAK}
+    \subitem {filevault::core}, \hyperpage{31}
+  \item {VIGENERE}
+    \subitem {filevault::core}, \hyperpage{27}, \hyperpage{29}
+  \item {Vigenere}
+    \subitem {filevault::algorithms::classical::Vigenere}, 
+		\hyperpage{359}
+
+  \indexspace
+
+  \item {warning}
+    \subitem {filevault::utils::Console}, \hyperpage{152}
+  \item {warnings}
+    \subitem {filevault::core::PasswordAnalysis}, \hyperpage{285}
+  \item {WEAK}
+    \subitem {filevault::core}, \hyperpage{31}
+  \item {write\_file}
+    \subitem {filevault::core::FileFormatHandler}, \hyperpage{204}
+    \subitem {filevault::utils::FileIO}, \hyperpage{221}
+  \item {write\_stream\_header}
+    \subitem {filevault::core::StreamingCrypto}, \hyperpage{331}
+  \item {write\_uint16}
+    \subitem {filevault::format::FileHeader}, \hyperpage{215}
+  \item {write\_uint32}
+    \subitem {filevault::archive::ArchiveFormat}, \hyperpage{85}
+    \subitem {filevault::format::FileHeader}, \hyperpage{216}
+  \item {write\_uint64}
+    \subitem {filevault::archive::ArchiveFormat}, \hyperpage{85}
+    \subitem {filevault::format::FileHeader}, \hyperpage{216}
+
+  \indexspace
+
+  \item {X25519}
+    \subitem {filevault::algorithms::asymmetric}, \hyperpage{20}
+
+  \indexspace
+
+  \item {ZLIB}
+    \subitem {filevault::core}, \hyperpage{29}
+
+\end{theindex}

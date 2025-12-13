@@ -1,0 +1,359 @@
+\doxysection{filevault\+::core\+::Crypto\+Engine Class Reference}
+\hypertarget{classfilevault_1_1core_1_1CryptoEngine}{}\label{classfilevault_1_1core_1_1CryptoEngine}\index{filevault::core::CryptoEngine@{filevault::core::CryptoEngine}}
+
+
+Main cryptographic engine Manages algorithms and provides key derivation.  
+
+
+
+
+{\ttfamily \#include $<$crypto\+\_\+engine.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classfilevault_1_1core_1_1CryptoEngine_ae0b54fb94dd63d15fd2409603692fc54}{Crypto\+Engine}} ()
+\item 
+\mbox{\hyperlink{classfilevault_1_1core_1_1CryptoEngine_a090a610b888d26b5d78e1e3a325a84f6}{\texorpdfstring{$\sim$}{\string~}\+Crypto\+Engine}} ()
+\item 
+\mbox{\hyperlink{classfilevault_1_1core_1_1CryptoEngine_ad03c3f423450d2f97777ca1e4565898f}{Crypto\+Engine}} (const \mbox{\hyperlink{classfilevault_1_1core_1_1CryptoEngine}{Crypto\+Engine}} \&)=delete
+\item 
+\mbox{\hyperlink{classfilevault_1_1core_1_1CryptoEngine}{Crypto\+Engine}} \& \mbox{\hyperlink{classfilevault_1_1core_1_1CryptoEngine_a677f65fd34b377f445bcff3b3019e082}{operator=}} (const \mbox{\hyperlink{classfilevault_1_1core_1_1CryptoEngine}{Crypto\+Engine}} \&)=delete
+\item 
+void \mbox{\hyperlink{classfilevault_1_1core_1_1CryptoEngine_a571908508c57b509439f1b64c1e8ca11}{initialize}} ()
+\begin{DoxyCompactList}\small\item\em Initialize engine with default algorithms. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classfilevault_1_1core_1_1CryptoEngine_a9c63ac35fcedbfb8e96e59f83344699d}{register\+\_\+algorithm}} (std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classfilevault_1_1core_1_1ICryptoAlgorithm}{ICrypto\+Algorithm}} $>$ algorithm)
+\begin{DoxyCompactList}\small\item\em Register a custom algorithm. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfilevault_1_1core_1_1ICryptoAlgorithm}{ICrypto\+Algorithm}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classfilevault_1_1core_1_1CryptoEngine_a0073a8ff37806b57fb1ec7c782332d06}{get\+\_\+algorithm}} (\mbox{\hyperlink{namespacefilevault_1_1core_ab1ba257a0205c63e9e1e3623170940a2}{Algorithm\+Type}} type)
+\begin{DoxyCompactList}\small\item\em Get algorithm by type. \end{DoxyCompactList}\item 
+std\+::vector$<$ uint8\+\_\+t $>$ \mbox{\hyperlink{classfilevault_1_1core_1_1CryptoEngine_a625f6c04b52b7b234e35d1ea0ac81cb3}{derive\+\_\+key}} (const std\+::string \&password, const std\+::vector$<$ uint8\+\_\+t $>$ \&salt, const \mbox{\hyperlink{structfilevault_1_1core_1_1EncryptionConfig}{Encryption\+Config}} \&config)
+\begin{DoxyCompactList}\small\item\em Derive key from password using KDF. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::vector$<$ uint8\+\_\+t $>$ \mbox{\hyperlink{classfilevault_1_1core_1_1CryptoEngine_aab0096edbf4637cc4a51f1dff3cb7235}{generate\+\_\+salt}} (size\+\_\+t length=32)
+\begin{DoxyCompactList}\small\item\em Generate random salt (32 bytes default) \end{DoxyCompactList}\item 
+static std\+::vector$<$ uint8\+\_\+t $>$ \mbox{\hyperlink{classfilevault_1_1core_1_1CryptoEngine_ad1ddf479e9a0b19afedeb1da70ee67d6}{generate\+\_\+nonce}} (size\+\_\+t length=12)
+\begin{DoxyCompactList}\small\item\em Generate random nonce/\+IV. \end{DoxyCompactList}\item 
+static std\+::string \mbox{\hyperlink{classfilevault_1_1core_1_1CryptoEngine_a3b0dd1547ce8003f7be2cb674bc366e3}{algorithm\+\_\+name}} (\mbox{\hyperlink{namespacefilevault_1_1core_ab1ba257a0205c63e9e1e3623170940a2}{Algorithm\+Type}} type)
+\begin{DoxyCompactList}\small\item\em Get algorithm name from type. \end{DoxyCompactList}\item 
+static std\+::string \mbox{\hyperlink{classfilevault_1_1core_1_1CryptoEngine_a1451a010750854983d8a472d1609b378}{kdf\+\_\+name}} (\mbox{\hyperlink{namespacefilevault_1_1core_ad5938d2ac317833646f1d8b965e3768f}{KDFType}} type)
+\begin{DoxyCompactList}\small\item\em Get KDF name from type. \end{DoxyCompactList}\item 
+static std\+::string \mbox{\hyperlink{classfilevault_1_1core_1_1CryptoEngine_af18db8c8600c125a0ceb61ba9278d1c4}{security\+\_\+level\+\_\+name}} (\mbox{\hyperlink{namespacefilevault_1_1core_abcb3b3d896f7dc00926903183b3e2dc9}{Security\+Level}} level)
+\begin{DoxyCompactList}\small\item\em Get security level name from type. \end{DoxyCompactList}\item 
+static std\+::optional$<$ \mbox{\hyperlink{namespacefilevault_1_1core_ab1ba257a0205c63e9e1e3623170940a2}{Algorithm\+Type}} $>$ \mbox{\hyperlink{classfilevault_1_1core_1_1CryptoEngine_afee778140ae7a661c944d3a508ca38a1}{parse\+\_\+algorithm}} (const std\+::string \&name)
+\begin{DoxyCompactList}\small\item\em Parse algorithm from string. \end{DoxyCompactList}\item 
+static std\+::optional$<$ \mbox{\hyperlink{namespacefilevault_1_1core_ad5938d2ac317833646f1d8b965e3768f}{KDFType}} $>$ \mbox{\hyperlink{classfilevault_1_1core_1_1CryptoEngine_aa1a4fd3cab88785b03702563249637f8}{parse\+\_\+kdf}} (const std\+::string \&name)
+\begin{DoxyCompactList}\small\item\em Parse KDF from string. \end{DoxyCompactList}\item 
+static std\+::optional$<$ \mbox{\hyperlink{namespacefilevault_1_1core_abcb3b3d896f7dc00926903183b3e2dc9}{Security\+Level}} $>$ \mbox{\hyperlink{classfilevault_1_1core_1_1CryptoEngine_a75a258b396c77667316a3ab2a75f9e8f}{parse\+\_\+security\+\_\+level}} (const std\+::string \&name)
+\begin{DoxyCompactList}\small\item\em Parse security level from string. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::map$<$ \mbox{\hyperlink{namespacefilevault_1_1core_ab1ba257a0205c63e9e1e3623170940a2}{Algorithm\+Type}}, std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classfilevault_1_1core_1_1ICryptoAlgorithm}{ICrypto\+Algorithm}} $>$ $>$ \mbox{\hyperlink{classfilevault_1_1core_1_1CryptoEngine_a87ae9c2d0f61e2cb618c7971c8d4eb45}{algorithms\+\_\+}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Main cryptographic engine Manages algorithms and provides key derivation. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classfilevault_1_1core_1_1CryptoEngine_ae0b54fb94dd63d15fd2409603692fc54}\label{classfilevault_1_1core_1_1CryptoEngine_ae0b54fb94dd63d15fd2409603692fc54} 
+\index{filevault::core::CryptoEngine@{filevault::core::CryptoEngine}!CryptoEngine@{CryptoEngine}}
+\index{CryptoEngine@{CryptoEngine}!filevault::core::CryptoEngine@{filevault::core::CryptoEngine}}
+\doxysubsubsection{\texorpdfstring{CryptoEngine()}{CryptoEngine()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily filevault\+::core\+::\+Crypto\+Engine\+::\+Crypto\+Engine (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{classfilevault_1_1core_1_1CryptoEngine_a090a610b888d26b5d78e1e3a325a84f6}\label{classfilevault_1_1core_1_1CryptoEngine_a090a610b888d26b5d78e1e3a325a84f6} 
+\index{filevault::core::CryptoEngine@{filevault::core::CryptoEngine}!````~CryptoEngine@{\texorpdfstring{$\sim$}{\string~}CryptoEngine}}
+\index{````~CryptoEngine@{\texorpdfstring{$\sim$}{\string~}CryptoEngine}!filevault::core::CryptoEngine@{filevault::core::CryptoEngine}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}CryptoEngine()}{\string~CryptoEngine()}}
+{\footnotesize\ttfamily filevault\+::core\+::\+Crypto\+Engine\+::\texorpdfstring{$\sim$}{\string~}\+Crypto\+Engine (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{classfilevault_1_1core_1_1CryptoEngine_ad03c3f423450d2f97777ca1e4565898f}\label{classfilevault_1_1core_1_1CryptoEngine_ad03c3f423450d2f97777ca1e4565898f} 
+\index{filevault::core::CryptoEngine@{filevault::core::CryptoEngine}!CryptoEngine@{CryptoEngine}}
+\index{CryptoEngine@{CryptoEngine}!filevault::core::CryptoEngine@{filevault::core::CryptoEngine}}
+\doxysubsubsection{\texorpdfstring{CryptoEngine()}{CryptoEngine()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily filevault\+::core\+::\+Crypto\+Engine\+::\+Crypto\+Engine (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classfilevault_1_1core_1_1CryptoEngine}{Crypto\+Engine}} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classfilevault_1_1core_1_1CryptoEngine_a3b0dd1547ce8003f7be2cb674bc366e3}\label{classfilevault_1_1core_1_1CryptoEngine_a3b0dd1547ce8003f7be2cb674bc366e3} 
+\index{filevault::core::CryptoEngine@{filevault::core::CryptoEngine}!algorithm\_name@{algorithm\_name}}
+\index{algorithm\_name@{algorithm\_name}!filevault::core::CryptoEngine@{filevault::core::CryptoEngine}}
+\doxysubsubsection{\texorpdfstring{algorithm\_name()}{algorithm\_name()}}
+{\footnotesize\ttfamily std\+::string filevault\+::core\+::\+Crypto\+Engine\+::algorithm\+\_\+name (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacefilevault_1_1core_ab1ba257a0205c63e9e1e3623170940a2}{Algorithm\+Type}}}]{type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Get algorithm name from type. 
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1core_1_1CryptoEngine_a3b0dd1547ce8003f7be2cb674bc366e3_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1core_1_1CryptoEngine_a625f6c04b52b7b234e35d1ea0ac81cb3}\label{classfilevault_1_1core_1_1CryptoEngine_a625f6c04b52b7b234e35d1ea0ac81cb3} 
+\index{filevault::core::CryptoEngine@{filevault::core::CryptoEngine}!derive\_key@{derive\_key}}
+\index{derive\_key@{derive\_key}!filevault::core::CryptoEngine@{filevault::core::CryptoEngine}}
+\doxysubsubsection{\texorpdfstring{derive\_key()}{derive\_key()}}
+{\footnotesize\ttfamily std\+::vector$<$ uint8\+\_\+t $>$ filevault\+::core\+::\+Crypto\+Engine\+::derive\+\_\+key (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{password,  }\item[{const std\+::vector$<$ uint8\+\_\+t $>$ \&}]{salt,  }\item[{const \mbox{\hyperlink{structfilevault_1_1core_1_1EncryptionConfig}{Encryption\+Config}} \&}]{config }\end{DoxyParamCaption})}
+
+
+
+Derive key from password using KDF. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em password} & User password \\
+\hline
+{\em salt} & Random salt (MUST be unique per file) \\
+\hline
+{\em config} & Configuration containing KDF parameters \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Derived key 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1core_1_1CryptoEngine_a625f6c04b52b7b234e35d1ea0ac81cb3_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1core_1_1CryptoEngine_a625f6c04b52b7b234e35d1ea0ac81cb3_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1core_1_1CryptoEngine_ad1ddf479e9a0b19afedeb1da70ee67d6}\label{classfilevault_1_1core_1_1CryptoEngine_ad1ddf479e9a0b19afedeb1da70ee67d6} 
+\index{filevault::core::CryptoEngine@{filevault::core::CryptoEngine}!generate\_nonce@{generate\_nonce}}
+\index{generate\_nonce@{generate\_nonce}!filevault::core::CryptoEngine@{filevault::core::CryptoEngine}}
+\doxysubsubsection{\texorpdfstring{generate\_nonce()}{generate\_nonce()}}
+{\footnotesize\ttfamily std\+::vector$<$ uint8\+\_\+t $>$ filevault\+::core\+::\+Crypto\+Engine\+::generate\+\_\+nonce (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{length = {\ttfamily 12} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Generate random nonce/\+IV. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em length} & Nonce length (12 for GCM, 16 for CBC) \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1core_1_1CryptoEngine_ad1ddf479e9a0b19afedeb1da70ee67d6_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1core_1_1CryptoEngine_aab0096edbf4637cc4a51f1dff3cb7235}\label{classfilevault_1_1core_1_1CryptoEngine_aab0096edbf4637cc4a51f1dff3cb7235} 
+\index{filevault::core::CryptoEngine@{filevault::core::CryptoEngine}!generate\_salt@{generate\_salt}}
+\index{generate\_salt@{generate\_salt}!filevault::core::CryptoEngine@{filevault::core::CryptoEngine}}
+\doxysubsubsection{\texorpdfstring{generate\_salt()}{generate\_salt()}}
+{\footnotesize\ttfamily std\+::vector$<$ uint8\+\_\+t $>$ filevault\+::core\+::\+Crypto\+Engine\+::generate\+\_\+salt (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{length = {\ttfamily 32} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Generate random salt (32 bytes default) 
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1core_1_1CryptoEngine_aab0096edbf4637cc4a51f1dff3cb7235_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1core_1_1CryptoEngine_a0073a8ff37806b57fb1ec7c782332d06}\label{classfilevault_1_1core_1_1CryptoEngine_a0073a8ff37806b57fb1ec7c782332d06} 
+\index{filevault::core::CryptoEngine@{filevault::core::CryptoEngine}!get\_algorithm@{get\_algorithm}}
+\index{get\_algorithm@{get\_algorithm}!filevault::core::CryptoEngine@{filevault::core::CryptoEngine}}
+\doxysubsubsection{\texorpdfstring{get\_algorithm()}{get\_algorithm()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classfilevault_1_1core_1_1ICryptoAlgorithm}{ICrypto\+Algorithm}} \texorpdfstring{$\ast$}{*} filevault\+::core\+::\+Crypto\+Engine\+::get\+\_\+algorithm (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacefilevault_1_1core_ab1ba257a0205c63e9e1e3623170940a2}{Algorithm\+Type}}}]{type }\end{DoxyParamCaption})}
+
+
+
+Get algorithm by type. 
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1core_1_1CryptoEngine_a0073a8ff37806b57fb1ec7c782332d06_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1core_1_1CryptoEngine_a571908508c57b509439f1b64c1e8ca11}\label{classfilevault_1_1core_1_1CryptoEngine_a571908508c57b509439f1b64c1e8ca11} 
+\index{filevault::core::CryptoEngine@{filevault::core::CryptoEngine}!initialize@{initialize}}
+\index{initialize@{initialize}!filevault::core::CryptoEngine@{filevault::core::CryptoEngine}}
+\doxysubsubsection{\texorpdfstring{initialize()}{initialize()}}
+{\footnotesize\ttfamily void filevault\+::core\+::\+Crypto\+Engine\+::initialize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Initialize engine with default algorithms. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1core_1_1CryptoEngine_a571908508c57b509439f1b64c1e8ca11_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1core_1_1CryptoEngine_a571908508c57b509439f1b64c1e8ca11_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1core_1_1CryptoEngine_a1451a010750854983d8a472d1609b378}\label{classfilevault_1_1core_1_1CryptoEngine_a1451a010750854983d8a472d1609b378} 
+\index{filevault::core::CryptoEngine@{filevault::core::CryptoEngine}!kdf\_name@{kdf\_name}}
+\index{kdf\_name@{kdf\_name}!filevault::core::CryptoEngine@{filevault::core::CryptoEngine}}
+\doxysubsubsection{\texorpdfstring{kdf\_name()}{kdf\_name()}}
+{\footnotesize\ttfamily std\+::string filevault\+::core\+::\+Crypto\+Engine\+::kdf\+\_\+name (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacefilevault_1_1core_ad5938d2ac317833646f1d8b965e3768f}{KDFType}}}]{type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Get KDF name from type. 
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1core_1_1CryptoEngine_a1451a010750854983d8a472d1609b378_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1core_1_1CryptoEngine_a677f65fd34b377f445bcff3b3019e082}\label{classfilevault_1_1core_1_1CryptoEngine_a677f65fd34b377f445bcff3b3019e082} 
+\index{filevault::core::CryptoEngine@{filevault::core::CryptoEngine}!operator=@{operator=}}
+\index{operator=@{operator=}!filevault::core::CryptoEngine@{filevault::core::CryptoEngine}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classfilevault_1_1core_1_1CryptoEngine}{Crypto\+Engine}} \& filevault\+::core\+::\+Crypto\+Engine\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classfilevault_1_1core_1_1CryptoEngine}{Crypto\+Engine}} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+\Hypertarget{classfilevault_1_1core_1_1CryptoEngine_afee778140ae7a661c944d3a508ca38a1}\label{classfilevault_1_1core_1_1CryptoEngine_afee778140ae7a661c944d3a508ca38a1} 
+\index{filevault::core::CryptoEngine@{filevault::core::CryptoEngine}!parse\_algorithm@{parse\_algorithm}}
+\index{parse\_algorithm@{parse\_algorithm}!filevault::core::CryptoEngine@{filevault::core::CryptoEngine}}
+\doxysubsubsection{\texorpdfstring{parse\_algorithm()}{parse\_algorithm()}}
+{\footnotesize\ttfamily std\+::optional$<$ \mbox{\hyperlink{namespacefilevault_1_1core_ab1ba257a0205c63e9e1e3623170940a2}{Algorithm\+Type}} $>$ filevault\+::core\+::\+Crypto\+Engine\+::parse\+\_\+algorithm (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Parse algorithm from string. 
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1core_1_1CryptoEngine_afee778140ae7a661c944d3a508ca38a1_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1core_1_1CryptoEngine_aa1a4fd3cab88785b03702563249637f8}\label{classfilevault_1_1core_1_1CryptoEngine_aa1a4fd3cab88785b03702563249637f8} 
+\index{filevault::core::CryptoEngine@{filevault::core::CryptoEngine}!parse\_kdf@{parse\_kdf}}
+\index{parse\_kdf@{parse\_kdf}!filevault::core::CryptoEngine@{filevault::core::CryptoEngine}}
+\doxysubsubsection{\texorpdfstring{parse\_kdf()}{parse\_kdf()}}
+{\footnotesize\ttfamily std\+::optional$<$ \mbox{\hyperlink{namespacefilevault_1_1core_ad5938d2ac317833646f1d8b965e3768f}{KDFType}} $>$ filevault\+::core\+::\+Crypto\+Engine\+::parse\+\_\+kdf (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Parse KDF from string. 
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1core_1_1CryptoEngine_aa1a4fd3cab88785b03702563249637f8_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1core_1_1CryptoEngine_a75a258b396c77667316a3ab2a75f9e8f}\label{classfilevault_1_1core_1_1CryptoEngine_a75a258b396c77667316a3ab2a75f9e8f} 
+\index{filevault::core::CryptoEngine@{filevault::core::CryptoEngine}!parse\_security\_level@{parse\_security\_level}}
+\index{parse\_security\_level@{parse\_security\_level}!filevault::core::CryptoEngine@{filevault::core::CryptoEngine}}
+\doxysubsubsection{\texorpdfstring{parse\_security\_level()}{parse\_security\_level()}}
+{\footnotesize\ttfamily std\+::optional$<$ \mbox{\hyperlink{namespacefilevault_1_1core_abcb3b3d896f7dc00926903183b3e2dc9}{Security\+Level}} $>$ filevault\+::core\+::\+Crypto\+Engine\+::parse\+\_\+security\+\_\+level (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Parse security level from string. 
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1core_1_1CryptoEngine_a75a258b396c77667316a3ab2a75f9e8f_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1core_1_1CryptoEngine_a9c63ac35fcedbfb8e96e59f83344699d}\label{classfilevault_1_1core_1_1CryptoEngine_a9c63ac35fcedbfb8e96e59f83344699d} 
+\index{filevault::core::CryptoEngine@{filevault::core::CryptoEngine}!register\_algorithm@{register\_algorithm}}
+\index{register\_algorithm@{register\_algorithm}!filevault::core::CryptoEngine@{filevault::core::CryptoEngine}}
+\doxysubsubsection{\texorpdfstring{register\_algorithm()}{register\_algorithm()}}
+{\footnotesize\ttfamily void filevault\+::core\+::\+Crypto\+Engine\+::register\+\_\+algorithm (\begin{DoxyParamCaption}\item[{std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classfilevault_1_1core_1_1ICryptoAlgorithm}{ICrypto\+Algorithm}} $>$}]{algorithm }\end{DoxyParamCaption})}
+
+
+
+Register a custom algorithm. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1core_1_1CryptoEngine_a9c63ac35fcedbfb8e96e59f83344699d_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1core_1_1CryptoEngine_a9c63ac35fcedbfb8e96e59f83344699d_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1core_1_1CryptoEngine_af18db8c8600c125a0ceb61ba9278d1c4}\label{classfilevault_1_1core_1_1CryptoEngine_af18db8c8600c125a0ceb61ba9278d1c4} 
+\index{filevault::core::CryptoEngine@{filevault::core::CryptoEngine}!security\_level\_name@{security\_level\_name}}
+\index{security\_level\_name@{security\_level\_name}!filevault::core::CryptoEngine@{filevault::core::CryptoEngine}}
+\doxysubsubsection{\texorpdfstring{security\_level\_name()}{security\_level\_name()}}
+{\footnotesize\ttfamily std\+::string filevault\+::core\+::\+Crypto\+Engine\+::security\+\_\+level\+\_\+name (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacefilevault_1_1core_abcb3b3d896f7dc00926903183b3e2dc9}{Security\+Level}}}]{level }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Get security level name from type. 
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1core_1_1CryptoEngine_af18db8c8600c125a0ceb61ba9278d1c4_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classfilevault_1_1core_1_1CryptoEngine_a87ae9c2d0f61e2cb618c7971c8d4eb45}\label{classfilevault_1_1core_1_1CryptoEngine_a87ae9c2d0f61e2cb618c7971c8d4eb45} 
+\index{filevault::core::CryptoEngine@{filevault::core::CryptoEngine}!algorithms\_@{algorithms\_}}
+\index{algorithms\_@{algorithms\_}!filevault::core::CryptoEngine@{filevault::core::CryptoEngine}}
+\doxysubsubsection{\texorpdfstring{algorithms\_}{algorithms\_}}
+{\footnotesize\ttfamily std\+::map$<$\mbox{\hyperlink{namespacefilevault_1_1core_ab1ba257a0205c63e9e1e3623170940a2}{Algorithm\+Type}}, std\+::unique\+\_\+ptr$<$\mbox{\hyperlink{classfilevault_1_1core_1_1ICryptoAlgorithm}{ICrypto\+Algorithm}}$>$ $>$ filevault\+::core\+::\+Crypto\+Engine\+::algorithms\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/filevault/core/\mbox{\hyperlink{crypto__engine_8hpp}{crypto\+\_\+engine.\+hpp}}\item 
+src/core/\mbox{\hyperlink{crypto__engine_8cpp}{crypto\+\_\+engine.\+cpp}}\end{DoxyCompactItemize}

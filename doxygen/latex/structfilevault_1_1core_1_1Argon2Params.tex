@@ -1,0 +1,91 @@
+\doxysection{filevault\+::core\+::Argon2\+Params Struct Reference}
+\hypertarget{structfilevault_1_1core_1_1Argon2Params}{}\label{structfilevault_1_1core_1_1Argon2Params}\index{filevault::core::Argon2Params@{filevault::core::Argon2Params}}
+
+
+KDF parameters for Argon2.  
+
+
+
+
+{\ttfamily \#include $<$file\+\_\+format.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ uint8\+\_\+t $>$ \mbox{\hyperlink{structfilevault_1_1core_1_1Argon2Params_a51d536228e69f056d2bc77a9a030b048}{serialize}} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{structfilevault_1_1core_1_1Argon2Params}{Argon2\+Params}} \mbox{\hyperlink{structfilevault_1_1core_1_1Argon2Params_ade4cb7c83c58a78c40dc99fba70f00b9}{deserialize}} (std\+::span$<$ const uint8\+\_\+t $>$ data)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{structfilevault_1_1core_1_1Argon2Params_a5735d5710027578bed120d65217fe417}{memory\+\_\+kb}} = 65536
+\item 
+uint32\+\_\+t \mbox{\hyperlink{structfilevault_1_1core_1_1Argon2Params_afc2a3a66d97c69a8712e6b2c09257785}{iterations}} = 3
+\item 
+uint32\+\_\+t \mbox{\hyperlink{structfilevault_1_1core_1_1Argon2Params_a234542a28b52a6e0ef26add333b5dfa5}{parallelism}} = 4
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+KDF parameters for Argon2. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{structfilevault_1_1core_1_1Argon2Params_ade4cb7c83c58a78c40dc99fba70f00b9}\label{structfilevault_1_1core_1_1Argon2Params_ade4cb7c83c58a78c40dc99fba70f00b9} 
+\index{filevault::core::Argon2Params@{filevault::core::Argon2Params}!deserialize@{deserialize}}
+\index{deserialize@{deserialize}!filevault::core::Argon2Params@{filevault::core::Argon2Params}}
+\doxysubsubsection{\texorpdfstring{deserialize()}{deserialize()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structfilevault_1_1core_1_1Argon2Params}{Argon2\+Params}} filevault\+::core\+::\+Argon2\+Params\+::deserialize (\begin{DoxyParamCaption}\item[{std\+::span$<$ const uint8\+\_\+t $>$}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structfilevault_1_1core_1_1Argon2Params_ade4cb7c83c58a78c40dc99fba70f00b9_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{structfilevault_1_1core_1_1Argon2Params_a51d536228e69f056d2bc77a9a030b048}\label{structfilevault_1_1core_1_1Argon2Params_a51d536228e69f056d2bc77a9a030b048} 
+\index{filevault::core::Argon2Params@{filevault::core::Argon2Params}!serialize@{serialize}}
+\index{serialize@{serialize}!filevault::core::Argon2Params@{filevault::core::Argon2Params}}
+\doxysubsubsection{\texorpdfstring{serialize()}{serialize()}}
+{\footnotesize\ttfamily std\+::vector$<$ uint8\+\_\+t $>$ filevault\+::core\+::\+Argon2\+Params\+::serialize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structfilevault_1_1core_1_1Argon2Params_a51d536228e69f056d2bc77a9a030b048_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{structfilevault_1_1core_1_1Argon2Params_afc2a3a66d97c69a8712e6b2c09257785}\label{structfilevault_1_1core_1_1Argon2Params_afc2a3a66d97c69a8712e6b2c09257785} 
+\index{filevault::core::Argon2Params@{filevault::core::Argon2Params}!iterations@{iterations}}
+\index{iterations@{iterations}!filevault::core::Argon2Params@{filevault::core::Argon2Params}}
+\doxysubsubsection{\texorpdfstring{iterations}{iterations}}
+{\footnotesize\ttfamily uint32\+\_\+t filevault\+::core\+::\+Argon2\+Params\+::iterations = 3}
+
+\Hypertarget{structfilevault_1_1core_1_1Argon2Params_a5735d5710027578bed120d65217fe417}\label{structfilevault_1_1core_1_1Argon2Params_a5735d5710027578bed120d65217fe417} 
+\index{filevault::core::Argon2Params@{filevault::core::Argon2Params}!memory\_kb@{memory\_kb}}
+\index{memory\_kb@{memory\_kb}!filevault::core::Argon2Params@{filevault::core::Argon2Params}}
+\doxysubsubsection{\texorpdfstring{memory\_kb}{memory\_kb}}
+{\footnotesize\ttfamily uint32\+\_\+t filevault\+::core\+::\+Argon2\+Params\+::memory\+\_\+kb = 65536}
+
+\Hypertarget{structfilevault_1_1core_1_1Argon2Params_a234542a28b52a6e0ef26add333b5dfa5}\label{structfilevault_1_1core_1_1Argon2Params_a234542a28b52a6e0ef26add333b5dfa5} 
+\index{filevault::core::Argon2Params@{filevault::core::Argon2Params}!parallelism@{parallelism}}
+\index{parallelism@{parallelism}!filevault::core::Argon2Params@{filevault::core::Argon2Params}}
+\doxysubsubsection{\texorpdfstring{parallelism}{parallelism}}
+{\footnotesize\ttfamily uint32\+\_\+t filevault\+::core\+::\+Argon2\+Params\+::parallelism = 4}
+
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/filevault/core/\mbox{\hyperlink{file__format_8hpp}{file\+\_\+format.\+hpp}}\item 
+src/format/\mbox{\hyperlink{file__format_8cpp}{file\+\_\+format.\+cpp}}\end{DoxyCompactItemize}

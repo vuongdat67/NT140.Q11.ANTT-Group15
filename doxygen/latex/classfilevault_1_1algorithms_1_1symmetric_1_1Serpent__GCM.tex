@@ -1,0 +1,298 @@
+\doxysection{filevault\+::algorithms\+::symmetric\+::Serpent\+\_\+\+GCM Class Reference}
+\hypertarget{classfilevault_1_1algorithms_1_1symmetric_1_1Serpent__GCM}{}\label{classfilevault_1_1algorithms_1_1symmetric_1_1Serpent__GCM}\index{filevault::algorithms::symmetric::Serpent\_GCM@{filevault::algorithms::symmetric::Serpent\_GCM}}
+
+
+Serpent-\/256-\/\+GCM implementation.  
+
+
+
+
+{\ttfamily \#include $<$serpent\+\_\+gcm.\+hpp$>$}
+
+
+
+Inheritance diagram for filevault\+::algorithms\+::symmetric\+::Serpent\+\_\+\+GCM\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=227pt]{classfilevault_1_1algorithms_1_1symmetric_1_1Serpent__GCM__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for filevault\+::algorithms\+::symmetric\+::Serpent\+\_\+\+GCM\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=227pt]{classfilevault_1_1algorithms_1_1symmetric_1_1Serpent__GCM__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1Serpent__GCM_acb25216fcc135ac64eeba12df6b66b70}{Serpent\+\_\+\+GCM}} ()
+\begin{DoxyCompactList}\small\item\em Construct Serpent-\/256-\/\+GCM cipher. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1Serpent__GCM_a9be4f16a630a241ee033332c36debec0}{name}} () const override
+\begin{DoxyCompactList}\small\item\em Get algorithm name. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacefilevault_1_1core_ab1ba257a0205c63e9e1e3623170940a2}{core\+::\+Algorithm\+Type}} \mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1Serpent__GCM_ab6b2766f0ae887175039e157364027f7}{type}} () const override
+\begin{DoxyCompactList}\small\item\em Get algorithm type. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structfilevault_1_1core_1_1CryptoResult}{core\+::\+Crypto\+Result}} \mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1Serpent__GCM_a8b40c667d182153201fdd578da382c04}{encrypt}} (std\+::span$<$ const uint8\+\_\+t $>$ plaintext, std\+::span$<$ const uint8\+\_\+t $>$ key, const \mbox{\hyperlink{structfilevault_1_1core_1_1EncryptionConfig}{core\+::\+Encryption\+Config}} \&config) override
+\begin{DoxyCompactList}\small\item\em Encrypt plaintext with Serpent-\/256-\/\+GCM. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structfilevault_1_1core_1_1CryptoResult}{core\+::\+Crypto\+Result}} \mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1Serpent__GCM_a67355c040c00455fc6e0ab3c9eedcdef}{decrypt}} (std\+::span$<$ const uint8\+\_\+t $>$ ciphertext, std\+::span$<$ const uint8\+\_\+t $>$ key, const \mbox{\hyperlink{structfilevault_1_1core_1_1EncryptionConfig}{core\+::\+Encryption\+Config}} \&config) override
+\begin{DoxyCompactList}\small\item\em Decrypt ciphertext with Serpent-\/256-\/\+GCM. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1Serpent__GCM_af39dc77346065c819afc2bf142056327}{key\+\_\+size}} () const override
+\begin{DoxyCompactList}\small\item\em Get required key size in bytes. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1Serpent__GCM_ad9b4e2da6c8173e28eda37a94eb4fa23}{is\+\_\+suitable\+\_\+for}} (\mbox{\hyperlink{namespacefilevault_1_1core_abcb3b3d896f7dc00926903183b3e2dc9}{core\+::\+Security\+Level}} level) const override
+\begin{DoxyCompactList}\small\item\em Check if algorithm is suitable for security level. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classfilevault_1_1core_1_1ICryptoAlgorithm}{filevault\+::core\+::\+ICrypto\+Algorithm}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classfilevault_1_1core_1_1ICryptoAlgorithm_a36383558169617931374ca3b64399818}{\texorpdfstring{$\sim$}{\string~}\+ICrypto\+Algorithm}} ()=default
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ uint8\+\_\+t $>$ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1Serpent__GCM_af79e9affc7f6a78e8fecffc5166ca204}{process\+\_\+gcm}} (std\+::span$<$ const uint8\+\_\+t $>$ input, std\+::span$<$ const uint8\+\_\+t $>$ key, std\+::span$<$ const uint8\+\_\+t $>$ nonce, std\+::span$<$ const uint8\+\_\+t $>$ tag, bool \mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1Serpent__GCM_a8b40c667d182153201fdd578da382c04}{encrypt}})
+\begin{DoxyCompactList}\small\item\em Perform encryption/decryption operation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Serpent-\/256-\/\+GCM implementation. 
+
+Serpent is a 128-\/bit block cipher designed by Ross Anderson, Eli Biham, and Lars Knudsen. It was an AES finalist and is known for its high security margin.
+
+References\+:
+\begin{DoxyItemize}
+\item Serpent\+: A Candidate Block Cipher for the AES \href{https://www.cl.cam.ac.uk/~rja14/serpent.html}{\texttt{ https\+://www.\+cl.\+cam.\+ac.\+uk/\texorpdfstring{$\sim$}{\string~}rja14/serpent.\+html}}
+\item NIST SP 800-\/38D\+: GCM Mode \href{https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-38d.pdf}{\texttt{ https\+://nvlpubs.\+nist.\+gov/nistpubs/\+Legacy/\+SP/nistspecialpublication800-\/38d.\+pdf}}
+\end{DoxyItemize}
+
+Security\+:
+\begin{DoxyItemize}
+\item Key size\+: 256 bits (32 bytes)
+\item Block size\+: 128 bits (16 bytes)
+\item Nonce size\+: 96 bits (12 bytes) for GCM
+\item Tag size\+: 128 bits (16 bytes) for authentication
+\end{DoxyItemize}
+
+\begin{DoxyNote}{Note}
+This implementation uses Botan\textquotesingle{}s Serpent/\+GCM mode 
+
+Serpent-\/256 provides very high security margin 
+
+Slower than AES on most platforms but more secure 
+\end{DoxyNote}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classfilevault_1_1algorithms_1_1symmetric_1_1Serpent__GCM_acb25216fcc135ac64eeba12df6b66b70}\label{classfilevault_1_1algorithms_1_1symmetric_1_1Serpent__GCM_acb25216fcc135ac64eeba12df6b66b70} 
+\index{filevault::algorithms::symmetric::Serpent\_GCM@{filevault::algorithms::symmetric::Serpent\_GCM}!Serpent\_GCM@{Serpent\_GCM}}
+\index{Serpent\_GCM@{Serpent\_GCM}!filevault::algorithms::symmetric::Serpent\_GCM@{filevault::algorithms::symmetric::Serpent\_GCM}}
+\doxysubsubsection{\texorpdfstring{Serpent\_GCM()}{Serpent\_GCM()}}
+{\footnotesize\ttfamily filevault\+::algorithms\+::symmetric\+::\+Serpent\+\_\+\+GCM\+::\+Serpent\+\_\+\+GCM (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Construct Serpent-\/256-\/\+GCM cipher. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classfilevault_1_1algorithms_1_1symmetric_1_1Serpent__GCM_a67355c040c00455fc6e0ab3c9eedcdef}\label{classfilevault_1_1algorithms_1_1symmetric_1_1Serpent__GCM_a67355c040c00455fc6e0ab3c9eedcdef} 
+\index{filevault::algorithms::symmetric::Serpent\_GCM@{filevault::algorithms::symmetric::Serpent\_GCM}!decrypt@{decrypt}}
+\index{decrypt@{decrypt}!filevault::algorithms::symmetric::Serpent\_GCM@{filevault::algorithms::symmetric::Serpent\_GCM}}
+\doxysubsubsection{\texorpdfstring{decrypt()}{decrypt()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structfilevault_1_1core_1_1CryptoResult}{core\+::\+Crypto\+Result}} filevault\+::algorithms\+::symmetric\+::\+Serpent\+\_\+\+GCM\+::decrypt (\begin{DoxyParamCaption}\item[{std\+::span$<$ const uint8\+\_\+t $>$}]{ciphertext,  }\item[{std\+::span$<$ const uint8\+\_\+t $>$}]{key,  }\item[{const \mbox{\hyperlink{structfilevault_1_1core_1_1EncryptionConfig}{core\+::\+Encryption\+Config}} \&}]{config }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Decrypt ciphertext with Serpent-\/256-\/\+GCM. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ciphertext} & Encrypted data \\
+\hline
+{\em key} & 256-\/bit decryption key \\
+\hline
+{\em config} & Decryption configuration with nonce and tag \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Decrypted plaintext 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classfilevault_1_1core_1_1ICryptoAlgorithm_a5ad6e9e19a3ed1dd3f0b49106bcaac0d}{filevault\+::core\+::\+ICrypto\+Algorithm}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1algorithms_1_1symmetric_1_1Serpent__GCM_a67355c040c00455fc6e0ab3c9eedcdef_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1algorithms_1_1symmetric_1_1Serpent__GCM_a8b40c667d182153201fdd578da382c04}\label{classfilevault_1_1algorithms_1_1symmetric_1_1Serpent__GCM_a8b40c667d182153201fdd578da382c04} 
+\index{filevault::algorithms::symmetric::Serpent\_GCM@{filevault::algorithms::symmetric::Serpent\_GCM}!encrypt@{encrypt}}
+\index{encrypt@{encrypt}!filevault::algorithms::symmetric::Serpent\_GCM@{filevault::algorithms::symmetric::Serpent\_GCM}}
+\doxysubsubsection{\texorpdfstring{encrypt()}{encrypt()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structfilevault_1_1core_1_1CryptoResult}{core\+::\+Crypto\+Result}} filevault\+::algorithms\+::symmetric\+::\+Serpent\+\_\+\+GCM\+::encrypt (\begin{DoxyParamCaption}\item[{std\+::span$<$ const uint8\+\_\+t $>$}]{plaintext,  }\item[{std\+::span$<$ const uint8\+\_\+t $>$}]{key,  }\item[{const \mbox{\hyperlink{structfilevault_1_1core_1_1EncryptionConfig}{core\+::\+Encryption\+Config}} \&}]{config }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Encrypt plaintext with Serpent-\/256-\/\+GCM. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em plaintext} & Input data to encrypt \\
+\hline
+{\em key} & 256-\/bit encryption key \\
+\hline
+{\em config} & Encryption configuration with nonce \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Encrypted data with authentication tag 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classfilevault_1_1core_1_1ICryptoAlgorithm_a5b9102cef54b84b54feea1dc16561a2d}{filevault\+::core\+::\+ICrypto\+Algorithm}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1algorithms_1_1symmetric_1_1Serpent__GCM_a8b40c667d182153201fdd578da382c04_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1algorithms_1_1symmetric_1_1Serpent__GCM_a8b40c667d182153201fdd578da382c04_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1algorithms_1_1symmetric_1_1Serpent__GCM_ad9b4e2da6c8173e28eda37a94eb4fa23}\label{classfilevault_1_1algorithms_1_1symmetric_1_1Serpent__GCM_ad9b4e2da6c8173e28eda37a94eb4fa23} 
+\index{filevault::algorithms::symmetric::Serpent\_GCM@{filevault::algorithms::symmetric::Serpent\_GCM}!is\_suitable\_for@{is\_suitable\_for}}
+\index{is\_suitable\_for@{is\_suitable\_for}!filevault::algorithms::symmetric::Serpent\_GCM@{filevault::algorithms::symmetric::Serpent\_GCM}}
+\doxysubsubsection{\texorpdfstring{is\_suitable\_for()}{is\_suitable\_for()}}
+{\footnotesize\ttfamily bool filevault\+::algorithms\+::symmetric\+::\+Serpent\+\_\+\+GCM\+::is\+\_\+suitable\+\_\+for (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacefilevault_1_1core_abcb3b3d896f7dc00926903183b3e2dc9}{core\+::\+Security\+Level}}}]{level }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Check if algorithm is suitable for security level. 
+
+
+
+Implements \mbox{\hyperlink{classfilevault_1_1core_1_1ICryptoAlgorithm_aab479734daf06d3f76af5d916c0285fa}{filevault\+::core\+::\+ICrypto\+Algorithm}}.
+
+\Hypertarget{classfilevault_1_1algorithms_1_1symmetric_1_1Serpent__GCM_af39dc77346065c819afc2bf142056327}\label{classfilevault_1_1algorithms_1_1symmetric_1_1Serpent__GCM_af39dc77346065c819afc2bf142056327} 
+\index{filevault::algorithms::symmetric::Serpent\_GCM@{filevault::algorithms::symmetric::Serpent\_GCM}!key\_size@{key\_size}}
+\index{key\_size@{key\_size}!filevault::algorithms::symmetric::Serpent\_GCM@{filevault::algorithms::symmetric::Serpent\_GCM}}
+\doxysubsubsection{\texorpdfstring{key\_size()}{key\_size()}}
+{\footnotesize\ttfamily size\+\_\+t filevault\+::algorithms\+::symmetric\+::\+Serpent\+\_\+\+GCM\+::key\+\_\+size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get required key size in bytes. 
+
+
+
+Implements \mbox{\hyperlink{classfilevault_1_1core_1_1ICryptoAlgorithm_af9ccb47457495eb99988fef0b5b2bbe8}{filevault\+::core\+::\+ICrypto\+Algorithm}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1algorithms_1_1symmetric_1_1Serpent__GCM_af39dc77346065c819afc2bf142056327_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1algorithms_1_1symmetric_1_1Serpent__GCM_a9be4f16a630a241ee033332c36debec0}\label{classfilevault_1_1algorithms_1_1symmetric_1_1Serpent__GCM_a9be4f16a630a241ee033332c36debec0} 
+\index{filevault::algorithms::symmetric::Serpent\_GCM@{filevault::algorithms::symmetric::Serpent\_GCM}!name@{name}}
+\index{name@{name}!filevault::algorithms::symmetric::Serpent\_GCM@{filevault::algorithms::symmetric::Serpent\_GCM}}
+\doxysubsubsection{\texorpdfstring{name()}{name()}}
+{\footnotesize\ttfamily std\+::string filevault\+::algorithms\+::symmetric\+::\+Serpent\+\_\+\+GCM\+::name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get algorithm name. 
+
+
+
+Implements \mbox{\hyperlink{classfilevault_1_1core_1_1ICryptoAlgorithm_a8acdc23e4f2ea77bb4a5b9820b27fa66}{filevault\+::core\+::\+ICrypto\+Algorithm}}.
+
+\Hypertarget{classfilevault_1_1algorithms_1_1symmetric_1_1Serpent__GCM_af79e9affc7f6a78e8fecffc5166ca204}\label{classfilevault_1_1algorithms_1_1symmetric_1_1Serpent__GCM_af79e9affc7f6a78e8fecffc5166ca204} 
+\index{filevault::algorithms::symmetric::Serpent\_GCM@{filevault::algorithms::symmetric::Serpent\_GCM}!process\_gcm@{process\_gcm}}
+\index{process\_gcm@{process\_gcm}!filevault::algorithms::symmetric::Serpent\_GCM@{filevault::algorithms::symmetric::Serpent\_GCM}}
+\doxysubsubsection{\texorpdfstring{process\_gcm()}{process\_gcm()}}
+{\footnotesize\ttfamily std\+::vector$<$ uint8\+\_\+t $>$ filevault\+::algorithms\+::symmetric\+::\+Serpent\+\_\+\+GCM\+::process\+\_\+gcm (\begin{DoxyParamCaption}\item[{std\+::span$<$ const uint8\+\_\+t $>$}]{input,  }\item[{std\+::span$<$ const uint8\+\_\+t $>$}]{key,  }\item[{std\+::span$<$ const uint8\+\_\+t $>$}]{nonce,  }\item[{std\+::span$<$ const uint8\+\_\+t $>$}]{tag,  }\item[{bool}]{encrypt }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Perform encryption/decryption operation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em input} & Input data \\
+\hline
+{\em key} & Encryption/decryption key \\
+\hline
+{\em nonce} & Unique nonce (96 bits) \\
+\hline
+{\em tag} & Authentication tag (for decryption, empty for encryption) \\
+\hline
+{\em encrypt} & True for encryption, false for decryption \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Encrypted/decrypted data (with tag appended for encryption) 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1algorithms_1_1symmetric_1_1Serpent__GCM_af79e9affc7f6a78e8fecffc5166ca204_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1algorithms_1_1symmetric_1_1Serpent__GCM_af79e9affc7f6a78e8fecffc5166ca204_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1algorithms_1_1symmetric_1_1Serpent__GCM_ab6b2766f0ae887175039e157364027f7}\label{classfilevault_1_1algorithms_1_1symmetric_1_1Serpent__GCM_ab6b2766f0ae887175039e157364027f7} 
+\index{filevault::algorithms::symmetric::Serpent\_GCM@{filevault::algorithms::symmetric::Serpent\_GCM}!type@{type}}
+\index{type@{type}!filevault::algorithms::symmetric::Serpent\_GCM@{filevault::algorithms::symmetric::Serpent\_GCM}}
+\doxysubsubsection{\texorpdfstring{type()}{type()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacefilevault_1_1core_ab1ba257a0205c63e9e1e3623170940a2}{core\+::\+Algorithm\+Type}} filevault\+::algorithms\+::symmetric\+::\+Serpent\+\_\+\+GCM\+::type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get algorithm type. 
+
+
+
+Implements \mbox{\hyperlink{classfilevault_1_1core_1_1ICryptoAlgorithm_a11b7820f7b0bbb5fd6668fac3b78a7e1}{filevault\+::core\+::\+ICrypto\+Algorithm}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1algorithms_1_1symmetric_1_1Serpent__GCM_ab6b2766f0ae887175039e157364027f7_icgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/filevault/algorithms/symmetric/\mbox{\hyperlink{serpent__gcm_8hpp}{serpent\+\_\+gcm.\+hpp}}\item 
+src/algorithms/symmetric/\mbox{\hyperlink{serpent__gcm_8cpp}{serpent\+\_\+gcm.\+cpp}}\end{DoxyCompactItemize}

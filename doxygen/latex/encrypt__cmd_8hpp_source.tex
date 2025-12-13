@@ -1,0 +1,47 @@
+\doxysection{encrypt\+\_\+cmd.\+hpp}
+\hypertarget{encrypt__cmd_8hpp_source}{}\label{encrypt__cmd_8hpp_source}\index{include/filevault/cli/commands/encrypt\_cmd.hpp@{include/filevault/cli/commands/encrypt\_cmd.hpp}}
+\mbox{\hyperlink{encrypt__cmd_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ FILEVAULT\_CLI\_COMMANDS\_ENCRYPT\_CMD\_HPP}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ FILEVAULT\_CLI\_COMMANDS\_ENCRYPT\_CMD\_HPP}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{command_8hpp}{filevault/cli/command.hpp}}"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{crypto__engine_8hpp}{filevault/core/crypto\_engine.hpp}}"{}}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacefilevault}{filevault}}\ \{}
+\DoxyCodeLine{00008\ \textcolor{keyword}{namespace\ }cli\ \{}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00013\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classfilevault_1_1cli_1_1EncryptCommand}{EncryptCommand}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classfilevault_1_1cli_1_1ICommand}{ICommand}}\ \{}
+\DoxyCodeLine{00014\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classfilevault_1_1cli_1_1EncryptCommand}{EncryptCommand}}(\mbox{\hyperlink{classfilevault_1_1core_1_1CryptoEngine}{core::CryptoEngine}}\&\ engine);}
+\DoxyCodeLine{00016\ \ \ \ \ }
+\DoxyCodeLine{00017\ \ \ \ \ std::string\ \mbox{\hyperlink{classfilevault_1_1cli_1_1EncryptCommand_a72f6b179613852d7c981853073d40710}{name}}()\textcolor{keyword}{\ const\ override\ }\{\ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}encrypt"{}};\ \}}
+\DoxyCodeLine{00018\ \ \ \ \ std::string\ \mbox{\hyperlink{classfilevault_1_1cli_1_1EncryptCommand_a0d3a5580a5ed89afc9f78d77a563ce85}{description}}()\textcolor{keyword}{\ const\ override\ }\{\ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Encrypt\ a\ file"{}};\ \}}
+\DoxyCodeLine{00019\ \ \ \ \ }
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classfilevault_1_1cli_1_1EncryptCommand_a49a6bf319c88ad28435c6de290a9ad57}{setup}}(CLI::App\&\ app)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classfilevault_1_1cli_1_1EncryptCommand_ab864b533aafa2be17b895ad80a213244}{execute}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00024\ \ \ \ \ \mbox{\hyperlink{classfilevault_1_1core_1_1CryptoEngine}{core::CryptoEngine}}\&\ \mbox{\hyperlink{classfilevault_1_1cli_1_1EncryptCommand_a6e3421d7492b83d36a57adad8aee37e8}{engine\_}};}
+\DoxyCodeLine{00025\ \ \ \ \ }
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{comment}{//\ Command\ options}}
+\DoxyCodeLine{00027\ \ \ \ \ std::string\ \mbox{\hyperlink{classfilevault_1_1cli_1_1EncryptCommand_ab2e24a32ebbf8762589523c02846b84e}{input\_file\_}};}
+\DoxyCodeLine{00028\ \ \ \ \ std::string\ \mbox{\hyperlink{classfilevault_1_1cli_1_1EncryptCommand_a710d9eea9ee16c7ea7edc4ae676eb433}{output\_file\_}};}
+\DoxyCodeLine{00029\ \ \ \ \ std::string\ \mbox{\hyperlink{classfilevault_1_1cli_1_1EncryptCommand_af89bfc9fff05c457851848cb8bd69935}{password\_}};}
+\DoxyCodeLine{00030\ \ \ \ \ std::string\ \mbox{\hyperlink{classfilevault_1_1cli_1_1EncryptCommand_aa3bb6dff93e5e81f58f1c7beaca41629}{mode\_}};\ \ \textcolor{comment}{//\ Mode\ preset:\ basic/standard/advanced}}
+\DoxyCodeLine{00031\ \ \ \ \ std::string\ \mbox{\hyperlink{classfilevault_1_1cli_1_1EncryptCommand_a6be306c1a97add73e20bd1a538b88d19}{algorithm\_}}\ =\ \textcolor{stringliteral}{"{}aes-\/256-\/gcm"{}};}
+\DoxyCodeLine{00032\ \ \ \ \ std::string\ \mbox{\hyperlink{classfilevault_1_1cli_1_1EncryptCommand_af4f447aa642c6ade3962a015c33ca237}{security\_level\_}}\ =\ \textcolor{stringliteral}{"{}medium"{}};}
+\DoxyCodeLine{00033\ \ \ \ \ std::string\ \mbox{\hyperlink{classfilevault_1_1cli_1_1EncryptCommand_ae8ffef1039948b7620133dbe6e1f1766}{kdf\_}}\ =\ \textcolor{stringliteral}{"{}argon2id"{}};}
+\DoxyCodeLine{00034\ \ \ \ \ std::string\ \mbox{\hyperlink{classfilevault_1_1cli_1_1EncryptCommand_ab000d7dcc9506da8fe9b123c0720fe24}{compression\_type\_}}\ =\ \textcolor{stringliteral}{"{}none"{}};}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classfilevault_1_1cli_1_1EncryptCommand_a2af2cf9e670baf46af85f2c57aaa6bec}{compression\_level\_}}\ =\ 6;}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classfilevault_1_1cli_1_1EncryptCommand_a961ccf6642546420706c79c4f0968362}{verbose\_}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classfilevault_1_1cli_1_1EncryptCommand_a741717d4d85079e6be49cf6b9f3af84b}{no\_progress\_}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classfilevault_1_1cli_1_1EncryptCommand_a827fbd7f2601bd5ee55ae2af9df19dc0}{force\_weak\_password\_}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00039\ \};}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \}\ \textcolor{comment}{//\ namespace\ cli}}
+\DoxyCodeLine{00042\ \}\ \textcolor{comment}{//\ namespace\ filevault}}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ FILEVAULT\_CLI\_COMMANDS\_ENCRYPT\_CMD\_HPP}}
+
+\end{DoxyCode}

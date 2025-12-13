@@ -1,0 +1,212 @@
+\doxysection{filevault\+::cli\+::commands\+::Verify\+Command Class Reference}
+\hypertarget{classfilevault_1_1cli_1_1commands_1_1VerifyCommand}{}\label{classfilevault_1_1cli_1_1commands_1_1VerifyCommand}\index{filevault::cli::commands::VerifyCommand@{filevault::cli::commands::VerifyCommand}}
+
+
+Command to verify digital signature of a file.  
+
+
+
+
+{\ttfamily \#include $<$verify\+\_\+cmd.\+hpp$>$}
+
+
+
+Inheritance diagram for filevault\+::cli\+::commands\+::Verify\+Command\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=214pt]{classfilevault_1_1cli_1_1commands_1_1VerifyCommand__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for filevault\+::cli\+::commands\+::Verify\+Command\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1cli_1_1commands_1_1VerifyCommand__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classfilevault_1_1cli_1_1commands_1_1VerifyCommand_aeac2e100bddc2d3a5292b8904c45c288}{Verify\+Command}} (\mbox{\hyperlink{classfilevault_1_1core_1_1CryptoEngine}{core\+::\+Crypto\+Engine}} \&engine)
+\item 
+std\+::string \mbox{\hyperlink{classfilevault_1_1cli_1_1commands_1_1VerifyCommand_a654b91061bc9bb829b86fd40d61c874e}{name}} () const override
+\begin{DoxyCompactList}\small\item\em Get command name. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classfilevault_1_1cli_1_1commands_1_1VerifyCommand_a61db4f7d7284c8d1a9dedefdd5c8151b}{description}} () const override
+\begin{DoxyCompactList}\small\item\em Get command description. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classfilevault_1_1cli_1_1commands_1_1VerifyCommand_a84d66a803a40e61cd9fc52497c85cb37}{setup}} (CLI\+::\+App \&app) override
+\begin{DoxyCompactList}\small\item\em Setup CLI11 subcommand. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classfilevault_1_1cli_1_1commands_1_1VerifyCommand_afb75e72f6a7f65f0eb154650e2d4626d}{execute}} () override
+\begin{DoxyCompactList}\small\item\em Execute the command. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classfilevault_1_1cli_1_1ICommand}{filevault\+::cli\+::\+ICommand}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classfilevault_1_1cli_1_1ICommand_a358ce6bf0db6a1ff7f53eec427481a5d}{\texorpdfstring{$\sim$}{\string~}\+ICommand}} ()=default
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{classfilevault_1_1cli_1_1commands_1_1VerifyCommand_a6c7bcf81da824ce63a76908bbe366420}{name\+\_\+}} = "{}verify"{}
+\item 
+std\+::string \mbox{\hyperlink{classfilevault_1_1cli_1_1commands_1_1VerifyCommand_ae3de9a212d121c0057f97fe6417e97ec}{description\+\_\+}} = "{}Verify digital signature of a file"{}
+\item 
+\mbox{\hyperlink{classfilevault_1_1core_1_1CryptoEngine}{core\+::\+Crypto\+Engine}} \& \mbox{\hyperlink{classfilevault_1_1cli_1_1commands_1_1VerifyCommand_a74572ebc71c6fc700fdd6b51f14bbb8d}{engine\+\_\+}}
+\item 
+std\+::string \mbox{\hyperlink{classfilevault_1_1cli_1_1commands_1_1VerifyCommand_ae0c83be517de73471f7b813e9c0d0726}{file\+\_\+path\+\_\+}}
+\item 
+std\+::string \mbox{\hyperlink{classfilevault_1_1cli_1_1commands_1_1VerifyCommand_ae2b1e647a07dd373bb0f22e40f6a8788}{signature\+\_\+path\+\_\+}}
+\item 
+std\+::string \mbox{\hyperlink{classfilevault_1_1cli_1_1commands_1_1VerifyCommand_a757d1061e909d8942be5b2a8a2fb5d74}{public\+\_\+key\+\_\+path\+\_\+}}
+\item 
+std\+::string \mbox{\hyperlink{classfilevault_1_1cli_1_1commands_1_1VerifyCommand_a757aeeac2c9af28b1be0fdbf38eaaf7c}{algorithm\+\_\+}} = "{}rsa"{}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Command to verify digital signature of a file. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classfilevault_1_1cli_1_1commands_1_1VerifyCommand_aeac2e100bddc2d3a5292b8904c45c288}\label{classfilevault_1_1cli_1_1commands_1_1VerifyCommand_aeac2e100bddc2d3a5292b8904c45c288} 
+\index{filevault::cli::commands::VerifyCommand@{filevault::cli::commands::VerifyCommand}!VerifyCommand@{VerifyCommand}}
+\index{VerifyCommand@{VerifyCommand}!filevault::cli::commands::VerifyCommand@{filevault::cli::commands::VerifyCommand}}
+\doxysubsubsection{\texorpdfstring{VerifyCommand()}{VerifyCommand()}}
+{\footnotesize\ttfamily filevault\+::cli\+::commands\+::\+Verify\+Command\+::\+Verify\+Command (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classfilevault_1_1core_1_1CryptoEngine}{core\+::\+Crypto\+Engine}} \&}]{engine }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classfilevault_1_1cli_1_1commands_1_1VerifyCommand_a61db4f7d7284c8d1a9dedefdd5c8151b}\label{classfilevault_1_1cli_1_1commands_1_1VerifyCommand_a61db4f7d7284c8d1a9dedefdd5c8151b} 
+\index{filevault::cli::commands::VerifyCommand@{filevault::cli::commands::VerifyCommand}!description@{description}}
+\index{description@{description}!filevault::cli::commands::VerifyCommand@{filevault::cli::commands::VerifyCommand}}
+\doxysubsubsection{\texorpdfstring{description()}{description()}}
+{\footnotesize\ttfamily std\+::string filevault\+::cli\+::commands\+::\+Verify\+Command\+::description (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get command description. 
+
+
+
+Implements \mbox{\hyperlink{classfilevault_1_1cli_1_1ICommand_a154cdd3f87273142e70814445abd48ea}{filevault\+::cli\+::\+ICommand}}.
+
+\Hypertarget{classfilevault_1_1cli_1_1commands_1_1VerifyCommand_afb75e72f6a7f65f0eb154650e2d4626d}\label{classfilevault_1_1cli_1_1commands_1_1VerifyCommand_afb75e72f6a7f65f0eb154650e2d4626d} 
+\index{filevault::cli::commands::VerifyCommand@{filevault::cli::commands::VerifyCommand}!execute@{execute}}
+\index{execute@{execute}!filevault::cli::commands::VerifyCommand@{filevault::cli::commands::VerifyCommand}}
+\doxysubsubsection{\texorpdfstring{execute()}{execute()}}
+{\footnotesize\ttfamily int filevault\+::cli\+::commands\+::\+Verify\+Command\+::execute (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Execute the command. 
+
+
+
+Implements \mbox{\hyperlink{classfilevault_1_1cli_1_1ICommand_a2fdc36b29a23b94a6e52bc3d4eb0c1ed}{filevault\+::cli\+::\+ICommand}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1cli_1_1commands_1_1VerifyCommand_afb75e72f6a7f65f0eb154650e2d4626d_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1cli_1_1commands_1_1VerifyCommand_afb75e72f6a7f65f0eb154650e2d4626d_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1cli_1_1commands_1_1VerifyCommand_a654b91061bc9bb829b86fd40d61c874e}\label{classfilevault_1_1cli_1_1commands_1_1VerifyCommand_a654b91061bc9bb829b86fd40d61c874e} 
+\index{filevault::cli::commands::VerifyCommand@{filevault::cli::commands::VerifyCommand}!name@{name}}
+\index{name@{name}!filevault::cli::commands::VerifyCommand@{filevault::cli::commands::VerifyCommand}}
+\doxysubsubsection{\texorpdfstring{name()}{name()}}
+{\footnotesize\ttfamily std\+::string filevault\+::cli\+::commands\+::\+Verify\+Command\+::name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get command name. 
+
+
+
+Implements \mbox{\hyperlink{classfilevault_1_1cli_1_1ICommand_a60aa4bc7c96c2e80feeb1a184d7ae2f7}{filevault\+::cli\+::\+ICommand}}.
+
+\Hypertarget{classfilevault_1_1cli_1_1commands_1_1VerifyCommand_a84d66a803a40e61cd9fc52497c85cb37}\label{classfilevault_1_1cli_1_1commands_1_1VerifyCommand_a84d66a803a40e61cd9fc52497c85cb37} 
+\index{filevault::cli::commands::VerifyCommand@{filevault::cli::commands::VerifyCommand}!setup@{setup}}
+\index{setup@{setup}!filevault::cli::commands::VerifyCommand@{filevault::cli::commands::VerifyCommand}}
+\doxysubsubsection{\texorpdfstring{setup()}{setup()}}
+{\footnotesize\ttfamily void filevault\+::cli\+::commands\+::\+Verify\+Command\+::setup (\begin{DoxyParamCaption}\item[{CLI\+::\+App \&}]{app }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Setup CLI11 subcommand. 
+
+
+
+Implements \mbox{\hyperlink{classfilevault_1_1cli_1_1ICommand_aa43a60aabddff55d1060c334dade972c}{filevault\+::cli\+::\+ICommand}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1cli_1_1commands_1_1VerifyCommand_a84d66a803a40e61cd9fc52497c85cb37_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classfilevault_1_1cli_1_1commands_1_1VerifyCommand_a757aeeac2c9af28b1be0fdbf38eaaf7c}\label{classfilevault_1_1cli_1_1commands_1_1VerifyCommand_a757aeeac2c9af28b1be0fdbf38eaaf7c} 
+\index{filevault::cli::commands::VerifyCommand@{filevault::cli::commands::VerifyCommand}!algorithm\_@{algorithm\_}}
+\index{algorithm\_@{algorithm\_}!filevault::cli::commands::VerifyCommand@{filevault::cli::commands::VerifyCommand}}
+\doxysubsubsection{\texorpdfstring{algorithm\_}{algorithm\_}}
+{\footnotesize\ttfamily std\+::string filevault\+::cli\+::commands\+::\+Verify\+Command\+::algorithm\+\_\+ = "{}rsa"{}\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classfilevault_1_1cli_1_1commands_1_1VerifyCommand_ae3de9a212d121c0057f97fe6417e97ec}\label{classfilevault_1_1cli_1_1commands_1_1VerifyCommand_ae3de9a212d121c0057f97fe6417e97ec} 
+\index{filevault::cli::commands::VerifyCommand@{filevault::cli::commands::VerifyCommand}!description\_@{description\_}}
+\index{description\_@{description\_}!filevault::cli::commands::VerifyCommand@{filevault::cli::commands::VerifyCommand}}
+\doxysubsubsection{\texorpdfstring{description\_}{description\_}}
+{\footnotesize\ttfamily std\+::string filevault\+::cli\+::commands\+::\+Verify\+Command\+::description\+\_\+ = "{}Verify digital signature of a file"{}\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classfilevault_1_1cli_1_1commands_1_1VerifyCommand_a74572ebc71c6fc700fdd6b51f14bbb8d}\label{classfilevault_1_1cli_1_1commands_1_1VerifyCommand_a74572ebc71c6fc700fdd6b51f14bbb8d} 
+\index{filevault::cli::commands::VerifyCommand@{filevault::cli::commands::VerifyCommand}!engine\_@{engine\_}}
+\index{engine\_@{engine\_}!filevault::cli::commands::VerifyCommand@{filevault::cli::commands::VerifyCommand}}
+\doxysubsubsection{\texorpdfstring{engine\_}{engine\_}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classfilevault_1_1core_1_1CryptoEngine}{core\+::\+Crypto\+Engine}}\& filevault\+::cli\+::commands\+::\+Verify\+Command\+::engine\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classfilevault_1_1cli_1_1commands_1_1VerifyCommand_ae0c83be517de73471f7b813e9c0d0726}\label{classfilevault_1_1cli_1_1commands_1_1VerifyCommand_ae0c83be517de73471f7b813e9c0d0726} 
+\index{filevault::cli::commands::VerifyCommand@{filevault::cli::commands::VerifyCommand}!file\_path\_@{file\_path\_}}
+\index{file\_path\_@{file\_path\_}!filevault::cli::commands::VerifyCommand@{filevault::cli::commands::VerifyCommand}}
+\doxysubsubsection{\texorpdfstring{file\_path\_}{file\_path\_}}
+{\footnotesize\ttfamily std\+::string filevault\+::cli\+::commands\+::\+Verify\+Command\+::file\+\_\+path\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classfilevault_1_1cli_1_1commands_1_1VerifyCommand_a6c7bcf81da824ce63a76908bbe366420}\label{classfilevault_1_1cli_1_1commands_1_1VerifyCommand_a6c7bcf81da824ce63a76908bbe366420} 
+\index{filevault::cli::commands::VerifyCommand@{filevault::cli::commands::VerifyCommand}!name\_@{name\_}}
+\index{name\_@{name\_}!filevault::cli::commands::VerifyCommand@{filevault::cli::commands::VerifyCommand}}
+\doxysubsubsection{\texorpdfstring{name\_}{name\_}}
+{\footnotesize\ttfamily std\+::string filevault\+::cli\+::commands\+::\+Verify\+Command\+::name\+\_\+ = "{}verify"{}\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classfilevault_1_1cli_1_1commands_1_1VerifyCommand_a757d1061e909d8942be5b2a8a2fb5d74}\label{classfilevault_1_1cli_1_1commands_1_1VerifyCommand_a757d1061e909d8942be5b2a8a2fb5d74} 
+\index{filevault::cli::commands::VerifyCommand@{filevault::cli::commands::VerifyCommand}!public\_key\_path\_@{public\_key\_path\_}}
+\index{public\_key\_path\_@{public\_key\_path\_}!filevault::cli::commands::VerifyCommand@{filevault::cli::commands::VerifyCommand}}
+\doxysubsubsection{\texorpdfstring{public\_key\_path\_}{public\_key\_path\_}}
+{\footnotesize\ttfamily std\+::string filevault\+::cli\+::commands\+::\+Verify\+Command\+::public\+\_\+key\+\_\+path\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classfilevault_1_1cli_1_1commands_1_1VerifyCommand_ae2b1e647a07dd373bb0f22e40f6a8788}\label{classfilevault_1_1cli_1_1commands_1_1VerifyCommand_ae2b1e647a07dd373bb0f22e40f6a8788} 
+\index{filevault::cli::commands::VerifyCommand@{filevault::cli::commands::VerifyCommand}!signature\_path\_@{signature\_path\_}}
+\index{signature\_path\_@{signature\_path\_}!filevault::cli::commands::VerifyCommand@{filevault::cli::commands::VerifyCommand}}
+\doxysubsubsection{\texorpdfstring{signature\_path\_}{signature\_path\_}}
+{\footnotesize\ttfamily std\+::string filevault\+::cli\+::commands\+::\+Verify\+Command\+::signature\+\_\+path\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/filevault/cli/commands/\mbox{\hyperlink{verify__cmd_8hpp}{verify\+\_\+cmd.\+hpp}}\item 
+src/cli/commands/\mbox{\hyperlink{verify__cmd_8cpp}{verify\+\_\+cmd.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,55 @@
+\doxysection{camellia\+\_\+gcm.\+hpp}
+\hypertarget{camellia__gcm_8hpp_source}{}\label{camellia__gcm_8hpp_source}\index{include/filevault/algorithms/symmetric/camellia\_gcm.hpp@{include/filevault/algorithms/symmetric/camellia\_gcm.hpp}}
+\mbox{\hyperlink{camellia__gcm_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#ifndef\ FILEVAULT\_ALGORITHMS\_SYMMETRIC\_CAMELLIA\_GCM\_HPP}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#define\ FILEVAULT\_ALGORITHMS\_SYMMETRIC\_CAMELLIA\_GCM\_HPP}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{crypto__algorithm_8hpp}{filevault/core/crypto\_algorithm.hpp}}"{}}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <botan/aead.h>}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacefilevault}{filevault}}\ \{}
+\DoxyCodeLine{00018\ \textcolor{keyword}{namespace\ }algorithms\ \{}
+\DoxyCodeLine{00019\ \textcolor{keyword}{namespace\ }symmetric\ \{}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00027\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1Camellia__GCM}{Camellia\_GCM}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classfilevault_1_1core_1_1ICryptoAlgorithm}{core::ICryptoAlgorithm}}\ \{}
+\DoxyCodeLine{00028\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1Camellia__GCM}{Camellia\_GCM}}(\textcolor{keywordtype}{size\_t}\ key\_bits\ =\ 256);}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1Camellia__GCM_a17cbcc22268b51fe6c61a42be9b38d65}{\string~Camellia\_GCM}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00035\ \ \ \ \ }
+\DoxyCodeLine{00036\ \ \ \ \ std::string\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1Camellia__GCM_a3a4d0f691d4691b82c4bada6a71da17e}{name}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00037\ \ \ \ \ \mbox{\hyperlink{namespacefilevault_1_1core_ab1ba257a0205c63e9e1e3623170940a2}{core::AlgorithmType}}\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1Camellia__GCM_a80006970e2af1034ac3884bbbc11df2a}{type}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00038\ \ \ \ \ }
+\DoxyCodeLine{00039\ \ \ \ \ \mbox{\hyperlink{structfilevault_1_1core_1_1CryptoResult}{core::CryptoResult}}\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1Camellia__GCM_a8dffd21011b4454a17c9d6210b78bdf3}{encrypt}}(}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ std::span<const\ uint8\_t>\ plaintext,}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ std::span<const\ uint8\_t>\ key,}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structfilevault_1_1core_1_1EncryptionConfig}{core::EncryptionConfig}}\&\ config}
+\DoxyCodeLine{00043\ \ \ \ \ )\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00044\ \ \ \ \ }
+\DoxyCodeLine{00045\ \ \ \ \ \mbox{\hyperlink{structfilevault_1_1core_1_1CryptoResult}{core::CryptoResult}}\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1Camellia__GCM_a65ee3222adf4802288f5d8907f71c951}{decrypt}}(}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ std::span<const\ uint8\_t>\ ciphertext,}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ std::span<const\ uint8\_t>\ key,}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structfilevault_1_1core_1_1EncryptionConfig}{core::EncryptionConfig}}\&\ config}
+\DoxyCodeLine{00049\ \ \ \ \ )\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00050\ \ \ \ \ }
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1Camellia__GCM_ac0bc27107e16b43430b534d1772bdc48}{key\_size}}()\textcolor{keyword}{\ const\ override\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1Camellia__GCM_af1bfe6720ed6e916686369d4e0ec5c4c}{key\_bits\_}}\ /\ 8;\ \}}
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1Camellia__GCM_a8c9ee8038febe47062c485ebc8c6dee2}{nonce\_size}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ 12;\ \}\ \ \textcolor{comment}{//\ GCM\ standard}}
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1Camellia__GCM_aed4a3f30256aa9916b3c29a476985303}{tag\_size}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ 16;\ \}\ \ \ \ \textcolor{comment}{//\ 128-\/bit\ tag}}
+\DoxyCodeLine{00054\ \ \ \ \ }
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1Camellia__GCM_aa4fab01b720f9f92ad30046fcadec1e2}{is\_suitable\_for}}(\mbox{\hyperlink{namespacefilevault_1_1core_abcb3b3d896f7dc00926903183b3e2dc9}{core::SecurityLevel}}\ level)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1Camellia__GCM_af1bfe6720ed6e916686369d4e0ec5c4c}{key\_bits\_}};}
+\DoxyCodeLine{00059\ \ \ \ \ \mbox{\hyperlink{namespacefilevault_1_1core_ab1ba257a0205c63e9e1e3623170940a2}{core::AlgorithmType}}\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1Camellia__GCM_a3122053c9f1dfc07dc9667579498fea6}{type\_}};}
+\DoxyCodeLine{00060\ \ \ \ \ std::string\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1Camellia__GCM_a1efa7450d9e6bce534cbbd19f06fa432}{botan\_name\_}};}
+\DoxyCodeLine{00061\ \};}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \}\ \textcolor{comment}{//\ namespace\ symmetric}}
+\DoxyCodeLine{00064\ \}\ \textcolor{comment}{//\ namespace\ algorithms}}
+\DoxyCodeLine{00065\ \}\ \textcolor{comment}{//\ namespace\ filevault}}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ FILEVAULT\_ALGORITHMS\_SYMMETRIC\_CAMELLIA\_GCM\_HPP}}
+
+\end{DoxyCode}

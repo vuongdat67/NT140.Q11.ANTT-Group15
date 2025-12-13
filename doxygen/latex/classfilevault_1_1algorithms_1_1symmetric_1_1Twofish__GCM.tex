@@ -1,0 +1,363 @@
+\doxysection{filevault\+::algorithms\+::symmetric\+::Twofish\+\_\+\+GCM Class Reference}
+\hypertarget{classfilevault_1_1algorithms_1_1symmetric_1_1Twofish__GCM}{}\label{classfilevault_1_1algorithms_1_1symmetric_1_1Twofish__GCM}\index{filevault::algorithms::symmetric::Twofish\_GCM@{filevault::algorithms::symmetric::Twofish\_GCM}}
+
+
+Twofish-\/256-\/\+GCM implementation.  
+
+
+
+
+{\ttfamily \#include $<$twofish\+\_\+gcm.\+hpp$>$}
+
+
+
+Inheritance diagram for filevault\+::algorithms\+::symmetric\+::Twofish\+\_\+\+GCM\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=226pt]{classfilevault_1_1algorithms_1_1symmetric_1_1Twofish__GCM__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for filevault\+::algorithms\+::symmetric\+::Twofish\+\_\+\+GCM\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=226pt]{classfilevault_1_1algorithms_1_1symmetric_1_1Twofish__GCM__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1Twofish__GCM_a4d0f9fe21fb166b9dd3e0f98dcbabb9f}{Twofish\+\_\+\+GCM}} (size\+\_\+t key\+\_\+bits=256)
+\begin{DoxyCompactList}\small\item\em Construct Twofish-\/256-\/\+GCM cipher. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1Twofish__GCM_a9fb70465dfba5df3a43ad22602b7080f}{name}} () const override
+\begin{DoxyCompactList}\small\item\em Get algorithm name. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacefilevault_1_1core_ab1ba257a0205c63e9e1e3623170940a2}{core\+::\+Algorithm\+Type}} \mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1Twofish__GCM_a828e4d8917adb6c7328bfe6d1a1ce4c0}{type}} () const override
+\begin{DoxyCompactList}\small\item\em Get algorithm type. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structfilevault_1_1core_1_1CryptoResult}{core\+::\+Crypto\+Result}} \mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1Twofish__GCM_aa37e0a47c6e51629f5ec6f0ab479eae5}{encrypt}} (std\+::span$<$ const uint8\+\_\+t $>$ plaintext, std\+::span$<$ const uint8\+\_\+t $>$ key, const \mbox{\hyperlink{structfilevault_1_1core_1_1EncryptionConfig}{core\+::\+Encryption\+Config}} \&config) override
+\begin{DoxyCompactList}\small\item\em Encrypt plaintext with Twofish-\/\+GCM. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structfilevault_1_1core_1_1CryptoResult}{core\+::\+Crypto\+Result}} \mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1Twofish__GCM_aa9b458aec4beb7b45639d799389939fe}{decrypt}} (std\+::span$<$ const uint8\+\_\+t $>$ ciphertext, std\+::span$<$ const uint8\+\_\+t $>$ key, const \mbox{\hyperlink{structfilevault_1_1core_1_1EncryptionConfig}{core\+::\+Encryption\+Config}} \&config) override
+\begin{DoxyCompactList}\small\item\em Decrypt ciphertext with Twofish-\/\+GCM. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1Twofish__GCM_a408fff0d2bfb9c706e7a96d059a0c5b2}{key\+\_\+size}} () const override
+\begin{DoxyCompactList}\small\item\em Get required key size in bytes. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1Twofish__GCM_ad774f33df4c919815cd2dd0304fcf6c2}{nonce\+\_\+size}} () const
+\begin{DoxyCompactList}\small\item\em Get nonce size in bytes (12 for GCM) \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1Twofish__GCM_a9e20878dc438decdc9a0bb5c924ddf0b}{tag\+\_\+size}} () const
+\begin{DoxyCompactList}\small\item\em Get tag size in bytes (16 for GCM) \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1Twofish__GCM_ae3122a1c34e1cb0414f420615018547d}{is\+\_\+suitable\+\_\+for}} (\mbox{\hyperlink{namespacefilevault_1_1core_abcb3b3d896f7dc00926903183b3e2dc9}{core\+::\+Security\+Level}} level) const override
+\begin{DoxyCompactList}\small\item\em Check if algorithm is suitable for security level. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classfilevault_1_1core_1_1ICryptoAlgorithm}{filevault\+::core\+::\+ICrypto\+Algorithm}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classfilevault_1_1core_1_1ICryptoAlgorithm_a36383558169617931374ca3b64399818}{\texorpdfstring{$\sim$}{\string~}\+ICrypto\+Algorithm}} ()=default
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ uint8\+\_\+t $>$ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1Twofish__GCM_ab6df4e1594d099ae70d27d59f6063d13}{process\+\_\+gcm}} (std\+::span$<$ const uint8\+\_\+t $>$ input, std\+::span$<$ const uint8\+\_\+t $>$ key, std\+::span$<$ const uint8\+\_\+t $>$ nonce, std\+::span$<$ const uint8\+\_\+t $>$ tag, bool \mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1Twofish__GCM_aa37e0a47c6e51629f5ec6f0ab479eae5}{encrypt}})
+\begin{DoxyCompactList}\small\item\em Perform encryption/decryption operation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+size\+\_\+t \mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1Twofish__GCM_aa1feef363ccf482c363ee55740cde74c}{key\+\_\+bits\+\_\+}}
+\item 
+\mbox{\hyperlink{namespacefilevault_1_1core_ab1ba257a0205c63e9e1e3623170940a2}{core\+::\+Algorithm\+Type}} \mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1Twofish__GCM_a7b3542c89a08521daf5cbbdf38c4d6de}{type\+\_\+}}
+\item 
+std\+::string \mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1Twofish__GCM_a9a8325ad5990cfd0d2c9d80d9ef20da2}{botan\+\_\+name\+\_\+}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Twofish-\/256-\/\+GCM implementation. 
+
+Twofish is a 128-\/bit block cipher designed by Bruce Schneier, John Kelsey, Doug Whiting, David Wagner, Chris Hall, and Niels Ferguson. It was an AES finalist and is known for its conservative design.
+
+References\+:
+\begin{DoxyItemize}
+\item Twofish\+: A 128-\/Bit Block Cipher \href{https://www.schneier.com/academic/twofish/}{\texttt{ https\+://www.\+schneier.\+com/academic/twofish/}}
+\item NIST SP 800-\/38D\+: GCM Mode \href{https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-38d.pdf}{\texttt{ https\+://nvlpubs.\+nist.\+gov/nistpubs/\+Legacy/\+SP/nistspecialpublication800-\/38d.\+pdf}}
+\end{DoxyItemize}
+
+Security\+:
+\begin{DoxyItemize}
+\item Key size\+: 256 bits (32 bytes)
+\item Block size\+: 128 bits (16 bytes)
+\item Nonce size\+: 96 bits (12 bytes) for GCM
+\item Tag size\+: 128 bits (16 bytes) for authentication
+\end{DoxyItemize}
+
+Features\+:
+\begin{DoxyItemize}
+\item Pre-\/computed S-\/boxes for performance
+\item Key-\/dependent S-\/boxes for security
+\item Supports 128, 192, and 256-\/bit keys
+\item Patent-\/free and royalty-\/free
+\end{DoxyItemize}
+
+\begin{DoxyNote}{Note}
+This implementation uses Botan\textquotesingle{}s Twofish/\+GCM mode 
+
+Twofish-\/256 provides equivalent security to AES-\/256 
+\end{DoxyNote}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classfilevault_1_1algorithms_1_1symmetric_1_1Twofish__GCM_a4d0f9fe21fb166b9dd3e0f98dcbabb9f}\label{classfilevault_1_1algorithms_1_1symmetric_1_1Twofish__GCM_a4d0f9fe21fb166b9dd3e0f98dcbabb9f} 
+\index{filevault::algorithms::symmetric::Twofish\_GCM@{filevault::algorithms::symmetric::Twofish\_GCM}!Twofish\_GCM@{Twofish\_GCM}}
+\index{Twofish\_GCM@{Twofish\_GCM}!filevault::algorithms::symmetric::Twofish\_GCM@{filevault::algorithms::symmetric::Twofish\_GCM}}
+\doxysubsubsection{\texorpdfstring{Twofish\_GCM()}{Twofish\_GCM()}}
+{\footnotesize\ttfamily filevault\+::algorithms\+::symmetric\+::\+Twofish\+\_\+\+GCM\+::\+Twofish\+\_\+\+GCM (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{key\+\_\+bits = {\ttfamily 256} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Construct Twofish-\/256-\/\+GCM cipher. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em key\+\_\+bits} & Key size in bits (128, 192, or 256, default 256) \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classfilevault_1_1algorithms_1_1symmetric_1_1Twofish__GCM_aa9b458aec4beb7b45639d799389939fe}\label{classfilevault_1_1algorithms_1_1symmetric_1_1Twofish__GCM_aa9b458aec4beb7b45639d799389939fe} 
+\index{filevault::algorithms::symmetric::Twofish\_GCM@{filevault::algorithms::symmetric::Twofish\_GCM}!decrypt@{decrypt}}
+\index{decrypt@{decrypt}!filevault::algorithms::symmetric::Twofish\_GCM@{filevault::algorithms::symmetric::Twofish\_GCM}}
+\doxysubsubsection{\texorpdfstring{decrypt()}{decrypt()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structfilevault_1_1core_1_1CryptoResult}{core\+::\+Crypto\+Result}} filevault\+::algorithms\+::symmetric\+::\+Twofish\+\_\+\+GCM\+::decrypt (\begin{DoxyParamCaption}\item[{std\+::span$<$ const uint8\+\_\+t $>$}]{ciphertext,  }\item[{std\+::span$<$ const uint8\+\_\+t $>$}]{key,  }\item[{const \mbox{\hyperlink{structfilevault_1_1core_1_1EncryptionConfig}{core\+::\+Encryption\+Config}} \&}]{config }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Decrypt ciphertext with Twofish-\/\+GCM. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ciphertext} & Encrypted data \\
+\hline
+{\em key} & Decryption key (size depends on key\+\_\+bits) \\
+\hline
+{\em config} & Decryption configuration with nonce and tag \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Decrypted plaintext 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classfilevault_1_1core_1_1ICryptoAlgorithm_a5ad6e9e19a3ed1dd3f0b49106bcaac0d}{filevault\+::core\+::\+ICrypto\+Algorithm}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1algorithms_1_1symmetric_1_1Twofish__GCM_aa9b458aec4beb7b45639d799389939fe_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1algorithms_1_1symmetric_1_1Twofish__GCM_aa37e0a47c6e51629f5ec6f0ab479eae5}\label{classfilevault_1_1algorithms_1_1symmetric_1_1Twofish__GCM_aa37e0a47c6e51629f5ec6f0ab479eae5} 
+\index{filevault::algorithms::symmetric::Twofish\_GCM@{filevault::algorithms::symmetric::Twofish\_GCM}!encrypt@{encrypt}}
+\index{encrypt@{encrypt}!filevault::algorithms::symmetric::Twofish\_GCM@{filevault::algorithms::symmetric::Twofish\_GCM}}
+\doxysubsubsection{\texorpdfstring{encrypt()}{encrypt()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structfilevault_1_1core_1_1CryptoResult}{core\+::\+Crypto\+Result}} filevault\+::algorithms\+::symmetric\+::\+Twofish\+\_\+\+GCM\+::encrypt (\begin{DoxyParamCaption}\item[{std\+::span$<$ const uint8\+\_\+t $>$}]{plaintext,  }\item[{std\+::span$<$ const uint8\+\_\+t $>$}]{key,  }\item[{const \mbox{\hyperlink{structfilevault_1_1core_1_1EncryptionConfig}{core\+::\+Encryption\+Config}} \&}]{config }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Encrypt plaintext with Twofish-\/\+GCM. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em plaintext} & Input data to encrypt \\
+\hline
+{\em key} & Encryption key (size depends on key\+\_\+bits) \\
+\hline
+{\em config} & Encryption configuration with nonce \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Encrypted data with authentication tag 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classfilevault_1_1core_1_1ICryptoAlgorithm_a5b9102cef54b84b54feea1dc16561a2d}{filevault\+::core\+::\+ICrypto\+Algorithm}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1algorithms_1_1symmetric_1_1Twofish__GCM_aa37e0a47c6e51629f5ec6f0ab479eae5_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1algorithms_1_1symmetric_1_1Twofish__GCM_aa37e0a47c6e51629f5ec6f0ab479eae5_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1algorithms_1_1symmetric_1_1Twofish__GCM_ae3122a1c34e1cb0414f420615018547d}\label{classfilevault_1_1algorithms_1_1symmetric_1_1Twofish__GCM_ae3122a1c34e1cb0414f420615018547d} 
+\index{filevault::algorithms::symmetric::Twofish\_GCM@{filevault::algorithms::symmetric::Twofish\_GCM}!is\_suitable\_for@{is\_suitable\_for}}
+\index{is\_suitable\_for@{is\_suitable\_for}!filevault::algorithms::symmetric::Twofish\_GCM@{filevault::algorithms::symmetric::Twofish\_GCM}}
+\doxysubsubsection{\texorpdfstring{is\_suitable\_for()}{is\_suitable\_for()}}
+{\footnotesize\ttfamily bool filevault\+::algorithms\+::symmetric\+::\+Twofish\+\_\+\+GCM\+::is\+\_\+suitable\+\_\+for (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacefilevault_1_1core_abcb3b3d896f7dc00926903183b3e2dc9}{core\+::\+Security\+Level}}}]{level }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Check if algorithm is suitable for security level. 
+
+
+
+Implements \mbox{\hyperlink{classfilevault_1_1core_1_1ICryptoAlgorithm_aab479734daf06d3f76af5d916c0285fa}{filevault\+::core\+::\+ICrypto\+Algorithm}}.
+
+\Hypertarget{classfilevault_1_1algorithms_1_1symmetric_1_1Twofish__GCM_a408fff0d2bfb9c706e7a96d059a0c5b2}\label{classfilevault_1_1algorithms_1_1symmetric_1_1Twofish__GCM_a408fff0d2bfb9c706e7a96d059a0c5b2} 
+\index{filevault::algorithms::symmetric::Twofish\_GCM@{filevault::algorithms::symmetric::Twofish\_GCM}!key\_size@{key\_size}}
+\index{key\_size@{key\_size}!filevault::algorithms::symmetric::Twofish\_GCM@{filevault::algorithms::symmetric::Twofish\_GCM}}
+\doxysubsubsection{\texorpdfstring{key\_size()}{key\_size()}}
+{\footnotesize\ttfamily size\+\_\+t filevault\+::algorithms\+::symmetric\+::\+Twofish\+\_\+\+GCM\+::key\+\_\+size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get required key size in bytes. 
+
+
+
+Implements \mbox{\hyperlink{classfilevault_1_1core_1_1ICryptoAlgorithm_af9ccb47457495eb99988fef0b5b2bbe8}{filevault\+::core\+::\+ICrypto\+Algorithm}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1algorithms_1_1symmetric_1_1Twofish__GCM_a408fff0d2bfb9c706e7a96d059a0c5b2_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1algorithms_1_1symmetric_1_1Twofish__GCM_a9fb70465dfba5df3a43ad22602b7080f}\label{classfilevault_1_1algorithms_1_1symmetric_1_1Twofish__GCM_a9fb70465dfba5df3a43ad22602b7080f} 
+\index{filevault::algorithms::symmetric::Twofish\_GCM@{filevault::algorithms::symmetric::Twofish\_GCM}!name@{name}}
+\index{name@{name}!filevault::algorithms::symmetric::Twofish\_GCM@{filevault::algorithms::symmetric::Twofish\_GCM}}
+\doxysubsubsection{\texorpdfstring{name()}{name()}}
+{\footnotesize\ttfamily std\+::string filevault\+::algorithms\+::symmetric\+::\+Twofish\+\_\+\+GCM\+::name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get algorithm name. 
+
+
+
+Implements \mbox{\hyperlink{classfilevault_1_1core_1_1ICryptoAlgorithm_a8acdc23e4f2ea77bb4a5b9820b27fa66}{filevault\+::core\+::\+ICrypto\+Algorithm}}.
+
+\Hypertarget{classfilevault_1_1algorithms_1_1symmetric_1_1Twofish__GCM_ad774f33df4c919815cd2dd0304fcf6c2}\label{classfilevault_1_1algorithms_1_1symmetric_1_1Twofish__GCM_ad774f33df4c919815cd2dd0304fcf6c2} 
+\index{filevault::algorithms::symmetric::Twofish\_GCM@{filevault::algorithms::symmetric::Twofish\_GCM}!nonce\_size@{nonce\_size}}
+\index{nonce\_size@{nonce\_size}!filevault::algorithms::symmetric::Twofish\_GCM@{filevault::algorithms::symmetric::Twofish\_GCM}}
+\doxysubsubsection{\texorpdfstring{nonce\_size()}{nonce\_size()}}
+{\footnotesize\ttfamily size\+\_\+t filevault\+::algorithms\+::symmetric\+::\+Twofish\+\_\+\+GCM\+::nonce\+\_\+size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get nonce size in bytes (12 for GCM) 
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1algorithms_1_1symmetric_1_1Twofish__GCM_ad774f33df4c919815cd2dd0304fcf6c2_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1algorithms_1_1symmetric_1_1Twofish__GCM_ab6df4e1594d099ae70d27d59f6063d13}\label{classfilevault_1_1algorithms_1_1symmetric_1_1Twofish__GCM_ab6df4e1594d099ae70d27d59f6063d13} 
+\index{filevault::algorithms::symmetric::Twofish\_GCM@{filevault::algorithms::symmetric::Twofish\_GCM}!process\_gcm@{process\_gcm}}
+\index{process\_gcm@{process\_gcm}!filevault::algorithms::symmetric::Twofish\_GCM@{filevault::algorithms::symmetric::Twofish\_GCM}}
+\doxysubsubsection{\texorpdfstring{process\_gcm()}{process\_gcm()}}
+{\footnotesize\ttfamily std\+::vector$<$ uint8\+\_\+t $>$ filevault\+::algorithms\+::symmetric\+::\+Twofish\+\_\+\+GCM\+::process\+\_\+gcm (\begin{DoxyParamCaption}\item[{std\+::span$<$ const uint8\+\_\+t $>$}]{input,  }\item[{std\+::span$<$ const uint8\+\_\+t $>$}]{key,  }\item[{std\+::span$<$ const uint8\+\_\+t $>$}]{nonce,  }\item[{std\+::span$<$ const uint8\+\_\+t $>$}]{tag,  }\item[{bool}]{encrypt }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Perform encryption/decryption operation. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1algorithms_1_1symmetric_1_1Twofish__GCM_ab6df4e1594d099ae70d27d59f6063d13_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1algorithms_1_1symmetric_1_1Twofish__GCM_ab6df4e1594d099ae70d27d59f6063d13_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1algorithms_1_1symmetric_1_1Twofish__GCM_a9e20878dc438decdc9a0bb5c924ddf0b}\label{classfilevault_1_1algorithms_1_1symmetric_1_1Twofish__GCM_a9e20878dc438decdc9a0bb5c924ddf0b} 
+\index{filevault::algorithms::symmetric::Twofish\_GCM@{filevault::algorithms::symmetric::Twofish\_GCM}!tag\_size@{tag\_size}}
+\index{tag\_size@{tag\_size}!filevault::algorithms::symmetric::Twofish\_GCM@{filevault::algorithms::symmetric::Twofish\_GCM}}
+\doxysubsubsection{\texorpdfstring{tag\_size()}{tag\_size()}}
+{\footnotesize\ttfamily size\+\_\+t filevault\+::algorithms\+::symmetric\+::\+Twofish\+\_\+\+GCM\+::tag\+\_\+size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get tag size in bytes (16 for GCM) 
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1algorithms_1_1symmetric_1_1Twofish__GCM_a9e20878dc438decdc9a0bb5c924ddf0b_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1algorithms_1_1symmetric_1_1Twofish__GCM_a828e4d8917adb6c7328bfe6d1a1ce4c0}\label{classfilevault_1_1algorithms_1_1symmetric_1_1Twofish__GCM_a828e4d8917adb6c7328bfe6d1a1ce4c0} 
+\index{filevault::algorithms::symmetric::Twofish\_GCM@{filevault::algorithms::symmetric::Twofish\_GCM}!type@{type}}
+\index{type@{type}!filevault::algorithms::symmetric::Twofish\_GCM@{filevault::algorithms::symmetric::Twofish\_GCM}}
+\doxysubsubsection{\texorpdfstring{type()}{type()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacefilevault_1_1core_ab1ba257a0205c63e9e1e3623170940a2}{core\+::\+Algorithm\+Type}} filevault\+::algorithms\+::symmetric\+::\+Twofish\+\_\+\+GCM\+::type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get algorithm type. 
+
+
+
+Implements \mbox{\hyperlink{classfilevault_1_1core_1_1ICryptoAlgorithm_a11b7820f7b0bbb5fd6668fac3b78a7e1}{filevault\+::core\+::\+ICrypto\+Algorithm}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1algorithms_1_1symmetric_1_1Twofish__GCM_a828e4d8917adb6c7328bfe6d1a1ce4c0_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classfilevault_1_1algorithms_1_1symmetric_1_1Twofish__GCM_a9a8325ad5990cfd0d2c9d80d9ef20da2}\label{classfilevault_1_1algorithms_1_1symmetric_1_1Twofish__GCM_a9a8325ad5990cfd0d2c9d80d9ef20da2} 
+\index{filevault::algorithms::symmetric::Twofish\_GCM@{filevault::algorithms::symmetric::Twofish\_GCM}!botan\_name\_@{botan\_name\_}}
+\index{botan\_name\_@{botan\_name\_}!filevault::algorithms::symmetric::Twofish\_GCM@{filevault::algorithms::symmetric::Twofish\_GCM}}
+\doxysubsubsection{\texorpdfstring{botan\_name\_}{botan\_name\_}}
+{\footnotesize\ttfamily std\+::string filevault\+::algorithms\+::symmetric\+::\+Twofish\+\_\+\+GCM\+::botan\+\_\+name\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classfilevault_1_1algorithms_1_1symmetric_1_1Twofish__GCM_aa1feef363ccf482c363ee55740cde74c}\label{classfilevault_1_1algorithms_1_1symmetric_1_1Twofish__GCM_aa1feef363ccf482c363ee55740cde74c} 
+\index{filevault::algorithms::symmetric::Twofish\_GCM@{filevault::algorithms::symmetric::Twofish\_GCM}!key\_bits\_@{key\_bits\_}}
+\index{key\_bits\_@{key\_bits\_}!filevault::algorithms::symmetric::Twofish\_GCM@{filevault::algorithms::symmetric::Twofish\_GCM}}
+\doxysubsubsection{\texorpdfstring{key\_bits\_}{key\_bits\_}}
+{\footnotesize\ttfamily size\+\_\+t filevault\+::algorithms\+::symmetric\+::\+Twofish\+\_\+\+GCM\+::key\+\_\+bits\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classfilevault_1_1algorithms_1_1symmetric_1_1Twofish__GCM_a7b3542c89a08521daf5cbbdf38c4d6de}\label{classfilevault_1_1algorithms_1_1symmetric_1_1Twofish__GCM_a7b3542c89a08521daf5cbbdf38c4d6de} 
+\index{filevault::algorithms::symmetric::Twofish\_GCM@{filevault::algorithms::symmetric::Twofish\_GCM}!type\_@{type\_}}
+\index{type\_@{type\_}!filevault::algorithms::symmetric::Twofish\_GCM@{filevault::algorithms::symmetric::Twofish\_GCM}}
+\doxysubsubsection{\texorpdfstring{type\_}{type\_}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacefilevault_1_1core_ab1ba257a0205c63e9e1e3623170940a2}{core\+::\+Algorithm\+Type}} filevault\+::algorithms\+::symmetric\+::\+Twofish\+\_\+\+GCM\+::type\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/filevault/algorithms/symmetric/\mbox{\hyperlink{twofish__gcm_8hpp}{twofish\+\_\+gcm.\+hpp}}\item 
+src/algorithms/symmetric/\mbox{\hyperlink{twofish__gcm_8cpp}{twofish\+\_\+gcm.\+cpp}}\end{DoxyCompactItemize}

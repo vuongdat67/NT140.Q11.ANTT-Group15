@@ -1,0 +1,99 @@
+\doxysection{compressor.\+hpp}
+\hypertarget{compressor_8hpp_source}{}\label{compressor_8hpp_source}\index{include/filevault/compression/compressor.hpp@{include/filevault/compression/compressor.hpp}}
+\mbox{\hyperlink{compressor_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ FILEVAULT\_COMPRESSION\_COMPRESSOR\_HPP}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ FILEVAULT\_COMPRESSION\_COMPRESSOR\_HPP}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{types_8hpp}{filevault/core/types.hpp}}"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{result_8hpp}{filevault/core/result.hpp}}"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <span>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacefilevault}{filevault}}\ \{}
+\DoxyCodeLine{00011\ \textcolor{keyword}{namespace\ }compression\ \{}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00016\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structfilevault_1_1compression_1_1CompressionResult}{CompressionResult}}\ \{}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structfilevault_1_1compression_1_1CompressionResult_a866959a32e137889cc84800418775735}{success}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00018\ \ \ \ \ std::string\ \mbox{\hyperlink{structfilevault_1_1compression_1_1CompressionResult_acb8ced953764bcf61a1251f51bed8f4d}{error\_message}};}
+\DoxyCodeLine{00019\ \ \ \ \ std::vector<uint8\_t>\ \mbox{\hyperlink{structfilevault_1_1compression_1_1CompressionResult_a140c6dee76c847ea69716a86f9c584b5}{data}};}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{structfilevault_1_1compression_1_1CompressionResult_a4bf17bb28078bca5451e17dc84cc8386}{original\_size}}\ =\ 0;}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{structfilevault_1_1compression_1_1CompressionResult_a0bd9d8bb3fc200f41f2f44f746ed76b1}{compressed\_size}}\ =\ 0;}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{structfilevault_1_1compression_1_1CompressionResult_ae5ebc4b157bfe53ea23a836508cec842}{compression\_ratio}}\ =\ 0.0;\ \ \textcolor{comment}{//\ Percentage\ saved}}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{structfilevault_1_1compression_1_1CompressionResult_aa0cd19753f449d2b4760a193b7a335cd}{processing\_time\_ms}}\ =\ 0.0;}
+\DoxyCodeLine{00024\ \};}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00029\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classfilevault_1_1compression_1_1ICompressor}{ICompressor}}\ \{}
+\DoxyCodeLine{00030\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classfilevault_1_1compression_1_1ICompressor_a0f7a59ccdc3d563924a70ba0f0b70f5c}{\string~ICompressor}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00032\ \ \ \ \ }
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keyword}{virtual}\ std::string\ \mbox{\hyperlink{classfilevault_1_1compression_1_1ICompressor_ad73882b08b0b4f3bc455a0a723ddcda7}{name}}()\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00037\ \ \ \ \ }
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{structfilevault_1_1compression_1_1CompressionResult}{CompressionResult}}\ \mbox{\hyperlink{classfilevault_1_1compression_1_1ICompressor_a9f5965e075283a118a99119a9359f102}{compress}}(}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ std::span<const\ uint8\_t>\ input,}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ level\ =\ 6}
+\DoxyCodeLine{00047\ \ \ \ \ )\ =\ 0;}
+\DoxyCodeLine{00048\ \ \ \ \ }
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{structfilevault_1_1compression_1_1CompressionResult}{CompressionResult}}\ \mbox{\hyperlink{classfilevault_1_1compression_1_1ICompressor_a5ffea9c3e4bf9304dcacad2fc6a2c575}{decompress}}(}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ std::span<const\ uint8\_t>\ input}
+\DoxyCodeLine{00056\ \ \ \ \ )\ =\ 0;}
+\DoxyCodeLine{00057\ \};}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00062\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classfilevault_1_1compression_1_1CompressionService}{CompressionService}}\ \{}
+\DoxyCodeLine{00063\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keyword}{static}\ std::unique\_ptr<ICompressor>\ \mbox{\hyperlink{classfilevault_1_1compression_1_1CompressionService_afb8afa1ffe9712ba33bf4ca6aece202e}{create}}(\mbox{\hyperlink{namespacefilevault_1_1core_ac7e3615724bd970e96e131cab64ef303}{core::CompressionType}}\ type);}
+\DoxyCodeLine{00068\ \ \ \ \ }
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keyword}{static}\ std::string\ \mbox{\hyperlink{classfilevault_1_1compression_1_1CompressionService_a0961ce02a3d69060b55b3c1798efa23a}{get\_algorithm\_name}}(\mbox{\hyperlink{namespacefilevault_1_1core_ac7e3615724bd970e96e131cab64ef303}{core::CompressionType}}\ type);}
+\DoxyCodeLine{00073\ \ \ \ \ }
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{namespacefilevault_1_1core_ac7e3615724bd970e96e131cab64ef303}{core::CompressionType}}\ \mbox{\hyperlink{classfilevault_1_1compression_1_1CompressionService_ab73ef658b217d19255323c6f8648bff9}{parse\_algorithm}}(\textcolor{keyword}{const}\ std::string\&\ name);}
+\DoxyCodeLine{00078\ \};}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00083\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classfilevault_1_1compression_1_1ZlibCompressor}{ZlibCompressor}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classfilevault_1_1compression_1_1ICompressor}{ICompressor}}\ \{}
+\DoxyCodeLine{00084\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00085\ \ \ \ \ std::string\ \mbox{\hyperlink{classfilevault_1_1compression_1_1ZlibCompressor_a9889af9a97b10fb16a2c1f74c714c7e0}{name}}()\textcolor{keyword}{\ const\ override\ }\{\ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}zlib"{}};\ \}}
+\DoxyCodeLine{00086\ \ \ \ \ }
+\DoxyCodeLine{00087\ \ \ \ \ \mbox{\hyperlink{structfilevault_1_1compression_1_1CompressionResult}{CompressionResult}}\ \mbox{\hyperlink{classfilevault_1_1compression_1_1ZlibCompressor_a7e925f8f86d240fb0fdf682611b1b55b}{compress}}(}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ std::span<const\ uint8\_t>\ input,}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ level\ =\ 6}
+\DoxyCodeLine{00090\ \ \ \ \ )\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00091\ \ \ \ \ }
+\DoxyCodeLine{00092\ \ \ \ \ \mbox{\hyperlink{structfilevault_1_1compression_1_1CompressionResult}{CompressionResult}}\ \mbox{\hyperlink{classfilevault_1_1compression_1_1ZlibCompressor_ad9008bd8fb5503d1fddbb440de8ea190}{decompress}}(}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ std::span<const\ uint8\_t>\ input}
+\DoxyCodeLine{00094\ \ \ \ \ )\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00095\ \};}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00100\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classfilevault_1_1compression_1_1Bzip2Compressor}{Bzip2Compressor}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classfilevault_1_1compression_1_1ICompressor}{ICompressor}}\ \{}
+\DoxyCodeLine{00101\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00102\ \ \ \ \ std::string\ \mbox{\hyperlink{classfilevault_1_1compression_1_1Bzip2Compressor_af704acf1ce91d1e844e1a6963e762f9f}{name}}()\textcolor{keyword}{\ const\ override\ }\{\ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}bzip2"{}};\ \}}
+\DoxyCodeLine{00103\ \ \ \ \ }
+\DoxyCodeLine{00104\ \ \ \ \ \mbox{\hyperlink{structfilevault_1_1compression_1_1CompressionResult}{CompressionResult}}\ \mbox{\hyperlink{classfilevault_1_1compression_1_1Bzip2Compressor_a6bd9ee11ba6b30c116d262f36f27435a}{compress}}(}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ std::span<const\ uint8\_t>\ input,}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ level\ =\ 6}
+\DoxyCodeLine{00107\ \ \ \ \ )\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00108\ \ \ \ \ }
+\DoxyCodeLine{00109\ \ \ \ \ \mbox{\hyperlink{structfilevault_1_1compression_1_1CompressionResult}{CompressionResult}}\ \mbox{\hyperlink{classfilevault_1_1compression_1_1Bzip2Compressor_a2db0671e3ca386030ce06c9217a11631}{decompress}}(}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ std::span<const\ uint8\_t>\ input}
+\DoxyCodeLine{00111\ \ \ \ \ )\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00112\ \};}
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00117\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classfilevault_1_1compression_1_1LzmaCompressor}{LzmaCompressor}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classfilevault_1_1compression_1_1ICompressor}{ICompressor}}\ \{}
+\DoxyCodeLine{00118\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00119\ \ \ \ \ std::string\ \mbox{\hyperlink{classfilevault_1_1compression_1_1LzmaCompressor_ae4bc7f04889a0d9e0ddd2680a54bb55e}{name}}()\textcolor{keyword}{\ const\ override\ }\{\ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}lzma"{}};\ \}}
+\DoxyCodeLine{00120\ \ \ \ \ }
+\DoxyCodeLine{00121\ \ \ \ \ \mbox{\hyperlink{structfilevault_1_1compression_1_1CompressionResult}{CompressionResult}}\ \mbox{\hyperlink{classfilevault_1_1compression_1_1LzmaCompressor_a9343e005b1b6f040a4898b9fd6e0a71d}{compress}}(}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ std::span<const\ uint8\_t>\ input,}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ level\ =\ 6}
+\DoxyCodeLine{00124\ \ \ \ \ )\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00125\ \ \ \ \ }
+\DoxyCodeLine{00126\ \ \ \ \ \mbox{\hyperlink{structfilevault_1_1compression_1_1CompressionResult}{CompressionResult}}\ \mbox{\hyperlink{classfilevault_1_1compression_1_1LzmaCompressor_a43155962756ebbbf9c6e758b5dfd602b}{decompress}}(}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ std::span<const\ uint8\_t>\ input}
+\DoxyCodeLine{00128\ \ \ \ \ )\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00129\ \};}
+\DoxyCodeLine{00130\ }
+\DoxyCodeLine{00131\ \}\ \textcolor{comment}{//\ namespace\ compression}}
+\DoxyCodeLine{00132\ \}\ \textcolor{comment}{//\ namespace\ filevault}}
+\DoxyCodeLine{00133\ }
+\DoxyCodeLine{00134\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ FILEVAULT\_COMPRESSION\_COMPRESSOR\_HPP}}
+
+\end{DoxyCode}

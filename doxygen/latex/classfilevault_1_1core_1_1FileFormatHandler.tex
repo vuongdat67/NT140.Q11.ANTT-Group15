@@ -1,0 +1,262 @@
+\doxysection{filevault\+::core\+::File\+Format\+Handler Class Reference}
+\hypertarget{classfilevault_1_1core_1_1FileFormatHandler}{}\label{classfilevault_1_1core_1_1FileFormatHandler}\index{filevault::core::FileFormatHandler@{filevault::core::FileFormatHandler}}
+
+
+File format handler.  
+
+
+
+
+{\ttfamily \#include $<$file\+\_\+format.\+hpp$>$}
+
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{structfilevault_1_1core_1_1FileHeader}{File\+Header}} \mbox{\hyperlink{classfilevault_1_1core_1_1FileFormatHandler_a4e05d4dadd820749380878248d83bd55}{create\+\_\+header}} (\mbox{\hyperlink{namespacefilevault_1_1core_ab1ba257a0205c63e9e1e3623170940a2}{Algorithm\+Type}} algo\+\_\+type, \mbox{\hyperlink{namespacefilevault_1_1core_ad5938d2ac317833646f1d8b965e3768f}{KDFType}} kdf\+\_\+type, const \mbox{\hyperlink{structfilevault_1_1core_1_1EncryptionConfig}{Encryption\+Config}} \&config, std\+::span$<$ const uint8\+\_\+t $>$ salt, std\+::span$<$ const uint8\+\_\+t $>$ nonce, bool compressed)
+\begin{DoxyCompactList}\small\item\em Create header from encryption config. \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{classfilevault_1_1core_1_1FileFormatHandler_a52cdac6abfe8c4bd7f75e1ea282511a1}{write\+\_\+file}} (const std\+::string \&path, const \mbox{\hyperlink{structfilevault_1_1core_1_1FileHeader}{File\+Header}} \&header, std\+::span$<$ const uint8\+\_\+t $>$ ciphertext, std\+::span$<$ const uint8\+\_\+t $>$ auth\+\_\+tag)
+\begin{DoxyCompactList}\small\item\em Write encrypted file with header. \end{DoxyCompactList}\item 
+static std\+::tuple$<$ \mbox{\hyperlink{structfilevault_1_1core_1_1FileHeader}{File\+Header}}, std\+::vector$<$ uint8\+\_\+t $>$, std\+::vector$<$ uint8\+\_\+t $>$ $>$ \mbox{\hyperlink{classfilevault_1_1core_1_1FileFormatHandler_a9cb9b55cd37e633a305531815159ad90}{read\+\_\+file}} (const std\+::string \&path)
+\begin{DoxyCompactList}\small\item\em Read encrypted file and parse header. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{namespacefilevault_1_1core_a4bffcb3f9b484a5d110fa7c4b7d182da}{Algorithm\+ID}} \mbox{\hyperlink{classfilevault_1_1core_1_1FileFormatHandler_a9272eb3ff01073f2b7dd9922bf86c8d0}{to\+\_\+algorithm\+\_\+id}} (\mbox{\hyperlink{namespacefilevault_1_1core_ab1ba257a0205c63e9e1e3623170940a2}{Algorithm\+Type}} type)
+\begin{DoxyCompactList}\small\item\em Convert Algorithm\+Type to Algorithm\+ID. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{namespacefilevault_1_1core_ab1ba257a0205c63e9e1e3623170940a2}{Algorithm\+Type}} \mbox{\hyperlink{classfilevault_1_1core_1_1FileFormatHandler_aa6e8141e4c7df98017f3e3f081cbd6e9}{from\+\_\+algorithm\+\_\+id}} (\mbox{\hyperlink{namespacefilevault_1_1core_a4bffcb3f9b484a5d110fa7c4b7d182da}{Algorithm\+ID}} id)
+\begin{DoxyCompactList}\small\item\em Convert Algorithm\+ID to Algorithm\+Type. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{namespacefilevault_1_1core_a71f7621637ca5fbd225b12230940776c}{KDFID}} \mbox{\hyperlink{classfilevault_1_1core_1_1FileFormatHandler_ada5782a7cde7d23c945e879310021783}{to\+\_\+kdf\+\_\+id}} (\mbox{\hyperlink{namespacefilevault_1_1core_ad5938d2ac317833646f1d8b965e3768f}{KDFType}} type)
+\begin{DoxyCompactList}\small\item\em Convert KDFType to KDFID. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{namespacefilevault_1_1core_ad5938d2ac317833646f1d8b965e3768f}{KDFType}} \mbox{\hyperlink{classfilevault_1_1core_1_1FileFormatHandler_a257ab0a84aaaf1b3410ebee94f832b5f}{from\+\_\+kdf\+\_\+id}} (\mbox{\hyperlink{namespacefilevault_1_1core_a71f7621637ca5fbd225b12230940776c}{KDFID}} id)
+\begin{DoxyCompactList}\small\item\em Convert KDFID to KDFType. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{namespacefilevault_1_1core_a27d87235901fbdf385ab615dd984511d}{Compression\+ID}} \mbox{\hyperlink{classfilevault_1_1core_1_1FileFormatHandler_a94eeab4465d34fd1cfa66ddb87b566b0}{to\+\_\+compression\+\_\+id}} (const std\+::string \&type)
+\begin{DoxyCompactList}\small\item\em Convert compression type to Compression\+ID. \end{DoxyCompactList}\item 
+static std\+::string \mbox{\hyperlink{classfilevault_1_1core_1_1FileFormatHandler_a8c0d700d628d3f8d687f76a15f3e4fd8}{from\+\_\+compression\+\_\+id}} (\mbox{\hyperlink{namespacefilevault_1_1core_a27d87235901fbdf385ab615dd984511d}{Compression\+ID}} id)
+\begin{DoxyCompactList}\small\item\em Convert Compression\+ID to string. \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{classfilevault_1_1core_1_1FileFormatHandler_a37c2c2a0394c696bac75f7338c009c1f}{is\+\_\+legacy\+\_\+format}} (const std\+::string \&path)
+\begin{DoxyCompactList}\small\item\em Detect if file is legacy format (no magic bytes) \end{DoxyCompactList}\item 
+static std\+::tuple$<$ std\+::vector$<$ uint8\+\_\+t $>$, std\+::vector$<$ uint8\+\_\+t $>$, std\+::vector$<$ uint8\+\_\+t $>$ $>$ \mbox{\hyperlink{classfilevault_1_1core_1_1FileFormatHandler_af55554730bf127d13fca1f3cbc3831fb}{read\+\_\+legacy\+\_\+file}} (const std\+::string \&path)
+\begin{DoxyCompactList}\small\item\em Read legacy format file (old format without header) \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+File format handler. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classfilevault_1_1core_1_1FileFormatHandler_a4e05d4dadd820749380878248d83bd55}\label{classfilevault_1_1core_1_1FileFormatHandler_a4e05d4dadd820749380878248d83bd55} 
+\index{filevault::core::FileFormatHandler@{filevault::core::FileFormatHandler}!create\_header@{create\_header}}
+\index{create\_header@{create\_header}!filevault::core::FileFormatHandler@{filevault::core::FileFormatHandler}}
+\doxysubsubsection{\texorpdfstring{create\_header()}{create\_header()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structfilevault_1_1core_1_1FileHeader}{File\+Header}} filevault\+::core\+::\+File\+Format\+Handler\+::create\+\_\+header (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacefilevault_1_1core_ab1ba257a0205c63e9e1e3623170940a2}{Algorithm\+Type}}}]{algo\+\_\+type,  }\item[{\mbox{\hyperlink{namespacefilevault_1_1core_ad5938d2ac317833646f1d8b965e3768f}{KDFType}}}]{kdf\+\_\+type,  }\item[{const \mbox{\hyperlink{structfilevault_1_1core_1_1EncryptionConfig}{Encryption\+Config}} \&}]{config,  }\item[{std\+::span$<$ const uint8\+\_\+t $>$}]{salt,  }\item[{std\+::span$<$ const uint8\+\_\+t $>$}]{nonce,  }\item[{bool}]{compressed }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Create header from encryption config. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1core_1_1FileFormatHandler_a4e05d4dadd820749380878248d83bd55_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1core_1_1FileFormatHandler_a4e05d4dadd820749380878248d83bd55_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1core_1_1FileFormatHandler_aa6e8141e4c7df98017f3e3f081cbd6e9}\label{classfilevault_1_1core_1_1FileFormatHandler_aa6e8141e4c7df98017f3e3f081cbd6e9} 
+\index{filevault::core::FileFormatHandler@{filevault::core::FileFormatHandler}!from\_algorithm\_id@{from\_algorithm\_id}}
+\index{from\_algorithm\_id@{from\_algorithm\_id}!filevault::core::FileFormatHandler@{filevault::core::FileFormatHandler}}
+\doxysubsubsection{\texorpdfstring{from\_algorithm\_id()}{from\_algorithm\_id()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacefilevault_1_1core_ab1ba257a0205c63e9e1e3623170940a2}{Algorithm\+Type}} filevault\+::core\+::\+File\+Format\+Handler\+::from\+\_\+algorithm\+\_\+id (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacefilevault_1_1core_a4bffcb3f9b484a5d110fa7c4b7d182da}{Algorithm\+ID}}}]{id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Convert Algorithm\+ID to Algorithm\+Type. 
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1core_1_1FileFormatHandler_aa6e8141e4c7df98017f3e3f081cbd6e9_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1core_1_1FileFormatHandler_a8c0d700d628d3f8d687f76a15f3e4fd8}\label{classfilevault_1_1core_1_1FileFormatHandler_a8c0d700d628d3f8d687f76a15f3e4fd8} 
+\index{filevault::core::FileFormatHandler@{filevault::core::FileFormatHandler}!from\_compression\_id@{from\_compression\_id}}
+\index{from\_compression\_id@{from\_compression\_id}!filevault::core::FileFormatHandler@{filevault::core::FileFormatHandler}}
+\doxysubsubsection{\texorpdfstring{from\_compression\_id()}{from\_compression\_id()}}
+{\footnotesize\ttfamily std\+::string filevault\+::core\+::\+File\+Format\+Handler\+::from\+\_\+compression\+\_\+id (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacefilevault_1_1core_a27d87235901fbdf385ab615dd984511d}{Compression\+ID}}}]{id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Convert Compression\+ID to string. 
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1core_1_1FileFormatHandler_a8c0d700d628d3f8d687f76a15f3e4fd8_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1core_1_1FileFormatHandler_a257ab0a84aaaf1b3410ebee94f832b5f}\label{classfilevault_1_1core_1_1FileFormatHandler_a257ab0a84aaaf1b3410ebee94f832b5f} 
+\index{filevault::core::FileFormatHandler@{filevault::core::FileFormatHandler}!from\_kdf\_id@{from\_kdf\_id}}
+\index{from\_kdf\_id@{from\_kdf\_id}!filevault::core::FileFormatHandler@{filevault::core::FileFormatHandler}}
+\doxysubsubsection{\texorpdfstring{from\_kdf\_id()}{from\_kdf\_id()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacefilevault_1_1core_ad5938d2ac317833646f1d8b965e3768f}{KDFType}} filevault\+::core\+::\+File\+Format\+Handler\+::from\+\_\+kdf\+\_\+id (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacefilevault_1_1core_a71f7621637ca5fbd225b12230940776c}{KDFID}}}]{id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Convert KDFID to KDFType. 
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1core_1_1FileFormatHandler_a257ab0a84aaaf1b3410ebee94f832b5f_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1core_1_1FileFormatHandler_a37c2c2a0394c696bac75f7338c009c1f}\label{classfilevault_1_1core_1_1FileFormatHandler_a37c2c2a0394c696bac75f7338c009c1f} 
+\index{filevault::core::FileFormatHandler@{filevault::core::FileFormatHandler}!is\_legacy\_format@{is\_legacy\_format}}
+\index{is\_legacy\_format@{is\_legacy\_format}!filevault::core::FileFormatHandler@{filevault::core::FileFormatHandler}}
+\doxysubsubsection{\texorpdfstring{is\_legacy\_format()}{is\_legacy\_format()}}
+{\footnotesize\ttfamily bool filevault\+::core\+::\+File\+Format\+Handler\+::is\+\_\+legacy\+\_\+format (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Detect if file is legacy format (no magic bytes) 
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1core_1_1FileFormatHandler_a37c2c2a0394c696bac75f7338c009c1f_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1core_1_1FileFormatHandler_a9cb9b55cd37e633a305531815159ad90}\label{classfilevault_1_1core_1_1FileFormatHandler_a9cb9b55cd37e633a305531815159ad90} 
+\index{filevault::core::FileFormatHandler@{filevault::core::FileFormatHandler}!read\_file@{read\_file}}
+\index{read\_file@{read\_file}!filevault::core::FileFormatHandler@{filevault::core::FileFormatHandler}}
+\doxysubsubsection{\texorpdfstring{read\_file()}{read\_file()}}
+{\footnotesize\ttfamily std\+::tuple$<$ \mbox{\hyperlink{structfilevault_1_1core_1_1FileHeader}{File\+Header}}, std\+::vector$<$ uint8\+\_\+t $>$, std\+::vector$<$ uint8\+\_\+t $>$ $>$ filevault\+::core\+::\+File\+Format\+Handler\+::read\+\_\+file (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Read encrypted file and parse header. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1core_1_1FileFormatHandler_a9cb9b55cd37e633a305531815159ad90_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1core_1_1FileFormatHandler_a9cb9b55cd37e633a305531815159ad90_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1core_1_1FileFormatHandler_af55554730bf127d13fca1f3cbc3831fb}\label{classfilevault_1_1core_1_1FileFormatHandler_af55554730bf127d13fca1f3cbc3831fb} 
+\index{filevault::core::FileFormatHandler@{filevault::core::FileFormatHandler}!read\_legacy\_file@{read\_legacy\_file}}
+\index{read\_legacy\_file@{read\_legacy\_file}!filevault::core::FileFormatHandler@{filevault::core::FileFormatHandler}}
+\doxysubsubsection{\texorpdfstring{read\_legacy\_file()}{read\_legacy\_file()}}
+{\footnotesize\ttfamily std\+::tuple$<$ std\+::vector$<$ uint8\+\_\+t $>$, std\+::vector$<$ uint8\+\_\+t $>$, std\+::vector$<$ uint8\+\_\+t $>$ $>$ filevault\+::core\+::\+File\+Format\+Handler\+::read\+\_\+legacy\+\_\+file (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Read legacy format file (old format without header) 
+
+\Hypertarget{classfilevault_1_1core_1_1FileFormatHandler_a9272eb3ff01073f2b7dd9922bf86c8d0}\label{classfilevault_1_1core_1_1FileFormatHandler_a9272eb3ff01073f2b7dd9922bf86c8d0} 
+\index{filevault::core::FileFormatHandler@{filevault::core::FileFormatHandler}!to\_algorithm\_id@{to\_algorithm\_id}}
+\index{to\_algorithm\_id@{to\_algorithm\_id}!filevault::core::FileFormatHandler@{filevault::core::FileFormatHandler}}
+\doxysubsubsection{\texorpdfstring{to\_algorithm\_id()}{to\_algorithm\_id()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacefilevault_1_1core_a4bffcb3f9b484a5d110fa7c4b7d182da}{Algorithm\+ID}} filevault\+::core\+::\+File\+Format\+Handler\+::to\+\_\+algorithm\+\_\+id (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacefilevault_1_1core_ab1ba257a0205c63e9e1e3623170940a2}{Algorithm\+Type}}}]{type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Convert Algorithm\+Type to Algorithm\+ID. 
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1core_1_1FileFormatHandler_a9272eb3ff01073f2b7dd9922bf86c8d0_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1core_1_1FileFormatHandler_a94eeab4465d34fd1cfa66ddb87b566b0}\label{classfilevault_1_1core_1_1FileFormatHandler_a94eeab4465d34fd1cfa66ddb87b566b0} 
+\index{filevault::core::FileFormatHandler@{filevault::core::FileFormatHandler}!to\_compression\_id@{to\_compression\_id}}
+\index{to\_compression\_id@{to\_compression\_id}!filevault::core::FileFormatHandler@{filevault::core::FileFormatHandler}}
+\doxysubsubsection{\texorpdfstring{to\_compression\_id()}{to\_compression\_id()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacefilevault_1_1core_a27d87235901fbdf385ab615dd984511d}{Compression\+ID}} filevault\+::core\+::\+File\+Format\+Handler\+::to\+\_\+compression\+\_\+id (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Convert compression type to Compression\+ID. 
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1core_1_1FileFormatHandler_a94eeab4465d34fd1cfa66ddb87b566b0_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1core_1_1FileFormatHandler_ada5782a7cde7d23c945e879310021783}\label{classfilevault_1_1core_1_1FileFormatHandler_ada5782a7cde7d23c945e879310021783} 
+\index{filevault::core::FileFormatHandler@{filevault::core::FileFormatHandler}!to\_kdf\_id@{to\_kdf\_id}}
+\index{to\_kdf\_id@{to\_kdf\_id}!filevault::core::FileFormatHandler@{filevault::core::FileFormatHandler}}
+\doxysubsubsection{\texorpdfstring{to\_kdf\_id()}{to\_kdf\_id()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacefilevault_1_1core_a71f7621637ca5fbd225b12230940776c}{KDFID}} filevault\+::core\+::\+File\+Format\+Handler\+::to\+\_\+kdf\+\_\+id (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacefilevault_1_1core_ad5938d2ac317833646f1d8b965e3768f}{KDFType}}}]{type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Convert KDFType to KDFID. 
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1core_1_1FileFormatHandler_ada5782a7cde7d23c945e879310021783_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1core_1_1FileFormatHandler_a52cdac6abfe8c4bd7f75e1ea282511a1}\label{classfilevault_1_1core_1_1FileFormatHandler_a52cdac6abfe8c4bd7f75e1ea282511a1} 
+\index{filevault::core::FileFormatHandler@{filevault::core::FileFormatHandler}!write\_file@{write\_file}}
+\index{write\_file@{write\_file}!filevault::core::FileFormatHandler@{filevault::core::FileFormatHandler}}
+\doxysubsubsection{\texorpdfstring{write\_file()}{write\_file()}}
+{\footnotesize\ttfamily bool filevault\+::core\+::\+File\+Format\+Handler\+::write\+\_\+file (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{path,  }\item[{const \mbox{\hyperlink{structfilevault_1_1core_1_1FileHeader}{File\+Header}} \&}]{header,  }\item[{std\+::span$<$ const uint8\+\_\+t $>$}]{ciphertext,  }\item[{std\+::span$<$ const uint8\+\_\+t $>$}]{auth\+\_\+tag }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Write encrypted file with header. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1core_1_1FileFormatHandler_a52cdac6abfe8c4bd7f75e1ea282511a1_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1core_1_1FileFormatHandler_a52cdac6abfe8c4bd7f75e1ea282511a1_icgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/filevault/core/\mbox{\hyperlink{file__format_8hpp}{file\+\_\+format.\+hpp}}\item 
+src/format/\mbox{\hyperlink{file__format_8cpp}{file\+\_\+format.\+cpp}}\end{DoxyCompactItemize}

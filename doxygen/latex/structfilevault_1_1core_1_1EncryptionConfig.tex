@@ -1,0 +1,208 @@
+\doxysection{filevault\+::core\+::Encryption\+Config Struct Reference}
+\hypertarget{structfilevault_1_1core_1_1EncryptionConfig}{}\label{structfilevault_1_1core_1_1EncryptionConfig}\index{filevault::core::EncryptionConfig@{filevault::core::EncryptionConfig}}
+
+
+Configuration for encryption operations.  
+
+
+
+
+{\ttfamily \#include $<$types.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{structfilevault_1_1core_1_1EncryptionConfig_ad34ad11b1956a77959b4705eccc32a53}{apply\+\_\+security\+\_\+level}} ()
+\begin{DoxyCompactList}\small\item\em Apply security level parameters. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{structfilevault_1_1core_1_1EncryptionConfig_aaf60251f703a9c66c93e5e3032ffe63f}{apply\+\_\+user\+\_\+mode}} ()
+\begin{DoxyCompactList}\small\item\em Apply user mode defaults. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespacefilevault_1_1core_ab1ba257a0205c63e9e1e3623170940a2}{Algorithm\+Type}} \mbox{\hyperlink{structfilevault_1_1core_1_1EncryptionConfig_a1d70d6fc2a086f267a67eebb82d42f98}{algorithm}} = \mbox{\hyperlink{namespacefilevault_1_1core_ab1ba257a0205c63e9e1e3623170940a2abe0f06b885034bb30ebb9fd868bba087}{Algorithm\+Type\+::\+AES\+\_\+256\+\_\+\+GCM}}
+\item 
+\mbox{\hyperlink{namespacefilevault_1_1core_ad5938d2ac317833646f1d8b965e3768f}{KDFType}} \mbox{\hyperlink{structfilevault_1_1core_1_1EncryptionConfig_afab4db409cd2289cad707daa1973e8ff}{kdf}} = \mbox{\hyperlink{namespacefilevault_1_1core_ad5938d2ac317833646f1d8b965e3768fa0b06f1bf38e4ec2b1c827b6c31fd6510}{KDFType\+::\+ARGON2\+ID}}
+\item 
+\mbox{\hyperlink{namespacefilevault_1_1core_abcb3b3d896f7dc00926903183b3e2dc9}{Security\+Level}} \mbox{\hyperlink{structfilevault_1_1core_1_1EncryptionConfig_a002c18fbfb781b1ababa3e859e827a14}{level}} = \mbox{\hyperlink{namespacefilevault_1_1core_abcb3b3d896f7dc00926903183b3e2dc9ac87f3be66ffc3c0d4249f1c2cc5f3cce}{Security\+Level\+::\+MEDIUM}}
+\item 
+\mbox{\hyperlink{namespacefilevault_1_1core_a89d269facaa3468c9c64583832084d2d}{User\+Mode}} \mbox{\hyperlink{structfilevault_1_1core_1_1EncryptionConfig_a02f377befb0c6d9e438ed14934ed5e4b}{mode}} = \mbox{\hyperlink{namespacefilevault_1_1core_a89d269facaa3468c9c64583832084d2dac2e26e257fdbb435b39cc022429b95b5}{User\+Mode\+::\+PROFESSIONAL}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{structfilevault_1_1core_1_1EncryptionConfig_a04e5ebdda27e15b100bc3dd90a1d26dd}{kdf\+\_\+iterations}} = 100000
+\item 
+uint32\+\_\+t \mbox{\hyperlink{structfilevault_1_1core_1_1EncryptionConfig_aea9f9736344a4054cdcca80928bfe33d}{kdf\+\_\+memory\+\_\+kb}} = 65536
+\item 
+uint32\+\_\+t \mbox{\hyperlink{structfilevault_1_1core_1_1EncryptionConfig_ac2f9a15e8425fabecb8b9d28f3df05c4}{kdf\+\_\+parallelism}} = 4
+\item 
+std\+::vector$<$ uint8\+\_\+t $>$ \mbox{\hyperlink{structfilevault_1_1core_1_1EncryptionConfig_a2e9b7566b466a006d1f664693346a124}{salt}}
+\item 
+std\+::optional$<$ std\+::vector$<$ uint8\+\_\+t $>$ $>$ \mbox{\hyperlink{structfilevault_1_1core_1_1EncryptionConfig_a106d1f73afa50af522b61b8a475053bf}{nonce}}
+\item 
+std\+::optional$<$ std\+::vector$<$ uint8\+\_\+t $>$ $>$ \mbox{\hyperlink{structfilevault_1_1core_1_1EncryptionConfig_aae2c836564dae60b172fd5d428d58e19}{tag}}
+\item 
+std\+::optional$<$ std\+::vector$<$ uint8\+\_\+t $>$ $>$ \mbox{\hyperlink{structfilevault_1_1core_1_1EncryptionConfig_afa34ff615f86cf9e4864ab8ad33c1bda}{associated\+\_\+data}}
+\item 
+\mbox{\hyperlink{namespacefilevault_1_1core_ac7e3615724bd970e96e131cab64ef303}{Compression\+Type}} \mbox{\hyperlink{structfilevault_1_1core_1_1EncryptionConfig_af763a1cf6dec19a6302e3883a35a4336}{compression}} = \mbox{\hyperlink{namespacefilevault_1_1core_ac7e3615724bd970e96e131cab64ef303ab50339a10e1de285ac99d4c3990b8693}{Compression\+Type\+::\+NONE}}
+\item 
+int \mbox{\hyperlink{structfilevault_1_1core_1_1EncryptionConfig_ae018dd7c3df00196d3eeefed8c6090fd}{compression\+\_\+level}} = 6
+\item 
+bool \mbox{\hyperlink{structfilevault_1_1core_1_1EncryptionConfig_a2b71de3210e217f20d49b4f2ddf5b1f1}{include\+\_\+metadata}} = true
+\item 
+std\+::string \mbox{\hyperlink{structfilevault_1_1core_1_1EncryptionConfig_acf7934d577990da75dd56347430faadd}{comment}}
+\item 
+bool \mbox{\hyperlink{structfilevault_1_1core_1_1EncryptionConfig_a7febc5d121a1c2d62d352bf329202504}{show\+\_\+progress}} = true
+\item 
+bool \mbox{\hyperlink{structfilevault_1_1core_1_1EncryptionConfig_ae6e92aefccbaa43a41fa3b3ed9170efa}{verbose}} = false
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Configuration for encryption operations. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{structfilevault_1_1core_1_1EncryptionConfig_ad34ad11b1956a77959b4705eccc32a53}\label{structfilevault_1_1core_1_1EncryptionConfig_ad34ad11b1956a77959b4705eccc32a53} 
+\index{filevault::core::EncryptionConfig@{filevault::core::EncryptionConfig}!apply\_security\_level@{apply\_security\_level}}
+\index{apply\_security\_level@{apply\_security\_level}!filevault::core::EncryptionConfig@{filevault::core::EncryptionConfig}}
+\doxysubsubsection{\texorpdfstring{apply\_security\_level()}{apply\_security\_level()}}
+{\footnotesize\ttfamily void filevault\+::core\+::\+Encryption\+Config\+::apply\+\_\+security\+\_\+level (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Apply security level parameters. 
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structfilevault_1_1core_1_1EncryptionConfig_ad34ad11b1956a77959b4705eccc32a53_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{structfilevault_1_1core_1_1EncryptionConfig_aaf60251f703a9c66c93e5e3032ffe63f}\label{structfilevault_1_1core_1_1EncryptionConfig_aaf60251f703a9c66c93e5e3032ffe63f} 
+\index{filevault::core::EncryptionConfig@{filevault::core::EncryptionConfig}!apply\_user\_mode@{apply\_user\_mode}}
+\index{apply\_user\_mode@{apply\_user\_mode}!filevault::core::EncryptionConfig@{filevault::core::EncryptionConfig}}
+\doxysubsubsection{\texorpdfstring{apply\_user\_mode()}{apply\_user\_mode()}}
+{\footnotesize\ttfamily void filevault\+::core\+::\+Encryption\+Config\+::apply\+\_\+user\+\_\+mode (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Apply user mode defaults. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structfilevault_1_1core_1_1EncryptionConfig_aaf60251f703a9c66c93e5e3032ffe63f_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{structfilevault_1_1core_1_1EncryptionConfig_a1d70d6fc2a086f267a67eebb82d42f98}\label{structfilevault_1_1core_1_1EncryptionConfig_a1d70d6fc2a086f267a67eebb82d42f98} 
+\index{filevault::core::EncryptionConfig@{filevault::core::EncryptionConfig}!algorithm@{algorithm}}
+\index{algorithm@{algorithm}!filevault::core::EncryptionConfig@{filevault::core::EncryptionConfig}}
+\doxysubsubsection{\texorpdfstring{algorithm}{algorithm}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacefilevault_1_1core_ab1ba257a0205c63e9e1e3623170940a2}{Algorithm\+Type}} filevault\+::core\+::\+Encryption\+Config\+::algorithm = \mbox{\hyperlink{namespacefilevault_1_1core_ab1ba257a0205c63e9e1e3623170940a2abe0f06b885034bb30ebb9fd868bba087}{Algorithm\+Type\+::\+AES\+\_\+256\+\_\+\+GCM}}}
+
+\Hypertarget{structfilevault_1_1core_1_1EncryptionConfig_afa34ff615f86cf9e4864ab8ad33c1bda}\label{structfilevault_1_1core_1_1EncryptionConfig_afa34ff615f86cf9e4864ab8ad33c1bda} 
+\index{filevault::core::EncryptionConfig@{filevault::core::EncryptionConfig}!associated\_data@{associated\_data}}
+\index{associated\_data@{associated\_data}!filevault::core::EncryptionConfig@{filevault::core::EncryptionConfig}}
+\doxysubsubsection{\texorpdfstring{associated\_data}{associated\_data}}
+{\footnotesize\ttfamily std\+::optional$<$std\+::vector$<$uint8\+\_\+t$>$ $>$ filevault\+::core\+::\+Encryption\+Config\+::associated\+\_\+data}
+
+\Hypertarget{structfilevault_1_1core_1_1EncryptionConfig_acf7934d577990da75dd56347430faadd}\label{structfilevault_1_1core_1_1EncryptionConfig_acf7934d577990da75dd56347430faadd} 
+\index{filevault::core::EncryptionConfig@{filevault::core::EncryptionConfig}!comment@{comment}}
+\index{comment@{comment}!filevault::core::EncryptionConfig@{filevault::core::EncryptionConfig}}
+\doxysubsubsection{\texorpdfstring{comment}{comment}}
+{\footnotesize\ttfamily std\+::string filevault\+::core\+::\+Encryption\+Config\+::comment}
+
+\Hypertarget{structfilevault_1_1core_1_1EncryptionConfig_af763a1cf6dec19a6302e3883a35a4336}\label{structfilevault_1_1core_1_1EncryptionConfig_af763a1cf6dec19a6302e3883a35a4336} 
+\index{filevault::core::EncryptionConfig@{filevault::core::EncryptionConfig}!compression@{compression}}
+\index{compression@{compression}!filevault::core::EncryptionConfig@{filevault::core::EncryptionConfig}}
+\doxysubsubsection{\texorpdfstring{compression}{compression}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacefilevault_1_1core_ac7e3615724bd970e96e131cab64ef303}{Compression\+Type}} filevault\+::core\+::\+Encryption\+Config\+::compression = \mbox{\hyperlink{namespacefilevault_1_1core_ac7e3615724bd970e96e131cab64ef303ab50339a10e1de285ac99d4c3990b8693}{Compression\+Type\+::\+NONE}}}
+
+\Hypertarget{structfilevault_1_1core_1_1EncryptionConfig_ae018dd7c3df00196d3eeefed8c6090fd}\label{structfilevault_1_1core_1_1EncryptionConfig_ae018dd7c3df00196d3eeefed8c6090fd} 
+\index{filevault::core::EncryptionConfig@{filevault::core::EncryptionConfig}!compression\_level@{compression\_level}}
+\index{compression\_level@{compression\_level}!filevault::core::EncryptionConfig@{filevault::core::EncryptionConfig}}
+\doxysubsubsection{\texorpdfstring{compression\_level}{compression\_level}}
+{\footnotesize\ttfamily int filevault\+::core\+::\+Encryption\+Config\+::compression\+\_\+level = 6}
+
+\Hypertarget{structfilevault_1_1core_1_1EncryptionConfig_a2b71de3210e217f20d49b4f2ddf5b1f1}\label{structfilevault_1_1core_1_1EncryptionConfig_a2b71de3210e217f20d49b4f2ddf5b1f1} 
+\index{filevault::core::EncryptionConfig@{filevault::core::EncryptionConfig}!include\_metadata@{include\_metadata}}
+\index{include\_metadata@{include\_metadata}!filevault::core::EncryptionConfig@{filevault::core::EncryptionConfig}}
+\doxysubsubsection{\texorpdfstring{include\_metadata}{include\_metadata}}
+{\footnotesize\ttfamily bool filevault\+::core\+::\+Encryption\+Config\+::include\+\_\+metadata = true}
+
+\Hypertarget{structfilevault_1_1core_1_1EncryptionConfig_afab4db409cd2289cad707daa1973e8ff}\label{structfilevault_1_1core_1_1EncryptionConfig_afab4db409cd2289cad707daa1973e8ff} 
+\index{filevault::core::EncryptionConfig@{filevault::core::EncryptionConfig}!kdf@{kdf}}
+\index{kdf@{kdf}!filevault::core::EncryptionConfig@{filevault::core::EncryptionConfig}}
+\doxysubsubsection{\texorpdfstring{kdf}{kdf}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacefilevault_1_1core_ad5938d2ac317833646f1d8b965e3768f}{KDFType}} filevault\+::core\+::\+Encryption\+Config\+::kdf = \mbox{\hyperlink{namespacefilevault_1_1core_ad5938d2ac317833646f1d8b965e3768fa0b06f1bf38e4ec2b1c827b6c31fd6510}{KDFType\+::\+ARGON2\+ID}}}
+
+\Hypertarget{structfilevault_1_1core_1_1EncryptionConfig_a04e5ebdda27e15b100bc3dd90a1d26dd}\label{structfilevault_1_1core_1_1EncryptionConfig_a04e5ebdda27e15b100bc3dd90a1d26dd} 
+\index{filevault::core::EncryptionConfig@{filevault::core::EncryptionConfig}!kdf\_iterations@{kdf\_iterations}}
+\index{kdf\_iterations@{kdf\_iterations}!filevault::core::EncryptionConfig@{filevault::core::EncryptionConfig}}
+\doxysubsubsection{\texorpdfstring{kdf\_iterations}{kdf\_iterations}}
+{\footnotesize\ttfamily uint32\+\_\+t filevault\+::core\+::\+Encryption\+Config\+::kdf\+\_\+iterations = 100000}
+
+\Hypertarget{structfilevault_1_1core_1_1EncryptionConfig_aea9f9736344a4054cdcca80928bfe33d}\label{structfilevault_1_1core_1_1EncryptionConfig_aea9f9736344a4054cdcca80928bfe33d} 
+\index{filevault::core::EncryptionConfig@{filevault::core::EncryptionConfig}!kdf\_memory\_kb@{kdf\_memory\_kb}}
+\index{kdf\_memory\_kb@{kdf\_memory\_kb}!filevault::core::EncryptionConfig@{filevault::core::EncryptionConfig}}
+\doxysubsubsection{\texorpdfstring{kdf\_memory\_kb}{kdf\_memory\_kb}}
+{\footnotesize\ttfamily uint32\+\_\+t filevault\+::core\+::\+Encryption\+Config\+::kdf\+\_\+memory\+\_\+kb = 65536}
+
+\Hypertarget{structfilevault_1_1core_1_1EncryptionConfig_ac2f9a15e8425fabecb8b9d28f3df05c4}\label{structfilevault_1_1core_1_1EncryptionConfig_ac2f9a15e8425fabecb8b9d28f3df05c4} 
+\index{filevault::core::EncryptionConfig@{filevault::core::EncryptionConfig}!kdf\_parallelism@{kdf\_parallelism}}
+\index{kdf\_parallelism@{kdf\_parallelism}!filevault::core::EncryptionConfig@{filevault::core::EncryptionConfig}}
+\doxysubsubsection{\texorpdfstring{kdf\_parallelism}{kdf\_parallelism}}
+{\footnotesize\ttfamily uint32\+\_\+t filevault\+::core\+::\+Encryption\+Config\+::kdf\+\_\+parallelism = 4}
+
+\Hypertarget{structfilevault_1_1core_1_1EncryptionConfig_a002c18fbfb781b1ababa3e859e827a14}\label{structfilevault_1_1core_1_1EncryptionConfig_a002c18fbfb781b1ababa3e859e827a14} 
+\index{filevault::core::EncryptionConfig@{filevault::core::EncryptionConfig}!level@{level}}
+\index{level@{level}!filevault::core::EncryptionConfig@{filevault::core::EncryptionConfig}}
+\doxysubsubsection{\texorpdfstring{level}{level}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacefilevault_1_1core_abcb3b3d896f7dc00926903183b3e2dc9}{Security\+Level}} filevault\+::core\+::\+Encryption\+Config\+::level = \mbox{\hyperlink{namespacefilevault_1_1core_abcb3b3d896f7dc00926903183b3e2dc9ac87f3be66ffc3c0d4249f1c2cc5f3cce}{Security\+Level\+::\+MEDIUM}}}
+
+\Hypertarget{structfilevault_1_1core_1_1EncryptionConfig_a02f377befb0c6d9e438ed14934ed5e4b}\label{structfilevault_1_1core_1_1EncryptionConfig_a02f377befb0c6d9e438ed14934ed5e4b} 
+\index{filevault::core::EncryptionConfig@{filevault::core::EncryptionConfig}!mode@{mode}}
+\index{mode@{mode}!filevault::core::EncryptionConfig@{filevault::core::EncryptionConfig}}
+\doxysubsubsection{\texorpdfstring{mode}{mode}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacefilevault_1_1core_a89d269facaa3468c9c64583832084d2d}{User\+Mode}} filevault\+::core\+::\+Encryption\+Config\+::mode = \mbox{\hyperlink{namespacefilevault_1_1core_a89d269facaa3468c9c64583832084d2dac2e26e257fdbb435b39cc022429b95b5}{User\+Mode\+::\+PROFESSIONAL}}}
+
+\Hypertarget{structfilevault_1_1core_1_1EncryptionConfig_a106d1f73afa50af522b61b8a475053bf}\label{structfilevault_1_1core_1_1EncryptionConfig_a106d1f73afa50af522b61b8a475053bf} 
+\index{filevault::core::EncryptionConfig@{filevault::core::EncryptionConfig}!nonce@{nonce}}
+\index{nonce@{nonce}!filevault::core::EncryptionConfig@{filevault::core::EncryptionConfig}}
+\doxysubsubsection{\texorpdfstring{nonce}{nonce}}
+{\footnotesize\ttfamily std\+::optional$<$std\+::vector$<$uint8\+\_\+t$>$ $>$ filevault\+::core\+::\+Encryption\+Config\+::nonce}
+
+\Hypertarget{structfilevault_1_1core_1_1EncryptionConfig_a2e9b7566b466a006d1f664693346a124}\label{structfilevault_1_1core_1_1EncryptionConfig_a2e9b7566b466a006d1f664693346a124} 
+\index{filevault::core::EncryptionConfig@{filevault::core::EncryptionConfig}!salt@{salt}}
+\index{salt@{salt}!filevault::core::EncryptionConfig@{filevault::core::EncryptionConfig}}
+\doxysubsubsection{\texorpdfstring{salt}{salt}}
+{\footnotesize\ttfamily std\+::vector$<$uint8\+\_\+t$>$ filevault\+::core\+::\+Encryption\+Config\+::salt}
+
+\Hypertarget{structfilevault_1_1core_1_1EncryptionConfig_a7febc5d121a1c2d62d352bf329202504}\label{structfilevault_1_1core_1_1EncryptionConfig_a7febc5d121a1c2d62d352bf329202504} 
+\index{filevault::core::EncryptionConfig@{filevault::core::EncryptionConfig}!show\_progress@{show\_progress}}
+\index{show\_progress@{show\_progress}!filevault::core::EncryptionConfig@{filevault::core::EncryptionConfig}}
+\doxysubsubsection{\texorpdfstring{show\_progress}{show\_progress}}
+{\footnotesize\ttfamily bool filevault\+::core\+::\+Encryption\+Config\+::show\+\_\+progress = true}
+
+\Hypertarget{structfilevault_1_1core_1_1EncryptionConfig_aae2c836564dae60b172fd5d428d58e19}\label{structfilevault_1_1core_1_1EncryptionConfig_aae2c836564dae60b172fd5d428d58e19} 
+\index{filevault::core::EncryptionConfig@{filevault::core::EncryptionConfig}!tag@{tag}}
+\index{tag@{tag}!filevault::core::EncryptionConfig@{filevault::core::EncryptionConfig}}
+\doxysubsubsection{\texorpdfstring{tag}{tag}}
+{\footnotesize\ttfamily std\+::optional$<$std\+::vector$<$uint8\+\_\+t$>$ $>$ filevault\+::core\+::\+Encryption\+Config\+::tag}
+
+\Hypertarget{structfilevault_1_1core_1_1EncryptionConfig_ae6e92aefccbaa43a41fa3b3ed9170efa}\label{structfilevault_1_1core_1_1EncryptionConfig_ae6e92aefccbaa43a41fa3b3ed9170efa} 
+\index{filevault::core::EncryptionConfig@{filevault::core::EncryptionConfig}!verbose@{verbose}}
+\index{verbose@{verbose}!filevault::core::EncryptionConfig@{filevault::core::EncryptionConfig}}
+\doxysubsubsection{\texorpdfstring{verbose}{verbose}}
+{\footnotesize\ttfamily bool filevault\+::core\+::\+Encryption\+Config\+::verbose = false}
+
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/filevault/core/\mbox{\hyperlink{types_8hpp}{types.\+hpp}}\item 
+src/core/\mbox{\hyperlink{types_8cpp}{types.\+cpp}}\end{DoxyCompactItemize}

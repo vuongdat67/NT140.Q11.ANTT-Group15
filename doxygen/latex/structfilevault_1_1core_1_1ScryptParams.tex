@@ -1,0 +1,83 @@
+\doxysection{filevault\+::core\+::Scrypt\+Params Struct Reference}
+\hypertarget{structfilevault_1_1core_1_1ScryptParams}{}\label{structfilevault_1_1core_1_1ScryptParams}\index{filevault::core::ScryptParams@{filevault::core::ScryptParams}}
+
+
+KDF parameters for Scrypt.  
+
+
+
+
+{\ttfamily \#include $<$file\+\_\+format.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ uint8\+\_\+t $>$ \mbox{\hyperlink{structfilevault_1_1core_1_1ScryptParams_af6aa5c6a8047858de22ff4bc7c1bcca9}{serialize}} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{structfilevault_1_1core_1_1ScryptParams}{Scrypt\+Params}} \mbox{\hyperlink{structfilevault_1_1core_1_1ScryptParams_a3da268f623c9fcec05324eedbf76f5ae}{deserialize}} (std\+::span$<$ const uint8\+\_\+t $>$ data)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{structfilevault_1_1core_1_1ScryptParams_afef9f4a3213a7b8da3fb737840c32f8d}{n}} = 32768
+\item 
+uint32\+\_\+t \mbox{\hyperlink{structfilevault_1_1core_1_1ScryptParams_abe1bfb635dc109208aadcfc69732f69a}{r}} = 8
+\item 
+uint32\+\_\+t \mbox{\hyperlink{structfilevault_1_1core_1_1ScryptParams_a2fe115f40d9dc11ae47d1d59df5eb692}{p}} = 1
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+KDF parameters for Scrypt. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{structfilevault_1_1core_1_1ScryptParams_a3da268f623c9fcec05324eedbf76f5ae}\label{structfilevault_1_1core_1_1ScryptParams_a3da268f623c9fcec05324eedbf76f5ae} 
+\index{filevault::core::ScryptParams@{filevault::core::ScryptParams}!deserialize@{deserialize}}
+\index{deserialize@{deserialize}!filevault::core::ScryptParams@{filevault::core::ScryptParams}}
+\doxysubsubsection{\texorpdfstring{deserialize()}{deserialize()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structfilevault_1_1core_1_1ScryptParams}{Scrypt\+Params}} filevault\+::core\+::\+Scrypt\+Params\+::deserialize (\begin{DoxyParamCaption}\item[{std\+::span$<$ const uint8\+\_\+t $>$}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{structfilevault_1_1core_1_1ScryptParams_af6aa5c6a8047858de22ff4bc7c1bcca9}\label{structfilevault_1_1core_1_1ScryptParams_af6aa5c6a8047858de22ff4bc7c1bcca9} 
+\index{filevault::core::ScryptParams@{filevault::core::ScryptParams}!serialize@{serialize}}
+\index{serialize@{serialize}!filevault::core::ScryptParams@{filevault::core::ScryptParams}}
+\doxysubsubsection{\texorpdfstring{serialize()}{serialize()}}
+{\footnotesize\ttfamily std\+::vector$<$ uint8\+\_\+t $>$ filevault\+::core\+::\+Scrypt\+Params\+::serialize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structfilevault_1_1core_1_1ScryptParams_af6aa5c6a8047858de22ff4bc7c1bcca9_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{structfilevault_1_1core_1_1ScryptParams_afef9f4a3213a7b8da3fb737840c32f8d}\label{structfilevault_1_1core_1_1ScryptParams_afef9f4a3213a7b8da3fb737840c32f8d} 
+\index{filevault::core::ScryptParams@{filevault::core::ScryptParams}!n@{n}}
+\index{n@{n}!filevault::core::ScryptParams@{filevault::core::ScryptParams}}
+\doxysubsubsection{\texorpdfstring{n}{n}}
+{\footnotesize\ttfamily uint32\+\_\+t filevault\+::core\+::\+Scrypt\+Params\+::n = 32768}
+
+\Hypertarget{structfilevault_1_1core_1_1ScryptParams_a2fe115f40d9dc11ae47d1d59df5eb692}\label{structfilevault_1_1core_1_1ScryptParams_a2fe115f40d9dc11ae47d1d59df5eb692} 
+\index{filevault::core::ScryptParams@{filevault::core::ScryptParams}!p@{p}}
+\index{p@{p}!filevault::core::ScryptParams@{filevault::core::ScryptParams}}
+\doxysubsubsection{\texorpdfstring{p}{p}}
+{\footnotesize\ttfamily uint32\+\_\+t filevault\+::core\+::\+Scrypt\+Params\+::p = 1}
+
+\Hypertarget{structfilevault_1_1core_1_1ScryptParams_abe1bfb635dc109208aadcfc69732f69a}\label{structfilevault_1_1core_1_1ScryptParams_abe1bfb635dc109208aadcfc69732f69a} 
+\index{filevault::core::ScryptParams@{filevault::core::ScryptParams}!r@{r}}
+\index{r@{r}!filevault::core::ScryptParams@{filevault::core::ScryptParams}}
+\doxysubsubsection{\texorpdfstring{r}{r}}
+{\footnotesize\ttfamily uint32\+\_\+t filevault\+::core\+::\+Scrypt\+Params\+::r = 8}
+
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/filevault/core/\mbox{\hyperlink{file__format_8hpp}{file\+\_\+format.\+hpp}}\item 
+src/format/\mbox{\hyperlink{file__format_8cpp}{file\+\_\+format.\+cpp}}\end{DoxyCompactItemize}

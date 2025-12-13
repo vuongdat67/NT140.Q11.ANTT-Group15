@@ -1,0 +1,91 @@
+\doxysection{filevault\+::algorithms\+::asymmetric Namespace Reference}
+\hypertarget{namespacefilevault_1_1algorithms_1_1asymmetric}{}\label{namespacefilevault_1_1algorithms_1_1asymmetric}\index{filevault::algorithms::asymmetric@{filevault::algorithms::asymmetric}}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classfilevault_1_1algorithms_1_1asymmetric_1_1ECCHybrid}{ECCHybrid}}
+\begin{DoxyCompactList}\small\item\em Hybrid encryption using \doxylink{classfilevault_1_1algorithms_1_1asymmetric_1_1ECDH}{ECDH} + AES-\/\+GCM. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structfilevault_1_1algorithms_1_1asymmetric_1_1ECCKeyPair}{ECCKey\+Pair}}
+\begin{DoxyCompactList}\small\item\em ECC key pair (\doxylink{classfilevault_1_1algorithms_1_1asymmetric_1_1ECDH}{ECDH} or \doxylink{classfilevault_1_1algorithms_1_1asymmetric_1_1ECDSA}{ECDSA}) \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classfilevault_1_1algorithms_1_1asymmetric_1_1ECDH}{ECDH}}
+\begin{DoxyCompactList}\small\item\em Elliptic Curve Diffie-\/\+Hellman (\doxylink{classfilevault_1_1algorithms_1_1asymmetric_1_1ECDH}{ECDH}) key exchange. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structfilevault_1_1algorithms_1_1asymmetric_1_1ECDHResult}{ECDHResult}}
+\begin{DoxyCompactList}\small\item\em \doxylink{classfilevault_1_1algorithms_1_1asymmetric_1_1ECDH}{ECDH} Key Exchange result. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classfilevault_1_1algorithms_1_1asymmetric_1_1ECDSA}{ECDSA}}
+\begin{DoxyCompactList}\small\item\em Elliptic Curve Digital Signature Algorithm (\doxylink{classfilevault_1_1algorithms_1_1asymmetric_1_1ECDSA}{ECDSA}) \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structfilevault_1_1algorithms_1_1asymmetric_1_1ECDSASignResult}{ECDSASign\+Result}}
+\begin{DoxyCompactList}\small\item\em \doxylink{classfilevault_1_1algorithms_1_1asymmetric_1_1ECDSA}{ECDSA} signature result. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classfilevault_1_1algorithms_1_1asymmetric_1_1RSA}{RSA}}
+\begin{DoxyCompactList}\small\item\em \doxylink{classfilevault_1_1algorithms_1_1asymmetric_1_1RSA}{RSA} asymmetric encryption algorithm. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structfilevault_1_1algorithms_1_1asymmetric_1_1RSAKeyPair}{RSAKey\+Pair}}
+\begin{DoxyCompactList}\small\item\em \doxylink{classfilevault_1_1algorithms_1_1asymmetric_1_1RSA}{RSA} key pair. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum class \mbox{\hyperlink{namespacefilevault_1_1algorithms_1_1asymmetric_a5955f778874f5a3eaa61006b00c2ab02}{ECCurve}} \{ \mbox{\hyperlink{namespacefilevault_1_1algorithms_1_1asymmetric_a5955f778874f5a3eaa61006b00c2ab02ae391840247cc176f98c8bd36b74393ce}{SECP256\+R1}}
+, \mbox{\hyperlink{namespacefilevault_1_1algorithms_1_1asymmetric_a5955f778874f5a3eaa61006b00c2ab02a22e60bed6bdf68bf51c8017786b26d27}{SECP384\+R1}}
+, \mbox{\hyperlink{namespacefilevault_1_1algorithms_1_1asymmetric_a5955f778874f5a3eaa61006b00c2ab02a2bd7340fbb5bdefe99376e3865cfb799}{SECP521\+R1}}
+, \mbox{\hyperlink{namespacefilevault_1_1algorithms_1_1asymmetric_a5955f778874f5a3eaa61006b00c2ab02af2c08fed6488d1d51758a6b692d9f832}{X25519}}
+ \}
+\begin{DoxyCompactList}\small\item\em Supported elliptic curves. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::string \mbox{\hyperlink{namespacefilevault_1_1algorithms_1_1asymmetric_ac0145e772ab69cce412d1e0865d2ba0c}{get\+\_\+botan\+\_\+curve\+\_\+name}} (\mbox{\hyperlink{namespacefilevault_1_1algorithms_1_1asymmetric_a5955f778874f5a3eaa61006b00c2ab02}{ECCurve}} curve)
+\item 
+static size\+\_\+t \mbox{\hyperlink{namespacefilevault_1_1algorithms_1_1asymmetric_ab8033174c16a6c51bc0182401f0f4b16}{get\+\_\+curve\+\_\+key\+\_\+size}} (\mbox{\hyperlink{namespacefilevault_1_1algorithms_1_1asymmetric_a5955f778874f5a3eaa61006b00c2ab02}{ECCurve}} curve)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{namespacefilevault_1_1algorithms_1_1asymmetric_a5955f778874f5a3eaa61006b00c2ab02}\label{namespacefilevault_1_1algorithms_1_1asymmetric_a5955f778874f5a3eaa61006b00c2ab02} 
+\index{filevault::algorithms::asymmetric@{filevault::algorithms::asymmetric}!ECCurve@{ECCurve}}
+\index{ECCurve@{ECCurve}!filevault::algorithms::asymmetric@{filevault::algorithms::asymmetric}}
+\doxysubsubsection{\texorpdfstring{ECCurve}{ECCurve}}
+{\footnotesize\ttfamily enum class \mbox{\hyperlink{namespacefilevault_1_1algorithms_1_1asymmetric_a5955f778874f5a3eaa61006b00c2ab02}{filevault\+::algorithms\+::asymmetric\+::\+ECCurve}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+Supported elliptic curves. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SECP256R1@{SECP256R1}!filevault::algorithms::asymmetric@{filevault::algorithms::asymmetric}}\index{filevault::algorithms::asymmetric@{filevault::algorithms::asymmetric}!SECP256R1@{SECP256R1}}}\Hypertarget{namespacefilevault_1_1algorithms_1_1asymmetric_a5955f778874f5a3eaa61006b00c2ab02ae391840247cc176f98c8bd36b74393ce}\label{namespacefilevault_1_1algorithms_1_1asymmetric_a5955f778874f5a3eaa61006b00c2ab02ae391840247cc176f98c8bd36b74393ce} 
+SECP256\+R1&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SECP384R1@{SECP384R1}!filevault::algorithms::asymmetric@{filevault::algorithms::asymmetric}}\index{filevault::algorithms::asymmetric@{filevault::algorithms::asymmetric}!SECP384R1@{SECP384R1}}}\Hypertarget{namespacefilevault_1_1algorithms_1_1asymmetric_a5955f778874f5a3eaa61006b00c2ab02a22e60bed6bdf68bf51c8017786b26d27}\label{namespacefilevault_1_1algorithms_1_1asymmetric_a5955f778874f5a3eaa61006b00c2ab02a22e60bed6bdf68bf51c8017786b26d27} 
+SECP384\+R1&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SECP521R1@{SECP521R1}!filevault::algorithms::asymmetric@{filevault::algorithms::asymmetric}}\index{filevault::algorithms::asymmetric@{filevault::algorithms::asymmetric}!SECP521R1@{SECP521R1}}}\Hypertarget{namespacefilevault_1_1algorithms_1_1asymmetric_a5955f778874f5a3eaa61006b00c2ab02a2bd7340fbb5bdefe99376e3865cfb799}\label{namespacefilevault_1_1algorithms_1_1asymmetric_a5955f778874f5a3eaa61006b00c2ab02a2bd7340fbb5bdefe99376e3865cfb799} 
+SECP521\+R1&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{X25519@{X25519}!filevault::algorithms::asymmetric@{filevault::algorithms::asymmetric}}\index{filevault::algorithms::asymmetric@{filevault::algorithms::asymmetric}!X25519@{X25519}}}\Hypertarget{namespacefilevault_1_1algorithms_1_1asymmetric_a5955f778874f5a3eaa61006b00c2ab02af2c08fed6488d1d51758a6b692d9f832}\label{namespacefilevault_1_1algorithms_1_1asymmetric_a5955f778874f5a3eaa61006b00c2ab02af2c08fed6488d1d51758a6b692d9f832} 
+X25519&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{namespacefilevault_1_1algorithms_1_1asymmetric_ac0145e772ab69cce412d1e0865d2ba0c}\label{namespacefilevault_1_1algorithms_1_1asymmetric_ac0145e772ab69cce412d1e0865d2ba0c} 
+\index{filevault::algorithms::asymmetric@{filevault::algorithms::asymmetric}!get\_botan\_curve\_name@{get\_botan\_curve\_name}}
+\index{get\_botan\_curve\_name@{get\_botan\_curve\_name}!filevault::algorithms::asymmetric@{filevault::algorithms::asymmetric}}
+\doxysubsubsection{\texorpdfstring{get\_botan\_curve\_name()}{get\_botan\_curve\_name()}}
+{\footnotesize\ttfamily static std\+::string filevault\+::algorithms\+::asymmetric\+::get\+\_\+botan\+\_\+curve\+\_\+name (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacefilevault_1_1algorithms_1_1asymmetric_a5955f778874f5a3eaa61006b00c2ab02}{ECCurve}}}]{curve }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{namespacefilevault_1_1algorithms_1_1asymmetric_ab8033174c16a6c51bc0182401f0f4b16}\label{namespacefilevault_1_1algorithms_1_1asymmetric_ab8033174c16a6c51bc0182401f0f4b16} 
+\index{filevault::algorithms::asymmetric@{filevault::algorithms::asymmetric}!get\_curve\_key\_size@{get\_curve\_key\_size}}
+\index{get\_curve\_key\_size@{get\_curve\_key\_size}!filevault::algorithms::asymmetric@{filevault::algorithms::asymmetric}}
+\doxysubsubsection{\texorpdfstring{get\_curve\_key\_size()}{get\_curve\_key\_size()}}
+{\footnotesize\ttfamily static size\+\_\+t filevault\+::algorithms\+::asymmetric\+::get\+\_\+curve\+\_\+key\+\_\+size (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacefilevault_1_1algorithms_1_1asymmetric_a5955f778874f5a3eaa61006b00c2ab02}{ECCurve}}}]{curve }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacefilevault_1_1algorithms_1_1asymmetric_ab8033174c16a6c51bc0182401f0f4b16_icgraph}
+\end{center}
+\end{figure}

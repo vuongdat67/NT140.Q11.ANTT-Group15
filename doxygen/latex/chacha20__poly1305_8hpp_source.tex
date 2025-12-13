@@ -1,0 +1,49 @@
+\doxysection{chacha20\+\_\+poly1305.\+hpp}
+\hypertarget{chacha20__poly1305_8hpp_source}{}\label{chacha20__poly1305_8hpp_source}\index{include/filevault/algorithms/symmetric/chacha20\_poly1305.hpp@{include/filevault/algorithms/symmetric/chacha20\_poly1305.hpp}}
+\mbox{\hyperlink{chacha20__poly1305_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ FILEVAULT\_ALGORITHMS\_SYMMETRIC\_CHACHA20\_POLY1305\_HPP}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ FILEVAULT\_ALGORITHMS\_SYMMETRIC\_CHACHA20\_POLY1305\_HPP}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{crypto__algorithm_8hpp}{filevault/core/crypto\_algorithm.hpp}}"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <botan/aead.h>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacefilevault}{filevault}}\ \{}
+\DoxyCodeLine{00009\ \textcolor{keyword}{namespace\ }algorithms\ \{}
+\DoxyCodeLine{00010\ \textcolor{keyword}{namespace\ }symmetric\ \{}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00031\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1ChaCha20Poly1305}{ChaCha20Poly1305}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classfilevault_1_1core_1_1ICryptoAlgorithm}{core::ICryptoAlgorithm}}\ \{}
+\DoxyCodeLine{00032\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00033\ \ \ \ \ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1ChaCha20Poly1305_a978d1fbb311842a83a6fcd0f2ea3112f}{ChaCha20Poly1305}}();}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1ChaCha20Poly1305_aad21b42e817212275912dac5ff952777}{\string~ChaCha20Poly1305}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00035\ \ \ \ \ }
+\DoxyCodeLine{00036\ \ \ \ \ std::string\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1ChaCha20Poly1305_a87749874df7e6e171a28e54f5e8c74f3}{name}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00037\ \ \ \ \ \mbox{\hyperlink{namespacefilevault_1_1core_ab1ba257a0205c63e9e1e3623170940a2}{core::AlgorithmType}}\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1ChaCha20Poly1305_a7b0fd61349ea570684b97f7a6a547ead}{type}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00038\ \ \ \ \ }
+\DoxyCodeLine{00039\ \ \ \ \ \mbox{\hyperlink{structfilevault_1_1core_1_1CryptoResult}{core::CryptoResult}}\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1ChaCha20Poly1305_afa0c1b9378dcee941ba77ee3cbc493e7}{encrypt}}(}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ std::span<const\ uint8\_t>\ plaintext,}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ std::span<const\ uint8\_t>\ key,}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structfilevault_1_1core_1_1EncryptionConfig}{core::EncryptionConfig}}\&\ config}
+\DoxyCodeLine{00043\ \ \ \ \ )\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00044\ \ \ \ \ }
+\DoxyCodeLine{00045\ \ \ \ \ \mbox{\hyperlink{structfilevault_1_1core_1_1CryptoResult}{core::CryptoResult}}\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1ChaCha20Poly1305_aaff4c05495663b019f035fd128b52834}{decrypt}}(}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ std::span<const\ uint8\_t>\ ciphertext,}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ std::span<const\ uint8\_t>\ key,}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structfilevault_1_1core_1_1EncryptionConfig}{core::EncryptionConfig}}\&\ config}
+\DoxyCodeLine{00049\ \ \ \ \ )\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00050\ \ \ \ \ }
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1ChaCha20Poly1305_a4d756e6c029edf41d1f1827176d6a283}{key\_size}}()\textcolor{keyword}{\ const\ override\ }\{\ \textcolor{keywordflow}{return}\ 32;\ \}\ \ \textcolor{comment}{//\ 256\ bits}}
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1ChaCha20Poly1305_acf7e028d98af7278d2257a09dd552bce}{nonce\_size}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ 12;\ \}\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 96\ bits\ (RFC\ 8439)}}
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1ChaCha20Poly1305_ad52a010762682277bdb632da5bc0d642}{tag\_size}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ 16;\ \}\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 128\ bits}}
+\DoxyCodeLine{00054\ \ \ \ \ }
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1ChaCha20Poly1305_aa08e9d4e9dc273d31a2eb5af216b7786}{is\_suitable\_for}}(\mbox{\hyperlink{namespacefilevault_1_1core_abcb3b3d896f7dc00926903183b3e2dc9}{core::SecurityLevel}}\ level)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00056\ \};}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \}\ \textcolor{comment}{//\ namespace\ symmetric}}
+\DoxyCodeLine{00059\ \}\ \textcolor{comment}{//\ namespace\ algorithms}}
+\DoxyCodeLine{00060\ \}\ \textcolor{comment}{//\ namespace\ filevault}}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ FILEVAULT\_ALGORITHMS\_SYMMETRIC\_CHACHA20\_POLY1305\_HPP}}
+
+\end{DoxyCode}

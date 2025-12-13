@@ -1,0 +1,110 @@
+\doxysection{filevault\+::cli\+::ICommand Class Reference}
+\hypertarget{classfilevault_1_1cli_1_1ICommand}{}\label{classfilevault_1_1cli_1_1ICommand}\index{filevault::cli::ICommand@{filevault::cli::ICommand}}
+
+
+Base interface for CLI commands.  
+
+
+
+
+{\ttfamily \#include $<$command.\+hpp$>$}
+
+
+
+Inheritance diagram for filevault\+::cli\+::ICommand\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classfilevault_1_1cli_1_1ICommand__inherit__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classfilevault_1_1cli_1_1ICommand_a358ce6bf0db6a1ff7f53eec427481a5d}{\texorpdfstring{$\sim$}{\string~}\+ICommand}} ()=default
+\item 
+virtual std\+::string \mbox{\hyperlink{classfilevault_1_1cli_1_1ICommand_a60aa4bc7c96c2e80feeb1a184d7ae2f7}{name}} () const =0
+\begin{DoxyCompactList}\small\item\em Get command name. \end{DoxyCompactList}\item 
+virtual std\+::string \mbox{\hyperlink{classfilevault_1_1cli_1_1ICommand_a154cdd3f87273142e70814445abd48ea}{description}} () const =0
+\begin{DoxyCompactList}\small\item\em Get command description. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classfilevault_1_1cli_1_1ICommand_aa43a60aabddff55d1060c334dade972c}{setup}} (CLI\+::\+App \&app)=0
+\begin{DoxyCompactList}\small\item\em Setup CLI11 subcommand. \end{DoxyCompactList}\item 
+virtual int \mbox{\hyperlink{classfilevault_1_1cli_1_1ICommand_a2fdc36b29a23b94a6e52bc3d4eb0c1ed}{execute}} ()=0
+\begin{DoxyCompactList}\small\item\em Execute the command. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Base interface for CLI commands. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classfilevault_1_1cli_1_1ICommand_a358ce6bf0db6a1ff7f53eec427481a5d}\label{classfilevault_1_1cli_1_1ICommand_a358ce6bf0db6a1ff7f53eec427481a5d} 
+\index{filevault::cli::ICommand@{filevault::cli::ICommand}!````~ICommand@{\texorpdfstring{$\sim$}{\string~}ICommand}}
+\index{````~ICommand@{\texorpdfstring{$\sim$}{\string~}ICommand}!filevault::cli::ICommand@{filevault::cli::ICommand}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}ICommand()}{\string~ICommand()}}
+{\footnotesize\ttfamily virtual filevault\+::cli\+::\+ICommand\+::\texorpdfstring{$\sim$}{\string~}\+ICommand (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classfilevault_1_1cli_1_1ICommand_a154cdd3f87273142e70814445abd48ea}\label{classfilevault_1_1cli_1_1ICommand_a154cdd3f87273142e70814445abd48ea} 
+\index{filevault::cli::ICommand@{filevault::cli::ICommand}!description@{description}}
+\index{description@{description}!filevault::cli::ICommand@{filevault::cli::ICommand}}
+\doxysubsubsection{\texorpdfstring{description()}{description()}}
+{\footnotesize\ttfamily virtual std\+::string filevault\+::cli\+::\+ICommand\+::description (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Get command description. 
+
+
+
+Implemented in \mbox{\hyperlink{classfilevault_1_1cli_1_1commands_1_1ArchiveCommand_a4ca923e5ab05840c929448a1cb1dd213}{filevault\+::cli\+::commands\+::\+Archive\+Command}}, \mbox{\hyperlink{classfilevault_1_1cli_1_1BenchmarkCommand_ab60d7a50d411f69a258e5665dde3a4c8}{filevault\+::cli\+::\+Benchmark\+Command}}, \mbox{\hyperlink{classfilevault_1_1cli_1_1CompressCommand_a605629d0449b4ae228cc395a24f842e0}{filevault\+::cli\+::\+Compress\+Command}}, \mbox{\hyperlink{classfilevault_1_1cli_1_1ConfigCommand_af24e65a29984e32172ca408eb77754a9}{filevault\+::cli\+::\+Config\+Command}}, \mbox{\hyperlink{classfilevault_1_1cli_1_1DecompressCommand_a9681f952e592100e046b9cec690a9c9d}{filevault\+::cli\+::\+Decompress\+Command}}, \mbox{\hyperlink{classfilevault_1_1cli_1_1DecryptCommand_a7ef50dfbf8c766b98f16b7e1176b3a25}{filevault\+::cli\+::\+Decrypt\+Command}}, \mbox{\hyperlink{classfilevault_1_1cli_1_1commands_1_1DumpCommand_a0230217d7e5faa9531f5f674032ad943}{filevault\+::cli\+::commands\+::\+Dump\+Command}}, \mbox{\hyperlink{classfilevault_1_1cli_1_1EncryptCommand_a0d3a5580a5ed89afc9f78d77a563ce85}{filevault\+::cli\+::\+Encrypt\+Command}}, \mbox{\hyperlink{classfilevault_1_1cli_1_1HashCommand_a0958b3a4ea698150ee74d8a543a2ed0f}{filevault\+::cli\+::\+Hash\+Command}}, \mbox{\hyperlink{classfilevault_1_1cli_1_1InfoCommand_abcc7573ae04d534d5e4d6c0148da1abd}{filevault\+::cli\+::\+Info\+Command}}, \mbox{\hyperlink{classfilevault_1_1cli_1_1KeygenCommand_ae088ff39cc05b3b1d0f47a543338e5d8}{filevault\+::cli\+::\+Keygen\+Command}}, \mbox{\hyperlink{classfilevault_1_1cli_1_1commands_1_1KeyInfoCommand_a9cc2430a3e96b8fec006925a50fd7b0d}{filevault\+::cli\+::commands\+::\+Key\+Info\+Command}}, \mbox{\hyperlink{classfilevault_1_1cli_1_1ListCommand_a0ffb13b01cd56e327a30155a1b764a45}{filevault\+::cli\+::\+List\+Command}}, \mbox{\hyperlink{classfilevault_1_1cli_1_1commands_1_1SignCommand_a78667a48952cd5bd302f05e2d81b45d2}{filevault\+::cli\+::commands\+::\+Sign\+Command}}, \mbox{\hyperlink{classfilevault_1_1cli_1_1commands_1_1StegoCommand_abc424ef9bb81b611498fa4a8c0bfc092}{filevault\+::cli\+::commands\+::\+Stego\+Command}}, and \mbox{\hyperlink{classfilevault_1_1cli_1_1commands_1_1VerifyCommand_a61db4f7d7284c8d1a9dedefdd5c8151b}{filevault\+::cli\+::commands\+::\+Verify\+Command}}.
+
+\Hypertarget{classfilevault_1_1cli_1_1ICommand_a2fdc36b29a23b94a6e52bc3d4eb0c1ed}\label{classfilevault_1_1cli_1_1ICommand_a2fdc36b29a23b94a6e52bc3d4eb0c1ed} 
+\index{filevault::cli::ICommand@{filevault::cli::ICommand}!execute@{execute}}
+\index{execute@{execute}!filevault::cli::ICommand@{filevault::cli::ICommand}}
+\doxysubsubsection{\texorpdfstring{execute()}{execute()}}
+{\footnotesize\ttfamily virtual int filevault\+::cli\+::\+ICommand\+::execute (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Execute the command. 
+
+
+
+Implemented in \mbox{\hyperlink{classfilevault_1_1cli_1_1commands_1_1ArchiveCommand_a162338a7beb4768289e9bfb5636ed776}{filevault\+::cli\+::commands\+::\+Archive\+Command}}, \mbox{\hyperlink{classfilevault_1_1cli_1_1BenchmarkCommand_ac67d1d013588d09628a81946d29850a0}{filevault\+::cli\+::\+Benchmark\+Command}}, \mbox{\hyperlink{classfilevault_1_1cli_1_1CompressCommand_a65b71cbd50b93536b684ad0c37a48bbb}{filevault\+::cli\+::\+Compress\+Command}}, \mbox{\hyperlink{classfilevault_1_1cli_1_1ConfigCommand_a55fbd5fe84773781f211af14aa15b3c6}{filevault\+::cli\+::\+Config\+Command}}, \mbox{\hyperlink{classfilevault_1_1cli_1_1DecompressCommand_a8a5ebb3e046b114bfeb5bc54e129d049}{filevault\+::cli\+::\+Decompress\+Command}}, \mbox{\hyperlink{classfilevault_1_1cli_1_1DecryptCommand_a7a190b9d06ea57aa3c3903c7b89fcd53}{filevault\+::cli\+::\+Decrypt\+Command}}, \mbox{\hyperlink{classfilevault_1_1cli_1_1commands_1_1DumpCommand_a5d3167faa948f2aa1bd9b692a683a806}{filevault\+::cli\+::commands\+::\+Dump\+Command}}, \mbox{\hyperlink{classfilevault_1_1cli_1_1EncryptCommand_ab864b533aafa2be17b895ad80a213244}{filevault\+::cli\+::\+Encrypt\+Command}}, \mbox{\hyperlink{classfilevault_1_1cli_1_1HashCommand_a101a84dad18cfffee77ca84ac88615b3}{filevault\+::cli\+::\+Hash\+Command}}, \mbox{\hyperlink{classfilevault_1_1cli_1_1InfoCommand_a5bfeea24e73f3bfac00fe683596a2f8d}{filevault\+::cli\+::\+Info\+Command}}, \mbox{\hyperlink{classfilevault_1_1cli_1_1KeygenCommand_a8fca79b131b144ec7191b715ebff2efc}{filevault\+::cli\+::\+Keygen\+Command}}, \mbox{\hyperlink{classfilevault_1_1cli_1_1commands_1_1KeyInfoCommand_aecd0006aa400ce42ee14ca696fb3b12a}{filevault\+::cli\+::commands\+::\+Key\+Info\+Command}}, \mbox{\hyperlink{classfilevault_1_1cli_1_1ListCommand_a0b12cece09c03008c6171637fb2d7881}{filevault\+::cli\+::\+List\+Command}}, \mbox{\hyperlink{classfilevault_1_1cli_1_1commands_1_1SignCommand_a33dcbd7fcd0b1537a5981fa172623c11}{filevault\+::cli\+::commands\+::\+Sign\+Command}}, \mbox{\hyperlink{classfilevault_1_1cli_1_1commands_1_1StegoCommand_a0b2c059bd47114a40719a4ed195aa535}{filevault\+::cli\+::commands\+::\+Stego\+Command}}, and \mbox{\hyperlink{classfilevault_1_1cli_1_1commands_1_1VerifyCommand_afb75e72f6a7f65f0eb154650e2d4626d}{filevault\+::cli\+::commands\+::\+Verify\+Command}}.
+
+\Hypertarget{classfilevault_1_1cli_1_1ICommand_a60aa4bc7c96c2e80feeb1a184d7ae2f7}\label{classfilevault_1_1cli_1_1ICommand_a60aa4bc7c96c2e80feeb1a184d7ae2f7} 
+\index{filevault::cli::ICommand@{filevault::cli::ICommand}!name@{name}}
+\index{name@{name}!filevault::cli::ICommand@{filevault::cli::ICommand}}
+\doxysubsubsection{\texorpdfstring{name()}{name()}}
+{\footnotesize\ttfamily virtual std\+::string filevault\+::cli\+::\+ICommand\+::name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Get command name. 
+
+
+
+Implemented in \mbox{\hyperlink{classfilevault_1_1cli_1_1commands_1_1ArchiveCommand_ab610bdda80f7a544a366e1c24e357b34}{filevault\+::cli\+::commands\+::\+Archive\+Command}}, \mbox{\hyperlink{classfilevault_1_1cli_1_1BenchmarkCommand_a063dcd7fd2c3dd6bc376103fad3bdb59}{filevault\+::cli\+::\+Benchmark\+Command}}, \mbox{\hyperlink{classfilevault_1_1cli_1_1CompressCommand_ae4c846e7e53c4cf3979427cc71d0ae05}{filevault\+::cli\+::\+Compress\+Command}}, \mbox{\hyperlink{classfilevault_1_1cli_1_1ConfigCommand_abc4895d4201a99d4680523cf377132f4}{filevault\+::cli\+::\+Config\+Command}}, \mbox{\hyperlink{classfilevault_1_1cli_1_1DecompressCommand_a79de5885842cae3755cfeba6ec4d8a91}{filevault\+::cli\+::\+Decompress\+Command}}, \mbox{\hyperlink{classfilevault_1_1cli_1_1DecryptCommand_af9a41220ba704171d3602a4afee1ebea}{filevault\+::cli\+::\+Decrypt\+Command}}, \mbox{\hyperlink{classfilevault_1_1cli_1_1commands_1_1DumpCommand_aac7a7f9def896a8c750d72430e1c4ebe}{filevault\+::cli\+::commands\+::\+Dump\+Command}}, \mbox{\hyperlink{classfilevault_1_1cli_1_1EncryptCommand_a72f6b179613852d7c981853073d40710}{filevault\+::cli\+::\+Encrypt\+Command}}, \mbox{\hyperlink{classfilevault_1_1cli_1_1HashCommand_a851d0623c1cda066171f255d3e441d82}{filevault\+::cli\+::\+Hash\+Command}}, \mbox{\hyperlink{classfilevault_1_1cli_1_1InfoCommand_acc48255b2dfbcf997e3b8cb17a7d7451}{filevault\+::cli\+::\+Info\+Command}}, \mbox{\hyperlink{classfilevault_1_1cli_1_1KeygenCommand_a11191c60a700b71dfc9ada1a7097e5d4}{filevault\+::cli\+::\+Keygen\+Command}}, \mbox{\hyperlink{classfilevault_1_1cli_1_1commands_1_1KeyInfoCommand_a440ffc83a217d64d0b50e4c63a2c40ed}{filevault\+::cli\+::commands\+::\+Key\+Info\+Command}}, \mbox{\hyperlink{classfilevault_1_1cli_1_1ListCommand_a84737fb70d343565b9b1913d45ec39fa}{filevault\+::cli\+::\+List\+Command}}, \mbox{\hyperlink{classfilevault_1_1cli_1_1commands_1_1SignCommand_a070a4094c45d32d5a82298055d131845}{filevault\+::cli\+::commands\+::\+Sign\+Command}}, \mbox{\hyperlink{classfilevault_1_1cli_1_1commands_1_1StegoCommand_a8c02846e5382b3ae504e37ea862a4ee1}{filevault\+::cli\+::commands\+::\+Stego\+Command}}, and \mbox{\hyperlink{classfilevault_1_1cli_1_1commands_1_1VerifyCommand_a654b91061bc9bb829b86fd40d61c874e}{filevault\+::cli\+::commands\+::\+Verify\+Command}}.
+
+\Hypertarget{classfilevault_1_1cli_1_1ICommand_aa43a60aabddff55d1060c334dade972c}\label{classfilevault_1_1cli_1_1ICommand_aa43a60aabddff55d1060c334dade972c} 
+\index{filevault::cli::ICommand@{filevault::cli::ICommand}!setup@{setup}}
+\index{setup@{setup}!filevault::cli::ICommand@{filevault::cli::ICommand}}
+\doxysubsubsection{\texorpdfstring{setup()}{setup()}}
+{\footnotesize\ttfamily virtual void filevault\+::cli\+::\+ICommand\+::setup (\begin{DoxyParamCaption}\item[{CLI\+::\+App \&}]{app }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Setup CLI11 subcommand. 
+
+
+
+Implemented in \mbox{\hyperlink{classfilevault_1_1cli_1_1commands_1_1ArchiveCommand_a115297ec242afc4bec5d4d4e3f23713c}{filevault\+::cli\+::commands\+::\+Archive\+Command}}, \mbox{\hyperlink{classfilevault_1_1cli_1_1BenchmarkCommand_a4b2a889f998d688ca81e7f7f0d030942}{filevault\+::cli\+::\+Benchmark\+Command}}, \mbox{\hyperlink{classfilevault_1_1cli_1_1CompressCommand_a38be503dcd926adc77753ad6ad353b83}{filevault\+::cli\+::\+Compress\+Command}}, \mbox{\hyperlink{classfilevault_1_1cli_1_1ConfigCommand_a8cde6159de491e6ae22dc72a56792576}{filevault\+::cli\+::\+Config\+Command}}, \mbox{\hyperlink{classfilevault_1_1cli_1_1DecompressCommand_a5cc59bb4cb1aaf5b0d63043b01de9647}{filevault\+::cli\+::\+Decompress\+Command}}, \mbox{\hyperlink{classfilevault_1_1cli_1_1DecryptCommand_ac7f8f8226b99377a0eef459e9ba1f782}{filevault\+::cli\+::\+Decrypt\+Command}}, \mbox{\hyperlink{classfilevault_1_1cli_1_1commands_1_1DumpCommand_ac1f6ef852c8c9ba0fe96f440d8a06819}{filevault\+::cli\+::commands\+::\+Dump\+Command}}, \mbox{\hyperlink{classfilevault_1_1cli_1_1EncryptCommand_a49a6bf319c88ad28435c6de290a9ad57}{filevault\+::cli\+::\+Encrypt\+Command}}, \mbox{\hyperlink{classfilevault_1_1cli_1_1HashCommand_a902dad711cc03489cdf0eac774ce8752}{filevault\+::cli\+::\+Hash\+Command}}, \mbox{\hyperlink{classfilevault_1_1cli_1_1InfoCommand_a39a2966dca60ae5e099cd1d244f854a0}{filevault\+::cli\+::\+Info\+Command}}, \mbox{\hyperlink{classfilevault_1_1cli_1_1KeygenCommand_a47b6d478f41644ea0f47125eaf941a9a}{filevault\+::cli\+::\+Keygen\+Command}}, \mbox{\hyperlink{classfilevault_1_1cli_1_1commands_1_1KeyInfoCommand_aa1a1d706d9c9a597198e24f20b409671}{filevault\+::cli\+::commands\+::\+Key\+Info\+Command}}, \mbox{\hyperlink{classfilevault_1_1cli_1_1ListCommand_a382b369f5c45d6c6e574c4456671c361}{filevault\+::cli\+::\+List\+Command}}, \mbox{\hyperlink{classfilevault_1_1cli_1_1commands_1_1SignCommand_acdd5e5fe41c364abdba116a088224995}{filevault\+::cli\+::commands\+::\+Sign\+Command}}, \mbox{\hyperlink{classfilevault_1_1cli_1_1commands_1_1StegoCommand_afaeac18a65ca27d6ac94551930792b0b}{filevault\+::cli\+::commands\+::\+Stego\+Command}}, and \mbox{\hyperlink{classfilevault_1_1cli_1_1commands_1_1VerifyCommand_a84d66a803a40e61cd9fc52497c85cb37}{filevault\+::cli\+::commands\+::\+Verify\+Command}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/filevault/cli/\mbox{\hyperlink{command_8hpp}{command.\+hpp}}\end{DoxyCompactItemize}

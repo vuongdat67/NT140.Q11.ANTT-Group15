@@ -1,0 +1,200 @@
+\doxysection{filevault\+::core\+::Streaming\+Crypto Class Reference}
+\hypertarget{classfilevault_1_1core_1_1StreamingCrypto}{}\label{classfilevault_1_1core_1_1StreamingCrypto}\index{filevault::core::StreamingCrypto@{filevault::core::StreamingCrypto}}
+
+
+Streaming encryption/decryption for large files.  
+
+
+
+
+{\ttfamily \#include $<$streaming.\+hpp$>$}
+
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{structfilevault_1_1core_1_1StreamingResult}{Streaming\+Result}} \mbox{\hyperlink{classfilevault_1_1core_1_1StreamingCrypto_af24fc5198c0965a7f7224d35e6db26bc}{encrypt\+\_\+file}} (const std\+::string \&input\+\_\+path, const std\+::string \&output\+\_\+path, const std\+::string \&password, const \mbox{\hyperlink{structfilevault_1_1core_1_1StreamingConfig}{Streaming\+Config}} \&config=\{\})
+\begin{DoxyCompactList}\small\item\em Encrypt a large file using streaming. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{structfilevault_1_1core_1_1StreamingResult}{Streaming\+Result}} \mbox{\hyperlink{classfilevault_1_1core_1_1StreamingCrypto_ac7f926a4f7a3a6afcce63a5ece7df84a}{decrypt\+\_\+file}} (const std\+::string \&input\+\_\+path, const std\+::string \&output\+\_\+path, const std\+::string \&password, \mbox{\hyperlink{namespacefilevault_1_1core_addf387e7b32c628f1b2b0d33c5ce6dc4}{Stream\+Progress\+Callback}} progress\+\_\+callback=nullptr)
+\begin{DoxyCompactList}\small\item\em Decrypt a large file using streaming. \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{classfilevault_1_1core_1_1StreamingCrypto_a661f6fee24eba6d526983efe0de0cfce}{should\+\_\+use\+\_\+streaming}} (const std\+::string \&file\+\_\+path, size\+\_\+t threshold=100 \texorpdfstring{$\ast$}{*}1024 \texorpdfstring{$\ast$}{*}1024)
+\begin{DoxyCompactList}\small\item\em Check if a file should use streaming (based on size) \end{DoxyCompactList}\item 
+static size\+\_\+t \mbox{\hyperlink{classfilevault_1_1core_1_1StreamingCrypto_ab3f5fcb98258d7294df1a49072afe902}{get\+\_\+recommended\+\_\+chunk\+\_\+size}} ()
+\begin{DoxyCompactList}\small\item\em Get recommended chunk size based on available memory. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::vector$<$ uint8\+\_\+t $>$ \mbox{\hyperlink{classfilevault_1_1core_1_1StreamingCrypto_a5402145fe43280b8bf994ac371aa52f8}{derive\+\_\+chunk\+\_\+nonce}} (const std\+::vector$<$ uint8\+\_\+t $>$ \&base\+\_\+nonce, size\+\_\+t chunk\+\_\+index)
+\begin{DoxyCompactList}\small\item\em Derive chunk-\/specific nonce from base nonce and chunk index. \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{classfilevault_1_1core_1_1StreamingCrypto_ac3915140893c7cd4d8b96ea38d18597d}{write\+\_\+stream\+\_\+header}} (std\+::ofstream \&file, const \mbox{\hyperlink{structfilevault_1_1core_1_1StreamingConfig}{Streaming\+Config}} \&config, const std\+::vector$<$ uint8\+\_\+t $>$ \&salt, const std\+::vector$<$ uint8\+\_\+t $>$ \&base\+\_\+nonce, size\+\_\+t total\+\_\+size, size\+\_\+t chunk\+\_\+count)
+\begin{DoxyCompactList}\small\item\em Write streaming file header. \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{classfilevault_1_1core_1_1StreamingCrypto_aed32c0bcf8bd237fd4e05049e351dcc8}{read\+\_\+stream\+\_\+header}} (std\+::ifstream \&file, \mbox{\hyperlink{structfilevault_1_1core_1_1StreamingConfig}{Streaming\+Config}} \&config, std\+::vector$<$ uint8\+\_\+t $>$ \&salt, std\+::vector$<$ uint8\+\_\+t $>$ \&base\+\_\+nonce, size\+\_\+t \&original\+\_\+size, size\+\_\+t \&chunk\+\_\+count)
+\begin{DoxyCompactList}\small\item\em Read streaming file header. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Streaming encryption/decryption for large files. 
+
+Uses chunk-\/based processing to handle files larger than available RAM. Each chunk is encrypted independently with a unique nonce derived from the base nonce and chunk index.
+
+File format for streaming\+: \mbox{[}Header\mbox{]}\mbox{[}Chunk1\mbox{]}\mbox{[}Chunk2\mbox{]}...\mbox{[}ChunkN\mbox{]}\mbox{[}Footer\mbox{]}
+
+Each chunk\+: \mbox{[}4 bytes\+: chunk\+\_\+size\mbox{]}\mbox{[}12 bytes\+: nonce\mbox{]}\mbox{[}encrypted\+\_\+data\mbox{]}\mbox{[}16 bytes\+: tag\mbox{]} 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classfilevault_1_1core_1_1StreamingCrypto_ac7f926a4f7a3a6afcce63a5ece7df84a}\label{classfilevault_1_1core_1_1StreamingCrypto_ac7f926a4f7a3a6afcce63a5ece7df84a} 
+\index{filevault::core::StreamingCrypto@{filevault::core::StreamingCrypto}!decrypt\_file@{decrypt\_file}}
+\index{decrypt\_file@{decrypt\_file}!filevault::core::StreamingCrypto@{filevault::core::StreamingCrypto}}
+\doxysubsubsection{\texorpdfstring{decrypt\_file()}{decrypt\_file()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structfilevault_1_1core_1_1StreamingResult}{Streaming\+Result}} filevault\+::core\+::\+Streaming\+Crypto\+::decrypt\+\_\+file (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{input\+\_\+path,  }\item[{const std\+::string \&}]{output\+\_\+path,  }\item[{const std\+::string \&}]{password,  }\item[{\mbox{\hyperlink{namespacefilevault_1_1core_addf387e7b32c628f1b2b0d33c5ce6dc4}{Stream\+Progress\+Callback}}}]{progress\+\_\+callback = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Decrypt a large file using streaming. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em input\+\_\+path} & Path to encrypted file \\
+\hline
+{\em output\+\_\+path} & Path to output file \\
+\hline
+{\em password} & Decryption password \\
+\hline
+{\em progress\+\_\+callback} & Optional progress callback \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxylink{structfilevault_1_1core_1_1Result}{Result} of the operation 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1core_1_1StreamingCrypto_ac7f926a4f7a3a6afcce63a5ece7df84a_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1core_1_1StreamingCrypto_a5402145fe43280b8bf994ac371aa52f8}\label{classfilevault_1_1core_1_1StreamingCrypto_a5402145fe43280b8bf994ac371aa52f8} 
+\index{filevault::core::StreamingCrypto@{filevault::core::StreamingCrypto}!derive\_chunk\_nonce@{derive\_chunk\_nonce}}
+\index{derive\_chunk\_nonce@{derive\_chunk\_nonce}!filevault::core::StreamingCrypto@{filevault::core::StreamingCrypto}}
+\doxysubsubsection{\texorpdfstring{derive\_chunk\_nonce()}{derive\_chunk\_nonce()}}
+{\footnotesize\ttfamily std\+::vector$<$ uint8\+\_\+t $>$ filevault\+::core\+::\+Streaming\+Crypto\+::derive\+\_\+chunk\+\_\+nonce (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ uint8\+\_\+t $>$ \&}]{base\+\_\+nonce,  }\item[{size\+\_\+t}]{chunk\+\_\+index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Derive chunk-\/specific nonce from base nonce and chunk index. 
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1core_1_1StreamingCrypto_a5402145fe43280b8bf994ac371aa52f8_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1core_1_1StreamingCrypto_af24fc5198c0965a7f7224d35e6db26bc}\label{classfilevault_1_1core_1_1StreamingCrypto_af24fc5198c0965a7f7224d35e6db26bc} 
+\index{filevault::core::StreamingCrypto@{filevault::core::StreamingCrypto}!encrypt\_file@{encrypt\_file}}
+\index{encrypt\_file@{encrypt\_file}!filevault::core::StreamingCrypto@{filevault::core::StreamingCrypto}}
+\doxysubsubsection{\texorpdfstring{encrypt\_file()}{encrypt\_file()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structfilevault_1_1core_1_1StreamingResult}{Streaming\+Result}} filevault\+::core\+::\+Streaming\+Crypto\+::encrypt\+\_\+file (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{input\+\_\+path,  }\item[{const std\+::string \&}]{output\+\_\+path,  }\item[{const std\+::string \&}]{password,  }\item[{const \mbox{\hyperlink{structfilevault_1_1core_1_1StreamingConfig}{Streaming\+Config}} \&}]{config = {\ttfamily \{\}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Encrypt a large file using streaming. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em input\+\_\+path} & Path to input file \\
+\hline
+{\em output\+\_\+path} & Path to output file \\
+\hline
+{\em password} & Encryption password \\
+\hline
+{\em config} & Streaming configuration \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxylink{structfilevault_1_1core_1_1Result}{Result} of the operation 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1core_1_1StreamingCrypto_af24fc5198c0965a7f7224d35e6db26bc_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1core_1_1StreamingCrypto_ab3f5fcb98258d7294df1a49072afe902}\label{classfilevault_1_1core_1_1StreamingCrypto_ab3f5fcb98258d7294df1a49072afe902} 
+\index{filevault::core::StreamingCrypto@{filevault::core::StreamingCrypto}!get\_recommended\_chunk\_size@{get\_recommended\_chunk\_size}}
+\index{get\_recommended\_chunk\_size@{get\_recommended\_chunk\_size}!filevault::core::StreamingCrypto@{filevault::core::StreamingCrypto}}
+\doxysubsubsection{\texorpdfstring{get\_recommended\_chunk\_size()}{get\_recommended\_chunk\_size()}}
+{\footnotesize\ttfamily size\+\_\+t filevault\+::core\+::\+Streaming\+Crypto\+::get\+\_\+recommended\+\_\+chunk\+\_\+size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Get recommended chunk size based on available memory. 
+
+\begin{DoxyReturn}{Returns}
+Recommended chunk size in bytes 
+\end{DoxyReturn}
+\Hypertarget{classfilevault_1_1core_1_1StreamingCrypto_aed32c0bcf8bd237fd4e05049e351dcc8}\label{classfilevault_1_1core_1_1StreamingCrypto_aed32c0bcf8bd237fd4e05049e351dcc8} 
+\index{filevault::core::StreamingCrypto@{filevault::core::StreamingCrypto}!read\_stream\_header@{read\_stream\_header}}
+\index{read\_stream\_header@{read\_stream\_header}!filevault::core::StreamingCrypto@{filevault::core::StreamingCrypto}}
+\doxysubsubsection{\texorpdfstring{read\_stream\_header()}{read\_stream\_header()}}
+{\footnotesize\ttfamily bool filevault\+::core\+::\+Streaming\+Crypto\+::read\+\_\+stream\+\_\+header (\begin{DoxyParamCaption}\item[{std\+::ifstream \&}]{file,  }\item[{\mbox{\hyperlink{structfilevault_1_1core_1_1StreamingConfig}{Streaming\+Config}} \&}]{config,  }\item[{std\+::vector$<$ uint8\+\_\+t $>$ \&}]{salt,  }\item[{std\+::vector$<$ uint8\+\_\+t $>$ \&}]{base\+\_\+nonce,  }\item[{size\+\_\+t \&}]{original\+\_\+size,  }\item[{size\+\_\+t \&}]{chunk\+\_\+count }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Read streaming file header. 
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1core_1_1StreamingCrypto_aed32c0bcf8bd237fd4e05049e351dcc8_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1core_1_1StreamingCrypto_a661f6fee24eba6d526983efe0de0cfce}\label{classfilevault_1_1core_1_1StreamingCrypto_a661f6fee24eba6d526983efe0de0cfce} 
+\index{filevault::core::StreamingCrypto@{filevault::core::StreamingCrypto}!should\_use\_streaming@{should\_use\_streaming}}
+\index{should\_use\_streaming@{should\_use\_streaming}!filevault::core::StreamingCrypto@{filevault::core::StreamingCrypto}}
+\doxysubsubsection{\texorpdfstring{should\_use\_streaming()}{should\_use\_streaming()}}
+{\footnotesize\ttfamily bool filevault\+::core\+::\+Streaming\+Crypto\+::should\+\_\+use\+\_\+streaming (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{file\+\_\+path,  }\item[{size\+\_\+t}]{threshold = {\ttfamily 100~\texorpdfstring{$\ast$}{*}~1024~\texorpdfstring{$\ast$}{*}~1024} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Check if a file should use streaming (based on size) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+\_\+path} & Path to file \\
+\hline
+{\em threshold} & Size threshold (default 100MB) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if file is larger than threshold 
+\end{DoxyReturn}
+\Hypertarget{classfilevault_1_1core_1_1StreamingCrypto_ac3915140893c7cd4d8b96ea38d18597d}\label{classfilevault_1_1core_1_1StreamingCrypto_ac3915140893c7cd4d8b96ea38d18597d} 
+\index{filevault::core::StreamingCrypto@{filevault::core::StreamingCrypto}!write\_stream\_header@{write\_stream\_header}}
+\index{write\_stream\_header@{write\_stream\_header}!filevault::core::StreamingCrypto@{filevault::core::StreamingCrypto}}
+\doxysubsubsection{\texorpdfstring{write\_stream\_header()}{write\_stream\_header()}}
+{\footnotesize\ttfamily bool filevault\+::core\+::\+Streaming\+Crypto\+::write\+\_\+stream\+\_\+header (\begin{DoxyParamCaption}\item[{std\+::ofstream \&}]{file,  }\item[{const \mbox{\hyperlink{structfilevault_1_1core_1_1StreamingConfig}{Streaming\+Config}} \&}]{config,  }\item[{const std\+::vector$<$ uint8\+\_\+t $>$ \&}]{salt,  }\item[{const std\+::vector$<$ uint8\+\_\+t $>$ \&}]{base\+\_\+nonce,  }\item[{size\+\_\+t}]{total\+\_\+size,  }\item[{size\+\_\+t}]{chunk\+\_\+count }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Write streaming file header. 
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1core_1_1StreamingCrypto_ac3915140893c7cd4d8b96ea38d18597d_icgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/filevault/core/\mbox{\hyperlink{streaming_8hpp}{streaming.\+hpp}}\item 
+src/core/\mbox{\hyperlink{streaming_8cpp}{streaming.\+cpp}}\end{DoxyCompactItemize}

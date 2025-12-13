@@ -1,0 +1,192 @@
+\doxysection{filevault\+::algorithms\+::asymmetric\+::ECDSA Class Reference}
+\hypertarget{classfilevault_1_1algorithms_1_1asymmetric_1_1ECDSA}{}\label{classfilevault_1_1algorithms_1_1asymmetric_1_1ECDSA}\index{filevault::algorithms::asymmetric::ECDSA@{filevault::algorithms::asymmetric::ECDSA}}
+
+
+Elliptic Curve Digital Signature Algorithm (\doxylink{classfilevault_1_1algorithms_1_1asymmetric_1_1ECDSA}{ECDSA})  
+
+
+
+
+{\ttfamily \#include $<$ecc.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classfilevault_1_1algorithms_1_1asymmetric_1_1ECDSA_a319b59db553e773d7a75b6bd2039559a}{ECDSA}} (\mbox{\hyperlink{namespacefilevault_1_1algorithms_1_1asymmetric_a5955f778874f5a3eaa61006b00c2ab02}{ECCurve}} curve=\mbox{\hyperlink{namespacefilevault_1_1algorithms_1_1asymmetric_a5955f778874f5a3eaa61006b00c2ab02ae391840247cc176f98c8bd36b74393ce}{ECCurve\+::\+SECP256\+R1}})
+\begin{DoxyCompactList}\small\item\em Construct \doxylink{classfilevault_1_1algorithms_1_1asymmetric_1_1ECDSA}{ECDSA} with specified curve. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfilevault_1_1algorithms_1_1asymmetric_1_1ECDSA_a2a3aaf2a0ec0f08afa692639f30de20c}{\texorpdfstring{$\sim$}{\string~}\+ECDSA}} ()=default
+\item 
+\mbox{\hyperlink{structfilevault_1_1algorithms_1_1asymmetric_1_1ECCKeyPair}{ECCKey\+Pair}} \mbox{\hyperlink{classfilevault_1_1algorithms_1_1asymmetric_1_1ECDSA_aa25175d4c43d8c2004b4ede520428561}{generate\+\_\+key\+\_\+pair}} ()
+\begin{DoxyCompactList}\small\item\em Generate a new \doxylink{classfilevault_1_1algorithms_1_1asymmetric_1_1ECDSA}{ECDSA} key pair. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structfilevault_1_1algorithms_1_1asymmetric_1_1ECDSASignResult}{ECDSASign\+Result}} \mbox{\hyperlink{classfilevault_1_1algorithms_1_1asymmetric_1_1ECDSA_a94340a6ad74718073be096ec8e387480}{sign}} (std\+::span$<$ const uint8\+\_\+t $>$ data, std\+::span$<$ const uint8\+\_\+t $>$ private\+\_\+key)
+\begin{DoxyCompactList}\small\item\em Sign data with private key. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classfilevault_1_1algorithms_1_1asymmetric_1_1ECDSA_a433c10efecf736c638d27baa65b55069}{verify}} (std\+::span$<$ const uint8\+\_\+t $>$ data, std\+::span$<$ const uint8\+\_\+t $>$ signature, std\+::span$<$ const uint8\+\_\+t $>$ public\+\_\+key)
+\begin{DoxyCompactList}\small\item\em Verify signature with public key. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classfilevault_1_1algorithms_1_1asymmetric_1_1ECDSA_a6b6ffd50f3e7268387cb5ffb078b99af}{name}} () const
+\item 
+std\+::string \mbox{\hyperlink{classfilevault_1_1algorithms_1_1asymmetric_1_1ECDSA_a867cd043c6c3a0cbea025ff1576e485e}{curve\+\_\+name}} () const
+\item 
+size\+\_\+t \mbox{\hyperlink{classfilevault_1_1algorithms_1_1asymmetric_1_1ECDSA_a3baf5038e40974a13c3bad3e08cb8e56}{key\+\_\+size}} () const
+\item 
+size\+\_\+t \mbox{\hyperlink{classfilevault_1_1algorithms_1_1asymmetric_1_1ECDSA_acba2d68fb4b6a46ccdd06ce5e510ae65}{signature\+\_\+size}} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespacefilevault_1_1algorithms_1_1asymmetric_a5955f778874f5a3eaa61006b00c2ab02}{ECCurve}} \mbox{\hyperlink{classfilevault_1_1algorithms_1_1asymmetric_1_1ECDSA_a8033d0b3841a9ec20b1a037a198f1cae}{curve\+\_\+}}
+\item 
+std\+::string \mbox{\hyperlink{classfilevault_1_1algorithms_1_1asymmetric_1_1ECDSA_a858b512e4bb747093f91e39e866dc6c1}{botan\+\_\+curve\+\_\+name\+\_\+}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Elliptic Curve Digital Signature Algorithm (\doxylink{classfilevault_1_1algorithms_1_1asymmetric_1_1ECDSA}{ECDSA}) 
+
+Used for digital signatures -\/ proving authenticity and integrity. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classfilevault_1_1algorithms_1_1asymmetric_1_1ECDSA_a319b59db553e773d7a75b6bd2039559a}\label{classfilevault_1_1algorithms_1_1asymmetric_1_1ECDSA_a319b59db553e773d7a75b6bd2039559a} 
+\index{filevault::algorithms::asymmetric::ECDSA@{filevault::algorithms::asymmetric::ECDSA}!ECDSA@{ECDSA}}
+\index{ECDSA@{ECDSA}!filevault::algorithms::asymmetric::ECDSA@{filevault::algorithms::asymmetric::ECDSA}}
+\doxysubsubsection{\texorpdfstring{ECDSA()}{ECDSA()}}
+{\footnotesize\ttfamily filevault\+::algorithms\+::asymmetric\+::\+ECDSA\+::\+ECDSA (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacefilevault_1_1algorithms_1_1asymmetric_a5955f778874f5a3eaa61006b00c2ab02}{ECCurve}}}]{curve = {\ttfamily \mbox{\hyperlink{namespacefilevault_1_1algorithms_1_1asymmetric_a5955f778874f5a3eaa61006b00c2ab02ae391840247cc176f98c8bd36b74393ce}{ECCurve\+::\+SECP256\+R1}}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Construct \doxylink{classfilevault_1_1algorithms_1_1asymmetric_1_1ECDSA}{ECDSA} with specified curve. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em curve} & Elliptic curve to use \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classfilevault_1_1algorithms_1_1asymmetric_1_1ECDSA_a2a3aaf2a0ec0f08afa692639f30de20c}\label{classfilevault_1_1algorithms_1_1asymmetric_1_1ECDSA_a2a3aaf2a0ec0f08afa692639f30de20c} 
+\index{filevault::algorithms::asymmetric::ECDSA@{filevault::algorithms::asymmetric::ECDSA}!````~ECDSA@{\texorpdfstring{$\sim$}{\string~}ECDSA}}
+\index{````~ECDSA@{\texorpdfstring{$\sim$}{\string~}ECDSA}!filevault::algorithms::asymmetric::ECDSA@{filevault::algorithms::asymmetric::ECDSA}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}ECDSA()}{\string~ECDSA()}}
+{\footnotesize\ttfamily filevault\+::algorithms\+::asymmetric\+::\+ECDSA\+::\texorpdfstring{$\sim$}{\string~}\+ECDSA (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classfilevault_1_1algorithms_1_1asymmetric_1_1ECDSA_a867cd043c6c3a0cbea025ff1576e485e}\label{classfilevault_1_1algorithms_1_1asymmetric_1_1ECDSA_a867cd043c6c3a0cbea025ff1576e485e} 
+\index{filevault::algorithms::asymmetric::ECDSA@{filevault::algorithms::asymmetric::ECDSA}!curve\_name@{curve\_name}}
+\index{curve\_name@{curve\_name}!filevault::algorithms::asymmetric::ECDSA@{filevault::algorithms::asymmetric::ECDSA}}
+\doxysubsubsection{\texorpdfstring{curve\_name()}{curve\_name()}}
+{\footnotesize\ttfamily std\+::string filevault\+::algorithms\+::asymmetric\+::\+ECDSA\+::curve\+\_\+name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\Hypertarget{classfilevault_1_1algorithms_1_1asymmetric_1_1ECDSA_aa25175d4c43d8c2004b4ede520428561}\label{classfilevault_1_1algorithms_1_1asymmetric_1_1ECDSA_aa25175d4c43d8c2004b4ede520428561} 
+\index{filevault::algorithms::asymmetric::ECDSA@{filevault::algorithms::asymmetric::ECDSA}!generate\_key\_pair@{generate\_key\_pair}}
+\index{generate\_key\_pair@{generate\_key\_pair}!filevault::algorithms::asymmetric::ECDSA@{filevault::algorithms::asymmetric::ECDSA}}
+\doxysubsubsection{\texorpdfstring{generate\_key\_pair()}{generate\_key\_pair()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structfilevault_1_1algorithms_1_1asymmetric_1_1ECCKeyPair}{ECCKey\+Pair}} filevault\+::algorithms\+::asymmetric\+::\+ECDSA\+::generate\+\_\+key\+\_\+pair (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Generate a new \doxylink{classfilevault_1_1algorithms_1_1asymmetric_1_1ECDSA}{ECDSA} key pair. 
+
+\Hypertarget{classfilevault_1_1algorithms_1_1asymmetric_1_1ECDSA_a3baf5038e40974a13c3bad3e08cb8e56}\label{classfilevault_1_1algorithms_1_1asymmetric_1_1ECDSA_a3baf5038e40974a13c3bad3e08cb8e56} 
+\index{filevault::algorithms::asymmetric::ECDSA@{filevault::algorithms::asymmetric::ECDSA}!key\_size@{key\_size}}
+\index{key\_size@{key\_size}!filevault::algorithms::asymmetric::ECDSA@{filevault::algorithms::asymmetric::ECDSA}}
+\doxysubsubsection{\texorpdfstring{key\_size()}{key\_size()}}
+{\footnotesize\ttfamily size\+\_\+t filevault\+::algorithms\+::asymmetric\+::\+ECDSA\+::key\+\_\+size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1algorithms_1_1asymmetric_1_1ECDSA_a3baf5038e40974a13c3bad3e08cb8e56_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1algorithms_1_1asymmetric_1_1ECDSA_a3baf5038e40974a13c3bad3e08cb8e56_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1algorithms_1_1asymmetric_1_1ECDSA_a6b6ffd50f3e7268387cb5ffb078b99af}\label{classfilevault_1_1algorithms_1_1asymmetric_1_1ECDSA_a6b6ffd50f3e7268387cb5ffb078b99af} 
+\index{filevault::algorithms::asymmetric::ECDSA@{filevault::algorithms::asymmetric::ECDSA}!name@{name}}
+\index{name@{name}!filevault::algorithms::asymmetric::ECDSA@{filevault::algorithms::asymmetric::ECDSA}}
+\doxysubsubsection{\texorpdfstring{name()}{name()}}
+{\footnotesize\ttfamily std\+::string filevault\+::algorithms\+::asymmetric\+::\+ECDSA\+::name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\Hypertarget{classfilevault_1_1algorithms_1_1asymmetric_1_1ECDSA_a94340a6ad74718073be096ec8e387480}\label{classfilevault_1_1algorithms_1_1asymmetric_1_1ECDSA_a94340a6ad74718073be096ec8e387480} 
+\index{filevault::algorithms::asymmetric::ECDSA@{filevault::algorithms::asymmetric::ECDSA}!sign@{sign}}
+\index{sign@{sign}!filevault::algorithms::asymmetric::ECDSA@{filevault::algorithms::asymmetric::ECDSA}}
+\doxysubsubsection{\texorpdfstring{sign()}{sign()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structfilevault_1_1algorithms_1_1asymmetric_1_1ECDSASignResult}{ECDSASign\+Result}} filevault\+::algorithms\+::asymmetric\+::\+ECDSA\+::sign (\begin{DoxyParamCaption}\item[{std\+::span$<$ const uint8\+\_\+t $>$}]{data,  }\item[{std\+::span$<$ const uint8\+\_\+t $>$}]{private\+\_\+key }\end{DoxyParamCaption})}
+
+
+
+Sign data with private key. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & Data to sign \\
+\hline
+{\em private\+\_\+key} & \doxylink{classfilevault_1_1algorithms_1_1asymmetric_1_1ECDSA}{ECDSA} private key \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Signature 
+\end{DoxyReturn}
+\Hypertarget{classfilevault_1_1algorithms_1_1asymmetric_1_1ECDSA_acba2d68fb4b6a46ccdd06ce5e510ae65}\label{classfilevault_1_1algorithms_1_1asymmetric_1_1ECDSA_acba2d68fb4b6a46ccdd06ce5e510ae65} 
+\index{filevault::algorithms::asymmetric::ECDSA@{filevault::algorithms::asymmetric::ECDSA}!signature\_size@{signature\_size}}
+\index{signature\_size@{signature\_size}!filevault::algorithms::asymmetric::ECDSA@{filevault::algorithms::asymmetric::ECDSA}}
+\doxysubsubsection{\texorpdfstring{signature\_size()}{signature\_size()}}
+{\footnotesize\ttfamily size\+\_\+t filevault\+::algorithms\+::asymmetric\+::\+ECDSA\+::signature\+\_\+size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1algorithms_1_1asymmetric_1_1ECDSA_acba2d68fb4b6a46ccdd06ce5e510ae65_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1algorithms_1_1asymmetric_1_1ECDSA_a433c10efecf736c638d27baa65b55069}\label{classfilevault_1_1algorithms_1_1asymmetric_1_1ECDSA_a433c10efecf736c638d27baa65b55069} 
+\index{filevault::algorithms::asymmetric::ECDSA@{filevault::algorithms::asymmetric::ECDSA}!verify@{verify}}
+\index{verify@{verify}!filevault::algorithms::asymmetric::ECDSA@{filevault::algorithms::asymmetric::ECDSA}}
+\doxysubsubsection{\texorpdfstring{verify()}{verify()}}
+{\footnotesize\ttfamily bool filevault\+::algorithms\+::asymmetric\+::\+ECDSA\+::verify (\begin{DoxyParamCaption}\item[{std\+::span$<$ const uint8\+\_\+t $>$}]{data,  }\item[{std\+::span$<$ const uint8\+\_\+t $>$}]{signature,  }\item[{std\+::span$<$ const uint8\+\_\+t $>$}]{public\+\_\+key }\end{DoxyParamCaption})}
+
+
+
+Verify signature with public key. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & Original data \\
+\hline
+{\em signature} & Signature to verify \\
+\hline
+{\em public\+\_\+key} & \doxylink{classfilevault_1_1algorithms_1_1asymmetric_1_1ECDSA}{ECDSA} public key \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if signature is valid 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classfilevault_1_1algorithms_1_1asymmetric_1_1ECDSA_a858b512e4bb747093f91e39e866dc6c1}\label{classfilevault_1_1algorithms_1_1asymmetric_1_1ECDSA_a858b512e4bb747093f91e39e866dc6c1} 
+\index{filevault::algorithms::asymmetric::ECDSA@{filevault::algorithms::asymmetric::ECDSA}!botan\_curve\_name\_@{botan\_curve\_name\_}}
+\index{botan\_curve\_name\_@{botan\_curve\_name\_}!filevault::algorithms::asymmetric::ECDSA@{filevault::algorithms::asymmetric::ECDSA}}
+\doxysubsubsection{\texorpdfstring{botan\_curve\_name\_}{botan\_curve\_name\_}}
+{\footnotesize\ttfamily std\+::string filevault\+::algorithms\+::asymmetric\+::\+ECDSA\+::botan\+\_\+curve\+\_\+name\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classfilevault_1_1algorithms_1_1asymmetric_1_1ECDSA_a8033d0b3841a9ec20b1a037a198f1cae}\label{classfilevault_1_1algorithms_1_1asymmetric_1_1ECDSA_a8033d0b3841a9ec20b1a037a198f1cae} 
+\index{filevault::algorithms::asymmetric::ECDSA@{filevault::algorithms::asymmetric::ECDSA}!curve\_@{curve\_}}
+\index{curve\_@{curve\_}!filevault::algorithms::asymmetric::ECDSA@{filevault::algorithms::asymmetric::ECDSA}}
+\doxysubsubsection{\texorpdfstring{curve\_}{curve\_}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacefilevault_1_1algorithms_1_1asymmetric_a5955f778874f5a3eaa61006b00c2ab02}{ECCurve}} filevault\+::algorithms\+::asymmetric\+::\+ECDSA\+::curve\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/filevault/algorithms/asymmetric/\mbox{\hyperlink{ecc_8hpp}{ecc.\+hpp}}\item 
+src/algorithms/asymmetric/\mbox{\hyperlink{ecc_8cpp}{ecc.\+cpp}}\end{DoxyCompactItemize}

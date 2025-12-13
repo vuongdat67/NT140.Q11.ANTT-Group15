@@ -1,0 +1,66 @@
+\doxysection{twofish\+\_\+gcm.\+hpp}
+\hypertarget{twofish__gcm_8hpp_source}{}\label{twofish__gcm_8hpp_source}\index{include/filevault/algorithms/symmetric/twofish\_gcm.hpp@{include/filevault/algorithms/symmetric/twofish\_gcm.hpp}}
+\mbox{\hyperlink{twofish__gcm_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#ifndef\ FILEVAULT\_ALGORITHMS\_SYMMETRIC\_TWOFISH\_GCM\_HPP}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#define\ FILEVAULT\_ALGORITHMS\_SYMMETRIC\_TWOFISH\_GCM\_HPP}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{types_8hpp}{filevault/core/types.hpp}}"{}}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{crypto__algorithm_8hpp}{filevault/core/crypto\_algorithm.hpp}}"{}}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ <span>}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacefilevault}{filevault}}\ \{}
+\DoxyCodeLine{00021\ \textcolor{keyword}{namespace\ }algorithms\ \{}
+\DoxyCodeLine{00022\ \textcolor{keyword}{namespace\ }symmetric\ \{}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00053\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1Twofish__GCM}{Twofish\_GCM}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classfilevault_1_1core_1_1ICryptoAlgorithm}{core::ICryptoAlgorithm}}\ \{}
+\DoxyCodeLine{00054\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1Twofish__GCM}{Twofish\_GCM}}(\textcolor{keywordtype}{size\_t}\ key\_bits\ =\ 256);}
+\DoxyCodeLine{00060\ \ \ \ \ }
+\DoxyCodeLine{00064\ \ \ \ \ std::string\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1Twofish__GCM_a9fb70465dfba5df3a43ad22602b7080f}{name}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00065\ \ \ \ \ }
+\DoxyCodeLine{00069\ \ \ \ \ \mbox{\hyperlink{namespacefilevault_1_1core_ab1ba257a0205c63e9e1e3623170940a2}{core::AlgorithmType}}\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1Twofish__GCM_a828e4d8917adb6c7328bfe6d1a1ce4c0}{type}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00070\ \ \ \ \ }
+\DoxyCodeLine{00079\ \ \ \ \ \mbox{\hyperlink{structfilevault_1_1core_1_1CryptoResult}{core::CryptoResult}}\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1Twofish__GCM_aa37e0a47c6e51629f5ec6f0ab479eae5}{encrypt}}(}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ std::span<const\ uint8\_t>\ plaintext,}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ std::span<const\ uint8\_t>\ key,}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structfilevault_1_1core_1_1EncryptionConfig}{core::EncryptionConfig}}\&\ config}
+\DoxyCodeLine{00083\ \ \ \ \ )\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00084\ \ \ \ \ }
+\DoxyCodeLine{00093\ \ \ \ \ \mbox{\hyperlink{structfilevault_1_1core_1_1CryptoResult}{core::CryptoResult}}\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1Twofish__GCM_aa9b458aec4beb7b45639d799389939fe}{decrypt}}(}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ std::span<const\ uint8\_t>\ ciphertext,}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ std::span<const\ uint8\_t>\ key,}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structfilevault_1_1core_1_1EncryptionConfig}{core::EncryptionConfig}}\&\ config}
+\DoxyCodeLine{00097\ \ \ \ \ )\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00098\ \ \ \ \ }
+\DoxyCodeLine{00102\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1Twofish__GCM_a408fff0d2bfb9c706e7a96d059a0c5b2}{key\_size}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00103\ \ \ \ \ }
+\DoxyCodeLine{00107\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1Twofish__GCM_ad774f33df4c919815cd2dd0304fcf6c2}{nonce\_size}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ 12;\ \}}
+\DoxyCodeLine{00108\ \ \ \ \ }
+\DoxyCodeLine{00112\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1Twofish__GCM_a9e20878dc438decdc9a0bb5c924ddf0b}{tag\_size}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ 16;\ \}}
+\DoxyCodeLine{00113\ \ \ \ \ }
+\DoxyCodeLine{00117\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1Twofish__GCM_ae3122a1c34e1cb0414f420615018547d}{is\_suitable\_for}}(\mbox{\hyperlink{namespacefilevault_1_1core_abcb3b3d896f7dc00926903183b3e2dc9}{core::SecurityLevel}}\ level)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00118\ }
+\DoxyCodeLine{00119\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00120\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1Twofish__GCM_aa1feef363ccf482c363ee55740cde74c}{key\_bits\_}};}
+\DoxyCodeLine{00121\ \ \ \ \ \mbox{\hyperlink{namespacefilevault_1_1core_ab1ba257a0205c63e9e1e3623170940a2}{core::AlgorithmType}}\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1Twofish__GCM_a7b3542c89a08521daf5cbbdf38c4d6de}{type\_}};}
+\DoxyCodeLine{00122\ \ \ \ \ std::string\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1Twofish__GCM_a9a8325ad5990cfd0d2c9d80d9ef20da2}{botan\_name\_}};}
+\DoxyCodeLine{00123\ \ \ \ \ }
+\DoxyCodeLine{00127\ \ \ \ \ std::vector<uint8\_t>\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1Twofish__GCM_ab6df4e1594d099ae70d27d59f6063d13}{process\_gcm}}(}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ std::span<const\ uint8\_t>\ input,}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ std::span<const\ uint8\_t>\ key,}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ std::span<const\ uint8\_t>\ nonce,}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ std::span<const\ uint8\_t>\ tag,}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1Twofish__GCM_aa37e0a47c6e51629f5ec6f0ab479eae5}{encrypt}}}
+\DoxyCodeLine{00133\ \ \ \ \ );}
+\DoxyCodeLine{00134\ \};}
+\DoxyCodeLine{00135\ }
+\DoxyCodeLine{00136\ \}\ \textcolor{comment}{//\ namespace\ symmetric}}
+\DoxyCodeLine{00137\ \}\ \textcolor{comment}{//\ namespace\ algorithms}}
+\DoxyCodeLine{00138\ \}\ \textcolor{comment}{//\ namespace\ filevault}}
+\DoxyCodeLine{00139\ }
+\DoxyCodeLine{00140\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ FILEVAULT\_ALGORITHMS\_SYMMETRIC\_TWOFISH\_GCM\_HPP}}
+
+\end{DoxyCode}

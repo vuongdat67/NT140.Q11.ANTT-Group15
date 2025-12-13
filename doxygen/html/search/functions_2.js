@@ -1,0 +1,20 @@
+var searchData=
+[
+  ['caesar_0',['caesar',['../classfilevault_1_1algorithms_1_1classical_1_1Caesar.html#a38f24d0361d6075bbd99d1f0fdb55982',1,'filevault::algorithms::classical::Caesar::Caesar(int shift=3)'],['../classfilevault_1_1algorithms_1_1classical_1_1Caesar.html#a38f24d0361d6075bbd99d1f0fdb55982',1,'filevault::algorithms::classical::Caesar::Caesar(int shift=3)']]],
+  ['calculate_5fcapacity_1',['calculate_capacity',['../classfilevault_1_1steganography_1_1LSBSteganography.html#a85414cae8f094b7999106e761095be31',1,'filevault::steganography::LSBSteganography']]],
+  ['calculate_5fentropy_2',['calculate_entropy',['../classfilevault_1_1utils_1_1Password.html#ad7c81aec65ec2267a275ef9861fbbb6a',1,'filevault::utils::Password']]],
+  ['calculate_5ffile_5fhash_3',['calculate_file_hash',['../classfilevault_1_1cli_1_1HashCommand.html#ae49310e22964f47b767a5f87873fcc99',1,'filevault::cli::HashCommand']]],
+  ['calculate_5ffile_5fhmac_4',['calculate_file_hmac',['../classfilevault_1_1cli_1_1HashCommand.html#a6cc228dedaa6784ec976b27e32be7e08',1,'filevault::cli::HashCommand']]],
+  ['camellia_5fgcm_5',['Camellia_GCM',['../classfilevault_1_1algorithms_1_1symmetric_1_1Camellia__GCM.html#ab81088c6577e6ab5f32c97999946eab2',1,'filevault::algorithms::symmetric::Camellia_GCM']]],
+  ['chacha20poly1305_6',['ChaCha20Poly1305',['../classfilevault_1_1algorithms_1_1symmetric_1_1ChaCha20Poly1305.html#a978d1fbb311842a83a6fcd0f2ea3112f',1,'filevault::algorithms::symmetric::ChaCha20Poly1305']]],
+  ['ciphertext_5fsize_7',['ciphertext_size',['../classfilevault_1_1algorithms_1_1pqc_1_1Kyber.html#aa762b0dea798567185fdf56d06273a10',1,'filevault::algorithms::pqc::Kyber']]],
+  ['compress_8',['compress',['../classfilevault_1_1compression_1_1Bzip2Compressor.html#a6bd9ee11ba6b30c116d262f36f27435a',1,'filevault::compression::Bzip2Compressor::compress()'],['../classfilevault_1_1compression_1_1LzmaCompressor.html#a9343e005b1b6f040a4898b9fd6e0a71d',1,'filevault::compression::LzmaCompressor::compress()'],['../classfilevault_1_1compression_1_1ZlibCompressor.html#a7e925f8f86d240fb0fdf682611b1b55b',1,'filevault::compression::ZlibCompressor::compress()'],['../classfilevault_1_1compression_1_1ICompressor.html#a9f5965e075283a118a99119a9359f102',1,'filevault::compression::ICompressor::compress()']]],
+  ['compresscommand_9',['CompressCommand',['../classfilevault_1_1cli_1_1CompressCommand.html#a04bb497d5c11f0bfc1af2ada4da7610c',1,'filevault::cli::CompressCommand']]],
+  ['configcommand_10',['ConfigCommand',['../classfilevault_1_1cli_1_1ConfigCommand.html#a9977bc7f110593c0b3da38448ee3a168',1,'filevault::cli::ConfigCommand']]],
+  ['create_11',['create',['../classfilevault_1_1compression_1_1CompressionService.html#afb8afa1ffe9712ba33bf4ca6aece202e',1,'filevault::compression::CompressionService']]],
+  ['create_5farchive_12',['create_archive',['../classfilevault_1_1archive_1_1ArchiveFormat.html#a56db58970e0d63112f9462b8ebb3a3e8',1,'filevault::archive::ArchiveFormat']]],
+  ['create_5fheader_13',['create_header',['../classfilevault_1_1core_1_1FileFormatHandler.html#a4e05d4dadd820749380878248d83bd55',1,'filevault::core::FileFormatHandler']]],
+  ['create_5freverse_5fmap_14',['create_reverse_map',['../classfilevault_1_1algorithms_1_1classical_1_1SubstitutionCipher.html#abcc7c1a6345c4d5eb74e1ed37b96ff1c',1,'filevault::algorithms::classical::SubstitutionCipher']]],
+  ['cryptoengine_15',['cryptoengine',['../classfilevault_1_1core_1_1CryptoEngine.html#ae0b54fb94dd63d15fd2409603692fc54',1,'filevault::core::CryptoEngine::CryptoEngine()'],['../classfilevault_1_1core_1_1CryptoEngine.html#ad03c3f423450d2f97777ca1e4565898f',1,'filevault::core::CryptoEngine::CryptoEngine(const CryptoEngine &amp;)=delete']]],
+  ['curve_5fname_16',['curve_name',['../classfilevault_1_1algorithms_1_1asymmetric_1_1ECDH.html#a09d637751aa988b6cd33c3c205ea2c8f',1,'filevault::algorithms::asymmetric::ECDH::curve_name()'],['../classfilevault_1_1algorithms_1_1asymmetric_1_1ECDSA.html#a867cd043c6c3a0cbea025ff1576e485e',1,'filevault::algorithms::asymmetric::ECDSA::curve_name()']]]
+];

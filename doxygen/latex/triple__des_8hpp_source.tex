@@ -1,0 +1,49 @@
+\doxysection{triple\+\_\+des.\+hpp}
+\hypertarget{triple__des_8hpp_source}{}\label{triple__des_8hpp_source}\index{include/filevault/algorithms/symmetric/triple\_des.hpp@{include/filevault/algorithms/symmetric/triple\_des.hpp}}
+\mbox{\hyperlink{triple__des_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#ifndef\ FILEVAULT\_ALGORITHMS\_SYMMETRIC\_TRIPLE\_DES\_HPP}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#define\ FILEVAULT\_ALGORITHMS\_SYMMETRIC\_TRIPLE\_DES\_HPP}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{crypto__algorithm_8hpp}{filevault/core/crypto\_algorithm.hpp}}"{}}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <botan/cipher\_mode.h>}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacefilevault}{filevault}}\ \{}
+\DoxyCodeLine{00016\ \textcolor{keyword}{namespace\ }algorithms\ \{}
+\DoxyCodeLine{00017\ \textcolor{keyword}{namespace\ }symmetric\ \{}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00030\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1TripleDES}{TripleDES}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classfilevault_1_1core_1_1ICryptoAlgorithm}{core::ICryptoAlgorithm}}\ \{}
+\DoxyCodeLine{00031\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1TripleDES_a39c8392ed716e5e5da691f7d8675728e}{TripleDES}}();}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1TripleDES_a267685aa7c824b9dac884475b5523a7f}{\string~TripleDES}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00034\ \ \ \ \ }
+\DoxyCodeLine{00035\ \ \ \ \ std::string\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1TripleDES_a08dee0926c8adc54dcd441e994cc1d97}{name}}()\textcolor{keyword}{\ const\ override\ }\{\ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}3DES-\/CBC"{}};\ \}}
+\DoxyCodeLine{00036\ \ \ \ \ \mbox{\hyperlink{namespacefilevault_1_1core_ab1ba257a0205c63e9e1e3623170940a2}{core::AlgorithmType}}\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1TripleDES_af48f771906900f4e77aa7912c6088eaf}{type}}()\textcolor{keyword}{\ const\ override\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespacefilevault_1_1core_ab1ba257a0205c63e9e1e3623170940a2a4cc418d388fd8ef547bce9360c45ff6f}{core::AlgorithmType::TRIPLE\_DES\_CBC}};\ \}}
+\DoxyCodeLine{00037\ \ \ \ \ }
+\DoxyCodeLine{00038\ \ \ \ \ \mbox{\hyperlink{structfilevault_1_1core_1_1CryptoResult}{core::CryptoResult}}\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1TripleDES_a90ba3e15757c07f58df3fc384c7a8b16}{encrypt}}(}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ std::span<const\ uint8\_t>\ plaintext,}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ std::span<const\ uint8\_t>\ key,}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structfilevault_1_1core_1_1EncryptionConfig}{core::EncryptionConfig}}\&\ config}
+\DoxyCodeLine{00042\ \ \ \ \ )\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00043\ \ \ \ \ }
+\DoxyCodeLine{00044\ \ \ \ \ \mbox{\hyperlink{structfilevault_1_1core_1_1CryptoResult}{core::CryptoResult}}\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1TripleDES_ac2bc933ee762aa0985c7985a59123d3d}{decrypt}}(}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ std::span<const\ uint8\_t>\ ciphertext,}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ std::span<const\ uint8\_t>\ key,}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structfilevault_1_1core_1_1EncryptionConfig}{core::EncryptionConfig}}\&\ config}
+\DoxyCodeLine{00048\ \ \ \ \ )\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00049\ \ \ \ \ }
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1TripleDES_a5d4a4e31337efdec4e63a8163f687408}{key\_size}}()\textcolor{keyword}{\ const\ override\ }\{\ \textcolor{keywordflow}{return}\ 24;\ \}\ \ \textcolor{comment}{//\ 168\ bits\ (3\ x\ 56\ bits)}}
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1TripleDES_aa774bb0065ad893fad7955284bec6901}{iv\_size}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ 8;\ \}\ \ \textcolor{comment}{//\ 64-\/bit\ block}}
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1TripleDES_a4983187a480f5c6dd6f4891507dd634f}{block\_size}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ 8;\ \}}
+\DoxyCodeLine{00053\ \ \ \ \ }
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1TripleDES_a49356de41065525043d10f066ceb70ae}{is\_suitable\_for}}(\mbox{\hyperlink{namespacefilevault_1_1core_abcb3b3d896f7dc00926903183b3e2dc9}{core::SecurityLevel}}\ level)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00055\ \};}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \}\ \textcolor{comment}{//\ namespace\ symmetric}}
+\DoxyCodeLine{00058\ \}\ \textcolor{comment}{//\ namespace\ algorithms}}
+\DoxyCodeLine{00059\ \}\ \textcolor{comment}{//\ namespace\ filevault}}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ FILEVAULT\_ALGORITHMS\_SYMMETRIC\_TRIPLE\_DES\_HPP}}
+
+\end{DoxyCode}

@@ -1,0 +1,55 @@
+\doxysection{aria\+\_\+gcm.\+hpp}
+\hypertarget{aria__gcm_8hpp_source}{}\label{aria__gcm_8hpp_source}\index{include/filevault/algorithms/symmetric/aria\_gcm.hpp@{include/filevault/algorithms/symmetric/aria\_gcm.hpp}}
+\mbox{\hyperlink{aria__gcm_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#ifndef\ FILEVAULT\_ALGORITHMS\_SYMMETRIC\_ARIA\_GCM\_HPP}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#define\ FILEVAULT\_ALGORITHMS\_SYMMETRIC\_ARIA\_GCM\_HPP}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{crypto__algorithm_8hpp}{filevault/core/crypto\_algorithm.hpp}}"{}}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <botan/aead.h>}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacefilevault}{filevault}}\ \{}
+\DoxyCodeLine{00018\ \textcolor{keyword}{namespace\ }algorithms\ \{}
+\DoxyCodeLine{00019\ \textcolor{keyword}{namespace\ }symmetric\ \{}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00027\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1ARIA__GCM}{ARIA\_GCM}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classfilevault_1_1core_1_1ICryptoAlgorithm}{core::ICryptoAlgorithm}}\ \{}
+\DoxyCodeLine{00028\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1ARIA__GCM}{ARIA\_GCM}}(\textcolor{keywordtype}{size\_t}\ key\_bits\ =\ 256);}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1ARIA__GCM_a37acd9557fb4049aa3922e5db5d2b097}{\string~ARIA\_GCM}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00035\ \ \ \ \ }
+\DoxyCodeLine{00036\ \ \ \ \ std::string\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1ARIA__GCM_aac2275c9bb6edf65ac7a4b701b0ca80a}{name}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00037\ \ \ \ \ \mbox{\hyperlink{namespacefilevault_1_1core_ab1ba257a0205c63e9e1e3623170940a2}{core::AlgorithmType}}\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1ARIA__GCM_ac18663b31585c878546c0ee6934680c1}{type}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00038\ \ \ \ \ }
+\DoxyCodeLine{00039\ \ \ \ \ \mbox{\hyperlink{structfilevault_1_1core_1_1CryptoResult}{core::CryptoResult}}\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1ARIA__GCM_a20b7925d6899e9aeee59fe4ad9651068}{encrypt}}(}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ std::span<const\ uint8\_t>\ plaintext,}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ std::span<const\ uint8\_t>\ key,}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structfilevault_1_1core_1_1EncryptionConfig}{core::EncryptionConfig}}\&\ config}
+\DoxyCodeLine{00043\ \ \ \ \ )\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00044\ \ \ \ \ }
+\DoxyCodeLine{00045\ \ \ \ \ \mbox{\hyperlink{structfilevault_1_1core_1_1CryptoResult}{core::CryptoResult}}\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1ARIA__GCM_a48c35419046065d03bdabd8bef8e4325}{decrypt}}(}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ std::span<const\ uint8\_t>\ ciphertext,}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ std::span<const\ uint8\_t>\ key,}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structfilevault_1_1core_1_1EncryptionConfig}{core::EncryptionConfig}}\&\ config}
+\DoxyCodeLine{00049\ \ \ \ \ )\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00050\ \ \ \ \ }
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1ARIA__GCM_ab85e4fd51e8189520d4a225945044895}{key\_size}}()\textcolor{keyword}{\ const\ override\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1ARIA__GCM_a3c263cdda145a881c73367acb9cf5827}{key\_bits\_}}\ /\ 8;\ \}}
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1ARIA__GCM_abaaf2dda621dc0b411784e3c50fff0f5}{nonce\_size}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ 12;\ \}\ \ \textcolor{comment}{//\ GCM\ standard}}
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1ARIA__GCM_aa06827cc1cf408eeea02a62162fe521e}{tag\_size}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ 16;\ \}\ \ \ \ \textcolor{comment}{//\ 128-\/bit\ tag}}
+\DoxyCodeLine{00054\ \ \ \ \ }
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1ARIA__GCM_ae2e5f482004401d0f950aa6f9c1f3091}{is\_suitable\_for}}(\mbox{\hyperlink{namespacefilevault_1_1core_abcb3b3d896f7dc00926903183b3e2dc9}{core::SecurityLevel}}\ level)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1ARIA__GCM_a3c263cdda145a881c73367acb9cf5827}{key\_bits\_}};}
+\DoxyCodeLine{00059\ \ \ \ \ \mbox{\hyperlink{namespacefilevault_1_1core_ab1ba257a0205c63e9e1e3623170940a2}{core::AlgorithmType}}\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1ARIA__GCM_a7e3bb3e3840c32e3aaba615b55c396ad}{type\_}};}
+\DoxyCodeLine{00060\ \ \ \ \ std::string\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1ARIA__GCM_a25ba3150f5e99a8ef6c144608ef507c8}{botan\_name\_}};}
+\DoxyCodeLine{00061\ \};}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \}\ \textcolor{comment}{//\ namespace\ symmetric}}
+\DoxyCodeLine{00064\ \}\ \textcolor{comment}{//\ namespace\ algorithms}}
+\DoxyCodeLine{00065\ \}\ \textcolor{comment}{//\ namespace\ filevault}}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ FILEVAULT\_ALGORITHMS\_SYMMETRIC\_ARIA\_GCM\_HPP}}
+
+\end{DoxyCode}

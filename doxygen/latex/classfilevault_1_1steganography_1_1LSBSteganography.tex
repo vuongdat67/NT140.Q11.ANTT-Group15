@@ -1,0 +1,189 @@
+\doxysection{filevault\+::steganography\+::LSBSteganography Class Reference}
+\hypertarget{classfilevault_1_1steganography_1_1LSBSteganography}{}\label{classfilevault_1_1steganography_1_1LSBSteganography}\index{filevault::steganography::LSBSteganography@{filevault::steganography::LSBSteganography}}
+
+
+LSB (Least Significant Bit) Steganography.  
+
+
+
+
+{\ttfamily \#include $<$lsb.\+hpp$>$}
+
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool \mbox{\hyperlink{classfilevault_1_1steganography_1_1LSBSteganography_a5536bb0cc2d01b8e77089acd73fd0818}{embed}} (const std\+::string \&cover\+\_\+image\+\_\+path, std\+::span$<$ const uint8\+\_\+t $>$ secret\+\_\+data, const std\+::string \&output\+\_\+path, int bits\+\_\+per\+\_\+channel=1)
+\begin{DoxyCompactList}\small\item\em Embed secret data into image. \end{DoxyCompactList}\item 
+static std\+::vector$<$ uint8\+\_\+t $>$ \mbox{\hyperlink{classfilevault_1_1steganography_1_1LSBSteganography_a5b9ffd7a8d99275eeea4044008603961}{extract}} (const std\+::string \&stego\+\_\+image\+\_\+path, int bits\+\_\+per\+\_\+channel=1)
+\begin{DoxyCompactList}\small\item\em Extract hidden data from stego image. \end{DoxyCompactList}\item 
+static size\+\_\+t \mbox{\hyperlink{classfilevault_1_1steganography_1_1LSBSteganography_a85414cae8f094b7999106e761095be31}{calculate\+\_\+capacity}} (const std\+::string \&image\+\_\+path, int bits\+\_\+per\+\_\+channel=1)
+\begin{DoxyCompactList}\small\item\em Calculate maximum capacity for given image. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{classfilevault_1_1steganography_1_1LSBSteganography_a04f2df76c61a64f1bef3133eb663822f}{embed\+\_\+byte}} (uint8\+\_\+t \texorpdfstring{$\ast$}{*}pixel\+\_\+data, size\+\_\+t pixel\+\_\+count, size\+\_\+t \&bit\+\_\+index, uint8\+\_\+t byte, int bits\+\_\+per\+\_\+channel)
+\item 
+static uint8\+\_\+t \mbox{\hyperlink{classfilevault_1_1steganography_1_1LSBSteganography_adfdae5ccdb4c8ff49a40b4c83954c1de}{extract\+\_\+byte}} (const uint8\+\_\+t \texorpdfstring{$\ast$}{*}pixel\+\_\+data, size\+\_\+t pixel\+\_\+count, size\+\_\+t \&bit\+\_\+index, int bits\+\_\+per\+\_\+channel)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static constexpr size\+\_\+t \mbox{\hyperlink{classfilevault_1_1steganography_1_1LSBSteganography_a685c9e8c025c32d4404d8a5aee6a8034}{LENGTH\+\_\+\+HEADER\+\_\+\+SIZE}} = 4
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+LSB (Least Significant Bit) Steganography. 
+
+Embeds secret data into image pixels by modifying the least significant bits. Supports PNG and BMP images.
+
+Capacity\+: For RGB images, \texorpdfstring{$\sim$}{\string~}3 bits per pixel (if using 1 bit per channel) For an 800x600 image\+: (800 \texorpdfstring{$\ast$}{*} 600 \texorpdfstring{$\ast$}{*} 3) / 8 = 180,000 bytes max 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classfilevault_1_1steganography_1_1LSBSteganography_a85414cae8f094b7999106e761095be31}\label{classfilevault_1_1steganography_1_1LSBSteganography_a85414cae8f094b7999106e761095be31} 
+\index{filevault::steganography::LSBSteganography@{filevault::steganography::LSBSteganography}!calculate\_capacity@{calculate\_capacity}}
+\index{calculate\_capacity@{calculate\_capacity}!filevault::steganography::LSBSteganography@{filevault::steganography::LSBSteganography}}
+\doxysubsubsection{\texorpdfstring{calculate\_capacity()}{calculate\_capacity()}}
+{\footnotesize\ttfamily size\+\_\+t filevault\+::steganography\+::\+LSBSteganography\+::calculate\+\_\+capacity (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{image\+\_\+path,  }\item[{int}]{bits\+\_\+per\+\_\+channel = {\ttfamily 1} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Calculate maximum capacity for given image. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em image\+\_\+path} & Path to image \\
+\hline
+{\em bits\+\_\+per\+\_\+channel} & Number of LSBs per channel \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Maximum bytes that can be hidden, or 0 on error 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1steganography_1_1LSBSteganography_a85414cae8f094b7999106e761095be31_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1steganography_1_1LSBSteganography_a5536bb0cc2d01b8e77089acd73fd0818}\label{classfilevault_1_1steganography_1_1LSBSteganography_a5536bb0cc2d01b8e77089acd73fd0818} 
+\index{filevault::steganography::LSBSteganography@{filevault::steganography::LSBSteganography}!embed@{embed}}
+\index{embed@{embed}!filevault::steganography::LSBSteganography@{filevault::steganography::LSBSteganography}}
+\doxysubsubsection{\texorpdfstring{embed()}{embed()}}
+{\footnotesize\ttfamily bool filevault\+::steganography\+::\+LSBSteganography\+::embed (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{cover\+\_\+image\+\_\+path,  }\item[{std\+::span$<$ const uint8\+\_\+t $>$}]{secret\+\_\+data,  }\item[{const std\+::string \&}]{output\+\_\+path,  }\item[{int}]{bits\+\_\+per\+\_\+channel = {\ttfamily 1} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Embed secret data into image. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cover\+\_\+image\+\_\+path} & Path to cover image (PNG/\+BMP) \\
+\hline
+{\em secret\+\_\+data} & Data to hide \\
+\hline
+{\em output\+\_\+path} & Path for output stego image \\
+\hline
+{\em bits\+\_\+per\+\_\+channel} & Number of LSBs to use per color channel (1-\/4, default 1) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if successful, false otherwise 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1steganography_1_1LSBSteganography_a5536bb0cc2d01b8e77089acd73fd0818_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1steganography_1_1LSBSteganography_a5536bb0cc2d01b8e77089acd73fd0818_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1steganography_1_1LSBSteganography_a04f2df76c61a64f1bef3133eb663822f}\label{classfilevault_1_1steganography_1_1LSBSteganography_a04f2df76c61a64f1bef3133eb663822f} 
+\index{filevault::steganography::LSBSteganography@{filevault::steganography::LSBSteganography}!embed\_byte@{embed\_byte}}
+\index{embed\_byte@{embed\_byte}!filevault::steganography::LSBSteganography@{filevault::steganography::LSBSteganography}}
+\doxysubsubsection{\texorpdfstring{embed\_byte()}{embed\_byte()}}
+{\footnotesize\ttfamily void filevault\+::steganography\+::\+LSBSteganography\+::embed\+\_\+byte (\begin{DoxyParamCaption}\item[{uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{pixel\+\_\+data,  }\item[{size\+\_\+t}]{pixel\+\_\+count,  }\item[{size\+\_\+t \&}]{bit\+\_\+index,  }\item[{uint8\+\_\+t}]{byte,  }\item[{int}]{bits\+\_\+per\+\_\+channel }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1steganography_1_1LSBSteganography_a04f2df76c61a64f1bef3133eb663822f_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1steganography_1_1LSBSteganography_a5b9ffd7a8d99275eeea4044008603961}\label{classfilevault_1_1steganography_1_1LSBSteganography_a5b9ffd7a8d99275eeea4044008603961} 
+\index{filevault::steganography::LSBSteganography@{filevault::steganography::LSBSteganography}!extract@{extract}}
+\index{extract@{extract}!filevault::steganography::LSBSteganography@{filevault::steganography::LSBSteganography}}
+\doxysubsubsection{\texorpdfstring{extract()}{extract()}}
+{\footnotesize\ttfamily std\+::vector$<$ uint8\+\_\+t $>$ filevault\+::steganography\+::\+LSBSteganography\+::extract (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{stego\+\_\+image\+\_\+path,  }\item[{int}]{bits\+\_\+per\+\_\+channel = {\ttfamily 1} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Extract hidden data from stego image. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em stego\+\_\+image\+\_\+path} & Path to stego image \\
+\hline
+{\em bits\+\_\+per\+\_\+channel} & Number of LSBs used per color channel (must match embed) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Extracted secret data, or empty vector on failure 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1steganography_1_1LSBSteganography_a5b9ffd7a8d99275eeea4044008603961_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1steganography_1_1LSBSteganography_a5b9ffd7a8d99275eeea4044008603961_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1steganography_1_1LSBSteganography_adfdae5ccdb4c8ff49a40b4c83954c1de}\label{classfilevault_1_1steganography_1_1LSBSteganography_adfdae5ccdb4c8ff49a40b4c83954c1de} 
+\index{filevault::steganography::LSBSteganography@{filevault::steganography::LSBSteganography}!extract\_byte@{extract\_byte}}
+\index{extract\_byte@{extract\_byte}!filevault::steganography::LSBSteganography@{filevault::steganography::LSBSteganography}}
+\doxysubsubsection{\texorpdfstring{extract\_byte()}{extract\_byte()}}
+{\footnotesize\ttfamily uint8\+\_\+t filevault\+::steganography\+::\+LSBSteganography\+::extract\+\_\+byte (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{pixel\+\_\+data,  }\item[{size\+\_\+t}]{pixel\+\_\+count,  }\item[{size\+\_\+t \&}]{bit\+\_\+index,  }\item[{int}]{bits\+\_\+per\+\_\+channel }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1steganography_1_1LSBSteganography_adfdae5ccdb4c8ff49a40b4c83954c1de_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classfilevault_1_1steganography_1_1LSBSteganography_a685c9e8c025c32d4404d8a5aee6a8034}\label{classfilevault_1_1steganography_1_1LSBSteganography_a685c9e8c025c32d4404d8a5aee6a8034} 
+\index{filevault::steganography::LSBSteganography@{filevault::steganography::LSBSteganography}!LENGTH\_HEADER\_SIZE@{LENGTH\_HEADER\_SIZE}}
+\index{LENGTH\_HEADER\_SIZE@{LENGTH\_HEADER\_SIZE}!filevault::steganography::LSBSteganography@{filevault::steganography::LSBSteganography}}
+\doxysubsubsection{\texorpdfstring{LENGTH\_HEADER\_SIZE}{LENGTH\_HEADER\_SIZE}}
+{\footnotesize\ttfamily constexpr size\+\_\+t filevault\+::steganography\+::\+LSBSteganography\+::\+LENGTH\+\_\+\+HEADER\+\_\+\+SIZE = 4\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}, {\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/filevault/steganography/\mbox{\hyperlink{lsb_8hpp}{lsb.\+hpp}}\item 
+src/steganography/\mbox{\hyperlink{lsb_8cpp}{lsb.\+cpp}}\end{DoxyCompactItemize}

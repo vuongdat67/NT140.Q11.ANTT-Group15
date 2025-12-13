@@ -1,0 +1,54 @@
+\doxysection{src/steganography/lsb.cpp File Reference}
+\hypertarget{lsb_8cpp}{}\label{lsb_8cpp}\index{src/steganography/lsb.cpp@{src/steganography/lsb.cpp}}
+{\ttfamily \#include "{}filevault/steganography/lsb.\+hpp"{}}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include $<$cstring$>$}\newline
+{\ttfamily \#include $<$algorithm$>$}\newline
+{\ttfamily \#include $<$spdlog/spdlog.\+h$>$}\newline
+{\ttfamily \#include $<$stb\+\_\+image.\+h$>$}\newline
+{\ttfamily \#include $<$stb\+\_\+image\+\_\+write.\+h$>$}\newline
+Include dependency graph for lsb.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{lsb_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespacefilevault}{filevault}}
+\item 
+namespace \mbox{\hyperlink{namespacefilevault_1_1steganography}{filevault\+::steganography}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{lsb_8cpp_a18372412ad2fc3ce1e3240b3cf0efe78}{STB\+\_\+\+IMAGE\+\_\+\+IMPLEMENTATION}}
+\item 
+\#define \mbox{\hyperlink{lsb_8cpp_aefe397a94e8feddc652f92ef40ce9597}{STB\+\_\+\+IMAGE\+\_\+\+WRITE\+\_\+\+IMPLEMENTATION}}
+\item 
+\#define \mbox{\hyperlink{lsb_8cpp_a03f11c185c278fd82e6d2624e9ce9214}{STBI\+\_\+\+FAILURE\+\_\+\+USERMSG}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{lsb_8cpp_a18372412ad2fc3ce1e3240b3cf0efe78}\label{lsb_8cpp_a18372412ad2fc3ce1e3240b3cf0efe78} 
+\index{lsb.cpp@{lsb.cpp}!STB\_IMAGE\_IMPLEMENTATION@{STB\_IMAGE\_IMPLEMENTATION}}
+\index{STB\_IMAGE\_IMPLEMENTATION@{STB\_IMAGE\_IMPLEMENTATION}!lsb.cpp@{lsb.cpp}}
+\doxysubsubsection{\texorpdfstring{STB\_IMAGE\_IMPLEMENTATION}{STB\_IMAGE\_IMPLEMENTATION}}
+{\footnotesize\ttfamily \#define STB\+\_\+\+IMAGE\+\_\+\+IMPLEMENTATION}
+
+\Hypertarget{lsb_8cpp_aefe397a94e8feddc652f92ef40ce9597}\label{lsb_8cpp_aefe397a94e8feddc652f92ef40ce9597} 
+\index{lsb.cpp@{lsb.cpp}!STB\_IMAGE\_WRITE\_IMPLEMENTATION@{STB\_IMAGE\_WRITE\_IMPLEMENTATION}}
+\index{STB\_IMAGE\_WRITE\_IMPLEMENTATION@{STB\_IMAGE\_WRITE\_IMPLEMENTATION}!lsb.cpp@{lsb.cpp}}
+\doxysubsubsection{\texorpdfstring{STB\_IMAGE\_WRITE\_IMPLEMENTATION}{STB\_IMAGE\_WRITE\_IMPLEMENTATION}}
+{\footnotesize\ttfamily \#define STB\+\_\+\+IMAGE\+\_\+\+WRITE\+\_\+\+IMPLEMENTATION}
+
+\Hypertarget{lsb_8cpp_a03f11c185c278fd82e6d2624e9ce9214}\label{lsb_8cpp_a03f11c185c278fd82e6d2624e9ce9214} 
+\index{lsb.cpp@{lsb.cpp}!STBI\_FAILURE\_USERMSG@{STBI\_FAILURE\_USERMSG}}
+\index{STBI\_FAILURE\_USERMSG@{STBI\_FAILURE\_USERMSG}!lsb.cpp@{lsb.cpp}}
+\doxysubsubsection{\texorpdfstring{STBI\_FAILURE\_USERMSG}{STBI\_FAILURE\_USERMSG}}
+{\footnotesize\ttfamily \#define STBI\+\_\+\+FAILURE\+\_\+\+USERMSG}
+

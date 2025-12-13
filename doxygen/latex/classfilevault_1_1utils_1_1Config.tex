@@ -1,0 +1,425 @@
+\doxysection{filevault\+::utils\+::Config Class Reference}
+\hypertarget{classfilevault_1_1utils_1_1Config}{}\label{classfilevault_1_1utils_1_1Config}\index{filevault::utils::Config@{filevault::utils::Config}}
+
+
+Configuration manager for File\+Vault.  
+
+
+
+
+{\ttfamily \#include $<$config.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classfilevault_1_1utils_1_1Config_a4bebc4cbfe5e009d161c44a6ea093015}{bool}} \mbox{\hyperlink{classfilevault_1_1utils_1_1Config_a946b67c355440b5330bef800056ad3b9}{save}} () \mbox{\hyperlink{classfilevault_1_1utils_1_1Config_a4bebc4cbfe5e009d161c44a6ea093015}{const}}
+\begin{DoxyCompactList}\small\item\em Save configuration to file. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfilevault_1_1utils_1_1Config_a4bebc4cbfe5e009d161c44a6ea093015}{void}} \mbox{\hyperlink{classfilevault_1_1utils_1_1Config_a70a4f00d08b05068e86993d8404fafa4}{reset}} ()
+\begin{DoxyCompactList}\small\item\em Reset to defaults. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classfilevault_1_1utils_1_1Config_a71511f6b41711634578f8198ddda2612}{get\+\_\+default\+\_\+mode}} () \mbox{\hyperlink{classfilevault_1_1utils_1_1Config_a4bebc4cbfe5e009d161c44a6ea093015}{const}}
+\item 
+std\+::string \mbox{\hyperlink{classfilevault_1_1utils_1_1Config_a1d0e517fe95267029a1582f9ebcd81cc}{get\+\_\+default\+\_\+algorithm}} () \mbox{\hyperlink{classfilevault_1_1utils_1_1Config_a4bebc4cbfe5e009d161c44a6ea093015}{const}}
+\item 
+std\+::string \mbox{\hyperlink{classfilevault_1_1utils_1_1Config_a6a5de5576f147918ba7f57c220113ecc}{get\+\_\+default\+\_\+kdf}} () \mbox{\hyperlink{classfilevault_1_1utils_1_1Config_a4bebc4cbfe5e009d161c44a6ea093015}{const}}
+\item 
+std\+::string \mbox{\hyperlink{classfilevault_1_1utils_1_1Config_a54f671615f2e689540ada38fb7572aaa}{get\+\_\+default\+\_\+compression}} () \mbox{\hyperlink{classfilevault_1_1utils_1_1Config_a4bebc4cbfe5e009d161c44a6ea093015}{const}}
+\item 
+\mbox{\hyperlink{classfilevault_1_1utils_1_1Config_a4bebc4cbfe5e009d161c44a6ea093015}{int}} \mbox{\hyperlink{classfilevault_1_1utils_1_1Config_ac94b0dc2468f4d6ffb1b361f0f7cc716}{get\+\_\+compression\+\_\+level}} () \mbox{\hyperlink{classfilevault_1_1utils_1_1Config_a4bebc4cbfe5e009d161c44a6ea093015}{const}}
+\item 
+\mbox{\hyperlink{classfilevault_1_1utils_1_1Config_a4bebc4cbfe5e009d161c44a6ea093015}{bool}} \mbox{\hyperlink{classfilevault_1_1utils_1_1Config_a5713f3f1b58724cbfa3dae020e3a48c8}{get\+\_\+show\+\_\+progress}} () \mbox{\hyperlink{classfilevault_1_1utils_1_1Config_a4bebc4cbfe5e009d161c44a6ea093015}{const}}
+\item 
+\mbox{\hyperlink{classfilevault_1_1utils_1_1Config_a4bebc4cbfe5e009d161c44a6ea093015}{bool}} \mbox{\hyperlink{classfilevault_1_1utils_1_1Config_a63ac0102581c173896d3dbc03f47a03a}{get\+\_\+verbose}} () \mbox{\hyperlink{classfilevault_1_1utils_1_1Config_a4bebc4cbfe5e009d161c44a6ea093015}{const}}
+\item 
+\mbox{\hyperlink{classfilevault_1_1utils_1_1Config_a4bebc4cbfe5e009d161c44a6ea093015}{void}} \mbox{\hyperlink{classfilevault_1_1utils_1_1Config_a1c5d1a65fab4687836fb08ca438045f5}{set\+\_\+default\+\_\+mode}} (\mbox{\hyperlink{classfilevault_1_1utils_1_1Config_a4bebc4cbfe5e009d161c44a6ea093015}{const}} std\+::string \&mode)
+\item 
+\mbox{\hyperlink{classfilevault_1_1utils_1_1Config_a4bebc4cbfe5e009d161c44a6ea093015}{void}} \mbox{\hyperlink{classfilevault_1_1utils_1_1Config_aca7ed0929e41ad65b8d3fc1874f4f2d5}{set\+\_\+default\+\_\+algorithm}} (\mbox{\hyperlink{classfilevault_1_1utils_1_1Config_a4bebc4cbfe5e009d161c44a6ea093015}{const}} std\+::string \&\mbox{\hyperlink{classfilevault_1_1utils_1_1Config_a4bebc4cbfe5e009d161c44a6ea093015}{algo}})
+\item 
+\mbox{\hyperlink{classfilevault_1_1utils_1_1Config_a4bebc4cbfe5e009d161c44a6ea093015}{void}} \mbox{\hyperlink{classfilevault_1_1utils_1_1Config_a48d143e4bafb4baeb873f0aeb01f7d8d}{set\+\_\+default\+\_\+kdf}} (\mbox{\hyperlink{classfilevault_1_1utils_1_1Config_a4bebc4cbfe5e009d161c44a6ea093015}{const}} std\+::string \&kdf)
+\item 
+\mbox{\hyperlink{classfilevault_1_1utils_1_1Config_a4bebc4cbfe5e009d161c44a6ea093015}{void}} \mbox{\hyperlink{classfilevault_1_1utils_1_1Config_a45557fbaea5ebb59efbacb9dcd304fc7}{set\+\_\+default\+\_\+compression}} (\mbox{\hyperlink{classfilevault_1_1utils_1_1Config_a4bebc4cbfe5e009d161c44a6ea093015}{const}} std\+::string \&\mbox{\hyperlink{classfilevault_1_1utils_1_1Config_a4bebc4cbfe5e009d161c44a6ea093015}{comp}})
+\item 
+\mbox{\hyperlink{classfilevault_1_1utils_1_1Config_a4bebc4cbfe5e009d161c44a6ea093015}{void}} \mbox{\hyperlink{classfilevault_1_1utils_1_1Config_ac7dec0be7e71afba9de3a6f720028361}{set\+\_\+compression\+\_\+level}} (\mbox{\hyperlink{classfilevault_1_1utils_1_1Config_a4bebc4cbfe5e009d161c44a6ea093015}{int}} level)
+\item 
+\mbox{\hyperlink{classfilevault_1_1utils_1_1Config_a4bebc4cbfe5e009d161c44a6ea093015}{void}} \mbox{\hyperlink{classfilevault_1_1utils_1_1Config_af09183c55789d340529b008b7a080b79}{set\+\_\+show\+\_\+progress}} (\mbox{\hyperlink{classfilevault_1_1utils_1_1Config_a4bebc4cbfe5e009d161c44a6ea093015}{bool}} show)
+\item 
+\mbox{\hyperlink{classfilevault_1_1utils_1_1Config_a4bebc4cbfe5e009d161c44a6ea093015}{void}} \mbox{\hyperlink{classfilevault_1_1utils_1_1Config_a5c03579f9b309d0be8a9aa1ba2bd0e5e}{set\+\_\+verbose}} (\mbox{\hyperlink{classfilevault_1_1utils_1_1Config_a4bebc4cbfe5e009d161c44a6ea093015}{bool}} verbose)
+\item 
+std\+::optional$<$ std\+::string $>$ \mbox{\hyperlink{classfilevault_1_1utils_1_1Config_a3b0583b341108a900e67927d2952e088}{get}} (\mbox{\hyperlink{classfilevault_1_1utils_1_1Config_a4bebc4cbfe5e009d161c44a6ea093015}{const}} std\+::string \&\mbox{\hyperlink{classfilevault_1_1utils_1_1Config_a4bebc4cbfe5e009d161c44a6ea093015}{key}}) \mbox{\hyperlink{classfilevault_1_1utils_1_1Config_a4bebc4cbfe5e009d161c44a6ea093015}{const}}
+\begin{DoxyCompactList}\small\item\em Get value by key path (e.\+g., "{}default.\+mode"{}) \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classfilevault_1_1utils_1_1Config_a4bebc4cbfe5e009d161c44a6ea093015}{set}} (const std\+::string \&key, const std\+::string \&value)
+\begin{DoxyCompactList}\small\item\em Set value by key path. \end{DoxyCompactList}\item 
+nlohmann\+::json \mbox{\hyperlink{classfilevault_1_1utils_1_1Config_a8f1c3b6a932ec1f377a8fa7feb4560e2}{to\+\_\+json}} () \mbox{\hyperlink{classfilevault_1_1utils_1_1Config_a4bebc4cbfe5e009d161c44a6ea093015}{const}}
+\begin{DoxyCompactList}\small\item\em Convert to JSON. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classfilevault_1_1utils_1_1Config_a4bebc4cbfe5e009d161c44a6ea093015}{static}} \mbox{\hyperlink{classfilevault_1_1utils_1_1Config}{Config}} \mbox{\hyperlink{classfilevault_1_1utils_1_1Config_af92729896ea314eaca5be1f889373a10}{load}} ()
+\begin{DoxyCompactList}\small\item\em Load configuration from file. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfilevault_1_1utils_1_1Config_a4bebc4cbfe5e009d161c44a6ea093015}{static}} std\+::filesystem\+::path \mbox{\hyperlink{classfilevault_1_1utils_1_1Config_ab1c0ed71714c295495f9e151f03024af}{get\+\_\+config\+\_\+path}} ()
+\begin{DoxyCompactList}\small\item\em Get config file path. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfilevault_1_1utils_1_1Config_a4bebc4cbfe5e009d161c44a6ea093015}{static}} \mbox{\hyperlink{classfilevault_1_1utils_1_1Config}{Config}} \mbox{\hyperlink{classfilevault_1_1utils_1_1Config_ab405ed7451ccbe59ee21507ece5d8f57}{get\+\_\+default}} ()
+\begin{DoxyCompactList}\small\item\em Get default config. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfilevault_1_1utils_1_1Config_a4bebc4cbfe5e009d161c44a6ea093015}{static}} \mbox{\hyperlink{classfilevault_1_1utils_1_1Config}{Config}} \mbox{\hyperlink{classfilevault_1_1utils_1_1Config_a62580661de150f544dc07284073d343e}{from\+\_\+json}} (\mbox{\hyperlink{classfilevault_1_1utils_1_1Config_a4bebc4cbfe5e009d161c44a6ea093015}{const}} nlohmann\+::json \&\mbox{\hyperlink{classfilevault_1_1utils_1_1Config_a4bebc4cbfe5e009d161c44a6ea093015}{j}})
+\begin{DoxyCompactList}\small\item\em Load from JSON. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{classfilevault_1_1utils_1_1Config_a26940db3fd5e836ef04bab0cd2343a34}{default\+\_\+mode\+\_\+}} = "{}standard"{}
+\item 
+std\+::string \mbox{\hyperlink{classfilevault_1_1utils_1_1Config_a4fc34aa38491b44bd88bb8208c076be7}{default\+\_\+algorithm\+\_\+}} = "{}aes-\/256-\/\mbox{\hyperlink{classfilevault_1_1utils_1_1Config_a4bebc4cbfe5e009d161c44a6ea093015}{gcm"{}}}
+\item 
+std\+::string \mbox{\hyperlink{classfilevault_1_1utils_1_1Config_a40481161e8fbaea4fce7a5be04226de7}{default\+\_\+kdf\+\_\+}} = "{}argon2id"{}
+\item 
+std\+::string \mbox{\hyperlink{classfilevault_1_1utils_1_1Config_a1ebfe739f835b82d7ee65c6da216e85a}{default\+\_\+compression\+\_\+}} = "{}none"{}
+\item 
+\mbox{\hyperlink{classfilevault_1_1utils_1_1Config_a4bebc4cbfe5e009d161c44a6ea093015}{int}} \mbox{\hyperlink{classfilevault_1_1utils_1_1Config_aa19f81eeb2f1a6bcd17ed0e045abe9a9}{compression\+\_\+level\+\_\+}} = 6
+\item 
+\mbox{\hyperlink{classfilevault_1_1utils_1_1Config_a4bebc4cbfe5e009d161c44a6ea093015}{bool}} \mbox{\hyperlink{classfilevault_1_1utils_1_1Config_a1bde9d1006edfc998c914e9d011acf7a}{show\+\_\+progress\+\_\+}} = \mbox{\hyperlink{classfilevault_1_1utils_1_1Config_a4bebc4cbfe5e009d161c44a6ea093015}{true}}
+\item 
+\mbox{\hyperlink{classfilevault_1_1utils_1_1Config_a4bebc4cbfe5e009d161c44a6ea093015}{bool}} \mbox{\hyperlink{classfilevault_1_1utils_1_1Config_a933a8b848d284d09b6d96b1051c4dbb8}{verbose\+\_\+}} = \mbox{\hyperlink{classfilevault_1_1utils_1_1Config_a4bebc4cbfe5e009d161c44a6ea093015}{false}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Configuration manager for File\+Vault. 
+
+Manages user preferences stored in \texorpdfstring{$\sim$}{\string~}/.filevault/config.\+json 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classfilevault_1_1utils_1_1Config_a62580661de150f544dc07284073d343e}\label{classfilevault_1_1utils_1_1Config_a62580661de150f544dc07284073d343e} 
+\index{filevault::utils::Config@{filevault::utils::Config}!from\_json@{from\_json}}
+\index{from\_json@{from\_json}!filevault::utils::Config@{filevault::utils::Config}}
+\doxysubsubsection{\texorpdfstring{from\_json()}{from\_json()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classfilevault_1_1utils_1_1Config}{Config}} filevault\+::utils\+::\+Config\+::from\+\_\+json (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classfilevault_1_1utils_1_1Config_a4bebc4cbfe5e009d161c44a6ea093015}{const}} nlohmann\+::json \&}]{j }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Load from JSON. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1utils_1_1Config_a62580661de150f544dc07284073d343e_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1utils_1_1Config_a62580661de150f544dc07284073d343e_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1utils_1_1Config_a3b0583b341108a900e67927d2952e088}\label{classfilevault_1_1utils_1_1Config_a3b0583b341108a900e67927d2952e088} 
+\index{filevault::utils::Config@{filevault::utils::Config}!get@{get}}
+\index{get@{get}!filevault::utils::Config@{filevault::utils::Config}}
+\doxysubsubsection{\texorpdfstring{get()}{get()}}
+{\footnotesize\ttfamily std\+::optional$<$ std\+::string $>$ filevault\+::utils\+::\+Config\+::get (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classfilevault_1_1utils_1_1Config_a4bebc4cbfe5e009d161c44a6ea093015}{const}} std\+::string \&}]{key }\end{DoxyParamCaption}) const}
+
+
+
+Get value by key path (e.\+g., "{}default.\+mode"{}) 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1utils_1_1Config_a3b0583b341108a900e67927d2952e088_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1utils_1_1Config_ac94b0dc2468f4d6ffb1b361f0f7cc716}\label{classfilevault_1_1utils_1_1Config_ac94b0dc2468f4d6ffb1b361f0f7cc716} 
+\index{filevault::utils::Config@{filevault::utils::Config}!get\_compression\_level@{get\_compression\_level}}
+\index{get\_compression\_level@{get\_compression\_level}!filevault::utils::Config@{filevault::utils::Config}}
+\doxysubsubsection{\texorpdfstring{get\_compression\_level()}{get\_compression\_level()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classfilevault_1_1utils_1_1Config_a4bebc4cbfe5e009d161c44a6ea093015}{int}} filevault\+::utils\+::\+Config\+::get\+\_\+compression\+\_\+level (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classfilevault_1_1utils_1_1Config_ab1c0ed71714c295495f9e151f03024af}\label{classfilevault_1_1utils_1_1Config_ab1c0ed71714c295495f9e151f03024af} 
+\index{filevault::utils::Config@{filevault::utils::Config}!get\_config\_path@{get\_config\_path}}
+\index{get\_config\_path@{get\_config\_path}!filevault::utils::Config@{filevault::utils::Config}}
+\doxysubsubsection{\texorpdfstring{get\_config\_path()}{get\_config\_path()}}
+{\footnotesize\ttfamily std\+::filesystem\+::path filevault\+::utils\+::\+Config\+::get\+\_\+config\+\_\+path (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Get config file path. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1utils_1_1Config_ab1c0ed71714c295495f9e151f03024af_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1utils_1_1Config_ab1c0ed71714c295495f9e151f03024af_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1utils_1_1Config_ab405ed7451ccbe59ee21507ece5d8f57}\label{classfilevault_1_1utils_1_1Config_ab405ed7451ccbe59ee21507ece5d8f57} 
+\index{filevault::utils::Config@{filevault::utils::Config}!get\_default@{get\_default}}
+\index{get\_default@{get\_default}!filevault::utils::Config@{filevault::utils::Config}}
+\doxysubsubsection{\texorpdfstring{get\_default()}{get\_default()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classfilevault_1_1utils_1_1Config}{Config}} filevault\+::utils\+::\+Config\+::get\+\_\+default (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Get default config. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1utils_1_1Config_ab405ed7451ccbe59ee21507ece5d8f57_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1utils_1_1Config_ab405ed7451ccbe59ee21507ece5d8f57_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1utils_1_1Config_a1d0e517fe95267029a1582f9ebcd81cc}\label{classfilevault_1_1utils_1_1Config_a1d0e517fe95267029a1582f9ebcd81cc} 
+\index{filevault::utils::Config@{filevault::utils::Config}!get\_default\_algorithm@{get\_default\_algorithm}}
+\index{get\_default\_algorithm@{get\_default\_algorithm}!filevault::utils::Config@{filevault::utils::Config}}
+\doxysubsubsection{\texorpdfstring{get\_default\_algorithm()}{get\_default\_algorithm()}}
+{\footnotesize\ttfamily std\+::string filevault\+::utils\+::\+Config\+::get\+\_\+default\+\_\+algorithm (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classfilevault_1_1utils_1_1Config_a54f671615f2e689540ada38fb7572aaa}\label{classfilevault_1_1utils_1_1Config_a54f671615f2e689540ada38fb7572aaa} 
+\index{filevault::utils::Config@{filevault::utils::Config}!get\_default\_compression@{get\_default\_compression}}
+\index{get\_default\_compression@{get\_default\_compression}!filevault::utils::Config@{filevault::utils::Config}}
+\doxysubsubsection{\texorpdfstring{get\_default\_compression()}{get\_default\_compression()}}
+{\footnotesize\ttfamily std\+::string filevault\+::utils\+::\+Config\+::get\+\_\+default\+\_\+compression (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classfilevault_1_1utils_1_1Config_a6a5de5576f147918ba7f57c220113ecc}\label{classfilevault_1_1utils_1_1Config_a6a5de5576f147918ba7f57c220113ecc} 
+\index{filevault::utils::Config@{filevault::utils::Config}!get\_default\_kdf@{get\_default\_kdf}}
+\index{get\_default\_kdf@{get\_default\_kdf}!filevault::utils::Config@{filevault::utils::Config}}
+\doxysubsubsection{\texorpdfstring{get\_default\_kdf()}{get\_default\_kdf()}}
+{\footnotesize\ttfamily std\+::string filevault\+::utils\+::\+Config\+::get\+\_\+default\+\_\+kdf (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classfilevault_1_1utils_1_1Config_a71511f6b41711634578f8198ddda2612}\label{classfilevault_1_1utils_1_1Config_a71511f6b41711634578f8198ddda2612} 
+\index{filevault::utils::Config@{filevault::utils::Config}!get\_default\_mode@{get\_default\_mode}}
+\index{get\_default\_mode@{get\_default\_mode}!filevault::utils::Config@{filevault::utils::Config}}
+\doxysubsubsection{\texorpdfstring{get\_default\_mode()}{get\_default\_mode()}}
+{\footnotesize\ttfamily std\+::string filevault\+::utils\+::\+Config\+::get\+\_\+default\+\_\+mode (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classfilevault_1_1utils_1_1Config_a5713f3f1b58724cbfa3dae020e3a48c8}\label{classfilevault_1_1utils_1_1Config_a5713f3f1b58724cbfa3dae020e3a48c8} 
+\index{filevault::utils::Config@{filevault::utils::Config}!get\_show\_progress@{get\_show\_progress}}
+\index{get\_show\_progress@{get\_show\_progress}!filevault::utils::Config@{filevault::utils::Config}}
+\doxysubsubsection{\texorpdfstring{get\_show\_progress()}{get\_show\_progress()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classfilevault_1_1utils_1_1Config_a4bebc4cbfe5e009d161c44a6ea093015}{bool}} filevault\+::utils\+::\+Config\+::get\+\_\+show\+\_\+progress (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classfilevault_1_1utils_1_1Config_a63ac0102581c173896d3dbc03f47a03a}\label{classfilevault_1_1utils_1_1Config_a63ac0102581c173896d3dbc03f47a03a} 
+\index{filevault::utils::Config@{filevault::utils::Config}!get\_verbose@{get\_verbose}}
+\index{get\_verbose@{get\_verbose}!filevault::utils::Config@{filevault::utils::Config}}
+\doxysubsubsection{\texorpdfstring{get\_verbose()}{get\_verbose()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classfilevault_1_1utils_1_1Config_a4bebc4cbfe5e009d161c44a6ea093015}{bool}} filevault\+::utils\+::\+Config\+::get\+\_\+verbose (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classfilevault_1_1utils_1_1Config_af92729896ea314eaca5be1f889373a10}\label{classfilevault_1_1utils_1_1Config_af92729896ea314eaca5be1f889373a10} 
+\index{filevault::utils::Config@{filevault::utils::Config}!load@{load}}
+\index{load@{load}!filevault::utils::Config@{filevault::utils::Config}}
+\doxysubsubsection{\texorpdfstring{load()}{load()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classfilevault_1_1utils_1_1Config}{Config}} filevault\+::utils\+::\+Config\+::load (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Load configuration from file. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1utils_1_1Config_af92729896ea314eaca5be1f889373a10_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1utils_1_1Config_af92729896ea314eaca5be1f889373a10_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1utils_1_1Config_a70a4f00d08b05068e86993d8404fafa4}\label{classfilevault_1_1utils_1_1Config_a70a4f00d08b05068e86993d8404fafa4} 
+\index{filevault::utils::Config@{filevault::utils::Config}!reset@{reset}}
+\index{reset@{reset}!filevault::utils::Config@{filevault::utils::Config}}
+\doxysubsubsection{\texorpdfstring{reset()}{reset()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classfilevault_1_1utils_1_1Config_a4bebc4cbfe5e009d161c44a6ea093015}{void}} filevault\+::utils\+::\+Config\+::reset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Reset to defaults. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1utils_1_1Config_a70a4f00d08b05068e86993d8404fafa4_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1utils_1_1Config_a946b67c355440b5330bef800056ad3b9}\label{classfilevault_1_1utils_1_1Config_a946b67c355440b5330bef800056ad3b9} 
+\index{filevault::utils::Config@{filevault::utils::Config}!save@{save}}
+\index{save@{save}!filevault::utils::Config@{filevault::utils::Config}}
+\doxysubsubsection{\texorpdfstring{save()}{save()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classfilevault_1_1utils_1_1Config_a4bebc4cbfe5e009d161c44a6ea093015}{bool}} filevault\+::utils\+::\+Config\+::save (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Save configuration to file. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1utils_1_1Config_a946b67c355440b5330bef800056ad3b9_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1utils_1_1Config_a4bebc4cbfe5e009d161c44a6ea093015}\label{classfilevault_1_1utils_1_1Config_a4bebc4cbfe5e009d161c44a6ea093015} 
+\index{filevault::utils::Config@{filevault::utils::Config}!set@{set}}
+\index{set@{set}!filevault::utils::Config@{filevault::utils::Config}}
+\doxysubsubsection{\texorpdfstring{set()}{set()}}
+{\footnotesize\ttfamily bool filevault\+::utils\+::\+Config\+::set (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{key,  }\item[{const std\+::string \&}]{value }\end{DoxyParamCaption})}
+
+
+
+Set value by key path. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=221pt]{classfilevault_1_1utils_1_1Config_a4bebc4cbfe5e009d161c44a6ea093015_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1utils_1_1Config_a4bebc4cbfe5e009d161c44a6ea093015_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1utils_1_1Config_ac7dec0be7e71afba9de3a6f720028361}\label{classfilevault_1_1utils_1_1Config_ac7dec0be7e71afba9de3a6f720028361} 
+\index{filevault::utils::Config@{filevault::utils::Config}!set\_compression\_level@{set\_compression\_level}}
+\index{set\_compression\_level@{set\_compression\_level}!filevault::utils::Config@{filevault::utils::Config}}
+\doxysubsubsection{\texorpdfstring{set\_compression\_level()}{set\_compression\_level()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classfilevault_1_1utils_1_1Config_a4bebc4cbfe5e009d161c44a6ea093015}{void}} filevault\+::utils\+::\+Config\+::set\+\_\+compression\+\_\+level (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classfilevault_1_1utils_1_1Config_a4bebc4cbfe5e009d161c44a6ea093015}{int}}}]{level }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classfilevault_1_1utils_1_1Config_aca7ed0929e41ad65b8d3fc1874f4f2d5}\label{classfilevault_1_1utils_1_1Config_aca7ed0929e41ad65b8d3fc1874f4f2d5} 
+\index{filevault::utils::Config@{filevault::utils::Config}!set\_default\_algorithm@{set\_default\_algorithm}}
+\index{set\_default\_algorithm@{set\_default\_algorithm}!filevault::utils::Config@{filevault::utils::Config}}
+\doxysubsubsection{\texorpdfstring{set\_default\_algorithm()}{set\_default\_algorithm()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classfilevault_1_1utils_1_1Config_a4bebc4cbfe5e009d161c44a6ea093015}{void}} filevault\+::utils\+::\+Config\+::set\+\_\+default\+\_\+algorithm (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classfilevault_1_1utils_1_1Config_a4bebc4cbfe5e009d161c44a6ea093015}{const}} std\+::string \&}]{algo }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classfilevault_1_1utils_1_1Config_a45557fbaea5ebb59efbacb9dcd304fc7}\label{classfilevault_1_1utils_1_1Config_a45557fbaea5ebb59efbacb9dcd304fc7} 
+\index{filevault::utils::Config@{filevault::utils::Config}!set\_default\_compression@{set\_default\_compression}}
+\index{set\_default\_compression@{set\_default\_compression}!filevault::utils::Config@{filevault::utils::Config}}
+\doxysubsubsection{\texorpdfstring{set\_default\_compression()}{set\_default\_compression()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classfilevault_1_1utils_1_1Config_a4bebc4cbfe5e009d161c44a6ea093015}{void}} filevault\+::utils\+::\+Config\+::set\+\_\+default\+\_\+compression (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classfilevault_1_1utils_1_1Config_a4bebc4cbfe5e009d161c44a6ea093015}{const}} std\+::string \&}]{comp }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classfilevault_1_1utils_1_1Config_a48d143e4bafb4baeb873f0aeb01f7d8d}\label{classfilevault_1_1utils_1_1Config_a48d143e4bafb4baeb873f0aeb01f7d8d} 
+\index{filevault::utils::Config@{filevault::utils::Config}!set\_default\_kdf@{set\_default\_kdf}}
+\index{set\_default\_kdf@{set\_default\_kdf}!filevault::utils::Config@{filevault::utils::Config}}
+\doxysubsubsection{\texorpdfstring{set\_default\_kdf()}{set\_default\_kdf()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classfilevault_1_1utils_1_1Config_a4bebc4cbfe5e009d161c44a6ea093015}{void}} filevault\+::utils\+::\+Config\+::set\+\_\+default\+\_\+kdf (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classfilevault_1_1utils_1_1Config_a4bebc4cbfe5e009d161c44a6ea093015}{const}} std\+::string \&}]{kdf }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classfilevault_1_1utils_1_1Config_a1c5d1a65fab4687836fb08ca438045f5}\label{classfilevault_1_1utils_1_1Config_a1c5d1a65fab4687836fb08ca438045f5} 
+\index{filevault::utils::Config@{filevault::utils::Config}!set\_default\_mode@{set\_default\_mode}}
+\index{set\_default\_mode@{set\_default\_mode}!filevault::utils::Config@{filevault::utils::Config}}
+\doxysubsubsection{\texorpdfstring{set\_default\_mode()}{set\_default\_mode()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classfilevault_1_1utils_1_1Config_a4bebc4cbfe5e009d161c44a6ea093015}{void}} filevault\+::utils\+::\+Config\+::set\+\_\+default\+\_\+mode (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classfilevault_1_1utils_1_1Config_a4bebc4cbfe5e009d161c44a6ea093015}{const}} std\+::string \&}]{mode }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classfilevault_1_1utils_1_1Config_af09183c55789d340529b008b7a080b79}\label{classfilevault_1_1utils_1_1Config_af09183c55789d340529b008b7a080b79} 
+\index{filevault::utils::Config@{filevault::utils::Config}!set\_show\_progress@{set\_show\_progress}}
+\index{set\_show\_progress@{set\_show\_progress}!filevault::utils::Config@{filevault::utils::Config}}
+\doxysubsubsection{\texorpdfstring{set\_show\_progress()}{set\_show\_progress()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classfilevault_1_1utils_1_1Config_a4bebc4cbfe5e009d161c44a6ea093015}{void}} filevault\+::utils\+::\+Config\+::set\+\_\+show\+\_\+progress (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classfilevault_1_1utils_1_1Config_a4bebc4cbfe5e009d161c44a6ea093015}{bool}}}]{show }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classfilevault_1_1utils_1_1Config_a5c03579f9b309d0be8a9aa1ba2bd0e5e}\label{classfilevault_1_1utils_1_1Config_a5c03579f9b309d0be8a9aa1ba2bd0e5e} 
+\index{filevault::utils::Config@{filevault::utils::Config}!set\_verbose@{set\_verbose}}
+\index{set\_verbose@{set\_verbose}!filevault::utils::Config@{filevault::utils::Config}}
+\doxysubsubsection{\texorpdfstring{set\_verbose()}{set\_verbose()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classfilevault_1_1utils_1_1Config_a4bebc4cbfe5e009d161c44a6ea093015}{void}} filevault\+::utils\+::\+Config\+::set\+\_\+verbose (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classfilevault_1_1utils_1_1Config_a4bebc4cbfe5e009d161c44a6ea093015}{bool}}}]{verbose }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classfilevault_1_1utils_1_1Config_a8f1c3b6a932ec1f377a8fa7feb4560e2}\label{classfilevault_1_1utils_1_1Config_a8f1c3b6a932ec1f377a8fa7feb4560e2} 
+\index{filevault::utils::Config@{filevault::utils::Config}!to\_json@{to\_json}}
+\index{to\_json@{to\_json}!filevault::utils::Config@{filevault::utils::Config}}
+\doxysubsubsection{\texorpdfstring{to\_json()}{to\_json()}}
+{\footnotesize\ttfamily nlohmann\+::json filevault\+::utils\+::\+Config\+::to\+\_\+json (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Convert to JSON. 
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1utils_1_1Config_a8f1c3b6a932ec1f377a8fa7feb4560e2_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classfilevault_1_1utils_1_1Config_aa19f81eeb2f1a6bcd17ed0e045abe9a9}\label{classfilevault_1_1utils_1_1Config_aa19f81eeb2f1a6bcd17ed0e045abe9a9} 
+\index{filevault::utils::Config@{filevault::utils::Config}!compression\_level\_@{compression\_level\_}}
+\index{compression\_level\_@{compression\_level\_}!filevault::utils::Config@{filevault::utils::Config}}
+\doxysubsubsection{\texorpdfstring{compression\_level\_}{compression\_level\_}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classfilevault_1_1utils_1_1Config_a4bebc4cbfe5e009d161c44a6ea093015}{int}} filevault\+::utils\+::\+Config\+::compression\+\_\+level\+\_\+ = 6\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classfilevault_1_1utils_1_1Config_a4fc34aa38491b44bd88bb8208c076be7}\label{classfilevault_1_1utils_1_1Config_a4fc34aa38491b44bd88bb8208c076be7} 
+\index{filevault::utils::Config@{filevault::utils::Config}!default\_algorithm\_@{default\_algorithm\_}}
+\index{default\_algorithm\_@{default\_algorithm\_}!filevault::utils::Config@{filevault::utils::Config}}
+\doxysubsubsection{\texorpdfstring{default\_algorithm\_}{default\_algorithm\_}}
+{\footnotesize\ttfamily std\+::string filevault\+::utils\+::\+Config\+::default\+\_\+algorithm\+\_\+ = "{}aes-\/256-\/\mbox{\hyperlink{classfilevault_1_1utils_1_1Config_a4bebc4cbfe5e009d161c44a6ea093015}{gcm"{}}}\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classfilevault_1_1utils_1_1Config_a1ebfe739f835b82d7ee65c6da216e85a}\label{classfilevault_1_1utils_1_1Config_a1ebfe739f835b82d7ee65c6da216e85a} 
+\index{filevault::utils::Config@{filevault::utils::Config}!default\_compression\_@{default\_compression\_}}
+\index{default\_compression\_@{default\_compression\_}!filevault::utils::Config@{filevault::utils::Config}}
+\doxysubsubsection{\texorpdfstring{default\_compression\_}{default\_compression\_}}
+{\footnotesize\ttfamily std\+::string filevault\+::utils\+::\+Config\+::default\+\_\+compression\+\_\+ = "{}none"{}\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classfilevault_1_1utils_1_1Config_a40481161e8fbaea4fce7a5be04226de7}\label{classfilevault_1_1utils_1_1Config_a40481161e8fbaea4fce7a5be04226de7} 
+\index{filevault::utils::Config@{filevault::utils::Config}!default\_kdf\_@{default\_kdf\_}}
+\index{default\_kdf\_@{default\_kdf\_}!filevault::utils::Config@{filevault::utils::Config}}
+\doxysubsubsection{\texorpdfstring{default\_kdf\_}{default\_kdf\_}}
+{\footnotesize\ttfamily std\+::string filevault\+::utils\+::\+Config\+::default\+\_\+kdf\+\_\+ = "{}argon2id"{}\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classfilevault_1_1utils_1_1Config_a26940db3fd5e836ef04bab0cd2343a34}\label{classfilevault_1_1utils_1_1Config_a26940db3fd5e836ef04bab0cd2343a34} 
+\index{filevault::utils::Config@{filevault::utils::Config}!default\_mode\_@{default\_mode\_}}
+\index{default\_mode\_@{default\_mode\_}!filevault::utils::Config@{filevault::utils::Config}}
+\doxysubsubsection{\texorpdfstring{default\_mode\_}{default\_mode\_}}
+{\footnotesize\ttfamily std\+::string filevault\+::utils\+::\+Config\+::default\+\_\+mode\+\_\+ = "{}standard"{}\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classfilevault_1_1utils_1_1Config_a1bde9d1006edfc998c914e9d011acf7a}\label{classfilevault_1_1utils_1_1Config_a1bde9d1006edfc998c914e9d011acf7a} 
+\index{filevault::utils::Config@{filevault::utils::Config}!show\_progress\_@{show\_progress\_}}
+\index{show\_progress\_@{show\_progress\_}!filevault::utils::Config@{filevault::utils::Config}}
+\doxysubsubsection{\texorpdfstring{show\_progress\_}{show\_progress\_}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classfilevault_1_1utils_1_1Config_a4bebc4cbfe5e009d161c44a6ea093015}{bool}} filevault\+::utils\+::\+Config\+::show\+\_\+progress\+\_\+ = \mbox{\hyperlink{classfilevault_1_1utils_1_1Config_a4bebc4cbfe5e009d161c44a6ea093015}{true}}\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classfilevault_1_1utils_1_1Config_a933a8b848d284d09b6d96b1051c4dbb8}\label{classfilevault_1_1utils_1_1Config_a933a8b848d284d09b6d96b1051c4dbb8} 
+\index{filevault::utils::Config@{filevault::utils::Config}!verbose\_@{verbose\_}}
+\index{verbose\_@{verbose\_}!filevault::utils::Config@{filevault::utils::Config}}
+\doxysubsubsection{\texorpdfstring{verbose\_}{verbose\_}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classfilevault_1_1utils_1_1Config_a4bebc4cbfe5e009d161c44a6ea093015}{bool}} filevault\+::utils\+::\+Config\+::verbose\+\_\+ = \mbox{\hyperlink{classfilevault_1_1utils_1_1Config_a4bebc4cbfe5e009d161c44a6ea093015}{false}}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/filevault/utils/\mbox{\hyperlink{config_8hpp}{config.\+hpp}}\item 
+src/utils/\mbox{\hyperlink{config_8cpp}{config.\+cpp}}\end{DoxyCompactItemize}

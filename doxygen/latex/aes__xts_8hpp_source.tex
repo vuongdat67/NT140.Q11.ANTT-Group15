@@ -1,0 +1,58 @@
+\doxysection{aes\+\_\+xts.\+hpp}
+\hypertarget{aes__xts_8hpp_source}{}\label{aes__xts_8hpp_source}\index{include/filevault/algorithms/symmetric/aes\_xts.hpp@{include/filevault/algorithms/symmetric/aes\_xts.hpp}}
+\mbox{\hyperlink{aes__xts_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#ifndef\ FILEVAULT\_ALGORITHMS\_SYMMETRIC\_AES\_XTS\_HPP}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#define\ FILEVAULT\_ALGORITHMS\_SYMMETRIC\_AES\_XTS\_HPP}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{crypto__algorithm_8hpp}{filevault/core/crypto\_algorithm.hpp}}"{}}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <botan/cipher\_mode.h>}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacefilevault}{filevault}}\ \{}
+\DoxyCodeLine{00016\ \textcolor{keyword}{namespace\ }algorithms\ \{}
+\DoxyCodeLine{00017\ \textcolor{keyword}{namespace\ }symmetric\ \{}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00029\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1AES__XTS}{AES\_XTS}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classfilevault_1_1core_1_1ICryptoAlgorithm}{core::ICryptoAlgorithm}}\ \{}
+\DoxyCodeLine{00030\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1AES__XTS}{AES\_XTS}}(\textcolor{keywordtype}{size\_t}\ key\_bits\ =\ 256);}
+\DoxyCodeLine{00037\ \ \ \ \ }
+\DoxyCodeLine{00038\ \ \ \ \ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1AES__XTS_ad38e715ff65367072fed4294cfc2f356}{\string~AES\_XTS}}()\ \textcolor{keyword}{override}\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00039\ \ \ \ \ }
+\DoxyCodeLine{00040\ \ \ \ \ std::string\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1AES__XTS_a29d0af17fc42ff20f0fb48074e6bb668}{name}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00041\ \ \ \ \ \mbox{\hyperlink{namespacefilevault_1_1core_ab1ba257a0205c63e9e1e3623170940a2}{core::AlgorithmType}}\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1AES__XTS_a7c8d8b97997f37d7c7e5396735ffa530}{type}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00042\ \ \ \ \ }
+\DoxyCodeLine{00043\ \ \ \ \ \mbox{\hyperlink{structfilevault_1_1core_1_1CryptoResult}{core::CryptoResult}}\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1AES__XTS_aedaafdbb4d6500874697422f385f7d6a}{encrypt}}(}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ std::span<const\ uint8\_t>\ plaintext,}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ std::span<const\ uint8\_t>\ key,}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structfilevault_1_1core_1_1EncryptionConfig}{core::EncryptionConfig}}\&\ config}
+\DoxyCodeLine{00047\ \ \ \ \ )\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00048\ \ \ \ \ }
+\DoxyCodeLine{00049\ \ \ \ \ \mbox{\hyperlink{structfilevault_1_1core_1_1CryptoResult}{core::CryptoResult}}\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1AES__XTS_ac961825bc311ac87a4ad5d050491833d}{decrypt}}(}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ std::span<const\ uint8\_t>\ ciphertext,}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ std::span<const\ uint8\_t>\ key,}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structfilevault_1_1core_1_1EncryptionConfig}{core::EncryptionConfig}}\&\ config}
+\DoxyCodeLine{00053\ \ \ \ \ )\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00054\ \ \ \ \ }
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{comment}{//\ XTS\ uses\ double\ key\ (two\ AES\ keys)}}
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1AES__XTS_a39b71ae5037e825f2f19a3ae6ae49047}{key\_size}}()\textcolor{keyword}{\ const\ override\ }\{\ \textcolor{keywordflow}{return}\ (\mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1AES__XTS_af6db99c59d0d071c1f500ef8cc14307a}{key\_bits\_}}\ /\ 8)\ *\ 2;\ \}}
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1AES__XTS_aef2eb960196b86f51c4a1f4fa4c98276}{tweak\_size}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ 16;\ \}\ \ \textcolor{comment}{//\ Tweak/IV\ size}}
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1AES__XTS_aec6b2da7cc7ad77ca4dc71ab5ba1100f}{block\_size}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ 16;\ \}}
+\DoxyCodeLine{00059\ \ \ \ \ }
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1AES__XTS_a63095cc30e42f01319c75ad0e83aaf0c}{requires\_padding}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};\ \}\ \ \textcolor{comment}{//\ Uses\ ciphertext\ stealing}}
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1AES__XTS_a0492d8df0e24d98e851e6f4553ee9aeb}{is\_authenticated}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};\ \}}
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1AES__XTS_a41659aed3059d44922f8e8ff92da7578}{is\_suitable\_for}}(\mbox{\hyperlink{namespacefilevault_1_1core_abcb3b3d896f7dc00926903183b3e2dc9}{core::SecurityLevel}}\ level)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00063\ \ \ \ \ }
+\DoxyCodeLine{00064\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1AES__XTS_af6db99c59d0d071c1f500ef8cc14307a}{key\_bits\_}};}
+\DoxyCodeLine{00066\ \ \ \ \ \mbox{\hyperlink{namespacefilevault_1_1core_ab1ba257a0205c63e9e1e3623170940a2}{core::AlgorithmType}}\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1AES__XTS_a6f3dcd23ce5b59ecd5b15f5740e84a2d}{type\_}};}
+\DoxyCodeLine{00067\ \ \ \ \ std::string\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1AES__XTS_a90d0888049d35f91da5baddf6db7ef32}{botan\_name\_}};}
+\DoxyCodeLine{00068\ \};}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \}\ \textcolor{comment}{//\ namespace\ symmetric}}
+\DoxyCodeLine{00071\ \}\ \textcolor{comment}{//\ namespace\ algorithms}}
+\DoxyCodeLine{00072\ \}\ \textcolor{comment}{//\ namespace\ filevault}}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

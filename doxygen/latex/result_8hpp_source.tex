@@ -1,0 +1,95 @@
+\doxysection{result.\+hpp}
+\hypertarget{result_8hpp_source}{}\label{result_8hpp_source}\index{include/filevault/core/result.hpp@{include/filevault/core/result.hpp}}
+\mbox{\hyperlink{result_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ FILEVAULT\_CORE\_RESULT\_HPP}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ FILEVAULT\_CORE\_RESULT\_HPP}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <cstdint>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <optional>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <stdexcept>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{types_8hpp}{types.hpp}}"{}}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacefilevault}{filevault}}\ \{}
+\DoxyCodeLine{00012\ \textcolor{keyword}{namespace\ }core\ \{}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00017\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structfilevault_1_1core_1_1CryptoResult}{CryptoResult}}\ \{}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structfilevault_1_1core_1_1CryptoResult_a25e09669305256e30233bc5a3172e495}{success}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00019\ \ \ \ \ std::string\ \mbox{\hyperlink{structfilevault_1_1core_1_1CryptoResult_a77b714326d923e9abfeb9a9c448536b3}{error\_message}};}
+\DoxyCodeLine{00020\ \ \ \ \ std::vector<uint8\_t>\ \mbox{\hyperlink{structfilevault_1_1core_1_1CryptoResult_a48574f498ae3eec77ee2c71a6b92dedb}{data}};}
+\DoxyCodeLine{00021\ \ \ \ \ }
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{comment}{//\ Metadata}}
+\DoxyCodeLine{00023\ \ \ \ \ \mbox{\hyperlink{namespacefilevault_1_1core_ab1ba257a0205c63e9e1e3623170940a2}{AlgorithmType}}\ \mbox{\hyperlink{structfilevault_1_1core_1_1CryptoResult_a174ccf71b242dfc028c7a231c9a782ec}{algorithm\_used}};}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{structfilevault_1_1core_1_1CryptoResult_ab2c02af1644b08eac76e32539a65296a}{original\_size}}\ =\ 0;}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{structfilevault_1_1core_1_1CryptoResult_a8a529ec8f642e00b7bd812d7f0509a97}{final\_size}}\ =\ 0;}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{structfilevault_1_1core_1_1CryptoResult_a8b68698194e2079ce468645f2a88e8fd}{processing\_time\_ms}}\ =\ 0.0;}
+\DoxyCodeLine{00027\ \ \ \ \ }
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{comment}{//\ Additional\ info}}
+\DoxyCodeLine{00029\ \ \ \ \ std::optional<std::vector<uint8\_t>>\ \mbox{\hyperlink{structfilevault_1_1core_1_1CryptoResult_a77ba4ee05ed2a514e0859f514ea0aff1}{salt}};}
+\DoxyCodeLine{00030\ \ \ \ \ std::optional<std::vector<uint8\_t>>\ \mbox{\hyperlink{structfilevault_1_1core_1_1CryptoResult_a578c87b661e472f930a9959b65d40627}{nonce}};}
+\DoxyCodeLine{00031\ \ \ \ \ std::optional<std::vector<uint8\_t>>\ \mbox{\hyperlink{structfilevault_1_1core_1_1CryptoResult_ad2c85d2aa2836f1ca2c669fcf7fb1e74}{tag}};}
+\DoxyCodeLine{00032\ \};}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00037\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00038\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structfilevault_1_1core_1_1Result}{Result}}\ \{}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structfilevault_1_1core_1_1Result_a09df05cb424ff7d141e41a742ebd259e}{success}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00040\ \ \ \ \ std::string\ \mbox{\hyperlink{structfilevault_1_1core_1_1Result_a4cf611220556e0dbbf7679d7b0bf4a7c}{error\_message}};}
+\DoxyCodeLine{00041\ \ \ \ \ T\ \mbox{\hyperlink{structfilevault_1_1core_1_1Result_aae73e6149360084f6313a68f44aaebcc}{value}};}
+\DoxyCodeLine{00042\ \ \ \ \ }
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{comment}{//\ Success\ constructor}}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{structfilevault_1_1core_1_1Result}{Result<T>}}\ \mbox{\hyperlink{structfilevault_1_1core_1_1Result_aa4c9cf1417bb26d982f83442c986dc03}{ok}}(T\ val)\ \{}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structfilevault_1_1core_1_1Result}{Result<T>}}\ r;}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ r.\mbox{\hyperlink{structfilevault_1_1core_1_1Result_a09df05cb424ff7d141e41a742ebd259e}{success}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ r.\mbox{\hyperlink{structfilevault_1_1core_1_1Result_aae73e6149360084f6313a68f44aaebcc}{value}}\ =\ std::move(val);}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ r;}
+\DoxyCodeLine{00049\ \ \ \ \ \}}
+\DoxyCodeLine{00050\ \ \ \ \ }
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{comment}{//\ Error\ constructor}}
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{structfilevault_1_1core_1_1Result}{Result<T>}}\ \mbox{\hyperlink{structfilevault_1_1core_1_1Result_a0846ce0feec9b1d8cd889c6e89f9af32}{error}}(\textcolor{keyword}{const}\ std::string\&\ msg)\ \{}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structfilevault_1_1core_1_1Result}{Result<T>}}\ r;}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ r.\mbox{\hyperlink{structfilevault_1_1core_1_1Result_a09df05cb424ff7d141e41a742ebd259e}{success}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ r.\mbox{\hyperlink{structfilevault_1_1core_1_1Result_a4cf611220556e0dbbf7679d7b0bf4a7c}{error\_message}}\ =\ msg;}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ r;}
+\DoxyCodeLine{00057\ \ \ \ \ \}}
+\DoxyCodeLine{00058\ \ \ \ \ }
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{comment}{//\ Check\ if\ result\ is\ ok}}
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keyword}{explicit}\ \textcolor{keyword}{operator}\ bool()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structfilevault_1_1core_1_1Result_a09df05cb424ff7d141e41a742ebd259e}{success}};\ \}}
+\DoxyCodeLine{00061\ \ \ \ \ }
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{comment}{//\ Get\ value\ (throws\ if\ error)}}
+\DoxyCodeLine{00063\ \ \ \ \ T\&\ \mbox{\hyperlink{structfilevault_1_1core_1_1Result_afacb840528e9fe3d23f7e04d69b6524c}{unwrap}}()\ \{}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{structfilevault_1_1core_1_1Result_a09df05cb424ff7d141e41a742ebd259e}{success}})\ \{}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::runtime\_error(\textcolor{stringliteral}{"{}Attempted\ to\ unwrap\ error:\ "{}}\ +\ \mbox{\hyperlink{structfilevault_1_1core_1_1Result_a4cf611220556e0dbbf7679d7b0bf4a7c}{error\_message}});}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structfilevault_1_1core_1_1Result_aae73e6149360084f6313a68f44aaebcc}{value}};}
+\DoxyCodeLine{00068\ \ \ \ \ \}}
+\DoxyCodeLine{00069\ \};}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00074\ \textcolor{keyword}{template}<>}
+\DoxyCodeLine{00075\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structfilevault_1_1core_1_1Result}{Result}}<void>\ \{}
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structfilevault_1_1core_1_1Result_a09df05cb424ff7d141e41a742ebd259e}{success}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00077\ \ \ \ \ std::string\ \mbox{\hyperlink{structfilevault_1_1core_1_1Result_3_01void_01_4_a1a28faa49305ad21760b4c0455606c74}{error\_message}};}
+\DoxyCodeLine{00078\ \ \ \ \ }
+\DoxyCodeLine{00079\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{structfilevault_1_1core_1_1Result}{Result<void>}}\ \mbox{\hyperlink{structfilevault_1_1core_1_1Result_3_01void_01_4_a4fff9114ebb79a519d53da691960da03}{ok}}()\ \{}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structfilevault_1_1core_1_1Result}{Result<void>}}\ r;}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ r.\mbox{\hyperlink{structfilevault_1_1core_1_1Result_a09df05cb424ff7d141e41a742ebd259e}{success}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ r;}
+\DoxyCodeLine{00083\ \ \ \ \ \}}
+\DoxyCodeLine{00084\ \ \ \ \ }
+\DoxyCodeLine{00085\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{structfilevault_1_1core_1_1Result}{Result<void>}}\ \mbox{\hyperlink{structfilevault_1_1core_1_1Result_3_01void_01_4_a791e81654d48accdcd62c431419c878c}{error}}(\textcolor{keyword}{const}\ std::string\&\ msg)\ \{}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structfilevault_1_1core_1_1Result}{Result<void>}}\ r;}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ r.\mbox{\hyperlink{structfilevault_1_1core_1_1Result_a09df05cb424ff7d141e41a742ebd259e}{success}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ r.\mbox{\hyperlink{structfilevault_1_1core_1_1Result_a4cf611220556e0dbbf7679d7b0bf4a7c}{error\_message}}\ =\ msg;}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ r;}
+\DoxyCodeLine{00090\ \ \ \ \ \}}
+\DoxyCodeLine{00091\ \ \ \ \ }
+\DoxyCodeLine{00092\ \ \ \ \ \textcolor{keyword}{explicit}\ \textcolor{keyword}{operator}\ bool()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structfilevault_1_1core_1_1Result_a09df05cb424ff7d141e41a742ebd259e}{success}};\ \}}
+\DoxyCodeLine{00093\ \};}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00095\ \}\ \textcolor{comment}{//\ namespace\ core}}
+\DoxyCodeLine{00096\ \}\ \textcolor{comment}{//\ namespace\ filevault}}
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00098\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ FILEVAULT\_CORE\_RESULT\_HPP}}
+
+\end{DoxyCode}

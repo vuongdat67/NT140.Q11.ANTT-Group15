@@ -1,0 +1,222 @@
+\doxysection{filevault\+::core\+::File\+Header Struct Reference}
+\hypertarget{structfilevault_1_1core_1_1FileHeader}{}\label{structfilevault_1_1core_1_1FileHeader}\index{filevault::core::FileHeader@{filevault::core::FileHeader}}
+
+
+File format header.  
+
+
+
+
+{\ttfamily \#include $<$file\+\_\+format.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{structfilevault_1_1core_1_1FileHeader_aa5b9206a7832c347a34812c40d0b7b08}{is\+\_\+valid}} () const
+\begin{DoxyCompactList}\small\item\em Check if magic bytes are valid. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{structfilevault_1_1core_1_1FileHeader_a3c59dc706d726f242086afd9978cdad2}{size}} () const
+\begin{DoxyCompactList}\small\item\em Get total header size in bytes. \end{DoxyCompactList}\item 
+std\+::vector$<$ uint8\+\_\+t $>$ \mbox{\hyperlink{structfilevault_1_1core_1_1FileHeader_abbbfdc7ce454d212b86c25ab16da6928}{serialize}} () const
+\begin{DoxyCompactList}\small\item\em Serialize header to bytes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::pair$<$ \mbox{\hyperlink{structfilevault_1_1core_1_1FileHeader}{File\+Header}}, size\+\_\+t $>$ \mbox{\hyperlink{structfilevault_1_1core_1_1FileHeader_ad0b290bd1b7353f3456530dc98810c0b}{deserialize}} (std\+::span$<$ const uint8\+\_\+t $>$ data)
+\begin{DoxyCompactList}\small\item\em Deserialize header from bytes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{structfilevault_1_1core_1_1FileHeader_addd6406768672e997e408ce003bc802b}{magic}} \mbox{[}8\mbox{]}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{structfilevault_1_1core_1_1FileHeader_adcf49654b095f708cbd4f180930297e8}{version\+\_\+major}}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{structfilevault_1_1core_1_1FileHeader_a12383fc23ebbfb3ba67b7c512bad4d89}{version\+\_\+minor}}
+\item 
+\mbox{\hyperlink{namespacefilevault_1_1core_a4bffcb3f9b484a5d110fa7c4b7d182da}{Algorithm\+ID}} \mbox{\hyperlink{structfilevault_1_1core_1_1FileHeader_aa875f2e59d8b6495f5b7f0c33763ea35}{algorithm}}
+\item 
+\mbox{\hyperlink{namespacefilevault_1_1core_a71f7621637ca5fbd225b12230940776c}{KDFID}} \mbox{\hyperlink{structfilevault_1_1core_1_1FileHeader_ae183642d44ddeb168f54f4980013f3d5}{kdf}}
+\item 
+\mbox{\hyperlink{namespacefilevault_1_1core_a27d87235901fbdf385ab615dd984511d}{Compression\+ID}} \mbox{\hyperlink{structfilevault_1_1core_1_1FileHeader_a2592bf5098a78c4a815edf7a997efeb6}{compression}}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{structfilevault_1_1core_1_1FileHeader_a0303010fce0fa9b616115611b929c31e}{reserved}} \mbox{[}3\mbox{]}
+\item 
+std\+::vector$<$ uint8\+\_\+t $>$ \mbox{\hyperlink{structfilevault_1_1core_1_1FileHeader_ae780436e3a2ee5264ce6e27f44cb3309}{salt}}
+\item 
+std\+::vector$<$ uint8\+\_\+t $>$ \mbox{\hyperlink{structfilevault_1_1core_1_1FileHeader_ac4139b99d49afbda5a6a8b671f8da797}{kdf\+\_\+params}}
+\item 
+std\+::vector$<$ uint8\+\_\+t $>$ \mbox{\hyperlink{structfilevault_1_1core_1_1FileHeader_ac9ba8b7775674e1e0a4c4bc2981f8207}{nonce}}
+\item 
+bool \mbox{\hyperlink{structfilevault_1_1core_1_1FileHeader_a472b3cb1be893a0cc917463f168e3c4f}{compressed}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+File format header. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{structfilevault_1_1core_1_1FileHeader_ad0b290bd1b7353f3456530dc98810c0b}\label{structfilevault_1_1core_1_1FileHeader_ad0b290bd1b7353f3456530dc98810c0b} 
+\index{filevault::core::FileHeader@{filevault::core::FileHeader}!deserialize@{deserialize}}
+\index{deserialize@{deserialize}!filevault::core::FileHeader@{filevault::core::FileHeader}}
+\doxysubsubsection{\texorpdfstring{deserialize()}{deserialize()}}
+{\footnotesize\ttfamily std\+::pair$<$ \mbox{\hyperlink{structfilevault_1_1core_1_1FileHeader}{File\+Header}}, size\+\_\+t $>$ filevault\+::core\+::\+File\+Header\+::deserialize (\begin{DoxyParamCaption}\item[{std\+::span$<$ const uint8\+\_\+t $>$}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Deserialize header from bytes. 
+
+\begin{DoxyReturn}{Returns}
+Header and number of bytes consumed 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structfilevault_1_1core_1_1FileHeader_ad0b290bd1b7353f3456530dc98810c0b_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structfilevault_1_1core_1_1FileHeader_ad0b290bd1b7353f3456530dc98810c0b_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{structfilevault_1_1core_1_1FileHeader_aa5b9206a7832c347a34812c40d0b7b08}\label{structfilevault_1_1core_1_1FileHeader_aa5b9206a7832c347a34812c40d0b7b08} 
+\index{filevault::core::FileHeader@{filevault::core::FileHeader}!is\_valid@{is\_valid}}
+\index{is\_valid@{is\_valid}!filevault::core::FileHeader@{filevault::core::FileHeader}}
+\doxysubsubsection{\texorpdfstring{is\_valid()}{is\_valid()}}
+{\footnotesize\ttfamily bool filevault\+::core\+::\+File\+Header\+::is\+\_\+valid (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Check if magic bytes are valid. 
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structfilevault_1_1core_1_1FileHeader_aa5b9206a7832c347a34812c40d0b7b08_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{structfilevault_1_1core_1_1FileHeader_abbbfdc7ce454d212b86c25ab16da6928}\label{structfilevault_1_1core_1_1FileHeader_abbbfdc7ce454d212b86c25ab16da6928} 
+\index{filevault::core::FileHeader@{filevault::core::FileHeader}!serialize@{serialize}}
+\index{serialize@{serialize}!filevault::core::FileHeader@{filevault::core::FileHeader}}
+\doxysubsubsection{\texorpdfstring{serialize()}{serialize()}}
+{\footnotesize\ttfamily std\+::vector$<$ uint8\+\_\+t $>$ filevault\+::core\+::\+File\+Header\+::serialize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Serialize header to bytes. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structfilevault_1_1core_1_1FileHeader_abbbfdc7ce454d212b86c25ab16da6928_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structfilevault_1_1core_1_1FileHeader_abbbfdc7ce454d212b86c25ab16da6928_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{structfilevault_1_1core_1_1FileHeader_a3c59dc706d726f242086afd9978cdad2}\label{structfilevault_1_1core_1_1FileHeader_a3c59dc706d726f242086afd9978cdad2} 
+\index{filevault::core::FileHeader@{filevault::core::FileHeader}!size@{size}}
+\index{size@{size}!filevault::core::FileHeader@{filevault::core::FileHeader}}
+\doxysubsubsection{\texorpdfstring{size()}{size()}}
+{\footnotesize\ttfamily size\+\_\+t filevault\+::core\+::\+File\+Header\+::size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get total header size in bytes. 
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structfilevault_1_1core_1_1FileHeader_a3c59dc706d726f242086afd9978cdad2_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{structfilevault_1_1core_1_1FileHeader_aa875f2e59d8b6495f5b7f0c33763ea35}\label{structfilevault_1_1core_1_1FileHeader_aa875f2e59d8b6495f5b7f0c33763ea35} 
+\index{filevault::core::FileHeader@{filevault::core::FileHeader}!algorithm@{algorithm}}
+\index{algorithm@{algorithm}!filevault::core::FileHeader@{filevault::core::FileHeader}}
+\doxysubsubsection{\texorpdfstring{algorithm}{algorithm}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacefilevault_1_1core_a4bffcb3f9b484a5d110fa7c4b7d182da}{Algorithm\+ID}} filevault\+::core\+::\+File\+Header\+::algorithm}
+
+\Hypertarget{structfilevault_1_1core_1_1FileHeader_a472b3cb1be893a0cc917463f168e3c4f}\label{structfilevault_1_1core_1_1FileHeader_a472b3cb1be893a0cc917463f168e3c4f} 
+\index{filevault::core::FileHeader@{filevault::core::FileHeader}!compressed@{compressed}}
+\index{compressed@{compressed}!filevault::core::FileHeader@{filevault::core::FileHeader}}
+\doxysubsubsection{\texorpdfstring{compressed}{compressed}}
+{\footnotesize\ttfamily bool filevault\+::core\+::\+File\+Header\+::compressed}
+
+\Hypertarget{structfilevault_1_1core_1_1FileHeader_a2592bf5098a78c4a815edf7a997efeb6}\label{structfilevault_1_1core_1_1FileHeader_a2592bf5098a78c4a815edf7a997efeb6} 
+\index{filevault::core::FileHeader@{filevault::core::FileHeader}!compression@{compression}}
+\index{compression@{compression}!filevault::core::FileHeader@{filevault::core::FileHeader}}
+\doxysubsubsection{\texorpdfstring{compression}{compression}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacefilevault_1_1core_a27d87235901fbdf385ab615dd984511d}{Compression\+ID}} filevault\+::core\+::\+File\+Header\+::compression}
+
+\Hypertarget{structfilevault_1_1core_1_1FileHeader_ae183642d44ddeb168f54f4980013f3d5}\label{structfilevault_1_1core_1_1FileHeader_ae183642d44ddeb168f54f4980013f3d5} 
+\index{filevault::core::FileHeader@{filevault::core::FileHeader}!kdf@{kdf}}
+\index{kdf@{kdf}!filevault::core::FileHeader@{filevault::core::FileHeader}}
+\doxysubsubsection{\texorpdfstring{kdf}{kdf}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacefilevault_1_1core_a71f7621637ca5fbd225b12230940776c}{KDFID}} filevault\+::core\+::\+File\+Header\+::kdf}
+
+\Hypertarget{structfilevault_1_1core_1_1FileHeader_ac4139b99d49afbda5a6a8b671f8da797}\label{structfilevault_1_1core_1_1FileHeader_ac4139b99d49afbda5a6a8b671f8da797} 
+\index{filevault::core::FileHeader@{filevault::core::FileHeader}!kdf\_params@{kdf\_params}}
+\index{kdf\_params@{kdf\_params}!filevault::core::FileHeader@{filevault::core::FileHeader}}
+\doxysubsubsection{\texorpdfstring{kdf\_params}{kdf\_params}}
+{\footnotesize\ttfamily std\+::vector$<$uint8\+\_\+t$>$ filevault\+::core\+::\+File\+Header\+::kdf\+\_\+params}
+
+\Hypertarget{structfilevault_1_1core_1_1FileHeader_addd6406768672e997e408ce003bc802b}\label{structfilevault_1_1core_1_1FileHeader_addd6406768672e997e408ce003bc802b} 
+\index{filevault::core::FileHeader@{filevault::core::FileHeader}!magic@{magic}}
+\index{magic@{magic}!filevault::core::FileHeader@{filevault::core::FileHeader}}
+\doxysubsubsection{\texorpdfstring{magic}{magic}}
+{\footnotesize\ttfamily uint8\+\_\+t filevault\+::core\+::\+File\+Header\+::magic\mbox{[}8\mbox{]}}
+
+\Hypertarget{structfilevault_1_1core_1_1FileHeader_ac9ba8b7775674e1e0a4c4bc2981f8207}\label{structfilevault_1_1core_1_1FileHeader_ac9ba8b7775674e1e0a4c4bc2981f8207} 
+\index{filevault::core::FileHeader@{filevault::core::FileHeader}!nonce@{nonce}}
+\index{nonce@{nonce}!filevault::core::FileHeader@{filevault::core::FileHeader}}
+\doxysubsubsection{\texorpdfstring{nonce}{nonce}}
+{\footnotesize\ttfamily std\+::vector$<$uint8\+\_\+t$>$ filevault\+::core\+::\+File\+Header\+::nonce}
+
+\Hypertarget{structfilevault_1_1core_1_1FileHeader_a0303010fce0fa9b616115611b929c31e}\label{structfilevault_1_1core_1_1FileHeader_a0303010fce0fa9b616115611b929c31e} 
+\index{filevault::core::FileHeader@{filevault::core::FileHeader}!reserved@{reserved}}
+\index{reserved@{reserved}!filevault::core::FileHeader@{filevault::core::FileHeader}}
+\doxysubsubsection{\texorpdfstring{reserved}{reserved}}
+{\footnotesize\ttfamily uint8\+\_\+t filevault\+::core\+::\+File\+Header\+::reserved\mbox{[}3\mbox{]}}
+
+\Hypertarget{structfilevault_1_1core_1_1FileHeader_ae780436e3a2ee5264ce6e27f44cb3309}\label{structfilevault_1_1core_1_1FileHeader_ae780436e3a2ee5264ce6e27f44cb3309} 
+\index{filevault::core::FileHeader@{filevault::core::FileHeader}!salt@{salt}}
+\index{salt@{salt}!filevault::core::FileHeader@{filevault::core::FileHeader}}
+\doxysubsubsection{\texorpdfstring{salt}{salt}}
+{\footnotesize\ttfamily std\+::vector$<$uint8\+\_\+t$>$ filevault\+::core\+::\+File\+Header\+::salt}
+
+\Hypertarget{structfilevault_1_1core_1_1FileHeader_adcf49654b095f708cbd4f180930297e8}\label{structfilevault_1_1core_1_1FileHeader_adcf49654b095f708cbd4f180930297e8} 
+\index{filevault::core::FileHeader@{filevault::core::FileHeader}!version\_major@{version\_major}}
+\index{version\_major@{version\_major}!filevault::core::FileHeader@{filevault::core::FileHeader}}
+\doxysubsubsection{\texorpdfstring{version\_major}{version\_major}}
+{\footnotesize\ttfamily uint8\+\_\+t filevault\+::core\+::\+File\+Header\+::version\+\_\+major}
+
+\Hypertarget{structfilevault_1_1core_1_1FileHeader_a12383fc23ebbfb3ba67b7c512bad4d89}\label{structfilevault_1_1core_1_1FileHeader_a12383fc23ebbfb3ba67b7c512bad4d89} 
+\index{filevault::core::FileHeader@{filevault::core::FileHeader}!version\_minor@{version\_minor}}
+\index{version\_minor@{version\_minor}!filevault::core::FileHeader@{filevault::core::FileHeader}}
+\doxysubsubsection{\texorpdfstring{version\_minor}{version\_minor}}
+{\footnotesize\ttfamily uint8\+\_\+t filevault\+::core\+::\+File\+Header\+::version\+\_\+minor}
+
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/filevault/core/\mbox{\hyperlink{file__format_8hpp}{file\+\_\+format.\+hpp}}\item 
+src/format/\mbox{\hyperlink{file__format_8cpp}{file\+\_\+format.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,37 @@
+\doxysection{decompress\+\_\+cmd.\+hpp}
+\hypertarget{decompress__cmd_8hpp_source}{}\label{decompress__cmd_8hpp_source}\index{include/filevault/cli/commands/decompress\_cmd.hpp@{include/filevault/cli/commands/decompress\_cmd.hpp}}
+\mbox{\hyperlink{decompress__cmd_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ FILEVAULT\_CLI\_COMMANDS\_DECOMPRESS\_CMD\_HPP}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ FILEVAULT\_CLI\_COMMANDS\_DECOMPRESS\_CMD\_HPP}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{command_8hpp}{filevault/cli/command.hpp}}"{}}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacefilevault_1_1cli}{filevault::cli}}\ \{}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00013\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classfilevault_1_1cli_1_1DecompressCommand}{DecompressCommand}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classfilevault_1_1cli_1_1ICommand}{ICommand}}\ \{}
+\DoxyCodeLine{00014\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00015\ \ \ \ \ std::string\ \mbox{\hyperlink{classfilevault_1_1cli_1_1DecompressCommand_a79de5885842cae3755cfeba6ec4d8a91}{name}}()\textcolor{keyword}{\ const\ override\ }\{\ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}decompress"{}};\ \}}
+\DoxyCodeLine{00016\ \ \ \ \ std::string\ \mbox{\hyperlink{classfilevault_1_1cli_1_1DecompressCommand_a9681f952e592100e046b9cec690a9c9d}{description}}()\textcolor{keyword}{\ const\ override\ }\{\ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Decompress\ a\ compressed\ file"{}};\ \}}
+\DoxyCodeLine{00017\ \ \ \ \ }
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classfilevault_1_1cli_1_1DecompressCommand_a5cc59bb4cb1aaf5b0d63043b01de9647}{setup}}(CLI::App\&\ app)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classfilevault_1_1cli_1_1DecompressCommand_a8a5ebb3e046b114bfeb5bc54e129d049}{execute}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00022\ \ \ \ \ std::string\ \mbox{\hyperlink{classfilevault_1_1cli_1_1DecompressCommand_a7a89f2cda053d5bb39c9d901a74776eb}{detect\_algorithm}}(\textcolor{keyword}{const}\ std::string\&\ path);}
+\DoxyCodeLine{00023\ \ \ \ \ std::string\ \mbox{\hyperlink{classfilevault_1_1cli_1_1DecompressCommand_a3e58f59f9674d43be523fcfabed0c1a6}{generate\_output\_path}}(\textcolor{keyword}{const}\ std::string\&\ input);}
+\DoxyCodeLine{00024\ \ \ \ \ }
+\DoxyCodeLine{00025\ \ \ \ \ CLI::App*\ \mbox{\hyperlink{classfilevault_1_1cli_1_1DecompressCommand_aecc670866d897199e0bd0cd17cce8368}{subcommand\_}}\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00026\ \ \ \ \ std::string\ \mbox{\hyperlink{classfilevault_1_1cli_1_1DecompressCommand_a3a2aca356c18f2f1b0e427cf6ff43be2}{input\_file\_}};}
+\DoxyCodeLine{00027\ \ \ \ \ std::string\ \mbox{\hyperlink{classfilevault_1_1cli_1_1DecompressCommand_aca953cb8ff67e1176bd94b5282c59225}{output\_file\_}};}
+\DoxyCodeLine{00028\ \ \ \ \ std::string\ \mbox{\hyperlink{classfilevault_1_1cli_1_1DecompressCommand_a23c711355cd39b33b7b3a0f7061311e6}{algorithm\_}};}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classfilevault_1_1cli_1_1DecompressCommand_a3d8a302cb890288e64c69e6a3e1dc6fd}{auto\_detect\_}}\ =\ \textcolor{keyword}{true};\ \ \textcolor{comment}{//\ Auto-\/detect\ by\ default\ for\ decompress}}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classfilevault_1_1cli_1_1DecompressCommand_a6cf20a0e6fa1172f0e6daead8c05f44d}{verbose\_}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classfilevault_1_1cli_1_1DecompressCommand_a96be31b07bf66df170e26f16ee92ecfa}{benchmark\_}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00032\ \};}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \}\ \textcolor{comment}{//\ namespace\ filevault::cli}}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

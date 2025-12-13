@@ -1,0 +1,48 @@
+\doxysection{include/filevault/core/streaming.hpp File Reference}
+\hypertarget{streaming_8hpp}{}\label{streaming_8hpp}\index{include/filevault/core/streaming.hpp@{include/filevault/core/streaming.hpp}}
+{\ttfamily \#include $<$cstdint$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$functional$>$}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include "{}types.\+hpp"{}}\newline
+{\ttfamily \#include "{}result.\+hpp"{}}\newline
+Include dependency graph for streaming.\+hpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{streaming_8hpp__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=208pt]{streaming_8hpp__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structfilevault_1_1core_1_1ChunkInfo}{filevault\+::core\+::\+Chunk\+Info}}
+\begin{DoxyCompactList}\small\item\em Chunk information for streaming encryption. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structfilevault_1_1core_1_1StreamingConfig}{filevault\+::core\+::\+Streaming\+Config}}
+\begin{DoxyCompactList}\small\item\em Configuration for streaming encryption. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structfilevault_1_1core_1_1StreamingResult}{filevault\+::core\+::\+Streaming\+Result}}
+\begin{DoxyCompactList}\small\item\em \doxylink{structfilevault_1_1core_1_1Result}{Result} of streaming operation. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classfilevault_1_1core_1_1StreamingCrypto}{filevault\+::core\+::\+Streaming\+Crypto}}
+\begin{DoxyCompactList}\small\item\em Streaming encryption/decryption for large files. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespacefilevault}{filevault}}
+\item 
+namespace \mbox{\hyperlink{namespacefilevault_1_1core}{filevault\+::core}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{namespacefilevault_1_1core_addf387e7b32c628f1b2b0d33c5ce6dc4}{filevault\+::core\+::\+Stream\+Progress\+Callback}} = std\+::function$<$ bool(const \mbox{\hyperlink{structfilevault_1_1core_1_1ChunkInfo}{Chunk\+Info}} \&info)$>$
+\begin{DoxyCompactList}\small\item\em Progress callback for streaming operations. \end{DoxyCompactList}\end{DoxyCompactItemize}

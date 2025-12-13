@@ -1,0 +1,49 @@
+\doxysection{include/filevault/algorithms/symmetric/aes\+\_\+cbc.hpp File Reference}
+\hypertarget{aes__cbc_8hpp}{}\label{aes__cbc_8hpp}\index{include/filevault/algorithms/symmetric/aes\_cbc.hpp@{include/filevault/algorithms/symmetric/aes\_cbc.hpp}}
+
+
+AES-\/\+CBC encryption implementation.  
+
+
+{\ttfamily \#include "{}filevault/core/crypto\+\_\+algorithm.\+hpp"{}}\newline
+{\ttfamily \#include $<$botan/cipher\+\_\+mode.\+h$>$}\newline
+Include dependency graph for aes\+\_\+cbc.\+hpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{aes__cbc_8hpp__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{aes__cbc_8hpp__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1AES__CBC}{filevault\+::algorithms\+::symmetric\+::\+AES\+\_\+\+CBC}}
+\begin{DoxyCompactList}\small\item\em AES-\/\+CBC encryption (legacy mode, not authenticated) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespacefilevault}{filevault}}
+\item 
+namespace \mbox{\hyperlink{namespacefilevault_1_1algorithms}{filevault\+::algorithms}}
+\item 
+namespace \mbox{\hyperlink{namespacefilevault_1_1algorithms_1_1symmetric}{filevault\+::algorithms\+::symmetric}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+AES-\/\+CBC encryption implementation. 
+
+AES in Cipher Block Chaining mode -\/ classic block cipher mode. NOT authenticated -\/ use with HMAC for integrity protection.
+
+\begin{DoxyWarning}{Warning}
+CBC mode is NOT AEAD -\/ no built-\/in authentication! Consider using AES-\/\+GCM instead for authenticated encryption. 
+\end{DoxyWarning}

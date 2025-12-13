@@ -1,0 +1,41 @@
+\doxysection{keygen\+\_\+cmd.\+hpp}
+\hypertarget{keygen__cmd_8hpp_source}{}\label{keygen__cmd_8hpp_source}\index{include/filevault/cli/commands/keygen\_cmd.hpp@{include/filevault/cli/commands/keygen\_cmd.hpp}}
+\mbox{\hyperlink{keygen__cmd_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#ifndef\ FILEVAULT\_CLI\_COMMANDS\_KEYGEN\_CMD\_HPP}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#define\ FILEVAULT\_CLI\_COMMANDS\_KEYGEN\_CMD\_HPP}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{command_8hpp}{filevault/cli/command.hpp}}"{}}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{crypto__engine_8hpp}{filevault/core/crypto\_engine.hpp}}"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <CLI/CLI.hpp>}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacefilevault}{filevault}}\ \{}
+\DoxyCodeLine{00014\ \textcolor{keyword}{namespace\ }cli\ \{}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00019\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classfilevault_1_1cli_1_1KeygenCommand}{KeygenCommand}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classfilevault_1_1cli_1_1ICommand}{ICommand}}\ \{}
+\DoxyCodeLine{00020\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classfilevault_1_1cli_1_1KeygenCommand}{KeygenCommand}}(\mbox{\hyperlink{classfilevault_1_1core_1_1CryptoEngine}{core::CryptoEngine}}\&\ engine);}
+\DoxyCodeLine{00022\ \ \ \ \ }
+\DoxyCodeLine{00023\ \ \ \ \ std::string\ \mbox{\hyperlink{classfilevault_1_1cli_1_1KeygenCommand_a11191c60a700b71dfc9ada1a7097e5d4}{name}}()\textcolor{keyword}{\ const\ override\ }\{\ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}keygen"{}};\ \}}
+\DoxyCodeLine{00024\ \ \ \ \ std::string\ \mbox{\hyperlink{classfilevault_1_1cli_1_1KeygenCommand_ae088ff39cc05b3b1d0f47a543338e5d8}{description}}()\textcolor{keyword}{\ const\ override\ }\{\ }
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Generate\ key\ pair\ for\ asymmetric/PQC\ encryption\ (RSA/ECC/Kyber/Dilithium)"{}};\ }
+\DoxyCodeLine{00026\ \ \ \ \ \}}
+\DoxyCodeLine{00027\ \ \ \ \ }
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classfilevault_1_1cli_1_1KeygenCommand_a47b6d478f41644ea0f47125eaf941a9a}{setup}}(CLI::App\&\ app)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classfilevault_1_1cli_1_1KeygenCommand_a8fca79b131b144ec7191b715ebff2efc}{execute}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00030\ \ \ \ \ }
+\DoxyCodeLine{00031\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00032\ \ \ \ \ \mbox{\hyperlink{classfilevault_1_1core_1_1CryptoEngine}{core::CryptoEngine}}\&\ \mbox{\hyperlink{classfilevault_1_1cli_1_1KeygenCommand_a351f2ae147f8a34436956363b75ec1b3}{engine\_}};}
+\DoxyCodeLine{00033\ \ \ \ \ std::string\ \mbox{\hyperlink{classfilevault_1_1cli_1_1KeygenCommand_aff51464bddbd91d4697c85d663831c1a}{algorithm\_}}\ =\ \textcolor{stringliteral}{"{}rsa-\/2048"{}};}
+\DoxyCodeLine{00034\ \ \ \ \ std::string\ \mbox{\hyperlink{classfilevault_1_1cli_1_1KeygenCommand_a5ac5f67916080da178191514ff42d59d}{output\_prefix\_}}\ =\ \textcolor{stringliteral}{"{}filevault\_key"{}};}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classfilevault_1_1cli_1_1KeygenCommand_a37bc4b66e544c0b9f210882bfa0abc60}{force\_}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classfilevault_1_1cli_1_1KeygenCommand_afc8789ab69a0c0d08ff414a4945a65f2}{verbose\_}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00037\ \};}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \}\ \textcolor{comment}{//\ namespace\ cli}}
+\DoxyCodeLine{00040\ \}\ \textcolor{comment}{//\ namespace\ filevault}}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

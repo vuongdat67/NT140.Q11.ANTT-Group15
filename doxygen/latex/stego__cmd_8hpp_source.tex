@@ -1,0 +1,42 @@
+\doxysection{stego\+\_\+cmd.\+hpp}
+\hypertarget{stego__cmd_8hpp_source}{}\label{stego__cmd_8hpp_source}\index{include/filevault/cli/commands/stego\_cmd.hpp@{include/filevault/cli/commands/stego\_cmd.hpp}}
+\mbox{\hyperlink{stego__cmd_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ FILEVAULT\_CLI\_COMMANDS\_STEGO\_CMD\_HPP}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ FILEVAULT\_CLI\_COMMANDS\_STEGO\_CMD\_HPP}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{command_8hpp}{filevault/cli/command.hpp}}"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacefilevault_1_1cli_1_1commands}{filevault::cli::commands}}\ \{}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00021\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classfilevault_1_1cli_1_1commands_1_1StegoCommand}{StegoCommand}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classfilevault_1_1cli_1_1ICommand}{ICommand}}\ \{}
+\DoxyCodeLine{00022\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00023\ \ \ \ \ std::string\ \mbox{\hyperlink{classfilevault_1_1cli_1_1commands_1_1StegoCommand_a8c02846e5382b3ae504e37ea862a4ee1}{name}}()\textcolor{keyword}{\ const\ override\ }\{\ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}stego"{}};\ \}}
+\DoxyCodeLine{00024\ \ \ \ \ std::string\ \mbox{\hyperlink{classfilevault_1_1cli_1_1commands_1_1StegoCommand_abc424ef9bb81b611498fa4a8c0bfc092}{description}}()\textcolor{keyword}{\ const\ override\ }\{}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Hide\ or\ extract\ data\ from\ images\ using\ steganography"{}};}
+\DoxyCodeLine{00026\ \ \ \ \ \}}
+\DoxyCodeLine{00027\ \ \ \ \ }
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classfilevault_1_1cli_1_1commands_1_1StegoCommand_afaeac18a65ca27d6ac94551930792b0b}{setup}}(CLI::App\&\ app)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classfilevault_1_1cli_1_1commands_1_1StegoCommand_a0b2c059bd47114a40719a4ed195aa535}{execute}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{comment}{//\ Subcommand\ handlers}}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classfilevault_1_1cli_1_1commands_1_1StegoCommand_ad024106669df06666aa97913749ebcff}{do\_embed}}();}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classfilevault_1_1cli_1_1commands_1_1StegoCommand_ab4aefd0dc98c608afa8368639e1aa5fe}{do\_extract}}();}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classfilevault_1_1cli_1_1commands_1_1StegoCommand_ab1773d71d90b0d92c3532f0687019751}{do\_capacity}}();}
+\DoxyCodeLine{00036\ \ \ \ \ }
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{comment}{//\ Options}}
+\DoxyCodeLine{00038\ \ \ \ \ std::string\ \mbox{\hyperlink{classfilevault_1_1cli_1_1commands_1_1StegoCommand_a07283c73efbcd5cab2652fd6d7682b5b}{operation\_}};\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ "{}embed"{},\ "{}extract"{},\ or\ "{}capacity"{}}}
+\DoxyCodeLine{00039\ \ \ \ \ std::string\ \mbox{\hyperlink{classfilevault_1_1cli_1_1commands_1_1StegoCommand_a3f4ad064fca4b20e4f6c551dd0364544}{input\_file\_}};\ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Secret\ file\ (for\ embed)\ or\ stego\ image\ (for\ extract)}}
+\DoxyCodeLine{00040\ \ \ \ \ std::string\ \mbox{\hyperlink{classfilevault_1_1cli_1_1commands_1_1StegoCommand_a0817a9e449b0f95904dca1c3e8645eb3}{cover\_image\_}};\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Cover\ image\ (for\ embed)}}
+\DoxyCodeLine{00041\ \ \ \ \ std::string\ \mbox{\hyperlink{classfilevault_1_1cli_1_1commands_1_1StegoCommand_a2afd152174c84ee60bf0f9d0062d8447}{output\_file\_}};\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Output\ path}}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classfilevault_1_1cli_1_1commands_1_1StegoCommand_a7ab82f2c94e1a020e46894d7751ec486}{bits\_per\_channel\_}}\ =\ 1;\ \ \ \ \ \ \ \ \textcolor{comment}{//\ 1-\/4\ bits\ per\ channel}}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classfilevault_1_1cli_1_1commands_1_1StegoCommand_ae04cefe0d09e4557d429f3eb83556611}{verbose\_}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00044\ \};}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \}\ \textcolor{comment}{//\ namespace\ filevault::cli::commands}}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ FILEVAULT\_CLI\_COMMANDS\_STEGO\_CMD\_HPP}}
+
+\end{DoxyCode}

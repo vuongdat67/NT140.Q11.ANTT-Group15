@@ -1,0 +1,60 @@
+\doxysection{substitution.\+hpp}
+\hypertarget{substitution_8hpp_source}{}\label{substitution_8hpp_source}\index{include/filevault/algorithms/classical/substitution.hpp@{include/filevault/algorithms/classical/substitution.hpp}}
+\mbox{\hyperlink{substitution_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ FILEVAULT\_ALGORITHMS\_CLASSICAL\_SUBSTITUTION\_HPP}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ FILEVAULT\_ALGORITHMS\_CLASSICAL\_SUBSTITUTION\_HPP}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{crypto__algorithm_8hpp}{filevault/core/crypto\_algorithm.hpp}}"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <array>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacefilevault}{filevault}}\ \{}
+\DoxyCodeLine{00009\ \textcolor{keyword}{namespace\ }algorithms\ \{}
+\DoxyCodeLine{00010\ \textcolor{keyword}{namespace\ }classical\ \{}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00018\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classfilevault_1_1algorithms_1_1classical_1_1SubstitutionCipher}{SubstitutionCipher}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classfilevault_1_1core_1_1ICryptoAlgorithm}{core::ICryptoAlgorithm}}\ \{}
+\DoxyCodeLine{00019\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00020\ \ \ \ \ std::string\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1classical_1_1SubstitutionCipher_a07e438805da191f5457d6a712d351bad}{name}}()\textcolor{keyword}{\ const\ override\ }\{\ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Substitution"{}};\ \}}
+\DoxyCodeLine{00021\ \ \ \ \ }
+\DoxyCodeLine{00022\ \ \ \ \ \mbox{\hyperlink{namespacefilevault_1_1core_ab1ba257a0205c63e9e1e3623170940a2}{core::AlgorithmType}}\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1classical_1_1SubstitutionCipher_a92cf10975f8653bfc4e61988ea17392c}{type}}()\textcolor{keyword}{\ const\ override\ }\{}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespacefilevault_1_1core_ab1ba257a0205c63e9e1e3623170940a2ae637679b66688b9f8c9441147fceb023}{core::AlgorithmType::SUBSTITUTION}};}
+\DoxyCodeLine{00024\ \ \ \ \ \}}
+\DoxyCodeLine{00025\ \ \ \ \ }
+\DoxyCodeLine{00026\ \ \ \ \ \mbox{\hyperlink{structfilevault_1_1core_1_1CryptoResult}{core::CryptoResult}}\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1classical_1_1SubstitutionCipher_a928b824d31e9338c6cf0b8bb39f04407}{encrypt}}(}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ std::span<const\ uint8\_t>\ plaintext,}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ std::span<const\ uint8\_t>\ key,}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structfilevault_1_1core_1_1EncryptionConfig}{core::EncryptionConfig}}\&\ config}
+\DoxyCodeLine{00030\ \ \ \ \ )\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00031\ \ \ \ \ }
+\DoxyCodeLine{00032\ \ \ \ \ \mbox{\hyperlink{structfilevault_1_1core_1_1CryptoResult}{core::CryptoResult}}\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1classical_1_1SubstitutionCipher_ab012398f7f317a200742e8adfe14c6b0}{decrypt}}(}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ std::span<const\ uint8\_t>\ ciphertext,}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ std::span<const\ uint8\_t>\ key,}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structfilevault_1_1core_1_1EncryptionConfig}{core::EncryptionConfig}}\&\ config}
+\DoxyCodeLine{00036\ \ \ \ \ )\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00037\ \ \ \ \ }
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1classical_1_1SubstitutionCipher_a5c2b4e89dcb3a5ff45a33ca05e905d7a}{key\_size}}()\textcolor{keyword}{\ const\ override\ }\{\ \textcolor{keywordflow}{return}\ 26;\ \}\ \ \textcolor{comment}{//\ 26-\/letter\ alphabet}}
+\DoxyCodeLine{00039\ \ \ \ \ }
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1classical_1_1SubstitutionCipher_a79e3fc909e42d38e5f3469a0d1a5a302}{is\_suitable\_for}}(\mbox{\hyperlink{namespacefilevault_1_1core_abcb3b3d896f7dc00926903183b3e2dc9}{core::SecurityLevel}}\ level)\textcolor{keyword}{\ const\ override\ }\{}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Educational\ cipher\ -\/\ suitable\ for\ learning\ only}}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ (void)level;}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};\ \ \textcolor{comment}{//\ Not\ recommended\ for\ real\ encryption}}
+\DoxyCodeLine{00044\ \ \ \ \ \}}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{classfilevault_1_1algorithms_1_1classical_1_1SubstitutionCipher_a2a724abf0eb8613b997f706f2af2c12e}{SubstitutionMap}}\ =\ std::array<char,\ 26>;}
+\DoxyCodeLine{00048\ \ \ \ \ }
+\DoxyCodeLine{00049\ \ \ \ \ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1classical_1_1SubstitutionCipher_a2a724abf0eb8613b997f706f2af2c12e}{SubstitutionMap}}\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1classical_1_1SubstitutionCipher_add7fb58c413fb43416b190523a760126}{parse\_key}}(std::span<const\ uint8\_t>\ key);}
+\DoxyCodeLine{00050\ \ \ \ \ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1classical_1_1SubstitutionCipher_a2a724abf0eb8613b997f706f2af2c12e}{SubstitutionMap}}\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1classical_1_1SubstitutionCipher_abcc7c1a6345c4d5eb74e1ed37b96ff1c}{create\_reverse\_map}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1classical_1_1SubstitutionCipher_a2a724abf0eb8613b997f706f2af2c12e}{SubstitutionMap}}\&\ forward\_map);}
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1classical_1_1SubstitutionCipher_a41f6bb061bc83c43b0458f8c7b3fa633}{is\_valid\_key}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1classical_1_1SubstitutionCipher_a2a724abf0eb8613b997f706f2af2c12e}{SubstitutionMap}}\&\ map);}
+\DoxyCodeLine{00052\ \ \ \ \ }
+\DoxyCodeLine{00053\ \ \ \ \ std::string\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1classical_1_1SubstitutionCipher_ac2af638c3ac78baebb52b239a904f137}{apply\_substitution}}(\textcolor{keyword}{const}\ std::string\&\ text,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1classical_1_1SubstitutionCipher_a2a724abf0eb8613b997f706f2af2c12e}{SubstitutionMap}}\&\ map);}
+\DoxyCodeLine{00054\ \};}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \}\ \textcolor{comment}{//\ namespace\ classical}}
+\DoxyCodeLine{00057\ \}\ \textcolor{comment}{//\ namespace\ algorithms}}
+\DoxyCodeLine{00058\ \}\ \textcolor{comment}{//\ namespace\ filevault}}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

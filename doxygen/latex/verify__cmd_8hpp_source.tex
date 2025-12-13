@@ -1,0 +1,43 @@
+\doxysection{verify\+\_\+cmd.\+hpp}
+\hypertarget{verify__cmd_8hpp_source}{}\label{verify__cmd_8hpp_source}\index{include/filevault/cli/commands/verify\_cmd.hpp@{include/filevault/cli/commands/verify\_cmd.hpp}}
+\mbox{\hyperlink{verify__cmd_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ FILEVAULT\_CLI\_COMMANDS\_VERIFY\_CMD\_HPP}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ FILEVAULT\_CLI\_COMMANDS\_VERIFY\_CMD\_HPP}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}../command.hpp"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{crypto__engine_8hpp}{filevault/core/crypto\_engine.hpp}}"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacefilevault}{filevault}}\ \{}
+\DoxyCodeLine{00009\ \textcolor{keyword}{namespace\ }cli\ \{}
+\DoxyCodeLine{00010\ \textcolor{keyword}{namespace\ }commands\ \{}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00015\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classfilevault_1_1cli_1_1commands_1_1VerifyCommand}{VerifyCommand}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classfilevault_1_1cli_1_1ICommand}{ICommand}}\ \{}
+\DoxyCodeLine{00016\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classfilevault_1_1cli_1_1commands_1_1VerifyCommand}{VerifyCommand}}(\mbox{\hyperlink{classfilevault_1_1core_1_1CryptoEngine}{core::CryptoEngine}}\&\ engine);}
+\DoxyCodeLine{00018\ \ \ \ \ }
+\DoxyCodeLine{00019\ \ \ \ \ std::string\ \mbox{\hyperlink{classfilevault_1_1cli_1_1commands_1_1VerifyCommand_a654b91061bc9bb829b86fd40d61c874e}{name}}()\textcolor{keyword}{\ const\ override\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classfilevault_1_1cli_1_1commands_1_1VerifyCommand_a6c7bcf81da824ce63a76908bbe366420}{name\_}};\ \}}
+\DoxyCodeLine{00020\ \ \ \ \ std::string\ \mbox{\hyperlink{classfilevault_1_1cli_1_1commands_1_1VerifyCommand_a61db4f7d7284c8d1a9dedefdd5c8151b}{description}}()\textcolor{keyword}{\ const\ override\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classfilevault_1_1cli_1_1commands_1_1VerifyCommand_ae3de9a212d121c0057f97fe6417e97ec}{description\_}};\ \}}
+\DoxyCodeLine{00021\ \ \ \ \ }
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classfilevault_1_1cli_1_1commands_1_1VerifyCommand_a84d66a803a40e61cd9fc52497c85cb37}{setup}}(CLI::App\&\ app)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classfilevault_1_1cli_1_1commands_1_1VerifyCommand_afb75e72f6a7f65f0eb154650e2d4626d}{execute}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00024\ \ \ \ \ }
+\DoxyCodeLine{00025\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00026\ \ \ \ \ std::string\ \mbox{\hyperlink{classfilevault_1_1cli_1_1commands_1_1VerifyCommand_a6c7bcf81da824ce63a76908bbe366420}{name\_}}\ =\ \textcolor{stringliteral}{"{}verify"{}};}
+\DoxyCodeLine{00027\ \ \ \ \ std::string\ \mbox{\hyperlink{classfilevault_1_1cli_1_1commands_1_1VerifyCommand_ae3de9a212d121c0057f97fe6417e97ec}{description\_}}\ =\ \textcolor{stringliteral}{"{}Verify\ digital\ signature\ of\ a\ file"{}};}
+\DoxyCodeLine{00028\ \ \ \ \ }
+\DoxyCodeLine{00029\ \ \ \ \ \mbox{\hyperlink{classfilevault_1_1core_1_1CryptoEngine}{core::CryptoEngine}}\&\ \mbox{\hyperlink{classfilevault_1_1cli_1_1commands_1_1VerifyCommand_a74572ebc71c6fc700fdd6b51f14bbb8d}{engine\_}};}
+\DoxyCodeLine{00030\ \ \ \ \ std::string\ \mbox{\hyperlink{classfilevault_1_1cli_1_1commands_1_1VerifyCommand_ae0c83be517de73471f7b813e9c0d0726}{file\_path\_}};}
+\DoxyCodeLine{00031\ \ \ \ \ std::string\ \mbox{\hyperlink{classfilevault_1_1cli_1_1commands_1_1VerifyCommand_ae2b1e647a07dd373bb0f22e40f6a8788}{signature\_path\_}};}
+\DoxyCodeLine{00032\ \ \ \ \ std::string\ \mbox{\hyperlink{classfilevault_1_1cli_1_1commands_1_1VerifyCommand_a757d1061e909d8942be5b2a8a2fb5d74}{public\_key\_path\_}};}
+\DoxyCodeLine{00033\ \ \ \ \ std::string\ \mbox{\hyperlink{classfilevault_1_1cli_1_1commands_1_1VerifyCommand_a757aeeac2c9af28b1be0fdbf38eaaf7c}{algorithm\_}}\ =\ \textcolor{stringliteral}{"{}rsa"{}};}
+\DoxyCodeLine{00034\ \};}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \}\ \textcolor{comment}{//\ namespace\ commands}}
+\DoxyCodeLine{00037\ \}\ \textcolor{comment}{//\ namespace\ cli}}
+\DoxyCodeLine{00038\ \}\ \textcolor{comment}{//\ namespace\ filevault}}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ FILEVAULT\_CLI\_COMMANDS\_VERIFY\_CMD\_HPP}}
+
+\end{DoxyCode}

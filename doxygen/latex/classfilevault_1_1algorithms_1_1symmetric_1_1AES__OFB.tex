@@ -1,0 +1,301 @@
+\doxysection{filevault\+::algorithms\+::symmetric\+::AES\+\_\+\+OFB Class Reference}
+\hypertarget{classfilevault_1_1algorithms_1_1symmetric_1_1AES__OFB}{}\label{classfilevault_1_1algorithms_1_1symmetric_1_1AES__OFB}\index{filevault::algorithms::symmetric::AES\_OFB@{filevault::algorithms::symmetric::AES\_OFB}}
+
+
+AES-\/\+OFB encryption algorithm.  
+
+
+
+
+{\ttfamily \#include $<$aes\+\_\+ofb.\+hpp$>$}
+
+
+
+Inheritance diagram for filevault\+::algorithms\+::symmetric\+::AES\+\_\+\+OFB\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=205pt]{classfilevault_1_1algorithms_1_1symmetric_1_1AES__OFB__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for filevault\+::algorithms\+::symmetric\+::AES\+\_\+\+OFB\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=205pt]{classfilevault_1_1algorithms_1_1symmetric_1_1AES__OFB__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1AES__OFB_a6de6a97dc3929545748efe8cc3a37607}{AES\+\_\+\+OFB}} (size\+\_\+t key\+\_\+bits=256)
+\begin{DoxyCompactList}\small\item\em Construct AES-\/\+OFB with specified key size. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1AES__OFB_a5f2224deb01e91658cb6550b42455684}{\texorpdfstring{$\sim$}{\string~}\+AES\+\_\+\+OFB}} () override=default
+\item 
+std\+::string \mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1AES__OFB_a5507ba31ff1e0037eb50c83f99a1a6b9}{name}} () const override
+\begin{DoxyCompactList}\small\item\em Get algorithm name. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacefilevault_1_1core_ab1ba257a0205c63e9e1e3623170940a2}{core\+::\+Algorithm\+Type}} \mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1AES__OFB_a6916f6aa3463f77bf24c0121daab469f}{type}} () const override
+\begin{DoxyCompactList}\small\item\em Get algorithm type. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structfilevault_1_1core_1_1CryptoResult}{core\+::\+Crypto\+Result}} \mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1AES__OFB_a70ae1c37e4e984129075bd92131641a0}{encrypt}} (std\+::span$<$ const uint8\+\_\+t $>$ plaintext, std\+::span$<$ const uint8\+\_\+t $>$ key, const \mbox{\hyperlink{structfilevault_1_1core_1_1EncryptionConfig}{core\+::\+Encryption\+Config}} \&config) override
+\begin{DoxyCompactList}\small\item\em Encrypt data. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structfilevault_1_1core_1_1CryptoResult}{core\+::\+Crypto\+Result}} \mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1AES__OFB_a9b373264f287b0b28ae060a8160a259f}{decrypt}} (std\+::span$<$ const uint8\+\_\+t $>$ ciphertext, std\+::span$<$ const uint8\+\_\+t $>$ key, const \mbox{\hyperlink{structfilevault_1_1core_1_1EncryptionConfig}{core\+::\+Encryption\+Config}} \&config) override
+\begin{DoxyCompactList}\small\item\em Decrypt data. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1AES__OFB_afe53f720d9c1ab4fcf2ed65bda07e0d2}{key\+\_\+size}} () const override
+\begin{DoxyCompactList}\small\item\em Get recommended key size in bytes. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1AES__OFB_abb6c2e8df98769b1ef2dd5d024207409}{iv\+\_\+size}} () const
+\item 
+size\+\_\+t \mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1AES__OFB_afce66c6c15290de923a7f3019f5e13b3}{block\+\_\+size}} () const
+\item 
+bool \mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1AES__OFB_a9ff224181636b95715a375a7db4284ae}{requires\+\_\+padding}} () const
+\item 
+bool \mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1AES__OFB_a8c777ce6148a91d7d23e408928970087}{is\+\_\+authenticated}} () const
+\item 
+bool \mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1AES__OFB_af7853c9e793e398ceca2cb800f215f14}{is\+\_\+suitable\+\_\+for}} (\mbox{\hyperlink{namespacefilevault_1_1core_abcb3b3d896f7dc00926903183b3e2dc9}{core\+::\+Security\+Level}} level) const override
+\begin{DoxyCompactList}\small\item\em Check if algorithm is suitable for security level. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classfilevault_1_1core_1_1ICryptoAlgorithm}{filevault\+::core\+::\+ICrypto\+Algorithm}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classfilevault_1_1core_1_1ICryptoAlgorithm_a36383558169617931374ca3b64399818}{\texorpdfstring{$\sim$}{\string~}\+ICrypto\+Algorithm}} ()=default
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+size\+\_\+t \mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1AES__OFB_ab315362f9dd1fe7ab239c676f309fbc8}{key\+\_\+bits\+\_\+}}
+\item 
+\mbox{\hyperlink{namespacefilevault_1_1core_ab1ba257a0205c63e9e1e3623170940a2}{core\+::\+Algorithm\+Type}} \mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1AES__OFB_a5cc4b157fc24fde21ee16edecbbda551}{type\+\_\+}}
+\item 
+std\+::string \mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1AES__OFB_a306dcd5ef527589baee71aa84382e608}{botan\+\_\+name\+\_\+}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+AES-\/\+OFB encryption algorithm. 
+
+Features\+:
+\begin{DoxyItemize}
+\item True stream cipher mode
+\item No error propagation (bit flip affects only one bit)
+\item Keystream can be pre-\/computed
+\item No padding required 
+\end{DoxyItemize}
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classfilevault_1_1algorithms_1_1symmetric_1_1AES__OFB_a6de6a97dc3929545748efe8cc3a37607}\label{classfilevault_1_1algorithms_1_1symmetric_1_1AES__OFB_a6de6a97dc3929545748efe8cc3a37607} 
+\index{filevault::algorithms::symmetric::AES\_OFB@{filevault::algorithms::symmetric::AES\_OFB}!AES\_OFB@{AES\_OFB}}
+\index{AES\_OFB@{AES\_OFB}!filevault::algorithms::symmetric::AES\_OFB@{filevault::algorithms::symmetric::AES\_OFB}}
+\doxysubsubsection{\texorpdfstring{AES\_OFB()}{AES\_OFB()}}
+{\footnotesize\ttfamily filevault\+::algorithms\+::symmetric\+::\+AES\+\_\+\+OFB\+::\+AES\+\_\+\+OFB (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{key\+\_\+bits = {\ttfamily 256} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Construct AES-\/\+OFB with specified key size. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em key\+\_\+bits} & Key size in bits (128, 192, or 256) \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classfilevault_1_1algorithms_1_1symmetric_1_1AES__OFB_a5f2224deb01e91658cb6550b42455684}\label{classfilevault_1_1algorithms_1_1symmetric_1_1AES__OFB_a5f2224deb01e91658cb6550b42455684} 
+\index{filevault::algorithms::symmetric::AES\_OFB@{filevault::algorithms::symmetric::AES\_OFB}!````~AES\_OFB@{\texorpdfstring{$\sim$}{\string~}AES\_OFB}}
+\index{````~AES\_OFB@{\texorpdfstring{$\sim$}{\string~}AES\_OFB}!filevault::algorithms::symmetric::AES\_OFB@{filevault::algorithms::symmetric::AES\_OFB}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}AES\_OFB()}{\string~AES\_OFB()}}
+{\footnotesize\ttfamily filevault\+::algorithms\+::symmetric\+::\+AES\+\_\+\+OFB\+::\texorpdfstring{$\sim$}{\string~}\+AES\+\_\+\+OFB (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [default]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classfilevault_1_1algorithms_1_1symmetric_1_1AES__OFB_afce66c6c15290de923a7f3019f5e13b3}\label{classfilevault_1_1algorithms_1_1symmetric_1_1AES__OFB_afce66c6c15290de923a7f3019f5e13b3} 
+\index{filevault::algorithms::symmetric::AES\_OFB@{filevault::algorithms::symmetric::AES\_OFB}!block\_size@{block\_size}}
+\index{block\_size@{block\_size}!filevault::algorithms::symmetric::AES\_OFB@{filevault::algorithms::symmetric::AES\_OFB}}
+\doxysubsubsection{\texorpdfstring{block\_size()}{block\_size()}}
+{\footnotesize\ttfamily size\+\_\+t filevault\+::algorithms\+::symmetric\+::\+AES\+\_\+\+OFB\+::block\+\_\+size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classfilevault_1_1algorithms_1_1symmetric_1_1AES__OFB_a9b373264f287b0b28ae060a8160a259f}\label{classfilevault_1_1algorithms_1_1symmetric_1_1AES__OFB_a9b373264f287b0b28ae060a8160a259f} 
+\index{filevault::algorithms::symmetric::AES\_OFB@{filevault::algorithms::symmetric::AES\_OFB}!decrypt@{decrypt}}
+\index{decrypt@{decrypt}!filevault::algorithms::symmetric::AES\_OFB@{filevault::algorithms::symmetric::AES\_OFB}}
+\doxysubsubsection{\texorpdfstring{decrypt()}{decrypt()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structfilevault_1_1core_1_1CryptoResult}{core\+::\+Crypto\+Result}} filevault\+::algorithms\+::symmetric\+::\+AES\+\_\+\+OFB\+::decrypt (\begin{DoxyParamCaption}\item[{std\+::span$<$ const uint8\+\_\+t $>$}]{ciphertext,  }\item[{std\+::span$<$ const uint8\+\_\+t $>$}]{key,  }\item[{const \mbox{\hyperlink{structfilevault_1_1core_1_1EncryptionConfig}{core\+::\+Encryption\+Config}} \&}]{config }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Decrypt data. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ciphertext} & Encrypted data \\
+\hline
+{\em key} & Decryption key (derived from password) \\
+\hline
+{\em config} & Decryption configuration \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Decrypted data 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classfilevault_1_1core_1_1ICryptoAlgorithm_a5ad6e9e19a3ed1dd3f0b49106bcaac0d}{filevault\+::core\+::\+ICrypto\+Algorithm}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1algorithms_1_1symmetric_1_1AES__OFB_a9b373264f287b0b28ae060a8160a259f_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1algorithms_1_1symmetric_1_1AES__OFB_a70ae1c37e4e984129075bd92131641a0}\label{classfilevault_1_1algorithms_1_1symmetric_1_1AES__OFB_a70ae1c37e4e984129075bd92131641a0} 
+\index{filevault::algorithms::symmetric::AES\_OFB@{filevault::algorithms::symmetric::AES\_OFB}!encrypt@{encrypt}}
+\index{encrypt@{encrypt}!filevault::algorithms::symmetric::AES\_OFB@{filevault::algorithms::symmetric::AES\_OFB}}
+\doxysubsubsection{\texorpdfstring{encrypt()}{encrypt()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structfilevault_1_1core_1_1CryptoResult}{core\+::\+Crypto\+Result}} filevault\+::algorithms\+::symmetric\+::\+AES\+\_\+\+OFB\+::encrypt (\begin{DoxyParamCaption}\item[{std\+::span$<$ const uint8\+\_\+t $>$}]{plaintext,  }\item[{std\+::span$<$ const uint8\+\_\+t $>$}]{key,  }\item[{const \mbox{\hyperlink{structfilevault_1_1core_1_1EncryptionConfig}{core\+::\+Encryption\+Config}} \&}]{config }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Encrypt data. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em plaintext} & Input data to encrypt \\
+\hline
+{\em key} & Encryption key (derived from password) \\
+\hline
+{\em config} & Encryption configuration \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Encrypted data with metadata 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classfilevault_1_1core_1_1ICryptoAlgorithm_a5b9102cef54b84b54feea1dc16561a2d}{filevault\+::core\+::\+ICrypto\+Algorithm}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1algorithms_1_1symmetric_1_1AES__OFB_a70ae1c37e4e984129075bd92131641a0_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1algorithms_1_1symmetric_1_1AES__OFB_a8c777ce6148a91d7d23e408928970087}\label{classfilevault_1_1algorithms_1_1symmetric_1_1AES__OFB_a8c777ce6148a91d7d23e408928970087} 
+\index{filevault::algorithms::symmetric::AES\_OFB@{filevault::algorithms::symmetric::AES\_OFB}!is\_authenticated@{is\_authenticated}}
+\index{is\_authenticated@{is\_authenticated}!filevault::algorithms::symmetric::AES\_OFB@{filevault::algorithms::symmetric::AES\_OFB}}
+\doxysubsubsection{\texorpdfstring{is\_authenticated()}{is\_authenticated()}}
+{\footnotesize\ttfamily bool filevault\+::algorithms\+::symmetric\+::\+AES\+\_\+\+OFB\+::is\+\_\+authenticated (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classfilevault_1_1algorithms_1_1symmetric_1_1AES__OFB_af7853c9e793e398ceca2cb800f215f14}\label{classfilevault_1_1algorithms_1_1symmetric_1_1AES__OFB_af7853c9e793e398ceca2cb800f215f14} 
+\index{filevault::algorithms::symmetric::AES\_OFB@{filevault::algorithms::symmetric::AES\_OFB}!is\_suitable\_for@{is\_suitable\_for}}
+\index{is\_suitable\_for@{is\_suitable\_for}!filevault::algorithms::symmetric::AES\_OFB@{filevault::algorithms::symmetric::AES\_OFB}}
+\doxysubsubsection{\texorpdfstring{is\_suitable\_for()}{is\_suitable\_for()}}
+{\footnotesize\ttfamily bool filevault\+::algorithms\+::symmetric\+::\+AES\+\_\+\+OFB\+::is\+\_\+suitable\+\_\+for (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacefilevault_1_1core_abcb3b3d896f7dc00926903183b3e2dc9}{core\+::\+Security\+Level}}}]{level }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Check if algorithm is suitable for security level. 
+
+
+
+Implements \mbox{\hyperlink{classfilevault_1_1core_1_1ICryptoAlgorithm_aab479734daf06d3f76af5d916c0285fa}{filevault\+::core\+::\+ICrypto\+Algorithm}}.
+
+\Hypertarget{classfilevault_1_1algorithms_1_1symmetric_1_1AES__OFB_abb6c2e8df98769b1ef2dd5d024207409}\label{classfilevault_1_1algorithms_1_1symmetric_1_1AES__OFB_abb6c2e8df98769b1ef2dd5d024207409} 
+\index{filevault::algorithms::symmetric::AES\_OFB@{filevault::algorithms::symmetric::AES\_OFB}!iv\_size@{iv\_size}}
+\index{iv\_size@{iv\_size}!filevault::algorithms::symmetric::AES\_OFB@{filevault::algorithms::symmetric::AES\_OFB}}
+\doxysubsubsection{\texorpdfstring{iv\_size()}{iv\_size()}}
+{\footnotesize\ttfamily size\+\_\+t filevault\+::algorithms\+::symmetric\+::\+AES\+\_\+\+OFB\+::iv\+\_\+size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1algorithms_1_1symmetric_1_1AES__OFB_abb6c2e8df98769b1ef2dd5d024207409_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1algorithms_1_1symmetric_1_1AES__OFB_afe53f720d9c1ab4fcf2ed65bda07e0d2}\label{classfilevault_1_1algorithms_1_1symmetric_1_1AES__OFB_afe53f720d9c1ab4fcf2ed65bda07e0d2} 
+\index{filevault::algorithms::symmetric::AES\_OFB@{filevault::algorithms::symmetric::AES\_OFB}!key\_size@{key\_size}}
+\index{key\_size@{key\_size}!filevault::algorithms::symmetric::AES\_OFB@{filevault::algorithms::symmetric::AES\_OFB}}
+\doxysubsubsection{\texorpdfstring{key\_size()}{key\_size()}}
+{\footnotesize\ttfamily size\+\_\+t filevault\+::algorithms\+::symmetric\+::\+AES\+\_\+\+OFB\+::key\+\_\+size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get recommended key size in bytes. 
+
+
+
+Implements \mbox{\hyperlink{classfilevault_1_1core_1_1ICryptoAlgorithm_af9ccb47457495eb99988fef0b5b2bbe8}{filevault\+::core\+::\+ICrypto\+Algorithm}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1algorithms_1_1symmetric_1_1AES__OFB_afe53f720d9c1ab4fcf2ed65bda07e0d2_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1algorithms_1_1symmetric_1_1AES__OFB_a5507ba31ff1e0037eb50c83f99a1a6b9}\label{classfilevault_1_1algorithms_1_1symmetric_1_1AES__OFB_a5507ba31ff1e0037eb50c83f99a1a6b9} 
+\index{filevault::algorithms::symmetric::AES\_OFB@{filevault::algorithms::symmetric::AES\_OFB}!name@{name}}
+\index{name@{name}!filevault::algorithms::symmetric::AES\_OFB@{filevault::algorithms::symmetric::AES\_OFB}}
+\doxysubsubsection{\texorpdfstring{name()}{name()}}
+{\footnotesize\ttfamily std\+::string filevault\+::algorithms\+::symmetric\+::\+AES\+\_\+\+OFB\+::name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get algorithm name. 
+
+
+
+Implements \mbox{\hyperlink{classfilevault_1_1core_1_1ICryptoAlgorithm_a8acdc23e4f2ea77bb4a5b9820b27fa66}{filevault\+::core\+::\+ICrypto\+Algorithm}}.
+
+\Hypertarget{classfilevault_1_1algorithms_1_1symmetric_1_1AES__OFB_a9ff224181636b95715a375a7db4284ae}\label{classfilevault_1_1algorithms_1_1symmetric_1_1AES__OFB_a9ff224181636b95715a375a7db4284ae} 
+\index{filevault::algorithms::symmetric::AES\_OFB@{filevault::algorithms::symmetric::AES\_OFB}!requires\_padding@{requires\_padding}}
+\index{requires\_padding@{requires\_padding}!filevault::algorithms::symmetric::AES\_OFB@{filevault::algorithms::symmetric::AES\_OFB}}
+\doxysubsubsection{\texorpdfstring{requires\_padding()}{requires\_padding()}}
+{\footnotesize\ttfamily bool filevault\+::algorithms\+::symmetric\+::\+AES\+\_\+\+OFB\+::requires\+\_\+padding (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classfilevault_1_1algorithms_1_1symmetric_1_1AES__OFB_a6916f6aa3463f77bf24c0121daab469f}\label{classfilevault_1_1algorithms_1_1symmetric_1_1AES__OFB_a6916f6aa3463f77bf24c0121daab469f} 
+\index{filevault::algorithms::symmetric::AES\_OFB@{filevault::algorithms::symmetric::AES\_OFB}!type@{type}}
+\index{type@{type}!filevault::algorithms::symmetric::AES\_OFB@{filevault::algorithms::symmetric::AES\_OFB}}
+\doxysubsubsection{\texorpdfstring{type()}{type()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacefilevault_1_1core_ab1ba257a0205c63e9e1e3623170940a2}{core\+::\+Algorithm\+Type}} filevault\+::algorithms\+::symmetric\+::\+AES\+\_\+\+OFB\+::type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get algorithm type. 
+
+
+
+Implements \mbox{\hyperlink{classfilevault_1_1core_1_1ICryptoAlgorithm_a11b7820f7b0bbb5fd6668fac3b78a7e1}{filevault\+::core\+::\+ICrypto\+Algorithm}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classfilevault_1_1algorithms_1_1symmetric_1_1AES__OFB_a306dcd5ef527589baee71aa84382e608}\label{classfilevault_1_1algorithms_1_1symmetric_1_1AES__OFB_a306dcd5ef527589baee71aa84382e608} 
+\index{filevault::algorithms::symmetric::AES\_OFB@{filevault::algorithms::symmetric::AES\_OFB}!botan\_name\_@{botan\_name\_}}
+\index{botan\_name\_@{botan\_name\_}!filevault::algorithms::symmetric::AES\_OFB@{filevault::algorithms::symmetric::AES\_OFB}}
+\doxysubsubsection{\texorpdfstring{botan\_name\_}{botan\_name\_}}
+{\footnotesize\ttfamily std\+::string filevault\+::algorithms\+::symmetric\+::\+AES\+\_\+\+OFB\+::botan\+\_\+name\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classfilevault_1_1algorithms_1_1symmetric_1_1AES__OFB_ab315362f9dd1fe7ab239c676f309fbc8}\label{classfilevault_1_1algorithms_1_1symmetric_1_1AES__OFB_ab315362f9dd1fe7ab239c676f309fbc8} 
+\index{filevault::algorithms::symmetric::AES\_OFB@{filevault::algorithms::symmetric::AES\_OFB}!key\_bits\_@{key\_bits\_}}
+\index{key\_bits\_@{key\_bits\_}!filevault::algorithms::symmetric::AES\_OFB@{filevault::algorithms::symmetric::AES\_OFB}}
+\doxysubsubsection{\texorpdfstring{key\_bits\_}{key\_bits\_}}
+{\footnotesize\ttfamily size\+\_\+t filevault\+::algorithms\+::symmetric\+::\+AES\+\_\+\+OFB\+::key\+\_\+bits\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classfilevault_1_1algorithms_1_1symmetric_1_1AES__OFB_a5cc4b157fc24fde21ee16edecbbda551}\label{classfilevault_1_1algorithms_1_1symmetric_1_1AES__OFB_a5cc4b157fc24fde21ee16edecbbda551} 
+\index{filevault::algorithms::symmetric::AES\_OFB@{filevault::algorithms::symmetric::AES\_OFB}!type\_@{type\_}}
+\index{type\_@{type\_}!filevault::algorithms::symmetric::AES\_OFB@{filevault::algorithms::symmetric::AES\_OFB}}
+\doxysubsubsection{\texorpdfstring{type\_}{type\_}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacefilevault_1_1core_ab1ba257a0205c63e9e1e3623170940a2}{core\+::\+Algorithm\+Type}} filevault\+::algorithms\+::symmetric\+::\+AES\+\_\+\+OFB\+::type\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/filevault/algorithms/symmetric/\mbox{\hyperlink{aes__ofb_8hpp}{aes\+\_\+ofb.\+hpp}}\item 
+src/algorithms/symmetric/\mbox{\hyperlink{aes__ofb_8cpp}{aes\+\_\+ofb.\+cpp}}\end{DoxyCompactItemize}

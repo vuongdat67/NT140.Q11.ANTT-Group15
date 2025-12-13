@@ -1,0 +1,45 @@
+\doxysection{include/filevault/compression/compressor.hpp File Reference}
+\hypertarget{compressor_8hpp}{}\label{compressor_8hpp}\index{include/filevault/compression/compressor.hpp@{include/filevault/compression/compressor.hpp}}
+{\ttfamily \#include "{}filevault/core/types.\+hpp"{}}\newline
+{\ttfamily \#include "{}filevault/core/result.\+hpp"{}}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$span$>$}\newline
+{\ttfamily \#include $<$memory$>$}\newline
+Include dependency graph for compressor.\+hpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{compressor_8hpp__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{compressor_8hpp__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structfilevault_1_1compression_1_1CompressionResult}{filevault\+::compression\+::\+Compression\+Result}}
+\begin{DoxyCompactList}\small\item\em Compression result. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classfilevault_1_1compression_1_1ICompressor}{filevault\+::compression\+::\+ICompressor}}
+\begin{DoxyCompactList}\small\item\em Interface for compression algorithms. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classfilevault_1_1compression_1_1CompressionService}{filevault\+::compression\+::\+Compression\+Service}}
+\begin{DoxyCompactList}\small\item\em Compression service -\/ factory for compressors. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classfilevault_1_1compression_1_1ZlibCompressor}{filevault\+::compression\+::\+Zlib\+Compressor}}
+\begin{DoxyCompactList}\small\item\em ZLIB compressor (fast, good compression) \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classfilevault_1_1compression_1_1Bzip2Compressor}{filevault\+::compression\+::\+Bzip2\+Compressor}}
+\begin{DoxyCompactList}\small\item\em BZIP2 compressor (better ratio, slower) \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classfilevault_1_1compression_1_1LzmaCompressor}{filevault\+::compression\+::\+Lzma\+Compressor}}
+\begin{DoxyCompactList}\small\item\em LZMA compressor (maximum compression, slowest) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespacefilevault}{filevault}}
+\item 
+namespace \mbox{\hyperlink{namespacefilevault_1_1compression}{filevault\+::compression}}
+\end{DoxyCompactItemize}

@@ -1,0 +1,254 @@
+\doxysection{filevault\+::cli\+::Decompress\+Command Class Reference}
+\hypertarget{classfilevault_1_1cli_1_1DecompressCommand}{}\label{classfilevault_1_1cli_1_1DecompressCommand}\index{filevault::cli::DecompressCommand@{filevault::cli::DecompressCommand}}
+
+
+Decompress command -\/ alias for compress -\/d.  
+
+
+
+
+{\ttfamily \#include $<$decompress\+\_\+cmd.\+hpp$>$}
+
+
+
+Inheritance diagram for filevault\+::cli\+::Decompress\+Command\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=220pt]{classfilevault_1_1cli_1_1DecompressCommand__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for filevault\+::cli\+::Decompress\+Command\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=220pt]{classfilevault_1_1cli_1_1DecompressCommand__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{classfilevault_1_1cli_1_1DecompressCommand_a79de5885842cae3755cfeba6ec4d8a91}{name}} () const override
+\begin{DoxyCompactList}\small\item\em Get command name. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classfilevault_1_1cli_1_1DecompressCommand_a9681f952e592100e046b9cec690a9c9d}{description}} () const override
+\begin{DoxyCompactList}\small\item\em Get command description. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classfilevault_1_1cli_1_1DecompressCommand_a5cc59bb4cb1aaf5b0d63043b01de9647}{setup}} (CLI\+::\+App \&app) override
+\begin{DoxyCompactList}\small\item\em Setup CLI11 subcommand. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classfilevault_1_1cli_1_1DecompressCommand_a8a5ebb3e046b114bfeb5bc54e129d049}{execute}} () override
+\begin{DoxyCompactList}\small\item\em Execute the command. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classfilevault_1_1cli_1_1ICommand}{filevault\+::cli\+::\+ICommand}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classfilevault_1_1cli_1_1ICommand_a358ce6bf0db6a1ff7f53eec427481a5d}{\texorpdfstring{$\sim$}{\string~}\+ICommand}} ()=default
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{classfilevault_1_1cli_1_1DecompressCommand_a7a89f2cda053d5bb39c9d901a74776eb}{detect\+\_\+algorithm}} (const std\+::string \&path)
+\item 
+std\+::string \mbox{\hyperlink{classfilevault_1_1cli_1_1DecompressCommand_a3e58f59f9674d43be523fcfabed0c1a6}{generate\+\_\+output\+\_\+path}} (const std\+::string \&input)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+CLI\+::\+App \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classfilevault_1_1cli_1_1DecompressCommand_aecc670866d897199e0bd0cd17cce8368}{subcommand\+\_\+}} = nullptr
+\item 
+std\+::string \mbox{\hyperlink{classfilevault_1_1cli_1_1DecompressCommand_a3a2aca356c18f2f1b0e427cf6ff43be2}{input\+\_\+file\+\_\+}}
+\item 
+std\+::string \mbox{\hyperlink{classfilevault_1_1cli_1_1DecompressCommand_aca953cb8ff67e1176bd94b5282c59225}{output\+\_\+file\+\_\+}}
+\item 
+std\+::string \mbox{\hyperlink{classfilevault_1_1cli_1_1DecompressCommand_a23c711355cd39b33b7b3a0f7061311e6}{algorithm\+\_\+}}
+\item 
+bool \mbox{\hyperlink{classfilevault_1_1cli_1_1DecompressCommand_a3d8a302cb890288e64c69e6a3e1dc6fd}{auto\+\_\+detect\+\_\+}} = true
+\item 
+bool \mbox{\hyperlink{classfilevault_1_1cli_1_1DecompressCommand_a6cf20a0e6fa1172f0e6daead8c05f44d}{verbose\+\_\+}} = false
+\item 
+bool \mbox{\hyperlink{classfilevault_1_1cli_1_1DecompressCommand_a96be31b07bf66df170e26f16ee92ecfa}{benchmark\+\_\+}} = false
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Decompress command -\/ alias for compress -\/d. 
+
+Provides a direct {\ttfamily decompress} command for better UX 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classfilevault_1_1cli_1_1DecompressCommand_a9681f952e592100e046b9cec690a9c9d}\label{classfilevault_1_1cli_1_1DecompressCommand_a9681f952e592100e046b9cec690a9c9d} 
+\index{filevault::cli::DecompressCommand@{filevault::cli::DecompressCommand}!description@{description}}
+\index{description@{description}!filevault::cli::DecompressCommand@{filevault::cli::DecompressCommand}}
+\doxysubsubsection{\texorpdfstring{description()}{description()}}
+{\footnotesize\ttfamily std\+::string filevault\+::cli\+::\+Decompress\+Command\+::description (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get command description. 
+
+
+
+Implements \mbox{\hyperlink{classfilevault_1_1cli_1_1ICommand_a154cdd3f87273142e70814445abd48ea}{filevault\+::cli\+::\+ICommand}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1cli_1_1DecompressCommand_a9681f952e592100e046b9cec690a9c9d_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1cli_1_1DecompressCommand_a7a89f2cda053d5bb39c9d901a74776eb}\label{classfilevault_1_1cli_1_1DecompressCommand_a7a89f2cda053d5bb39c9d901a74776eb} 
+\index{filevault::cli::DecompressCommand@{filevault::cli::DecompressCommand}!detect\_algorithm@{detect\_algorithm}}
+\index{detect\_algorithm@{detect\_algorithm}!filevault::cli::DecompressCommand@{filevault::cli::DecompressCommand}}
+\doxysubsubsection{\texorpdfstring{detect\_algorithm()}{detect\_algorithm()}}
+{\footnotesize\ttfamily std\+::string filevault\+::cli\+::\+Decompress\+Command\+::detect\+\_\+algorithm (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1cli_1_1DecompressCommand_a7a89f2cda053d5bb39c9d901a74776eb_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1cli_1_1DecompressCommand_a8a5ebb3e046b114bfeb5bc54e129d049}\label{classfilevault_1_1cli_1_1DecompressCommand_a8a5ebb3e046b114bfeb5bc54e129d049} 
+\index{filevault::cli::DecompressCommand@{filevault::cli::DecompressCommand}!execute@{execute}}
+\index{execute@{execute}!filevault::cli::DecompressCommand@{filevault::cli::DecompressCommand}}
+\doxysubsubsection{\texorpdfstring{execute()}{execute()}}
+{\footnotesize\ttfamily int filevault\+::cli\+::\+Decompress\+Command\+::execute (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Execute the command. 
+
+
+
+Implements \mbox{\hyperlink{classfilevault_1_1cli_1_1ICommand_a2fdc36b29a23b94a6e52bc3d4eb0c1ed}{filevault\+::cli\+::\+ICommand}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1cli_1_1DecompressCommand_a8a5ebb3e046b114bfeb5bc54e129d049_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1cli_1_1DecompressCommand_a8a5ebb3e046b114bfeb5bc54e129d049_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1cli_1_1DecompressCommand_a3e58f59f9674d43be523fcfabed0c1a6}\label{classfilevault_1_1cli_1_1DecompressCommand_a3e58f59f9674d43be523fcfabed0c1a6} 
+\index{filevault::cli::DecompressCommand@{filevault::cli::DecompressCommand}!generate\_output\_path@{generate\_output\_path}}
+\index{generate\_output\_path@{generate\_output\_path}!filevault::cli::DecompressCommand@{filevault::cli::DecompressCommand}}
+\doxysubsubsection{\texorpdfstring{generate\_output\_path()}{generate\_output\_path()}}
+{\footnotesize\ttfamily std\+::string filevault\+::cli\+::\+Decompress\+Command\+::generate\+\_\+output\+\_\+path (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{input }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1cli_1_1DecompressCommand_a3e58f59f9674d43be523fcfabed0c1a6_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1cli_1_1DecompressCommand_a79de5885842cae3755cfeba6ec4d8a91}\label{classfilevault_1_1cli_1_1DecompressCommand_a79de5885842cae3755cfeba6ec4d8a91} 
+\index{filevault::cli::DecompressCommand@{filevault::cli::DecompressCommand}!name@{name}}
+\index{name@{name}!filevault::cli::DecompressCommand@{filevault::cli::DecompressCommand}}
+\doxysubsubsection{\texorpdfstring{name()}{name()}}
+{\footnotesize\ttfamily std\+::string filevault\+::cli\+::\+Decompress\+Command\+::name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get command name. 
+
+
+
+Implements \mbox{\hyperlink{classfilevault_1_1cli_1_1ICommand_a60aa4bc7c96c2e80feeb1a184d7ae2f7}{filevault\+::cli\+::\+ICommand}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1cli_1_1DecompressCommand_a79de5885842cae3755cfeba6ec4d8a91_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1cli_1_1DecompressCommand_a5cc59bb4cb1aaf5b0d63043b01de9647}\label{classfilevault_1_1cli_1_1DecompressCommand_a5cc59bb4cb1aaf5b0d63043b01de9647} 
+\index{filevault::cli::DecompressCommand@{filevault::cli::DecompressCommand}!setup@{setup}}
+\index{setup@{setup}!filevault::cli::DecompressCommand@{filevault::cli::DecompressCommand}}
+\doxysubsubsection{\texorpdfstring{setup()}{setup()}}
+{\footnotesize\ttfamily void filevault\+::cli\+::\+Decompress\+Command\+::setup (\begin{DoxyParamCaption}\item[{CLI\+::\+App \&}]{app }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Setup CLI11 subcommand. 
+
+
+
+Implements \mbox{\hyperlink{classfilevault_1_1cli_1_1ICommand_aa43a60aabddff55d1060c334dade972c}{filevault\+::cli\+::\+ICommand}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1cli_1_1DecompressCommand_a5cc59bb4cb1aaf5b0d63043b01de9647_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classfilevault_1_1cli_1_1DecompressCommand_a23c711355cd39b33b7b3a0f7061311e6}\label{classfilevault_1_1cli_1_1DecompressCommand_a23c711355cd39b33b7b3a0f7061311e6} 
+\index{filevault::cli::DecompressCommand@{filevault::cli::DecompressCommand}!algorithm\_@{algorithm\_}}
+\index{algorithm\_@{algorithm\_}!filevault::cli::DecompressCommand@{filevault::cli::DecompressCommand}}
+\doxysubsubsection{\texorpdfstring{algorithm\_}{algorithm\_}}
+{\footnotesize\ttfamily std\+::string filevault\+::cli\+::\+Decompress\+Command\+::algorithm\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classfilevault_1_1cli_1_1DecompressCommand_a3d8a302cb890288e64c69e6a3e1dc6fd}\label{classfilevault_1_1cli_1_1DecompressCommand_a3d8a302cb890288e64c69e6a3e1dc6fd} 
+\index{filevault::cli::DecompressCommand@{filevault::cli::DecompressCommand}!auto\_detect\_@{auto\_detect\_}}
+\index{auto\_detect\_@{auto\_detect\_}!filevault::cli::DecompressCommand@{filevault::cli::DecompressCommand}}
+\doxysubsubsection{\texorpdfstring{auto\_detect\_}{auto\_detect\_}}
+{\footnotesize\ttfamily bool filevault\+::cli\+::\+Decompress\+Command\+::auto\+\_\+detect\+\_\+ = true\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classfilevault_1_1cli_1_1DecompressCommand_a96be31b07bf66df170e26f16ee92ecfa}\label{classfilevault_1_1cli_1_1DecompressCommand_a96be31b07bf66df170e26f16ee92ecfa} 
+\index{filevault::cli::DecompressCommand@{filevault::cli::DecompressCommand}!benchmark\_@{benchmark\_}}
+\index{benchmark\_@{benchmark\_}!filevault::cli::DecompressCommand@{filevault::cli::DecompressCommand}}
+\doxysubsubsection{\texorpdfstring{benchmark\_}{benchmark\_}}
+{\footnotesize\ttfamily bool filevault\+::cli\+::\+Decompress\+Command\+::benchmark\+\_\+ = false\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classfilevault_1_1cli_1_1DecompressCommand_a3a2aca356c18f2f1b0e427cf6ff43be2}\label{classfilevault_1_1cli_1_1DecompressCommand_a3a2aca356c18f2f1b0e427cf6ff43be2} 
+\index{filevault::cli::DecompressCommand@{filevault::cli::DecompressCommand}!input\_file\_@{input\_file\_}}
+\index{input\_file\_@{input\_file\_}!filevault::cli::DecompressCommand@{filevault::cli::DecompressCommand}}
+\doxysubsubsection{\texorpdfstring{input\_file\_}{input\_file\_}}
+{\footnotesize\ttfamily std\+::string filevault\+::cli\+::\+Decompress\+Command\+::input\+\_\+file\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classfilevault_1_1cli_1_1DecompressCommand_aca953cb8ff67e1176bd94b5282c59225}\label{classfilevault_1_1cli_1_1DecompressCommand_aca953cb8ff67e1176bd94b5282c59225} 
+\index{filevault::cli::DecompressCommand@{filevault::cli::DecompressCommand}!output\_file\_@{output\_file\_}}
+\index{output\_file\_@{output\_file\_}!filevault::cli::DecompressCommand@{filevault::cli::DecompressCommand}}
+\doxysubsubsection{\texorpdfstring{output\_file\_}{output\_file\_}}
+{\footnotesize\ttfamily std\+::string filevault\+::cli\+::\+Decompress\+Command\+::output\+\_\+file\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classfilevault_1_1cli_1_1DecompressCommand_aecc670866d897199e0bd0cd17cce8368}\label{classfilevault_1_1cli_1_1DecompressCommand_aecc670866d897199e0bd0cd17cce8368} 
+\index{filevault::cli::DecompressCommand@{filevault::cli::DecompressCommand}!subcommand\_@{subcommand\_}}
+\index{subcommand\_@{subcommand\_}!filevault::cli::DecompressCommand@{filevault::cli::DecompressCommand}}
+\doxysubsubsection{\texorpdfstring{subcommand\_}{subcommand\_}}
+{\footnotesize\ttfamily CLI\+::\+App\texorpdfstring{$\ast$}{*} filevault\+::cli\+::\+Decompress\+Command\+::subcommand\+\_\+ = nullptr\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classfilevault_1_1cli_1_1DecompressCommand_a6cf20a0e6fa1172f0e6daead8c05f44d}\label{classfilevault_1_1cli_1_1DecompressCommand_a6cf20a0e6fa1172f0e6daead8c05f44d} 
+\index{filevault::cli::DecompressCommand@{filevault::cli::DecompressCommand}!verbose\_@{verbose\_}}
+\index{verbose\_@{verbose\_}!filevault::cli::DecompressCommand@{filevault::cli::DecompressCommand}}
+\doxysubsubsection{\texorpdfstring{verbose\_}{verbose\_}}
+{\footnotesize\ttfamily bool filevault\+::cli\+::\+Decompress\+Command\+::verbose\+\_\+ = false\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/filevault/cli/commands/\mbox{\hyperlink{decompress__cmd_8hpp}{decompress\+\_\+cmd.\+hpp}}\item 
+src/cli/commands/\mbox{\hyperlink{decompress__cmd_8cpp}{decompress\+\_\+cmd.\+cpp}}\end{DoxyCompactItemize}

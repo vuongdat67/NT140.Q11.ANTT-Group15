@@ -1,0 +1,212 @@
+\doxysection{filevault\+::cli\+::Keygen\+Command Class Reference}
+\hypertarget{classfilevault_1_1cli_1_1KeygenCommand}{}\label{classfilevault_1_1cli_1_1KeygenCommand}\index{filevault::cli::KeygenCommand@{filevault::cli::KeygenCommand}}
+
+
+Command to generate key pairs for asymmetric encryption.  
+
+
+
+
+{\ttfamily \#include $<$keygen\+\_\+cmd.\+hpp$>$}
+
+
+
+Inheritance diagram for filevault\+::cli\+::Keygen\+Command\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=246pt]{classfilevault_1_1cli_1_1KeygenCommand__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for filevault\+::cli\+::Keygen\+Command\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1cli_1_1KeygenCommand__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classfilevault_1_1cli_1_1KeygenCommand_ad5ccae7ee728f919f86659ded57232e9}{Keygen\+Command}} (\mbox{\hyperlink{classfilevault_1_1core_1_1CryptoEngine}{core\+::\+Crypto\+Engine}} \&engine)
+\item 
+std\+::string \mbox{\hyperlink{classfilevault_1_1cli_1_1KeygenCommand_a11191c60a700b71dfc9ada1a7097e5d4}{name}} () const override
+\begin{DoxyCompactList}\small\item\em Get command name. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classfilevault_1_1cli_1_1KeygenCommand_ae088ff39cc05b3b1d0f47a543338e5d8}{description}} () const override
+\begin{DoxyCompactList}\small\item\em Get command description. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classfilevault_1_1cli_1_1KeygenCommand_a47b6d478f41644ea0f47125eaf941a9a}{setup}} (CLI\+::\+App \&app) override
+\begin{DoxyCompactList}\small\item\em Setup CLI11 subcommand. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classfilevault_1_1cli_1_1KeygenCommand_a8fca79b131b144ec7191b715ebff2efc}{execute}} () override
+\begin{DoxyCompactList}\small\item\em Execute the command. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classfilevault_1_1cli_1_1ICommand}{filevault\+::cli\+::\+ICommand}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classfilevault_1_1cli_1_1ICommand_a358ce6bf0db6a1ff7f53eec427481a5d}{\texorpdfstring{$\sim$}{\string~}\+ICommand}} ()=default
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classfilevault_1_1core_1_1CryptoEngine}{core\+::\+Crypto\+Engine}} \& \mbox{\hyperlink{classfilevault_1_1cli_1_1KeygenCommand_a351f2ae147f8a34436956363b75ec1b3}{engine\+\_\+}}
+\item 
+std\+::string \mbox{\hyperlink{classfilevault_1_1cli_1_1KeygenCommand_aff51464bddbd91d4697c85d663831c1a}{algorithm\+\_\+}} = "{}rsa-\/2048"{}
+\item 
+std\+::string \mbox{\hyperlink{classfilevault_1_1cli_1_1KeygenCommand_a5ac5f67916080da178191514ff42d59d}{output\+\_\+prefix\+\_\+}} = "{}filevault\+\_\+key"{}
+\item 
+bool \mbox{\hyperlink{classfilevault_1_1cli_1_1KeygenCommand_a37bc4b66e544c0b9f210882bfa0abc60}{force\+\_\+}} = false
+\item 
+bool \mbox{\hyperlink{classfilevault_1_1cli_1_1KeygenCommand_afc8789ab69a0c0d08ff414a4945a65f2}{verbose\+\_\+}} = false
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Command to generate key pairs for asymmetric encryption. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classfilevault_1_1cli_1_1KeygenCommand_ad5ccae7ee728f919f86659ded57232e9}\label{classfilevault_1_1cli_1_1KeygenCommand_ad5ccae7ee728f919f86659ded57232e9} 
+\index{filevault::cli::KeygenCommand@{filevault::cli::KeygenCommand}!KeygenCommand@{KeygenCommand}}
+\index{KeygenCommand@{KeygenCommand}!filevault::cli::KeygenCommand@{filevault::cli::KeygenCommand}}
+\doxysubsubsection{\texorpdfstring{KeygenCommand()}{KeygenCommand()}}
+{\footnotesize\ttfamily filevault\+::cli\+::\+Keygen\+Command\+::\+Keygen\+Command (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classfilevault_1_1core_1_1CryptoEngine}{core\+::\+Crypto\+Engine}} \&}]{engine }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classfilevault_1_1cli_1_1KeygenCommand_ae088ff39cc05b3b1d0f47a543338e5d8}\label{classfilevault_1_1cli_1_1KeygenCommand_ae088ff39cc05b3b1d0f47a543338e5d8} 
+\index{filevault::cli::KeygenCommand@{filevault::cli::KeygenCommand}!description@{description}}
+\index{description@{description}!filevault::cli::KeygenCommand@{filevault::cli::KeygenCommand}}
+\doxysubsubsection{\texorpdfstring{description()}{description()}}
+{\footnotesize\ttfamily std\+::string filevault\+::cli\+::\+Keygen\+Command\+::description (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get command description. 
+
+
+
+Implements \mbox{\hyperlink{classfilevault_1_1cli_1_1ICommand_a154cdd3f87273142e70814445abd48ea}{filevault\+::cli\+::\+ICommand}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1cli_1_1KeygenCommand_ae088ff39cc05b3b1d0f47a543338e5d8_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1cli_1_1KeygenCommand_a8fca79b131b144ec7191b715ebff2efc}\label{classfilevault_1_1cli_1_1KeygenCommand_a8fca79b131b144ec7191b715ebff2efc} 
+\index{filevault::cli::KeygenCommand@{filevault::cli::KeygenCommand}!execute@{execute}}
+\index{execute@{execute}!filevault::cli::KeygenCommand@{filevault::cli::KeygenCommand}}
+\doxysubsubsection{\texorpdfstring{execute()}{execute()}}
+{\footnotesize\ttfamily int filevault\+::cli\+::\+Keygen\+Command\+::execute (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Execute the command. 
+
+
+
+Implements \mbox{\hyperlink{classfilevault_1_1cli_1_1ICommand_a2fdc36b29a23b94a6e52bc3d4eb0c1ed}{filevault\+::cli\+::\+ICommand}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1cli_1_1KeygenCommand_a8fca79b131b144ec7191b715ebff2efc_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1cli_1_1KeygenCommand_a8fca79b131b144ec7191b715ebff2efc_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1cli_1_1KeygenCommand_a11191c60a700b71dfc9ada1a7097e5d4}\label{classfilevault_1_1cli_1_1KeygenCommand_a11191c60a700b71dfc9ada1a7097e5d4} 
+\index{filevault::cli::KeygenCommand@{filevault::cli::KeygenCommand}!name@{name}}
+\index{name@{name}!filevault::cli::KeygenCommand@{filevault::cli::KeygenCommand}}
+\doxysubsubsection{\texorpdfstring{name()}{name()}}
+{\footnotesize\ttfamily std\+::string filevault\+::cli\+::\+Keygen\+Command\+::name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get command name. 
+
+
+
+Implements \mbox{\hyperlink{classfilevault_1_1cli_1_1ICommand_a60aa4bc7c96c2e80feeb1a184d7ae2f7}{filevault\+::cli\+::\+ICommand}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1cli_1_1KeygenCommand_a11191c60a700b71dfc9ada1a7097e5d4_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1cli_1_1KeygenCommand_a47b6d478f41644ea0f47125eaf941a9a}\label{classfilevault_1_1cli_1_1KeygenCommand_a47b6d478f41644ea0f47125eaf941a9a} 
+\index{filevault::cli::KeygenCommand@{filevault::cli::KeygenCommand}!setup@{setup}}
+\index{setup@{setup}!filevault::cli::KeygenCommand@{filevault::cli::KeygenCommand}}
+\doxysubsubsection{\texorpdfstring{setup()}{setup()}}
+{\footnotesize\ttfamily void filevault\+::cli\+::\+Keygen\+Command\+::setup (\begin{DoxyParamCaption}\item[{CLI\+::\+App \&}]{app }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Setup CLI11 subcommand. 
+
+
+
+Implements \mbox{\hyperlink{classfilevault_1_1cli_1_1ICommand_aa43a60aabddff55d1060c334dade972c}{filevault\+::cli\+::\+ICommand}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1cli_1_1KeygenCommand_a47b6d478f41644ea0f47125eaf941a9a_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classfilevault_1_1cli_1_1KeygenCommand_aff51464bddbd91d4697c85d663831c1a}\label{classfilevault_1_1cli_1_1KeygenCommand_aff51464bddbd91d4697c85d663831c1a} 
+\index{filevault::cli::KeygenCommand@{filevault::cli::KeygenCommand}!algorithm\_@{algorithm\_}}
+\index{algorithm\_@{algorithm\_}!filevault::cli::KeygenCommand@{filevault::cli::KeygenCommand}}
+\doxysubsubsection{\texorpdfstring{algorithm\_}{algorithm\_}}
+{\footnotesize\ttfamily std\+::string filevault\+::cli\+::\+Keygen\+Command\+::algorithm\+\_\+ = "{}rsa-\/2048"{}\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classfilevault_1_1cli_1_1KeygenCommand_a351f2ae147f8a34436956363b75ec1b3}\label{classfilevault_1_1cli_1_1KeygenCommand_a351f2ae147f8a34436956363b75ec1b3} 
+\index{filevault::cli::KeygenCommand@{filevault::cli::KeygenCommand}!engine\_@{engine\_}}
+\index{engine\_@{engine\_}!filevault::cli::KeygenCommand@{filevault::cli::KeygenCommand}}
+\doxysubsubsection{\texorpdfstring{engine\_}{engine\_}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classfilevault_1_1core_1_1CryptoEngine}{core\+::\+Crypto\+Engine}}\& filevault\+::cli\+::\+Keygen\+Command\+::engine\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classfilevault_1_1cli_1_1KeygenCommand_a37bc4b66e544c0b9f210882bfa0abc60}\label{classfilevault_1_1cli_1_1KeygenCommand_a37bc4b66e544c0b9f210882bfa0abc60} 
+\index{filevault::cli::KeygenCommand@{filevault::cli::KeygenCommand}!force\_@{force\_}}
+\index{force\_@{force\_}!filevault::cli::KeygenCommand@{filevault::cli::KeygenCommand}}
+\doxysubsubsection{\texorpdfstring{force\_}{force\_}}
+{\footnotesize\ttfamily bool filevault\+::cli\+::\+Keygen\+Command\+::force\+\_\+ = false\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classfilevault_1_1cli_1_1KeygenCommand_a5ac5f67916080da178191514ff42d59d}\label{classfilevault_1_1cli_1_1KeygenCommand_a5ac5f67916080da178191514ff42d59d} 
+\index{filevault::cli::KeygenCommand@{filevault::cli::KeygenCommand}!output\_prefix\_@{output\_prefix\_}}
+\index{output\_prefix\_@{output\_prefix\_}!filevault::cli::KeygenCommand@{filevault::cli::KeygenCommand}}
+\doxysubsubsection{\texorpdfstring{output\_prefix\_}{output\_prefix\_}}
+{\footnotesize\ttfamily std\+::string filevault\+::cli\+::\+Keygen\+Command\+::output\+\_\+prefix\+\_\+ = "{}filevault\+\_\+key"{}\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classfilevault_1_1cli_1_1KeygenCommand_afc8789ab69a0c0d08ff414a4945a65f2}\label{classfilevault_1_1cli_1_1KeygenCommand_afc8789ab69a0c0d08ff414a4945a65f2} 
+\index{filevault::cli::KeygenCommand@{filevault::cli::KeygenCommand}!verbose\_@{verbose\_}}
+\index{verbose\_@{verbose\_}!filevault::cli::KeygenCommand@{filevault::cli::KeygenCommand}}
+\doxysubsubsection{\texorpdfstring{verbose\_}{verbose\_}}
+{\footnotesize\ttfamily bool filevault\+::cli\+::\+Keygen\+Command\+::verbose\+\_\+ = false\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/filevault/cli/commands/\mbox{\hyperlink{keygen__cmd_8hpp}{keygen\+\_\+cmd.\+hpp}}\item 
+src/cli/commands/\mbox{\hyperlink{keygen__cmd_8cpp}{keygen\+\_\+cmd.\+cpp}}\end{DoxyCompactItemize}

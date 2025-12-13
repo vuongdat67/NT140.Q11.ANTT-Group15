@@ -1,0 +1,283 @@
+\doxysection{filevault\+::algorithms\+::symmetric\+::AES\+\_\+\+CBC Class Reference}
+\hypertarget{classfilevault_1_1algorithms_1_1symmetric_1_1AES__CBC}{}\label{classfilevault_1_1algorithms_1_1symmetric_1_1AES__CBC}\index{filevault::algorithms::symmetric::AES\_CBC@{filevault::algorithms::symmetric::AES\_CBC}}
+
+
+AES-\/\+CBC encryption (legacy mode, not authenticated)  
+
+
+
+
+{\ttfamily \#include $<$aes\+\_\+cbc.\+hpp$>$}
+
+
+
+Inheritance diagram for filevault\+::algorithms\+::symmetric\+::AES\+\_\+\+CBC\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=205pt]{classfilevault_1_1algorithms_1_1symmetric_1_1AES__CBC__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for filevault\+::algorithms\+::symmetric\+::AES\+\_\+\+CBC\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=205pt]{classfilevault_1_1algorithms_1_1symmetric_1_1AES__CBC__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1AES__CBC_a192e23efda084e47877df42693fc8500}{AES\+\_\+\+CBC}} (size\+\_\+t key\+\_\+bits=256)
+\item 
+virtual \mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1AES__CBC_a59ea59b0d0b61ec6e0c8d9a2e1a7461d}{\texorpdfstring{$\sim$}{\string~}\+AES\+\_\+\+CBC}} ()=default
+\item 
+std\+::string \mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1AES__CBC_acbbf4fe69ef4868d528dab9248affa49}{name}} () const override
+\begin{DoxyCompactList}\small\item\em Get algorithm name. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacefilevault_1_1core_ab1ba257a0205c63e9e1e3623170940a2}{core\+::\+Algorithm\+Type}} \mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1AES__CBC_ad940d016df81dc5b0d13d72de94d62e7}{type}} () const override
+\begin{DoxyCompactList}\small\item\em Get algorithm type. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structfilevault_1_1core_1_1CryptoResult}{core\+::\+Crypto\+Result}} \mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1AES__CBC_af73f88a5c031da6f7948a9bff629b969}{encrypt}} (std\+::span$<$ const uint8\+\_\+t $>$ plaintext, std\+::span$<$ const uint8\+\_\+t $>$ key, const \mbox{\hyperlink{structfilevault_1_1core_1_1EncryptionConfig}{core\+::\+Encryption\+Config}} \&config) override
+\begin{DoxyCompactList}\small\item\em Encrypt data. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structfilevault_1_1core_1_1CryptoResult}{core\+::\+Crypto\+Result}} \mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1AES__CBC_a2d657b3f58108251677a6ebb271e4791}{decrypt}} (std\+::span$<$ const uint8\+\_\+t $>$ ciphertext, std\+::span$<$ const uint8\+\_\+t $>$ key, const \mbox{\hyperlink{structfilevault_1_1core_1_1EncryptionConfig}{core\+::\+Encryption\+Config}} \&config) override
+\begin{DoxyCompactList}\small\item\em Decrypt data. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1AES__CBC_a4dbb14b22c91c4a209d18e0e18a36401}{key\+\_\+size}} () const override
+\begin{DoxyCompactList}\small\item\em Get recommended key size in bytes. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1AES__CBC_a637f4845c6ba3880a09f3dc0a96acaf8}{iv\+\_\+size}} () const
+\item 
+size\+\_\+t \mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1AES__CBC_addce434187ba90951774aadf9c6cdb33}{block\+\_\+size}} () const
+\item 
+bool \mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1AES__CBC_a2468822e909122d2fe6f40bd1e69638b}{is\+\_\+suitable\+\_\+for}} (\mbox{\hyperlink{namespacefilevault_1_1core_abcb3b3d896f7dc00926903183b3e2dc9}{core\+::\+Security\+Level}} level) const override
+\begin{DoxyCompactList}\small\item\em Check if algorithm is suitable for security level. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classfilevault_1_1core_1_1ICryptoAlgorithm}{filevault\+::core\+::\+ICrypto\+Algorithm}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classfilevault_1_1core_1_1ICryptoAlgorithm_a36383558169617931374ca3b64399818}{\texorpdfstring{$\sim$}{\string~}\+ICrypto\+Algorithm}} ()=default
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+size\+\_\+t \mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1AES__CBC_a8e830777161ee29540cc43f8aa82b3fe}{key\+\_\+bits\+\_\+}}
+\item 
+\mbox{\hyperlink{namespacefilevault_1_1core_ab1ba257a0205c63e9e1e3623170940a2}{core\+::\+Algorithm\+Type}} \mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1AES__CBC_aa8fa3b74c005938ff671480053a14b92}{type\+\_\+}}
+\item 
+std\+::string \mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1AES__CBC_a0ba506d572cf2c54416f3b3b007188c8}{botan\+\_\+name\+\_\+}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+AES-\/\+CBC encryption (legacy mode, not authenticated) 
+
+Supports 128, 192, and 256 bit keys. Uses PKCS7 padding. Requires unique IV for each encryption.
+
+\begin{DoxyWarning}{Warning}
+This mode does NOT provide authentication! Ciphertext can be modified without detection. Consider using AES-\/\+GCM for authenticated encryption. 
+\end{DoxyWarning}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classfilevault_1_1algorithms_1_1symmetric_1_1AES__CBC_a192e23efda084e47877df42693fc8500}\label{classfilevault_1_1algorithms_1_1symmetric_1_1AES__CBC_a192e23efda084e47877df42693fc8500} 
+\index{filevault::algorithms::symmetric::AES\_CBC@{filevault::algorithms::symmetric::AES\_CBC}!AES\_CBC@{AES\_CBC}}
+\index{AES\_CBC@{AES\_CBC}!filevault::algorithms::symmetric::AES\_CBC@{filevault::algorithms::symmetric::AES\_CBC}}
+\doxysubsubsection{\texorpdfstring{AES\_CBC()}{AES\_CBC()}}
+{\footnotesize\ttfamily filevault\+::algorithms\+::symmetric\+::\+AES\+\_\+\+CBC\+::\+AES\+\_\+\+CBC (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{key\+\_\+bits = {\ttfamily 256} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+\Hypertarget{classfilevault_1_1algorithms_1_1symmetric_1_1AES__CBC_a59ea59b0d0b61ec6e0c8d9a2e1a7461d}\label{classfilevault_1_1algorithms_1_1symmetric_1_1AES__CBC_a59ea59b0d0b61ec6e0c8d9a2e1a7461d} 
+\index{filevault::algorithms::symmetric::AES\_CBC@{filevault::algorithms::symmetric::AES\_CBC}!````~AES\_CBC@{\texorpdfstring{$\sim$}{\string~}AES\_CBC}}
+\index{````~AES\_CBC@{\texorpdfstring{$\sim$}{\string~}AES\_CBC}!filevault::algorithms::symmetric::AES\_CBC@{filevault::algorithms::symmetric::AES\_CBC}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}AES\_CBC()}{\string~AES\_CBC()}}
+{\footnotesize\ttfamily virtual filevault\+::algorithms\+::symmetric\+::\+AES\+\_\+\+CBC\+::\texorpdfstring{$\sim$}{\string~}\+AES\+\_\+\+CBC (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classfilevault_1_1algorithms_1_1symmetric_1_1AES__CBC_addce434187ba90951774aadf9c6cdb33}\label{classfilevault_1_1algorithms_1_1symmetric_1_1AES__CBC_addce434187ba90951774aadf9c6cdb33} 
+\index{filevault::algorithms::symmetric::AES\_CBC@{filevault::algorithms::symmetric::AES\_CBC}!block\_size@{block\_size}}
+\index{block\_size@{block\_size}!filevault::algorithms::symmetric::AES\_CBC@{filevault::algorithms::symmetric::AES\_CBC}}
+\doxysubsubsection{\texorpdfstring{block\_size()}{block\_size()}}
+{\footnotesize\ttfamily size\+\_\+t filevault\+::algorithms\+::symmetric\+::\+AES\+\_\+\+CBC\+::block\+\_\+size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1algorithms_1_1symmetric_1_1AES__CBC_addce434187ba90951774aadf9c6cdb33_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1algorithms_1_1symmetric_1_1AES__CBC_a2d657b3f58108251677a6ebb271e4791}\label{classfilevault_1_1algorithms_1_1symmetric_1_1AES__CBC_a2d657b3f58108251677a6ebb271e4791} 
+\index{filevault::algorithms::symmetric::AES\_CBC@{filevault::algorithms::symmetric::AES\_CBC}!decrypt@{decrypt}}
+\index{decrypt@{decrypt}!filevault::algorithms::symmetric::AES\_CBC@{filevault::algorithms::symmetric::AES\_CBC}}
+\doxysubsubsection{\texorpdfstring{decrypt()}{decrypt()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structfilevault_1_1core_1_1CryptoResult}{core\+::\+Crypto\+Result}} filevault\+::algorithms\+::symmetric\+::\+AES\+\_\+\+CBC\+::decrypt (\begin{DoxyParamCaption}\item[{std\+::span$<$ const uint8\+\_\+t $>$}]{ciphertext,  }\item[{std\+::span$<$ const uint8\+\_\+t $>$}]{key,  }\item[{const \mbox{\hyperlink{structfilevault_1_1core_1_1EncryptionConfig}{core\+::\+Encryption\+Config}} \&}]{config }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Decrypt data. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ciphertext} & Encrypted data \\
+\hline
+{\em key} & Decryption key (derived from password) \\
+\hline
+{\em config} & Decryption configuration \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Decrypted data 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classfilevault_1_1core_1_1ICryptoAlgorithm_a5ad6e9e19a3ed1dd3f0b49106bcaac0d}{filevault\+::core\+::\+ICrypto\+Algorithm}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1algorithms_1_1symmetric_1_1AES__CBC_a2d657b3f58108251677a6ebb271e4791_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1algorithms_1_1symmetric_1_1AES__CBC_af73f88a5c031da6f7948a9bff629b969}\label{classfilevault_1_1algorithms_1_1symmetric_1_1AES__CBC_af73f88a5c031da6f7948a9bff629b969} 
+\index{filevault::algorithms::symmetric::AES\_CBC@{filevault::algorithms::symmetric::AES\_CBC}!encrypt@{encrypt}}
+\index{encrypt@{encrypt}!filevault::algorithms::symmetric::AES\_CBC@{filevault::algorithms::symmetric::AES\_CBC}}
+\doxysubsubsection{\texorpdfstring{encrypt()}{encrypt()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structfilevault_1_1core_1_1CryptoResult}{core\+::\+Crypto\+Result}} filevault\+::algorithms\+::symmetric\+::\+AES\+\_\+\+CBC\+::encrypt (\begin{DoxyParamCaption}\item[{std\+::span$<$ const uint8\+\_\+t $>$}]{plaintext,  }\item[{std\+::span$<$ const uint8\+\_\+t $>$}]{key,  }\item[{const \mbox{\hyperlink{structfilevault_1_1core_1_1EncryptionConfig}{core\+::\+Encryption\+Config}} \&}]{config }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Encrypt data. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em plaintext} & Input data to encrypt \\
+\hline
+{\em key} & Encryption key (derived from password) \\
+\hline
+{\em config} & Encryption configuration \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Encrypted data with metadata 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classfilevault_1_1core_1_1ICryptoAlgorithm_a5b9102cef54b84b54feea1dc16561a2d}{filevault\+::core\+::\+ICrypto\+Algorithm}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1algorithms_1_1symmetric_1_1AES__CBC_af73f88a5c031da6f7948a9bff629b969_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1algorithms_1_1symmetric_1_1AES__CBC_a2468822e909122d2fe6f40bd1e69638b}\label{classfilevault_1_1algorithms_1_1symmetric_1_1AES__CBC_a2468822e909122d2fe6f40bd1e69638b} 
+\index{filevault::algorithms::symmetric::AES\_CBC@{filevault::algorithms::symmetric::AES\_CBC}!is\_suitable\_for@{is\_suitable\_for}}
+\index{is\_suitable\_for@{is\_suitable\_for}!filevault::algorithms::symmetric::AES\_CBC@{filevault::algorithms::symmetric::AES\_CBC}}
+\doxysubsubsection{\texorpdfstring{is\_suitable\_for()}{is\_suitable\_for()}}
+{\footnotesize\ttfamily bool filevault\+::algorithms\+::symmetric\+::\+AES\+\_\+\+CBC\+::is\+\_\+suitable\+\_\+for (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacefilevault_1_1core_abcb3b3d896f7dc00926903183b3e2dc9}{core\+::\+Security\+Level}}}]{level }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Check if algorithm is suitable for security level. 
+
+
+
+Implements \mbox{\hyperlink{classfilevault_1_1core_1_1ICryptoAlgorithm_aab479734daf06d3f76af5d916c0285fa}{filevault\+::core\+::\+ICrypto\+Algorithm}}.
+
+\Hypertarget{classfilevault_1_1algorithms_1_1symmetric_1_1AES__CBC_a637f4845c6ba3880a09f3dc0a96acaf8}\label{classfilevault_1_1algorithms_1_1symmetric_1_1AES__CBC_a637f4845c6ba3880a09f3dc0a96acaf8} 
+\index{filevault::algorithms::symmetric::AES\_CBC@{filevault::algorithms::symmetric::AES\_CBC}!iv\_size@{iv\_size}}
+\index{iv\_size@{iv\_size}!filevault::algorithms::symmetric::AES\_CBC@{filevault::algorithms::symmetric::AES\_CBC}}
+\doxysubsubsection{\texorpdfstring{iv\_size()}{iv\_size()}}
+{\footnotesize\ttfamily size\+\_\+t filevault\+::algorithms\+::symmetric\+::\+AES\+\_\+\+CBC\+::iv\+\_\+size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1algorithms_1_1symmetric_1_1AES__CBC_a637f4845c6ba3880a09f3dc0a96acaf8_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1algorithms_1_1symmetric_1_1AES__CBC_a4dbb14b22c91c4a209d18e0e18a36401}\label{classfilevault_1_1algorithms_1_1symmetric_1_1AES__CBC_a4dbb14b22c91c4a209d18e0e18a36401} 
+\index{filevault::algorithms::symmetric::AES\_CBC@{filevault::algorithms::symmetric::AES\_CBC}!key\_size@{key\_size}}
+\index{key\_size@{key\_size}!filevault::algorithms::symmetric::AES\_CBC@{filevault::algorithms::symmetric::AES\_CBC}}
+\doxysubsubsection{\texorpdfstring{key\_size()}{key\_size()}}
+{\footnotesize\ttfamily size\+\_\+t filevault\+::algorithms\+::symmetric\+::\+AES\+\_\+\+CBC\+::key\+\_\+size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get recommended key size in bytes. 
+
+
+
+Implements \mbox{\hyperlink{classfilevault_1_1core_1_1ICryptoAlgorithm_af9ccb47457495eb99988fef0b5b2bbe8}{filevault\+::core\+::\+ICrypto\+Algorithm}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1algorithms_1_1symmetric_1_1AES__CBC_a4dbb14b22c91c4a209d18e0e18a36401_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1algorithms_1_1symmetric_1_1AES__CBC_acbbf4fe69ef4868d528dab9248affa49}\label{classfilevault_1_1algorithms_1_1symmetric_1_1AES__CBC_acbbf4fe69ef4868d528dab9248affa49} 
+\index{filevault::algorithms::symmetric::AES\_CBC@{filevault::algorithms::symmetric::AES\_CBC}!name@{name}}
+\index{name@{name}!filevault::algorithms::symmetric::AES\_CBC@{filevault::algorithms::symmetric::AES\_CBC}}
+\doxysubsubsection{\texorpdfstring{name()}{name()}}
+{\footnotesize\ttfamily std\+::string filevault\+::algorithms\+::symmetric\+::\+AES\+\_\+\+CBC\+::name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get algorithm name. 
+
+
+
+Implements \mbox{\hyperlink{classfilevault_1_1core_1_1ICryptoAlgorithm_a8acdc23e4f2ea77bb4a5b9820b27fa66}{filevault\+::core\+::\+ICrypto\+Algorithm}}.
+
+\Hypertarget{classfilevault_1_1algorithms_1_1symmetric_1_1AES__CBC_ad940d016df81dc5b0d13d72de94d62e7}\label{classfilevault_1_1algorithms_1_1symmetric_1_1AES__CBC_ad940d016df81dc5b0d13d72de94d62e7} 
+\index{filevault::algorithms::symmetric::AES\_CBC@{filevault::algorithms::symmetric::AES\_CBC}!type@{type}}
+\index{type@{type}!filevault::algorithms::symmetric::AES\_CBC@{filevault::algorithms::symmetric::AES\_CBC}}
+\doxysubsubsection{\texorpdfstring{type()}{type()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacefilevault_1_1core_ab1ba257a0205c63e9e1e3623170940a2}{core\+::\+Algorithm\+Type}} filevault\+::algorithms\+::symmetric\+::\+AES\+\_\+\+CBC\+::type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get algorithm type. 
+
+
+
+Implements \mbox{\hyperlink{classfilevault_1_1core_1_1ICryptoAlgorithm_a11b7820f7b0bbb5fd6668fac3b78a7e1}{filevault\+::core\+::\+ICrypto\+Algorithm}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classfilevault_1_1algorithms_1_1symmetric_1_1AES__CBC_a0ba506d572cf2c54416f3b3b007188c8}\label{classfilevault_1_1algorithms_1_1symmetric_1_1AES__CBC_a0ba506d572cf2c54416f3b3b007188c8} 
+\index{filevault::algorithms::symmetric::AES\_CBC@{filevault::algorithms::symmetric::AES\_CBC}!botan\_name\_@{botan\_name\_}}
+\index{botan\_name\_@{botan\_name\_}!filevault::algorithms::symmetric::AES\_CBC@{filevault::algorithms::symmetric::AES\_CBC}}
+\doxysubsubsection{\texorpdfstring{botan\_name\_}{botan\_name\_}}
+{\footnotesize\ttfamily std\+::string filevault\+::algorithms\+::symmetric\+::\+AES\+\_\+\+CBC\+::botan\+\_\+name\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classfilevault_1_1algorithms_1_1symmetric_1_1AES__CBC_a8e830777161ee29540cc43f8aa82b3fe}\label{classfilevault_1_1algorithms_1_1symmetric_1_1AES__CBC_a8e830777161ee29540cc43f8aa82b3fe} 
+\index{filevault::algorithms::symmetric::AES\_CBC@{filevault::algorithms::symmetric::AES\_CBC}!key\_bits\_@{key\_bits\_}}
+\index{key\_bits\_@{key\_bits\_}!filevault::algorithms::symmetric::AES\_CBC@{filevault::algorithms::symmetric::AES\_CBC}}
+\doxysubsubsection{\texorpdfstring{key\_bits\_}{key\_bits\_}}
+{\footnotesize\ttfamily size\+\_\+t filevault\+::algorithms\+::symmetric\+::\+AES\+\_\+\+CBC\+::key\+\_\+bits\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classfilevault_1_1algorithms_1_1symmetric_1_1AES__CBC_aa8fa3b74c005938ff671480053a14b92}\label{classfilevault_1_1algorithms_1_1symmetric_1_1AES__CBC_aa8fa3b74c005938ff671480053a14b92} 
+\index{filevault::algorithms::symmetric::AES\_CBC@{filevault::algorithms::symmetric::AES\_CBC}!type\_@{type\_}}
+\index{type\_@{type\_}!filevault::algorithms::symmetric::AES\_CBC@{filevault::algorithms::symmetric::AES\_CBC}}
+\doxysubsubsection{\texorpdfstring{type\_}{type\_}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacefilevault_1_1core_ab1ba257a0205c63e9e1e3623170940a2}{core\+::\+Algorithm\+Type}} filevault\+::algorithms\+::symmetric\+::\+AES\+\_\+\+CBC\+::type\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/filevault/algorithms/symmetric/\mbox{\hyperlink{aes__cbc_8hpp}{aes\+\_\+cbc.\+hpp}}\item 
+src/algorithms/symmetric/\mbox{\hyperlink{aes__cbc_8cpp}{aes\+\_\+cbc.\+cpp}}\end{DoxyCompactItemize}

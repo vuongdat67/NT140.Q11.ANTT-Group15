@@ -1,0 +1,49 @@
+\doxysection{caesar.\+hpp}
+\hypertarget{caesar_8hpp_source}{}\label{caesar_8hpp_source}\index{include/filevault/algorithms/classical/caesar.hpp@{include/filevault/algorithms/classical/caesar.hpp}}
+\mbox{\hyperlink{caesar_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{crypto__algorithm_8hpp}{filevault/core/crypto\_algorithm.hpp}}"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacefilevault}{filevault}}\ \{}
+\DoxyCodeLine{00007\ \textcolor{keyword}{namespace\ }algorithms\ \{}
+\DoxyCodeLine{00008\ \textcolor{keyword}{namespace\ }classical\ \{}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00021\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classfilevault_1_1algorithms_1_1classical_1_1Caesar}{Caesar}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classfilevault_1_1core_1_1ICryptoAlgorithm}{core::ICryptoAlgorithm}}\ \{}
+\DoxyCodeLine{00022\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1classical_1_1Caesar}{Caesar}}(\textcolor{keywordtype}{int}\ shift\ =\ 3);}
+\DoxyCodeLine{00024\ \ \ \ \ }
+\DoxyCodeLine{00025\ \ \ \ \ std::string\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1classical_1_1Caesar_a7d8c1d86b5503b24af543f239528e98a}{name}}()\textcolor{keyword}{\ const\ override\ }\{\ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Caesar"{}};\ \}}
+\DoxyCodeLine{00026\ \ \ \ \ \mbox{\hyperlink{namespacefilevault_1_1core_ab1ba257a0205c63e9e1e3623170940a2}{core::AlgorithmType}}\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1classical_1_1Caesar_afb560065d88fb6fd7fdd608ba527566e}{type}}()\textcolor{keyword}{\ const\ override\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespacefilevault_1_1core_ab1ba257a0205c63e9e1e3623170940a2a154bb57e2ecdbc2de013e140df5930e9}{core::AlgorithmType::CAESAR}};\ \}}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1classical_1_1Caesar_a99e58a9f4ae8094d51d4886f83826c66}{key\_size}}()\textcolor{keyword}{\ const\ override\ }\{\ \textcolor{keywordflow}{return}\ 4;\ \}\ \textcolor{comment}{//\ Min\ for\ Argon2,\ use\ first\ byte\ as\ shift}}
+\DoxyCodeLine{00028\ \ \ \ \ }
+\DoxyCodeLine{00029\ \ \ \ \ \mbox{\hyperlink{structfilevault_1_1core_1_1CryptoResult}{core::CryptoResult}}\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1classical_1_1Caesar_ad59e07d0412d6f8504697a3431470813}{encrypt}}(}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ std::span<const\ uint8\_t>\ plaintext,}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ std::span<const\ uint8\_t>\ key,}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structfilevault_1_1core_1_1EncryptionConfig}{core::EncryptionConfig}}\&\ config)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00033\ \ \ \ \ }
+\DoxyCodeLine{00034\ \ \ \ \ \mbox{\hyperlink{structfilevault_1_1core_1_1CryptoResult}{core::CryptoResult}}\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1classical_1_1Caesar_a2b366ea02e4411ce68705161cf638d1d}{decrypt}}(}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ std::span<const\ uint8\_t>\ ciphertext,}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ std::span<const\ uint8\_t>\ key,}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structfilevault_1_1core_1_1EncryptionConfig}{core::EncryptionConfig}}\&\ config)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00038\ \ \ \ \ }
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1classical_1_1Caesar_a02cecbc70ec0aa2953471c11ae35d239}{is\_suitable\_for}}(\mbox{\hyperlink{namespacefilevault_1_1core_abcb3b3d896f7dc00926903183b3e2dc9}{core::SecurityLevel}}\ level)\textcolor{keyword}{\ const\ override\ }\{}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ (void)level;\ \textcolor{comment}{//\ Educational\ only\ -\/\ not\ for\ real\ security}}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00042\ \ \ \ \ \}}
+\DoxyCodeLine{00043\ \ \ \ \ }
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keyword}{static}\ std::string\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1classical_1_1Caesar_a53f6e520efc5b34337ecebe5dc48936b}{brute\_force}}(\textcolor{keyword}{const}\ std::string\&\ ciphertext);}
+\DoxyCodeLine{00050\ \ \ \ \ }
+\DoxyCodeLine{00051\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1classical_1_1Caesar_a3a8c93a98d43808b141a369624298a71}{shift\_}};}
+\DoxyCodeLine{00053\ \ \ \ \ }
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1classical_1_1Caesar_ae1bba7ad4c07957789e6537791edd31e}{shift\_char}}(\textcolor{keywordtype}{char}\ ch,\ \textcolor{keywordtype}{int}\ shift)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00055\ \};}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \}\ \textcolor{comment}{//\ namespace\ classical}}
+\DoxyCodeLine{00058\ \}\ \textcolor{comment}{//\ namespace\ algorithms}}
+\DoxyCodeLine{00059\ \}\ \textcolor{comment}{//\ namespace\ filevault}}
+
+\end{DoxyCode}

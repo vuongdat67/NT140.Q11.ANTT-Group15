@@ -1,0 +1,189 @@
+\doxysection{file\+\_\+format.\+hpp}
+\hypertarget{file__format_8hpp_source}{}\label{file__format_8hpp_source}\index{include/filevault/core/file\_format.hpp@{include/filevault/core/file\_format.hpp}}
+\mbox{\hyperlink{file__format_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ FILEVAULT\_CORE\_FILE\_FORMAT\_HPP}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ FILEVAULT\_CORE\_FILE\_FORMAT\_HPP}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{types_8hpp}{filevault/core/types.hpp}}"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <cstdint>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <span>}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacefilevault}{filevault}}\ \{}
+\DoxyCodeLine{00011\ \textcolor{keyword}{namespace\ }core\ \{}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00036\ \textcolor{keyword}{constexpr}\ uint8\_t\ \mbox{\hyperlink{namespacefilevault_1_1core_a9cffd165aa268600bd1cd1966fafba37}{FILE\_FORMAT\_MAGIC}}[8]\ =\ \{\textcolor{charliteral}{'F'},\ \textcolor{charliteral}{'V'},\ \textcolor{charliteral}{'A'},\ \textcolor{charliteral}{'U'},\ \textcolor{charliteral}{'L'},\ \textcolor{charliteral}{'T'},\ \textcolor{charliteral}{'0'},\ \textcolor{charliteral}{'1'}\};}
+\DoxyCodeLine{00037\ \textcolor{keyword}{constexpr}\ uint8\_t\ \mbox{\hyperlink{namespacefilevault_1_1core_ad50ee40e67efb784d1d42b34c3ee1ca4}{FILE\_FORMAT\_VERSION\_MAJOR}}\ =\ 1;}
+\DoxyCodeLine{00038\ \textcolor{keyword}{constexpr}\ uint8\_t\ \mbox{\hyperlink{namespacefilevault_1_1core_ac6e5674a94657ff90785f7cb70a4717b}{FILE\_FORMAT\_VERSION\_MINOR}}\ =\ 0;}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00043\ \textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{namespacefilevault_1_1core_a4bffcb3f9b484a5d110fa7c4b7d182da}{AlgorithmID}}\ :\ uint8\_t\ \{}
+\DoxyCodeLine{00044\ \ \ \ \ \mbox{\hyperlink{namespacefilevault_1_1core_a4bffcb3f9b484a5d110fa7c4b7d182daa696b031073e74bf2cb98e5ef201d4aa3}{UNKNOWN}}\ =\ 0x00,}
+\DoxyCodeLine{00045\ \ \ \ \ \mbox{\hyperlink{namespacefilevault_1_1core_a4bffcb3f9b484a5d110fa7c4b7d182daa563888880c969f3d0822a1eaf5c25155}{AES\_128\_GCM}}\ =\ 0x01,}
+\DoxyCodeLine{00046\ \ \ \ \ \mbox{\hyperlink{namespacefilevault_1_1core_a4bffcb3f9b484a5d110fa7c4b7d182daad6b4df9c0ec8c6ab16f9a2fc1c8cc457}{AES\_192\_GCM}}\ =\ 0x02,}
+\DoxyCodeLine{00047\ \ \ \ \ \mbox{\hyperlink{namespacefilevault_1_1core_a4bffcb3f9b484a5d110fa7c4b7d182daabe0f06b885034bb30ebb9fd868bba087}{AES\_256\_GCM}}\ =\ 0x03,}
+\DoxyCodeLine{00048\ \ \ \ \ \mbox{\hyperlink{namespacefilevault_1_1core_a4bffcb3f9b484a5d110fa7c4b7d182daa31a23b8b2578a404dd9994c89a772bc6}{CHACHA20\_POLY1305}}\ =\ 0x04,}
+\DoxyCodeLine{00049\ \ \ \ \ \mbox{\hyperlink{namespacefilevault_1_1core_a4bffcb3f9b484a5d110fa7c4b7d182daa1a2beddd2bf5c37edde3cb3162c6e42f}{SERPENT\_256\_GCM}}\ =\ 0x05,}
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{comment}{//\ Twofish\ family}}
+\DoxyCodeLine{00051\ \ \ \ \ \mbox{\hyperlink{namespacefilevault_1_1core_a4bffcb3f9b484a5d110fa7c4b7d182daa3d63e4840891b12d1a3fa81da2503a3e}{TWOFISH\_128\_GCM}}\ =\ 0x06,}
+\DoxyCodeLine{00052\ \ \ \ \ \mbox{\hyperlink{namespacefilevault_1_1core_a4bffcb3f9b484a5d110fa7c4b7d182daad756ee46a3266bb958a103890f41cf94}{TWOFISH\_192\_GCM}}\ =\ 0x07,}
+\DoxyCodeLine{00053\ \ \ \ \ \mbox{\hyperlink{namespacefilevault_1_1core_a4bffcb3f9b484a5d110fa7c4b7d182daa6e1a2885526019433ac8475ef8aad04c}{TWOFISH\_256\_GCM}}\ =\ 0x08,}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{comment}{//\ International\ standards}}
+\DoxyCodeLine{00055\ \ \ \ \ \mbox{\hyperlink{namespacefilevault_1_1core_a4bffcb3f9b484a5d110fa7c4b7d182daa063660af65748a7d4915df6700d4c019}{CAMELLIA\_128\_GCM}}\ =\ 0x09,}
+\DoxyCodeLine{00056\ \ \ \ \ \mbox{\hyperlink{namespacefilevault_1_1core_a4bffcb3f9b484a5d110fa7c4b7d182daa222a7b6f28583f4e007d3129b59f6ec6}{CAMELLIA\_192\_GCM}}\ =\ 0x0A,}
+\DoxyCodeLine{00057\ \ \ \ \ \mbox{\hyperlink{namespacefilevault_1_1core_a4bffcb3f9b484a5d110fa7c4b7d182daaa98e39f4a192ca1a0df0ea5da16290d4}{CAMELLIA\_256\_GCM}}\ =\ 0x0B,}
+\DoxyCodeLine{00058\ \ \ \ \ \mbox{\hyperlink{namespacefilevault_1_1core_a4bffcb3f9b484a5d110fa7c4b7d182daa1eb5a4a433258042a744b85ecff0d1c3}{ARIA\_128\_GCM}}\ =\ 0x0C,}
+\DoxyCodeLine{00059\ \ \ \ \ \mbox{\hyperlink{namespacefilevault_1_1core_a4bffcb3f9b484a5d110fa7c4b7d182daa7f5da338a66386f0c38ff9bbca1e50ab}{ARIA\_192\_GCM}}\ =\ 0x0D,}
+\DoxyCodeLine{00060\ \ \ \ \ \mbox{\hyperlink{namespacefilevault_1_1core_a4bffcb3f9b484a5d110fa7c4b7d182daaa3e66a572409ed951885b845a2505f54}{ARIA\_256\_GCM}}\ =\ 0x0E,}
+\DoxyCodeLine{00061\ \ \ \ \ \mbox{\hyperlink{namespacefilevault_1_1core_a4bffcb3f9b484a5d110fa7c4b7d182daa7d32b56e3de44351ea53fccc7d45088b}{SM4\_GCM}}\ =\ 0x0F,}
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{comment}{//\ Classical\ ciphers}}
+\DoxyCodeLine{00063\ \ \ \ \ \mbox{\hyperlink{namespacefilevault_1_1core_a4bffcb3f9b484a5d110fa7c4b7d182daa154bb57e2ecdbc2de013e140df5930e9}{CAESAR}}\ =\ 0x10,}
+\DoxyCodeLine{00064\ \ \ \ \ \mbox{\hyperlink{namespacefilevault_1_1core_a4bffcb3f9b484a5d110fa7c4b7d182daa72df12cbf45652307ffee3ce5138b95a}{VIGENERE}}\ =\ 0x11,}
+\DoxyCodeLine{00065\ \ \ \ \ \mbox{\hyperlink{namespacefilevault_1_1core_a4bffcb3f9b484a5d110fa7c4b7d182daaad900b7d4fc34fc14862086e1c267b33}{PLAYFAIR}}\ =\ 0x12,}
+\DoxyCodeLine{00066\ \ \ \ \ \mbox{\hyperlink{namespacefilevault_1_1core_a4bffcb3f9b484a5d110fa7c4b7d182daae637679b66688b9f8c9441147fceb023}{SUBSTITUTION}}\ =\ 0x13,}
+\DoxyCodeLine{00067\ \ \ \ \ \mbox{\hyperlink{namespacefilevault_1_1core_a4bffcb3f9b484a5d110fa7c4b7d182daab279edd63cb7ea76ae038c4810e2cbd1}{HILL}}\ =\ 0x14,}
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{comment}{//\ Non-\/AEAD\ modes\ (CBC,\ CTR)}}
+\DoxyCodeLine{00069\ \ \ \ \ \mbox{\hyperlink{namespacefilevault_1_1core_a4bffcb3f9b484a5d110fa7c4b7d182daa50fe100f77cd51758b3cd75006dbf224}{AES\_128\_CBC}}\ =\ 0x20,}
+\DoxyCodeLine{00070\ \ \ \ \ \mbox{\hyperlink{namespacefilevault_1_1core_a4bffcb3f9b484a5d110fa7c4b7d182daabc7819d62caa5b84d21dbdb124ae58cf}{AES\_192\_CBC}}\ =\ 0x21,}
+\DoxyCodeLine{00071\ \ \ \ \ \mbox{\hyperlink{namespacefilevault_1_1core_a4bffcb3f9b484a5d110fa7c4b7d182daa676df607811c40945c7a99fabcda098c}{AES\_256\_CBC}}\ =\ 0x22,}
+\DoxyCodeLine{00072\ \ \ \ \ \mbox{\hyperlink{namespacefilevault_1_1core_a4bffcb3f9b484a5d110fa7c4b7d182daa2f58e8203171f1ce6501bada66206da8}{AES\_128\_CTR}}\ =\ 0x23,}
+\DoxyCodeLine{00073\ \ \ \ \ \mbox{\hyperlink{namespacefilevault_1_1core_a4bffcb3f9b484a5d110fa7c4b7d182daa3d12da190d20d1a0620dd275aaca87e6}{AES\_192\_CTR}}\ =\ 0x24,}
+\DoxyCodeLine{00074\ \ \ \ \ \mbox{\hyperlink{namespacefilevault_1_1core_a4bffcb3f9b484a5d110fa7c4b7d182daa9b820f72a588d2f478254412c10475f9}{AES\_256\_CTR}}\ =\ 0x25,}
+\DoxyCodeLine{00075\ \ \ \ \ \textcolor{comment}{//\ CFB\ mode}}
+\DoxyCodeLine{00076\ \ \ \ \ \mbox{\hyperlink{namespacefilevault_1_1core_a4bffcb3f9b484a5d110fa7c4b7d182daa34adc4be01df42646bc3537276807dfe}{AES\_128\_CFB}}\ =\ 0x26,}
+\DoxyCodeLine{00077\ \ \ \ \ \mbox{\hyperlink{namespacefilevault_1_1core_a4bffcb3f9b484a5d110fa7c4b7d182daa1e801bc6ece58588f971ad322ca191e3}{AES\_192\_CFB}}\ =\ 0x27,}
+\DoxyCodeLine{00078\ \ \ \ \ \mbox{\hyperlink{namespacefilevault_1_1core_a4bffcb3f9b484a5d110fa7c4b7d182daa223b83913299e7f78e14acb73c6fa7fb}{AES\_256\_CFB}}\ =\ 0x28,}
+\DoxyCodeLine{00079\ \ \ \ \ \textcolor{comment}{//\ OFB\ mode}}
+\DoxyCodeLine{00080\ \ \ \ \ \mbox{\hyperlink{namespacefilevault_1_1core_a4bffcb3f9b484a5d110fa7c4b7d182daa405ca1146505f789acd4d32c91b5bbe7}{AES\_128\_OFB}}\ =\ 0x29,}
+\DoxyCodeLine{00081\ \ \ \ \ \mbox{\hyperlink{namespacefilevault_1_1core_a4bffcb3f9b484a5d110fa7c4b7d182daaab21093e6552113ba0ba1186f94ba40e}{AES\_192\_OFB}}\ =\ 0x2A,}
+\DoxyCodeLine{00082\ \ \ \ \ \mbox{\hyperlink{namespacefilevault_1_1core_a4bffcb3f9b484a5d110fa7c4b7d182daac28a5d52b7df936419fc668500f88fe8}{AES\_256\_OFB}}\ =\ 0x2B,}
+\DoxyCodeLine{00083\ \ \ \ \ \textcolor{comment}{//\ ECB\ mode\ (insecure)}}
+\DoxyCodeLine{00084\ \ \ \ \ \mbox{\hyperlink{namespacefilevault_1_1core_a4bffcb3f9b484a5d110fa7c4b7d182daab49aa46d4a21fd193afe95c73fd35578}{AES\_128\_ECB}}\ =\ 0x2C,}
+\DoxyCodeLine{00085\ \ \ \ \ \mbox{\hyperlink{namespacefilevault_1_1core_a4bffcb3f9b484a5d110fa7c4b7d182daa37875941d20a5b5351a347b2b073d7d3}{AES\_192\_ECB}}\ =\ 0x2D,}
+\DoxyCodeLine{00086\ \ \ \ \ \mbox{\hyperlink{namespacefilevault_1_1core_a4bffcb3f9b484a5d110fa7c4b7d182daa95ab3d7e379ab8a2e5979d5427db4b8c}{AES\_256\_ECB}}\ =\ 0x2E,}
+\DoxyCodeLine{00087\ \ \ \ \ \textcolor{comment}{//\ XTS\ mode\ (disk\ encryption)}}
+\DoxyCodeLine{00088\ \ \ \ \ \mbox{\hyperlink{namespacefilevault_1_1core_a4bffcb3f9b484a5d110fa7c4b7d182daac8bf4acb1165b5fa37ca145dbf8e114f}{AES\_128\_XTS}}\ =\ 0x2F,}
+\DoxyCodeLine{00089\ \ \ \ \ \mbox{\hyperlink{namespacefilevault_1_1core_a4bffcb3f9b484a5d110fa7c4b7d182daad0500b2fcd899b977027a786515412ca}{AES\_256\_XTS}}\ =\ 0x30,}
+\DoxyCodeLine{00090\ \ \ \ \ \textcolor{comment}{//\ Legacy\ algorithms}}
+\DoxyCodeLine{00091\ \ \ \ \ \mbox{\hyperlink{namespacefilevault_1_1core_a4bffcb3f9b484a5d110fa7c4b7d182daa4cc418d388fd8ef547bce9360c45ff6f}{TRIPLE\_DES\_CBC}}\ =\ 0x40,}
+\DoxyCodeLine{00092\ \ \ \ \ \textcolor{comment}{//\ Asymmetric\ (RSA)}}
+\DoxyCodeLine{00093\ \ \ \ \ \mbox{\hyperlink{namespacefilevault_1_1core_a4bffcb3f9b484a5d110fa7c4b7d182daa5b3bf47dace955c9874047820a78d5b8}{RSA\_2048}}\ =\ 0x50,}
+\DoxyCodeLine{00094\ \ \ \ \ \mbox{\hyperlink{namespacefilevault_1_1core_a4bffcb3f9b484a5d110fa7c4b7d182daa67538512a7a454af72127006a8b7d536}{RSA\_3072}}\ =\ 0x51,}
+\DoxyCodeLine{00095\ \ \ \ \ \mbox{\hyperlink{namespacefilevault_1_1core_a4bffcb3f9b484a5d110fa7c4b7d182daa92fe71714ec7684d00e86d85efe27190}{RSA\_4096}}\ =\ 0x52,}
+\DoxyCodeLine{00096\ \ \ \ \ \textcolor{comment}{//\ Asymmetric\ (ECC)}}
+\DoxyCodeLine{00097\ \ \ \ \ \mbox{\hyperlink{namespacefilevault_1_1core_a4bffcb3f9b484a5d110fa7c4b7d182daa76f70b72d84d1736cc8ed018b0b454c9}{ECC\_P256}}\ =\ 0x60,}
+\DoxyCodeLine{00098\ \ \ \ \ \mbox{\hyperlink{namespacefilevault_1_1core_a4bffcb3f9b484a5d110fa7c4b7d182daa236262ba47ef36e64636801765049b26}{ECC\_P384}}\ =\ 0x61,}
+\DoxyCodeLine{00099\ \ \ \ \ \mbox{\hyperlink{namespacefilevault_1_1core_a4bffcb3f9b484a5d110fa7c4b7d182daa669ef67584b835c3fc2324c161cc1cbc}{ECC\_P521}}\ =\ 0x62}
+\DoxyCodeLine{00100\ \};}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00105\ \textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{namespacefilevault_1_1core_a71f7621637ca5fbd225b12230940776c}{KDFID}}\ :\ uint8\_t\ \{}
+\DoxyCodeLine{00106\ \ \ \ \ \mbox{\hyperlink{namespacefilevault_1_1core_a71f7621637ca5fbd225b12230940776cab50339a10e1de285ac99d4c3990b8693}{NONE}}\ =\ 0x00,}
+\DoxyCodeLine{00107\ \ \ \ \ \mbox{\hyperlink{namespacefilevault_1_1core_a71f7621637ca5fbd225b12230940776ca0b06f1bf38e4ec2b1c827b6c31fd6510}{ARGON2ID}}\ =\ 0x01,}
+\DoxyCodeLine{00108\ \ \ \ \ \mbox{\hyperlink{namespacefilevault_1_1core_a71f7621637ca5fbd225b12230940776ca82b2185b3a9e804eb54f74f321514b6c}{ARGON2I}}\ =\ 0x02,}
+\DoxyCodeLine{00109\ \ \ \ \ \mbox{\hyperlink{namespacefilevault_1_1core_a71f7621637ca5fbd225b12230940776ca3f62dbde2ad0b6d8f1a24dd2f2375091}{PBKDF2\_SHA256}}\ =\ 0x03,}
+\DoxyCodeLine{00110\ \ \ \ \ \mbox{\hyperlink{namespacefilevault_1_1core_a71f7621637ca5fbd225b12230940776ca33c665d4accae817b7faa420a8b2554b}{PBKDF2\_SHA512}}\ =\ 0x04,}
+\DoxyCodeLine{00111\ \ \ \ \ \mbox{\hyperlink{namespacefilevault_1_1core_a71f7621637ca5fbd225b12230940776cab1721204ae2a3addbf2d282e99fa7bea}{SCRYPT}}\ =\ 0x05}
+\DoxyCodeLine{00112\ \};}
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00117\ \textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{namespacefilevault_1_1core_a27d87235901fbdf385ab615dd984511d}{CompressionID}}\ :\ uint8\_t\ \{}
+\DoxyCodeLine{00118\ \ \ \ \ \mbox{\hyperlink{namespacefilevault_1_1core_a71f7621637ca5fbd225b12230940776cab50339a10e1de285ac99d4c3990b8693}{NONE}}\ =\ 0x00,}
+\DoxyCodeLine{00119\ \ \ \ \ \mbox{\hyperlink{namespacefilevault_1_1core_a27d87235901fbdf385ab615dd984511da87c23ff88ac9b1c4390a679b63ea3b8c}{ZLIB}}\ =\ 0x01,}
+\DoxyCodeLine{00120\ \ \ \ \ \mbox{\hyperlink{namespacefilevault_1_1core_a27d87235901fbdf385ab615dd984511da800edd55a1e18b397e3d5d826f85ce34}{BZIP2}}\ =\ 0x02,}
+\DoxyCodeLine{00121\ \ \ \ \ \mbox{\hyperlink{namespacefilevault_1_1core_a27d87235901fbdf385ab615dd984511daf42190e84ceca474c5c77e4ddad30fb1}{LZMA}}\ =\ 0x03}
+\DoxyCodeLine{00122\ \};}
+\DoxyCodeLine{00123\ }
+\DoxyCodeLine{00127\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structfilevault_1_1core_1_1Argon2Params}{Argon2Params}}\ \{}
+\DoxyCodeLine{00128\ \ \ \ \ uint32\_t\ \mbox{\hyperlink{structfilevault_1_1core_1_1Argon2Params_a5735d5710027578bed120d65217fe417}{memory\_kb}}\ =\ 65536;\ \ \ \ \ \textcolor{comment}{//\ 64\ MB\ default}}
+\DoxyCodeLine{00129\ \ \ \ \ uint32\_t\ \mbox{\hyperlink{structfilevault_1_1core_1_1Argon2Params_afc2a3a66d97c69a8712e6b2c09257785}{iterations}}\ =\ 3;}
+\DoxyCodeLine{00130\ \ \ \ \ uint32\_t\ \mbox{\hyperlink{structfilevault_1_1core_1_1Argon2Params_a234542a28b52a6e0ef26add333b5dfa5}{parallelism}}\ =\ 4;}
+\DoxyCodeLine{00131\ \ \ \ \ }
+\DoxyCodeLine{00132\ \ \ \ \ std::vector<uint8\_t>\ \mbox{\hyperlink{structfilevault_1_1core_1_1Argon2Params_a51d536228e69f056d2bc77a9a030b048}{serialize}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00133\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{structfilevault_1_1core_1_1Argon2Params}{Argon2Params}}\ \mbox{\hyperlink{structfilevault_1_1core_1_1Argon2Params_ade4cb7c83c58a78c40dc99fba70f00b9}{deserialize}}(std::span<const\ uint8\_t>\ data);}
+\DoxyCodeLine{00134\ \};}
+\DoxyCodeLine{00135\ }
+\DoxyCodeLine{00139\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structfilevault_1_1core_1_1PBKDF2Params}{PBKDF2Params}}\ \{}
+\DoxyCodeLine{00140\ \ \ \ \ uint32\_t\ \mbox{\hyperlink{structfilevault_1_1core_1_1PBKDF2Params_a5f07484614253afc9c36bdf8edba2071}{iterations}}\ =\ 100000;}
+\DoxyCodeLine{00141\ \ \ \ \ }
+\DoxyCodeLine{00142\ \ \ \ \ std::vector<uint8\_t>\ \mbox{\hyperlink{structfilevault_1_1core_1_1PBKDF2Params_aba44a5549a00b4551849063c31a36c9b}{serialize}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00143\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{structfilevault_1_1core_1_1PBKDF2Params}{PBKDF2Params}}\ \mbox{\hyperlink{structfilevault_1_1core_1_1PBKDF2Params_ac573381cbe4c8522cda2c9dc4a713135}{deserialize}}(std::span<const\ uint8\_t>\ data);}
+\DoxyCodeLine{00144\ \};}
+\DoxyCodeLine{00145\ }
+\DoxyCodeLine{00149\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structfilevault_1_1core_1_1ScryptParams}{ScryptParams}}\ \{}
+\DoxyCodeLine{00150\ \ \ \ \ uint32\_t\ \mbox{\hyperlink{structfilevault_1_1core_1_1ScryptParams_afef9f4a3213a7b8da3fb737840c32f8d}{n}}\ =\ 32768;\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ CPU/memory\ cost}}
+\DoxyCodeLine{00151\ \ \ \ \ uint32\_t\ \mbox{\hyperlink{structfilevault_1_1core_1_1ScryptParams_abe1bfb635dc109208aadcfc69732f69a}{r}}\ =\ 8;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Block\ size}}
+\DoxyCodeLine{00152\ \ \ \ \ uint32\_t\ \mbox{\hyperlink{structfilevault_1_1core_1_1ScryptParams_a2fe115f40d9dc11ae47d1d59df5eb692}{p}}\ =\ 1;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Parallelization}}
+\DoxyCodeLine{00153\ \ \ \ \ }
+\DoxyCodeLine{00154\ \ \ \ \ std::vector<uint8\_t>\ \mbox{\hyperlink{structfilevault_1_1core_1_1ScryptParams_af6aa5c6a8047858de22ff4bc7c1bcca9}{serialize}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00155\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{structfilevault_1_1core_1_1ScryptParams}{ScryptParams}}\ \mbox{\hyperlink{structfilevault_1_1core_1_1ScryptParams_a3da268f623c9fcec05324eedbf76f5ae}{deserialize}}(std::span<const\ uint8\_t>\ data);}
+\DoxyCodeLine{00156\ \};}
+\DoxyCodeLine{00157\ }
+\DoxyCodeLine{00161\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structfilevault_1_1core_1_1FileHeader}{FileHeader}}\ \{}
+\DoxyCodeLine{00162\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{structfilevault_1_1core_1_1FileHeader_addd6406768672e997e408ce003bc802b}{magic}}[8];}
+\DoxyCodeLine{00163\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{structfilevault_1_1core_1_1FileHeader_adcf49654b095f708cbd4f180930297e8}{version\_major}};}
+\DoxyCodeLine{00164\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{structfilevault_1_1core_1_1FileHeader_a12383fc23ebbfb3ba67b7c512bad4d89}{version\_minor}};}
+\DoxyCodeLine{00165\ \ \ \ \ \mbox{\hyperlink{namespacefilevault_1_1core_a4bffcb3f9b484a5d110fa7c4b7d182da}{AlgorithmID}}\ \mbox{\hyperlink{structfilevault_1_1core_1_1FileHeader_aa875f2e59d8b6495f5b7f0c33763ea35}{algorithm}};}
+\DoxyCodeLine{00166\ \ \ \ \ \mbox{\hyperlink{namespacefilevault_1_1core_a71f7621637ca5fbd225b12230940776c}{KDFID}}\ \mbox{\hyperlink{structfilevault_1_1core_1_1FileHeader_ae183642d44ddeb168f54f4980013f3d5}{kdf}};}
+\DoxyCodeLine{00167\ \ \ \ \ \mbox{\hyperlink{namespacefilevault_1_1core_a27d87235901fbdf385ab615dd984511d}{CompressionID}}\ \mbox{\hyperlink{structfilevault_1_1core_1_1FileHeader_a2592bf5098a78c4a815edf7a997efeb6}{compression}};}
+\DoxyCodeLine{00168\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{structfilevault_1_1core_1_1FileHeader_a0303010fce0fa9b616115611b929c31e}{reserved}}[3];}
+\DoxyCodeLine{00169\ \ \ \ \ std::vector<uint8\_t>\ \mbox{\hyperlink{structfilevault_1_1core_1_1FileHeader_ae780436e3a2ee5264ce6e27f44cb3309}{salt}};}
+\DoxyCodeLine{00170\ \ \ \ \ std::vector<uint8\_t>\ \mbox{\hyperlink{structfilevault_1_1core_1_1FileHeader_ac4139b99d49afbda5a6a8b671f8da797}{kdf\_params}};}
+\DoxyCodeLine{00171\ \ \ \ \ std::vector<uint8\_t>\ \mbox{\hyperlink{structfilevault_1_1core_1_1FileHeader_ac9ba8b7775674e1e0a4c4bc2981f8207}{nonce}};}
+\DoxyCodeLine{00172\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structfilevault_1_1core_1_1FileHeader_a472b3cb1be893a0cc917463f168e3c4f}{compressed}};}
+\DoxyCodeLine{00173\ \ \ \ \ }
+\DoxyCodeLine{00177\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structfilevault_1_1core_1_1FileHeader_aa5b9206a7832c347a34812c40d0b7b08}{is\_valid}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00178\ \ \ \ \ }
+\DoxyCodeLine{00182\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{structfilevault_1_1core_1_1FileHeader_a3c59dc706d726f242086afd9978cdad2}{size}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00183\ \ \ \ \ }
+\DoxyCodeLine{00187\ \ \ \ \ std::vector<uint8\_t>\ \mbox{\hyperlink{structfilevault_1_1core_1_1FileHeader_abbbfdc7ce454d212b86c25ab16da6928}{serialize}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00188\ \ \ \ \ }
+\DoxyCodeLine{00193\ \ \ \ \ \textcolor{keyword}{static}\ std::pair<FileHeader,\ size\_t>\ \mbox{\hyperlink{structfilevault_1_1core_1_1FileHeader_ad0b290bd1b7353f3456530dc98810c0b}{deserialize}}(std::span<const\ uint8\_t>\ data);}
+\DoxyCodeLine{00194\ \};}
+\DoxyCodeLine{00195\ }
+\DoxyCodeLine{00199\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classfilevault_1_1core_1_1FileFormatHandler}{FileFormatHandler}}\ \{}
+\DoxyCodeLine{00200\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00204\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{structfilevault_1_1core_1_1FileHeader}{FileHeader}}\ \mbox{\hyperlink{classfilevault_1_1core_1_1FileFormatHandler_a4e05d4dadd820749380878248d83bd55}{create\_header}}(}
+\DoxyCodeLine{00205\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespacefilevault_1_1core_ab1ba257a0205c63e9e1e3623170940a2}{AlgorithmType}}\ algo\_type,}
+\DoxyCodeLine{00206\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespacefilevault_1_1core_ad5938d2ac317833646f1d8b965e3768f}{KDFType}}\ kdf\_type,}
+\DoxyCodeLine{00207\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structfilevault_1_1core_1_1EncryptionConfig}{EncryptionConfig}}\&\ config,}
+\DoxyCodeLine{00208\ \ \ \ \ \ \ \ \ std::span<const\ uint8\_t>\ salt,}
+\DoxyCodeLine{00209\ \ \ \ \ \ \ \ \ std::span<const\ uint8\_t>\ nonce,}
+\DoxyCodeLine{00210\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ compressed}
+\DoxyCodeLine{00211\ \ \ \ \ );}
+\DoxyCodeLine{00212\ \ \ \ \ }
+\DoxyCodeLine{00216\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classfilevault_1_1core_1_1FileFormatHandler_a52cdac6abfe8c4bd7f75e1ea282511a1}{write\_file}}(}
+\DoxyCodeLine{00217\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ path,}
+\DoxyCodeLine{00218\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structfilevault_1_1core_1_1FileHeader}{FileHeader}}\&\ header,}
+\DoxyCodeLine{00219\ \ \ \ \ \ \ \ \ std::span<const\ uint8\_t>\ ciphertext,}
+\DoxyCodeLine{00220\ \ \ \ \ \ \ \ \ std::span<const\ uint8\_t>\ auth\_tag}
+\DoxyCodeLine{00221\ \ \ \ \ );}
+\DoxyCodeLine{00222\ \ \ \ \ }
+\DoxyCodeLine{00226\ \ \ \ \ \textcolor{keyword}{static}\ std::tuple<FileHeader,\ std::vector<uint8\_t>,\ std::vector<uint8\_t>>\ \mbox{\hyperlink{classfilevault_1_1core_1_1FileFormatHandler_a9cb9b55cd37e633a305531815159ad90}{read\_file}}(}
+\DoxyCodeLine{00227\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ path}
+\DoxyCodeLine{00228\ \ \ \ \ );}
+\DoxyCodeLine{00229\ \ \ \ \ }
+\DoxyCodeLine{00233\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{namespacefilevault_1_1core_a4bffcb3f9b484a5d110fa7c4b7d182da}{AlgorithmID}}\ \mbox{\hyperlink{classfilevault_1_1core_1_1FileFormatHandler_a9272eb3ff01073f2b7dd9922bf86c8d0}{to\_algorithm\_id}}(\mbox{\hyperlink{namespacefilevault_1_1core_ab1ba257a0205c63e9e1e3623170940a2}{AlgorithmType}}\ type);}
+\DoxyCodeLine{00234\ \ \ \ \ }
+\DoxyCodeLine{00238\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{namespacefilevault_1_1core_ab1ba257a0205c63e9e1e3623170940a2}{AlgorithmType}}\ \mbox{\hyperlink{classfilevault_1_1core_1_1FileFormatHandler_aa6e8141e4c7df98017f3e3f081cbd6e9}{from\_algorithm\_id}}(\mbox{\hyperlink{namespacefilevault_1_1core_a4bffcb3f9b484a5d110fa7c4b7d182da}{AlgorithmID}}\ \textcolor{keywordtype}{id});}
+\DoxyCodeLine{00239\ \ \ \ \ }
+\DoxyCodeLine{00243\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{namespacefilevault_1_1core_a71f7621637ca5fbd225b12230940776c}{KDFID}}\ \mbox{\hyperlink{classfilevault_1_1core_1_1FileFormatHandler_ada5782a7cde7d23c945e879310021783}{to\_kdf\_id}}(\mbox{\hyperlink{namespacefilevault_1_1core_ad5938d2ac317833646f1d8b965e3768f}{KDFType}}\ type);}
+\DoxyCodeLine{00244\ \ \ \ \ }
+\DoxyCodeLine{00248\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{namespacefilevault_1_1core_ad5938d2ac317833646f1d8b965e3768f}{KDFType}}\ \mbox{\hyperlink{classfilevault_1_1core_1_1FileFormatHandler_a257ab0a84aaaf1b3410ebee94f832b5f}{from\_kdf\_id}}(\mbox{\hyperlink{namespacefilevault_1_1core_a71f7621637ca5fbd225b12230940776c}{KDFID}}\ \textcolor{keywordtype}{id});}
+\DoxyCodeLine{00249\ \ \ \ \ }
+\DoxyCodeLine{00253\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{namespacefilevault_1_1core_a27d87235901fbdf385ab615dd984511d}{CompressionID}}\ \mbox{\hyperlink{classfilevault_1_1core_1_1FileFormatHandler_a94eeab4465d34fd1cfa66ddb87b566b0}{to\_compression\_id}}(\textcolor{keyword}{const}\ std::string\&\ type);}
+\DoxyCodeLine{00254\ \ \ \ \ }
+\DoxyCodeLine{00258\ \ \ \ \ \textcolor{keyword}{static}\ std::string\ \mbox{\hyperlink{classfilevault_1_1core_1_1FileFormatHandler_a8c0d700d628d3f8d687f76a15f3e4fd8}{from\_compression\_id}}(\mbox{\hyperlink{namespacefilevault_1_1core_a27d87235901fbdf385ab615dd984511d}{CompressionID}}\ \textcolor{keywordtype}{id});}
+\DoxyCodeLine{00259\ \ \ \ \ }
+\DoxyCodeLine{00263\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classfilevault_1_1core_1_1FileFormatHandler_a37c2c2a0394c696bac75f7338c009c1f}{is\_legacy\_format}}(\textcolor{keyword}{const}\ std::string\&\ path);}
+\DoxyCodeLine{00264\ \ \ \ \ }
+\DoxyCodeLine{00268\ \ \ \ \ \textcolor{keyword}{static}\ std::tuple<std::vector<uint8\_t>,\ std::vector<uint8\_t>,\ std::vector<uint8\_t>>\ \mbox{\hyperlink{classfilevault_1_1core_1_1FileFormatHandler_af55554730bf127d13fca1f3cbc3831fb}{read\_legacy\_file}}(}
+\DoxyCodeLine{00269\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ path}
+\DoxyCodeLine{00270\ \ \ \ \ );}
+\DoxyCodeLine{00271\ \};}
+\DoxyCodeLine{00272\ }
+\DoxyCodeLine{00273\ \}\ \textcolor{comment}{//\ namespace\ core}}
+\DoxyCodeLine{00274\ \}\ \textcolor{comment}{//\ namespace\ filevault}}
+\DoxyCodeLine{00275\ }
+\DoxyCodeLine{00276\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

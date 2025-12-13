@@ -1,0 +1,361 @@
+\doxysection{filevault\+::cli\+::Hash\+Command Class Reference}
+\hypertarget{classfilevault_1_1cli_1_1HashCommand}{}\label{classfilevault_1_1cli_1_1HashCommand}\index{filevault::cli::HashCommand@{filevault::cli::HashCommand}}
+
+
+Hash command -\/ Calculate cryptographic hashes.  
+
+
+
+
+{\ttfamily \#include $<$hash\+\_\+cmd.\+hpp$>$}
+
+
+
+Inheritance diagram for filevault\+::cli\+::Hash\+Command\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=235pt]{classfilevault_1_1cli_1_1HashCommand__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for filevault\+::cli\+::Hash\+Command\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1cli_1_1HashCommand__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classfilevault_1_1cli_1_1HashCommand_a366b1b570e31830340db91d96d43014b}{Hash\+Command}} (\mbox{\hyperlink{classfilevault_1_1core_1_1CryptoEngine}{core\+::\+Crypto\+Engine}} \&engine)
+\item 
+std\+::string \mbox{\hyperlink{classfilevault_1_1cli_1_1HashCommand_a851d0623c1cda066171f255d3e441d82}{name}} () const override
+\begin{DoxyCompactList}\small\item\em Get command name. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classfilevault_1_1cli_1_1HashCommand_a0958b3a4ea698150ee74d8a543a2ed0f}{description}} () const override
+\begin{DoxyCompactList}\small\item\em Get command description. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classfilevault_1_1cli_1_1HashCommand_a902dad711cc03489cdf0eac774ce8752}{setup}} (CLI\+::\+App \&app) override
+\begin{DoxyCompactList}\small\item\em Setup CLI11 subcommand. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classfilevault_1_1cli_1_1HashCommand_a101a84dad18cfffee77ca84ac88615b3}{execute}} () override
+\begin{DoxyCompactList}\small\item\em Execute the command. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classfilevault_1_1cli_1_1ICommand}{filevault\+::cli\+::\+ICommand}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classfilevault_1_1cli_1_1ICommand_a358ce6bf0db6a1ff7f53eec427481a5d}{\texorpdfstring{$\sim$}{\string~}\+ICommand}} ()=default
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{classfilevault_1_1cli_1_1HashCommand_a5d8f3cbd7f65b9009c532f0d64a8e42f}{get\+\_\+botan\+\_\+algorithm\+\_\+name}} (const std\+::string \&algo)
+\item 
+bool \mbox{\hyperlink{classfilevault_1_1cli_1_1HashCommand_ad4a931317994b0cef3ff1119df3a09f0}{is\+\_\+secure\+\_\+algorithm}} (const std\+::string \&algo)
+\item 
+std\+::string \mbox{\hyperlink{classfilevault_1_1cli_1_1HashCommand_ae49310e22964f47b767a5f87873fcc99}{calculate\+\_\+file\+\_\+hash}} (const std\+::string \&filepath, const std\+::string \&algorithm)
+\item 
+std\+::string \mbox{\hyperlink{classfilevault_1_1cli_1_1HashCommand_a6cc228dedaa6784ec976b27e32be7e08}{calculate\+\_\+file\+\_\+hmac}} (const std\+::string \&filepath, const std\+::string \&hash\+\_\+algorithm, const std\+::string \&key)
+\item 
+int \mbox{\hyperlink{classfilevault_1_1cli_1_1HashCommand_a482d075223c2bbb8b5841b1ce9ffdba6}{verify\+\_\+mode}} (const std\+::string \&calculated\+\_\+hash)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classfilevault_1_1core_1_1CryptoEngine}{core\+::\+Crypto\+Engine}} \& \mbox{\hyperlink{classfilevault_1_1cli_1_1HashCommand_aea71026df9c0c9cf21246d55f18bd2ea}{engine\+\_\+}}
+\item 
+std\+::string \mbox{\hyperlink{classfilevault_1_1cli_1_1HashCommand_a021ffa7f23516745c1d8f4cb961871d8}{input\+\_\+file\+\_\+}}
+\item 
+std\+::string \mbox{\hyperlink{classfilevault_1_1cli_1_1HashCommand_aff855c069c5b15a67a427156f3dbd2a0}{output\+\_\+file\+\_\+}}
+\item 
+std\+::string \mbox{\hyperlink{classfilevault_1_1cli_1_1HashCommand_a4c5f31ec2a24d16abdeac40469e24e11}{algorithm\+\_\+}} = "{}sha256"{}
+\item 
+std\+::string \mbox{\hyperlink{classfilevault_1_1cli_1_1HashCommand_aba9e76057268f2d0145d84edccd3185e}{output\+\_\+format\+\_\+}} = "{}hex"{}
+\item 
+std\+::string \mbox{\hyperlink{classfilevault_1_1cli_1_1HashCommand_ae3283ce268c234b82f468254b07b889b}{verify\+\_\+hash\+\_\+}}
+\item 
+std\+::string \mbox{\hyperlink{classfilevault_1_1cli_1_1HashCommand_a6baefce49b562623c53c1667906c6c86}{hmac\+\_\+key\+\_\+}}
+\item 
+bool \mbox{\hyperlink{classfilevault_1_1cli_1_1HashCommand_a1ab8e2ad8fecdc3ba4379821432f279e}{uppercase\+\_\+}} = false
+\item 
+bool \mbox{\hyperlink{classfilevault_1_1cli_1_1HashCommand_a9d4b02821b722995ff573780479ff686}{no\+\_\+filename\+\_\+}} = false
+\item 
+bool \mbox{\hyperlink{classfilevault_1_1cli_1_1HashCommand_a15ccb8e2f865b1ce54dd3dd1de516938}{verbose\+\_\+}} = false
+\item 
+bool \mbox{\hyperlink{classfilevault_1_1cli_1_1HashCommand_afdbfdaaaf370e7f437244546bc565122}{benchmark\+\_\+}} = false
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Hash command -\/ Calculate cryptographic hashes. 
+
+Supports\+: MD5, SHA1, SHA2 family (224/256/384/512), SHA3 family (224/256/384/512), BLAKE2 (b/s variants)
+
+Features\+:
+\begin{DoxyItemize}
+\item HMAC mode with key
+\item Hash verification
+\item Batch processing
+\item Performance benchmarking 
+\end{DoxyItemize}
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classfilevault_1_1cli_1_1HashCommand_a366b1b570e31830340db91d96d43014b}\label{classfilevault_1_1cli_1_1HashCommand_a366b1b570e31830340db91d96d43014b} 
+\index{filevault::cli::HashCommand@{filevault::cli::HashCommand}!HashCommand@{HashCommand}}
+\index{HashCommand@{HashCommand}!filevault::cli::HashCommand@{filevault::cli::HashCommand}}
+\doxysubsubsection{\texorpdfstring{HashCommand()}{HashCommand()}}
+{\footnotesize\ttfamily filevault\+::cli\+::\+Hash\+Command\+::\+Hash\+Command (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classfilevault_1_1core_1_1CryptoEngine}{core\+::\+Crypto\+Engine}} \&}]{engine }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classfilevault_1_1cli_1_1HashCommand_ae49310e22964f47b767a5f87873fcc99}\label{classfilevault_1_1cli_1_1HashCommand_ae49310e22964f47b767a5f87873fcc99} 
+\index{filevault::cli::HashCommand@{filevault::cli::HashCommand}!calculate\_file\_hash@{calculate\_file\_hash}}
+\index{calculate\_file\_hash@{calculate\_file\_hash}!filevault::cli::HashCommand@{filevault::cli::HashCommand}}
+\doxysubsubsection{\texorpdfstring{calculate\_file\_hash()}{calculate\_file\_hash()}}
+{\footnotesize\ttfamily std\+::string filevault\+::cli\+::\+Hash\+Command\+::calculate\+\_\+file\+\_\+hash (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filepath,  }\item[{const std\+::string \&}]{algorithm }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1cli_1_1HashCommand_ae49310e22964f47b767a5f87873fcc99_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1cli_1_1HashCommand_a6cc228dedaa6784ec976b27e32be7e08}\label{classfilevault_1_1cli_1_1HashCommand_a6cc228dedaa6784ec976b27e32be7e08} 
+\index{filevault::cli::HashCommand@{filevault::cli::HashCommand}!calculate\_file\_hmac@{calculate\_file\_hmac}}
+\index{calculate\_file\_hmac@{calculate\_file\_hmac}!filevault::cli::HashCommand@{filevault::cli::HashCommand}}
+\doxysubsubsection{\texorpdfstring{calculate\_file\_hmac()}{calculate\_file\_hmac()}}
+{\footnotesize\ttfamily std\+::string filevault\+::cli\+::\+Hash\+Command\+::calculate\+\_\+file\+\_\+hmac (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filepath,  }\item[{const std\+::string \&}]{hash\+\_\+algorithm,  }\item[{const std\+::string \&}]{key }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1cli_1_1HashCommand_a6cc228dedaa6784ec976b27e32be7e08_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1cli_1_1HashCommand_a0958b3a4ea698150ee74d8a543a2ed0f}\label{classfilevault_1_1cli_1_1HashCommand_a0958b3a4ea698150ee74d8a543a2ed0f} 
+\index{filevault::cli::HashCommand@{filevault::cli::HashCommand}!description@{description}}
+\index{description@{description}!filevault::cli::HashCommand@{filevault::cli::HashCommand}}
+\doxysubsubsection{\texorpdfstring{description()}{description()}}
+{\footnotesize\ttfamily std\+::string filevault\+::cli\+::\+Hash\+Command\+::description (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get command description. 
+
+
+
+Implements \mbox{\hyperlink{classfilevault_1_1cli_1_1ICommand_a154cdd3f87273142e70814445abd48ea}{filevault\+::cli\+::\+ICommand}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1cli_1_1HashCommand_a0958b3a4ea698150ee74d8a543a2ed0f_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1cli_1_1HashCommand_a101a84dad18cfffee77ca84ac88615b3}\label{classfilevault_1_1cli_1_1HashCommand_a101a84dad18cfffee77ca84ac88615b3} 
+\index{filevault::cli::HashCommand@{filevault::cli::HashCommand}!execute@{execute}}
+\index{execute@{execute}!filevault::cli::HashCommand@{filevault::cli::HashCommand}}
+\doxysubsubsection{\texorpdfstring{execute()}{execute()}}
+{\footnotesize\ttfamily int filevault\+::cli\+::\+Hash\+Command\+::execute (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Execute the command. 
+
+
+
+Implements \mbox{\hyperlink{classfilevault_1_1cli_1_1ICommand_a2fdc36b29a23b94a6e52bc3d4eb0c1ed}{filevault\+::cli\+::\+ICommand}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1cli_1_1HashCommand_a101a84dad18cfffee77ca84ac88615b3_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1cli_1_1HashCommand_a101a84dad18cfffee77ca84ac88615b3_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1cli_1_1HashCommand_a5d8f3cbd7f65b9009c532f0d64a8e42f}\label{classfilevault_1_1cli_1_1HashCommand_a5d8f3cbd7f65b9009c532f0d64a8e42f} 
+\index{filevault::cli::HashCommand@{filevault::cli::HashCommand}!get\_botan\_algorithm\_name@{get\_botan\_algorithm\_name}}
+\index{get\_botan\_algorithm\_name@{get\_botan\_algorithm\_name}!filevault::cli::HashCommand@{filevault::cli::HashCommand}}
+\doxysubsubsection{\texorpdfstring{get\_botan\_algorithm\_name()}{get\_botan\_algorithm\_name()}}
+{\footnotesize\ttfamily std\+::string filevault\+::cli\+::\+Hash\+Command\+::get\+\_\+botan\+\_\+algorithm\+\_\+name (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{algo }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1cli_1_1HashCommand_a5d8f3cbd7f65b9009c532f0d64a8e42f_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1cli_1_1HashCommand_ad4a931317994b0cef3ff1119df3a09f0}\label{classfilevault_1_1cli_1_1HashCommand_ad4a931317994b0cef3ff1119df3a09f0} 
+\index{filevault::cli::HashCommand@{filevault::cli::HashCommand}!is\_secure\_algorithm@{is\_secure\_algorithm}}
+\index{is\_secure\_algorithm@{is\_secure\_algorithm}!filevault::cli::HashCommand@{filevault::cli::HashCommand}}
+\doxysubsubsection{\texorpdfstring{is\_secure\_algorithm()}{is\_secure\_algorithm()}}
+{\footnotesize\ttfamily bool filevault\+::cli\+::\+Hash\+Command\+::is\+\_\+secure\+\_\+algorithm (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{algo }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1cli_1_1HashCommand_ad4a931317994b0cef3ff1119df3a09f0_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1cli_1_1HashCommand_a851d0623c1cda066171f255d3e441d82}\label{classfilevault_1_1cli_1_1HashCommand_a851d0623c1cda066171f255d3e441d82} 
+\index{filevault::cli::HashCommand@{filevault::cli::HashCommand}!name@{name}}
+\index{name@{name}!filevault::cli::HashCommand@{filevault::cli::HashCommand}}
+\doxysubsubsection{\texorpdfstring{name()}{name()}}
+{\footnotesize\ttfamily std\+::string filevault\+::cli\+::\+Hash\+Command\+::name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get command name. 
+
+
+
+Implements \mbox{\hyperlink{classfilevault_1_1cli_1_1ICommand_a60aa4bc7c96c2e80feeb1a184d7ae2f7}{filevault\+::cli\+::\+ICommand}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1cli_1_1HashCommand_a851d0623c1cda066171f255d3e441d82_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1cli_1_1HashCommand_a902dad711cc03489cdf0eac774ce8752}\label{classfilevault_1_1cli_1_1HashCommand_a902dad711cc03489cdf0eac774ce8752} 
+\index{filevault::cli::HashCommand@{filevault::cli::HashCommand}!setup@{setup}}
+\index{setup@{setup}!filevault::cli::HashCommand@{filevault::cli::HashCommand}}
+\doxysubsubsection{\texorpdfstring{setup()}{setup()}}
+{\footnotesize\ttfamily void filevault\+::cli\+::\+Hash\+Command\+::setup (\begin{DoxyParamCaption}\item[{CLI\+::\+App \&}]{app }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Setup CLI11 subcommand. 
+
+
+
+Implements \mbox{\hyperlink{classfilevault_1_1cli_1_1ICommand_aa43a60aabddff55d1060c334dade972c}{filevault\+::cli\+::\+ICommand}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1cli_1_1HashCommand_a902dad711cc03489cdf0eac774ce8752_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1cli_1_1HashCommand_a482d075223c2bbb8b5841b1ce9ffdba6}\label{classfilevault_1_1cli_1_1HashCommand_a482d075223c2bbb8b5841b1ce9ffdba6} 
+\index{filevault::cli::HashCommand@{filevault::cli::HashCommand}!verify\_mode@{verify\_mode}}
+\index{verify\_mode@{verify\_mode}!filevault::cli::HashCommand@{filevault::cli::HashCommand}}
+\doxysubsubsection{\texorpdfstring{verify\_mode()}{verify\_mode()}}
+{\footnotesize\ttfamily int filevault\+::cli\+::\+Hash\+Command\+::verify\+\_\+mode (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{calculated\+\_\+hash }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1cli_1_1HashCommand_a482d075223c2bbb8b5841b1ce9ffdba6_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1cli_1_1HashCommand_a482d075223c2bbb8b5841b1ce9ffdba6_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classfilevault_1_1cli_1_1HashCommand_a4c5f31ec2a24d16abdeac40469e24e11}\label{classfilevault_1_1cli_1_1HashCommand_a4c5f31ec2a24d16abdeac40469e24e11} 
+\index{filevault::cli::HashCommand@{filevault::cli::HashCommand}!algorithm\_@{algorithm\_}}
+\index{algorithm\_@{algorithm\_}!filevault::cli::HashCommand@{filevault::cli::HashCommand}}
+\doxysubsubsection{\texorpdfstring{algorithm\_}{algorithm\_}}
+{\footnotesize\ttfamily std\+::string filevault\+::cli\+::\+Hash\+Command\+::algorithm\+\_\+ = "{}sha256"{}\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classfilevault_1_1cli_1_1HashCommand_afdbfdaaaf370e7f437244546bc565122}\label{classfilevault_1_1cli_1_1HashCommand_afdbfdaaaf370e7f437244546bc565122} 
+\index{filevault::cli::HashCommand@{filevault::cli::HashCommand}!benchmark\_@{benchmark\_}}
+\index{benchmark\_@{benchmark\_}!filevault::cli::HashCommand@{filevault::cli::HashCommand}}
+\doxysubsubsection{\texorpdfstring{benchmark\_}{benchmark\_}}
+{\footnotesize\ttfamily bool filevault\+::cli\+::\+Hash\+Command\+::benchmark\+\_\+ = false\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classfilevault_1_1cli_1_1HashCommand_aea71026df9c0c9cf21246d55f18bd2ea}\label{classfilevault_1_1cli_1_1HashCommand_aea71026df9c0c9cf21246d55f18bd2ea} 
+\index{filevault::cli::HashCommand@{filevault::cli::HashCommand}!engine\_@{engine\_}}
+\index{engine\_@{engine\_}!filevault::cli::HashCommand@{filevault::cli::HashCommand}}
+\doxysubsubsection{\texorpdfstring{engine\_}{engine\_}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classfilevault_1_1core_1_1CryptoEngine}{core\+::\+Crypto\+Engine}}\& filevault\+::cli\+::\+Hash\+Command\+::engine\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classfilevault_1_1cli_1_1HashCommand_a6baefce49b562623c53c1667906c6c86}\label{classfilevault_1_1cli_1_1HashCommand_a6baefce49b562623c53c1667906c6c86} 
+\index{filevault::cli::HashCommand@{filevault::cli::HashCommand}!hmac\_key\_@{hmac\_key\_}}
+\index{hmac\_key\_@{hmac\_key\_}!filevault::cli::HashCommand@{filevault::cli::HashCommand}}
+\doxysubsubsection{\texorpdfstring{hmac\_key\_}{hmac\_key\_}}
+{\footnotesize\ttfamily std\+::string filevault\+::cli\+::\+Hash\+Command\+::hmac\+\_\+key\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classfilevault_1_1cli_1_1HashCommand_a021ffa7f23516745c1d8f4cb961871d8}\label{classfilevault_1_1cli_1_1HashCommand_a021ffa7f23516745c1d8f4cb961871d8} 
+\index{filevault::cli::HashCommand@{filevault::cli::HashCommand}!input\_file\_@{input\_file\_}}
+\index{input\_file\_@{input\_file\_}!filevault::cli::HashCommand@{filevault::cli::HashCommand}}
+\doxysubsubsection{\texorpdfstring{input\_file\_}{input\_file\_}}
+{\footnotesize\ttfamily std\+::string filevault\+::cli\+::\+Hash\+Command\+::input\+\_\+file\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classfilevault_1_1cli_1_1HashCommand_a9d4b02821b722995ff573780479ff686}\label{classfilevault_1_1cli_1_1HashCommand_a9d4b02821b722995ff573780479ff686} 
+\index{filevault::cli::HashCommand@{filevault::cli::HashCommand}!no\_filename\_@{no\_filename\_}}
+\index{no\_filename\_@{no\_filename\_}!filevault::cli::HashCommand@{filevault::cli::HashCommand}}
+\doxysubsubsection{\texorpdfstring{no\_filename\_}{no\_filename\_}}
+{\footnotesize\ttfamily bool filevault\+::cli\+::\+Hash\+Command\+::no\+\_\+filename\+\_\+ = false\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classfilevault_1_1cli_1_1HashCommand_aff855c069c5b15a67a427156f3dbd2a0}\label{classfilevault_1_1cli_1_1HashCommand_aff855c069c5b15a67a427156f3dbd2a0} 
+\index{filevault::cli::HashCommand@{filevault::cli::HashCommand}!output\_file\_@{output\_file\_}}
+\index{output\_file\_@{output\_file\_}!filevault::cli::HashCommand@{filevault::cli::HashCommand}}
+\doxysubsubsection{\texorpdfstring{output\_file\_}{output\_file\_}}
+{\footnotesize\ttfamily std\+::string filevault\+::cli\+::\+Hash\+Command\+::output\+\_\+file\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classfilevault_1_1cli_1_1HashCommand_aba9e76057268f2d0145d84edccd3185e}\label{classfilevault_1_1cli_1_1HashCommand_aba9e76057268f2d0145d84edccd3185e} 
+\index{filevault::cli::HashCommand@{filevault::cli::HashCommand}!output\_format\_@{output\_format\_}}
+\index{output\_format\_@{output\_format\_}!filevault::cli::HashCommand@{filevault::cli::HashCommand}}
+\doxysubsubsection{\texorpdfstring{output\_format\_}{output\_format\_}}
+{\footnotesize\ttfamily std\+::string filevault\+::cli\+::\+Hash\+Command\+::output\+\_\+format\+\_\+ = "{}hex"{}\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classfilevault_1_1cli_1_1HashCommand_a1ab8e2ad8fecdc3ba4379821432f279e}\label{classfilevault_1_1cli_1_1HashCommand_a1ab8e2ad8fecdc3ba4379821432f279e} 
+\index{filevault::cli::HashCommand@{filevault::cli::HashCommand}!uppercase\_@{uppercase\_}}
+\index{uppercase\_@{uppercase\_}!filevault::cli::HashCommand@{filevault::cli::HashCommand}}
+\doxysubsubsection{\texorpdfstring{uppercase\_}{uppercase\_}}
+{\footnotesize\ttfamily bool filevault\+::cli\+::\+Hash\+Command\+::uppercase\+\_\+ = false\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classfilevault_1_1cli_1_1HashCommand_a15ccb8e2f865b1ce54dd3dd1de516938}\label{classfilevault_1_1cli_1_1HashCommand_a15ccb8e2f865b1ce54dd3dd1de516938} 
+\index{filevault::cli::HashCommand@{filevault::cli::HashCommand}!verbose\_@{verbose\_}}
+\index{verbose\_@{verbose\_}!filevault::cli::HashCommand@{filevault::cli::HashCommand}}
+\doxysubsubsection{\texorpdfstring{verbose\_}{verbose\_}}
+{\footnotesize\ttfamily bool filevault\+::cli\+::\+Hash\+Command\+::verbose\+\_\+ = false\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classfilevault_1_1cli_1_1HashCommand_ae3283ce268c234b82f468254b07b889b}\label{classfilevault_1_1cli_1_1HashCommand_ae3283ce268c234b82f468254b07b889b} 
+\index{filevault::cli::HashCommand@{filevault::cli::HashCommand}!verify\_hash\_@{verify\_hash\_}}
+\index{verify\_hash\_@{verify\_hash\_}!filevault::cli::HashCommand@{filevault::cli::HashCommand}}
+\doxysubsubsection{\texorpdfstring{verify\_hash\_}{verify\_hash\_}}
+{\footnotesize\ttfamily std\+::string filevault\+::cli\+::\+Hash\+Command\+::verify\+\_\+hash\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/filevault/cli/commands/\mbox{\hyperlink{hash__cmd_8hpp}{hash\+\_\+cmd.\+hpp}}\item 
+src/cli/commands/\mbox{\hyperlink{hash__cmd_8cpp}{hash\+\_\+cmd.\+cpp}}\end{DoxyCompactItemize}

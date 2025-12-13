@@ -1,0 +1,276 @@
+\doxysection{filevault\+::algorithms\+::symmetric\+::Cha\+Cha20\+Poly1305 Class Reference}
+\hypertarget{classfilevault_1_1algorithms_1_1symmetric_1_1ChaCha20Poly1305}{}\label{classfilevault_1_1algorithms_1_1symmetric_1_1ChaCha20Poly1305}\index{filevault::algorithms::symmetric::ChaCha20Poly1305@{filevault::algorithms::symmetric::ChaCha20Poly1305}}
+
+
+Cha\+Cha20-\/\+Poly1305 AEAD encryption.  
+
+
+
+
+{\ttfamily \#include $<$chacha20\+\_\+poly1305.\+hpp$>$}
+
+
+
+Inheritance diagram for filevault\+::algorithms\+::symmetric\+::Cha\+Cha20\+Poly1305\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=256pt]{classfilevault_1_1algorithms_1_1symmetric_1_1ChaCha20Poly1305__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for filevault\+::algorithms\+::symmetric\+::Cha\+Cha20\+Poly1305\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=256pt]{classfilevault_1_1algorithms_1_1symmetric_1_1ChaCha20Poly1305__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1ChaCha20Poly1305_a978d1fbb311842a83a6fcd0f2ea3112f}{Cha\+Cha20\+Poly1305}} ()
+\item 
+virtual \mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1ChaCha20Poly1305_aad21b42e817212275912dac5ff952777}{\texorpdfstring{$\sim$}{\string~}\+Cha\+Cha20\+Poly1305}} ()=default
+\item 
+std\+::string \mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1ChaCha20Poly1305_a87749874df7e6e171a28e54f5e8c74f3}{name}} () const override
+\begin{DoxyCompactList}\small\item\em Get algorithm name. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacefilevault_1_1core_ab1ba257a0205c63e9e1e3623170940a2}{core\+::\+Algorithm\+Type}} \mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1ChaCha20Poly1305_a7b0fd61349ea570684b97f7a6a547ead}{type}} () const override
+\begin{DoxyCompactList}\small\item\em Get algorithm type. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structfilevault_1_1core_1_1CryptoResult}{core\+::\+Crypto\+Result}} \mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1ChaCha20Poly1305_afa0c1b9378dcee941ba77ee3cbc493e7}{encrypt}} (std\+::span$<$ const uint8\+\_\+t $>$ plaintext, std\+::span$<$ const uint8\+\_\+t $>$ key, const \mbox{\hyperlink{structfilevault_1_1core_1_1EncryptionConfig}{core\+::\+Encryption\+Config}} \&config) override
+\begin{DoxyCompactList}\small\item\em Encrypt data. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structfilevault_1_1core_1_1CryptoResult}{core\+::\+Crypto\+Result}} \mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1ChaCha20Poly1305_aaff4c05495663b019f035fd128b52834}{decrypt}} (std\+::span$<$ const uint8\+\_\+t $>$ ciphertext, std\+::span$<$ const uint8\+\_\+t $>$ key, const \mbox{\hyperlink{structfilevault_1_1core_1_1EncryptionConfig}{core\+::\+Encryption\+Config}} \&config) override
+\begin{DoxyCompactList}\small\item\em Decrypt data. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1ChaCha20Poly1305_a4d756e6c029edf41d1f1827176d6a283}{key\+\_\+size}} () const override
+\begin{DoxyCompactList}\small\item\em Get recommended key size in bytes. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1ChaCha20Poly1305_acf7e028d98af7278d2257a09dd552bce}{nonce\+\_\+size}} () const
+\item 
+size\+\_\+t \mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1ChaCha20Poly1305_ad52a010762682277bdb632da5bc0d642}{tag\+\_\+size}} () const
+\item 
+bool \mbox{\hyperlink{classfilevault_1_1algorithms_1_1symmetric_1_1ChaCha20Poly1305_aa08e9d4e9dc273d31a2eb5af216b7786}{is\+\_\+suitable\+\_\+for}} (\mbox{\hyperlink{namespacefilevault_1_1core_abcb3b3d896f7dc00926903183b3e2dc9}{core\+::\+Security\+Level}} level) const override
+\begin{DoxyCompactList}\small\item\em Check if algorithm is suitable for security level. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classfilevault_1_1core_1_1ICryptoAlgorithm}{filevault\+::core\+::\+ICrypto\+Algorithm}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classfilevault_1_1core_1_1ICryptoAlgorithm_a36383558169617931374ca3b64399818}{\texorpdfstring{$\sim$}{\string~}\+ICrypto\+Algorithm}} ()=default
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Cha\+Cha20-\/\+Poly1305 AEAD encryption. 
+
+Cha\+Cha20-\/\+Poly1305 is a modern AEAD cipher combining\+:
+\begin{DoxyItemize}
+\item Cha\+Cha20 stream cipher (designed by Daniel J. Bernstein)
+\item Poly1305 MAC for authentication
+\end{DoxyItemize}
+
+Benefits over AES-\/\+GCM\+:
+\begin{DoxyItemize}
+\item No need for AES-\/\+NI hardware acceleration
+\item Constant-\/time implementation easier to achieve
+\item Better performance on software-\/only platforms
+\item Recommended by IETF (RFC 8439)
+\end{DoxyItemize}
+
+Security\+:
+\begin{DoxyItemize}
+\item 256-\/bit key
+\item 96-\/bit nonce (12 bytes) -\/ MUST be unique per encryption
+\item 128-\/bit authentication tag (16 bytes)
+\item Provides confidentiality and authenticity 
+\end{DoxyItemize}
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classfilevault_1_1algorithms_1_1symmetric_1_1ChaCha20Poly1305_a978d1fbb311842a83a6fcd0f2ea3112f}\label{classfilevault_1_1algorithms_1_1symmetric_1_1ChaCha20Poly1305_a978d1fbb311842a83a6fcd0f2ea3112f} 
+\index{filevault::algorithms::symmetric::ChaCha20Poly1305@{filevault::algorithms::symmetric::ChaCha20Poly1305}!ChaCha20Poly1305@{ChaCha20Poly1305}}
+\index{ChaCha20Poly1305@{ChaCha20Poly1305}!filevault::algorithms::symmetric::ChaCha20Poly1305@{filevault::algorithms::symmetric::ChaCha20Poly1305}}
+\doxysubsubsection{\texorpdfstring{ChaCha20Poly1305()}{ChaCha20Poly1305()}}
+{\footnotesize\ttfamily filevault\+::algorithms\+::symmetric\+::\+Cha\+Cha20\+Poly1305\+::\+Cha\+Cha20\+Poly1305 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{classfilevault_1_1algorithms_1_1symmetric_1_1ChaCha20Poly1305_aad21b42e817212275912dac5ff952777}\label{classfilevault_1_1algorithms_1_1symmetric_1_1ChaCha20Poly1305_aad21b42e817212275912dac5ff952777} 
+\index{filevault::algorithms::symmetric::ChaCha20Poly1305@{filevault::algorithms::symmetric::ChaCha20Poly1305}!````~ChaCha20Poly1305@{\texorpdfstring{$\sim$}{\string~}ChaCha20Poly1305}}
+\index{````~ChaCha20Poly1305@{\texorpdfstring{$\sim$}{\string~}ChaCha20Poly1305}!filevault::algorithms::symmetric::ChaCha20Poly1305@{filevault::algorithms::symmetric::ChaCha20Poly1305}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}ChaCha20Poly1305()}{\string~ChaCha20Poly1305()}}
+{\footnotesize\ttfamily virtual filevault\+::algorithms\+::symmetric\+::\+Cha\+Cha20\+Poly1305\+::\texorpdfstring{$\sim$}{\string~}\+Cha\+Cha20\+Poly1305 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classfilevault_1_1algorithms_1_1symmetric_1_1ChaCha20Poly1305_aaff4c05495663b019f035fd128b52834}\label{classfilevault_1_1algorithms_1_1symmetric_1_1ChaCha20Poly1305_aaff4c05495663b019f035fd128b52834} 
+\index{filevault::algorithms::symmetric::ChaCha20Poly1305@{filevault::algorithms::symmetric::ChaCha20Poly1305}!decrypt@{decrypt}}
+\index{decrypt@{decrypt}!filevault::algorithms::symmetric::ChaCha20Poly1305@{filevault::algorithms::symmetric::ChaCha20Poly1305}}
+\doxysubsubsection{\texorpdfstring{decrypt()}{decrypt()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structfilevault_1_1core_1_1CryptoResult}{core\+::\+Crypto\+Result}} filevault\+::algorithms\+::symmetric\+::\+Cha\+Cha20\+Poly1305\+::decrypt (\begin{DoxyParamCaption}\item[{std\+::span$<$ const uint8\+\_\+t $>$}]{ciphertext,  }\item[{std\+::span$<$ const uint8\+\_\+t $>$}]{key,  }\item[{const \mbox{\hyperlink{structfilevault_1_1core_1_1EncryptionConfig}{core\+::\+Encryption\+Config}} \&}]{config }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Decrypt data. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ciphertext} & Encrypted data \\
+\hline
+{\em key} & Decryption key (derived from password) \\
+\hline
+{\em config} & Decryption configuration \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Decrypted data 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classfilevault_1_1core_1_1ICryptoAlgorithm_a5ad6e9e19a3ed1dd3f0b49106bcaac0d}{filevault\+::core\+::\+ICrypto\+Algorithm}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1algorithms_1_1symmetric_1_1ChaCha20Poly1305_aaff4c05495663b019f035fd128b52834_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1algorithms_1_1symmetric_1_1ChaCha20Poly1305_afa0c1b9378dcee941ba77ee3cbc493e7}\label{classfilevault_1_1algorithms_1_1symmetric_1_1ChaCha20Poly1305_afa0c1b9378dcee941ba77ee3cbc493e7} 
+\index{filevault::algorithms::symmetric::ChaCha20Poly1305@{filevault::algorithms::symmetric::ChaCha20Poly1305}!encrypt@{encrypt}}
+\index{encrypt@{encrypt}!filevault::algorithms::symmetric::ChaCha20Poly1305@{filevault::algorithms::symmetric::ChaCha20Poly1305}}
+\doxysubsubsection{\texorpdfstring{encrypt()}{encrypt()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structfilevault_1_1core_1_1CryptoResult}{core\+::\+Crypto\+Result}} filevault\+::algorithms\+::symmetric\+::\+Cha\+Cha20\+Poly1305\+::encrypt (\begin{DoxyParamCaption}\item[{std\+::span$<$ const uint8\+\_\+t $>$}]{plaintext,  }\item[{std\+::span$<$ const uint8\+\_\+t $>$}]{key,  }\item[{const \mbox{\hyperlink{structfilevault_1_1core_1_1EncryptionConfig}{core\+::\+Encryption\+Config}} \&}]{config }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Encrypt data. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em plaintext} & Input data to encrypt \\
+\hline
+{\em key} & Encryption key (derived from password) \\
+\hline
+{\em config} & Encryption configuration \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Encrypted data with metadata 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classfilevault_1_1core_1_1ICryptoAlgorithm_a5b9102cef54b84b54feea1dc16561a2d}{filevault\+::core\+::\+ICrypto\+Algorithm}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1algorithms_1_1symmetric_1_1ChaCha20Poly1305_afa0c1b9378dcee941ba77ee3cbc493e7_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1algorithms_1_1symmetric_1_1ChaCha20Poly1305_aa08e9d4e9dc273d31a2eb5af216b7786}\label{classfilevault_1_1algorithms_1_1symmetric_1_1ChaCha20Poly1305_aa08e9d4e9dc273d31a2eb5af216b7786} 
+\index{filevault::algorithms::symmetric::ChaCha20Poly1305@{filevault::algorithms::symmetric::ChaCha20Poly1305}!is\_suitable\_for@{is\_suitable\_for}}
+\index{is\_suitable\_for@{is\_suitable\_for}!filevault::algorithms::symmetric::ChaCha20Poly1305@{filevault::algorithms::symmetric::ChaCha20Poly1305}}
+\doxysubsubsection{\texorpdfstring{is\_suitable\_for()}{is\_suitable\_for()}}
+{\footnotesize\ttfamily bool filevault\+::algorithms\+::symmetric\+::\+Cha\+Cha20\+Poly1305\+::is\+\_\+suitable\+\_\+for (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacefilevault_1_1core_abcb3b3d896f7dc00926903183b3e2dc9}{core\+::\+Security\+Level}}}]{level }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Check if algorithm is suitable for security level. 
+
+
+
+Implements \mbox{\hyperlink{classfilevault_1_1core_1_1ICryptoAlgorithm_aab479734daf06d3f76af5d916c0285fa}{filevault\+::core\+::\+ICrypto\+Algorithm}}.
+
+\Hypertarget{classfilevault_1_1algorithms_1_1symmetric_1_1ChaCha20Poly1305_a4d756e6c029edf41d1f1827176d6a283}\label{classfilevault_1_1algorithms_1_1symmetric_1_1ChaCha20Poly1305_a4d756e6c029edf41d1f1827176d6a283} 
+\index{filevault::algorithms::symmetric::ChaCha20Poly1305@{filevault::algorithms::symmetric::ChaCha20Poly1305}!key\_size@{key\_size}}
+\index{key\_size@{key\_size}!filevault::algorithms::symmetric::ChaCha20Poly1305@{filevault::algorithms::symmetric::ChaCha20Poly1305}}
+\doxysubsubsection{\texorpdfstring{key\_size()}{key\_size()}}
+{\footnotesize\ttfamily size\+\_\+t filevault\+::algorithms\+::symmetric\+::\+Cha\+Cha20\+Poly1305\+::key\+\_\+size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get recommended key size in bytes. 
+
+
+
+Implements \mbox{\hyperlink{classfilevault_1_1core_1_1ICryptoAlgorithm_af9ccb47457495eb99988fef0b5b2bbe8}{filevault\+::core\+::\+ICrypto\+Algorithm}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1algorithms_1_1symmetric_1_1ChaCha20Poly1305_a4d756e6c029edf41d1f1827176d6a283_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1algorithms_1_1symmetric_1_1ChaCha20Poly1305_a87749874df7e6e171a28e54f5e8c74f3}\label{classfilevault_1_1algorithms_1_1symmetric_1_1ChaCha20Poly1305_a87749874df7e6e171a28e54f5e8c74f3} 
+\index{filevault::algorithms::symmetric::ChaCha20Poly1305@{filevault::algorithms::symmetric::ChaCha20Poly1305}!name@{name}}
+\index{name@{name}!filevault::algorithms::symmetric::ChaCha20Poly1305@{filevault::algorithms::symmetric::ChaCha20Poly1305}}
+\doxysubsubsection{\texorpdfstring{name()}{name()}}
+{\footnotesize\ttfamily std\+::string filevault\+::algorithms\+::symmetric\+::\+Cha\+Cha20\+Poly1305\+::name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get algorithm name. 
+
+
+
+Implements \mbox{\hyperlink{classfilevault_1_1core_1_1ICryptoAlgorithm_a8acdc23e4f2ea77bb4a5b9820b27fa66}{filevault\+::core\+::\+ICrypto\+Algorithm}}.
+
+\Hypertarget{classfilevault_1_1algorithms_1_1symmetric_1_1ChaCha20Poly1305_acf7e028d98af7278d2257a09dd552bce}\label{classfilevault_1_1algorithms_1_1symmetric_1_1ChaCha20Poly1305_acf7e028d98af7278d2257a09dd552bce} 
+\index{filevault::algorithms::symmetric::ChaCha20Poly1305@{filevault::algorithms::symmetric::ChaCha20Poly1305}!nonce\_size@{nonce\_size}}
+\index{nonce\_size@{nonce\_size}!filevault::algorithms::symmetric::ChaCha20Poly1305@{filevault::algorithms::symmetric::ChaCha20Poly1305}}
+\doxysubsubsection{\texorpdfstring{nonce\_size()}{nonce\_size()}}
+{\footnotesize\ttfamily size\+\_\+t filevault\+::algorithms\+::symmetric\+::\+Cha\+Cha20\+Poly1305\+::nonce\+\_\+size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1algorithms_1_1symmetric_1_1ChaCha20Poly1305_acf7e028d98af7278d2257a09dd552bce_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1algorithms_1_1symmetric_1_1ChaCha20Poly1305_ad52a010762682277bdb632da5bc0d642}\label{classfilevault_1_1algorithms_1_1symmetric_1_1ChaCha20Poly1305_ad52a010762682277bdb632da5bc0d642} 
+\index{filevault::algorithms::symmetric::ChaCha20Poly1305@{filevault::algorithms::symmetric::ChaCha20Poly1305}!tag\_size@{tag\_size}}
+\index{tag\_size@{tag\_size}!filevault::algorithms::symmetric::ChaCha20Poly1305@{filevault::algorithms::symmetric::ChaCha20Poly1305}}
+\doxysubsubsection{\texorpdfstring{tag\_size()}{tag\_size()}}
+{\footnotesize\ttfamily size\+\_\+t filevault\+::algorithms\+::symmetric\+::\+Cha\+Cha20\+Poly1305\+::tag\+\_\+size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1algorithms_1_1symmetric_1_1ChaCha20Poly1305_ad52a010762682277bdb632da5bc0d642_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1algorithms_1_1symmetric_1_1ChaCha20Poly1305_a7b0fd61349ea570684b97f7a6a547ead}\label{classfilevault_1_1algorithms_1_1symmetric_1_1ChaCha20Poly1305_a7b0fd61349ea570684b97f7a6a547ead} 
+\index{filevault::algorithms::symmetric::ChaCha20Poly1305@{filevault::algorithms::symmetric::ChaCha20Poly1305}!type@{type}}
+\index{type@{type}!filevault::algorithms::symmetric::ChaCha20Poly1305@{filevault::algorithms::symmetric::ChaCha20Poly1305}}
+\doxysubsubsection{\texorpdfstring{type()}{type()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacefilevault_1_1core_ab1ba257a0205c63e9e1e3623170940a2}{core\+::\+Algorithm\+Type}} filevault\+::algorithms\+::symmetric\+::\+Cha\+Cha20\+Poly1305\+::type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get algorithm type. 
+
+
+
+Implements \mbox{\hyperlink{classfilevault_1_1core_1_1ICryptoAlgorithm_a11b7820f7b0bbb5fd6668fac3b78a7e1}{filevault\+::core\+::\+ICrypto\+Algorithm}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1algorithms_1_1symmetric_1_1ChaCha20Poly1305_a7b0fd61349ea570684b97f7a6a547ead_icgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/filevault/algorithms/symmetric/\mbox{\hyperlink{chacha20__poly1305_8hpp}{chacha20\+\_\+poly1305.\+hpp}}\item 
+src/algorithms/symmetric/\mbox{\hyperlink{chacha20__poly1305_8cpp}{chacha20\+\_\+poly1305.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,115 @@
+\doxysection{filevault\+::core\+::Result\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>} Struct Template Reference}
+\hypertarget{structfilevault_1_1core_1_1Result}{}\label{structfilevault_1_1core_1_1Result}\index{filevault::core::Result$<$ T $>$@{filevault::core::Result$<$ T $>$}}
+
+
+Generic result type.  
+
+
+
+
+{\ttfamily \#include $<$result.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structfilevault_1_1core_1_1Result_a130c3afb5cb32c248d440a89392e0bac}{operator bool}} () const
+\item 
+T \& \mbox{\hyperlink{structfilevault_1_1core_1_1Result_afacb840528e9fe3d23f7e04d69b6524c}{unwrap}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{structfilevault_1_1core_1_1Result}{Result}}$<$ T $>$ \mbox{\hyperlink{structfilevault_1_1core_1_1Result_aa4c9cf1417bb26d982f83442c986dc03}{ok}} (T val)
+\item 
+static \mbox{\hyperlink{structfilevault_1_1core_1_1Result}{Result}}$<$ T $>$ \mbox{\hyperlink{structfilevault_1_1core_1_1Result_a0846ce0feec9b1d8cd889c6e89f9af32}{error}} (const std\+::string \&msg)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{structfilevault_1_1core_1_1Result_a09df05cb424ff7d141e41a742ebd259e}{success}} = false
+\item 
+std\+::string \mbox{\hyperlink{structfilevault_1_1core_1_1Result_a4cf611220556e0dbbf7679d7b0bf4a7c}{error\+\_\+message}}
+\item 
+T \mbox{\hyperlink{structfilevault_1_1core_1_1Result_aae73e6149360084f6313a68f44aaebcc}{value}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename T$>$\newline
+struct filevault\+::core\+::\+Result$<$ T $>$}
+Generic result type. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{structfilevault_1_1core_1_1Result_a0846ce0feec9b1d8cd889c6e89f9af32}\label{structfilevault_1_1core_1_1Result_a0846ce0feec9b1d8cd889c6e89f9af32} 
+\index{filevault::core::Result$<$ T $>$@{filevault::core::Result$<$ T $>$}!error@{error}}
+\index{error@{error}!filevault::core::Result$<$ T $>$@{filevault::core::Result$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{error()}{error()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+static \mbox{\hyperlink{structfilevault_1_1core_1_1Result}{Result}}$<$ T $>$ \mbox{\hyperlink{structfilevault_1_1core_1_1Result}{filevault\+::core\+::\+Result}}$<$ T $>$\+::error (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{msg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structfilevault_1_1core_1_1Result_a0846ce0feec9b1d8cd889c6e89f9af32_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{structfilevault_1_1core_1_1Result_aa4c9cf1417bb26d982f83442c986dc03}\label{structfilevault_1_1core_1_1Result_aa4c9cf1417bb26d982f83442c986dc03} 
+\index{filevault::core::Result$<$ T $>$@{filevault::core::Result$<$ T $>$}!ok@{ok}}
+\index{ok@{ok}!filevault::core::Result$<$ T $>$@{filevault::core::Result$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{ok()}{ok()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+static \mbox{\hyperlink{structfilevault_1_1core_1_1Result}{Result}}$<$ T $>$ \mbox{\hyperlink{structfilevault_1_1core_1_1Result}{filevault\+::core\+::\+Result}}$<$ T $>$\+::ok (\begin{DoxyParamCaption}\item[{T}]{val }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structfilevault_1_1core_1_1Result_aa4c9cf1417bb26d982f83442c986dc03_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{structfilevault_1_1core_1_1Result_a130c3afb5cb32c248d440a89392e0bac}\label{structfilevault_1_1core_1_1Result_a130c3afb5cb32c248d440a89392e0bac} 
+\index{filevault::core::Result$<$ T $>$@{filevault::core::Result$<$ T $>$}!operator bool@{operator bool}}
+\index{operator bool@{operator bool}!filevault::core::Result$<$ T $>$@{filevault::core::Result$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator bool()}{operator bool()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{structfilevault_1_1core_1_1Result}{filevault\+::core\+::\+Result}}$<$ T $>$\+::operator bool (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+\Hypertarget{structfilevault_1_1core_1_1Result_afacb840528e9fe3d23f7e04d69b6524c}\label{structfilevault_1_1core_1_1Result_afacb840528e9fe3d23f7e04d69b6524c} 
+\index{filevault::core::Result$<$ T $>$@{filevault::core::Result$<$ T $>$}!unwrap@{unwrap}}
+\index{unwrap@{unwrap}!filevault::core::Result$<$ T $>$@{filevault::core::Result$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{unwrap()}{unwrap()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+T \& \mbox{\hyperlink{structfilevault_1_1core_1_1Result}{filevault\+::core\+::\+Result}}$<$ T $>$\+::unwrap (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{structfilevault_1_1core_1_1Result_a4cf611220556e0dbbf7679d7b0bf4a7c}\label{structfilevault_1_1core_1_1Result_a4cf611220556e0dbbf7679d7b0bf4a7c} 
+\index{filevault::core::Result$<$ T $>$@{filevault::core::Result$<$ T $>$}!error\_message@{error\_message}}
+\index{error\_message@{error\_message}!filevault::core::Result$<$ T $>$@{filevault::core::Result$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{error\_message}{error\_message}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+std\+::string \mbox{\hyperlink{structfilevault_1_1core_1_1Result}{filevault\+::core\+::\+Result}}$<$ T $>$\+::error\+\_\+message}
+
+\Hypertarget{structfilevault_1_1core_1_1Result_a09df05cb424ff7d141e41a742ebd259e}\label{structfilevault_1_1core_1_1Result_a09df05cb424ff7d141e41a742ebd259e} 
+\index{filevault::core::Result$<$ T $>$@{filevault::core::Result$<$ T $>$}!success@{success}}
+\index{success@{success}!filevault::core::Result$<$ T $>$@{filevault::core::Result$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{success}{success}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+bool \mbox{\hyperlink{structfilevault_1_1core_1_1Result}{filevault\+::core\+::\+Result}}$<$ T $>$\+::success = false}
+
+\Hypertarget{structfilevault_1_1core_1_1Result_aae73e6149360084f6313a68f44aaebcc}\label{structfilevault_1_1core_1_1Result_aae73e6149360084f6313a68f44aaebcc} 
+\index{filevault::core::Result$<$ T $>$@{filevault::core::Result$<$ T $>$}!value@{value}}
+\index{value@{value}!filevault::core::Result$<$ T $>$@{filevault::core::Result$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{value}{value}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+T \mbox{\hyperlink{structfilevault_1_1core_1_1Result}{filevault\+::core\+::\+Result}}$<$ T $>$\+::value}
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/filevault/core/\mbox{\hyperlink{result_8hpp}{result.\+hpp}}\end{DoxyCompactItemize}

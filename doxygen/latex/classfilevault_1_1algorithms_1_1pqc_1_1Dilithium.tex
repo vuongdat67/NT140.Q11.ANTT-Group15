@@ -1,0 +1,264 @@
+\doxysection{filevault\+::algorithms\+::pqc\+::Dilithium Class Reference}
+\hypertarget{classfilevault_1_1algorithms_1_1pqc_1_1Dilithium}{}\label{classfilevault_1_1algorithms_1_1pqc_1_1Dilithium}\index{filevault::algorithms::pqc::Dilithium@{filevault::algorithms::pqc::Dilithium}}
+
+
+\doxylink{classfilevault_1_1algorithms_1_1pqc_1_1Dilithium}{Dilithium} Digital Signature Algorithm.  
+
+
+
+
+{\ttfamily \#include $<$post\+\_\+quantum.\+hpp$>$}
+
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum class \mbox{\hyperlink{classfilevault_1_1algorithms_1_1pqc_1_1Dilithium_af4621ffb3514a8472a05e80592b8270f}{Variant}} \{ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1pqc_1_1Dilithium_af4621ffb3514a8472a05e80592b8270faf08f0144fc2bea5f2eed697cb4936cf8}{Dilithium2}}
+, \mbox{\hyperlink{classfilevault_1_1algorithms_1_1pqc_1_1Dilithium_af4621ffb3514a8472a05e80592b8270fa1e7f3436097ccf8a3260470dcbc79197}{Dilithium3}}
+, \mbox{\hyperlink{classfilevault_1_1algorithms_1_1pqc_1_1Dilithium_af4621ffb3514a8472a05e80592b8270fa29d405889d7e72dea3503c5a0e819ad9}{Dilithium5}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classfilevault_1_1algorithms_1_1pqc_1_1Dilithium_aa751beeefb152a774dde910a53522c9a}{Dilithium}} (\mbox{\hyperlink{classfilevault_1_1algorithms_1_1pqc_1_1Dilithium_af4621ffb3514a8472a05e80592b8270f}{Variant}} variant=\mbox{\hyperlink{classfilevault_1_1algorithms_1_1pqc_1_1Dilithium_af4621ffb3514a8472a05e80592b8270fa1e7f3436097ccf8a3260470dcbc79197}{Variant\+::\+Dilithium3}})
+\item 
+std\+::string \mbox{\hyperlink{classfilevault_1_1algorithms_1_1pqc_1_1Dilithium_ad9d5f8fe37bc41512f2becb907db208b}{name}} () const
+\item 
+\mbox{\hyperlink{structfilevault_1_1algorithms_1_1pqc_1_1PQKeyPair}{PQKey\+Pair}} \mbox{\hyperlink{classfilevault_1_1algorithms_1_1pqc_1_1Dilithium_a23939a3f91ec6fa9f322347218755fdb}{generate\+\_\+keypair}} ()
+\begin{DoxyCompactList}\small\item\em Generate \doxylink{classfilevault_1_1algorithms_1_1pqc_1_1Dilithium}{Dilithium} key pair. \end{DoxyCompactList}\item 
+std\+::vector$<$ uint8\+\_\+t $>$ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1pqc_1_1Dilithium_adb793e96b7626cb55fc5daeec35be9d7}{sign}} (std\+::span$<$ const uint8\+\_\+t $>$ message, std\+::span$<$ const uint8\+\_\+t $>$ private\+\_\+key)
+\begin{DoxyCompactList}\small\item\em Sign a message. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classfilevault_1_1algorithms_1_1pqc_1_1Dilithium_a82c0d297dd80fe3567ad603728426d23}{verify}} (std\+::span$<$ const uint8\+\_\+t $>$ message, std\+::span$<$ const uint8\+\_\+t $>$ signature, std\+::span$<$ const uint8\+\_\+t $>$ public\+\_\+key)
+\begin{DoxyCompactList}\small\item\em Verify a signature. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{classfilevault_1_1algorithms_1_1pqc_1_1Dilithium_a5f63bd8c91d304ad5fbf447c05d620e5}{public\+\_\+key\+\_\+size}} () const
+\begin{DoxyCompactList}\small\item\em Get public key size for this variant. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{classfilevault_1_1algorithms_1_1pqc_1_1Dilithium_ab9a28ac6653924b0149a382d0bbfc9a5}{private\+\_\+key\+\_\+size}} () const
+\begin{DoxyCompactList}\small\item\em Get private key size for this variant. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{classfilevault_1_1algorithms_1_1pqc_1_1Dilithium_ae2cca391c6cdccfd70826d895a5b5a7f}{signature\+\_\+size}} () const
+\begin{DoxyCompactList}\small\item\em Get signature size for this variant. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classfilevault_1_1algorithms_1_1pqc_1_1Dilithium_af4621ffb3514a8472a05e80592b8270f}{Variant}} \mbox{\hyperlink{classfilevault_1_1algorithms_1_1pqc_1_1Dilithium_ab61854ddfe62925858d93cea5f1cf254}{variant\+\_\+}}
+\item 
+std\+::string \mbox{\hyperlink{classfilevault_1_1algorithms_1_1pqc_1_1Dilithium_aded33b74f449ad2c4b8f33aee56452db}{botan\+\_\+name\+\_\+}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\doxylink{classfilevault_1_1algorithms_1_1pqc_1_1Dilithium}{Dilithium} Digital Signature Algorithm. 
+
+NIST FIPS 204 (ML-\/\+DSA) -\/ Post-\/quantum secure digital signatures
+
+\doxylink{classfilevault_1_1algorithms_1_1pqc_1_1Dilithium}{Dilithium} is a lattice-\/based signature scheme that provides\+:
+\begin{DoxyItemize}
+\item EUF-\/\+CMA security
+\item Resistance to quantum computer attacks
+\item Efficient signing and verification
+\end{DoxyItemize}
+
+Variants\+:
+\begin{DoxyItemize}
+\item Dilithium2\+: \texorpdfstring{$\sim$}{\string~}128-\/bit post-\/quantum security
+\item Dilithium3\+: \texorpdfstring{$\sim$}{\string~}192-\/bit post-\/quantum security (recommended)
+\item Dilithium5\+: \texorpdfstring{$\sim$}{\string~}256-\/bit post-\/quantum security 
+\end{DoxyItemize}
+
+\doxysubsection{Member Enumeration Documentation}
+\Hypertarget{classfilevault_1_1algorithms_1_1pqc_1_1Dilithium_af4621ffb3514a8472a05e80592b8270f}\label{classfilevault_1_1algorithms_1_1pqc_1_1Dilithium_af4621ffb3514a8472a05e80592b8270f} 
+\index{filevault::algorithms::pqc::Dilithium@{filevault::algorithms::pqc::Dilithium}!Variant@{Variant}}
+\index{Variant@{Variant}!filevault::algorithms::pqc::Dilithium@{filevault::algorithms::pqc::Dilithium}}
+\doxysubsubsection{\texorpdfstring{Variant}{Variant}}
+{\footnotesize\ttfamily enum class \mbox{\hyperlink{classfilevault_1_1algorithms_1_1pqc_1_1Dilithium_af4621ffb3514a8472a05e80592b8270f}{filevault\+::algorithms\+::pqc\+::\+Dilithium\+::\+Variant}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Dilithium2@{Dilithium2}!filevault::algorithms::pqc::Dilithium@{filevault::algorithms::pqc::Dilithium}}\index{filevault::algorithms::pqc::Dilithium@{filevault::algorithms::pqc::Dilithium}!Dilithium2@{Dilithium2}}}\Hypertarget{classfilevault_1_1algorithms_1_1pqc_1_1Dilithium_af4621ffb3514a8472a05e80592b8270faf08f0144fc2bea5f2eed697cb4936cf8}\label{classfilevault_1_1algorithms_1_1pqc_1_1Dilithium_af4621ffb3514a8472a05e80592b8270faf08f0144fc2bea5f2eed697cb4936cf8} 
+Dilithium2&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Dilithium3@{Dilithium3}!filevault::algorithms::pqc::Dilithium@{filevault::algorithms::pqc::Dilithium}}\index{filevault::algorithms::pqc::Dilithium@{filevault::algorithms::pqc::Dilithium}!Dilithium3@{Dilithium3}}}\Hypertarget{classfilevault_1_1algorithms_1_1pqc_1_1Dilithium_af4621ffb3514a8472a05e80592b8270fa1e7f3436097ccf8a3260470dcbc79197}\label{classfilevault_1_1algorithms_1_1pqc_1_1Dilithium_af4621ffb3514a8472a05e80592b8270fa1e7f3436097ccf8a3260470dcbc79197} 
+Dilithium3&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Dilithium5@{Dilithium5}!filevault::algorithms::pqc::Dilithium@{filevault::algorithms::pqc::Dilithium}}\index{filevault::algorithms::pqc::Dilithium@{filevault::algorithms::pqc::Dilithium}!Dilithium5@{Dilithium5}}}\Hypertarget{classfilevault_1_1algorithms_1_1pqc_1_1Dilithium_af4621ffb3514a8472a05e80592b8270fa29d405889d7e72dea3503c5a0e819ad9}\label{classfilevault_1_1algorithms_1_1pqc_1_1Dilithium_af4621ffb3514a8472a05e80592b8270fa29d405889d7e72dea3503c5a0e819ad9} 
+Dilithium5&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classfilevault_1_1algorithms_1_1pqc_1_1Dilithium_aa751beeefb152a774dde910a53522c9a}\label{classfilevault_1_1algorithms_1_1pqc_1_1Dilithium_aa751beeefb152a774dde910a53522c9a} 
+\index{filevault::algorithms::pqc::Dilithium@{filevault::algorithms::pqc::Dilithium}!Dilithium@{Dilithium}}
+\index{Dilithium@{Dilithium}!filevault::algorithms::pqc::Dilithium@{filevault::algorithms::pqc::Dilithium}}
+\doxysubsubsection{\texorpdfstring{Dilithium()}{Dilithium()}}
+{\footnotesize\ttfamily filevault\+::algorithms\+::pqc\+::\+Dilithium\+::\+Dilithium (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classfilevault_1_1algorithms_1_1pqc_1_1Dilithium_af4621ffb3514a8472a05e80592b8270f}{Variant}}}]{variant = {\ttfamily \mbox{\hyperlink{classfilevault_1_1algorithms_1_1pqc_1_1Dilithium_af4621ffb3514a8472a05e80592b8270fa1e7f3436097ccf8a3260470dcbc79197}{Variant\+::\+Dilithium3}}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classfilevault_1_1algorithms_1_1pqc_1_1Dilithium_a23939a3f91ec6fa9f322347218755fdb}\label{classfilevault_1_1algorithms_1_1pqc_1_1Dilithium_a23939a3f91ec6fa9f322347218755fdb} 
+\index{filevault::algorithms::pqc::Dilithium@{filevault::algorithms::pqc::Dilithium}!generate\_keypair@{generate\_keypair}}
+\index{generate\_keypair@{generate\_keypair}!filevault::algorithms::pqc::Dilithium@{filevault::algorithms::pqc::Dilithium}}
+\doxysubsubsection{\texorpdfstring{generate\_keypair()}{generate\_keypair()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structfilevault_1_1algorithms_1_1pqc_1_1PQKeyPair}{PQKey\+Pair}} filevault\+::algorithms\+::pqc\+::\+Dilithium\+::generate\+\_\+keypair (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Generate \doxylink{classfilevault_1_1algorithms_1_1pqc_1_1Dilithium}{Dilithium} key pair. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1algorithms_1_1pqc_1_1Dilithium_a23939a3f91ec6fa9f322347218755fdb_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1algorithms_1_1pqc_1_1Dilithium_a23939a3f91ec6fa9f322347218755fdb_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1algorithms_1_1pqc_1_1Dilithium_ad9d5f8fe37bc41512f2becb907db208b}\label{classfilevault_1_1algorithms_1_1pqc_1_1Dilithium_ad9d5f8fe37bc41512f2becb907db208b} 
+\index{filevault::algorithms::pqc::Dilithium@{filevault::algorithms::pqc::Dilithium}!name@{name}}
+\index{name@{name}!filevault::algorithms::pqc::Dilithium@{filevault::algorithms::pqc::Dilithium}}
+\doxysubsubsection{\texorpdfstring{name()}{name()}}
+{\footnotesize\ttfamily std\+::string filevault\+::algorithms\+::pqc\+::\+Dilithium\+::name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1algorithms_1_1pqc_1_1Dilithium_ad9d5f8fe37bc41512f2becb907db208b_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1algorithms_1_1pqc_1_1Dilithium_ab9a28ac6653924b0149a382d0bbfc9a5}\label{classfilevault_1_1algorithms_1_1pqc_1_1Dilithium_ab9a28ac6653924b0149a382d0bbfc9a5} 
+\index{filevault::algorithms::pqc::Dilithium@{filevault::algorithms::pqc::Dilithium}!private\_key\_size@{private\_key\_size}}
+\index{private\_key\_size@{private\_key\_size}!filevault::algorithms::pqc::Dilithium@{filevault::algorithms::pqc::Dilithium}}
+\doxysubsubsection{\texorpdfstring{private\_key\_size()}{private\_key\_size()}}
+{\footnotesize\ttfamily size\+\_\+t filevault\+::algorithms\+::pqc\+::\+Dilithium\+::private\+\_\+key\+\_\+size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get private key size for this variant. 
+
+\Hypertarget{classfilevault_1_1algorithms_1_1pqc_1_1Dilithium_a5f63bd8c91d304ad5fbf447c05d620e5}\label{classfilevault_1_1algorithms_1_1pqc_1_1Dilithium_a5f63bd8c91d304ad5fbf447c05d620e5} 
+\index{filevault::algorithms::pqc::Dilithium@{filevault::algorithms::pqc::Dilithium}!public\_key\_size@{public\_key\_size}}
+\index{public\_key\_size@{public\_key\_size}!filevault::algorithms::pqc::Dilithium@{filevault::algorithms::pqc::Dilithium}}
+\doxysubsubsection{\texorpdfstring{public\_key\_size()}{public\_key\_size()}}
+{\footnotesize\ttfamily size\+\_\+t filevault\+::algorithms\+::pqc\+::\+Dilithium\+::public\+\_\+key\+\_\+size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get public key size for this variant. 
+
+\Hypertarget{classfilevault_1_1algorithms_1_1pqc_1_1Dilithium_adb793e96b7626cb55fc5daeec35be9d7}\label{classfilevault_1_1algorithms_1_1pqc_1_1Dilithium_adb793e96b7626cb55fc5daeec35be9d7} 
+\index{filevault::algorithms::pqc::Dilithium@{filevault::algorithms::pqc::Dilithium}!sign@{sign}}
+\index{sign@{sign}!filevault::algorithms::pqc::Dilithium@{filevault::algorithms::pqc::Dilithium}}
+\doxysubsubsection{\texorpdfstring{sign()}{sign()}}
+{\footnotesize\ttfamily std\+::vector$<$ uint8\+\_\+t $>$ filevault\+::algorithms\+::pqc\+::\+Dilithium\+::sign (\begin{DoxyParamCaption}\item[{std\+::span$<$ const uint8\+\_\+t $>$}]{message,  }\item[{std\+::span$<$ const uint8\+\_\+t $>$}]{private\+\_\+key }\end{DoxyParamCaption})}
+
+
+
+Sign a message. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em message} & Message to sign \\
+\hline
+{\em private\+\_\+key} & Signer\textquotesingle{}s private key \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Signature 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1algorithms_1_1pqc_1_1Dilithium_adb793e96b7626cb55fc5daeec35be9d7_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1algorithms_1_1pqc_1_1Dilithium_adb793e96b7626cb55fc5daeec35be9d7_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1algorithms_1_1pqc_1_1Dilithium_ae2cca391c6cdccfd70826d895a5b5a7f}\label{classfilevault_1_1algorithms_1_1pqc_1_1Dilithium_ae2cca391c6cdccfd70826d895a5b5a7f} 
+\index{filevault::algorithms::pqc::Dilithium@{filevault::algorithms::pqc::Dilithium}!signature\_size@{signature\_size}}
+\index{signature\_size@{signature\_size}!filevault::algorithms::pqc::Dilithium@{filevault::algorithms::pqc::Dilithium}}
+\doxysubsubsection{\texorpdfstring{signature\_size()}{signature\_size()}}
+{\footnotesize\ttfamily size\+\_\+t filevault\+::algorithms\+::pqc\+::\+Dilithium\+::signature\+\_\+size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get signature size for this variant. 
+
+\Hypertarget{classfilevault_1_1algorithms_1_1pqc_1_1Dilithium_a82c0d297dd80fe3567ad603728426d23}\label{classfilevault_1_1algorithms_1_1pqc_1_1Dilithium_a82c0d297dd80fe3567ad603728426d23} 
+\index{filevault::algorithms::pqc::Dilithium@{filevault::algorithms::pqc::Dilithium}!verify@{verify}}
+\index{verify@{verify}!filevault::algorithms::pqc::Dilithium@{filevault::algorithms::pqc::Dilithium}}
+\doxysubsubsection{\texorpdfstring{verify()}{verify()}}
+{\footnotesize\ttfamily bool filevault\+::algorithms\+::pqc\+::\+Dilithium\+::verify (\begin{DoxyParamCaption}\item[{std\+::span$<$ const uint8\+\_\+t $>$}]{message,  }\item[{std\+::span$<$ const uint8\+\_\+t $>$}]{signature,  }\item[{std\+::span$<$ const uint8\+\_\+t $>$}]{public\+\_\+key }\end{DoxyParamCaption})}
+
+
+
+Verify a signature. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em message} & Original message \\
+\hline
+{\em signature} & Signature to verify \\
+\hline
+{\em public\+\_\+key} & Signer\textquotesingle{}s public key \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if signature is valid 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1algorithms_1_1pqc_1_1Dilithium_a82c0d297dd80fe3567ad603728426d23_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1algorithms_1_1pqc_1_1Dilithium_a82c0d297dd80fe3567ad603728426d23_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classfilevault_1_1algorithms_1_1pqc_1_1Dilithium_aded33b74f449ad2c4b8f33aee56452db}\label{classfilevault_1_1algorithms_1_1pqc_1_1Dilithium_aded33b74f449ad2c4b8f33aee56452db} 
+\index{filevault::algorithms::pqc::Dilithium@{filevault::algorithms::pqc::Dilithium}!botan\_name\_@{botan\_name\_}}
+\index{botan\_name\_@{botan\_name\_}!filevault::algorithms::pqc::Dilithium@{filevault::algorithms::pqc::Dilithium}}
+\doxysubsubsection{\texorpdfstring{botan\_name\_}{botan\_name\_}}
+{\footnotesize\ttfamily std\+::string filevault\+::algorithms\+::pqc\+::\+Dilithium\+::botan\+\_\+name\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classfilevault_1_1algorithms_1_1pqc_1_1Dilithium_ab61854ddfe62925858d93cea5f1cf254}\label{classfilevault_1_1algorithms_1_1pqc_1_1Dilithium_ab61854ddfe62925858d93cea5f1cf254} 
+\index{filevault::algorithms::pqc::Dilithium@{filevault::algorithms::pqc::Dilithium}!variant\_@{variant\_}}
+\index{variant\_@{variant\_}!filevault::algorithms::pqc::Dilithium@{filevault::algorithms::pqc::Dilithium}}
+\doxysubsubsection{\texorpdfstring{variant\_}{variant\_}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classfilevault_1_1algorithms_1_1pqc_1_1Dilithium_af4621ffb3514a8472a05e80592b8270f}{Variant}} filevault\+::algorithms\+::pqc\+::\+Dilithium\+::variant\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/filevault/algorithms/pqc/\mbox{\hyperlink{post__quantum_8hpp}{post\+\_\+quantum.\+hpp}}\item 
+src/algorithms/pqc/\mbox{\hyperlink{post__quantum_8cpp}{post\+\_\+quantum.\+cpp}}\end{DoxyCompactItemize}

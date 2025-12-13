@@ -1,0 +1,100 @@
+\doxysection{benchmark\+\_\+cmd.\+hpp}
+\hypertarget{benchmark__cmd_8hpp_source}{}\label{benchmark__cmd_8hpp_source}\index{include/filevault/cli/commands/benchmark\_cmd.hpp@{include/filevault/cli/commands/benchmark\_cmd.hpp}}
+\mbox{\hyperlink{benchmark__cmd_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ FILEVAULT\_CLI\_COMMANDS\_BENCHMARK\_CMD\_HPP}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ FILEVAULT\_CLI\_COMMANDS\_BENCHMARK\_CMD\_HPP}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{command_8hpp}{filevault/cli/command.hpp}}"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{crypto__engine_8hpp}{filevault/core/crypto\_engine.hpp}}"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <nlohmann/json.hpp>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <botan/hash.h>}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacefilevault}{filevault}}\ \{}
+\DoxyCodeLine{00010\ \textcolor{keyword}{namespace\ }cli\ \{}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structfilevault_1_1cli_1_1BenchmarkResult}{BenchmarkResult}}\ \{}
+\DoxyCodeLine{00013\ \ \ \ \ std::string\ \mbox{\hyperlink{structfilevault_1_1cli_1_1BenchmarkResult_a82463b02cc492f2ec7fb5297d089758b}{algorithm}};}
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{structfilevault_1_1cli_1_1BenchmarkResult_a4540f626870a16688518e30bdc306fd5}{encrypt\_ms}}\ =\ 0;}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{structfilevault_1_1cli_1_1BenchmarkResult_aa6ae359258acd3f310315db6f4692fd9}{decrypt\_ms}}\ =\ 0;}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{structfilevault_1_1cli_1_1BenchmarkResult_afb0527b99e4d3bd7e0da2705ffeb41e4}{encrypt\_mbps}}\ =\ 0;}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{structfilevault_1_1cli_1_1BenchmarkResult_a8262a78ee71b92c855c2d3dc1b3243ab}{decrypt\_mbps}}\ =\ 0;}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structfilevault_1_1cli_1_1BenchmarkResult_aa61de4c75b75ee1bf6bcdef1beff69aa}{success}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00019\ \};}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structfilevault_1_1cli_1_1AsymmetricBenchmarkResult}{AsymmetricBenchmarkResult}}\ \{}
+\DoxyCodeLine{00022\ \ \ \ \ std::string\ \mbox{\hyperlink{structfilevault_1_1cli_1_1AsymmetricBenchmarkResult_aaba58c335d412e1ee01b234aac408f08}{algorithm}};}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{structfilevault_1_1cli_1_1AsymmetricBenchmarkResult_a0a0312d3c25ed85f3e8d3ed7df924f90}{keygen\_ms}}\ =\ 0;}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{structfilevault_1_1cli_1_1AsymmetricBenchmarkResult_abadd1e62a3afa39009125c348ae67aa1}{encrypt\_ms}}\ =\ 0;}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{structfilevault_1_1cli_1_1AsymmetricBenchmarkResult_a3c792dce64e4feec9ae4d07a44c8b545}{decrypt\_ms}}\ =\ 0;}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structfilevault_1_1cli_1_1AsymmetricBenchmarkResult_a8414022fb6c64b43f214488bf6371a73}{success}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00027\ \};}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structfilevault_1_1cli_1_1PQCBenchmarkResult}{PQCBenchmarkResult}}\ \{}
+\DoxyCodeLine{00030\ \ \ \ \ std::string\ \mbox{\hyperlink{structfilevault_1_1cli_1_1PQCBenchmarkResult_aac759d1eca1c2507d12df0cdfcec01ab}{algorithm}};}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{structfilevault_1_1cli_1_1PQCBenchmarkResult_aa321ee77c35cc118488b36597d6149d2}{keygen\_ms}}\ =\ 0;}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{structfilevault_1_1cli_1_1PQCBenchmarkResult_a08206a2e2123819017198a92b0fd2925}{encaps\_ms}}\ =\ 0;}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{structfilevault_1_1cli_1_1PQCBenchmarkResult_a6f37e8e9c2859d78d04267c2820f1351}{decaps\_ms}}\ =\ 0;}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structfilevault_1_1cli_1_1PQCBenchmarkResult_adf1c978c3e344ed79d386d8a4c3063f3}{success}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00035\ \};}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structfilevault_1_1cli_1_1SignatureBenchmarkResult}{SignatureBenchmarkResult}}\ \{}
+\DoxyCodeLine{00038\ \ \ \ \ std::string\ \mbox{\hyperlink{structfilevault_1_1cli_1_1SignatureBenchmarkResult_a89d398870b079384e2e25d6633e6d9dc}{algorithm}};}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{structfilevault_1_1cli_1_1SignatureBenchmarkResult_a112d00077b714c43969684bba5385d26}{keygen\_ms}}\ =\ 0;}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{structfilevault_1_1cli_1_1SignatureBenchmarkResult_af016d9c2299142355f05efc3a6ff6bbb}{sign\_ms}}\ =\ 0;}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{structfilevault_1_1cli_1_1SignatureBenchmarkResult_a15383b0c5b639a589d1a2061d74c001e}{verify\_ms}}\ =\ 0;}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structfilevault_1_1cli_1_1SignatureBenchmarkResult_a87b733560bd75a1c2d07c24ea58859d5}{success}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00043\ \};}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classfilevault_1_1cli_1_1BenchmarkCommand}{BenchmarkCommand}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classfilevault_1_1cli_1_1ICommand}{ICommand}}\ \{}
+\DoxyCodeLine{00046\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classfilevault_1_1cli_1_1BenchmarkCommand}{BenchmarkCommand}}(\mbox{\hyperlink{classfilevault_1_1core_1_1CryptoEngine}{core::CryptoEngine}}\&\ engine);}
+\DoxyCodeLine{00048\ \ \ \ \ }
+\DoxyCodeLine{00049\ \ \ \ \ std::string\ \mbox{\hyperlink{classfilevault_1_1cli_1_1BenchmarkCommand_a063dcd7fd2c3dd6bc376103fad3bdb59}{name}}()\textcolor{keyword}{\ const\ override\ }\{\ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}benchmark"{}};\ \}}
+\DoxyCodeLine{00050\ \ \ \ \ std::string\ \mbox{\hyperlink{classfilevault_1_1cli_1_1BenchmarkCommand_ab60d7a50d411f69a258e5665dde3a4c8}{description}}()\textcolor{keyword}{\ const\ override\ }\{\ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Benchmark\ all\ cryptographic\ algorithms"{}};\ \}}
+\DoxyCodeLine{00051\ \ \ \ \ }
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classfilevault_1_1cli_1_1BenchmarkCommand_a4b2a889f998d688ca81e7f7f0d030942}{setup}}(CLI::App\&\ app)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classfilevault_1_1cli_1_1BenchmarkCommand_ac67d1d013588d09628a81946d29850a0}{execute}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{comment}{//\ Benchmark\ functions}}
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classfilevault_1_1cli_1_1BenchmarkCommand_ab06cd7823dbb52389235276e909915b4}{benchmark\_symmetric}}(nlohmann::json\&\ json\_results);}
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classfilevault_1_1cli_1_1BenchmarkCommand_a7a3ecf2227863875ce27e5c341bd784e}{benchmark\_asymmetric}}(nlohmann::json\&\ json\_results);}
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classfilevault_1_1cli_1_1BenchmarkCommand_afbbca157c9720dc83fd8337e52048a5a}{benchmark\_pqc}}(nlohmann::json\&\ json\_results);}
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classfilevault_1_1cli_1_1BenchmarkCommand_af8850722c5b6e611e6e73c44074720b8}{benchmark\_kdf}}(nlohmann::json\&\ json\_results);}
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classfilevault_1_1cli_1_1BenchmarkCommand_aee073d126ccd3aa38bc5a7aeb1ee4de9}{benchmark\_compression}}(nlohmann::json\&\ json\_results);}
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classfilevault_1_1cli_1_1BenchmarkCommand_a6577b6eb82abea3b7e9cdcff01f9da9c}{benchmark\_hash}}(nlohmann::json\&\ json\_results);}
+\DoxyCodeLine{00063\ \ \ \ \ }
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{comment}{//\ Algorithm-\/specific\ benchmarks}}
+\DoxyCodeLine{00065\ \ \ \ \ \mbox{\hyperlink{structfilevault_1_1cli_1_1BenchmarkResult}{BenchmarkResult}}\ \mbox{\hyperlink{classfilevault_1_1cli_1_1BenchmarkCommand_a2ff18058e61d67ddd05269bbd6706811}{benchmark\_algorithm}}(\mbox{\hyperlink{namespacefilevault_1_1core_ab1ba257a0205c63e9e1e3623170940a2}{core::AlgorithmType}}\ algo\_type);}
+\DoxyCodeLine{00066\ \ \ \ \ \mbox{\hyperlink{structfilevault_1_1cli_1_1AsymmetricBenchmarkResult}{AsymmetricBenchmarkResult}}\ \mbox{\hyperlink{classfilevault_1_1cli_1_1BenchmarkCommand_a8a312fa54380d5f2ef1db7240d0fd2ea}{benchmark\_asymmetric\_algorithm}}(\mbox{\hyperlink{namespacefilevault_1_1core_ab1ba257a0205c63e9e1e3623170940a2}{core::AlgorithmType}}\ algo\_type);}
+\DoxyCodeLine{00067\ \ \ \ \ \mbox{\hyperlink{structfilevault_1_1cli_1_1PQCBenchmarkResult}{PQCBenchmarkResult}}\ \mbox{\hyperlink{classfilevault_1_1cli_1_1BenchmarkCommand_ad649e39df4e8acbcc792c673c3b6e7a7}{benchmark\_pqc\_algorithm}}(\mbox{\hyperlink{namespacefilevault_1_1core_ab1ba257a0205c63e9e1e3623170940a2}{core::AlgorithmType}}\ algo\_type);}
+\DoxyCodeLine{00068\ \ \ \ \ \mbox{\hyperlink{structfilevault_1_1cli_1_1BenchmarkResult}{BenchmarkResult}}\ \mbox{\hyperlink{classfilevault_1_1cli_1_1BenchmarkCommand_aa3ac0c475f13752cf10e475b93dce589}{benchmark\_hybrid\_algorithm}}(\mbox{\hyperlink{namespacefilevault_1_1core_ab1ba257a0205c63e9e1e3623170940a2}{core::AlgorithmType}}\ algo\_type);}
+\DoxyCodeLine{00069\ \ \ \ \ \mbox{\hyperlink{structfilevault_1_1cli_1_1SignatureBenchmarkResult}{SignatureBenchmarkResult}}\ \mbox{\hyperlink{classfilevault_1_1cli_1_1BenchmarkCommand_aeaf99366d0a6cb1e2288dbef1f06322e}{benchmark\_signature\_algorithm}}(\mbox{\hyperlink{namespacefilevault_1_1core_ab1ba257a0205c63e9e1e3623170940a2}{core::AlgorithmType}}\ algo\_type);}
+\DoxyCodeLine{00070\ \ \ \ \ }
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{comment}{//\ Helpers}}
+\DoxyCodeLine{00072\ \ \ \ \ std::string\ \mbox{\hyperlink{classfilevault_1_1cli_1_1BenchmarkCommand_a4a001e94c2a5b73e9df3ffa2c20d8371}{get\_platform\_info}}();}
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classfilevault_1_1cli_1_1BenchmarkCommand_a8020f6e491e8c28b618fd0f64477524b}{save\_json\_output}}(\textcolor{keyword}{const}\ nlohmann::json\&\ results);}
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classfilevault_1_1cli_1_1BenchmarkCommand_a378369c02e20bb1676cf874c0b446070}{save\_log\_output}}(\textcolor{keyword}{const}\ std::string\&\ log\_content);}
+\DoxyCodeLine{00075\ \ \ \ \ }
+\DoxyCodeLine{00076\ \ \ \ \ \mbox{\hyperlink{classfilevault_1_1core_1_1CryptoEngine}{core::CryptoEngine}}\&\ \mbox{\hyperlink{classfilevault_1_1cli_1_1BenchmarkCommand_a3943024249d5bb1546923e10e607efdc}{engine\_}};}
+\DoxyCodeLine{00077\ \ \ \ \ std::string\ \mbox{\hyperlink{classfilevault_1_1cli_1_1BenchmarkCommand_a9a97f42ed0a57c9803cd0021c6252f65}{algorithm\_}};}
+\DoxyCodeLine{00078\ \ \ \ \ std::string\ \mbox{\hyperlink{classfilevault_1_1cli_1_1BenchmarkCommand_aadd14504970978efa6ab6b3679cbf540}{output\_file\_}};}
+\DoxyCodeLine{00079\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classfilevault_1_1cli_1_1BenchmarkCommand_a55947e53380ba4988f62f44eaad939e3}{data\_size\_}}\ =\ 1048576;\ \ \textcolor{comment}{//\ 1MB\ default}}
+\DoxyCodeLine{00080\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classfilevault_1_1cli_1_1BenchmarkCommand_a3a8a7c81a82c5eaf6fdb492811cce243}{iterations\_}}\ =\ 5;}
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classfilevault_1_1cli_1_1BenchmarkCommand_a749ef77d6333dc19632da3a90db4ab1e}{all\_}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00082\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classfilevault_1_1cli_1_1BenchmarkCommand_aa951b642c3a5bae2ea331fc2cf8044d1}{json\_output\_}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00083\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classfilevault_1_1cli_1_1BenchmarkCommand_ae050988e5b7e5ae0618f8d648f998e5b}{pqc\_only\_}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00084\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classfilevault_1_1cli_1_1BenchmarkCommand_aa242a82d06fe3161df253a67f723d903}{symmetric\_only\_}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00085\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classfilevault_1_1cli_1_1BenchmarkCommand_a1c84437f85e0fda97144c1dce2b97069}{asymmetric\_only\_}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00086\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classfilevault_1_1cli_1_1BenchmarkCommand_a17a54ca87daa1686392cbeedc693ede7}{hash\_only\_}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00087\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classfilevault_1_1cli_1_1BenchmarkCommand_a013b70ec3df8bac6f2eccb8344eab816}{kdf\_only\_}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00088\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classfilevault_1_1cli_1_1BenchmarkCommand_a7af4f1d388953ca03e3b8f91ce675e0b}{compression\_only\_}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00089\ \};}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00091\ \}\ \textcolor{comment}{//\ namespace\ cli}}
+\DoxyCodeLine{00092\ \}\ \textcolor{comment}{//\ namespace\ filevault}}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00094\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

@@ -1,0 +1,86 @@
+\doxysection{filevault\+::compression\+::Compression\+Service Class Reference}
+\hypertarget{classfilevault_1_1compression_1_1CompressionService}{}\label{classfilevault_1_1compression_1_1CompressionService}\index{filevault::compression::CompressionService@{filevault::compression::CompressionService}}
+
+
+Compression service -\/ factory for compressors.  
+
+
+
+
+{\ttfamily \#include $<$compressor.\+hpp$>$}
+
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classfilevault_1_1compression_1_1ICompressor}{ICompressor}} $>$ \mbox{\hyperlink{classfilevault_1_1compression_1_1CompressionService_afb8afa1ffe9712ba33bf4ca6aece202e}{create}} (\mbox{\hyperlink{namespacefilevault_1_1core_ac7e3615724bd970e96e131cab64ef303}{core\+::\+Compression\+Type}} type)
+\begin{DoxyCompactList}\small\item\em Create compressor for algorithm. \end{DoxyCompactList}\item 
+static std\+::string \mbox{\hyperlink{classfilevault_1_1compression_1_1CompressionService_a0961ce02a3d69060b55b3c1798efa23a}{get\+\_\+algorithm\+\_\+name}} (\mbox{\hyperlink{namespacefilevault_1_1core_ac7e3615724bd970e96e131cab64ef303}{core\+::\+Compression\+Type}} type)
+\begin{DoxyCompactList}\small\item\em Get algorithm name. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{namespacefilevault_1_1core_ac7e3615724bd970e96e131cab64ef303}{core\+::\+Compression\+Type}} \mbox{\hyperlink{classfilevault_1_1compression_1_1CompressionService_ab73ef658b217d19255323c6f8648bff9}{parse\+\_\+algorithm}} (const std\+::string \&name)
+\begin{DoxyCompactList}\small\item\em Parse algorithm from string. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Compression service -\/ factory for compressors. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classfilevault_1_1compression_1_1CompressionService_afb8afa1ffe9712ba33bf4ca6aece202e}\label{classfilevault_1_1compression_1_1CompressionService_afb8afa1ffe9712ba33bf4ca6aece202e} 
+\index{filevault::compression::CompressionService@{filevault::compression::CompressionService}!create@{create}}
+\index{create@{create}!filevault::compression::CompressionService@{filevault::compression::CompressionService}}
+\doxysubsubsection{\texorpdfstring{create()}{create()}}
+{\footnotesize\ttfamily std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classfilevault_1_1compression_1_1ICompressor}{ICompressor}} $>$ filevault\+::compression\+::\+Compression\+Service\+::create (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacefilevault_1_1core_ac7e3615724bd970e96e131cab64ef303}{core\+::\+Compression\+Type}}}]{type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Create compressor for algorithm. 
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1compression_1_1CompressionService_afb8afa1ffe9712ba33bf4ca6aece202e_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1compression_1_1CompressionService_a0961ce02a3d69060b55b3c1798efa23a}\label{classfilevault_1_1compression_1_1CompressionService_a0961ce02a3d69060b55b3c1798efa23a} 
+\index{filevault::compression::CompressionService@{filevault::compression::CompressionService}!get\_algorithm\_name@{get\_algorithm\_name}}
+\index{get\_algorithm\_name@{get\_algorithm\_name}!filevault::compression::CompressionService@{filevault::compression::CompressionService}}
+\doxysubsubsection{\texorpdfstring{get\_algorithm\_name()}{get\_algorithm\_name()}}
+{\footnotesize\ttfamily std\+::string filevault\+::compression\+::\+Compression\+Service\+::get\+\_\+algorithm\+\_\+name (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacefilevault_1_1core_ac7e3615724bd970e96e131cab64ef303}{core\+::\+Compression\+Type}}}]{type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Get algorithm name. 
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1compression_1_1CompressionService_a0961ce02a3d69060b55b3c1798efa23a_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1compression_1_1CompressionService_ab73ef658b217d19255323c6f8648bff9}\label{classfilevault_1_1compression_1_1CompressionService_ab73ef658b217d19255323c6f8648bff9} 
+\index{filevault::compression::CompressionService@{filevault::compression::CompressionService}!parse\_algorithm@{parse\_algorithm}}
+\index{parse\_algorithm@{parse\_algorithm}!filevault::compression::CompressionService@{filevault::compression::CompressionService}}
+\doxysubsubsection{\texorpdfstring{parse\_algorithm()}{parse\_algorithm()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacefilevault_1_1core_ac7e3615724bd970e96e131cab64ef303}{core\+::\+Compression\+Type}} filevault\+::compression\+::\+Compression\+Service\+::parse\+\_\+algorithm (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Parse algorithm from string. 
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1compression_1_1CompressionService_ab73ef658b217d19255323c6f8648bff9_icgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/filevault/compression/\mbox{\hyperlink{compressor_8hpp}{compressor.\+hpp}}\item 
+src/compression/\mbox{\hyperlink{compressor_8cpp}{compressor.\+cpp}}\end{DoxyCompactItemize}

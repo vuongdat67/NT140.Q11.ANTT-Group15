@@ -1,0 +1,90 @@
+\doxysection{filevault\+::utils\+::Table\+Builder Class Reference}
+\hypertarget{classfilevault_1_1utils_1_1TableBuilder}{}\label{classfilevault_1_1utils_1_1TableBuilder}\index{filevault::utils::TableBuilder@{filevault::utils::TableBuilder}}
+
+
+Quick table builders.  
+
+
+
+
+{\ttfamily \#include $<$table\+\_\+formatter.\+hpp$>$}
+
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{classfilevault_1_1utils_1_1TableBuilder_a433762195a125e5bee25c1ea97cc1eec}{print\+\_\+algorithm\+\_\+list}} (const std\+::vector$<$ std\+::tuple$<$ std\+::string, std\+::string, std\+::string $>$ $>$ \&algorithms)
+\item 
+static void \mbox{\hyperlink{classfilevault_1_1utils_1_1TableBuilder_a14bf4019529c603305eb71746eb5d845}{print\+\_\+benchmark\+\_\+results}} (const std\+::vector$<$ std\+::tuple$<$ std\+::string, double, double $>$ $>$ \&results)
+\item 
+static void \mbox{\hyperlink{classfilevault_1_1utils_1_1TableBuilder_a67ed394aae6527e7493bc557f1503b21}{print\+\_\+file\+\_\+summary}} (const std\+::string \&input\+\_\+file, const std\+::string \&output\+\_\+file, size\+\_\+t input\+\_\+size, size\+\_\+t output\+\_\+size, double processing\+\_\+time\+\_\+ms)
+\item 
+static void \mbox{\hyperlink{classfilevault_1_1utils_1_1TableBuilder_a55e23dc6f0ea857c67df214ebcf8a212}{print\+\_\+encryption\+\_\+config}} (const std\+::string \&algorithm, const std\+::string \&kdf, const std\+::string \&security\+\_\+level, size\+\_\+t kdf\+\_\+iterations, size\+\_\+t kdf\+\_\+memory\+\_\+kb)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Quick table builders. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classfilevault_1_1utils_1_1TableBuilder_a433762195a125e5bee25c1ea97cc1eec}\label{classfilevault_1_1utils_1_1TableBuilder_a433762195a125e5bee25c1ea97cc1eec} 
+\index{filevault::utils::TableBuilder@{filevault::utils::TableBuilder}!print\_algorithm\_list@{print\_algorithm\_list}}
+\index{print\_algorithm\_list@{print\_algorithm\_list}!filevault::utils::TableBuilder@{filevault::utils::TableBuilder}}
+\doxysubsubsection{\texorpdfstring{print\_algorithm\_list()}{print\_algorithm\_list()}}
+{\footnotesize\ttfamily void filevault\+::utils\+::\+Table\+Builder\+::print\+\_\+algorithm\+\_\+list (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::tuple$<$ std\+::string, std\+::string, std\+::string $>$ $>$ \&}]{algorithms }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1utils_1_1TableBuilder_a433762195a125e5bee25c1ea97cc1eec_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1utils_1_1TableBuilder_a14bf4019529c603305eb71746eb5d845}\label{classfilevault_1_1utils_1_1TableBuilder_a14bf4019529c603305eb71746eb5d845} 
+\index{filevault::utils::TableBuilder@{filevault::utils::TableBuilder}!print\_benchmark\_results@{print\_benchmark\_results}}
+\index{print\_benchmark\_results@{print\_benchmark\_results}!filevault::utils::TableBuilder@{filevault::utils::TableBuilder}}
+\doxysubsubsection{\texorpdfstring{print\_benchmark\_results()}{print\_benchmark\_results()}}
+{\footnotesize\ttfamily void filevault\+::utils\+::\+Table\+Builder\+::print\+\_\+benchmark\+\_\+results (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::tuple$<$ std\+::string, double, double $>$ $>$ \&}]{results }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1utils_1_1TableBuilder_a14bf4019529c603305eb71746eb5d845_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1utils_1_1TableBuilder_a55e23dc6f0ea857c67df214ebcf8a212}\label{classfilevault_1_1utils_1_1TableBuilder_a55e23dc6f0ea857c67df214ebcf8a212} 
+\index{filevault::utils::TableBuilder@{filevault::utils::TableBuilder}!print\_encryption\_config@{print\_encryption\_config}}
+\index{print\_encryption\_config@{print\_encryption\_config}!filevault::utils::TableBuilder@{filevault::utils::TableBuilder}}
+\doxysubsubsection{\texorpdfstring{print\_encryption\_config()}{print\_encryption\_config()}}
+{\footnotesize\ttfamily void filevault\+::utils\+::\+Table\+Builder\+::print\+\_\+encryption\+\_\+config (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{algorithm,  }\item[{const std\+::string \&}]{kdf,  }\item[{const std\+::string \&}]{security\+\_\+level,  }\item[{size\+\_\+t}]{kdf\+\_\+iterations,  }\item[{size\+\_\+t}]{kdf\+\_\+memory\+\_\+kb }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1utils_1_1TableBuilder_a55e23dc6f0ea857c67df214ebcf8a212_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfilevault_1_1utils_1_1TableBuilder_a67ed394aae6527e7493bc557f1503b21}\label{classfilevault_1_1utils_1_1TableBuilder_a67ed394aae6527e7493bc557f1503b21} 
+\index{filevault::utils::TableBuilder@{filevault::utils::TableBuilder}!print\_file\_summary@{print\_file\_summary}}
+\index{print\_file\_summary@{print\_file\_summary}!filevault::utils::TableBuilder@{filevault::utils::TableBuilder}}
+\doxysubsubsection{\texorpdfstring{print\_file\_summary()}{print\_file\_summary()}}
+{\footnotesize\ttfamily void filevault\+::utils\+::\+Table\+Builder\+::print\+\_\+file\+\_\+summary (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{input\+\_\+file,  }\item[{const std\+::string \&}]{output\+\_\+file,  }\item[{size\+\_\+t}]{input\+\_\+size,  }\item[{size\+\_\+t}]{output\+\_\+size,  }\item[{double}]{processing\+\_\+time\+\_\+ms }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfilevault_1_1utils_1_1TableBuilder_a67ed394aae6527e7493bc557f1503b21_cgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/filevault/utils/\mbox{\hyperlink{table__formatter_8hpp}{table\+\_\+formatter.\+hpp}}\item 
+src/utils/\mbox{\hyperlink{table__formatter_8cpp}{table\+\_\+formatter.\+cpp}}\end{DoxyCompactItemize}

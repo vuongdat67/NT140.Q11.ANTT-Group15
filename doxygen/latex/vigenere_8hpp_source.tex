@@ -1,0 +1,46 @@
+\doxysection{vigenere.\+hpp}
+\hypertarget{vigenere_8hpp_source}{}\label{vigenere_8hpp_source}\index{include/filevault/algorithms/classical/vigenere.hpp@{include/filevault/algorithms/classical/vigenere.hpp}}
+\mbox{\hyperlink{vigenere_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{crypto__algorithm_8hpp}{filevault/core/crypto\_algorithm.hpp}}"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacefilevault}{filevault}}\ \{}
+\DoxyCodeLine{00008\ \textcolor{keyword}{namespace\ }algorithms\ \{}
+\DoxyCodeLine{00009\ \textcolor{keyword}{namespace\ }classical\ \{}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00022\ \textcolor{keyword}{class\ }Vigenere\ :\ \textcolor{keyword}{public}\ core::ICryptoAlgorithm\ \{}
+\DoxyCodeLine{00023\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1classical_1_1Vigenere_aa8db8002e87fdeeee291996d53a211d7}{Vigenere}}(\textcolor{keyword}{const}\ std::string\&\ keyword\ =\ \textcolor{stringliteral}{"{}KEY"{}});}
+\DoxyCodeLine{00025\ \ \ \ \ }
+\DoxyCodeLine{00026\ \ \ \ \ std::string\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1classical_1_1Vigenere_ab02b3ad23ae80b57aa67bb79a8dd6dc2}{name}}()\textcolor{keyword}{\ const\ override\ }\{\ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Vigenere"{}};\ \}}
+\DoxyCodeLine{00027\ \ \ \ \ \mbox{\hyperlink{namespacefilevault_1_1core_ab1ba257a0205c63e9e1e3623170940a2}{core::AlgorithmType}}\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1classical_1_1Vigenere_ac3fd1cdebc63d2c66e97e58f35bcbf74}{type}}()\textcolor{keyword}{\ const\ override\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespacefilevault_1_1core_ab1ba257a0205c63e9e1e3623170940a2a72df12cbf45652307ffee3ce5138b95a}{core::AlgorithmType::VIGENERE}};\ \}}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1classical_1_1Vigenere_a8ec35106b800a454708718aba57a8f12}{key\_size}}()\textcolor{keyword}{\ const\ override\ }\{\ \textcolor{keywordflow}{return}\ 32;\ \}\ \textcolor{comment}{//\ Standard\ key\ size}}
+\DoxyCodeLine{00029\ \ \ \ \ }
+\DoxyCodeLine{00030\ \ \ \ \ \mbox{\hyperlink{structfilevault_1_1core_1_1CryptoResult}{core::CryptoResult}}\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1classical_1_1Vigenere_a9a80560c498e953ff171c88cbdfe0823}{encrypt}}(}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ std::span<const\ uint8\_t>\ plaintext,}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ std::span<const\ uint8\_t>\ key,}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structfilevault_1_1core_1_1EncryptionConfig}{core::EncryptionConfig}}\&\ config)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00034\ \ \ \ \ }
+\DoxyCodeLine{00035\ \ \ \ \ \mbox{\hyperlink{structfilevault_1_1core_1_1CryptoResult}{core::CryptoResult}}\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1classical_1_1Vigenere_a6c1c3a6b3b7716c1c146dd32205e5982}{decrypt}}(}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ std::span<const\ uint8\_t>\ ciphertext,}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ std::span<const\ uint8\_t>\ key,}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structfilevault_1_1core_1_1EncryptionConfig}{core::EncryptionConfig}}\&\ config)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00039\ \ \ \ \ }
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1classical_1_1Vigenere_ab1f1dfb4e8d727b40a494858bf494f68}{is\_suitable\_for}}(\mbox{\hyperlink{namespacefilevault_1_1core_abcb3b3d896f7dc00926903183b3e2dc9}{core::SecurityLevel}}\ level)\textcolor{keyword}{\ const\ override\ }\{}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ (void)level;}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00043\ \ \ \ \ \}}
+\DoxyCodeLine{00044\ \ \ \ \ }
+\DoxyCodeLine{00045\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00046\ \ \ \ \ std::string\ \mbox{\hyperlink{classfilevault_1_1algorithms_1_1classical_1_1Vigenere_a9f12fa11bfe7740150e007924a9335be}{keyword\_}};}
+\DoxyCodeLine{00047\ \};}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \}\ \textcolor{comment}{//\ namespace\ classical}}
+\DoxyCodeLine{00050\ \}\ \textcolor{comment}{//\ namespace\ algorithms}}
+\DoxyCodeLine{00051\ \}\ \textcolor{comment}{//\ namespace\ filevault}}
+
+\end{DoxyCode}
